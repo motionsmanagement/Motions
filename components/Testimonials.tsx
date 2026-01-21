@@ -13,7 +13,7 @@ const Testimonials: React.FC = () => {
           </div>
           <div className="rounded-[2rem] overflow-hidden aspect-[4/5] shadow-xl">
             <img
-              src="https://picsum.photos/id/65/600/800"
+              src="/resta.jpg"
               alt="Cliente satisfecho"
               className="w-full h-full object-cover"
             />
