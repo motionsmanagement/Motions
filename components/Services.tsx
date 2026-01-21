@@ -5,23 +5,23 @@ import { User, Users, HeartPulse, Crosshair } from 'lucide-react';
 const serviceList = [
   {
     icon: <User className="w-6 h-6" />,
-    title: "Individual Therapy",
-    desc: "One-on-one sessions with licensed therapists tailored specifically to your personal challenges."
+    title: "Google My Business",
+    desc: "Configuración y optimización completa de tu perfil para aparecer primero en búsquedas locales y Google Maps."
   },
   {
     icon: <Users className="w-6 h-6" />,
-    title: "Group Session",
-    desc: "Connect and heal with others in guided support groups that foster community and shared growth."
+    title: "Publicidad en Google Maps",
+    desc: "Campañas estratégicas para atraer clientes hambrientos que buscan restaurantes cerca de ellos."
   },
   {
     icon: <HeartPulse className="w-6 h-6" />,
-    title: "Crisis Support",
-    desc: "24/7 immediate help from trained crisis counselors for when you need support the most."
+    title: "Sitios Web para Restaurantes",
+    desc: "Diseño web personalizado, optimizado para móviles, con menús atractivos y sistema de reservas integrado."
   },
   {
     icon: <Crosshair className="w-6 h-6" />,
-    title: "Specialized Programs",
-    desc: "Focused treatment pathways for anxiety, depression, trauma, and PTSD with proven results."
+    title: "Gestión de Reputación",
+    desc: "Manejo profesional de reseñas y presencia online para construir confianza y atraer más comensales."
   }
 ];
 
@@ -33,18 +33,18 @@ const Services: React.FC = () => {
           <div className="lg:w-1/2">
             <div className="flex items-center gap-2 text-[#4A3728] font-bold text-xs tracking-[0.2em] uppercase mb-6">
               <div className="w-1.5 h-1.5 rotate-45 bg-[#4A3728]"></div>
-              <span>Our Services</span>
+              <span>Nuestros Servicios</span>
             </div>
             <h2 className="text-5xl md:text-7xl mb-8 leading-[1] text-[#2D241E]">
-              Your Path <br /><span className="text-[#8C7B6B]">to Balance</span>
+              Soluciones que <span className="text-[#8C7B6B]">Funcionan</span>
             </h2>
             <p className="text-lg text-[#2D241E]/60 max-w-md mb-12 leading-relaxed tracking-tight">
-              We combine professional expertise and genuine empathy to help individuals navigate mental health with confidence and hope.
+              Google My Business y sitios web optimizados para atraer más clientes y aumentar tus ventas.
             </p>
             <div className="rounded-[3rem] overflow-hidden aspect-[4/3] shadow-2xl relative group">
-              <img 
-                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200" 
-                alt="Therapy session" 
+              <img
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200"
+                alt="Restaurante exitoso"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-black/5"></div>
@@ -62,7 +62,7 @@ const Services: React.FC = () => {
                   {service.desc}
                 </p>
                 <button className="text-xs font-bold tracking-widest uppercase border-b border-[#2D241E]/20 pb-2 hover:border-[#8C7B6B] hover:text-[#8C7B6B] transition-all">
-                  More Details
+                  Más Información
                 </button>
               </div>
             ))}

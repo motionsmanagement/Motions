@@ -10,18 +10,18 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-8 text-white/80 font-medium text-sm">
-          <a href="#services" className="hover:text-white transition-colors tracking-tight">Services</a>
-          <a href="#how-it-works" className="hover:text-white transition-colors tracking-tight">How it Works</a>
-          <a href="#team" className="hover:text-white transition-colors tracking-tight">Our Team</a>
-          <a href="#contact" className="hover:text-white transition-colors tracking-tight">Contact</a>
+          <a href="#services" className="hover:text-white transition-colors tracking-tight">Servicios</a>
+          <a href="#how-it-works" className="hover:text-white transition-colors tracking-tight">Cómo Funciona</a>
+          <a href="#projects" className="hover:text-white transition-colors tracking-tight">Proyectos</a>
+          <a href="#contact" className="hover:text-white transition-colors tracking-tight">Contacto</a>
         </div>
 
         <div className="flex items-center gap-3">
           <button className="hidden sm:block px-5 py-2 rounded-full border border-white/20 text-white/90 text-sm font-medium hover:bg-white/10 transition-all tracking-tight">
-            Book Session
+            Agendar Llamada
           </button>
           <button className="px-6 py-2 rounded-full bg-white text-[#2D241E] text-sm font-semibold hover:bg-opacity-90 transition-all shadow-lg tracking-tight">
-            Get Support
+            Empezar Ahora
           </button>
         </div>
       </nav>

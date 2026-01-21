@@ -9,30 +9,30 @@ const Testimonials: React.FC = () => {
         <div className="w-full md:w-1/3">
           <div className="flex items-center gap-2 text-[#4A3728] font-medium mb-12">
             <div className="w-2 h-2 rotate-45 bg-[#4A3728]"></div>
-            <span>Testimonials</span>
+            <span>Testimonios</span>
           </div>
           <div className="rounded-[2rem] overflow-hidden aspect-[4/5] shadow-xl">
-            <img 
-              src="https://picsum.photos/id/65/600/800" 
-              alt="Testimonial author" 
+            <img
+              src="https://picsum.photos/id/65/600/800"
+              alt="Cliente satisfecho"
               className="w-full h-full object-cover"
             />
           </div>
         </div>
-        
+
         <div className="w-full md:w-2/3">
           <blockquote className="text-3xl md:text-5xl leading-tight text-[#2D241E] font-medium mb-12">
-            “The trauma from my accident haunted me for two years. Healance's 
-            <span className="text-[#4A3728]"> specialized PTSD program</span> 
-            <span className="text-[#8C7B6B]"> and amazing therapist</span> helped me process my feelings and find peace again. I finally feel like myself.”
+            "Antes nadie nos encontraba en Google. Después de trabajar con Motions,
+            <span className="text-[#4A3728]"> aparecemos primero en Google Maps</span>
+            <span className="text-[#8C7B6B]"> y las reservas aumentaron un 60%</span>. El sitio web que nos hicieron es increíble y recibimos pedidos todos los días."
           </blockquote>
-          
+
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xl font-medium text-[#2D241E]">Samantha William</p>
-              <p className="text-[#2D241E]/50">Oregon, United States</p>
+              <p className="text-xl font-medium text-[#2D241E]">Carlos Mendoza</p>
+              <p className="text-[#2D241E]/50">Restaurante La Tradición, Madrid</p>
             </div>
-            
+
             <div className="flex gap-4">
               <button className="w-14 h-14 rounded-full border border-black/10 flex items-center justify-center hover:bg-[#FBF9F6] transition-colors">
                 <ArrowLeft className="w-6 h-6 text-[#2D241E]" />

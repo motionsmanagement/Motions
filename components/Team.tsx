@@ -4,18 +4,18 @@ import React from 'react';
 const therapists = [
   {
     img: "https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=600",
-    name: "Sarah Winters",
-    role: "Clinical Psychologist"
+    name: "Ana García",
+    role: "Especialista en Google My Business"
   },
   {
     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600",
-    name: "Emily Reyes",
-    role: "Licensed Family Therapist"
+    name: "Laura Martínez",
+    role: "Diseñadora Web Senior"
   },
   {
     img: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?auto=format&fit=crop&q=80&w=600",
-    name: "David Jacob",
-    role: "PTSD Specialist"
+    name: "Miguel Sánchez",
+    role: "Estratega de Marketing Digital"
   }
 ];
 
@@ -27,14 +27,14 @@ const Team: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 text-[#4A3728] font-bold text-xs tracking-[0.2em] uppercase mb-6">
               <div className="w-1.5 h-1.5 rotate-45 bg-[#4A3728]"></div>
-              <span>Our Team</span>
+              <span>Nuestro Equipo</span>
             </div>
             <h2 className="text-5xl md:text-7xl text-[#2D241E] leading-none">
-              Meet Your Therapist
+              Conoce a Tu Equipo
             </h2>
           </div>
           <p className="max-w-md text-[#2D241E]/40 leading-relaxed text-sm tracking-tight">
-            Our professionals combine clinical expertise with genuine compassion to create treatment plans that address your unique healing timeline.
+            Expertos en marketing digital para restaurantes que combinan estrategia, creatividad y resultados medibles para hacer crecer tu negocio.
           </p>
         </div>
 
@@ -42,9 +42,9 @@ const Team: React.FC = () => {
           {therapists.map((member, idx) => (
             <div key={idx} className="group cursor-pointer">
               <div className="rounded-[3rem] overflow-hidden mb-8 aspect-[4/5] shadow-2xl transition-all duration-700 group-hover:-translate-y-2">
-                <img 
-                  src={member.img} 
-                  alt={member.name} 
+                <img
+                  src={member.img}
+                  alt={member.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                 />
               </div>

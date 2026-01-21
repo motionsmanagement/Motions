@@ -1,15 +1,15 @@
 
 import React, { useEffect } from 'react';
-import { 
-  ArrowRight, 
-  ArrowLeft, 
-  ChevronRight, 
-  User, 
-  Users, 
-  HeartPulse, 
-  Crosshair, 
-  Brain, 
-  Award, 
+import {
+  ArrowRight,
+  ArrowLeft,
+  ChevronRight,
+  User,
+  Users,
+  HeartPulse,
+  Crosshair,
+  Brain,
+  Award,
   Globe,
   Calendar,
   CheckCircle2,
@@ -26,7 +26,7 @@ import Services from './components/Services';
 import HowItWorks from './components/HowItWorks';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
-import Team from './components/Team';
+import Projects from './components/Projects';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 
@@ -40,7 +40,7 @@ const App: React.FC = () => {
         <HowItWorks />
         <WhyChooseUs />
         <Testimonials />
-        <Team />
+        <Projects />
         <FinalCTA />
       </main>
       <Footer />
