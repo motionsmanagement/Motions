@@ -36,14 +36,14 @@ const Services: React.FC = () => {
               <span>Nuestros Servicios</span>
             </div>
             <h2 className="text-5xl md:text-7xl mb-8 leading-[1] text-black">
-              Soluciones que <span className="text-[#8C7B6B]">Funcionan</span>
+              Soluciones que Funcionan
             </h2>
             <p className="text-lg text-[#2D241E]/60 max-w-md mb-12 leading-relaxed tracking-tight">
               Google My Business y sitios web optimizados para atraer más clientes y aumentar tus ventas.
             </p>
             <div className="rounded-[3rem] overflow-hidden aspect-[4/3] shadow-2xl relative group">
               <img
-                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200"
+                src="/restaurant.jpg"
                 alt="Restaurante exitoso"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />

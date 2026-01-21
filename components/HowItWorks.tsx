@@ -31,8 +31,8 @@ const HowItWorks: React.FC = () => {
             <span className="text-sm tracking-tight">Cómo Funciona</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-medium leading-tight text-right md:max-w-2xl text-black">
-            <span className="text-black/40">Nuestro Proceso para</span><br />
-            <span className="text-black">Aumentar tus Ventas</span>
+            <span>Nuestro Proceso para</span><br />
+            <span>Aumentar tus Ventas</span>
           </h2>
         </div>
 
@@ -75,7 +75,7 @@ const HowItWorks: React.FC = () => {
           {/* Centered Button at bottom of image area */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
             <button className="px-10 py-3 bg-white text-[#2D241E] rounded-full font-semibold text-sm shadow-xl hover:scale-105 transition-transform">
-              Agenda tu Consulta Gratis
+              Llamar ahora
             </button>
           </div>
         </div>

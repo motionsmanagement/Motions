@@ -24,7 +24,7 @@ const FinalCTA: React.FC = () => {
         </p>
 
         <button className="px-14 py-6 rounded-full bg-white text-[#2D241E] text-xl font-bold shadow-[0_20px_80px_rgba(255,255,255,0.2)] hover:scale-105 transition-transform mb-24 tracking-tighter">
-          Agenda tu Consulta Gratis
+          Llamar ahora
         </button>
 
         <div className="flex flex-col md:flex-row items-center justify-between w-full text-white/40 text-xs tracking-widest uppercase font-bold gap-8">

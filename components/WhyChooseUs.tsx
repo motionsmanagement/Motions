@@ -36,7 +36,7 @@ const WhyChooseUs: React.FC = () => {
               <span>Por Qué Elegirnos</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-medium text-black mb-8 leading-tight">
-              Resultados <span className="text-[#8C7B6B]">Comprobados</span>
+              Resultados Comprobados
             </h2>
             <p className="text-lg text-[#2D241E]/60 mb-10 leading-relaxed max-w-lg">
               Google My Business optimizado y un sitio web que convierte. Tu restaurante será la primera opción para clientes en tu zona.
@@ -48,7 +48,7 @@ const WhyChooseUs: React.FC = () => {
           <div className="lg:w-1/2">
             <div className="rounded-[2.5rem] overflow-hidden shadow-2xl">
               <img
-                src="https://picsum.photos/id/64/1000/1000"
+                src="/salmon.jpg"
                 alt="Restaurante exitoso"
                 className="w-full h-full object-cover"
               />
