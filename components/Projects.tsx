@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
                             <div className="w-1.5 h-1.5 rotate-45 bg-[#4A3728]"></div>
                             <span>Proyectos Realizados</span>
                         </div>
-                        <h2 className="text-5xl md:text-7xl text-[#2D241E] leading-none">
+                        <h2 className="text-5xl md:text-7xl text-black leading-none">
                             Casos de Éxito
                         </h2>
                     </div>
@@ -58,7 +58,7 @@ const Projects: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
-                            <h4 className="text-3xl mb-1 text-[#2D241E]">{project.name}</h4>
+                            <h4 className="text-3xl mb-1 text-black">{project.name}</h4>
                             <p className="text-[#8C7B6B] text-sm font-bold tracking-[0.1em] uppercase">Cliente Satisfecho</p>
                         </div>
                     ))}

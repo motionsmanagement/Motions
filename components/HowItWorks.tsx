@@ -30,9 +30,9 @@ const HowItWorks: React.FC = () => {
             <span className="text-[10px]">◆</span>
             <span className="text-sm tracking-tight">Cómo Funciona</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-medium leading-tight text-right md:max-w-2xl">
-            <span className="text-[#A3A3A3]">Nuestro Proceso para</span><br />
-            <span className="text-[#4D2C1A]">Aumentar tus Ventas</span>
+          <h2 className="text-4xl md:text-6xl font-medium leading-tight text-right md:max-w-2xl text-black">
+            <span className="text-black/40">Nuestro Proceso para</span><br />
+            <span className="text-black">Aumentar tus Ventas</span>
           </h2>
         </div>
 

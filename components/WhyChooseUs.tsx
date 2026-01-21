@@ -35,7 +35,7 @@ const WhyChooseUs: React.FC = () => {
               <div className="w-2 h-2 rotate-45 bg-[#4A3728]"></div>
               <span>Por Qué Elegirnos</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-medium text-[#2D241E] mb-8 leading-tight">
+            <h2 className="text-5xl md:text-6xl font-medium text-black mb-8 leading-tight">
               Resultados <span className="text-[#8C7B6B]">Comprobados</span>
             </h2>
             <p className="text-lg text-[#2D241E]/60 mb-10 leading-relaxed max-w-lg">

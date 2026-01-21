@@ -35,7 +35,7 @@ const Services: React.FC = () => {
               <div className="w-1.5 h-1.5 rotate-45 bg-[#4A3728]"></div>
               <span>Nuestros Servicios</span>
             </div>
-            <h2 className="text-5xl md:text-7xl mb-8 leading-[1] text-[#2D241E]">
+            <h2 className="text-5xl md:text-7xl mb-8 leading-[1] text-black">
               Soluciones que <span className="text-[#8C7B6B]">Funcionan</span>
             </h2>
             <p className="text-lg text-[#2D241E]/60 max-w-md mb-12 leading-relaxed tracking-tight">
@@ -57,7 +57,7 @@ const Services: React.FC = () => {
                 <div className="w-16 h-16 rounded-[1.5rem] bg-[#F6F3F0] flex items-center justify-center mb-8 transition-all duration-500 group-hover:bg-[#4A3728] group-hover:text-white group-hover:-translate-y-1">
                   <span className="text-[#4A3728] group-hover:text-white transition-colors">{service.icon}</span>
                 </div>
-                <h3 className="text-3xl mb-4 text-[#2D241E]">{service.title}</h3>
+                <h3 className="text-3xl mb-4 text-black">{service.title}</h3>
                 <p className="text-[#2D241E]/50 mb-8 leading-relaxed tracking-tight text-sm">
                   {service.desc}
                 </p>
