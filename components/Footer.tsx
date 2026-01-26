@@ -13,8 +13,7 @@ const Footer: React.FC = () => {
     <footer className="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-[#F1EFEA]">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-3 text-[#2D241E] mb-20">
-          <img src="/MotionsLogo.png" alt="Motions Logo" className="h-10 w-auto" />
-          <span className="text-2xl font-semibold tracking-tight">Motions</span>
+          <img src="/motionsblack.png" alt="Motions Logo" className="h-10 w-auto" />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 mb-24">
