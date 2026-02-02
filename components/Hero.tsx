@@ -30,12 +30,12 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
           <button className="px-8 md:px-12 py-3 md:py-5 rounded-full bg-black/40 backdrop-blur-xl border border-white/30 text-white text-sm md:text-lg font-bold hover:scale-105 hover:bg-black/50 transition-all shadow-[0_20px_50px_rgba(0,0,0,0.3)] tracking-tight">
             Llamar ahora
           </button>
 
-          <div className="liquid-glass-dark rounded-[2rem] md:rounded-[2.5rem] p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-12 md:px-10 max-w-[90%] md:max-w-none">
+          <div className="liquid-glass-dark rounded-[2rem] md:rounded-[2.5rem] p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-12 md:px-10 max-w-[95%] md:max-w-none">
             <div className="flex items-center gap-3 text-white">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
                 <Brain className="w-4 h-4 md:w-5 md:h-5 text-white/80" />
