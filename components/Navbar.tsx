@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
           <button className={`hidden sm:block px-4 md:px-5 py-2 rounded-full border text-xs md:text-sm font-medium transition-all tracking-tight ${isScrolled ? "border-black/10 text-black/90 hover:bg-black/5" : "border-white/20 text-white/90 hover:bg-white/10"}`}>
             Agendar Llamada
           </button>
-          <button className={`px-5 md:px-6 py-2 rounded-full text-xs md:text-sm font-semibold transition-all shadow-lg tracking-tight ${isScrolled ? "bg-black text-white hover:bg-gray-800" : "bg-black text-white hover:bg-gray-900 border border-white/20"}`}>
+          <button className={`px-5 md:px-6 py-2 rounded-full text-xs md:text-sm font-semibold transition-all shadow-lg tracking-tight ${isScrolled ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}>
             Empezar Ahora
           </button>
         </div>

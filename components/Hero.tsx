@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          <button className="w-full lg:w-auto px-12 py-5 rounded-full bg-black text-white text-lg font-bold hover:scale-105 transition-transform shadow-[0_20px_50px_rgba(0,0,0,0.1)] tracking-tight border border-white/20">
+          <button className="w-full lg:w-auto px-10 md:px-12 py-4 md:py-5 rounded-full bg-black/40 backdrop-blur-xl border border-white/30 text-white text-base md:text-lg font-bold hover:scale-105 hover:bg-black/50 transition-all shadow-[0_20px_50px_rgba(0,0,0,0.3)] tracking-tight">
             Llamar ahora
           </button>
 
