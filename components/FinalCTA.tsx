@@ -7,8 +7,8 @@ const FinalCTA: React.FC = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=1920"
-          alt="Healing path"
+          src="/new.jpg"
+          alt="Final CTA background"
           className="w-full h-full object-cover brightness-[0.6]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
