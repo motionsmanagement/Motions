@@ -25,8 +25,8 @@ const HowItWorks: React.FC = () => {
     <section id="how-it-works" className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-end items-start mb-16">
-          <h2 className="text-4xl md:text-6xl font-medium leading-tight text-right md:max-w-2xl text-black">
+        <div className="flex flex-col md:flex-row justify-center items-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-medium leading-tight text-center text-black">
             <span>Nuestro Proceso para</span><br />
             <span>Aumentar tus Ventas</span>
           </h2>
