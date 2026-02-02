@@ -38,7 +38,7 @@ const WhyChooseUs: React.FC = () => {
             <p className="text-lg text-gray-500 mb-10 leading-relaxed max-w-lg">
               Google My Business optimizado y un sitio web que convierte. Tu restaurante será la primera opción para clientes en tu zona.
             </p>
-            <button className="px-10 py-4 rounded-full liquid-glass-btn font-medium hover:scale-105 transition-transform">
+            <button className="px-10 py-4 rounded-full bg-black text-white font-medium hover:bg-gray-800 transition-colors">
               Conocer Más
             </button>
           </div>

@@ -23,7 +23,7 @@ const FinalCTA: React.FC = () => {
           Agenda una consulta gratis y descubre cómo aumentar tu visibilidad y tus reservas.
         </p>
 
-        <button className="px-14 py-6 rounded-full liquid-glass-btn text-xl font-bold hover:scale-105 transition-transform mb-24 tracking-tighter">
+        <button className="px-14 py-6 rounded-full bg-black text-white text-xl font-bold shadow-[0_20px_80px_rgba(0,0,0,0.3)] hover:scale-105 transition-transform mb-24 tracking-tighter border border-white/20">
           Llamar ahora
         </button>
 
