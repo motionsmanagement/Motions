@@ -28,15 +28,12 @@ const Projects: React.FC = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-12">
                     <div>
-                        <div className="flex items-center gap-2 text-[#4A3728] font-bold text-xs tracking-[0.2em] uppercase mb-6">
-                            <div className="w-1.5 h-1.5 rotate-45 bg-[#4A3728]"></div>
-                            <span>Proyectos Realizados</span>
-                        </div>
+
                         <h2 className="text-5xl md:text-7xl text-black leading-none">
                             Casos de Éxito
                         </h2>
                     </div>
-                    <p className="max-w-md text-[#2D241E]/40 leading-relaxed text-sm tracking-tight">
+                    <p className="max-w-md text-gray-400 leading-relaxed text-sm tracking-tight">
                         Restaurantes que confiaron en nosotros y ahora disfrutan de más clientes, más reservas y más ventas.
                     </p>
                 </div>
@@ -59,15 +56,15 @@ const Projects: React.FC = () => {
                                 </div>
                             </div>
                             <h4 className="text-3xl mb-1 text-black">{project.name}</h4>
-                            <p className="text-[#8C7B6B] text-sm font-bold tracking-[0.1em] uppercase">Cliente Satisfecho</p>
+                            <p className="text-gray-400 text-sm font-bold tracking-[0.1em] uppercase">Cliente Satisfecho</p>
                         </div>
                     ))}
                 </div>
 
                 <div className="flex justify-center mt-20 gap-3">
-                    <div className="w-2 h-2 rounded-full bg-[#2D241E]"></div>
-                    <div className="w-2 h-2 rounded-full bg-[#2D241E]/10"></div>
-                    <div className="w-2 h-2 rounded-full bg-[#2D241E]/10"></div>
+                    <div className="w-2 h-2 rounded-full bg-black"></div>
+                    <div className="w-2 h-2 rounded-full bg-black/10"></div>
+                    <div className="w-2 h-2 rounded-full bg-black/10"></div>
                 </div>
             </div>
         </section>

@@ -32,19 +32,17 @@ const Services: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="services" className="py-24 px-6 md:px-12 bg-white">
+    <section id="services" className="py-20 px-6 md:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
 
           {/* Left Column: List */}
-          <div className="lg:w-1/3">
-            <div className="text-black/40 font-medium text-sm mb-6 tracking-tight">
-              (Nuestros Servicios)
-            </div>
-            <h2 className="text-4xl md:text-5xl font-medium text-black leading-tight mb-8 tracking-tighter">
+          <div className="lg:w-[45%]">
+
+            <h2 className="text-4xl md:text-5xl font-medium text-black leading-[1.1] mb-6 tracking-tighter">
               Soluciones expertas<br />para tu restaurante
             </h2>
-            <p className="text-[#2D241E]/50 text-sm leading-relaxed mb-12 max-w-sm">
+            <p className="text-gray-500 text-sm leading-relaxed mb-10 max-w-sm">
               Potenciamos tu visibilidad digital para que te centres en lo que mejor sabes hacer: cocinar y dar un gran servicio.
             </p>
 
@@ -53,10 +51,10 @@ const Services: React.FC = () => {
                 <button
                   key={idx}
                   onClick={() => setActiveTab(idx)}
-                  className={`py-6 text-left border-b border-black/10 transition-all duration-300 group ${activeTab === idx ? 'text-black' : 'text-black/30'
+                  className={`py-5 text-left border-b border-black/10 transition-all duration-300 group ${activeTab === idx ? 'text-black' : 'text-black/30'
                     }`}
                 >
-                  <span className={`text-xl md:text-2xl font-medium tracking-tight ${activeTab === idx ? '' : 'hover:text-black/50'}`}>
+                  <span className={`text-lg md:text-xl font-medium tracking-tight ${activeTab === idx ? '' : 'hover:text-black/50'}`}>
                     {service.title}
                   </span>
                 </button>
@@ -65,8 +63,8 @@ const Services: React.FC = () => {
           </div>
 
           {/* Right Column: Dynamic Content */}
-          <div className="lg:w-2/3">
-            <div className="rounded-[2.5rem] overflow-hidden aspect-[16/10] mb-8 shadow-2xl">
+          <div className="lg:w-[55%]">
+            <div className="rounded-[2rem] overflow-hidden aspect-video mb-6 border border-black/5">
               <img
                 src={serviceList[activeTab].image}
                 alt={serviceList[activeTab].title}
@@ -74,19 +72,19 @@ const Services: React.FC = () => {
               />
             </div>
 
-            <div className="max-w-2xl">
-              <h3 className="text-3xl md:text-4xl font-medium text-black mb-6 tracking-tighter">
+            <div className="max-w-xl">
+              <h3 className="text-2xl md:text-3xl font-medium text-black mb-4 tracking-tighter">
                 {serviceList[activeTab].title}
               </h3>
-              <p className="text-lg text-[#2D241E]/60 leading-relaxed tracking-tight mb-10">
+              <p className="text-base text-gray-500 leading-relaxed tracking-tight mb-8">
                 {serviceList[activeTab].desc}
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <button className="px-8 py-4 rounded-full bg-[#2D241E] text-white font-bold hover:scale-105 transition-all shadow-xl">
+                <button className="px-6 py-3 rounded-full bg-black text-white text-sm font-bold hover:scale-105 transition-all shadow-lg">
                   Más Información
                 </button>
-                <button className="px-8 py-4 rounded-full border border-black/20 text-black font-bold hover:bg-black/5 transition-all">
+                <button className="px-6 py-3 rounded-full border border-black/20 text-black text-sm font-bold hover:bg-black/5 transition-all">
                   Llamar ahora
                 </button>
               </div>

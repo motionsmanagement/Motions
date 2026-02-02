@@ -32,7 +32,7 @@ import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen selection:bg-[#4A3728] selection:text-white">
+    <div className="min-h-screen selection:bg-gray-200 selection:text-black">
       <Navbar />
       <main>
         <Hero />

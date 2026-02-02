@@ -31,17 +31,14 @@ const WhyChooseUs: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-20 items-center mb-24">
           <div className="lg:w-1/2">
-            <div className="flex items-center gap-2 text-[#4A3728] font-medium mb-6">
-              <div className="w-2 h-2 rotate-45 bg-[#4A3728]"></div>
-              <span>Por Qué Elegirnos</span>
-            </div>
+
             <h2 className="text-5xl md:text-6xl font-medium text-black mb-8 leading-tight">
               Resultados Comprobados
             </h2>
-            <p className="text-lg text-[#2D241E]/60 mb-10 leading-relaxed max-w-lg">
+            <p className="text-lg text-gray-500 mb-10 leading-relaxed max-w-lg">
               Google My Business optimizado y un sitio web que convierte. Tu restaurante será la primera opción para clientes en tu zona.
             </p>
-            <button className="px-10 py-4 rounded-full bg-[#3D2C24] text-white font-medium hover:bg-[#2D241E] transition-colors">
+            <button className="px-10 py-4 rounded-full bg-black text-white font-medium hover:bg-gray-800 transition-colors">
               Conocer Más
             </button>
           </div>
@@ -59,9 +56,9 @@ const WhyChooseUs: React.FC = () => {
         <div className="pt-16 border-t border-black/5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {benefits.map((benefit, idx) => (
             <div key={idx} className="flex flex-col">
-              <div className="text-[#4A3728] mb-6">{benefit.icon}</div>
-              <h4 className="text-xl font-medium text-[#2D241E] mb-3">{benefit.title}</h4>
-              <p className="text-[#2D241E]/60 leading-relaxed text-sm">
+              <div className="text-gray-500 mb-6">{benefit.icon}</div>
+              <h4 className="text-xl font-medium text-black mb-3">{benefit.title}</h4>
+              <p className="text-gray-500 leading-relaxed text-sm">
                 {benefit.desc}
               </p>
             </div>
