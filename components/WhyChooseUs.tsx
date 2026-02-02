@@ -48,6 +48,7 @@ const WhyChooseUs: React.FC = () => {
                 src="/salmon.jpg"
                 alt="Restaurante exitoso"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>

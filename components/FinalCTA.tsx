@@ -10,6 +10,7 @@ const FinalCTA: React.FC = () => {
           src="/new.jpg"
           alt="Final CTA background"
           className="w-full h-full object-cover brightness-[0.6]"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
       </div>

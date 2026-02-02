@@ -11,13 +11,14 @@ const Hero: React.FC = () => {
           src="/steak.jpg"
           alt="Steak gourmet"
           className="w-full h-full object-cover brightness-[0.7]"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       </div>
 
       <div className="relative z-10 px-6 md:px-12 pb-16 md:pb-24 max-w-7xl mx-auto w-full">
         <div className="max-w-4xl mb-12">
-          <h1 className="text-5xl md:text-[5.5rem] leading-[1.05] text-white mb-6">
+          <h1 className="text-4xl md:text-[5.5rem] leading-[1.05] text-white mb-6">
             Más Clientes para<br />
             Tu Restaurante
           </h1>
@@ -34,7 +35,7 @@ const Hero: React.FC = () => {
             Llamar ahora
           </button>
 
-          <div className="liquid-glass-dark rounded-[2.5rem] p-6 flex flex-col md:flex-row items-center gap-6 md:gap-12 w-full lg:w-auto md:px-10">
+          <div className="liquid-glass-dark rounded-[2.5rem] p-4 md:p-6 flex flex-col md:flex-row items-center gap-6 md:gap-12 w-full lg:w-auto md:px-10">
             <div className="flex items-center gap-4 text-white">
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
                 <Brain className="w-5 h-5 text-white/80" />

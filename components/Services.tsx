@@ -68,7 +68,8 @@ const Services: React.FC = () => {
               <img
                 src={serviceList[activeTab].image}
                 alt={serviceList[activeTab].title}
-                className="w-full h-full object-cover transition-all duration-700"
+                className="w-full h-full object-cover brightness-[0.7] transition-all duration-700"
+                loading="lazy"
               />
             </div>
 

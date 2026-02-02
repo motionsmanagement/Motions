@@ -13,6 +13,7 @@ const Testimonials: React.FC = () => {
               src="/resta.jpg"
               alt="Cliente satisfecho"
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
         </div>

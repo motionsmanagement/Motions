@@ -32,11 +32,11 @@ const Navbar: React.FC = () => {
           <a href="#contact" className={`hover:text-current transition-colors tracking-tight ${isScrolled ? "hover:text-black" : "hover:text-white"}`}>Contacto</a>
         </div>
 
-        <div className="flex items-center gap-3">
-          <button className={`hidden sm:block px-5 py-2 rounded-full border text-sm font-medium transition-all tracking-tight ${isScrolled ? "border-black/10 text-black/90 hover:bg-black/5" : "border-white/20 text-white/90 hover:bg-white/10"}`}>
+        <div className="flex items-center gap-2 md:gap-3">
+          <button className={`hidden sm:block px-4 md:px-5 py-2 rounded-full border text-xs md:text-sm font-medium transition-all tracking-tight ${isScrolled ? "border-black/10 text-black/90 hover:bg-black/5" : "border-white/20 text-white/90 hover:bg-white/10"}`}>
             Agendar Llamada
           </button>
-          <button className={`px-6 py-2 rounded-full text-sm font-semibold transition-all shadow-lg tracking-tight ${isScrolled ? "bg-black text-white hover:bg-gray-800" : "bg-black text-white hover:bg-gray-900 border border-white/20"}`}>
+          <button className={`px-5 md:px-6 py-2 rounded-full text-xs md:text-sm font-semibold transition-all shadow-lg tracking-tight ${isScrolled ? "bg-black text-white hover:bg-gray-800" : "bg-black text-white hover:bg-gray-900 border border-white/20"}`}>
             Empezar Ahora
           </button>
         </div>

@@ -33,7 +33,7 @@ const HowItWorks: React.FC = () => {
         </div>
 
         {/* Gray Container and Cards */}
-        <div className="relative rounded-[2.5rem] bg-gray-100 overflow-hidden min-h-[500px] flex flex-col justify-center p-8 md:p-12">
+        <div className="relative rounded-[2.5rem] bg-gray-100 overflow-hidden min-h-[400px] md:min-h-[500px] flex flex-col justify-center p-6 md:p-12">
           {/* Cards Grid */}
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
             {steps.map((step, idx) => (
