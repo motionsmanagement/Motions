@@ -81,7 +81,7 @@ const Services: React.FC = () => {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <button className="px-6 py-3 rounded-full bg-black text-white text-sm font-bold hover:scale-105 transition-all shadow-lg">
+                <button className="px-6 py-3 rounded-full liquid-glass-btn text-sm font-bold hover:scale-105 transition-all shadow-lg">
                   Más Información
                 </button>
                 <button className="px-6 py-3 rounded-full border border-black/20 text-black text-sm font-bold hover:bg-black/5 transition-all">

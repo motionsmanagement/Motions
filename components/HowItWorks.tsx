@@ -52,9 +52,8 @@ const HowItWorks: React.FC = () => {
             ))}
           </div>
 
-          {/* Centered Button at bottom */}
           <div className="mt-12 flex justify-center z-20">
-            <button className="px-10 py-3 bg-black text-white rounded-full font-semibold text-sm shadow-xl hover:scale-105 transition-transform">
+            <button className="px-10 py-3 liquid-glass-btn rounded-full font-semibold text-sm hover:scale-105 transition-transform">
               Llamar ahora
             </button>
           </div>
