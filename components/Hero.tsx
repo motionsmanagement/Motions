@@ -30,43 +30,43 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          <button className="w-full lg:w-auto px-10 md:px-12 py-4 md:py-5 rounded-full bg-black/40 backdrop-blur-xl border border-white/30 text-white text-base md:text-lg font-bold hover:scale-105 hover:bg-black/50 transition-all shadow-[0_20px_50px_rgba(0,0,0,0.3)] tracking-tight">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+          <button className="w-full lg:w-auto px-8 md:px-12 py-3 md:py-5 rounded-full bg-black/40 backdrop-blur-xl border border-white/30 text-white text-sm md:text-lg font-bold hover:scale-105 hover:bg-black/50 transition-all shadow-[0_20px_50px_rgba(0,0,0,0.3)] tracking-tight">
             Llamar ahora
           </button>
 
-          <div className="liquid-glass-dark rounded-[2.5rem] p-4 md:p-6 flex flex-col md:flex-row items-center gap-6 md:gap-12 w-full lg:w-auto md:px-10">
-            <div className="flex items-center gap-4 text-white">
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                <Brain className="w-5 h-5 text-white/80" />
+          <div className="liquid-glass-dark rounded-[2rem] md:rounded-[2.5rem] p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-12 w-full lg:w-auto md:px-10">
+            <div className="flex items-center gap-3 text-white w-full md:w-auto">
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                <Brain className="w-4 h-4 md:w-5 md:h-5 text-white/80" />
               </div>
-              <div className="whitespace-nowrap">
-                <p className="text-sm font-semibold tracking-tight">Estrategia personalizada</p>
-                <p className="text-xs text-white/40">para tu restaurante</p>
-              </div>
-            </div>
-
-            <div className="hidden md:block w-px h-10 bg-white/10"></div>
-
-            <div className="flex items-center gap-4 text-white">
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                <Award className="w-5 h-5 text-white/80" />
-              </div>
-              <div className="whitespace-nowrap">
-                <p className="text-sm font-semibold tracking-tight">Resultados medibles</p>
-                <p className="text-xs text-white/40">más visibilidad y ventas</p>
+              <div className="flex-1 md:flex-initial">
+                <p className="text-xs md:text-sm font-semibold tracking-tight leading-tight">Estrategia personalizada</p>
+                <p className="text-[10px] md:text-xs text-white/40 leading-tight">para tu restaurante</p>
               </div>
             </div>
 
             <div className="hidden md:block w-px h-10 bg-white/10"></div>
 
-            <div className="flex items-center gap-4 text-white">
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                <Globe className="w-5 h-5 text-white/80" />
+            <div className="flex items-center gap-3 text-white w-full md:w-auto">
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                <Award className="w-4 h-4 md:w-5 md:h-5 text-white/80" />
               </div>
-              <div className="whitespace-nowrap">
-                <p className="text-sm font-semibold tracking-tight">Presencia digital completa</p>
-                <p className="text-xs text-white/40">Google Maps + Web optimizada</p>
+              <div className="flex-1 md:flex-initial">
+                <p className="text-xs md:text-sm font-semibold tracking-tight leading-tight">Resultados medibles</p>
+                <p className="text-[10px] md:text-xs text-white/40 leading-tight">más visibilidad y ventas</p>
+              </div>
+            </div>
+
+            <div className="hidden md:block w-px h-10 bg-white/10"></div>
+
+            <div className="flex items-center gap-3 text-white w-full md:w-auto">
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                <Globe className="w-4 h-4 md:w-5 md:h-5 text-white/80" />
+              </div>
+              <div className="flex-1 md:flex-initial">
+                <p className="text-xs md:text-sm font-semibold tracking-tight leading-tight">Presencia digital completa</p>
+                <p className="text-[10px] md:text-xs text-white/40 leading-tight">Google Maps + Web optimizada</p>
               </div>
             </div>
           </div>
