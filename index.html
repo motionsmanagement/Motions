@@ -51,6 +51,8 @@
             -webkit-backdrop-filter: blur(28px) saturate(120%);
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
         }
 
         .liquid-glass-dark::after {
@@ -59,6 +61,7 @@
             inset: 0;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
             pointer-events: none;
+            border-radius: inherit;
         }
 
         /* Custom underline for specific emphasis */
