@@ -1,125 +1,124 @@
-import React, { useState } from 'react';
-import { Search, Smartphone, Palette, PenTool, BrainCircuit, MapPin, Globe, Utensils, MessageSquare, Layout, ArrowRight } from 'lucide-react';
+import React from 'react';
+import { MapPin, Globe, Star, TrendingUp, ArrowRight, MessageSquare, Gauge, ShieldCheck } from 'lucide-react';
 
-const serviceList = [
-  {
-    icon: <Globe className="w-5 h-5" />,
-    title: "Google My Business",
-    desc: "Configuración y optimización completa del perfil de GMB para dominar el SEO local. Gestionamos reseñas, publicaciones y actualizaciones estratégicas para que tu restaurante sea la primera opción de Google.",
-    image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=1200"
-  },
-  {
-    icon: <MapPin className="w-5 h-5" />,
-    title: "Publicidad en Google Maps",
-    desc: "Campañas de publicidad en Google Maps diseñadas para captar clientes en el momento exacto de búsqueda. Maximizamos tu visibilidad local con anuncios segmentados por ubicación y tipo de cocina.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1200"
-  },
-  {
-    icon: <Layout className="w-5 h-5" />,
-    title: "Sitios Web para Restaurantes",
-    desc: "Diseño web personalizado con fotografía profesional e integración de menús digitales interactivos. Sitios responsive optimizados para conversión, velocidad y sistemas de reservas directas.",
-    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1200"
-  },
-  {
-    icon: <Palette className="w-5 h-5" />,
-    title: "Branding e Identidad Visual",
-    desc: "Creación de logos profesionales y rebranding completo. Desarrollamos la identidad visual corporativa y guías de estilo que elevan el posicionamiento y la percepción de valor de tu marca.",
-    image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=1200"
-  },
-  {
-    icon: <PenTool className="w-5 h-5" />,
-    title: "Diseño Gráfico & Materiales",
-    desc: "Rediseño de menús físicos y digitales, materiales de marketing, señalética y packaging para take-away. Coherencia visual en cada punto de contacto con el cliente.",
-    image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=1200"
-  },
-  {
-    icon: <BrainCircuit className="w-5 h-5" />,
-    title: "Integración de IA",
-    desc: "Automatización de atención al cliente con chatbots inteligentes para reservas y pedidos. Implementamos análisis predictivo de ventas para optimizar tus procesos y anticipar la demanda.",
-    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=1200"
-  }
+const services = [
+    {
+        title: "Google My Business",
+        description: "Optimizamos tu ficha para que aparezcas en los primeros resultados cuando los clientes busquen dónde comer cerca.",
+        icon: <MapPin className="w-6 h-6" />,
+        stats: "+85% visibilidad",
+        tag: "SEO Local"
+    },
+    {
+        title: "Sitios Web para Rest.",
+        description: "Diseñamos plataformas rápidas, optimizadas para móviles y enfocadas en convertir visitantes en reservas reales.",
+        icon: <Globe className="w-6 h-6" />,
+        stats: "Carga < 1.5s",
+        tag: "Conversión"
+    },
+    {
+        title: "Gestión de Reputación",
+        description: "Analizamos y gestionamos tus reseñas para construir una imagen impecable que atraiga a nuevos comensales.",
+        icon: <Star className="w-6 h-6" />,
+        stats: "4.9★ promedio",
+        tag: "Reputación"
+    },
+    {
+        title: "Publicidad en Maps",
+        description: "Campañas de Google Ads ultra-localizadas para captar tráfico inmediato y superar a tu competencia directa.",
+        icon: <TrendingUp className="w-6 h-6" />,
+        stats: "ROI medible",
+        tag: "Ads"
+    }
 ];
 
 const Services: React.FC = () => {
-  const [activeTab, setActiveTab] = useState(0);
-
-  return (
-    <section id="services" className="py-32 px-6 md:px-12 bg-white font-['Inter']">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
-
-          {/* Left Column: List */}
-          <div className="lg:w-[45%]">
-            {/* Added Pill Shape Tag */}
-            <div className="inline-flex items-center bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6">
-              <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Nuestras Soluciones</span>
-            </div>
-
-            <h2 className="text-5xl md:text-7xl font-medium text-black leading-none mb-8 tracking-tighter">
-              Soluciones expertas<br />para tu restaurante
-            </h2>
-            <p className="text-gray-500 text-sm leading-relaxed mb-12 max-w-sm">
-              Potenciamos tu visibilidad digital para que te centres en lo que mejor sabes hacer: cocinar y dar un gran servicio.
-            </p>
-
-            <div className="flex flex-col border-t border-black/10">
-              {serviceList.map((service, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveTab(idx)}
-                  className={`py-5 text-left border-b border-black/10 transition-all duration-300 group flex items-center justify-between ${activeTab === idx ? 'text-black' : 'text-black/30'
-                    }`}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className={`transition-all duration-300 ${activeTab === idx ? 'text-black' : 'text-black/20 group-hover:text-black/40'}`}>
-                      {service.icon}
+    return (
+        <section id="services" className="py-24 px-6 md:px-12 bg-white font-['Inter']">
+            <div className="max-w-7xl mx-auto">
+                {/* Header */}
+                <div className="mb-20">
+                    <div className="inline-flex items-center bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6">
+                        <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Soluciones Expertas</span>
                     </div>
-                    <span className={`text-xl md:text-2xl font-medium tracking-tight ${activeTab === idx ? '' : 'hover:text-black/50'}`}>
-                      {service.title}
-                    </span>
-                  </div>
-                  {activeTab === idx && <ArrowRight className="w-5 h-5 animate-pulse" />}
-                </button>
-              ))}
+                    <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1] mb-6">
+                        Impulsa el crecimiento<br />
+                        digital de tu restaurante.
+                    </h2>
+                    <p className="text-lg text-gray-500 max-w-2xl leading-relaxed">
+                        Especialistas en transformar la presencia online de negocios gastronómicos,
+                        enfocándonos en atraer clientes y maximizar la rentabilidad.
+                    </p>
+                </div>
+
+                {/* Services Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {services.map((service, index) => (
+                        <div
+                            key={index}
+                            className="group relative p-8 rounded-[2rem] border border-gray-100 bg-[#FBF9F6] hover:bg-black transition-all duration-500 cursor-default overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2"
+                        >
+                            {/* Content */}
+                            <div className="relative z-10 transition-colors duration-500 group-hover:text-white">
+                                <div className="bg-white group-hover:bg-white/10 w-12 h-12 rounded-2xl flex items-center justify-center mb-10 shadow-sm transition-colors duration-500 group-hover:text-white text-black">
+                                    {service.icon}
+                                </div>
+
+                                <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4 block group-hover:text-white/60">
+                                    {service.tag}
+                                </span>
+
+                                <h3 className="text-xl font-medium mb-4 group-hover:text-white">
+                                    {service.title}
+                                </h3>
+
+                                <p className="text-sm text-gray-500 group-hover:text-white/70 leading-relaxed mb-8">
+                                    {service.description}
+                                </p>
+
+                                <div className="pt-6 border-t border-gray-200/50 group-hover:border-white/10 flex items-center justify-between">
+                                    <span className="text-xs font-mono font-medium opacity-80">{service.stats}</span>
+                                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <ArrowRight className="w-4 h-4 text-white" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Decorative gradient mask on hover */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-0" />
+                        </div>
+                    ))}
+                </div>
+
+                {/* Bottom CTA or Note */}
+                <div className="mt-16 pt-16 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div className="flex items-center gap-6">
+                        <div className="flex -space-x-3">
+                            {[1, 2, 3].map(i => (
+                                <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
+                                    <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" />
+                                </div>
+                            ))}
+                        </div>
+                        <p className="text-sm text-gray-500">
+                            Únete a más de <span className="font-bold text-black font-mono">50+</span> restaurantes <br />que confían en nuestra gestión.
+                        </p>
+                    </div>
+
+                    <div className="flex items-center gap-8">
+                        <div className="flex items-center gap-2">
+                            <ShieldCheck className="w-4 h-4 text-green-500" />
+                            <span className="text-xs font-medium text-gray-400 uppercase tracking-widest">Sin Comisiones</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Gauge className="w-4 h-4 text-blue-500" />
+                            <span className="text-xs font-medium text-gray-400 uppercase tracking-widest">Soporte 24/7</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          {/* Right Column: Dynamic Content */}
-          <div className="lg:w-[55%] sticky top-32 h-fit">
-            <div className="rounded-[3rem] overflow-hidden aspect-[4/3] mb-8 border border-black/5 shadow-2xl group/img relative">
-              <img
-                src={serviceList[activeTab].image}
-                alt={serviceList[activeTab].title}
-                className="w-full h-full object-cover transition-all duration-1000 ease-out group-hover/img:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover/img:opacity-40 transition-opacity"></div>
-            </div>
-
-            <div className="max-w-xl">
-              <h3 className="text-3xl md:text-4xl font-medium text-black mb-6 tracking-tighter">
-                {serviceList[activeTab].title}
-              </h3>
-              <p className="text-lg text-gray-500 leading-relaxed tracking-tight mb-10">
-                {serviceList[activeTab].desc}
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                <button className="px-10 py-4 rounded-full bg-black text-white text-sm font-bold hover:scale-105 transition-all shadow-xl flex items-center gap-2 group">
-                  Saber Más
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="px-10 py-4 rounded-full border border-black/10 text-black text-sm font-bold hover:bg-black hover:text-white transition-all">
-                  Contactar
-                </button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default Services;
