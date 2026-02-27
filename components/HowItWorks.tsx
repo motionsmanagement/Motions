@@ -7,8 +7,9 @@ const HowItWorks: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         {/* Header Section */}
         <div className="text-center mb-20 text-balance">
-          <div className="inline-flex items-center bg-[#f3f4f1] px-4 py-1.5 rounded-full mb-6">
-            <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest font-mono">Metodología Especialista</span>
+          {/* Updated tag font to match Casos de Éxito (No font-mono, added border) */}
+          <div className="inline-flex items-center bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6">
+            <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Metodología Especialista</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1]">
             Nuestro Proceso para<br />
@@ -96,9 +97,8 @@ const HowItWorks: React.FC = () => {
               </div>
 
               <div className="flex gap-6 h-full relative">
-                {/* Mobile Device - Professional Simplification */}
+                {/* Mobile Device */}
                 <div className="w-24 h-36 border-x border-t border-white/20 rounded-t-xl bg-black/40 p-2 shrink-0 relative overflow-hidden mt-2">
-                  {/* Static UI Representation */}
                   <div className="space-y-2 opacity-60">
                     <div className="h-1.5 w-full bg-white/20 rounded-full"></div>
                     <div className="aspect-square w-full bg-white/10 rounded-lg flex items-center justify-center">
@@ -107,7 +107,6 @@ const HowItWorks: React.FC = () => {
                     <div className="h-4 w-full bg-white/20 rounded-md border border-white/10"></div>
                   </div>
 
-                  {/* Smooth & Professional Success Pulse Overlay */}
                   <div className="absolute inset-x-0 bottom-4 px-2 translate-y-0 animate-booking-soft-pulse">
                     <div className="bg-white text-black text-[7px] font-black uppercase py-2 rounded-md shadow-2xl flex items-center justify-center gap-1">
                       <CheckCircle2 className="w-3 h-3" />
@@ -115,7 +114,6 @@ const HowItWorks: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Subtle Top Loader */}
                   <div className="absolute top-0 left-0 h-[1px] bg-white/60 animate-top-scan"></div>
                 </div>
 
@@ -129,7 +127,6 @@ const HowItWorks: React.FC = () => {
                     <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
                   </div>
 
-                  {/* Reservation Details Box */}
                   <div className="bg-white/5 border border-white/5 rounded-xl p-3">
                     <div className="flex items-center gap-2 mb-2">
                       <Users className="w-3 h-3 text-white/40" />
@@ -170,36 +167,54 @@ const HowItWorks: React.FC = () => {
               </p>
             </div>
 
-            {/* Visualization: KPI Dashboard */}
+            {/* Visualization: Interactive KPI Dashboard */}
             <div className="mt-8 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden shrink-0">
               <div className="flex items-center justify-between mb-4">
                 <div className="text-[9px] font-mono text-white/40 tracking-tighter uppercase whitespace-nowrap">ANÁLISIS_CRECIMIENTO</div>
                 <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 flex-1">
-                <div className="bg-white/5 border border-white/10 rounded-xl p-2 flex flex-col justify-center">
+              <div className="grid grid-cols-2 gap-3 flex-1 relative">
+                {/* Metrics with subtle "live" updates */}
+                <div className="bg-white/5 border border-white/10 rounded-xl p-2 flex flex-col justify-center relative overflow-hidden group/metric">
                   <div className="flex items-center gap-2 mb-1">
                     <Users className="w-3 h-3 text-white/40" />
                     <span className="text-[9px] font-mono text-white/40 uppercase tracking-tighter">CLIENTES</span>
                   </div>
-                  <div className="text-lg font-mono text-white tabular-nums">+84</div>
+                  <div className="text-lg font-mono text-white tabular-nums animate-data-fade">+84</div>
+                  <div className="absolute inset-0 bg-white/5 translate-x-[-100%] group-hover/metric:translate-x-[100%] transition-transform duration-700"></div>
                 </div>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-2 flex flex-col justify-center">
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-2 flex flex-col justify-center relative overflow-hidden group/metric">
                   <div className="flex items-center gap-2 mb-1">
                     <PhoneCall className="w-3 h-3 text-white/40" />
                     <span className="text-[9px] font-mono text-white/40 uppercase tracking-tighter">LLAMADAS</span>
                   </div>
-                  <div className="text-lg font-mono text-white tabular-nums">+126</div>
+                  <div className="text-lg font-mono text-white tabular-nums animate-data-fade-delayed">+126</div>
+                  <div className="absolute inset-0 bg-white/5 translate-x-[-100%] group-hover/metric:translate-x-[100%] transition-transform duration-700"></div>
                 </div>
+
                 <div className="col-span-2 bg-white/10 border border-white/20 rounded-xl p-2 flex items-center justify-between overflow-hidden relative">
                   <div className="relative z-10 w-full">
                     <div className="text-[9px] font-mono text-white/40 uppercase tracking-tighter mb-1">RETORNO_INVERSIÓN_ROI</div>
-                    <div className="text-xl font-mono text-white transition-transform duration-500">4.2x</div>
+                    <div className="text-xl font-mono text-white group-hover:scale-105 transition-transform duration-500">4.2x</div>
                   </div>
-                  <div className="absolute right-0 bottom-0 top-0 w-20 opacity-20">
-                    <svg viewBox="0 0 100 40" className="w-full h-full">
-                      <path d="M0 35 Q 20 35, 40 25 T 80 10 T 100 5" fill="none" stroke="white" strokeWidth="2" strokeDasharray="200" strokeDashoffset="200" className="animate-draw-path" />
+
+                  {/* Enhanced Data Graph */}
+                  <div className="absolute right-0 bottom-0 top-0 w-24 opacity-30">
+                    <svg viewBox="0 0 100 40" className="w-full h-full overflow-visible">
+                      <defs>
+                        <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="rgba(255,255,255,0)" />
+                          <stop offset="50%" stopColor="rgba(255,255,255,0.8)" />
+                          <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+                        </linearGradient>
+                      </defs>
+                      <path d="M0 35 Q 20 35, 40 25 T 80 10 T 100 5" fill="none" stroke="white" strokeWidth="1.5" strokeDasharray="200" strokeDashoffset="200" className="animate-draw-path" />
+                      {/* Moving data point */}
+                      <circle r="2" fill="white" className="animate-point-move">
+                        <animateMotion dur="4s" repeatCount="indefinite" path="M0 35 Q 20 35, 40 25 T 80 10 T 100 5" />
+                      </circle>
                     </svg>
                   </div>
                 </div>
@@ -214,7 +229,7 @@ const HowItWorks: React.FC = () => {
             <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             Quiero potenciar mi restaurante
           </button>
-          <p className="mt-4 text-gray-400 text-xs font-semibold italic tracking-wide text-center uppercase opacity-60">Resultados reales para hostelería</p>
+          {/* Removed "Resultados reales para hostelería" as requested */}
         </div>
       </div>
 
@@ -229,7 +244,6 @@ const HowItWorks: React.FC = () => {
                     animation: scan 4s linear infinite;
                 }
                 
-                /* PROFESSIONAL & SIMPLE MOBILE LOOP */
                 @keyframes booking-soft-pulse {
                     0%, 40% { opacity: 0; transform: translateY(10px); }
                     50%, 90% { opacity: 1; transform: translateY(0); }
@@ -248,6 +262,21 @@ const HowItWorks: React.FC = () => {
                 .animate-top-scan {
                     animation: top-scan 4s linear infinite;
                 }
+
+                /* GRID 3 ANIMATIONS */
+                @keyframes data-fade {
+                    0%, 100% { opacity: 1; transform: scale(1); }
+                    50% { opacity: 0.7; transform: scale(0.98); }
+                }
+                .animate-data-fade { animation: data-fade 4s ease-in-out infinite; }
+                .animate-data-fade-delayed { animation: data-fade 4s ease-in-out infinite 2s; }
+                
+                @keyframes point-move {
+                    0% { opacity: 0; }
+                    10%, 90% { opacity: 1; }
+                    100% { opacity: 0; }
+                }
+                .animate-point-move { animation: point-move 4s linear infinite; }
                 
                 @keyframes draw-path {
                     to { stroke-dashoffset: 0; }
