@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, CheckCircle2, TrendingUp, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, TrendingUp, ChevronRight, MessageSquare } from 'lucide-react';
 
 interface SuccessCase {
     id: string;
@@ -10,7 +10,7 @@ interface SuccessCase {
     image: string;
     description: string;
     impact: string;
-    certification: string;
+    result: string;
 }
 
 const successCases: SuccessCase[] = [
@@ -23,7 +23,7 @@ const successCases: SuccessCase[] = [
         image: 'https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=800',
         description: 'Transformamos una ficha de Google My Business estancada en una máquina de generar clientes. Implementamos una estrategia de contenido visual y SEO local que posicionó al restaurante como la primera opción en su zona.',
         impact: '+45% de Reservas Mensuales',
-        certification: 'Google Local Expert Partner'
+        result: 'Google Local Expert Partner'
     },
     {
         id: '02',
@@ -34,7 +34,7 @@ const successCases: SuccessCase[] = [
         image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&q=80&w=800',
         description: 'Desarrollamos una plataforma de pedidos propia optimizada para móviles, eliminando la dependencia de apps de terceros. La velocidad de carga y la facilidad de uso dispararon las ventas directas desde el primer mes.',
         impact: '+60% Ventas sin Comisiones',
-        certification: 'Web Performance Gold'
+        result: 'Web Performance Gold'
     },
     {
         id: '03',
@@ -45,7 +45,7 @@ const successCases: SuccessCase[] = [
         image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&q=80&w=800',
         description: 'Rebranding completo para elevar el posicionamiento del restaurante. Rediseñamos desde el logo hasta la carta física y digital, acompañando el proceso con fotografía gastronómica de alta gama.',
         impact: '+35% Incremento Ticket Medio',
-        certification: 'Design Excellence 2023'
+        result: 'Design Excellence 2023'
     },
     {
         id: '04',
@@ -56,19 +56,45 @@ const successCases: SuccessCase[] = [
         image: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&q=80&w=800',
         description: 'Estrategia integral de reputación online. Pasamos de una puntuación de 3.8 a 4.9 gestionando profesionalmente las reseñas y generando un flujo constante de nuevas opiniones positivas.',
         impact: '4.9★ Calificación Promedio',
-        certification: 'Reputation Management Pro'
+        result: 'Reputation Management Pro'
+    },
+    {
+        id: '05',
+        category: 'Sitios Web',
+        title: 'Trattoria Bella Napoli',
+        year: '2023',
+        location: 'Málaga, España',
+        image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=800',
+        description: 'Digitalización completa de reservas. Implementamos un sistema que redujo las cancelaciones en un 30% mediante recordatorios automáticos y prepagos para grupos grandes.',
+        impact: '-30% No-Shows en Reservas',
+        result: 'Efficiency Award 2023'
+    },
+    {
+        id: '06',
+        category: 'Branding',
+        title: 'Green Leaf Vegan Café',
+        year: '2024',
+        location: 'Bilbao, España',
+        image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800',
+        description: 'Creación de marca desde cero para un nuevo concepto saludable. Establecimos una estética fresca y orgánica que resonó perfectamente con el público joven de la ciudad.',
+        impact: 'Sold Out Primera Semana',
+        result: 'Brand Identity Success'
     }
 ];
 
 const SuccessStories: React.FC = () => {
     const [activeTab, setActiveTab] = useState('Todos');
     const [expandedId, setExpandedId] = useState<string | null>(successCases[0].id);
+    const [showAll, setShowAll] = useState(false);
 
     const categories = ['Todos', 'Google Maps', 'Sitios Web', 'Branding'];
 
-    const filteredCases = activeTab === 'Todos'
+    const filteredCasesByTab = activeTab === 'Todos'
         ? successCases
         : successCases.filter(c => c.category === activeTab);
+
+    // Show 4 by default, show all if showAll is true
+    const displayedCases = showAll ? filteredCasesByTab : filteredCasesByTab.slice(0, 4);
 
     return (
         <section id="cases" className="py-24 px-6 md:px-12 bg-white font-['Inter']">
@@ -76,10 +102,10 @@ const SuccessStories: React.FC = () => {
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
                     <div>
-                        <div className="inline-flex items-center gap-2 bg-[#F3F4F1] px-3 py-1 rounded-md mb-6">
-                            <span className="text-[10px] font-bold text-gray-400">04</span>
+                        <div className="inline-flex items-center gap-3 bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6">
+                            <span className="text-[10px] font-bold text-gray-500">04</span>
                             <span className="w-px h-3 bg-gray-300"></span>
-                            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Casos de Éxito</span>
+                            <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Casos de Éxito</span>
                         </div>
                         <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-[#111] leading-[1.1]">
                             Proyectos con impacto,<br />
@@ -94,7 +120,6 @@ const SuccessStories: React.FC = () => {
                                     key={cat}
                                     onClick={() => {
                                         setActiveTab(cat);
-                                        // Auto-expand first item of filtered list
                                         const first = cat === 'Todos'
                                             ? successCases[0]
                                             : successCases.find(c => c.category === cat);
@@ -110,10 +135,10 @@ const SuccessStories: React.FC = () => {
                                 </button>
                             ))}
                         </div>
-                        <button className="flex items-center gap-2 bg-[#111] text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-black transition-colors group">
-                            Ver todos los casos
+                        <button className="flex items-center gap-2 bg-[#111] text-white px-7 py-3 rounded-full text-sm font-semibold hover:bg-black transition-all hover:scale-105 active:scale-95 group shadow-lg">
+                            Mandanos un mensaje
                             <div className="bg-white/10 p-1 rounded-full group-hover:bg-white/20 transition-colors">
-                                <ArrowUpRight className="w-4 h-4" />
+                                <MessageSquare className="w-4 h-4" />
                             </div>
                         </button>
                     </div>
@@ -121,73 +146,71 @@ const SuccessStories: React.FC = () => {
 
                 {/* Main List */}
                 <div className="border-t border-gray-100">
-                    {filteredCases.map((item) => {
+                    {displayedCases.map((item) => {
                         const isExpanded = expandedId === item.id;
                         return (
                             <div
                                 key={item.id}
-                                className={`border-b border-gray-100 transition-all duration-500 overflow-hidden ${isExpanded ? 'py-12' : 'hover:bg-gray-50'
+                                className={`border-b border-gray-100 transition-all duration-700 ease-in-out overflow-hidden ${isExpanded ? 'py-12 bg-white' : 'hover:bg-gray-50/50'
                                     }`}
                             >
                                 {/* Header (Clickable) */}
                                 <div
-                                    className={`flex items-center justify-between cursor-pointer ${!isExpanded ? 'py-6' : 'mb-8'}`}
+                                    className={`flex items-center justify-between cursor-pointer group ${!isExpanded ? 'py-7' : 'mb-10'}`}
                                     onClick={() => setExpandedId(isExpanded ? null : item.id)}
                                 >
-                                    <h3 className={`text-xl md:text-2xl font-medium transition-colors ${isExpanded ? 'text-black' : 'text-gray-800'}`}>
+                                    <h3 className={`text-xl md:text-2xl font-medium transition-all ${isExpanded ? 'text-black' : 'text-gray-500 group-hover:text-black'}`}>
                                         {item.title}
                                     </h3>
 
-                                    {!isExpanded && (
-                                        <div className="flex items-center gap-12 text-gray-400">
-                                            <span className="text-sm font-medium">{item.year}</span>
-                                            <span className="text-sm font-medium hidden md:block">{item.location}</span>
-                                            <ChevronRight className="w-5 h-5" />
+                                    <div className="flex items-center gap-4 md:gap-16">
+                                        <div className="flex items-center gap-12 text-gray-400 min-w-[140px] md:min-w-[200px] justify-end">
+                                            <span className="text-sm font-medium tabular-nums">{item.year}</span>
+                                            <span className="text-sm font-medium hidden md:block w-32 truncate text-right">{item.location}</span>
                                         </div>
-                                    )}
-
-                                    {isExpanded && (
-                                        <div className="flex items-center gap-8 text-gray-500">
-                                            <span className="text-sm font-medium">{item.year}</span>
-                                            <span className="text-sm font-medium">{item.location}</span>
-                                            <ChevronRight className="w-5 h-5 rotate-90 transition-transform" />
+                                        <div className={`p-1.5 rounded-full border border-gray-100 transition-all duration-500 ${isExpanded ? 'bg-black border-black rotate-90' : 'bg-transparent'}`}>
+                                            <ChevronRight className={`w-4 h-4 transition-colors ${isExpanded ? 'text-white' : 'text-gray-400'}`} />
                                         </div>
-                                    )}
+                                    </div>
                                 </div>
 
-                                {/* Content (Expanded) */}
+                                {/* Content Container with Smooth Animation */}
                                 <div
-                                    className={`grid grid-cols-1 lg:grid-cols-2 gap-12 transition-all duration-700 ease-in-out ${isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+                                    className={`grid grid-cols-1 lg:grid-cols-2 gap-12 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${isExpanded ? 'max-h-[800px] opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-4 pointer-events-none'
                                         }`}
                                 >
-                                    <div className="rounded-2xl overflow-hidden aspect-[16/10]">
+                                    <div className="rounded-2xl overflow-hidden aspect-[16/10] bg-gray-50">
                                         <img
                                             src={item.image}
                                             alt={item.title}
-                                            className="w-full h-full object-cover rounded-2xl transition-transform duration-1000"
-                                            style={{ transform: isExpanded ? 'scale(1)' : 'scale(1.1)' }}
+                                            className="w-full h-full object-cover rounded-2xl transition-transform duration-1000 ease-out"
+                                            style={{ transform: isExpanded ? 'scale(1)' : 'scale(1.15)' }}
                                         />
                                     </div>
 
                                     <div className="flex flex-col justify-center">
-                                        <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-12 max-w-lg">
+                                        <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-10 max-w-lg">
                                             {item.description}
                                         </p>
 
                                         <div className="grid grid-cols-2 gap-8">
-                                            <div>
-                                                <div className="w-10 h-10 bg-[#F3F4F1] rounded-lg flex items-center justify-center mb-4">
-                                                    <TrendingUp className="w-5 h-5 text-gray-600" />
+                                            <div className="space-y-4">
+                                                <div className="w-10 h-10 bg-[#f3f4f1] rounded-xl flex items-center justify-center">
+                                                    <TrendingUp className="w-5 h-5 text-gray-700" />
                                                 </div>
-                                                <h4 className="text-sm font-bold text-gray-900 mb-1 caps tracking-wide">IMPACTO</h4>
-                                                <p className="text-gray-500 text-sm">{item.impact}</p>
+                                                <div>
+                                                    <h4 className="text-[10px] font-bold text-black mb-1.5 uppercase tracking-widest">IMPACTO</h4>
+                                                    <p className="text-gray-500 text-sm font-medium">{item.impact}</p>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <div className="w-10 h-10 bg-[#F3F4F1] rounded-lg flex items-center justify-center mb-4">
-                                                    <CheckCircle2 className="w-5 h-5 text-gray-600" />
+                                            <div className="space-y-4">
+                                                <div className="w-10 h-10 bg-[#f3f4f1] rounded-xl flex items-center justify-center">
+                                                    <CheckCircle2 className="w-5 h-5 text-gray-700" />
                                                 </div>
-                                                <h4 className="text-sm font-bold text-gray-900 mb-1 caps tracking-wide">RESULTADO</h4>
-                                                <p className="text-gray-500 text-sm">{item.certification}</p>
+                                                <div>
+                                                    <h4 className="text-[10px] font-bold text-black mb-1.5 uppercase tracking-widest">RESULTADO</h4>
+                                                    <p className="text-gray-500 text-sm font-medium">{item.result}</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -196,6 +219,19 @@ const SuccessStories: React.FC = () => {
                         );
                     })}
                 </div>
+
+                {/* Show More Button */}
+                {!showAll && filteredCasesByTab.length > 4 && (
+                    <div className="mt-12 flex justify-center">
+                        <button
+                            onClick={() => setShowAll(true)}
+                            className="text-sm font-bold text-black underline underline-offset-8 decoration-gray-200 hover:decoration-black transition-all flex items-center gap-2 py-4"
+                        >
+                            Ver más proyectos
+                            <ChevronRight className="w-4 h-4 rotate-90" />
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     );
