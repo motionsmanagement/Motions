@@ -133,12 +133,6 @@ const SuccessStories: React.FC = () => {
                                 </button>
                             ))}
                         </div>
-                        <button className="flex items-center gap-2 bg-[#111] text-white px-7 py-3 rounded-full text-sm font-semibold hover:bg-black transition-all hover:scale-105 active:scale-95 group shadow-lg">
-                            Mandanos un mensaje
-                            <div className="bg-white/10 p-1 rounded-full group-hover:bg-white/20 transition-colors">
-                                <MessageSquare className="w-4 h-4" />
-                            </div>
-                        </button>
                     </div>
                 </div>
 
@@ -222,7 +216,7 @@ const SuccessStories: React.FC = () => {
                     <div className="mt-12 flex justify-center">
                         <button
                             onClick={() => setShowAll(true)}
-                            className="text-sm font-bold text-black underline underline-offset-8 decoration-gray-200 hover:decoration-black transition-all flex items-center gap-2 py-4"
+                            className="bg-black text-white px-8 py-3 rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95 flex items-center gap-2 shadow-lg"
                         >
                             Ver más proyectos
                             <ChevronRight className="w-4 h-4 rotate-90" />

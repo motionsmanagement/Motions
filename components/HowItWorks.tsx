@@ -197,9 +197,9 @@ const HowItWorks: React.FC = () => {
                       <span className="text-[6px] text-white/40 font-bold uppercase mt-1">ROI</span>
                     </div>
                   </div>
-                  <div className="mt-3 flex items-center gap-1.5 bg-white/10 px-2 py-0.5 rounded-full">
-                    <TrendingUp className="w-2 h-2 text-white" />
-                    <span className="text-[7px] text-white font-mono">+12% MENSUAL</span>
+                  <div className="mt-3 flex items-center gap-1.5 bg-white/10 px-2.5 py-1 rounded-full w-fit whitespace-nowrap">
+                    <TrendingUp className="w-2 h-2 text-white shrink-0" />
+                    <span className="text-[7px] text-white font-mono leading-none">+12% MENSUAL</span>
                   </div>
                 </div>
 
