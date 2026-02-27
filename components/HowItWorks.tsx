@@ -92,32 +92,51 @@ const HowItWorks: React.FC = () => {
                   <div className="w-1.5 h-1.5 rounded-full bg-white/40"></div>
                   <span className="text-[9px] font-mono text-white/40 uppercase tracking-widest">Interfaz_Móvil</span>
                 </div>
-                <div className="px-2 py-0.5 rounded-md bg-white/10 border border-white/10 text-[8px] font-bold text-white/60">UX_OPTIMIZADO</div>
+                <div className="px-2 py-0.5 rounded-md bg-white/10 border border-white/10 text-[8px] font-bold text-white/60 uppercase">UX_Optimizado</div>
               </div>
 
               <div className="flex gap-4 h-full relative">
-                <div className="w-20 h-full border-x border-t border-white/20 rounded-t-xl bg-white/5 p-2 space-y-2 animate-float-slow shrink-0">
-                  <div className="h-1.5 w-full bg-white/20 rounded-full"></div>
-                  <div className="aspect-square w-full bg-white/10 rounded-lg flex items-center justify-center">
-                    <UtensilsCrossed className="w-4 h-4 text-white/20" />
+                {/* Mobile Skeleton View - NOW STATIC DEVICE */}
+                <div className="w-20 h-full border-x border-t border-white/20 rounded-t-xl bg-white/5 p-2 shrink-0 relative overflow-hidden">
+                  {/* Animated Content Inside Phone */}
+                  <div className="space-y-2 animate-content-scroll">
+                    <div className="h-1.5 w-full bg-white/20 rounded-full"></div>
+                    <div className="aspect-square w-full bg-white/10 rounded-lg flex items-center justify-center">
+                      <UtensilsCrossed className="w-4 h-4 text-white/20" />
+                    </div>
+                    <div className="h-1 w-full bg-white/10 rounded-full"></div>
+                    <div className="h-4 w-full bg-white/30 rounded-md border border-white/10 flex items-center justify-center">
+                      <span className="text-[6px] text-white/40 font-bold">RESERVAR</span>
+                    </div>
+                    {/* Repeat for scroll effect */}
+                    <div className="h-1.5 w-full bg-white/20 rounded-full opacity-50"></div>
+                    <div className="h-8 w-full bg-white/5 rounded-lg"></div>
                   </div>
-                  <div className="h-1 w-full bg-white/10 rounded-full"></div>
-                  <div className="h-4 w-full bg-white/30 rounded-md border border-white/10"></div>
+
+                  {/* Booking Success Overlay (Internal Animation) */}
+                  <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center opacity-0 animate-booking-pop px-2">
+                    <div className="bg-white/10 border border-white/20 rounded-lg p-1.5 w-full text-center">
+                      <CheckCircle2 className="w-4 h-4 text-white mx-auto mb-1 animate-bounce" />
+                      <div className="text-[5px] text-white/80 font-bold whitespace-nowrap uppercase">Mesa Confirmada</div>
+                    </div>
+                  </div>
                 </div>
 
+                {/* Intricate Sidebar Details */}
                 <div className="flex-1 space-y-3 pt-2">
                   <div className="bg-white/5 border border-white/5 rounded-xl p-2 animate-float">
                     <div className="flex items-center gap-2 mb-1">
                       <Calendar className="w-3 h-3 text-white/40" />
-                      <span className="text-[8px] text-white/40 font-bold uppercase">Reserva</span>
+                      <span className="text-[8px] text-white/40 font-bold uppercase">Sistema</span>
                     </div>
                     <div className="h-1 w-full bg-white/10 rounded-full mb-1"></div>
                   </div>
                   <div className="bg-white/5 border border-white/5 rounded-xl p-2 animate-float-delayed">
                     <div className="flex items-center gap-2 mb-1">
                       <CheckCircle2 className="w-3 h-3 text-white/60" />
-                      <span className="text-[8px] text-white/80 font-bold uppercase">Confirmado</span>
+                      <span className="text-[8px] text-white/80 font-bold uppercase">Gestión_Auto</span>
                     </div>
+                    <div className="h-1 w-1/2 bg-white/10 rounded-full"></div>
                   </div>
                 </div>
               </div>
@@ -192,6 +211,22 @@ const HowItWorks: React.FC = () => {
                 }
                 .animate-scan {
                     animation: scan 4s linear infinite;
+                }
+                @keyframes content-scroll {
+                    0%, 20% { transform: translateY(0); }
+                    40%, 60% { transform: translateY(-30px); }
+                    80%, 100% { transform: translateY(0); }
+                }
+                .animate-content-scroll {
+                    animation: content-scroll 8s ease-in-out infinite;
+                }
+                @keyframes booking-pop {
+                    0%, 60% { opacity: 0; transform: scale(0.9); }
+                    70%, 90% { opacity: 1; transform: scale(1); }
+                    100% { opacity: 0; transform: scale(1); }
+                }
+                .animate-booking-pop {
+                    animation: booking-pop 8s ease-in-out infinite;
                 }
                 @keyframes float-slow {
                     0%, 100% { transform: translateY(0px) rotate(0deg); }
