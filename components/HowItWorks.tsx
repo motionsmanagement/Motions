@@ -7,6 +7,7 @@ const HowItWorks: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         {/* Header Section */}
         <div className="text-center mb-20 text-balance">
+          {/* Tag font matching Casos de Éxito */}
           <div className="inline-flex items-center bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6">
             <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Metodología Especialista</span>
           </div>
@@ -159,7 +160,7 @@ const HowItWorks: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 3: Crecimiento - COMPLETO REDISEÑO PARA NIVELAR CON 1 Y 2 */}
+          {/* Card 3: Crecimiento - Rediseñado con menos movimiento y en español */}
           <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 pb-6 flex flex-col min-h-[480px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
             <div className="relative z-10 mb-1">
               <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
@@ -170,9 +171,8 @@ const HowItWorks: React.FC = () => {
               </p>
             </div>
 
-            {/* Visualization: Professional Performance Terminal */}
+            {/* Visualization: Performance Terminal (Spanish + Less Motion) */}
             <div className="mt-8 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden shrink-0">
-              {/* Terminal Header */}
               <div className="flex items-center justify-between mb-4 border-b border-white/5 pb-2">
                 <div className="flex gap-1.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
@@ -180,17 +180,17 @@ const HowItWorks: React.FC = () => {
                   <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[8px] font-mono text-white/30 uppercase tracking-widest">PERFORMANCE_OS_V2.0</span>
+                  <span className="text-[8px] font-mono text-white/30 uppercase tracking-widest">SISTEMA_RENDIMIENTO_V2.0</span>
                 </div>
               </div>
 
               <div className="flex-1 flex gap-4">
-                {/* Left: Main Metric Circle */}
+                {/* Left: ROI Circle (Subtle Animation) */}
                 <div className="w-24 flex flex-col items-center justify-center border-r border-white/10 pr-4">
                   <div className="relative w-16 h-16 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90">
                       <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="3" className="text-white/5" />
-                      <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="3" strokeDasharray="176" strokeDashoffset="44" className="text-white animate-progress-spin" />
+                      <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="3" strokeDasharray="176" strokeDashoffset="44" className="text-white opacity-80" />
                     </svg>
                     <div className="flex flex-col items-center">
                       <span className="text-xs font-mono text-white leading-none">4.2x</span>
@@ -199,53 +199,51 @@ const HowItWorks: React.FC = () => {
                   </div>
                   <div className="mt-3 flex items-center gap-1.5 bg-white/10 px-2 py-0.5 rounded-full">
                     <TrendingUp className="w-2 h-2 text-white" />
-                    <span className="text-[7px] text-white font-mono">+12% MoM</span>
+                    <span className="text-[7px] text-white font-mono">+12% MENSUAL</span>
                   </div>
                 </div>
 
-                {/* Right: Data Stream Feed */}
+                {/* Right: Data Feed (Static + Slow animations) */}
                 <div className="flex-1 space-y-2.5">
-                  <div className="bg-white/5 border border-white/5 rounded-lg p-2.5 flex items-center justify-between group-hover:bg-white/10 transition-colors">
+                  <div className="bg-white/5 border border-white/5 rounded-lg p-2.5 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Users className="w-3 h-3 text-white/40" />
                       <div className="flex flex-col">
-                        <span className="text-[8px] text-white/30 font-mono leading-none">TRAFFIC</span>
+                        <span className="text-[8px] text-white/30 font-mono leading-none">TRÁFICO</span>
                         <span className="text-[10px] text-white font-mono leading-none mt-1">+2,840</span>
                       </div>
                     </div>
                     <div className="flex gap-0.5 h-4 items-end">
                       {[...Array(5)].map((_, i) => (
-                        <div key={i} className="w-1 bg-white/20 rounded-t-sm animate-bar-dance" style={{ height: `${20 + Math.random() * 80}%`, animationDelay: `${i * 0.1}s` }}></div>
+                        <div key={i} className="w-1 bg-white/20 rounded-t-sm" style={{ height: `${40 + (i * 12)}%` }}></div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="bg-white/5 border border-white/5 rounded-lg p-2.5 flex items-center justify-between group-hover:bg-white/10 transition-colors">
+                  <div className="bg-white/5 border border-white/5 rounded-lg p-2.5 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Activity className="w-3 h-3 text-white/40" />
                       <div className="flex flex-col">
-                        <span className="text-[8px] text-white/30 font-mono leading-none">CONVERSION</span>
+                        <span className="text-[8px] text-white/30 font-mono leading-none">CONVERSIÓN</span>
                         <span className="text-[10px] text-white font-mono leading-none mt-1">18.4%</span>
                       </div>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-8 h-1 bg-white/10 rounded-full overflow-hidden">
-                        <div className="h-full w-full bg-white/60 animate-loading-bar"></div>
-                      </div>
+                    <div className="w-12 h-1 bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full w-3/4 bg-white/30"></div>
                     </div>
                   </div>
 
-                  {/* Live Log Footer */}
+                  {/* Static Log Footer */}
                   <div className="pt-1">
                     <div className="flex items-center gap-2">
-                      <span className="text-[7px] text-white/20 font-mono animate-pulse">{'>'} OPTIMIZING_CAMPAIGNS...</span>
+                      <span className="text-[7px] text-white/20 font-mono italic tracking-tight">{'>'} OPTIMIZANDO_ESTRATEGIA_RESULTADOS</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Background scanning effect to match Card 1 */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent w-full h-full -skew-x-12 translate-x-[-200%] animate-scan-fast pointer-events-none"></div>
+              {/* Very subtle scanning effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent w-full h-full -skew-x-12 translate-x-[-200%] animate-scan-slow pointer-events-none"></div>
             </div>
           </div>
         </div>
@@ -266,12 +264,12 @@ const HowItWorks: React.FC = () => {
                     50% { opacity: 0.5; }
                     100% { transform: translateY(200%); opacity: 0; }
                 }
-                @keyframes scan-fast {
+                @keyframes scan-slow {
                     0% { transform: translateX(-200%) skewX(-12deg); }
                     100% { transform: translateX(200%) skewX(-12deg); }
                 }
                 .animate-scan { animation: scan 4s linear infinite; }
-                .animate-scan-fast { animation: scan-fast 3s linear infinite; }
+                .animate-scan-slow { animation: scan-slow 8s linear infinite; }
                 
                 @keyframes mobile-step-1 {
                     0%, 45% { opacity: 1; transform: scale(1); }
@@ -298,24 +296,6 @@ const HowItWorks: React.FC = () => {
                 .animate-mobile-step-2 { animation: mobile-step-2 6s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
                 .animate-check-pop { animation: check-pop 6s ease-out infinite; }
                 .animate-sync-loader { animation: sync-loader 6s ease-in-out infinite; }
-
-                /* NEW GRID 3 ANIMATIONS */
-                @keyframes progress-spin {
-                    0% { stroke-dashoffset: 176; }
-                    50% { stroke-dashoffset: 44; }
-                    100% { stroke-dashoffset: 176; }
-                }
-                @keyframes bar-dance {
-                    0%, 100% { height: 30%; }
-                    50% { height: 90%; }
-                }
-                @keyframes loading-bar {
-                    0% { transform: translateX(-100%); }
-                    100% { transform: translateX(100%); }
-                }
-                .animate-progress-spin { animation: progress-spin 4s ease-in-out infinite; }
-                .animate-bar-dance { animation: bar-dance 1.5s ease-in-out infinite; }
-                .animate-loading-bar { animation: loading-bar 2s linear infinite; }
                 
                 @keyframes draw-path {
                     to { stroke-dashoffset: 0; }
