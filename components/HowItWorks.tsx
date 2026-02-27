@@ -4,7 +4,7 @@ import { Phone, TrendingUp, Search, MapPin, ArrowRight, UtensilsCrossed, BarChar
 const HowItWorks: React.FC = () => {
   return (
     <section id="how-it-works" className="bg-white py-28 font-['Inter']">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         {/* Header Section */}
         <div className="text-center mb-20 text-balance">
           <div className="inline-flex items-center bg-[#f3f4f1] px-4 py-1.5 rounded-full mb-6">
@@ -17,9 +17,9 @@ const HowItWorks: React.FC = () => {
         </div>
 
         {/* Step Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {/* Card 1: Auditoría */}
-          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[480px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
+          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 pb-6 flex flex-col min-h-[480px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
             <div className="relative z-10 mb-1">
               <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
                 Auditoría Local GMB
@@ -30,7 +30,7 @@ const HowItWorks: React.FC = () => {
             </div>
 
             {/* Visualization: Technical Scanner Focus on Google Reviews */}
-            <div className="mt-8 relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-48 flex flex-col justify-center overflow-hidden shrink-0">
+            <div className="mt-8 relative bg-white/5 rounded-3xl p-5 md:p-6 border border-white/10 backdrop-blur-md h-52 flex flex-col justify-center overflow-hidden shrink-0">
               <div className="absolute inset-0 opacity-10">
                 <div className="grid grid-cols-6 grid-rows-6 w-full h-full">
                   {[...Array(36)].map((_, i) => (
@@ -75,7 +75,7 @@ const HowItWorks: React.FC = () => {
           </div>
 
           {/* Card 2: Desarrollo */}
-          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[480px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
+          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 pb-6 flex flex-col min-h-[480px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
             <div className="relative z-10 mb-1">
               <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
                 Plataforma de Reservas
@@ -86,7 +86,7 @@ const HowItWorks: React.FC = () => {
             </div>
 
             {/* Visualization: More Intricate Mobile Web & Conversion UX */}
-            <div className="mt-8 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-48 flex flex-col overflow-hidden shrink-0">
+            <div className="mt-8 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden shrink-0">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-white/40"></div>
@@ -125,7 +125,7 @@ const HowItWorks: React.FC = () => {
           </div>
 
           {/* Card 3: Crecimiento */}
-          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[480px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
+          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 pb-6 flex flex-col min-h-[480px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
             <div className="relative z-10 mb-1">
               <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
                 Escalamiento y ROI
@@ -136,7 +136,7 @@ const HowItWorks: React.FC = () => {
             </div>
 
             {/* Visualization: Professional KPI Dashboard */}
-            <div className="mt-8 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-48 flex flex-col overflow-hidden shrink-0">
+            <div className="mt-8 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden shrink-0">
               <div className="flex items-center justify-between mb-4">
                 <div className="text-[10px] font-mono text-white/40 tracking-widest uppercase">RESULTADOS_ROI</div>
                 <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></div>
