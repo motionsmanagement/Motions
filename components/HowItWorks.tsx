@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, TrendingUp, Search, MapPin, ArrowRight, UtensilsCrossed, BarChart3, Target, MousePointer2, Smartphone } from 'lucide-react';
+import { Phone, TrendingUp, Search, MapPin, ArrowRight, UtensilsCrossed, BarChart3, Target, MousePointer2, Smartphone, Star, PhoneCall, Users } from 'lucide-react';
 
 const HowItWorks: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const HowItWorks: React.FC = () => {
         {/* Header Section */}
         <div className="text-center mb-20 text-balance">
           <div className="inline-flex items-center bg-[#f3f4f1] px-4 py-1.5 rounded-full mb-6">
-            <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest font-mono">Metodología Profesional</span>
+            <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest font-mono">Metodología Especialista</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1]">
             Nuestro Proceso para<br />
@@ -21,50 +21,51 @@ const HowItWorks: React.FC = () => {
           {/* Card 1: Auditoría */}
           <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[520px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
             <div className="relative z-10 mb-8">
-              <h3 className="text-2xl md:text-3xl font-medium text-white leading-tight mb-4">
-                Auditoría Estratégica
+              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
+                Auditoría Local GMB
               </h3>
               <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
-                Evaluamos el posicionamiento actual de tu negocio y analizamos a la competencia local para identificar oportunidades reales de crecimiento.
+                Evaluamos el posicionamiento de tu ficha en Google Maps y la calidad de tus reseñas para identificar los puntos de mejora inmediata.
               </p>
             </div>
 
-            {/* Visualization: Animated Restaurant-Centric Map Audit */}
+            {/* Visualization: Google Maps & Reviews Focus */}
             <div className="mt-auto relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-56 flex flex-col justify-center overflow-hidden">
-              <div className="absolute inset-0 opacity-10">
-                <div className="grid grid-cols-6 grid-rows-6 w-full h-full">
-                  {[...Array(36)].map((_, i) => (
-                    <div key={i} className="border-t border-l border-white/20"></div>
+              <div className="absolute inset-0 opacity-20">
+                <div className="grid grid-cols-5 grid-rows-5 w-full h-full">
+                  {[...Array(25)].map((_, i) => (
+                    <div key={i} className="border-t border-l border-white/10"></div>
                   ))}
                 </div>
               </div>
 
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-1/2 w-full animate-scan pointer-events-none"></div>
-
               <div className="relative space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-white animate-pulse shadow-[0_0_10px_white]"></div>
-                    <span className="text-[9px] font-mono text-white/70 tracking-tighter uppercase">ESTADO_RANKING_MAPS</span>
+                {/* Map Pin Highlight */}
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full border border-white/20">
+                    <MapPin className="w-3 h-3 text-white" />
+                    <span className="text-[9px] font-bold text-white uppercase tracking-tighter">Ranking #1 Local</span>
                   </div>
-                  <span className="text-[9px] font-mono text-white/40">ZONA_LOCAL</span>
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-2.5 h-2.5 text-white fill-white" />
+                    ))}
+                  </div>
                 </div>
-                <div className="grid grid-cols-4 gap-2">
-                  {[...Array(12)].map((_, i) => (
-                    <div key={i} className={`h-8 rounded-md border border-white/10 flex items-center justify-center transition-all duration-1000 ${i === 5 ? 'bg-white/25 scale-110 border-white/30' : 'bg-white/5 opacity-40'}`}
-                      style={{ animation: i === 5 ? 'pulse-glow 2s infinite' : 'none' }}>
-                      <MapPin className={`w-3 h-3 ${i === 5 ? 'text-white' : 'text-white/20'}`} />
-                    </div>
-                  ))}
+
+                {/* Review Feed Snippet */}
+                <div className="space-y-2 bg-white/5 p-3 rounded-2xl border border-white/5">
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 rounded-full bg-white/20"></div>
+                    <div className="h-1.5 w-16 bg-white/20 rounded-full"></div>
+                  </div>
+                  <div className="h-1 w-full bg-white/10 rounded-full"></div>
+                  <div className="h-1 w-2/3 bg-white/10 rounded-full"></div>
                 </div>
-                <div className="pt-2">
-                  <div className="flex justify-between text-[9px] text-white/60 mb-1">
-                    <span>RESEÑAS_RELEVANTES</span>
-                    <span className="tabular-nums">4.8★</span>
-                  </div>
-                  <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                    <div className="h-full w-[94%] bg-white/60 animate-load-slow"></div>
-                  </div>
+
+                <div className="flex items-center justify-between pt-2">
+                  <div className="text-[10px] text-white/40 font-mono">GOOGLE_MY_BUSINESS</div>
+                  <div className="text-[10px] text-green-400 font-mono animate-pulse">OPTIMIZADO</div>
                 </div>
               </div>
             </div>
@@ -73,15 +74,15 @@ const HowItWorks: React.FC = () => {
           {/* Card 2: Desarrollo */}
           <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[520px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
             <div className="relative z-10 mb-8">
-              <h3 className="text-2xl md:text-3xl font-medium text-white leading-tight mb-4">
-                Desarrollo y Conversión
+              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
+                Plataforma de Reservas
               </h3>
               <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
-                Implementamos soluciones digitales personalizadas, desde sitios web optimizados hasta cartas interactivas diseñadas para generar reservas.
+                Desarrollamos tu sitio web especializado con carta digital interactiva, optimizado para convertir visitas en reservas sin comisiones locales.
               </p>
             </div>
 
-            {/* Visualization: Floating Mobile Web Layout */}
+            {/* Visualization: Mobile Web Layout */}
             <div className="mt-auto relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-56 flex flex-col items-center overflow-hidden">
               <div className="w-32 h-full border-x border-t border-white/20 rounded-t-2xl bg-white/5 p-3 space-y-3 animate-float-slow">
                 <div className="h-2 w-full bg-white/20 rounded-full"></div>
@@ -100,63 +101,55 @@ const HowItWorks: React.FC = () => {
               <div className="absolute top-12 left-6">
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-3 py-1.5 rounded-full border border-white/20 shadow-2xl animate-float-delayed">
                   <Smartphone className="w-3 h-3 text-white/80" />
-                  <span className="text-[8px] text-white/90 font-bold whitespace-nowrap">WEB_OPTIMIZADA</span>
-                </div>
-              </div>
-              <div className="absolute bottom-10 right-6 animate-float">
-                <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur shadow-2xl">
-                  <MousePointer2 className="w-4 h-4 text-white/60" />
+                  <span className="text-[8px] text-white/90 font-bold whitespace-nowrap uppercase">Web_Móvil</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Card 3: Optimización */}
+          {/* Card 3: Crecimiento */}
           <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[520px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
             <div className="relative z-10 mb-8">
-              <h3 className="text-2xl md:text-3xl font-medium text-white leading-tight mb-4">
-                Optimización Continua
+              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
+                Escalamiento y ROI
               </h3>
               <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
-                Analizamos el impacto de cada estrategia en tiempo real, ajustando los parámetros para asegurar el mejor retorno sobre tu inversión inicial.
+                Implementamos estrategias de escalado basadas en datos reales para maximizar el retorno de tu inversión y el flujo de clientes.
               </p>
             </div>
 
-            {/* Visualization: Animated Growth Dashboard */}
-            <div className="mt-auto relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-56 flex flex-col justify-end overflow-hidden">
-              <div className="absolute top-6 left-6 flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
-                <span className="text-[8px] font-bold text-white/60 uppercase tracking-widest font-mono">MÉTRICAS_EN_VIVO</span>
+            {/* Visualization: Professional KPI Dashboard */}
+            <div className="mt-auto relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-56 flex flex-col overflow-hidden">
+              <div className="flex items-center justify-between mb-6">
+                <div className="text-[10px] font-mono text-white/40 tracking-widest uppercase">Panel_de_Resultados</div>
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
               </div>
 
-              <div className="flex items-end gap-[4px] h-20 mb-8 px-2 relative">
-                {[20, 35, 30, 55, 40, 95, 60, 80, 50, 85].map((h, i) => (
-                  <div key={i}
-                    className={`w-full bg-white/10 rounded-t-sm transition-all duration-1000 ease-out`}
-                    style={{
-                      height: `${h}%`,
-                      opacity: 0.2 + (i * 0.08),
-                      animation: `grow-up 1.5s ease-out forwards ${i * 0.1}s`
-                    }}>
+              <div className="grid grid-cols-2 gap-4 flex-1">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-3 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Users className="w-3 h-3 text-white/40" />
+                    <span className="text-[8px] text-white/40 font-bold uppercase">Clientes</span>
                   </div>
-                ))}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-white/5 to-transparent opacity-30 animate-pulse pointer-events-none"></div>
-              </div>
-
-              <div className="flex items-center justify-between border-t border-white/10 pt-4">
-                <div>
-                  <div className="text-2xl font-mono text-white inline-flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-white/80 animate-bounce-subtle" />
-                    <span className="animate-counter">+42%</span>
-                  </div>
-                  <div className="text-[9px] font-bold text-white/30 uppercase tracking-[0.2em] mt-1">CRECIMIENTO_RESERVAS</div>
+                  <div className="text-xl font-mono text-white tabular-nums">+84</div>
                 </div>
-                <div className="flex -space-x-2">
-                  {[...Array(3)].map((_, i) => (
-                    <div key={i} className="w-7 h-7 rounded-full border border-white/20 bg-black/40 flex items-center justify-center text-[8px] text-white/50 font-bold backdrop-blur">
-                      ROI
-                    </div>
-                  ))}
+                <div className="bg-white/5 border border-white/10 rounded-xl p-3 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 mb-1">
+                    <PhoneCall className="w-3 h-3 text-white/40" />
+                    <span className="text-[8px] text-white/40 font-bold uppercase">Llamadas</span>
+                  </div>
+                  <div className="text-xl font-mono text-white tabular-nums">+126</div>
+                </div>
+                <div className="col-span-2 bg-white/10 border border-white/20 rounded-xl p-3 flex items-center justify-between overflow-hidden relative">
+                  <div>
+                    <div className="text-[8px] text-white/50 font-bold uppercase tracking-widest mb-1">Retorno de Inversión</div>
+                    <div className="text-2xl font-mono text-white group-hover:scale-110 transition-transform duration-500">4.2x</div>
+                  </div>
+                  <div className="absolute right-0 bottom-0 top-0 w-24 opacity-20">
+                    <svg viewBox="0 0 100 40" className="w-full h-full">
+                      <path d="M0 35 Q 20 35, 40 25 T 80 10 T 100 5" fill="none" stroke="white" strokeWidth="2" strokeDasharray="200" strokeDashoffset="200" className="animate-draw-path" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -169,7 +162,7 @@ const HowItWorks: React.FC = () => {
             <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             Quiero potenciar mi restaurante
           </button>
-          <p className="mt-6 text-gray-400 text-xs font-semibold italic tracking-wide">Metodología comprobada para maximizar el retorno de inversión.</p>
+          <p className="mt-6 text-gray-400 text-xs font-semibold italic tracking-wide text-center">Metodología optimizada para resultados reales en hostelería.</p>
         </div>
       </div>
 
@@ -190,37 +183,15 @@ const HowItWorks: React.FC = () => {
                 .animate-float-slow {
                     animation: float-slow 4s ease-in-out infinite;
                 }
-                @keyframes float {
-                    0%, 100% { transform: translate(0, 0); }
-                    50% { transform: translate(5px, -5px); }
+                @keyframes draw-path {
+                    to { stroke-dashoffset: 0; }
                 }
-                .animate-float {
-                    animation: float 3s ease-in-out infinite;
-                }
-                @keyframes float-delayed {
-                    0%, 100% { transform: translate(0, 0); }
-                    50% { transform: translate(-3px, -8px); }
-                }
-                .animate-float-delayed {
-                    animation: float-delayed 5s ease-in-out infinite;
-                }
-                @keyframes grow-up {
-                    from { height: 0; opacity: 0; }
-                    to { opacity: inherit; }
+                .animate-draw-path {
+                    animation: draw-path 3s ease-out forwards;
                 }
                 @keyframes pulse-glow {
                     0%, 100% { box-shadow: 0 0 5px rgba(255,255,255,0.2); }
                     50% { box-shadow: 0 0 20px rgba(255,255,255,0.4); }
-                }
-                @keyframes bounce-subtle {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-3px); }
-                }
-                .animate-bounce-subtle {
-                    animation: bounce-subtle 2s ease-in-out infinite;
-                }
-                .animate-load-slow {
-                    animation: grow-up 2s ease-out forwards;
                 }
             `}} />
     </section>
