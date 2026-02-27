@@ -19,9 +19,9 @@ const HowItWorks: React.FC = () => {
         {/* Step Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1: Auditoría */}
-          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[520px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
-            <div className="relative z-10 mb-8">
-              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
+          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[500px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
+            <div className="relative z-10 mb-4">
+              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-2 whitespace-nowrap">
                 Auditoría Local GMB
               </h3>
               <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
@@ -29,8 +29,8 @@ const HowItWorks: React.FC = () => {
               </p>
             </div>
 
-            {/* Visualization: Restored Technical Scanner Focus on Google Reviews */}
-            <div className="mt-auto relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-56 flex flex-col justify-center overflow-hidden">
+            {/* Visualization: Technical Scanner Focus on Google Reviews */}
+            <div className="mt-auto relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-52 flex flex-col justify-center overflow-hidden">
               <div className="absolute inset-0 opacity-10">
                 <div className="grid grid-cols-6 grid-rows-6 w-full h-full">
                   {[...Array(36)].map((_, i) => (
@@ -45,11 +45,11 @@ const HowItWorks: React.FC = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-white animate-pulse shadow-[0_0_10px_white]"></div>
-                    <span className="text-[9px] font-mono text-white/70 tracking-tighter uppercase whitespace-offset-1">GOOGLE_REVIEWS_AUDIT</span>
+                    <span className="text-[9px] font-mono text-white/70 tracking-tighter uppercase">AUDITORÍA_RESEÑAS</span>
                   </div>
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-2 h-2 text-white/40 fill-white" />
+                      <Star key={i} className="w-2 h-2 text-white/60 fill-white" />
                     ))}
                   </div>
                 </div>
@@ -75,9 +75,9 @@ const HowItWorks: React.FC = () => {
           </div>
 
           {/* Card 2: Desarrollo */}
-          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[520px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
-            <div className="relative z-10 mb-8">
-              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
+          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[500px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
+            <div className="relative z-10 mb-4">
+              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-2 whitespace-nowrap">
                 Plataforma de Reservas
               </h3>
               <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
@@ -86,11 +86,11 @@ const HowItWorks: React.FC = () => {
             </div>
 
             {/* Visualization: Mobile Web Layout */}
-            <div className="mt-auto relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-56 flex flex-col items-center overflow-hidden">
-              <div className="w-32 h-full border-x border-t border-white/20 rounded-t-2xl bg-white/5 p-3 space-y-3 animate-float-slow">
+            <div className="mt-auto relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-52 flex flex-col items-center overflow-hidden">
+              <div className="w-28 h-full border-x border-t border-white/20 rounded-t-2xl bg-white/5 p-3 space-y-3 animate-float-slow">
                 <div className="h-2 w-full bg-white/20 rounded-full"></div>
                 <div className="aspect-[4/3] w-full bg-white/10 rounded-lg flex items-center justify-center relative overflow-hidden">
-                  <UtensilsCrossed className="w-5 h-5 text-white/20" />
+                  <UtensilsCrossed className="w-4 h-4 text-white/30" />
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent"></div>
                 </div>
                 <div className="space-y-1">
@@ -98,10 +98,10 @@ const HowItWorks: React.FC = () => {
                   <div className="h-1.5 w-[60%] bg-white/5 rounded-full"></div>
                 </div>
                 <div className="h-6 w-full bg-white/30 rounded-md flex items-center justify-center border border-white/20 shadow-lg">
-                  <span className="text-[7px] font-black text-white tracking-widest">RESERVAR</span>
+                  <span className="text-[7px] font-black text-white tracking-widest uppercase">Reservar</span>
                 </div>
               </div>
-              <div className="absolute top-12 left-6">
+              <div className="absolute top-10 left-6">
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-3 py-1.5 rounded-full border border-white/20 shadow-2xl animate-float-delayed">
                   <Smartphone className="w-3 h-3 text-white/80" />
                   <span className="text-[8px] text-white/90 font-bold whitespace-nowrap uppercase">Web_Móvil</span>
@@ -111,9 +111,9 @@ const HowItWorks: React.FC = () => {
           </div>
 
           {/* Card 3: Crecimiento */}
-          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[520px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
-            <div className="relative z-10 mb-8">
-              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
+          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[500px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
+            <div className="relative z-10 mb-4">
+              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-2 whitespace-nowrap">
                 Escalamiento y ROI
               </h3>
               <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
@@ -122,33 +122,33 @@ const HowItWorks: React.FC = () => {
             </div>
 
             {/* Visualization: Professional KPI Dashboard */}
-            <div className="mt-auto relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-56 flex flex-col overflow-hidden">
-              <div className="flex items-center justify-between mb-6">
-                <div className="text-[10px] font-mono text-white/40 tracking-widest uppercase">Panel_de_Resultados</div>
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            <div className="mt-auto relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden">
+              <div className="flex items-center justify-between mb-4">
+                <div className="text-[10px] font-mono text-white/40 tracking-widest uppercase">RESULTADOS_ROI</div>
+                <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 flex-1">
-                <div className="bg-white/5 border border-white/10 rounded-xl p-3 flex flex-col justify-center">
+              <div className="grid grid-cols-2 gap-3 flex-1">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-2.5 flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-1">
                     <Users className="w-3 h-3 text-white/40" />
                     <span className="text-[8px] text-white/40 font-bold uppercase">Clientes</span>
                   </div>
-                  <div className="text-xl font-mono text-white tabular-nums">+84</div>
+                  <div className="text-lg font-mono text-white tabular-nums">+84</div>
                 </div>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-3 flex flex-col justify-center">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-2.5 flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-1">
                     <PhoneCall className="w-3 h-3 text-white/40" />
                     <span className="text-[8px] text-white/40 font-bold uppercase">Llamadas</span>
                   </div>
-                  <div className="text-xl font-mono text-white tabular-nums">+126</div>
+                  <div className="text-lg font-mono text-white tabular-nums">+126</div>
                 </div>
-                <div className="col-span-2 bg-white/10 border border-white/20 rounded-xl p-3 flex items-center justify-between overflow-hidden relative">
-                  <div>
-                    <div className="text-[8px] text-white/50 font-bold uppercase tracking-widest mb-1">Retorno de Inversión</div>
-                    <div className="text-2xl font-mono text-white group-hover:scale-110 transition-transform duration-500">4.2x</div>
+                <div className="col-span-2 bg-white/10 border border-white/20 rounded-xl p-2.5 flex items-center justify-between overflow-hidden relative">
+                  <div className="relative z-10">
+                    <div className="text-[8px] text-white/50 font-bold uppercase tracking-widest mb-1">Retorno Inversión</div>
+                    <div className="text-xl font-mono text-white group-hover:scale-105 transition-transform duration-500">4.2x</div>
                   </div>
-                  <div className="absolute right-0 bottom-0 top-0 w-24 opacity-20">
+                  <div className="absolute right-0 bottom-0 top-0 w-20 opacity-20">
                     <svg viewBox="0 0 100 40" className="w-full h-full">
                       <path d="M0 35 Q 20 35, 40 25 T 80 10 T 100 5" fill="none" stroke="white" strokeWidth="2" strokeDasharray="200" strokeDashoffset="200" className="animate-draw-path" />
                     </svg>
@@ -160,12 +160,12 @@ const HowItWorks: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-24 flex flex-col items-center">
+        <div className="mt-20 flex flex-col items-center">
           <button className="flex items-center gap-3 px-10 py-4 bg-black text-white rounded-full font-semibold text-base shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:bg-neutral-900 hover:scale-105 active:scale-95 transition-all group">
             <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             Quiero potenciar mi restaurante
           </button>
-          <p className="mt-6 text-gray-400 text-xs font-semibold italic tracking-wide text-center">Metodología optimizada para resultados reales en hostelería.</p>
+          <p className="mt-4 text-gray-400 text-xs font-semibold italic tracking-wide text-center uppercase opacity-60">Resultados reales para hostelería</p>
         </div>
       </div>
 
