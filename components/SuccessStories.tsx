@@ -162,7 +162,7 @@ const SuccessStories: React.FC = () => {
                                     </h3>
 
                                     <div className="flex items-center gap-4 md:gap-16">
-                                        <div className="flex items-center gap-12 text-gray-400 min-w-[140px] md:min-w-[200px] justify-end">
+                                        <div className="flex items-center gap-12 text-black min-w-[140px] md:min-w-[200px] justify-end">
                                             <span className="text-sm font-medium tabular-nums">{item.year}</span>
                                             <span className="text-sm font-medium hidden md:block w-32 truncate text-right">{item.location}</span>
                                         </div>
