@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, TrendingUp, Search, MapPin, ArrowRight, UtensilsCrossed, BarChart3, Target, MousePointer2, Smartphone, Star, PhoneCall, Users, Calendar, CheckCircle2 } from 'lucide-react';
+import { Phone, TrendingUp, Search, MapPin, ArrowRight, UtensilsCrossed, BarChart3, Target, MousePointer2, Smartphone, Star, PhoneCall, Users, Calendar, CheckCircle2, Clock } from 'lucide-react';
 
 const HowItWorks: React.FC = () => {
   return (
@@ -96,8 +96,8 @@ const HowItWorks: React.FC = () => {
               </div>
 
               <div className="flex gap-4 h-full relative">
-                {/* Mobile Skeleton View - NOW STATIC DEVICE */}
-                <div className="w-20 h-full border-x border-t border-white/20 rounded-t-xl bg-white/5 p-2 shrink-0 relative overflow-hidden">
+                {/* Mobile Skeleton View - NOW COMPACT DEVICE */}
+                <div className="w-20 h-40 border-x border-t border-white/20 rounded-t-xl bg-white/5 p-2 shrink-0 relative overflow-hidden mt-2">
                   {/* Animated Content Inside Phone */}
                   <div className="space-y-2 animate-content-scroll">
                     <div className="h-1.5 w-full bg-white/20 rounded-full"></div>
@@ -108,12 +108,10 @@ const HowItWorks: React.FC = () => {
                     <div className="h-4 w-full bg-white/30 rounded-md border border-white/10 flex items-center justify-center">
                       <span className="text-[6px] text-white/40 font-bold">RESERVAR</span>
                     </div>
-                    {/* Repeat for scroll effect */}
                     <div className="h-1.5 w-full bg-white/20 rounded-full opacity-50"></div>
-                    <div className="h-8 w-full bg-white/5 rounded-lg"></div>
                   </div>
 
-                  {/* Booking Success Overlay (Internal Animation) */}
+                  {/* Booking Success Overlay */}
                   <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center opacity-0 animate-booking-pop px-2">
                     <div className="bg-white/10 border border-white/20 rounded-lg p-1.5 w-full text-center">
                       <CheckCircle2 className="w-4 h-4 text-white mx-auto mb-1 animate-bounce" />
@@ -122,8 +120,8 @@ const HowItWorks: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Intricate Sidebar Details */}
-                <div className="flex-1 space-y-3 pt-2">
+                {/* Intricate Sidebar Details - NOW WITH 3 BOXES */}
+                <div className="flex-1 space-y-2 pt-1">
                   <div className="bg-white/5 border border-white/5 rounded-xl p-2 animate-float">
                     <div className="flex items-center gap-2 mb-1">
                       <Calendar className="w-3 h-3 text-white/40" />
@@ -131,12 +129,31 @@ const HowItWorks: React.FC = () => {
                     </div>
                     <div className="h-1 w-full bg-white/10 rounded-full mb-1"></div>
                   </div>
+
                   <div className="bg-white/5 border border-white/5 rounded-xl p-2 animate-float-delayed">
                     <div className="flex items-center gap-2 mb-1">
                       <CheckCircle2 className="w-3 h-3 text-white/60" />
                       <span className="text-[8px] text-white/80 font-bold uppercase">Gestión_Auto</span>
                     </div>
                     <div className="h-1 w-1/2 bg-white/10 rounded-full"></div>
+                  </div>
+
+                  {/* NEW 3RD BOX: Reservation Data */}
+                  <div className="bg-white/10 border border-white/10 rounded-xl p-2 animate-float opacity-90">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[7px] text-white/40 font-bold uppercase">Nueva_Reserva</span>
+                      <Users className="w-2.5 h-2.5 text-white/40" />
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="flex flex-col">
+                        <span className="text-[6px] text-white/30 uppercase">Personas</span>
+                        <span className="text-[10px] text-white font-mono">04</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-[6px] text-white/30 uppercase">Hora</span>
+                        <span className="text-[10px] text-white font-mono">21:30</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
