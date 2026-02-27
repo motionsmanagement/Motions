@@ -29,43 +29,46 @@ const HowItWorks: React.FC = () => {
               </p>
             </div>
 
-            {/* Visualization: Google Maps & Reviews Focus */}
+            {/* Visualization: Restored Technical Scanner Focus on Google Reviews */}
             <div className="mt-auto relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-56 flex flex-col justify-center overflow-hidden">
-              <div className="absolute inset-0 opacity-20">
-                <div className="grid grid-cols-5 grid-rows-5 w-full h-full">
-                  {[...Array(25)].map((_, i) => (
-                    <div key={i} className="border-t border-l border-white/10"></div>
+              <div className="absolute inset-0 opacity-10">
+                <div className="grid grid-cols-6 grid-rows-6 w-full h-full">
+                  {[...Array(36)].map((_, i) => (
+                    <div key={i} className="border-t border-l border-white/20"></div>
                   ))}
                 </div>
               </div>
 
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-1/2 w-full animate-scan pointer-events-none"></div>
+
               <div className="relative space-y-4">
-                {/* Map Pin Highlight */}
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full border border-white/20">
-                    <MapPin className="w-3 h-3 text-white" />
-                    <span className="text-[9px] font-bold text-white uppercase tracking-tighter">Ranking #1 Local</span>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-white animate-pulse shadow-[0_0_10px_white]"></div>
+                    <span className="text-[9px] font-mono text-white/70 tracking-tighter uppercase whitespace-offset-1">GOOGLE_REVIEWS_AUDIT</span>
                   </div>
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-2.5 h-2.5 text-white fill-white" />
+                      <Star key={i} className="w-2 h-2 text-white/40 fill-white" />
                     ))}
                   </div>
                 </div>
-
-                {/* Review Feed Snippet */}
-                <div className="space-y-2 bg-white/5 p-3 rounded-2xl border border-white/5">
-                  <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 rounded-full bg-white/20"></div>
-                    <div className="h-1.5 w-16 bg-white/20 rounded-full"></div>
-                  </div>
-                  <div className="h-1 w-full bg-white/10 rounded-full"></div>
-                  <div className="h-1 w-2/3 bg-white/10 rounded-full"></div>
+                <div className="grid grid-cols-4 gap-2">
+                  {[...Array(12)].map((_, i) => (
+                    <div key={i} className={`h-8 rounded-md border border-white/10 flex items-center justify-center transition-all duration-1000 ${i === 5 ? 'bg-white/25 scale-110 border-white/30' : 'bg-white/5 opacity-40'}`}
+                      style={{ animation: i === 5 ? 'pulse-glow 2s infinite' : 'none' }}>
+                      <MapPin className={`w-3 h-3 ${i === 5 ? 'text-white' : 'text-white/20'}`} />
+                    </div>
+                  ))}
                 </div>
-
-                <div className="flex items-center justify-between pt-2">
-                  <div className="text-[10px] text-white/40 font-mono">GOOGLE_MY_BUSINESS</div>
-                  <div className="text-[10px] text-green-400 font-mono animate-pulse">OPTIMIZADO</div>
+                <div className="pt-2">
+                  <div className="flex justify-between text-[9px] text-white/60 mb-1 font-mono uppercase">
+                    <span>Reputación_Online</span>
+                    <span className="tabular-nums">4.8★</span>
+                  </div>
+                  <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-full w-[94%] bg-white/60 animate-load-slow"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -192,6 +195,13 @@ const HowItWorks: React.FC = () => {
                 @keyframes pulse-glow {
                     0%, 100% { box-shadow: 0 0 5px rgba(255,255,255,0.2); }
                     50% { box-shadow: 0 0 20px rgba(255,255,255,0.4); }
+                }
+                @keyframes grow-up {
+                    from { height: 0; opacity: 0; }
+                    to { opacity: 1; }
+                }
+                .animate-load-slow {
+                    animation: grow-up 2s ease-out forwards;
                 }
             `}} />
     </section>
