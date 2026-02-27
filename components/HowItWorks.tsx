@@ -45,7 +45,7 @@ const HowItWorks: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50"></div>
 
               <div className="relative z-10">
-                <span className="text-5xl font-light text-white/10 block mb-10 tracking-tighter group-hover:text-white/20 transition-colors">
+                <span className="text-7xl font-light text-white block mb-10 tracking-tighter transition-all">
                   {step.num}
                 </span>
                 <h3 className="text-3xl font-medium text-white leading-tight mb-6">
@@ -54,7 +54,7 @@ const HowItWorks: React.FC = () => {
               </div>
 
               <div className="relative z-10">
-                <p className="text-white/60 text-base leading-relaxed mb-8">
+                <p className="text-white/60 text-base leading-relaxed mb-8 line-clamp-3">
                   {step.desc}
                 </p>
                 <div className="flex items-center gap-2 text-white/40 text-xs font-bold uppercase tracking-widest group-hover:text-white transition-colors">
