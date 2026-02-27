@@ -27,14 +27,13 @@ const FinalCTA: React.FC = () => {
           y descubre cómo multiplicar tus reservas y ventas este mes.
         </p>
 
-        {/* Glass Buttons Duo */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-24">
-          <button className="flex items-center gap-3 px-10 py-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group w-full sm:w-auto justify-center">
+          <button className="flex items-center gap-3 px-8 py-3.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group w-full sm:w-auto justify-center">
             <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             Llamar ahora
           </button>
 
-          <button className="flex items-center gap-3 px-10 py-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group w-full sm:w-auto justify-center">
+          <button className="flex items-center gap-3 px-8 py-3.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group w-full sm:w-auto justify-center">
             <MessageSquare className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" />
             Mándanos un mensaje
           </button>

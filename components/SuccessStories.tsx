@@ -102,9 +102,7 @@ const SuccessStories: React.FC = () => {
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
                     <div>
-                        <div className="inline-flex items-center gap-3 bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6">
-                            <span className="text-[10px] font-bold text-gray-500">04</span>
-                            <span className="w-px h-3 bg-gray-300"></span>
+                        <div className="inline-flex items-center bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6">
                             <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Casos de Éxito</span>
                         </div>
                         <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-[#111] leading-[1.1]">
@@ -174,9 +172,8 @@ const SuccessStories: React.FC = () => {
                                     </div>
                                 </div>
 
-                                {/* Content Container with Smooth Animation */}
                                 <div
-                                    className={`grid grid-cols-1 lg:grid-cols-2 gap-12 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${isExpanded ? 'max-h-[800px] opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-4 pointer-events-none'
+                                    className={`grid grid-cols-1 lg:grid-cols-2 gap-12 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded ? 'max-h-[1000px] opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2 pointer-events-none'
                                         }`}
                                 >
                                     <div className="rounded-2xl overflow-hidden aspect-[16/10] bg-gray-50">
@@ -199,7 +196,7 @@ const SuccessStories: React.FC = () => {
                                                     <TrendingUp className="w-5 h-5 text-gray-700" />
                                                 </div>
                                                 <div>
-                                                    <h4 className="text-[10px] font-bold text-black mb-1.5 uppercase tracking-widest">IMPACTO</h4>
+                                                    <h4 className="text-[10px] font-bold text-black mb-1.5 tracking-widest">Impacto</h4>
                                                     <p className="text-gray-500 text-sm font-medium">{item.impact}</p>
                                                 </div>
                                             </div>
@@ -208,7 +205,7 @@ const SuccessStories: React.FC = () => {
                                                     <CheckCircle2 className="w-5 h-5 text-gray-700" />
                                                 </div>
                                                 <div>
-                                                    <h4 className="text-[10px] font-bold text-black mb-1.5 uppercase tracking-widest">RESULTADO</h4>
+                                                    <h4 className="text-[10px] font-bold text-black mb-1.5 tracking-widest">Resultado</h4>
                                                     <p className="text-gray-500 text-sm font-medium">{item.result}</p>
                                                 </div>
                                             </div>
