@@ -23,6 +23,7 @@ import {
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import ServicesBanner from './components/ServicesBanner';
 import HowItWorks from './components/HowItWorks';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
@@ -37,6 +38,7 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <Services />
+        <ServicesBanner />
         <HowItWorks />
         <WhyChooseUs />
         <Testimonials />
