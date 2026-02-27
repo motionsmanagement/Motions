@@ -1,37 +1,48 @@
-
 import React from 'react';
+import { Phone, MessageSquare } from 'lucide-react';
 
 const FinalCTA: React.FC = () => {
   return (
-    <section className="relative py-40 px-6 md:px-12 overflow-hidden flex flex-col items-center text-center">
+    <section className="relative py-44 px-6 md:px-12 overflow-hidden flex flex-col items-center text-center font-['Inter']">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src="/new.jpg"
           alt="Final CTA background"
-          className="w-full h-full object-cover brightness-[0.6]"
+          className="w-full h-full object-cover brightness-[0.55]"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70"></div>
       </div>
 
-      <div className="relative z-10 max-w-4xl">
-        <h2 className="text-5xl md:text-[5.5rem] text-white mb-10 leading-[1.05]">
-          Comienza Hoy <span className="text-white/40">a</span><br />
-          Aumentar tus Ventas
+      <div className="relative z-10 max-w-5xl">
+        {/* Improved Conversion Headline */}
+        <h2 className="text-5xl md:text-[5.5rem] text-white mb-8 leading-[1.05] font-medium tracking-tight">
+          Transforma tu restaurante hoy<br />
+          <span className="text-white">y domina tu mercado local</span>
         </h2>
-        <p className="text-white/70 text-lg md:text-xl mb-14 max-w-2xl mx-auto leading-relaxed tracking-tight">
-          Agenda una consulta gratis y descubre cómo aumentar tu visibilidad y tus reservas.
+
+        <p className="text-white text-lg md:text-2xl mb-14 max-w-3xl mx-auto leading-relaxed font-light">
+          Es el momento de dejar de ser invisible. Agenda una consulta gratuita y descubre<br className="hidden md:block" /> cómo multiplicar tus reservas y ventas este mes.
         </p>
 
-        <button className="px-14 py-6 rounded-full bg-black text-white text-xl font-bold shadow-[0_20px_80px_rgba(0,0,0,0.3)] hover:scale-105 transition-transform mb-24 tracking-tighter border border-white/20">
-          Llamar ahora
-        </button>
+        {/* Glass Buttons Duo */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-24">
+          <button className="flex items-center gap-3 px-10 py-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group w-full sm:w-auto justify-center">
+            <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+            Llamar ahora
+          </button>
 
-        <div className="flex flex-col md:flex-row items-center justify-between w-full text-white/40 text-xs tracking-widest uppercase font-bold gap-8">
-          <a href="#" className="hover:text-white transition-colors border-b border-white/10 pb-1">¿Tienes alguna pregunta?</a>
-          <a href="#" className="flex items-center gap-2 hover:text-white transition-colors">
-            Revisa nuestras <span className="text-white font-black underline decoration-white/20">Preguntas Frecuentes</span>
+          <button className="flex items-center gap-3 px-10 py-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group w-full sm:w-auto justify-center">
+            <MessageSquare className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" />
+            Mándanos un mensaje
+          </button>
+        </div>
+
+        <div className="flex flex-col md:flex-row items-center justify-between w-full text-white text-[10px] tracking-[0.2em] uppercase font-bold gap-10 opacity-70">
+          <a href="#" className="hover:opacity-100 transition-opacity border-b border-white/30 pb-1">¿Tienes alguna pregunta?</a>
+          <a href="#" className="flex items-center gap-3 hover:opacity-100 transition-opacity">
+            REVISA NUESTRAS <span className="underline decoration-white/40 underline-offset-4">PREGUNTAS FRECUENTES</span>
           </a>
         </div>
       </div>
