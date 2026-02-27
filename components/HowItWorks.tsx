@@ -19,8 +19,8 @@ const HowItWorks: React.FC = () => {
         {/* Step Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1: Auditoría */}
-          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[500px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
-            <div className="relative z-10 mb-2">
+          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[460px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
+            <div className="relative z-10 mb-1">
               <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
                 Auditoría Local GMB
               </h3>
@@ -30,7 +30,7 @@ const HowItWorks: React.FC = () => {
             </div>
 
             {/* Visualization: Technical Scanner Focus on Google Reviews */}
-            <div className="mt-auto relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-52 flex flex-col justify-center overflow-hidden">
+            <div className="mt-4 relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-48 flex flex-col justify-center overflow-hidden">
               <div className="absolute inset-0 opacity-10">
                 <div className="grid grid-cols-6 grid-rows-6 w-full h-full">
                   {[...Array(36)].map((_, i) => (
@@ -75,8 +75,8 @@ const HowItWorks: React.FC = () => {
           </div>
 
           {/* Card 2: Desarrollo */}
-          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[500px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
-            <div className="relative z-10 mb-2">
+          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[460px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
+            <div className="relative z-10 mb-1">
               <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
                 Plataforma de Reservas
               </h3>
@@ -86,17 +86,16 @@ const HowItWorks: React.FC = () => {
             </div>
 
             {/* Visualization: More Intricate Mobile Web & Conversion UX */}
-            <div className="mt-auto relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden">
+            <div className="mt-4 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-48 flex flex-col overflow-hidden">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-white/40"></div>
                   <span className="text-[9px] font-mono text-white/40 uppercase tracking-widest">Interfaz_Móvil</span>
                 </div>
-                <div className="px-2 py-0.5 rounded-md bg-white/10 border border-white/10 text-[8px] font-bold text-white/60">UX_ALTA_CONVERSIÓN</div>
+                <div className="px-2 py-0.5 rounded-md bg-white/10 border border-white/10 text-[8px] font-bold text-white/60">UX_OPTIMIZADO</div>
               </div>
 
               <div className="flex gap-4 h-full relative">
-                {/* Mobile Skeleton View */}
                 <div className="w-20 h-full border-x border-t border-white/20 rounded-t-xl bg-white/5 p-2 space-y-2 animate-float-slow shrink-0">
                   <div className="h-1.5 w-full bg-white/20 rounded-full"></div>
                   <div className="aspect-square w-full bg-white/10 rounded-lg flex items-center justify-center">
@@ -106,7 +105,6 @@ const HowItWorks: React.FC = () => {
                   <div className="h-4 w-full bg-white/30 rounded-md border border-white/10"></div>
                 </div>
 
-                {/* Intricate Details Column */}
                 <div className="flex-1 space-y-3 pt-2">
                   <div className="bg-white/5 border border-white/5 rounded-xl p-2 animate-float">
                     <div className="flex items-center gap-2 mb-1">
@@ -114,25 +112,12 @@ const HowItWorks: React.FC = () => {
                       <span className="text-[8px] text-white/40 font-bold uppercase">Reserva</span>
                     </div>
                     <div className="h-1 w-full bg-white/10 rounded-full mb-1"></div>
-                    <div className="h-1 w-2/3 bg-white/5 rounded-full"></div>
                   </div>
                   <div className="bg-white/5 border border-white/5 rounded-xl p-2 animate-float-delayed">
                     <div className="flex items-center gap-2 mb-1">
                       <CheckCircle2 className="w-3 h-3 text-white/60" />
                       <span className="text-[8px] text-white/80 font-bold uppercase">Confirmado</span>
                     </div>
-                    <div className="flex gap-1">
-                      {[...Array(3)].map((_, i) => (
-                        <div key={i} className="h-0.5 w-3 bg-white/20 rounded-full"></div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating Badge */}
-                <div className="absolute right-0 top-0 rotate-12 group-hover:rotate-0 transition-transform">
-                  <div className="bg-white text-black text-[9px] font-black px-2 py-1 rounded-lg shadow-2xl">
-                    98% MÓVIL
                   </div>
                 </div>
               </div>
@@ -140,8 +125,8 @@ const HowItWorks: React.FC = () => {
           </div>
 
           {/* Card 3: Crecimiento */}
-          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[500px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
-            <div className="relative z-10 mb-2">
+          <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[460px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
+            <div className="relative z-10 mb-1">
               <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
                 Escalamiento y ROI
               </h3>
@@ -151,30 +136,30 @@ const HowItWorks: React.FC = () => {
             </div>
 
             {/* Visualization: Professional KPI Dashboard */}
-            <div className="mt-auto relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden">
+            <div className="mt-4 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-48 flex flex-col overflow-hidden">
               <div className="flex items-center justify-between mb-4">
                 <div className="text-[10px] font-mono text-white/40 tracking-widest uppercase">RESULTADOS_ROI</div>
                 <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></div>
               </div>
 
               <div className="grid grid-cols-2 gap-3 flex-1">
-                <div className="bg-white/5 border border-white/10 rounded-xl p-2.5 flex flex-col justify-center">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-2 flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-1">
                     <Users className="w-3 h-3 text-white/40" />
                     <span className="text-[8px] text-white/40 font-bold uppercase">Clientes</span>
                   </div>
                   <div className="text-lg font-mono text-white tabular-nums">+84</div>
                 </div>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-2.5 flex flex-col justify-center">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-2 flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-1">
                     <PhoneCall className="w-3 h-3 text-white/40" />
                     <span className="text-[8px] text-white/40 font-bold uppercase">Llamadas</span>
                   </div>
                   <div className="text-lg font-mono text-white tabular-nums">+126</div>
                 </div>
-                <div className="col-span-2 bg-white/10 border border-white/20 rounded-xl p-2.5 flex items-center justify-between overflow-hidden relative">
+                <div className="col-span-2 bg-white/10 border border-white/20 rounded-xl p-2 flex items-center justify-between overflow-hidden relative">
                   <div className="relative z-10">
-                    <div className="text-[8px] text-white/50 font-bold uppercase tracking-widest mb-1">Retorno Inversión</div>
+                    <div className="text-[8px] text-white/50 font-bold uppercase tracking-widest mb-0.5">Retorno Inversión</div>
                     <div className="text-xl font-mono text-white group-hover:scale-105 transition-transform duration-500">4.2x</div>
                   </div>
                   <div className="absolute right-0 bottom-0 top-0 w-20 opacity-20">
