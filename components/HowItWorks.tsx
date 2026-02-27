@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, TrendingUp, Search, MapPin, ArrowRight, UtensilsCrossed, BarChart3, Target, MousePointer2, Smartphone, Star, PhoneCall, Users, Calendar, CheckCircle2, Clock, Zap, ShieldCheck, Loader2 } from 'lucide-react';
+import { Phone, TrendingUp, Search, MapPin, ArrowRight, UtensilsCrossed, BarChart3, Target, MousePointer2, Smartphone, Star, PhoneCall, Users, Calendar, CheckCircle2, Clock, Zap, ShieldCheck, Loader2, Sparkles } from 'lucide-react';
 
 const HowItWorks: React.FC = () => {
   return (
@@ -7,7 +7,6 @@ const HowItWorks: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         {/* Header Section */}
         <div className="text-center mb-20 text-balance">
-          {/* Updated tag font to match Casos de Éxito (No font-mono, added border) */}
           <div className="inline-flex items-center bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6">
             <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Metodología Especialista</span>
           </div>
@@ -86,7 +85,7 @@ const HowItWorks: React.FC = () => {
               </p>
             </div>
 
-            {/* Visualization: Professional Mobile UX */}
+            {/* Visualization: Professional Mobile UX with Confirm Page */}
             <div className="mt-8 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden shrink-0">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
@@ -97,29 +96,40 @@ const HowItWorks: React.FC = () => {
               </div>
 
               <div className="flex gap-6 h-full relative">
-                {/* Mobile Device */}
-                <div className="w-24 h-36 border-x border-t border-white/20 rounded-t-xl bg-black/40 p-2 shrink-0 relative overflow-hidden mt-2">
-                  <div className="space-y-2 opacity-60">
-                    <div className="h-1.5 w-full bg-white/20 rounded-full"></div>
+                {/* Mobile Device with Step-based Animation */}
+                <div className="w-24 h-36 border-x border-t border-white/20 rounded-t-xl bg-black/60 shrink-0 relative overflow-hidden mt-2 shadow-2xl">
+                  {/* Step 1: Initial Selection UI */}
+                  <div className="absolute inset-0 p-2 space-y-2 animate-mobile-step-1">
+                    <div className="h-1.5 w-1/2 bg-white/20 rounded-full"></div>
                     <div className="aspect-square w-full bg-white/10 rounded-lg flex items-center justify-center">
-                      <UtensilsCrossed className="w-4 h-4 text-white/20" />
+                      <UtensilsCrossed className="w-5 h-5 text-white/20" />
                     </div>
-                    <div className="h-4 w-full bg-white/20 rounded-md border border-white/10"></div>
-                  </div>
-
-                  <div className="absolute inset-x-0 bottom-4 px-2 translate-y-0 animate-booking-soft-pulse">
-                    <div className="bg-white text-black text-[7px] font-black uppercase py-2 rounded-md shadow-2xl flex items-center justify-center gap-1">
-                      <CheckCircle2 className="w-3 h-3" />
-                      Confirmado
+                    <div className="h-4 w-full bg-white/30 rounded-md border border-white/10 flex items-center justify-center">
+                      <span className="text-[6px] text-white/40 font-bold">RESERVAR</span>
                     </div>
                   </div>
 
-                  <div className="absolute top-0 left-0 h-[1px] bg-white/60 animate-top-scan"></div>
+                  {/* Step 2: Final Confirmation Page (Enphasized) */}
+                  <div className="absolute inset-0 bg-white flex flex-col items-center justify-center p-3 animate-mobile-step-2 opacity-0">
+                    <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center mb-3 shadow-xl">
+                      <CheckCircle2 className="w-6 h-6 text-white animate-check-pop" />
+                    </div>
+                    <h4 className="text-black text-[9px] font-black uppercase tracking-widest text-center leading-none mb-2">Reserva<br />Confirmada</h4>
+                    <div className="h-[1px] w-8 bg-black/10 mb-2"></div>
+                    <div className="flex flex-col items-center gap-1 opacity-60">
+                      <div className="h-1 w-10 bg-black/20 rounded-full"></div>
+                      <div className="h-1 w-6 bg-black/20 rounded-full"></div>
+                    </div>
+                    <Sparkles className="absolute top-2 right-2 w-3 h-3 text-black/20 animate-pulse" />
+                  </div>
+
+                  {/* Subtle Top Loader sync */}
+                  <div className="absolute top-0 left-0 h-[1.5px] bg-white/60 animate-sync-loader"></div>
                 </div>
 
                 {/* Information Boxes */}
                 <div className="flex-1 space-y-3 pt-2">
-                  <div className="bg-white/5 border border-white/5 rounded-xl p-3 flex items-center justify-between transition-colors hover:bg-white/10">
+                  <div className="bg-white/5 border border-white/5 rounded-xl p-3 flex items-center justify-between">
                     <div className="flex flex-col gap-1">
                       <span className="text-[9px] text-white/40 font-mono uppercase tracking-tighter leading-none">STATUS_RESERVA</span>
                       <span className="text-[11px] text-white font-mono leading-none">ONLINE</span>
@@ -167,7 +177,7 @@ const HowItWorks: React.FC = () => {
               </p>
             </div>
 
-            {/* Visualization: Interactive KPI Dashboard */}
+            {/* Visualization: KPI Dashboard */}
             <div className="mt-8 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden shrink-0">
               <div className="flex items-center justify-between mb-4">
                 <div className="text-[9px] font-mono text-white/40 tracking-tighter uppercase whitespace-nowrap">ANÁLISIS_CRECIMIENTO</div>
@@ -175,7 +185,6 @@ const HowItWorks: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-2 gap-3 flex-1 relative">
-                {/* Metrics with subtle "live" updates */}
                 <div className="bg-white/5 border border-white/10 rounded-xl p-2 flex flex-col justify-center relative overflow-hidden group/metric">
                   <div className="flex items-center gap-2 mb-1">
                     <Users className="w-3 h-3 text-white/40" />
@@ -200,18 +209,9 @@ const HowItWorks: React.FC = () => {
                     <div className="text-xl font-mono text-white group-hover:scale-105 transition-transform duration-500">4.2x</div>
                   </div>
 
-                  {/* Enhanced Data Graph */}
                   <div className="absolute right-0 bottom-0 top-0 w-24 opacity-30">
                     <svg viewBox="0 0 100 40" className="w-full h-full overflow-visible">
-                      <defs>
-                        <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="rgba(255,255,255,0)" />
-                          <stop offset="50%" stopColor="rgba(255,255,255,0.8)" />
-                          <stop offset="100%" stopColor="rgba(255,255,255,0)" />
-                        </linearGradient>
-                      </defs>
                       <path d="M0 35 Q 20 35, 40 25 T 80 10 T 100 5" fill="none" stroke="white" strokeWidth="1.5" strokeDasharray="200" strokeDashoffset="200" className="animate-draw-path" />
-                      {/* Moving data point */}
                       <circle r="2" fill="white" className="animate-point-move">
                         <animateMotion dur="4s" repeatCount="indefinite" path="M0 35 Q 20 35, 40 25 T 80 10 T 100 5" />
                       </circle>
@@ -229,7 +229,6 @@ const HowItWorks: React.FC = () => {
             <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             Quiero potenciar mi restaurante
           </button>
-          {/* Removed "Resultados reales para hostelería" as requested */}
         </div>
       </div>
 
@@ -244,24 +243,32 @@ const HowItWorks: React.FC = () => {
                     animation: scan 4s linear infinite;
                 }
                 
-                @keyframes booking-soft-pulse {
-                    0%, 40% { opacity: 0; transform: translateY(10px); }
-                    50%, 90% { opacity: 1; transform: translateY(0); }
-                    100% { opacity: 0; transform: translateY(-5px); }
+                /* PROFESSIONAL STEPPED MOBILE LOOP */
+                @keyframes mobile-step-1 {
+                    0%, 45% { opacity: 1; transform: scale(1); }
+                    50%, 95% { opacity: 0; transform: scale(0.95); }
+                    100% { opacity: 1; transform: scale(1); }
                 }
-                .animate-booking-soft-pulse {
-                    animation: booking-soft-pulse 4s ease-in-out infinite;
+                @keyframes mobile-step-2 {
+                    0%, 47% { opacity: 0; transform: translateY(100%); }
+                    50%, 92% { opacity: 1; transform: translateY(0); }
+                    95%, 100% { opacity: 0; transform: translateY(-10%); }
+                }
+                @keyframes check-pop {
+                    0%, 55% { transform: scale(0); rotate: -45deg; }
+                    65% { transform: scale(1.2); rotate: 0deg; }
+                    70%, 100% { transform: scale(1); rotate: 0deg; }
+                }
+                @keyframes sync-loader {
+                    0% { width: 0; opacity: 1; }
+                    48% { width: 100%; opacity: 1; }
+                    50%, 100% { width: 100%; opacity: 0; }
                 }
                 
-                @keyframes top-scan {
-                    0% { width: 0; left: 0; }
-                    40% { width: 100%; left: 0; }
-                    50% { width: 0; left: 100%; }
-                    100% { width: 0; left: 0; }
-                }
-                .animate-top-scan {
-                    animation: top-scan 4s linear infinite;
-                }
+                .animate-mobile-step-1 { animation: mobile-step-1 6s ease-in-out infinite; }
+                .animate-mobile-step-2 { animation: mobile-step-2 6s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+                .animate-check-pop { animation: check-pop 6s ease-out infinite; }
+                .animate-sync-loader { animation: sync-loader 6s ease-in-out infinite; }
 
                 /* GRID 3 ANIMATIONS */
                 @keyframes data-fade {
