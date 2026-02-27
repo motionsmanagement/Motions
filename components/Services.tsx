@@ -132,11 +132,11 @@ const Services: React.FC = () => {
                         <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Servicios Especializados</span>
                     </div>
                     <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1] mb-6">
-                        Soluciones Digitales para<br />
-                        Impulsar tu Negocio.
+                        Impulsa el crecimiento<br />
+                        digital de tu restaurante.
                     </h2>
                     <p className="text-lg text-gray-500 max-w-2xl leading-relaxed">
-                        Transformamos la presencia online de tu negocio con tecnología de vanguardia y diseño de alto nivel.
+                        Especialistas en transformar la presencia online de negocios gastronómicos, enfocándonos en atraer clientes y maximizar la rentabilidad.
                     </p>
                 </div>
 
