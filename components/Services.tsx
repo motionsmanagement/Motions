@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, MapPin, Globe, Palette, Cpu, Zap, Activity, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowRight, MapPin, Globe, Palette, Cpu, Zap, Activity, ShieldCheck, Sparkles, UtensilsCrossed, Clock, Star, MousePointer2, CheckCircle2 } from 'lucide-react';
 
 const services = [
     {
@@ -9,26 +9,38 @@ const services = [
         tag: "SEO LOCAL",
         Illustration: () => (
             <div className="relative w-full h-full flex items-center justify-center">
-                {/* Minimalist target circles */}
-                <div className="relative w-40 h-40 flex items-center justify-center">
-                    <div className="absolute inset-0 border border-white/[0.05] rounded-full"></div>
-                    <div className="absolute inset-8 border border-white/[0.08] rounded-full"></div>
-                    <div className="absolute inset-16 border border-white/[0.12] rounded-full"></div>
-
-                    {/* Pulsing center node */}
-                    <div className="relative z-10 w-12 h-12 bg-white/5 border border-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                        <MapPin className="w-5 h-5 text-white/80" />
-                        <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-white rounded-full animate-ping"></div>
+                <div className="relative w-44 h-44 flex items-center justify-center">
+                    {/* Architectural Map Grid */}
+                    <div className="absolute inset-0 opacity-10">
+                        <svg width="100%" height="100%" viewBox="0 0 100 100">
+                            <path d="M0 20 H100 M0 50 H100 M0 80 H100 M20 0 V100 M50 0 V100 M80 0 V100" stroke="white" strokeWidth="0.5" fill="none" />
+                        </svg>
                     </div>
 
-                    {/* Minimalist pointers */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1px] h-4 bg-white/20"></div>
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[1px] h-4 bg-white/20"></div>
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-[1px] w-4 bg-white/20"></div>
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 h-[1px] w-4 bg-white/20"></div>
+                    {/* Specialized Restaurant Pin */}
+                    <div className="relative z-10 w-16 h-16 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-white/10 blur-2xl rounded-full animate-pulse"></div>
+                        <div className="relative w-full h-full bg-white/5 border border-white/20 rounded-3xl flex items-center justify-center backdrop-blur-md shadow-2xl">
+                            <div className="flex flex-col items-center gap-1">
+                                <UtensilsCrossed className="w-5 h-5 text-white/90" />
+                                <div className="flex gap-0.5">
+                                    {[...Array(5)].map((_, i) => <Star key={i} className="w-1 h-1 text-white/40 fill-white/20" />)}
+                                </div>
+                            </div>
+                        </div>
+                        {/* Floating "Local Expert" badge */}
+                        <div className="absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center shadow-lg animate-bounce" style={{ animationDuration: '3s' }}>
+                            <CheckCircle2 className="w-2.5 h-2.5 text-black" />
+                        </div>
+                    </div>
+
+                    {/* Proximity rings */}
+                    <div className="absolute inset-0 border border-white/5 rounded-full scale-75"></div>
+                    <div className="absolute inset-0 border border-white/[0.03] rounded-full scale-110 animate-ping" style={{ animationDuration: '4s' }}></div>
                 </div>
-                <div className="absolute bottom-6 left-8">
-                    <span className="text-[8px] font-mono text-white/20 uppercase tracking-[0.4em]">Sincronización_Local</span>
+                <div className="absolute bottom-6 left-8 flex items-center gap-2">
+                    <MapPin className="w-3 h-3 text-white/30" />
+                    <span className="text-[8px] font-mono text-white/20 uppercase tracking-[0.4em]">Visibilidad_Gastronómica</span>
                 </div>
             </div>
         )
@@ -39,28 +51,54 @@ const services = [
         stats: "ALTA VELOCIDAD",
         tag: "NÚCLEO WEB",
         Illustration: () => (
-            <div className="relative w-full h-full flex items-center justify-center p-14">
-                <div className="w-full h-full border border-white/10 rounded-2xl bg-white/[0.02] relative overflow-hidden flex flex-col backdrop-blur-sm">
-                    {/* Ultra Minimal Browser Head */}
-                    <div className="h-6 border-b border-white/5 flex items-center px-4 gap-1.5">
-                        <div className="w-1 h-1 rounded-full bg-white/20"></div>
-                        <div className="w-1 h-1 rounded-full bg-white/20"></div>
-                    </div>
-                    {/* Centered Speed Indicator */}
-                    <div className="flex-1 flex flex-col items-center justify-center gap-4">
-                        <div className="relative w-16 h-16 flex items-center justify-center">
-                            <svg className="absolute inset-0 w-full h-full -rotate-90">
-                                <circle cx="32" cy="32" r="30" fill="none" stroke="white" strokeWidth="1" strokeDasharray="188" strokeDashoffset="40" opacity="0.2" />
-                            </svg>
-                            <Zap className="w-6 h-6 text-white/40" />
+            <div className="relative w-full h-full flex items-center justify-center p-12">
+                <div className="w-full h-full border border-white/10 rounded-2xl bg-[#0A0A0A] relative overflow-hidden flex flex-col shadow-2xl">
+                    {/* Website Header Mockup */}
+                    <div className="h-8 border-b border-white/5 flex items-center justify-between px-4 bg-white/[0.02]">
+                        <div className="w-12 h-1.5 bg-white/20 rounded-full"></div>
+                        <div className="flex gap-2">
+                            <div className="w-4 h-1.5 bg-white/10 rounded-full"></div>
+                            <div className="w-4 h-1.5 bg-white/10 rounded-full"></div>
                         </div>
-                        <div className="h-1 w-20 bg-white/5 rounded-full overflow-hidden">
-                            <div className="h-full w-[70%] bg-white/20 animate-loading-bar"></div>
+                    </div>
+
+                    {/* Hero Section Mockup */}
+                    <div className="flex-1 p-5 flex flex-col gap-4">
+                        <div className="space-y-2">
+                            <div className="h-3 w-3/4 bg-white/20 rounded-full"></div>
+                            <div className="h-2 w-1/2 bg-white/10 rounded-full"></div>
+                        </div>
+
+                        {/* Interactive Reservation Card */}
+                        <div className="mt-2 p-3 rounded-xl border border-white/10 bg-white/5 flex items-center justify-between">
+                            <div className="flex flex-col gap-1">
+                                <span className="text-[7px] text-white/40 uppercase font-bold tracking-tighter">Reservar Mesa</span>
+                                <div className="flex gap-1">
+                                    <Clock className="w-2 h-2 text-white/30" />
+                                    <div className="w-8 h-1 bg-white/20 rounded-full mt-0.5"></div>
+                                </div>
+                            </div>
+                            <div className="px-3 py-1.5 bg-white rounded-lg flex items-center justify-center scale-90 transition-transform">
+                                <MousePointer2 className="w-2.5 h-2.5 text-black" />
+                            </div>
+                        </div>
+
+                        {/* Visual menu elements */}
+                        <div className="grid grid-cols-2 gap-3">
+                            <div className="h-12 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center">
+                                <div className="w-6 h-6 rounded-full border border-white/10 border-dashed animate-[spin_10s_linear_infinite]"></div>
+                            </div>
+                            <div className="h-12 rounded-xl bg-white/[0.03] border border-white/5 p-2 space-y-1.5">
+                                <div className="h-1 w-full bg-white/10 rounded-full"></div>
+                                <div className="h-1 w-2/3 bg-white/10 rounded-full"></div>
+                                <div className="h-1 w-full bg-white/10 rounded-full"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className="absolute top-8 right-10">
-                    <span className="text-[8px] font-mono text-white/10 uppercase tracking-widest">Rendimiento_Optimizado</span>
+                {/* floating tag */}
+                <div className="absolute top-10 right-14 bg-white/10 backdrop-blur-md px-2 py-1 rounded-md border border-white/20">
+                    <span className="text-[6px] font-mono text-white/60">UX_RESTAURANTE_V2</span>
                 </div>
             </div>
         )
