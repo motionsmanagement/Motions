@@ -1,17 +1,21 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const services = [
+// 6 services — two rows of 3, all same fixed width
+const row1 = [
     { label: 'Google My Business', icon: '📍' },
-    { label: 'Publicidad en Google Maps', icon: '📣' },
     { label: 'Sitios Web para Restaurantes', icon: '🌐' },
-    { label: 'Gestión de Reputación', icon: '⭐' },
+    { label: 'Branding e Identidad Visual', icon: '✨' },
+];
+const row2 = [
+    { label: 'Diseño Gráfico', icon: '🎨' },
+    { label: 'Integración con IA', icon: '🤖' },
+    { label: 'Gestión de Redes Sociales', icon: '📱' },
 ];
 
-// Layout: two rows of 2 cards each, offset like the reference
-const cardRows = [
-    [services[0], services[1]],
-    [services[2], services[3]],
-];
+// Fixed card dimensions — ensures all pills are identical size
+const CARD_W = 196;
+const CARD_H = 56;
+const CARD_GAP = 10;
 
 const ServicesBanner: React.FC = () => {
     const [visible, setVisible] = useState(false);
@@ -20,7 +24,7 @@ const ServicesBanner: React.FC = () => {
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-            { threshold: 0.15 }
+            { threshold: 0.1 }
         );
         if (ref.current) observer.observe(ref.current);
         return () => observer.disconnect();
@@ -29,137 +33,300 @@ const ServicesBanner: React.FC = () => {
     return (
         <section
             ref={ref}
-            className="relative w-full overflow-hidden"
-            style={{ minHeight: '340px' }}
-            aria-label="Nuestros Servicios Banner"
+            aria-label="Servicios Banner"
+            style={{
+                position: 'relative',
+                width: '100%',
+                height: '320px',
+                overflow: 'hidden',
+            }}
         >
-            {/* Background Image */}
+            {/* ── Background image ── */}
             <img
                 src="/Bannemotions.jpg"
-                alt="Kitchen background"
-                className="absolute inset-0 w-full h-full object-cover object-center"
-                style={{ filter: 'brightness(0.55)' }}
+                alt="Fondo restaurante"
+                style={{
+                    position: 'absolute',
+                    inset: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center center',
+                    filter: 'brightness(0.58)',
+                    zIndex: 0,
+                }}
                 loading="lazy"
             />
 
-            {/* Subtle overlay gradient for legibility */}
+            {/* ── Gradient: dark left → transparent right ── */}
             <div
-                className="absolute inset-0"
                 style={{
+                    position: 'absolute',
+                    inset: 0,
                     background:
-                        'linear-gradient(90deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.18) 55%, rgba(0,0,0,0.06) 100%)',
+                        'linear-gradient(90deg, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.45) 35%, rgba(0,0,0,0.10) 65%, rgba(0,0,0,0) 100%)',
+                    zIndex: 1,
                 }}
             />
 
-            {/* Content */}
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between h-full px-8 md:px-14 py-14 gap-10 max-w-7xl mx-auto">
-
-                {/* Left: Tag + Headline */}
-                <div
-                    className="flex flex-col gap-4 lg:max-w-[38%]"
+            {/* ── TOP-LEFT: "SERVICIOS  Soluciones Digitales ›" ── */}
+            <div
+                style={{
+                    position: 'absolute',
+                    top: '20px',
+                    left: '28px',
+                    zIndex: 10,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                }}
+            >
+                <span
                     style={{
-                        opacity: visible ? 1 : 0,
-                        transform: visible ? 'translateX(0)' : 'translateX(-32px)',
-                        transition: 'opacity 0.7s ease, transform 0.7s ease',
+                        fontSize: '10px',
+                        fontWeight: 700,
+                        letterSpacing: '0.14em',
+                        textTransform: 'uppercase',
+                        color: 'rgba(255,255,255,0.75)',
+                        background: 'rgba(255,255,255,0.13)',
+                        backdropFilter: 'blur(10px)',
+                        WebkitBackdropFilter: 'blur(10px)',
+                        border: '1px solid rgba(255,255,255,0.22)',
+                        borderRadius: '999px',
+                        padding: '4px 12px',
                     }}
                 >
-                    <span
-                        className="self-start text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full border"
-                        style={{
-                            color: 'rgba(255,255,255,0.8)',
-                            borderColor: 'rgba(255,255,255,0.25)',
-                            background: 'rgba(255,255,255,0.1)',
-                            backdropFilter: 'blur(8px)',
-                        }}
-                    >
-                        Nuestros Servicios
-                    </span>
+                    SERVICIOS
+                </span>
+                <span
+                    style={{
+                        fontSize: '12px',
+                        fontWeight: 500,
+                        color: 'rgba(255,255,255,0.88)',
+                        letterSpacing: '-0.01em',
+                    }}
+                >
+                    Soluciones Digitales
+                </span>
+                <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: '13px' }}>›</span>
+            </div>
 
-                    <h2
-                        className="text-3xl md:text-4xl lg:text-[2.6rem] font-semibold leading-tight tracking-tight"
-                        style={{ color: '#fff' }}
-                    >
-                        Soluciones expertas<br />
-                        <span style={{ color: 'rgba(255,255,255,0.75)' }}>para tu restaurante</span>
-                    </h2>
+            {/* ── TOP-RIGHT: "Empezar ahora ↓" pill ── */}
+            <button
+                style={{
+                    position: 'absolute',
+                    top: '20px',
+                    right: '28px',
+                    zIndex: 10,
+                    fontSize: '12px',
+                    fontWeight: 600,
+                    color: 'rgba(255,255,255,0.88)',
+                    background: 'rgba(255,255,255,0.15)',
+                    backdropFilter: 'blur(14px)',
+                    WebkitBackdropFilter: 'blur(14px)',
+                    border: '1px solid rgba(255,255,255,0.28)',
+                    borderRadius: '999px',
+                    padding: '6px 18px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    letterSpacing: '-0.01em',
+                }}
+            >
+                Empezar ahora
+                <span style={{ fontSize: '11px' }}>↓</span>
+            </button>
 
-                    <p
-                        className="text-sm leading-relaxed"
-                        style={{ color: 'rgba(255,255,255,0.65)', maxWidth: '320px' }}
-                    >
-                        Potenciamos tu visibilidad digital para que te centres en lo que mejor sabes hacer: cocinar y dar un gran servicio.
-                    </p>
+            {/* ── BOTTOM-LEFT: sub-tag + headline + description ── */}
+            <div
+                style={{
+                    position: 'absolute',
+                    bottom: '30px',
+                    left: '28px',
+                    zIndex: 10,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '8px',
+                    maxWidth: '300px',
+                    opacity: visible ? 1 : 0,
+                    transform: visible ? 'translateX(0)' : 'translateX(-20px)',
+                    transition: 'opacity 0.65s ease, transform 0.65s ease',
+                }}
+            >
+                {/* small tag — like "Job Opportunities" in reference */}
+                <span
+                    style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        fontSize: '10px',
+                        fontWeight: 600,
+                        letterSpacing: '0.06em',
+                        textTransform: 'uppercase',
+                        color: 'rgba(255,255,255,0.72)',
+                        background: 'rgba(255,255,255,0.11)',
+                        border: '1px solid rgba(255,255,255,0.2)',
+                        borderRadius: '999px',
+                        padding: '3px 10px',
+                        width: 'fit-content',
+                    }}
+                >
+                    Nuestros Servicios
+                </span>
 
-                    <button
-                        className="self-start mt-2 flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
-                        style={{
-                            background: 'rgba(255,255,255,0.95)',
-                            color: '#111',
-                            boxShadow: '0 4px 24px rgba(0,0,0,0.18)',
-                        }}
-                    >
-                        Ver todos
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                            <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="#111" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </button>
-                </div>
+                {/* Big headline — mirrors "Efficiently transform your candidate experience." */}
+                <h2
+                    style={{
+                        fontSize: 'clamp(1.35rem, 2.6vw, 1.95rem)',
+                        fontWeight: 600,
+                        lineHeight: 1.08,
+                        letterSpacing: '-0.04em',
+                        color: '#ffffff',
+                        margin: 0,
+                    }}
+                >
+                    Soluciones expertas para<br />
+                    <span style={{ color: 'rgba(255,255,255,0.65)' }}>tu restaurante.</span>
+                </h2>
 
-                {/* Right: Service Cards grid */}
-                <div className="flex flex-col gap-3 lg:max-w-[58%] w-full">
-                    {cardRows.map((row, rowIdx) => (
-                        <div
-                            key={rowIdx}
-                            className="flex flex-wrap gap-3 justify-end"
-                            style={{
-                                // Offset odd rows slightly to the left like the reference
-                                marginRight: rowIdx === 0 ? '0px' : '0px',
-                                marginLeft: rowIdx === 1 ? '0px' : '40px',
-                            }}
-                        >
-                            {row.map((service, cardIdx) => {
-                                const delay = 0.2 + rowIdx * 0.15 + cardIdx * 0.1;
-                                return (
-                                    <div
-                                        key={service.label}
-                                        className="flex items-center gap-3 px-4 py-3 rounded-2xl cursor-default select-none transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                                        style={{
-                                            background: 'rgba(255,255,255,0.92)',
-                                            backdropFilter: 'blur(16px)',
-                                            WebkitBackdropFilter: 'blur(16px)',
-                                            boxShadow: '0 4px 24px rgba(0,0,0,0.14)',
-                                            minWidth: '200px',
-                                            maxWidth: '260px',
-                                            opacity: visible ? 1 : 0,
-                                            transform: visible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.96)',
-                                            transition: `opacity 0.55s ease ${delay}s, transform 0.55s ease ${delay}s, box-shadow 0.3s ease`,
-                                        }}
-                                    >
-                                        {/* Icon bubble */}
-                                        <span
-                                            className="flex items-center justify-center w-9 h-9 rounded-full text-lg flex-shrink-0"
-                                            style={{ background: 'rgba(0,0,0,0.07)' }}
-                                        >
-                                            {service.icon}
-                                        </span>
+                {/* Description */}
+                <p
+                    style={{
+                        fontSize: '11.5px',
+                        color: 'rgba(255,255,255,0.55)',
+                        lineHeight: 1.55,
+                        margin: 0,
+                        maxWidth: '270px',
+                    }}
+                >
+                    Potenciamos tu visibilidad digital para que te centres en lo que mejor sabes hacer: cocinar y dar un gran servicio.
+                </p>
+            </div>
 
-                                        {/* Label */}
-                                        <span
-                                            className="text-sm font-semibold leading-tight"
-                                            style={{ color: '#111' }}
-                                        >
-                                            {service.label}
-                                        </span>
-                                    </div>
-                                );
-                            })}
-                        </div>
+            {/* ── CENTER-RIGHT: 2 rows of 3 service cards, all identical size ── */}
+            <div
+                style={{
+                    position: 'absolute',
+                    // Vertically centred, pushed toward the right half
+                    top: '50%',
+                    right: '28px',
+                    transform: 'translateY(-50%)',
+                    zIndex: 10,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: `${CARD_GAP}px`,
+                    // Row 2 is offset slightly left (like the reference)
+                }}
+            >
+                {/* ROW 1 — 3 cards, aligned right */}
+                <div style={{ display: 'flex', gap: `${CARD_GAP}px` }}>
+                    {row1.map((service, idx) => (
+                        <ServiceCard
+                            key={service.label}
+                            service={service}
+                            visible={visible}
+                            delay={0.10 + idx * 0.08}
+                        />
                     ))}
                 </div>
 
+                {/* ROW 2 — 3 cards, shifted left by ~(CARD_W + GAP) / 2 to create stagger */}
+                <div
+                    style={{
+                        display: 'flex',
+                        gap: `${CARD_GAP}px`,
+                        marginRight: `${(CARD_W + CARD_GAP) * 0.55}px`,
+                    }}
+                >
+                    {row2.map((service, idx) => (
+                        <ServiceCard
+                            key={service.label}
+                            service={service}
+                            visible={visible}
+                            delay={0.26 + idx * 0.08}
+                        />
+                    ))}
+                </div>
             </div>
         </section>
     );
 };
+
+/* ── Reusable card — always exactly CARD_W × CARD_H ── */
+interface CardProps {
+    service: { label: string; icon: string };
+    visible: boolean;
+    delay: number;
+}
+
+const ServiceCard: React.FC<CardProps> = ({ service, visible, delay }) => (
+    <div
+        style={{
+            width: `${CARD_W}px`,
+            height: `${CARD_H}px`,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            padding: '0 14px',
+            borderRadius: '14px',
+            background: 'rgba(255,255,255,0.93)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            boxShadow: '0 4px 18px rgba(0,0,0,0.18)',
+            cursor: 'default',
+            userSelect: 'none',
+            flexShrink: 0,
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0) scale(1)' : 'translateY(14px) scale(0.96)',
+            transition: `opacity 0.45s ease ${delay}s, transform 0.45s ease ${delay}s`,
+            boxSizing: 'border-box',
+        }}
+    >
+        {/* Icon circle */}
+        <span
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '32px',
+                height: '32px',
+                borderRadius: '50%',
+                background: 'rgba(0,0,0,0.06)',
+                fontSize: '15px',
+                flexShrink: 0,
+            }}
+        >
+            {service.icon}
+        </span>
+
+        {/* Label + subtitle */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', minWidth: 0 }}>
+            <span
+                style={{
+                    fontSize: '12px',
+                    fontWeight: 600,
+                    color: '#111',
+                    lineHeight: 1.2,
+                    letterSpacing: '-0.02em',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                }}
+            >
+                {service.label}
+            </span>
+            <span
+                style={{
+                    fontSize: '10px',
+                    color: 'rgba(0,0,0,0.38)',
+                    lineHeight: 1.2,
+                    letterSpacing: '-0.01em',
+                }}
+            >
+                Motions Agency
+            </span>
+        </div>
+    </div>
+);
 
 export default ServicesBanner;
