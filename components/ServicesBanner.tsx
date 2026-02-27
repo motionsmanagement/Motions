@@ -78,7 +78,7 @@ const ServicesBanner: React.FC = () => {
         <section
             ref={ref}
             aria-label="Servicios Banner"
-            style={{ position: 'relative', width: '100%', height: '320px', overflow: 'hidden', ...INTER }}
+            style={{ position: 'relative', width: '100%', height: '400px', overflow: 'hidden', ...INTER }}
         >
             {/* Background image */}
             <img
@@ -104,9 +104,9 @@ const ServicesBanner: React.FC = () => {
             <div style={{
                 position: 'absolute', inset: 0, zIndex: 10,
                 display: 'flex', flexDirection: 'column',
-                maxWidth: '1200px',   // ← mid-point: not too spread, not too tight
+                maxWidth: '1280px',   // ← same as max-w-7xl in Services section
                 margin: '0 auto',
-                padding: '0 40px',    // ← horizontal breathing room from container edges
+                padding: '0 48px',    // ← same as px-12 in Services section
                 width: '100%',
             }}>
 
@@ -134,18 +134,8 @@ const ServicesBanner: React.FC = () => {
                         <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px' }}>›</span>
                     </div>
 
-                    {/* Right: Empezar ahora */}
-                    <button style={{
-                        fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.88)',
-                        background: 'rgba(255,255,255,0.14)', backdropFilter: 'blur(14px)',
-                        WebkitBackdropFilter: 'blur(14px)',
-                        border: '1px solid rgba(255,255,255,0.28)',
-                        borderRadius: '999px', padding: '6px 18px', cursor: 'pointer',
-                        display: 'flex', alignItems: 'center', gap: '6px',
-                        letterSpacing: '-0.01em', ...INTER,
-                    }}>
-                        Empezar ahora <span style={{ fontSize: '11px' }}>↓</span>
-                    </button>
+                    {/* Right: removed "Empezar ahora" button */}
+                    <div />
                 </div>
 
                 {/* MAIN ROW: text left · cards right — vertically centred */}
@@ -177,7 +167,7 @@ const ServicesBanner: React.FC = () => {
 
                         <h2 style={{
                             fontSize: 'clamp(1.4rem, 2.6vw, 1.9rem)',
-                            fontWeight: 600, lineHeight: 1.1,
+                            fontWeight: 400, lineHeight: 1.1,
                             letterSpacing: '-0.04em', color: '#fff', margin: 0,
                         }}>
                             Visibilidad, diseño<br />
