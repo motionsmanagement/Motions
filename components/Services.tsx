@@ -9,34 +9,43 @@ const services = [
         tag: "SEO LOCAL",
         Illustration: () => (
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 opacity-[0.15]">
-                    <div className="grid grid-cols-12 grid-rows-12 w-full h-full">
-                        {[...Array(144)].map((_, i) => (
-                            <div key={i} className="border-t-[0.5px] border-l-[0.5px] border-white/20"></div>
-                        ))}
-                    </div>
+                {/* Advanced Coordinate Grid */}
+                <div className="absolute inset-0 opacity-[0.1]">
+                    <div className="w-full h-full" style={{
+                        backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
+                        backgroundSize: '24px 24px'
+                    }}></div>
                 </div>
-                {/* Radar System */}
-                <div className="relative w-40 h-40">
-                    {[...Array(3)].map((_, i) => (
-                        <div key={i}
-                            className="absolute inset-0 border border-white/5 rounded-full animate-pulse"
-                            style={{ animationDelay: `${i * 1.5}s`, transform: `scale(${1 + i * 0.2})` }}></div>
-                    ))}
-                    <div className="absolute inset-0 border border-white/10 rounded-full"></div>
-                    <div className="absolute inset-4 border border-white/5 rounded-full"></div>
+                {/* Mapping Nodes Section */}
+                <div className="relative w-44 h-44">
+                    <svg className="absolute inset-0 w-full h-full">
+                        <circle cx="50%" cy="50%" r="70" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="1 10" opacity="0.2" className="animate-[spin_60s_linear_infinite]" />
+                        <circle cx="50%" cy="50%" r="40" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="5 5" opacity="0.1" />
+                        {/* Dynamic connection lines */}
+                        <line x1="50%" y1="50%" x2="20%" y2="20%" stroke="white" strokeWidth="0.5" opacity="0.1" className="animate-pulse" />
+                        <line x1="50%" y1="50%" x2="80%" y2="30%" stroke="white" strokeWidth="0.5" opacity="0.1" style={{ animationDelay: '1s' }} className="animate-pulse" />
+                    </svg>
+                    {/* Floating Data Points */}
+                    <div className="absolute top-4 left-10 w-1.5 h-1.5 bg-white/40 rounded-full animate-ping"></div>
+                    <div className="absolute bottom-10 right-8 w-1 h-1 bg-white/20 rounded-full"></div>
+
                     <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="relative">
-                            <MapPin className="w-10 h-10 text-white/90 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
-                            <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-white rounded-full animate-ping"></div>
+                        <div className="relative z-10">
+                            <div className="absolute inset-0 bg-white/20 blur-xl rounded-full"></div>
+                            <div className="relative w-14 h-14 bg-white/[0.03] border border-white/20 rounded-2xl flex items-center justify-center backdrop-blur-md">
+                                <MapPin className="w-6 h-6 text-white" />
+                            </div>
                         </div>
                     </div>
-                    {/* Scanning Beam */}
-                    <div className="absolute top-[50%] left-[50%] w-[150%] h-[150%] -translate-x-1/2 -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_0deg,rgba(255,255,255,0.1)_20deg,transparent_40deg)] animate-[spin_8s_linear_infinite]"></div>
+                    {/* Circular Progress Rings */}
+                    <div className="absolute inset-2 border border-white/5 rounded-full animate-[spin_10s_linear_infinite] border-t-white/20"></div>
                 </div>
-                <div className="absolute bottom-6 left-6 flex items-center gap-2.5">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white opacity-40"></div>
-                    <span className="text-[9px] font-mono text-white/20 uppercase tracking-[0.3em]">GEOLOCAL_SYNC_V3</span>
+                <div className="absolute top-6 right-6 flex items-center gap-2">
+                    <span className="text-[7px] font-mono text-white/20 tracking-[0.4em]">LOC_DATA_720</span>
+                </div>
+                <div className="absolute bottom-4 left-6 border-l border-white/20 pl-3">
+                    <div className="text-[7px] font-mono text-white/20 uppercase tracking-widest leading-none mb-1">Status</div>
+                    <div className="text-[9px] font-mono text-white/60 uppercase">Indexed_Active</div>
                 </div>
             </div>
         )
@@ -47,37 +56,52 @@ const services = [
         stats: "ULTRA FAST",
         tag: "WEB CORE",
         Illustration: () => (
-            <div className="relative w-full h-full flex items-center justify-center p-12">
-                <div className="w-full h-full border border-white/10 rounded-t-3xl bg-white/[0.03] relative overflow-hidden backdrop-blur-sm">
-                    {/* Browser Toolbar */}
-                    <div className="h-8 border-b border-white/10 flex items-center justify-between px-4">
-                        <div className="flex gap-1.5">
-                            <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
-                            <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+            <div className="relative w-full h-full flex items-center justify-center p-10">
+                <div className="w-full h-full border border-white/10 rounded-2xl bg-white/[0.02] relative overflow-hidden flex flex-col">
+                    {/* Pro Browser Window */}
+                    <div className="h-7 border-b border-white/10 flex items-center justify-between px-3 bg-white/[0.02]">
+                        <div className="flex gap-1">
+                            <div className="w-1.5 h-1.5 rounded-full bg-white/10"></div>
+                            <div className="w-1.5 h-1.5 rounded-full bg-white/10"></div>
                         </div>
-                        <div className="h-2 w-24 bg-white/5 rounded-full"></div>
+                        <div className="flex gap-4">
+                            <div className="h-1 w-6 bg-white/5 rounded-full"></div>
+                            <div className="h-1 w-6 bg-white/5 rounded-full"></div>
+                        </div>
                     </div>
-                    {/* Web Content Mockup */}
-                    <div className="p-6 space-y-4">
-                        <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                                <Zap className="w-4 h-4 text-white/40" />
+                    {/* Internal Interface */}
+                    <div className="flex-1 p-5 flex gap-4">
+                        <div className="w-16 h-full flex flex-col gap-2">
+                            <div className="h-1.5 w-full bg-white/10 rounded-full"></div>
+                            <div className="h-1.5 w-2/3 bg-white/5 rounded-full"></div>
+                            <div className="mt-4 h-12 w-full border border-white/10 rounded-lg bg-white/[0.03] flex items-center justify-center">
+                                <div className="w-4 h-4 border-2 border-white/20 border-t-white/60 rounded-full animate-spin"></div>
                             </div>
-                            <div className="h-3 w-1/2 bg-white/20 rounded-full"></div>
                         </div>
-                        <div className="grid grid-cols-2 gap-3 pt-2">
-                            <div className="h-16 rounded-2xl border border-white/5 bg-white/[0.02] flex items-center justify-center overflow-hidden relative">
-                                <Activity className="w-6 h-6 text-white/10" />
-                                <div className="absolute bottom-1 right-1 h-3 w-10 bg-white/10 rounded-full"></div>
-                            </div>
-                            <div className="h-16 rounded-2xl border border-white/10 bg-white/5 flex flex-col items-center justify-center">
-                                <span className="text-[10px] font-mono text-white/60 mb-1">98%</span>
-                                <div className="w-8 h-1 bg-white/10 rounded-full overflow-hidden">
-                                    <div className="h-full w-full bg-white/40 animate-loading-bar"></div>
+                        <div className="flex-1 space-y-3">
+                            <div className="h-20 w-full border border-white/5 bg-white/[0.01] rounded-xl relative overflow-hidden p-3">
+                                <div className="absolute top-0 right-0 p-2 text-[6px] font-mono text-white/20 uppercase">Core_Metrics</div>
+                                <div className="mt-auto h-0.5 w-full bg-white/5 relative">
+                                    <div className="absolute left-0 h-full w-[85%] bg-white/20 animate-loading-bar"></div>
+                                </div>
+                                <div className="flex justify-between mt-3">
+                                    <div className="w-6 h-6 rounded-lg bg-white/5"></div>
+                                    <div className="w-6 h-6 rounded-lg bg-white/5"></div>
+                                    <div className="w-6 h-6 rounded-lg bg-white/20 animate-pulse"></div>
                                 </div>
                             </div>
+                            <div className="h-6 w-full flex items-center justify-between px-1">
+                                <div className="flex gap-1">
+                                    {[...Array(5)].map((_, i) => <div key={i} className="w-1 h-3 bg-white/10 rounded-full"></div>)}
+                                </div>
+                                <Activity className="w-3 h-3 text-white/20" />
+                            </div>
                         </div>
                     </div>
+                </div>
+                {/* Floating Meta Data */}
+                <div className="absolute bottom-6 right-6 px-2 py-1 bg-[#0A0A0A] border border-white/10 rounded text-[7px] font-mono text-white/40 uppercase tracking-tighter">
+                    Speed_Index: 1.2s
                 </div>
             </div>
         )
