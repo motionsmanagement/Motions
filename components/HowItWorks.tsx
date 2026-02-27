@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, TrendingUp, Search, MapPin, ArrowRight, UtensilsCrossed, BarChart3, Target, MousePointer2, Smartphone, Star, PhoneCall, Users } from 'lucide-react';
+import { Phone, TrendingUp, Search, MapPin, ArrowRight, UtensilsCrossed, BarChart3, Target, MousePointer2, Smartphone, Star, PhoneCall, Users, Calendar, CheckCircle2 } from 'lucide-react';
 
 const HowItWorks: React.FC = () => {
   return (
@@ -20,8 +20,8 @@ const HowItWorks: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1: Auditoría */}
           <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[500px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
-            <div className="relative z-10 mb-4">
-              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-2 whitespace-nowrap">
+            <div className="relative z-10 mb-2">
+              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
                 Auditoría Local GMB
               </h3>
               <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
@@ -45,7 +45,7 @@ const HowItWorks: React.FC = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-white animate-pulse shadow-[0_0_10px_white]"></div>
-                    <span className="text-[9px] font-mono text-white/70 tracking-tighter uppercase">AUDITORÍA_RESEÑAS</span>
+                    <span className="text-[9px] font-mono text-white/70 tracking-tighter uppercase whitespace-nowrap">AUDITORÍA_RESEÑAS</span>
                   </div>
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
@@ -76,8 +76,8 @@ const HowItWorks: React.FC = () => {
 
           {/* Card 2: Desarrollo */}
           <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[500px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
-            <div className="relative z-10 mb-4">
-              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-2 whitespace-nowrap">
+            <div className="relative z-10 mb-2">
+              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
                 Plataforma de Reservas
               </h3>
               <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
@@ -85,26 +85,55 @@ const HowItWorks: React.FC = () => {
               </p>
             </div>
 
-            {/* Visualization: Mobile Web Layout */}
-            <div className="mt-auto relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-52 flex flex-col items-center overflow-hidden">
-              <div className="w-28 h-full border-x border-t border-white/20 rounded-t-2xl bg-white/5 p-3 space-y-3 animate-float-slow">
-                <div className="h-2 w-full bg-white/20 rounded-full"></div>
-                <div className="aspect-[4/3] w-full bg-white/10 rounded-lg flex items-center justify-center relative overflow-hidden">
-                  <UtensilsCrossed className="w-4 h-4 text-white/30" />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent"></div>
+            {/* Visualization: More Intricate Mobile Web & Conversion UX */}
+            <div className="mt-auto relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-white/40"></div>
+                  <span className="text-[9px] font-mono text-white/40 uppercase tracking-widest">Interfaz_Móvil</span>
                 </div>
-                <div className="space-y-1">
-                  <div className="h-1.5 w-[80%] bg-white/10 rounded-full"></div>
-                  <div className="h-1.5 w-[60%] bg-white/5 rounded-full"></div>
-                </div>
-                <div className="h-6 w-full bg-white/30 rounded-md flex items-center justify-center border border-white/20 shadow-lg">
-                  <span className="text-[7px] font-black text-white tracking-widest uppercase">Reservar</span>
-                </div>
+                <div className="px-2 py-0.5 rounded-md bg-white/10 border border-white/10 text-[8px] font-bold text-white/60">UX_ALTA_CONVERSIÓN</div>
               </div>
-              <div className="absolute top-10 left-6">
-                <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-3 py-1.5 rounded-full border border-white/20 shadow-2xl animate-float-delayed">
-                  <Smartphone className="w-3 h-3 text-white/80" />
-                  <span className="text-[8px] text-white/90 font-bold whitespace-nowrap uppercase">Web_Móvil</span>
+
+              <div className="flex gap-4 h-full relative">
+                {/* Mobile Skeleton View */}
+                <div className="w-20 h-full border-x border-t border-white/20 rounded-t-xl bg-white/5 p-2 space-y-2 animate-float-slow shrink-0">
+                  <div className="h-1.5 w-full bg-white/20 rounded-full"></div>
+                  <div className="aspect-square w-full bg-white/10 rounded-lg flex items-center justify-center">
+                    <UtensilsCrossed className="w-4 h-4 text-white/20" />
+                  </div>
+                  <div className="h-1 w-full bg-white/10 rounded-full"></div>
+                  <div className="h-4 w-full bg-white/30 rounded-md border border-white/10"></div>
+                </div>
+
+                {/* Intricate Details Column */}
+                <div className="flex-1 space-y-3 pt-2">
+                  <div className="bg-white/5 border border-white/5 rounded-xl p-2 animate-float">
+                    <div className="flex items-center gap-2 mb-1">
+                      <Calendar className="w-3 h-3 text-white/40" />
+                      <span className="text-[8px] text-white/40 font-bold uppercase">Reserva</span>
+                    </div>
+                    <div className="h-1 w-full bg-white/10 rounded-full mb-1"></div>
+                    <div className="h-1 w-2/3 bg-white/5 rounded-full"></div>
+                  </div>
+                  <div className="bg-white/5 border border-white/5 rounded-xl p-2 animate-float-delayed">
+                    <div className="flex items-center gap-2 mb-1">
+                      <CheckCircle2 className="w-3 h-3 text-white/60" />
+                      <span className="text-[8px] text-white/80 font-bold uppercase">Confirmado</span>
+                    </div>
+                    <div className="flex gap-1">
+                      {[...Array(3)].map((_, i) => (
+                        <div key={i} className="h-0.5 w-3 bg-white/20 rounded-full"></div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Badge */}
+                <div className="absolute right-0 top-0 rotate-12 group-hover:rotate-0 transition-transform">
+                  <div className="bg-white text-black text-[9px] font-black px-2 py-1 rounded-lg shadow-2xl">
+                    98% MÓVIL
+                  </div>
                 </div>
               </div>
             </div>
@@ -112,8 +141,8 @@ const HowItWorks: React.FC = () => {
 
           {/* Card 3: Crecimiento */}
           <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[500px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
-            <div className="relative z-10 mb-4">
-              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-2 whitespace-nowrap">
+            <div className="relative z-10 mb-2">
+              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
                 Escalamiento y ROI
               </h3>
               <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
@@ -185,6 +214,20 @@ const HowItWorks: React.FC = () => {
                 }
                 .animate-float-slow {
                     animation: float-slow 4s ease-in-out infinite;
+                }
+                @keyframes float {
+                    0%, 100% { transform: translate(0, 0); }
+                    50% { transform: translate(3px, -5px); }
+                }
+                .animate-float {
+                    animation: float 3s ease-in-out infinite;
+                }
+                @keyframes float-delayed {
+                    0%, 100% { transform: translate(0, 0); }
+                    50% { transform: translate(-2px, -6px); }
+                }
+                .animate-float-delayed {
+                    animation: float-delayed 5s ease-in-out infinite;
                 }
                 @keyframes draw-path {
                     to { stroke-dashoffset: 0; }
