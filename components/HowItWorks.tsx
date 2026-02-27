@@ -186,7 +186,7 @@ const HowItWorks: React.FC = () => {
 
               <div className="flex-1 flex gap-4">
                 {/* Left: ROI Circle (Subtle Animation) */}
-                <div className="w-24 flex flex-col items-center justify-center border-r border-white/10 pr-4">
+                <div className="w-28 flex flex-col items-center justify-center border-r border-white/10 pr-4 shrink-0">
                   <div className="relative w-16 h-16 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90">
                       <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="3" className="text-white/5" />
@@ -197,9 +197,9 @@ const HowItWorks: React.FC = () => {
                       <span className="text-[6px] text-white/40 font-bold uppercase mt-1">ROI</span>
                     </div>
                   </div>
-                  <div className="mt-3 flex items-center gap-1.5 bg-white/10 px-2.5 py-1 rounded-full w-fit whitespace-nowrap">
-                    <TrendingUp className="w-2 h-2 text-white shrink-0" />
-                    <span className="text-[7px] text-white font-mono leading-none">+12% MENSUAL</span>
+                  <div className="mt-3 flex items-center gap-1.5 bg-white/10 px-2 py-1 rounded-full whitespace-nowrap">
+                    <TrendingUp className="w-2 h-2 text-white" />
+                    <span className="text-[7px] text-white font-mono tracking-tighter uppercase whitespace-nowrap">+12% MENSUAL</span>
                   </div>
                 </div>
 

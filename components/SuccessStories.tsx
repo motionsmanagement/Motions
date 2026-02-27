@@ -213,13 +213,13 @@ const SuccessStories: React.FC = () => {
 
                 {/* Show More Button */}
                 {!showAll && filteredCasesByTab.length > 4 && (
-                    <div className="mt-12 flex justify-center">
+                    <div className="mt-16 flex justify-center">
                         <button
                             onClick={() => setShowAll(true)}
-                            className="bg-black text-white px-8 py-3 rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95 flex items-center gap-2 shadow-lg"
+                            className="flex items-center gap-2 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg"
                         >
                             Ver más proyectos
-                            <ChevronRight className="w-4 h-4 rotate-90" />
+                            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </button>
                     </div>
                 )}
