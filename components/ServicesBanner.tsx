@@ -104,9 +104,9 @@ const ServicesBanner: React.FC = () => {
             <div style={{
                 position: 'absolute', inset: 0, zIndex: 10,
                 display: 'flex', flexDirection: 'column',
-                maxWidth: '1000px',   // ← caps total width so nothing feels too spread
+                maxWidth: '1200px',   // ← mid-point: not too spread, not too tight
                 margin: '0 auto',
-                padding: '0 48px',    // ← horizontal breathing room from container edges
+                padding: '0 40px',    // ← horizontal breathing room from container edges
                 width: '100%',
             }}>
 
