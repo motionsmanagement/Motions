@@ -5,47 +5,30 @@ const services = [
     {
         title: "Google My Business",
         description: "Optimizamos tu presencia local para que tu negocio sea la primera opción cuando los clientes busquen dónde comer.",
-        stats: "TOP 3 RANKING",
+        stats: "RANKING TOP 3",
         tag: "SEO LOCAL",
         Illustration: () => (
-            <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-                {/* Advanced Coordinate Grid */}
-                <div className="absolute inset-0 opacity-[0.1]">
-                    <div className="w-full h-full" style={{
-                        backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-                        backgroundSize: '24px 24px'
-                    }}></div>
-                </div>
-                {/* Mapping Nodes Section */}
-                <div className="relative w-44 h-44">
-                    <svg className="absolute inset-0 w-full h-full">
-                        <circle cx="50%" cy="50%" r="70" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="1 10" opacity="0.2" className="animate-[spin_60s_linear_infinite]" />
-                        <circle cx="50%" cy="50%" r="40" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="5 5" opacity="0.1" />
-                        {/* Dynamic connection lines */}
-                        <line x1="50%" y1="50%" x2="20%" y2="20%" stroke="white" strokeWidth="0.5" opacity="0.1" className="animate-pulse" />
-                        <line x1="50%" y1="50%" x2="80%" y2="30%" stroke="white" strokeWidth="0.5" opacity="0.1" style={{ animationDelay: '1s' }} className="animate-pulse" />
-                    </svg>
-                    {/* Floating Data Points */}
-                    <div className="absolute top-4 left-10 w-1.5 h-1.5 bg-white/40 rounded-full animate-ping"></div>
-                    <div className="absolute bottom-10 right-8 w-1 h-1 bg-white/20 rounded-full"></div>
+            <div className="relative w-full h-full flex items-center justify-center">
+                {/* Minimalist target circles */}
+                <div className="relative w-40 h-40 flex items-center justify-center">
+                    <div className="absolute inset-0 border border-white/[0.05] rounded-full"></div>
+                    <div className="absolute inset-8 border border-white/[0.08] rounded-full"></div>
+                    <div className="absolute inset-16 border border-white/[0.12] rounded-full"></div>
 
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="relative z-10">
-                            <div className="absolute inset-0 bg-white/20 blur-xl rounded-full"></div>
-                            <div className="relative w-14 h-14 bg-white/[0.03] border border-white/20 rounded-2xl flex items-center justify-center backdrop-blur-md">
-                                <MapPin className="w-6 h-6 text-white" />
-                            </div>
-                        </div>
+                    {/* Pulsing center node */}
+                    <div className="relative z-10 w-12 h-12 bg-white/5 border border-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                        <MapPin className="w-5 h-5 text-white/80" />
+                        <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-white rounded-full animate-ping"></div>
                     </div>
-                    {/* Circular Progress Rings */}
-                    <div className="absolute inset-2 border border-white/5 rounded-full animate-[spin_10s_linear_infinite] border-t-white/20"></div>
+
+                    {/* Minimalist pointers */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1px] h-4 bg-white/20"></div>
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[1px] h-4 bg-white/20"></div>
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-[1px] w-4 bg-white/20"></div>
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 h-[1px] w-4 bg-white/20"></div>
                 </div>
-                <div className="absolute top-6 right-6 flex items-center gap-2">
-                    <span className="text-[7px] font-mono text-white/20 tracking-[0.4em]">LOC_DATA_720</span>
-                </div>
-                <div className="absolute bottom-4 left-6 border-l border-white/20 pl-3">
-                    <div className="text-[7px] font-mono text-white/20 uppercase tracking-widest leading-none mb-1">Status</div>
-                    <div className="text-[9px] font-mono text-white/60 uppercase">Indexed_Active</div>
+                <div className="absolute bottom-6 left-8">
+                    <span className="text-[8px] font-mono text-white/20 uppercase tracking-[0.4em]">Sincronización_Local</span>
                 </div>
             </div>
         )
@@ -53,55 +36,31 @@ const services = [
     {
         title: "Página Web",
         description: "Desarrollamos plataformas de alto rendimiento diseñadas para convertir usuarios en ventas directas para tu negocio.",
-        stats: "ULTRA FAST",
-        tag: "WEB CORE",
+        stats: "ALTA VELOCIDAD",
+        tag: "NÚCLEO WEB",
         Illustration: () => (
-            <div className="relative w-full h-full flex items-center justify-center p-10">
-                <div className="w-full h-full border border-white/10 rounded-2xl bg-white/[0.02] relative overflow-hidden flex flex-col">
-                    {/* Pro Browser Window */}
-                    <div className="h-7 border-b border-white/10 flex items-center justify-between px-3 bg-white/[0.02]">
-                        <div className="flex gap-1">
-                            <div className="w-1.5 h-1.5 rounded-full bg-white/10"></div>
-                            <div className="w-1.5 h-1.5 rounded-full bg-white/10"></div>
-                        </div>
-                        <div className="flex gap-4">
-                            <div className="h-1 w-6 bg-white/5 rounded-full"></div>
-                            <div className="h-1 w-6 bg-white/5 rounded-full"></div>
-                        </div>
+            <div className="relative w-full h-full flex items-center justify-center p-14">
+                <div className="w-full h-full border border-white/10 rounded-2xl bg-white/[0.02] relative overflow-hidden flex flex-col backdrop-blur-sm">
+                    {/* Ultra Minimal Browser Head */}
+                    <div className="h-6 border-b border-white/5 flex items-center px-4 gap-1.5">
+                        <div className="w-1 h-1 rounded-full bg-white/20"></div>
+                        <div className="w-1 h-1 rounded-full bg-white/20"></div>
                     </div>
-                    {/* Internal Interface */}
-                    <div className="flex-1 p-5 flex gap-4">
-                        <div className="w-16 h-full flex flex-col gap-2">
-                            <div className="h-1.5 w-full bg-white/10 rounded-full"></div>
-                            <div className="h-1.5 w-2/3 bg-white/5 rounded-full"></div>
-                            <div className="mt-4 h-12 w-full border border-white/10 rounded-lg bg-white/[0.03] flex items-center justify-center">
-                                <div className="w-4 h-4 border-2 border-white/20 border-t-white/60 rounded-full animate-spin"></div>
-                            </div>
+                    {/* Centered Speed Indicator */}
+                    <div className="flex-1 flex flex-col items-center justify-center gap-4">
+                        <div className="relative w-16 h-16 flex items-center justify-center">
+                            <svg className="absolute inset-0 w-full h-full -rotate-90">
+                                <circle cx="32" cy="32" r="30" fill="none" stroke="white" strokeWidth="1" strokeDasharray="188" strokeDashoffset="40" opacity="0.2" />
+                            </svg>
+                            <Zap className="w-6 h-6 text-white/40" />
                         </div>
-                        <div className="flex-1 space-y-3">
-                            <div className="h-20 w-full border border-white/5 bg-white/[0.01] rounded-xl relative overflow-hidden p-3">
-                                <div className="absolute top-0 right-0 p-2 text-[6px] font-mono text-white/20 uppercase">Core_Metrics</div>
-                                <div className="mt-auto h-0.5 w-full bg-white/5 relative">
-                                    <div className="absolute left-0 h-full w-[85%] bg-white/20 animate-loading-bar"></div>
-                                </div>
-                                <div className="flex justify-between mt-3">
-                                    <div className="w-6 h-6 rounded-lg bg-white/5"></div>
-                                    <div className="w-6 h-6 rounded-lg bg-white/5"></div>
-                                    <div className="w-6 h-6 rounded-lg bg-white/20 animate-pulse"></div>
-                                </div>
-                            </div>
-                            <div className="h-6 w-full flex items-center justify-between px-1">
-                                <div className="flex gap-1">
-                                    {[...Array(5)].map((_, i) => <div key={i} className="w-1 h-3 bg-white/10 rounded-full"></div>)}
-                                </div>
-                                <Activity className="w-3 h-3 text-white/20" />
-                            </div>
+                        <div className="h-1 w-20 bg-white/5 rounded-full overflow-hidden">
+                            <div className="h-full w-[70%] bg-white/20 animate-loading-bar"></div>
                         </div>
                     </div>
                 </div>
-                {/* Floating Meta Data */}
-                <div className="absolute bottom-6 right-6 px-2 py-1 bg-[#0A0A0A] border border-white/10 rounded text-[7px] font-mono text-white/40 uppercase tracking-tighter">
-                    Speed_Index: 1.2s
+                <div className="absolute top-8 right-10">
+                    <span className="text-[8px] font-mono text-white/10 uppercase tracking-widest">Rendimiento_Optimizado</span>
                 </div>
             </div>
         )
@@ -109,8 +68,8 @@ const services = [
     {
         title: "Integración con IA",
         description: "Implementamos sistemas de inteligencia artificial para automatizar procesos y personalizar la experiencia de tus clientes.",
-        stats: "AI DRIVEN",
-        tag: "AUTOMATION",
+        stats: "IA INTEGRADA",
+        tag: "AUTOMATIZACIÓN",
         Illustration: () => (
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                 <div className="flex gap-4">
@@ -134,17 +93,14 @@ const services = [
                     <line x1="0" y1="50%" x2="100%" y2="50%" stroke="white" strokeWidth="0.5" strokeDasharray="4 4" opacity="0.05" />
                 </svg>
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white/5 blur-[50px] rounded-full animate-pulse"></div>
-                <div className="absolute top-4 left-4">
-                    <Sparkles className="w-4 h-4 text-white/20 animate-spin-slow" />
-                </div>
             </div>
         )
     },
     {
         title: "Branding",
         description: "Creamos una identidad visual impactante y profesional que diferencia a tu negocio de la competencia de forma única.",
-        stats: "PREMIUM IDENTITY",
-        tag: "DESIGN",
+        stats: "IDENTIDAD PREMIUM",
+        tag: "DISEÑO",
         Illustration: () => (
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                 <div className="w-48 h-48 border-[0.5px] border-white/10 rounded-full absolute"></div>
@@ -160,7 +116,7 @@ const services = [
                 <div className="w-full h-[0.5px] bg-white/10 absolute"></div>
                 <div className="w-[0.5px] h-full bg-white/10 absolute"></div>
                 {/* Measurements Labels */}
-                <div className="absolute top-1/4 right-8 font-mono text-[6px] text-white/20 tracking-widest uppercase">Ratio: 1.618</div>
+                <div className="absolute top-1/4 right-8 font-mono text-[6px] text-white/20 tracking-widest uppercase">Proportion: 1.618</div>
             </div>
         )
     }
@@ -238,7 +194,6 @@ const Services: React.FC = () => {
                     100% { transform: translateX(100%); }
                 }
                 .animate-loading-bar { animation: loading-bar 2s linear infinite; }
-                .animate-spin-slow { animation: spin 10s linear infinite; }
             `}} />
         </section>
     );
