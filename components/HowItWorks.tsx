@@ -29,7 +29,7 @@ const HowItWorks: React.FC = () => {
               </p>
             </div>
 
-            {/* Visualization: Technical Scanner Focus on Google Reviews */}
+            {/* Visualization: Technical Scanner */}
             <div className="mt-8 relative bg-white/5 rounded-3xl p-5 md:p-6 border border-white/10 backdrop-blur-md h-52 flex flex-col justify-center overflow-hidden shrink-0">
               <div className="absolute inset-0 opacity-10">
                 <div className="grid grid-cols-6 grid-rows-6 w-full h-full">
@@ -85,7 +85,7 @@ const HowItWorks: React.FC = () => {
               </p>
             </div>
 
-            {/* Visualization: High-End Fluid Booking Loop */}
+            {/* Visualization: Professional Mobile UX */}
             <div className="mt-8 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden shrink-0">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
@@ -96,44 +96,37 @@ const HowItWorks: React.FC = () => {
               </div>
 
               <div className="flex gap-6 h-full relative">
-                {/* Mobile Device with Perfect Loop Animation */}
-                <div className="w-24 h-36 border-x border-t border-white/20 rounded-t-xl bg-black/40 p-2 shrink-0 relative overflow-hidden mt-2 shadow-2xl">
-                  {/* Step 1: Loading/Searching */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-3 animate-loop-step-1 opacity-100">
-                    <Loader2 className="w-6 h-6 text-white/40 animate-spin mb-2" />
-                    <div className="h-1 w-12 bg-white/10 rounded-full animate-pulse"></div>
-                  </div>
-
-                  {/* Step 2: Content Selection (Menu) */}
-                  <div className="absolute inset-0 p-2 space-y-2 animate-loop-step-2 opacity-0">
-                    <div className="h-12 w-full bg-white/5 rounded-lg border border-white/10 flex items-center justify-center">
+                {/* Mobile Device - Professional Simplification */}
+                <div className="w-24 h-36 border-x border-t border-white/20 rounded-t-xl bg-black/40 p-2 shrink-0 relative overflow-hidden mt-2">
+                  {/* Static UI Representation */}
+                  <div className="space-y-2 opacity-60">
+                    <div className="h-1.5 w-full bg-white/20 rounded-full"></div>
+                    <div className="aspect-square w-full bg-white/10 rounded-lg flex items-center justify-center">
                       <UtensilsCrossed className="w-4 h-4 text-white/20" />
                     </div>
-                    <div className="space-y-1">
-                      <div className="h-1 w-full bg-white/10 rounded-full"></div>
-                      <div className="h-1 w-2/3 bg-white/10 rounded-full"></div>
-                    </div>
-                    <div className="h-6 w-full bg-white/40 rounded-md border border-white/20"></div>
+                    <div className="h-4 w-full bg-white/20 rounded-md border border-white/10"></div>
                   </div>
 
-                  {/* Step 3: Success Confirmation */}
-                  <div className="absolute inset-0 bg-white/5 border border-white/10 flex flex-col items-center justify-center animate-loop-step-3 opacity-0">
-                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.4)] mb-2">
-                      <CheckCircle2 className="w-5 h-5 text-black" />
+                  {/* Smooth & Professional Success Pulse Overlay */}
+                  <div className="absolute inset-x-0 bottom-4 px-2 translate-y-0 animate-booking-soft-pulse">
+                    <div className="bg-white text-black text-[7px] font-black uppercase py-2 rounded-md shadow-2xl flex items-center justify-center gap-1">
+                      <CheckCircle2 className="w-3 h-3" />
+                      Confirmado
                     </div>
-                    <span className="text-[7px] text-white font-black tracking-widest uppercase">¡Confirmado!</span>
-                    <div className="mt-2 text-[5px] font-mono text-white/40">TICKET #8821</div>
                   </div>
+
+                  {/* Subtle Top Loader */}
+                  <div className="absolute top-0 left-0 h-[1px] bg-white/60 animate-top-scan"></div>
                 </div>
 
-                {/* Information Boxes - NO LONGER FLOATING */}
+                {/* Information Boxes */}
                 <div className="flex-1 space-y-3 pt-2">
-                  <div className="bg-white/5 border border-white/5 rounded-xl p-3 flex items-center justify-between">
+                  <div className="bg-white/5 border border-white/5 rounded-xl p-3 flex items-center justify-between transition-colors hover:bg-white/10">
                     <div className="flex flex-col gap-1">
                       <span className="text-[9px] text-white/40 font-mono uppercase tracking-tighter leading-none">STATUS_RESERVA</span>
-                      <span className="text-[11px] text-white font-mono leading-none">CONFIRMADO</span>
+                      <span className="text-[11px] text-white font-mono leading-none">ONLINE</span>
                     </div>
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
                   </div>
 
                   {/* Reservation Details Box */}
@@ -177,7 +170,7 @@ const HowItWorks: React.FC = () => {
               </p>
             </div>
 
-            {/* Visualization: Professional KPI Dashboard */}
+            {/* Visualization: KPI Dashboard */}
             <div className="mt-8 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden shrink-0">
               <div className="flex items-center justify-between mb-4">
                 <div className="text-[9px] font-mono text-white/40 tracking-tighter uppercase whitespace-nowrap">ANÁLISIS_CRECIMIENTO</div>
@@ -235,31 +228,27 @@ const HowItWorks: React.FC = () => {
                 .animate-scan {
                     animation: scan 4s linear infinite;
                 }
-                @keyframes loop-step-1 {
-                    0%, 25% { opacity: 1; transform: scale(1); }
-                    33%, 100% { opacity: 0; transform: scale(0.95); }
-                }
-                @keyframes loop-step-2 {
-                    0%, 33% { opacity: 0; transform: scale(1.05); }
-                    41%, 58% { opacity: 1; transform: scale(1); }
-                    66%, 100% { opacity: 0; transform: scale(0.95); }
-                }
-                @keyframes loop-step-3 {
-                    0%, 66% { opacity: 0; transform: scale(1.05); }
-                    74%, 91% { opacity: 1; transform: scale(1); }
-                    100% { opacity: 0; transform: scale(0.95); }
-                }
-                .animate-loop-step-1 { animation: loop-step-1 9s infinite; }
-                .animate-loop-step-2 { animation: loop-step-2 9s infinite; }
-                .animate-loop-step-3 { animation: loop-step-3 9s infinite; }
                 
-                @keyframes float-slow {
-                    0%, 100% { transform: translateY(0px) rotate(0deg); }
-                    50% { transform: translateY(-10px) rotate(1deg); }
+                /* PROFESSIONAL & SIMPLE MOBILE LOOP */
+                @keyframes booking-soft-pulse {
+                    0%, 40% { opacity: 0; transform: translateY(10px); }
+                    50%, 90% { opacity: 1; transform: translateY(0); }
+                    100% { opacity: 0; transform: translateY(-5px); }
                 }
-                .animate-float-slow {
-                    animation: float-slow 4s ease-in-out infinite;
+                .animate-booking-soft-pulse {
+                    animation: booking-soft-pulse 4s ease-in-out infinite;
                 }
+                
+                @keyframes top-scan {
+                    0% { width: 0; left: 0; }
+                    40% { width: 100%; left: 0; }
+                    50% { width: 0; left: 100%; }
+                    100% { width: 0; left: 0; }
+                }
+                .animate-top-scan {
+                    animation: top-scan 4s linear infinite;
+                }
+                
                 @keyframes draw-path {
                     to { stroke-dashoffset: 0; }
                 }
