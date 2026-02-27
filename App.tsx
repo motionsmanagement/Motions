@@ -27,7 +27,7 @@ import ServicesBanner from './components/ServicesBanner';
 import HowItWorks from './components/HowItWorks';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
-import Projects from './components/Projects';
+import SuccessStories from './components/SuccessStories';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 
@@ -42,7 +42,7 @@ const App: React.FC = () => {
         <HowItWorks />
         <WhyChooseUs />
         <Testimonials />
-        <Projects />
+        <SuccessStories />
         <FinalCTA />
       </main>
       <Footer />
