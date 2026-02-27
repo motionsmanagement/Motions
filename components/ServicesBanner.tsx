@@ -53,8 +53,8 @@ const row2 = [
 ];
 
 // All pills exactly the same size
-const CARD_W = 185;
-const CARD_H = 60;
+const CARD_W = 210;
+const CARD_H = 68;
 const CARD_GAP = 10;
 
 // Shared Inter font style (matches rest of the site)
@@ -166,7 +166,7 @@ const ServicesBanner: React.FC = () => {
                         </span>
 
                         <h2 style={{
-                            fontSize: 'clamp(1.4rem, 2.6vw, 1.9rem)',
+                            fontSize: 'clamp(1.9rem, 3.4vw, 2.6rem)',
                             fontWeight: 400, lineHeight: 1.1,
                             letterSpacing: '-0.04em', color: '#fff', margin: 0,
                         }}>
