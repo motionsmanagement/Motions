@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-// ── SVG icon components (white stroke) ─────────────────────────────────────
+// ── SVG icons (white stroke) ─────────────────────────────────────────────────
 const IconMapPin = () => (
     <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="white" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
         <path d="M8.5 1.5C6.015 1.5 4 3.515 4 6c0 4 4.5 9.5 4.5 9.5S13 10 13 6c0-2.485-2.015-4.5-4.5-4.5z" />
@@ -36,15 +36,15 @@ const IconShare = () => (
         <circle cx="12.5" cy="3.5" r="1.5" />
         <circle cx="12.5" cy="13.5" r="1.5" />
         <circle cx="4.5" cy="8.5" r="1.5" />
-        <path d="M6 7.8l5-2.6M6 9.2l5 2.6" />
+        <path d="M6 7.8l5-2.6M5.5 9.2l5.5 2.4" />
     </svg>
 );
 
-// ── 6 services, two rows of 3 ───────────────────────────────────────────────
+// ── 6 services in 2 rows of 3 ────────────────────────────────────────────────
 const row1 = [
     { label: 'Google My Business', phrase: 'Visibilidad local garantizada', Icon: IconMapPin },
-    { label: 'Sitios Web para Restaurantes', phrase: 'Tu web lista para convertir', Icon: IconGlobe },
-    { label: 'Branding e Identidad Visual', phrase: 'Una marca que deja huella', Icon: IconDiamond },
+    { label: 'Sitios Web para Rest.', phrase: 'Tu web lista para convertir', Icon: IconGlobe },
+    { label: 'Branding e Identidad', phrase: 'Una marca que deja huella', Icon: IconDiamond },
 ];
 const row2 = [
     { label: 'Diseño Gráfico', phrase: 'Piezas que comunican y venden', Icon: IconPen },
@@ -52,12 +52,15 @@ const row2 = [
     { label: 'Gestión de Redes Sociales', phrase: 'Comunidad que convierte', Icon: IconShare },
 ];
 
-// Fixed card dimensions — all pills identical
+// All pills exactly the same size
 const CARD_W = 185;
 const CARD_H = 60;
 const CARD_GAP = 10;
 
-// ── Component ───────────────────────────────────────────────────────────────
+// Shared Inter font style (matches rest of the site)
+const INTER: React.CSSProperties = { fontFamily: "'Inter', sans-serif" };
+
+// ── Component ─────────────────────────────────────────────────────────────────
 const ServicesBanner: React.FC = () => {
     const [visible, setVisible] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
@@ -75,7 +78,7 @@ const ServicesBanner: React.FC = () => {
         <section
             ref={ref}
             aria-label="Servicios Banner"
-            style={{ position: 'relative', width: '100%', height: '320px', overflow: 'hidden' }}
+            style={{ position: 'relative', width: '100%', height: '320px', overflow: 'hidden', ...INTER }}
         >
             {/* Background image */}
             <img
@@ -85,119 +88,135 @@ const ServicesBanner: React.FC = () => {
                     position: 'absolute', inset: 0,
                     width: '100%', height: '100%',
                     objectFit: 'cover', objectPosition: 'center',
-                    filter: 'brightness(0.52)',
-                    zIndex: 0,
+                    filter: 'brightness(0.52)', zIndex: 0,
                 }}
                 loading="lazy"
             />
 
-            {/* Gradient — dark left, clear right */}
+            {/* Gradient — dark left → clear right */}
             <div style={{
                 position: 'absolute', inset: 0,
                 background: 'linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.48) 32%, rgba(0,0,0,0.10) 62%, rgba(0,0,0,0) 100%)',
                 zIndex: 1,
             }} />
 
-            {/* TOP-LEFT: "SERVICIOS  Soluciones Digitales ›" */}
+            {/* ── Centered content wrapper — max-width brings all elements inward ── */}
             <div style={{
-                position: 'absolute', top: '20px', left: '28px', zIndex: 10,
-                display: 'flex', alignItems: 'center', gap: '8px',
+                position: 'absolute', inset: 0, zIndex: 10,
+                display: 'flex', flexDirection: 'column',
+                maxWidth: '1000px',   // ← caps total width so nothing feels too spread
+                margin: '0 auto',
+                padding: '0 48px',    // ← horizontal breathing room from container edges
+                width: '100%',
             }}>
-                <span style={{
-                    fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em',
-                    textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)',
-                    background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(10px)',
-                    WebkitBackdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(255,255,255,0.22)',
-                    borderRadius: '999px', padding: '4px 12px',
+
+                {/* TOP BAR: tag left · button right */}
+                <div style={{
+                    display: 'flex', alignItems: 'center',
+                    justifyContent: 'space-between',
+                    paddingTop: '20px',
                 }}>
-                    SERVICIOS
-                </span>
-                <span style={{ fontSize: '12px', fontWeight: 500, color: 'rgba(255,255,255,0.85)', letterSpacing: '-0.01em' }}>
-                    Soluciones Digitales
-                </span>
-                <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px' }}>›</span>
-            </div>
+                    {/* Left: SERVICIOS pill + label */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span style={{
+                            fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em',
+                            textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)',
+                            background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(10px)',
+                            WebkitBackdropFilter: 'blur(10px)',
+                            border: '1px solid rgba(255,255,255,0.22)',
+                            borderRadius: '999px', padding: '4px 12px',
+                        }}>
+                            SERVICIOS
+                        </span>
+                        <span style={{ fontSize: '12px', fontWeight: 500, color: 'rgba(255,255,255,0.85)', letterSpacing: '-0.01em' }}>
+                            Soluciones Digitales
+                        </span>
+                        <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px' }}>›</span>
+                    </div>
 
-            {/* TOP-RIGHT: "Empezar ahora ↓" pill */}
-            <button style={{
-                position: 'absolute', top: '20px', right: '28px', zIndex: 10,
-                fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.88)',
-                background: 'rgba(255,255,255,0.14)', backdropFilter: 'blur(14px)',
-                WebkitBackdropFilter: 'blur(14px)',
-                border: '1px solid rgba(255,255,255,0.28)',
-                borderRadius: '999px', padding: '6px 18px', cursor: 'pointer',
-                display: 'flex', alignItems: 'center', gap: '6px', letterSpacing: '-0.01em',
-            }}>
-                Empezar ahora <span style={{ fontSize: '11px' }}>↓</span>
-            </button>
-
-            {/* LEFT: tag + 2-line headline + description — vertically centred */}
-            <div style={{
-                position: 'absolute',
-                top: '50%',
-                left: '28px',
-                transform: visible ? 'translateY(-50%) translateX(0)' : 'translateY(-50%) translateX(-20px)',
-                zIndex: 10,
-                display: 'flex', flexDirection: 'column', gap: '8px', maxWidth: '310px',
-                opacity: visible ? 1 : 0,
-                transition: 'opacity 0.65s ease, transform 0.65s ease',
-            }}>
-                {/* small tag */}
-                <span style={{
-                    display: 'inline-flex', alignItems: 'center',
-                    fontSize: '10px', fontWeight: 600, letterSpacing: '0.06em',
-                    textTransform: 'uppercase', color: 'rgba(255,255,255,0.68)',
-                    background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.18)',
-                    borderRadius: '999px', padding: '3px 10px', width: 'fit-content',
-                }}>
-                    Nuestros Servicios
-                </span>
-
-                {/* 2-line headline */}
-                <h2 style={{
-                    fontSize: 'clamp(1.45rem, 2.8vw, 2.05rem)',
-                    fontWeight: 600, lineHeight: 1.08, letterSpacing: '-0.04em',
-                    color: '#ffffff', margin: 0,
-                }}>
-                    Visibilidad, diseño<br />
-                    <span style={{ color: 'rgba(255,255,255,0.62)' }}>y crecimiento digital.</span>
-                </h2>
-
-                {/* Description */}
-                <p style={{
-                    fontSize: '11.5px', color: 'rgba(255,255,255,0.52)',
-                    lineHeight: 1.6, margin: 0, maxWidth: '265px',
-                }}>
-                    Todo lo que tu restaurante necesita para destacar online, en un solo lugar.
-                </p>
-            </div>
-
-            {/* CENTER-RIGHT: 2 rows of 3 glass pill cards */}
-            <div style={{
-                position: 'absolute',
-                top: '50%', right: '28px',
-                transform: 'translateY(-50%)',
-                zIndex: 10, display: 'flex', flexDirection: 'column', gap: `${CARD_GAP}px`,
-            }}>
-                {/* Row 1 */}
-                <div style={{ display: 'flex', gap: `${CARD_GAP}px` }}>
-                    {row1.map((service, idx) => (
-                        <ServicePill key={service.label} service={service} visible={visible} delay={0.10 + idx * 0.09} />
-                    ))}
+                    {/* Right: Empezar ahora */}
+                    <button style={{
+                        fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.88)',
+                        background: 'rgba(255,255,255,0.14)', backdropFilter: 'blur(14px)',
+                        WebkitBackdropFilter: 'blur(14px)',
+                        border: '1px solid rgba(255,255,255,0.28)',
+                        borderRadius: '999px', padding: '6px 18px', cursor: 'pointer',
+                        display: 'flex', alignItems: 'center', gap: '6px',
+                        letterSpacing: '-0.01em', ...INTER,
+                    }}>
+                        Empezar ahora <span style={{ fontSize: '11px' }}>↓</span>
+                    </button>
                 </div>
-                {/* Row 2 — offset left for stagger */}
-                <div style={{ display: 'flex', gap: `${CARD_GAP}px`, marginRight: `${(CARD_W + CARD_GAP) * 0.5}px` }}>
-                    {row2.map((service, idx) => (
-                        <ServicePill key={service.label} service={service} visible={visible} delay={0.28 + idx * 0.09} />
-                    ))}
+
+                {/* MAIN ROW: text left · cards right — vertically centred */}
+                <div style={{
+                    flex: 1,
+                    display: 'flex', alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '32px',
+                    paddingBottom: '8px',
+                }}>
+                    {/* LEFT: sub-tag + headline + description */}
+                    <div style={{
+                        display: 'flex', flexDirection: 'column', gap: '8px',
+                        maxWidth: '280px', flexShrink: 0,
+                        opacity: visible ? 1 : 0,
+                        transform: visible ? 'translateX(0)' : 'translateX(-20px)',
+                        transition: 'opacity 0.65s ease, transform 0.65s ease',
+                    }}>
+                        <span style={{
+                            display: 'inline-flex', alignItems: 'center',
+                            fontSize: '10px', fontWeight: 600, letterSpacing: '0.06em',
+                            textTransform: 'uppercase', color: 'rgba(255,255,255,0.68)',
+                            background: 'rgba(255,255,255,0.1)',
+                            border: '1px solid rgba(255,255,255,0.18)',
+                            borderRadius: '999px', padding: '3px 10px', width: 'fit-content',
+                        }}>
+                            Nuestros Servicios
+                        </span>
+
+                        <h2 style={{
+                            fontSize: 'clamp(1.4rem, 2.6vw, 1.9rem)',
+                            fontWeight: 600, lineHeight: 1.1,
+                            letterSpacing: '-0.04em', color: '#fff', margin: 0,
+                        }}>
+                            Visibilidad, diseño<br />
+                            <span style={{ color: 'rgba(255,255,255,0.62)' }}>y crecimiento digital.</span>
+                        </h2>
+
+                        <p style={{
+                            fontSize: '11.5px', color: 'rgba(255,255,255,0.52)',
+                            lineHeight: 1.6, margin: 0,
+                        }}>
+                            Todo lo que tu restaurante necesita para destacar online, en un solo lugar.
+                        </p>
+                    </div>
+
+                    {/* RIGHT: 2 rows of 3 glass pills */}
+                    <div style={{
+                        display: 'flex', flexDirection: 'column',
+                        gap: `${CARD_GAP}px`, alignItems: 'flex-end',
+                    }}>
+                        {/* Row 1 */}
+                        <div style={{ display: 'flex', gap: `${CARD_GAP}px` }}>
+                            {row1.map((s, i) => (
+                                <ServicePill key={s.label} service={s} visible={visible} delay={0.10 + i * 0.09} />
+                            ))}
+                        </div>
+                        {/* Row 2 — offset left for stagger effect */}
+                        <div style={{ display: 'flex', gap: `${CARD_GAP}px`, marginRight: `${(CARD_W + CARD_GAP) * 0.5}px` }}>
+                            {row2.map((s, i) => (
+                                <ServicePill key={s.label} service={s} visible={visible} delay={0.28 + i * 0.09} />
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     );
 };
 
-// ── Glass pill card ─────────────────────────────────────────────────────────
+// ── Glass pill card ───────────────────────────────────────────────────────────
 interface PillProps {
     service: { label: string; phrase: string; Icon: React.FC };
     visible: boolean;
@@ -208,29 +227,24 @@ const ServicePill: React.FC<PillProps> = ({ service, visible, delay }) => (
     <div style={{
         width: `${CARD_W}px`,
         height: `${CARD_H}px`,
-        display: 'flex',
-        alignItems: 'center',
-        gap: '11px',
-        padding: '0 18px 0 10px',
+        display: 'flex', alignItems: 'center', gap: '10px',
+        padding: '0 16px 0 9px',
         borderRadius: '999px',
-        // Glass style
         background: 'rgba(255,255,255,0.10)',
         backdropFilter: 'blur(22px) saturate(160%)',
         WebkitBackdropFilter: 'blur(22px) saturate(160%)',
         border: '1px solid rgba(255,255,255,0.22)',
         boxShadow: '0 4px 24px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.12)',
-        cursor: 'default',
-        userSelect: 'none',
-        flexShrink: 0,
-        boxSizing: 'border-box',
+        cursor: 'default', userSelect: 'none', flexShrink: 0, boxSizing: 'border-box',
+        fontFamily: "'Inter', sans-serif",
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0) scale(1)' : 'translateY(14px) scale(0.96)',
         transition: `opacity 0.45s ease ${delay}s, transform 0.45s ease ${delay}s`,
     }}>
-        {/* White SVG icon in a glass circle */}
+        {/* Icon circle */}
         <span style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            width: '34px', height: '34px', borderRadius: '50%',
+            width: '32px', height: '32px', borderRadius: '50%',
             background: 'rgba(255,255,255,0.12)',
             border: '1px solid rgba(255,255,255,0.18)',
             flexShrink: 0,
@@ -238,7 +252,7 @@ const ServicePill: React.FC<PillProps> = ({ service, visible, delay }) => (
             <service.Icon />
         </span>
 
-        {/* Text: service name + short phrase */}
+        {/* Text */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', minWidth: 0 }}>
             <span style={{
                 fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.95)',
