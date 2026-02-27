@@ -8,24 +8,24 @@ const HowItWorks: React.FC = () => {
         {/* Header Section */}
         <div className="text-center mb-20 text-balance">
           <div className="inline-flex items-center bg-[#f3f4f1] px-4 py-1.5 rounded-full mb-6">
-            <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest font-mono">ROI_DRIVEN_METHOD</span>
+            <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest font-mono">Metodología Profesional</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1]">
-            Cómo Potenciamos tu<br />
-            Facturación Mensual
+            Nuestro Proceso para<br />
+            Optimizar tu Restaurante
           </h2>
         </div>
 
         {/* Step Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Card 1: Dominio Local */}
+          {/* Card 1: Auditoría */}
           <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[520px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
             <div className="relative z-10 mb-8">
-              <h3 className="text-2xl md:text-3xl font-medium text-white leading-tight mb-4 group-hover:text-white/90 transition-colors">
-                Dominio Local del Mercado
+              <h3 className="text-2xl md:text-3xl font-medium text-white leading-tight mb-4">
+                Auditoría Estratégica
               </h3>
-              <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem]">
-                Analizamos a tu competencia en Google Maps para posicionarte por encima de ellos y garantizar que seas la primera opción de cada cliente local.
+              <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
+                Evaluamos el posicionamiento actual de tu negocio y analizamos a la competencia local para identificar oportunidades reales de crecimiento.
               </p>
             </div>
 
@@ -39,14 +39,13 @@ const HowItWorks: React.FC = () => {
                 </div>
               </div>
 
-              {/* Scanning Light Effect */}
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-1/2 w-full animate-scan pointer-events-none"></div>
 
               <div className="relative space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-white animate-pulse shadow-[0_0_10px_white]"></div>
-                    <span className="text-[9px] font-mono text-white/70 tracking-tighter uppercase">MAPS_RANKING_STATUS</span>
+                    <span className="text-[9px] font-mono text-white/70 tracking-tighter uppercase">ESTADO_RANKING_MAPS</span>
                   </div>
                   <span className="text-[9px] font-mono text-white/40">ZONA_LOCAL</span>
                 </div>
@@ -60,7 +59,7 @@ const HowItWorks: React.FC = () => {
                 </div>
                 <div className="pt-2">
                   <div className="flex justify-between text-[9px] text-white/60 mb-1">
-                    <span>RESEÑAS_POSITIVAS</span>
+                    <span>RESEÑAS_RELEVANTES</span>
                     <span className="tabular-nums">4.8★</span>
                   </div>
                   <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
@@ -71,14 +70,14 @@ const HowItWorks: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 2: Máquina de Reservas */}
+          {/* Card 2: Desarrollo */}
           <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[520px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
             <div className="relative z-10 mb-8">
-              <h3 className="text-2xl md:text-3xl font-medium text-white leading-tight mb-4 group-hover:text-white/90 transition-colors">
-                Máquina de Reservas Directas
+              <h3 className="text-2xl md:text-3xl font-medium text-white leading-tight mb-4">
+                Desarrollo y Conversión
               </h3>
-              <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem]">
-                Diseñamos tu sitio web optimizado para móviles con carta interactiva, enfocado exclusivamente en convertir visitas en reservas sin pagar comisiones.
+              <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
+                Implementamos soluciones digitales personalizadas, desde sitios web optimizados hasta cartas interactivas diseñadas para generar reservas.
               </p>
             </div>
 
@@ -101,7 +100,7 @@ const HowItWorks: React.FC = () => {
               <div className="absolute top-12 left-6">
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-3 py-1.5 rounded-full border border-white/20 shadow-2xl animate-float-delayed">
                   <Smartphone className="w-3 h-3 text-white/80" />
-                  <span className="text-[8px] text-white/90 font-bold whitespace-nowrap">WEB_UX_OPTIMIZED</span>
+                  <span className="text-[8px] text-white/90 font-bold whitespace-nowrap">WEB_OPTIMIZADA</span>
                 </div>
               </div>
               <div className="absolute bottom-10 right-6 animate-float">
@@ -112,14 +111,14 @@ const HowItWorks: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 3: Escalado ROI */}
+          {/* Card 3: Optimización */}
           <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 flex flex-col min-h-[520px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
             <div className="relative z-10 mb-8">
-              <h3 className="text-2xl md:text-3xl font-medium text-white leading-tight mb-4 group-hover:text-white/90 transition-colors">
-                Escalado de Facturación (ROI)
+              <h3 className="text-2xl md:text-3xl font-medium text-white leading-tight mb-4">
+                Optimización Continua
               </h3>
-              <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem]">
-                Ejecutamos y optimizamos cada campaña midiendo el retorno real de tu inversión, asegurando un crecimiento mensual en mesas ocupadas y facturación.
+              <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
+                Analizamos el impacto de cada estrategia en tiempo real, ajustando los parámetros para asegurar el mejor retorno sobre tu inversión inicial.
               </p>
             </div>
 
@@ -127,7 +126,7 @@ const HowItWorks: React.FC = () => {
             <div className="mt-auto relative bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-md h-56 flex flex-col justify-end overflow-hidden">
               <div className="absolute top-6 left-6 flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
-                <span className="text-[8px] font-bold text-white/60 uppercase tracking-widest font-mono">LIVE_ROI_METRICS</span>
+                <span className="text-[8px] font-bold text-white/60 uppercase tracking-widest font-mono">MÉTRICAS_EN_VIVO</span>
               </div>
 
               <div className="flex items-end gap-[4px] h-20 mb-8 px-2 relative">
