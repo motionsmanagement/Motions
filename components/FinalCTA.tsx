@@ -15,15 +15,16 @@ const FinalCTA: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70"></div>
       </div>
 
-      <div className="relative z-10 max-w-5xl">
-        {/* Improved Conversion Headline */}
-        <h2 className="text-5xl md:text-[5.5rem] text-white mb-8 leading-[1.05] font-medium tracking-tight">
+      <div className="relative z-10 max-w-4xl">
+        {/* Smaller 2-line title */}
+        <h2 className="text-3xl md:text-5xl text-white mb-6 leading-[1.15] font-medium tracking-tight">
           Transforma tu restaurante hoy<br />
-          <span className="text-white">y domina tu mercado local</span>
+          y domina tu mercado local
         </h2>
 
-        <p className="text-white text-lg md:text-2xl mb-14 max-w-3xl mx-auto leading-relaxed font-light">
-          Es el momento de dejar de ser invisible. Agenda una consulta gratuita y descubre<br className="hidden md:block" /> cómo multiplicar tus reservas y ventas este mes.
+        <p className="text-white text-base md:text-lg mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+          Es el momento de dejar de ser invisible. Agenda una consulta gratuita<br className="hidden md:block" />
+          y descubre cómo multiplicar tus reservas y ventas este mes.
         </p>
 
         {/* Glass Buttons Duo */}
