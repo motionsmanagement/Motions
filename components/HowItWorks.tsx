@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, TrendingUp, Search, MapPin, ArrowRight, UtensilsCrossed, BarChart3, Target, MousePointer2, Smartphone, Star, PhoneCall, Users, Calendar, CheckCircle2, Clock, Zap, ShieldCheck, Loader2, Sparkles } from 'lucide-react';
+import { Phone, TrendingUp, Search, MapPin, ArrowRight, UtensilsCrossed, BarChart3, Target, MousePointer2, Smartphone, Star, PhoneCall, Users, Calendar, CheckCircle2, Clock, Zap, ShieldCheck, Loader2, Sparkles, Activity } from 'lucide-react';
 
 const HowItWorks: React.FC = () => {
   return (
@@ -85,7 +85,7 @@ const HowItWorks: React.FC = () => {
               </p>
             </div>
 
-            {/* Visualization: Professional Mobile UX with Confirm Page */}
+            {/* Visualization: Professional Mobile UX */}
             <div className="mt-8 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden shrink-0">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
@@ -96,9 +96,8 @@ const HowItWorks: React.FC = () => {
               </div>
 
               <div className="flex gap-6 h-full relative">
-                {/* Mobile Device with Step-based Animation */}
+                {/* Mobile Device */}
                 <div className="w-24 h-36 border-x border-t border-white/20 rounded-t-xl bg-black/60 shrink-0 relative overflow-hidden mt-2 shadow-2xl">
-                  {/* Step 1: Initial Selection UI */}
                   <div className="absolute inset-0 p-2 space-y-2 animate-mobile-step-1">
                     <div className="h-1.5 w-1/2 bg-white/20 rounded-full"></div>
                     <div className="aspect-square w-full bg-white/10 rounded-lg flex items-center justify-center">
@@ -109,21 +108,15 @@ const HowItWorks: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Step 2: Final Confirmation Page (Enphasized) */}
                   <div className="absolute inset-0 bg-white flex flex-col items-center justify-center p-3 animate-mobile-step-2 opacity-0">
                     <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center mb-3 shadow-xl">
                       <CheckCircle2 className="w-6 h-6 text-white animate-check-pop" />
                     </div>
                     <h4 className="text-black text-[9px] font-black uppercase tracking-widest text-center leading-none mb-2">Reserva<br />Confirmada</h4>
                     <div className="h-[1px] w-8 bg-black/10 mb-2"></div>
-                    <div className="flex flex-col items-center gap-1 opacity-60">
-                      <div className="h-1 w-10 bg-black/20 rounded-full"></div>
-                      <div className="h-1 w-6 bg-black/20 rounded-full"></div>
-                    </div>
                     <Sparkles className="absolute top-2 right-2 w-3 h-3 text-black/20 animate-pulse" />
                   </div>
 
-                  {/* Subtle Top Loader sync */}
                   <div className="absolute top-0 left-0 h-[1.5px] bg-white/60 animate-sync-loader"></div>
                 </div>
 
@@ -166,7 +159,7 @@ const HowItWorks: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 3: Crecimiento */}
+          {/* Card 3: Crecimiento - COMPLETO REDISEÑO PARA NIVELAR CON 1 Y 2 */}
           <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 pb-6 flex flex-col min-h-[480px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
             <div className="relative z-10 mb-1">
               <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
@@ -177,48 +170,82 @@ const HowItWorks: React.FC = () => {
               </p>
             </div>
 
-            {/* Visualization: KPI Dashboard */}
+            {/* Visualization: Professional Performance Terminal */}
             <div className="mt-8 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden shrink-0">
-              <div className="flex items-center justify-between mb-4">
-                <div className="text-[9px] font-mono text-white/40 tracking-tighter uppercase whitespace-nowrap">ANÁLISIS_CRECIMIENTO</div>
-                <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></div>
+              {/* Terminal Header */}
+              <div className="flex items-center justify-between mb-4 border-b border-white/5 pb-2">
+                <div className="flex gap-1.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[8px] font-mono text-white/30 uppercase tracking-widest">PERFORMANCE_OS_V2.0</span>
+                </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 flex-1 relative">
-                <div className="bg-white/5 border border-white/10 rounded-xl p-2 flex flex-col justify-center relative overflow-hidden group/metric">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Users className="w-3 h-3 text-white/40" />
-                    <span className="text-[9px] font-mono text-white/40 uppercase tracking-tighter">CLIENTES</span>
-                  </div>
-                  <div className="text-lg font-mono text-white tabular-nums animate-data-fade">+84</div>
-                  <div className="absolute inset-0 bg-white/5 translate-x-[-100%] group-hover/metric:translate-x-[100%] transition-transform duration-700"></div>
-                </div>
-
-                <div className="bg-white/5 border border-white/10 rounded-xl p-2 flex flex-col justify-center relative overflow-hidden group/metric">
-                  <div className="flex items-center gap-2 mb-1">
-                    <PhoneCall className="w-3 h-3 text-white/40" />
-                    <span className="text-[9px] font-mono text-white/40 uppercase tracking-tighter">LLAMADAS</span>
-                  </div>
-                  <div className="text-lg font-mono text-white tabular-nums animate-data-fade-delayed">+126</div>
-                  <div className="absolute inset-0 bg-white/5 translate-x-[-100%] group-hover/metric:translate-x-[100%] transition-transform duration-700"></div>
-                </div>
-
-                <div className="col-span-2 bg-white/10 border border-white/20 rounded-xl p-2 flex items-center justify-between overflow-hidden relative">
-                  <div className="relative z-10 w-full">
-                    <div className="text-[9px] font-mono text-white/40 uppercase tracking-tighter mb-1">RETORNO_INVERSIÓN_ROI</div>
-                    <div className="text-xl font-mono text-white group-hover:scale-105 transition-transform duration-500">4.2x</div>
-                  </div>
-
-                  <div className="absolute right-0 bottom-0 top-0 w-24 opacity-30">
-                    <svg viewBox="0 0 100 40" className="w-full h-full overflow-visible">
-                      <path d="M0 35 Q 20 35, 40 25 T 80 10 T 100 5" fill="none" stroke="white" strokeWidth="1.5" strokeDasharray="200" strokeDashoffset="200" className="animate-draw-path" />
-                      <circle r="2" fill="white" className="animate-point-move">
-                        <animateMotion dur="4s" repeatCount="indefinite" path="M0 35 Q 20 35, 40 25 T 80 10 T 100 5" />
-                      </circle>
+              <div className="flex-1 flex gap-4">
+                {/* Left: Main Metric Circle */}
+                <div className="w-24 flex flex-col items-center justify-center border-r border-white/10 pr-4">
+                  <div className="relative w-16 h-16 flex items-center justify-center">
+                    <svg className="absolute inset-0 w-full h-full -rotate-90">
+                      <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="3" className="text-white/5" />
+                      <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="3" strokeDasharray="176" strokeDashoffset="44" className="text-white animate-progress-spin" />
                     </svg>
+                    <div className="flex flex-col items-center">
+                      <span className="text-xs font-mono text-white leading-none">4.2x</span>
+                      <span className="text-[6px] text-white/40 font-bold uppercase mt-1">ROI</span>
+                    </div>
+                  </div>
+                  <div className="mt-3 flex items-center gap-1.5 bg-white/10 px-2 py-0.5 rounded-full">
+                    <TrendingUp className="w-2 h-2 text-white" />
+                    <span className="text-[7px] text-white font-mono">+12% MoM</span>
+                  </div>
+                </div>
+
+                {/* Right: Data Stream Feed */}
+                <div className="flex-1 space-y-2.5">
+                  <div className="bg-white/5 border border-white/5 rounded-lg p-2.5 flex items-center justify-between group-hover:bg-white/10 transition-colors">
+                    <div className="flex items-center gap-2">
+                      <Users className="w-3 h-3 text-white/40" />
+                      <div className="flex flex-col">
+                        <span className="text-[8px] text-white/30 font-mono leading-none">TRAFFIC</span>
+                        <span className="text-[10px] text-white font-mono leading-none mt-1">+2,840</span>
+                      </div>
+                    </div>
+                    <div className="flex gap-0.5 h-4 items-end">
+                      {[...Array(5)].map((_, i) => (
+                        <div key={i} className="w-1 bg-white/20 rounded-t-sm animate-bar-dance" style={{ height: `${20 + Math.random() * 80}%`, animationDelay: `${i * 0.1}s` }}></div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-white/5 border border-white/5 rounded-lg p-2.5 flex items-center justify-between group-hover:bg-white/10 transition-colors">
+                    <div className="flex items-center gap-2">
+                      <Activity className="w-3 h-3 text-white/40" />
+                      <div className="flex flex-col">
+                        <span className="text-[8px] text-white/30 font-mono leading-none">CONVERSION</span>
+                        <span className="text-[10px] text-white font-mono leading-none mt-1">18.4%</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-8 h-1 bg-white/10 rounded-full overflow-hidden">
+                        <div className="h-full w-full bg-white/60 animate-loading-bar"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Live Log Footer */}
+                  <div className="pt-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[7px] text-white/20 font-mono animate-pulse">{'>'} OPTIMIZING_CAMPAIGNS...</span>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              {/* Background scanning effect to match Card 1 */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent w-full h-full -skew-x-12 translate-x-[-200%] animate-scan-fast pointer-events-none"></div>
             </div>
           </div>
         </div>
@@ -239,11 +266,13 @@ const HowItWorks: React.FC = () => {
                     50% { opacity: 0.5; }
                     100% { transform: translateY(200%); opacity: 0; }
                 }
-                .animate-scan {
-                    animation: scan 4s linear infinite;
+                @keyframes scan-fast {
+                    0% { transform: translateX(-200%) skewX(-12deg); }
+                    100% { transform: translateX(200%) skewX(-12deg); }
                 }
+                .animate-scan { animation: scan 4s linear infinite; }
+                .animate-scan-fast { animation: scan-fast 3s linear infinite; }
                 
-                /* PROFESSIONAL STEPPED MOBILE LOOP */
                 @keyframes mobile-step-1 {
                     0%, 45% { opacity: 1; transform: scale(1); }
                     50%, 95% { opacity: 0; transform: scale(0.95); }
@@ -270,20 +299,23 @@ const HowItWorks: React.FC = () => {
                 .animate-check-pop { animation: check-pop 6s ease-out infinite; }
                 .animate-sync-loader { animation: sync-loader 6s ease-in-out infinite; }
 
-                /* GRID 3 ANIMATIONS */
-                @keyframes data-fade {
-                    0%, 100% { opacity: 1; transform: scale(1); }
-                    50% { opacity: 0.7; transform: scale(0.98); }
+                /* NEW GRID 3 ANIMATIONS */
+                @keyframes progress-spin {
+                    0% { stroke-dashoffset: 176; }
+                    50% { stroke-dashoffset: 44; }
+                    100% { stroke-dashoffset: 176; }
                 }
-                .animate-data-fade { animation: data-fade 4s ease-in-out infinite; }
-                .animate-data-fade-delayed { animation: data-fade 4s ease-in-out infinite 2s; }
-                
-                @keyframes point-move {
-                    0% { opacity: 0; }
-                    10%, 90% { opacity: 1; }
-                    100% { opacity: 0; }
+                @keyframes bar-dance {
+                    0%, 100% { height: 30%; }
+                    50% { height: 90%; }
                 }
-                .animate-point-move { animation: point-move 4s linear infinite; }
+                @keyframes loading-bar {
+                    0% { transform: translateX(-100%); }
+                    100% { transform: translateX(100%); }
+                }
+                .animate-progress-spin { animation: progress-spin 4s ease-in-out infinite; }
+                .animate-bar-dance { animation: bar-dance 1.5s ease-in-out infinite; }
+                .animate-loading-bar { animation: loading-bar 2s linear infinite; }
                 
                 @keyframes draw-path {
                     to { stroke-dashoffset: 0; }
