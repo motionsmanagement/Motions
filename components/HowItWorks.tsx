@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, TrendingUp, Search, MapPin, ArrowRight, UtensilsCrossed, BarChart3, Target, MousePointer2, Smartphone, Star, PhoneCall, Users, Calendar, CheckCircle2, Clock, Zap, ShieldCheck } from 'lucide-react';
+import { Phone, TrendingUp, Search, MapPin, ArrowRight, UtensilsCrossed, BarChart3, Target, MousePointer2, Smartphone, Star, PhoneCall, Users, Calendar, CheckCircle2, Clock, Zap, ShieldCheck, Loader2 } from 'lucide-react';
 
 const HowItWorks: React.FC = () => {
   return (
@@ -85,76 +85,78 @@ const HowItWorks: React.FC = () => {
               </p>
             </div>
 
-            {/* Visualization: More Intricate Mobile Web & Conversion UX */}
+            {/* Visualization: High-End Fluid Booking Loop */}
             <div className="mt-8 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden shrink-0">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-white/40"></div>
-                  <span className="text-[9px] font-mono text-white/40 uppercase tracking-widest">Interfaz_Móvil</span>
+                  <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest font-bold">Reserva_Cloud</span>
                 </div>
-                <div className="px-2 py-0.5 rounded-md bg-white/10 border border-white/10 text-[8px] font-bold text-white/60 uppercase">UX_Optimizado</div>
+                <div className="px-2 py-0.5 rounded-md bg-white/10 border border-white/10 text-[8px] font-bold text-white/60 uppercase tracking-tighter">Sincronización_Real</div>
               </div>
 
-              <div className="flex gap-4 h-full relative">
-                {/* Mobile Skeleton View - COMPACT DEVICE */}
-                <div className="w-20 h-36 border-x border-t border-white/20 rounded-t-xl bg-white/5 p-2 shrink-0 relative overflow-hidden mt-2">
-                  {/* Animated Content Inside Phone */}
-                  <div className="space-y-2 animate-content-scroll">
-                    <div className="h-1.5 w-full bg-white/20 rounded-full"></div>
-                    <div className="aspect-square w-full bg-white/10 rounded-lg flex items-center justify-center">
-                      <UtensilsCrossed className="w-4 h-4 text-white/20" />
-                    </div>
-                    <div className="h-1 w-full bg-white/10 rounded-full"></div>
-                    <div className="h-4 w-full bg-white/30 rounded-md border border-white/10 flex items-center justify-center">
-                      <span className="text-[6px] text-white/40 font-bold">RESERVAR</span>
-                    </div>
+              <div className="flex gap-6 h-full relative">
+                {/* Mobile Device with Perfect Loop Animation */}
+                <div className="w-24 h-36 border-x border-t border-white/20 rounded-t-xl bg-black/40 p-2 shrink-0 relative overflow-hidden mt-2 shadow-2xl">
+                  {/* Step 1: Loading/Searching */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-3 animate-loop-step-1 opacity-100">
+                    <Loader2 className="w-6 h-6 text-white/40 animate-spin mb-2" />
+                    <div className="h-1 w-12 bg-white/10 rounded-full animate-pulse"></div>
                   </div>
 
-                  {/* IMPROVED Booking Animation: Success Receipt */}
-                  <div className="absolute inset-0 bg-black/80 backdrop-blur-md flex flex-col items-center justify-center opacity-0 animate-booking-refined px-2 gap-2">
-                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center scale-0 animate-check-scale">
-                      <CheckCircle2 className="w-5 h-5 text-white" />
+                  {/* Step 2: Content Selection (Menu) */}
+                  <div className="absolute inset-0 p-2 space-y-2 animate-loop-step-2 opacity-0">
+                    <div className="h-12 w-full bg-white/5 rounded-lg border border-white/10 flex items-center justify-center">
+                      <UtensilsCrossed className="w-4 h-4 text-white/20" />
                     </div>
-                    <div className="w-full h-12 bg-white/5 border border-white/10 rounded-lg p-1 text-center translate-y-4 animate-receipt-up">
-                      <div className="text-[5px] text-white/30 uppercase font-bold mb-1 tracking-widest">Voucher_Gástro</div>
-                      <div className="text-[10px] text-white font-mono leading-none">#4829</div>
-                      <div className="h-0.5 w-6 bg-white/40 mx-auto mt-1"></div>
+                    <div className="space-y-1">
+                      <div className="h-1 w-full bg-white/10 rounded-full"></div>
+                      <div className="h-1 w-2/3 bg-white/10 rounded-full"></div>
                     </div>
+                    <div className="h-6 w-full bg-white/40 rounded-md border border-white/20 shadow-lg"></div>
+                  </div>
+
+                  {/* Step 3: Success Confirmation */}
+                  <div className="absolute inset-0 bg-white/5 border border-white/10 flex flex-col items-center justify-center animate-loop-step-3 opacity-0">
+                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.4)] mb-2">
+                      <CheckCircle2 className="w-5 h-5 text-black" />
+                    </div>
+                    <span className="text-[7px] text-white font-black tracking-widest uppercase">¡Confirmado!</span>
+                    <div className="mt-2 text-[5px] font-mono text-white/40">TICKET #8821</div>
                   </div>
                 </div>
 
-                {/* Information Boxes - NO LONGER FLOATING */}
-                <div className="flex-1 space-y-2 pt-1 relative z-10">
-                  <div className="bg-white/5 border border-white/5 rounded-xl p-2 transition-all hover:bg-white/10">
-                    <div className="flex items-center gap-2 mb-1">
+                {/* Technical Side-Info (Static but layered) */}
+                <div className="flex-1 space-y-3 pt-2">
+                  <div className="relative group">
+                    <div className="bg-white/5 border border-white/5 rounded-xl p-3 flex items-center justify-between">
+                      <div className="flex flex-col gap-1">
+                        <span className="text-[7px] text-white/30 uppercase font-bold tracking-widest leading-none">Status</span>
+                        <span className="text-[10px] text-white font-mono leading-none">Online</span>
+                      </div>
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/5 border border-white/5 rounded-xl p-3">
+                    <div className="flex items-center gap-2 mb-2">
                       <Zap className="w-3 h-3 text-white/40" />
-                      <span className="text-[8px] text-white/40 font-bold uppercase">Sincronización POS</span>
+                      <span className="text-[8px] text-white/50 font-bold uppercase tracking-widest">Auto_Sync</span>
                     </div>
-                    <div className="h-1 w-full bg-white/10 rounded-full"></div>
+                    <div className="flex gap-1">
+                      {[...Array(12)].map((_, i) => (
+                        <div key={i} className="h-3 w-0.5 bg-white/10 rounded-full overflow-hidden">
+                          <div className="h-full w-full bg-white/60 animate-loading-bar" style={{ animationDelay: `${i * 0.15}s` }}></div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
-                  <div className="bg-white/5 border border-white/5 rounded-xl p-2 transition-all hover:bg-white/10">
-                    <div className="flex items-center gap-2 mb-1">
-                      <ShieldCheck className="w-3 h-3 text-white/40" />
-                      <span className="text-[8px] text-white/40 font-bold uppercase">Control de Aforo</span>
-                    </div>
-                    <div className="h-1 w-2/3 bg-white/10 rounded-full"></div>
-                  </div>
-
-                  <div className="bg-white/10 border border-white/10 rounded-xl p-2 shadow-xl">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-[7px] text-white/50 font-bold uppercase tracking-widest">RESERVA_INMEDIATA</span>
-                      <Users className="w-2.5 h-2.5 text-white/40" />
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="flex flex-col">
-                        <span className="text-[6px] text-white/30 uppercase">Pax</span>
-                        <span className="text-[10px] text-white font-mono">04</span>
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-[6px] text-white/30 uppercase">Confirm</span>
-                        <span className="text-[10px] text-white font-mono">21:30</span>
-                      </div>
+                  <div className="bg-black/20 border border-white/10 rounded-xl p-3 backdrop-blur-sm">
+                    <div className="text-[7px] text-white/30 font-bold uppercase tracking-widest mb-1.5">Métrica Global</div>
+                    <div className="flex items-end justify-between">
+                      <div className="text-xl font-mono text-white leading-none">100%</div>
+                      <div className="text-[7px] text-white/30 uppercase font-bold">Disponibilidad</div>
                     </div>
                   </div>
                 </div>
@@ -231,36 +233,39 @@ const HowItWorks: React.FC = () => {
                 .animate-scan {
                     animation: scan 4s linear infinite;
                 }
-                @keyframes content-scroll {
-                    0%, 20% { transform: translateY(0); }
-                    40%, 60% { transform: translateY(-30px); }
-                    80%, 100% { transform: translateY(0); }
+                @keyframes loop-step-1 {
+                    0%, 25% { opacity: 1; transform: scale(1); }
+                    33%, 100% { opacity: 0; transform: scale(0.95); }
                 }
-                .animate-content-scroll {
-                    animation: content-scroll 8s ease-in-out infinite;
+                @keyframes loop-step-2 {
+                    0%, 33% { opacity: 0; transform: scale(1.05); }
+                    41%, 58% { opacity: 1; transform: scale(1); }
+                    66%, 100% { opacity: 0; transform: scale(0.95); }
                 }
-                @keyframes booking-refined {
-                    0%, 60% { opacity: 0; }
-                    70%, 95% { opacity: 1; }
-                    100% { opacity: 0; }
+                @keyframes loop-step-3 {
+                    0%, 66% { opacity: 0; transform: scale(1.05); }
+                    74%, 91% { opacity: 1; transform: scale(1); }
+                    100% { opacity: 0; transform: scale(0.95); }
                 }
-                @keyframes check-scale {
-                    65% { transform: scale(0); }
-                    75% { transform: scale(1.2); }
-                    80% { transform: scale(1); }
+                .animate-loop-step-1 { animation: loop-step-1 9s infinite; }
+                .animate-loop-step-2 { animation: loop-step-2 9s infinite; }
+                .animate-loop-step-3 { animation: loop-step-3 9s infinite; }
+                
+                @keyframes loading-bar {
+                    0% { height: 0; }
+                    50% { height: 100%; }
+                    100% { height: 0; }
                 }
-                @keyframes receipt-up {
-                    70% { transform: translateY(20px); opacity: 0; }
-                    80% { transform: translateY(0); opacity: 1; }
+                .animate-loading-bar {
+                    animation: loading-bar 1.5s ease-in-out infinite;
                 }
-                .animate-booking-refined {
-                    animation: booking-refined 8s ease-in-out infinite;
+                
+                @keyframes float-slow {
+                    0%, 100% { transform: translateY(0px) rotate(0deg); }
+                    50% { transform: translateY(-10px) rotate(1deg); }
                 }
-                .animate-check-scale {
-                    animation: check-scale 8s ease-in-out infinite;
-                }
-                .animate-receipt-up {
-                    animation: receipt-up 8s ease-in-out infinite;
+                .animate-float-slow {
+                    animation: float-slow 4s ease-in-out infinite;
                 }
                 @keyframes draw-path {
                     to { stroke-dashoffset: 0; }
