@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Globe, Star, TrendingUp, ArrowRight } from 'lucide-react';
+import { MapPin, Globe, Star, Palette, ArrowRight } from 'lucide-react';
 
 const services = [
     {
@@ -10,7 +10,7 @@ const services = [
         tag: "SEO Local"
     },
     {
-        title: "Sitios Web para Rest.",
+        title: "Página Web",
         description: "Diseñamos plataformas rápidas, optimizadas para móviles y enfocadas en convertir visitas en reservas para tu negocio.",
         icon: <Globe className="w-6 h-6" />,
         stats: "Carga < 1.5s",
@@ -24,11 +24,11 @@ const services = [
         tag: "Reputación"
     },
     {
-        title: "Publicidad en Maps",
-        description: "Campañas de Google Ads ultra-localizadas para captar tráfico inmediato y superar a tu competencia directa.",
-        icon: <TrendingUp className="w-6 h-6" />,
-        stats: "ROI medible",
-        tag: "Ads"
+        title: "Branding",
+        description: "Creamos una identidad visual impactante y profesional que diferencia a tu negocio de la competencia.",
+        icon: <Palette className="w-6 h-6" />,
+        stats: "Diseño Premium",
+        tag: "Identidad"
     }
 ];
 
