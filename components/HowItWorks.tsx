@@ -45,7 +45,7 @@ const HowItWorks: React.FC = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-white animate-pulse shadow-[0_0_10px_white]"></div>
-                    <span className="text-[9px] font-mono text-white/70 tracking-tighter uppercase whitespace-nowrap">AUDITORÍA_RESEÑAS</span>
+                    <span className="text-[9px] font-mono text-white tracking-tighter uppercase whitespace-nowrap">AUDITORÍA_RESEÑAS</span>
                   </div>
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
@@ -62,8 +62,8 @@ const HowItWorks: React.FC = () => {
                   ))}
                 </div>
                 <div className="pt-2">
-                  <div className="flex justify-between text-[9px] text-white/60 mb-1 font-mono uppercase">
-                    <span>Reputación_Online</span>
+                  <div className="flex justify-between text-[9px] text-white/60 mb-1 font-mono uppercase tracking-tighter">
+                    <span>REPUTACIÓN_ONLINE</span>
                     <span className="tabular-nums">4.8★</span>
                   </div>
                   <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
@@ -90,9 +90,9 @@ const HowItWorks: React.FC = () => {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-white/40"></div>
-                  <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest font-bold">Reserva_Cloud</span>
+                  <span className="text-[9px] font-mono text-white/70 uppercase tracking-tighter">INTERFAZ_RESERVAS</span>
                 </div>
-                <div className="px-2 py-0.5 rounded-md bg-white/10 border border-white/10 text-[8px] font-bold text-white/60 uppercase tracking-tighter">Sincronización_Real</div>
+                <div className="text-[9px] font-mono text-white/40 uppercase tracking-tighter">UX_OPTIMIZADO</div>
               </div>
 
               <div className="flex gap-6 h-full relative">
@@ -113,7 +113,7 @@ const HowItWorks: React.FC = () => {
                       <div className="h-1 w-full bg-white/10 rounded-full"></div>
                       <div className="h-1 w-2/3 bg-white/10 rounded-full"></div>
                     </div>
-                    <div className="h-6 w-full bg-white/40 rounded-md border border-white/20 shadow-lg"></div>
+                    <div className="h-6 w-full bg-white/40 rounded-md border border-white/20"></div>
                   </div>
 
                   {/* Step 3: Success Confirmation */}
@@ -126,37 +126,39 @@ const HowItWorks: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Technical Side-Info (Static but layered) */}
+                {/* Information Boxes - NO LONGER FLOATING */}
                 <div className="flex-1 space-y-3 pt-2">
-                  <div className="relative group">
-                    <div className="bg-white/5 border border-white/5 rounded-xl p-3 flex items-center justify-between">
-                      <div className="flex flex-col gap-1">
-                        <span className="text-[7px] text-white/30 uppercase font-bold tracking-widest leading-none">Status</span>
-                        <span className="text-[10px] text-white font-mono leading-none">Online</span>
-                      </div>
-                      <div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
+                  <div className="bg-white/5 border border-white/5 rounded-xl p-3 flex items-center justify-between">
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[9px] text-white/40 font-mono uppercase tracking-tighter leading-none">STATUS_RESERVA</span>
+                      <span className="text-[11px] text-white font-mono leading-none">CONFIRMADO</span>
                     </div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
                   </div>
 
+                  {/* Reservation Details Box */}
                   <div className="bg-white/5 border border-white/5 rounded-xl p-3">
                     <div className="flex items-center gap-2 mb-2">
-                      <Zap className="w-3 h-3 text-white/40" />
-                      <span className="text-[8px] text-white/50 font-bold uppercase tracking-widest">Auto_Sync</span>
+                      <Users className="w-3 h-3 text-white/40" />
+                      <span className="text-[9px] font-mono text-white/40 uppercase tracking-tighter">DETALLE_MESA</span>
                     </div>
-                    <div className="flex gap-1">
-                      {[...Array(12)].map((_, i) => (
-                        <div key={i} className="h-3 w-0.5 bg-white/10 rounded-full overflow-hidden">
-                          <div className="h-full w-full bg-white/60 animate-loading-bar" style={{ animationDelay: `${i * 0.15}s` }}></div>
-                        </div>
-                      ))}
+                    <div className="flex items-center gap-4">
+                      <div className="flex flex-col">
+                        <span className="text-[8px] text-white/30 font-mono uppercase tracking-tighter">PAX</span>
+                        <span className="text-[11px] text-white font-mono">04</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-[8px] text-white/30 font-mono uppercase tracking-tighter">HORA</span>
+                        <span className="text-[11px] text-white font-mono">21:30</span>
+                      </div>
                     </div>
                   </div>
 
                   <div className="bg-black/20 border border-white/10 rounded-xl p-3 backdrop-blur-sm">
-                    <div className="text-[7px] text-white/30 font-bold uppercase tracking-widest mb-1.5">Métrica Global</div>
+                    <div className="text-[9px] text-white/40 font-mono uppercase tracking-tighter mb-1.5">MÉTRICA_WEB</div>
                     <div className="flex items-end justify-between">
                       <div className="text-xl font-mono text-white leading-none">100%</div>
-                      <div className="text-[7px] text-white/30 uppercase font-bold">Disponibilidad</div>
+                      <div className="text-[8px] text-white/30 font-mono uppercase tracking-tighter">UPTIME</div>
                     </div>
                   </div>
                 </div>
@@ -178,7 +180,7 @@ const HowItWorks: React.FC = () => {
             {/* Visualization: Professional KPI Dashboard */}
             <div className="mt-8 relative bg-white/5 rounded-3xl p-5 border border-white/10 backdrop-blur-md h-52 flex flex-col overflow-hidden shrink-0">
               <div className="flex items-center justify-between mb-4">
-                <div className="text-[10px] font-mono text-white/40 tracking-widest uppercase">RESULTADOS_ROI</div>
+                <div className="text-[9px] font-mono text-white/40 tracking-tighter uppercase whitespace-nowrap">ANÁLISIS_CRECIMIENTO</div>
                 <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></div>
               </div>
 
@@ -186,21 +188,21 @@ const HowItWorks: React.FC = () => {
                 <div className="bg-white/5 border border-white/10 rounded-xl p-2 flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-1">
                     <Users className="w-3 h-3 text-white/40" />
-                    <span className="text-[8px] text-white/40 font-bold uppercase">Clientes</span>
+                    <span className="text-[9px] font-mono text-white/40 uppercase tracking-tighter">CLIENTES</span>
                   </div>
                   <div className="text-lg font-mono text-white tabular-nums">+84</div>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-xl p-2 flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-1">
                     <PhoneCall className="w-3 h-3 text-white/40" />
-                    <span className="text-[8px] text-white/40 font-bold uppercase">Llamadas</span>
+                    <span className="text-[9px] font-mono text-white/40 uppercase tracking-tighter">LLAMADAS</span>
                   </div>
                   <div className="text-lg font-mono text-white tabular-nums">+126</div>
                 </div>
                 <div className="col-span-2 bg-white/10 border border-white/20 rounded-xl p-2 flex items-center justify-between overflow-hidden relative">
-                  <div className="relative z-10">
-                    <div className="text-[8px] text-white/50 font-bold uppercase tracking-widest mb-0.5">Retorno Inversión</div>
-                    <div className="text-xl font-mono text-white group-hover:scale-105 transition-transform duration-500">4.2x</div>
+                  <div className="relative z-10 w-full">
+                    <div className="text-[9px] font-mono text-white/40 uppercase tracking-tighter mb-1">RETORNO_INVERSIÓN_ROI</div>
+                    <div className="text-xl font-mono text-white transition-transform duration-500">4.2x</div>
                   </div>
                   <div className="absolute right-0 bottom-0 top-0 w-20 opacity-20">
                     <svg viewBox="0 0 100 40" className="w-full h-full">
@@ -250,15 +252,6 @@ const HowItWorks: React.FC = () => {
                 .animate-loop-step-1 { animation: loop-step-1 9s infinite; }
                 .animate-loop-step-2 { animation: loop-step-2 9s infinite; }
                 .animate-loop-step-3 { animation: loop-step-3 9s infinite; }
-                
-                @keyframes loading-bar {
-                    0% { height: 0; }
-                    50% { height: 100%; }
-                    100% { height: 0; }
-                }
-                .animate-loading-bar {
-                    animation: loading-bar 1.5s ease-in-out infinite;
-                }
                 
                 @keyframes float-slow {
                     0%, 100% { transform: translateY(0px) rotate(0deg); }
