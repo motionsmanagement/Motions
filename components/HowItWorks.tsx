@@ -24,7 +24,7 @@ const HowItWorks: React.FC = () => {
               <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
                 Auditoría Local GMB
               </h3>
-              <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
+              <p className="text-white/40 text-sm leading-relaxed h-[4.5rem] overflow-hidden">
                 Evaluamos el posicionamiento de tu ficha en Google Maps y la calidad de tus reseñas para identificar los puntos de mejora inmediata.
               </p>
             </div>
@@ -80,7 +80,7 @@ const HowItWorks: React.FC = () => {
               <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
                 Plataforma de Reservas
               </h3>
-              <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
+              <p className="text-white/40 text-sm leading-relaxed h-[4.5rem] overflow-hidden">
                 Desarrollamos tu sitio web especializado con carta digital interactiva, optimizado para convertir visitas en reservas sin comisiones locales.
               </p>
             </div>
@@ -145,7 +145,7 @@ const HowItWorks: React.FC = () => {
               <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
                 Escalamiento y ROI
               </h3>
-              <p className="text-white/40 text-sm md:text-base leading-relaxed h-[4.5rem] overflow-hidden">
+              <p className="text-white/40 text-sm leading-relaxed h-[4.5rem] overflow-hidden">
                 Implementamos estrategias de escalado basadas en datos reales para maximizar el retorno de tu inversión y el flujo de clientes.
               </p>
             </div>
