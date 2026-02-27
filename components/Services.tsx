@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Smartphone, Palette, PenTool, BrainCircuit, MapPin, Globe, Utensils, MessageSquare, Layout } from 'lucide-react';
+import { Search, Smartphone, Palette, PenTool, BrainCircuit, MapPin, Globe, Utensils, MessageSquare, Layout, ArrowRight } from 'lucide-react';
 
 const serviceList = [
   {
