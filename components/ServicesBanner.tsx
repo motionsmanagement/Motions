@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+// Build trigger: Final Version with 6 services, glass pills and SVGs
 
 // ── SVG icons (white stroke) ─────────────────────────────────────────────────
 const IconMapPin = () => (
