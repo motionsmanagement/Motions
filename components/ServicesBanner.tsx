@@ -149,7 +149,7 @@ const ServicesBanner: React.FC = () => {
                     {/* LEFT: sub-tag + headline + description */}
                     <div style={{
                         display: 'flex', flexDirection: 'column', gap: '8px',
-                        maxWidth: '280px', flexShrink: 0,
+                        maxWidth: '380px', flexShrink: 0,
                         opacity: visible ? 1 : 0,
                         transform: visible ? 'translateX(0)' : 'translateX(-20px)',
                         transition: 'opacity 0.65s ease, transform 0.65s ease',
@@ -175,7 +175,7 @@ const ServicesBanner: React.FC = () => {
                         </h2>
 
                         <p style={{
-                            fontSize: '11.5px', color: 'rgba(255,255,255,0.52)',
+                            fontSize: '13.5px', color: 'rgba(255,255,255,0.52)',
                             lineHeight: 1.6, margin: 0,
                         }}>
                             Todo lo que tu restaurante necesita para destacar online, en un solo lugar.
