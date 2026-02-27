@@ -17,7 +17,7 @@ const FinalCTA: React.FC = () => {
 
       <div className="relative z-10 max-w-4xl">
         {/* Smaller 2-line title */}
-        <h2 className="text-3xl md:text-5xl text-white mb-6 leading-[1.15] font-medium tracking-tight">
+        <h2 className="text-4xl md:text-6xl text-white mb-6 leading-[1.15] font-medium tracking-tight">
           Transforma tu restaurante hoy<br />
           y domina tu mercado local
         </h2>
