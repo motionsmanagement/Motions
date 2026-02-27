@@ -53,7 +53,7 @@ const row2 = [
 ];
 
 // Fixed card dimensions — all pills identical
-const CARD_W = 210;
+const CARD_W = 185;
 const CARD_H = 60;
 const CARD_GAP = 10;
 
@@ -132,12 +132,15 @@ const ServicesBanner: React.FC = () => {
                 Empezar ahora <span style={{ fontSize: '11px' }}>↓</span>
             </button>
 
-            {/* BOTTOM-LEFT: tag + 2-line headline + description */}
+            {/* LEFT: tag + 2-line headline + description — vertically centred */}
             <div style={{
-                position: 'absolute', bottom: '30px', left: '28px', zIndex: 10,
+                position: 'absolute',
+                top: '50%',
+                left: '28px',
+                transform: visible ? 'translateY(-50%) translateX(0)' : 'translateY(-50%) translateX(-20px)',
+                zIndex: 10,
                 display: 'flex', flexDirection: 'column', gap: '8px', maxWidth: '310px',
                 opacity: visible ? 1 : 0,
-                transform: visible ? 'translateX(0)' : 'translateX(-20px)',
                 transition: 'opacity 0.65s ease, transform 0.65s ease',
             }}>
                 {/* small tag */}
