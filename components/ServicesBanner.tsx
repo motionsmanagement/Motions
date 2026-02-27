@@ -111,33 +111,7 @@ const ServicesBanner: React.FC = () => {
                 width: '100%',
             }}>
 
-                {/* TOP BAR: tag left · button right */}
-                <div style={{
-                    display: 'flex', alignItems: 'center',
-                    justifyContent: 'space-between',
-                    paddingTop: '20px',
-                }}>
-                    {/* Left: SERVICIOS pill + label */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <span style={{
-                            fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em',
-                            textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)',
-                            background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(10px)',
-                            WebkitBackdropFilter: 'blur(10px)',
-                            border: '1px solid rgba(255,255,255,0.22)',
-                            borderRadius: '999px', padding: '4px 12px',
-                        }}>
-                            SERVICIOS
-                        </span>
-                        <span style={{ fontSize: '12px', fontWeight: 500, color: 'rgba(255,255,255,0.85)', letterSpacing: '-0.01em' }}>
-                            Soluciones Digitales
-                        </span>
-                        <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px' }}>›</span>
-                    </div>
 
-                    {/* Right: removed "Empezar ahora" button */}
-                    <div />
-                </div>
 
                 {/* MAIN ROW: text left · cards right — vertically centred */}
                 <div style={{
