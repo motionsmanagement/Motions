@@ -132,72 +132,82 @@ const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) =
             <div className="flex-1 flex flex-col gap-2">
                 <div className="flex-1 rounded-lg bg-black/[0.02] border border-black/[0.03] relative overflow-hidden flex items-center justify-center p-2.5">
                     {type === 'performance' && (
-                        <div className="w-full h-full flex items-end gap-1 justify-center">
-                            {[40, 75, 50, 95, 65, 85].map((h, i) => (
-                                <div key={i} className="flex-1 bg-black/5 rounded-t-[1px] relative group/bar overflow-hidden" style={{ height: `${h}%` }}>
-                                    <div className="absolute inset-0 bg-black/20 translate-y-full group-hover/bar:translate-y-0 transition-transform duration-500 animate-bounce-slow" style={{ animationDelay: `${i * 0.1}s` }}></div>
-                                </div>
-                            ))}
+                        <div className="w-full h-full flex flex-col justify-end gap-1.5">
+                            <div className="flex items-end gap-1 h-full">
+                                {[35, 60, 45, 85, 55, 100].map((h, i) => (
+                                    <div key={i} className="flex-1 bg-black/5 rounded-t-[1px] relative overflow-hidden" style={{ height: `${h}%` }}>
+                                        <div className="absolute inset-x-0 bottom-0 bg-black/20 animate-grow-vertical" style={{ animationDelay: `${i * 0.1}s`, height: '100%' }}></div>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="flex justify-between border-t border-black/5 pt-1">
+                                <span className="text-[5px] font-mono text-black/40">MAR</span>
+                                <span className="text-[5px] font-mono text-black/40">HOY</span>
+                            </div>
                         </div>
                     )}
                     {type === 'brand' && (
                         <div className="relative w-full h-full flex items-center justify-center">
-                            <div className="w-14 h-14 rounded-full border border-black/5 border-dashed animate-spin-slow"></div>
-                            <div className="absolute w-10 h-10 rounded-full border border-black/10 border-t-black/40 flex items-center justify-center">
-                                <Activity className="w-3.5 h-3.5 text-black/60 animate-pulse" />
+                            <div className="w-16 h-16 rounded-full border border-black/5 border-dashed animate-spin-slow"></div>
+                            <div className="absolute w-12 h-12 rounded-full border border-black/10 flex items-center justify-center">
+                                <div className="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center">
+                                    <Activity className="w-4 h-4 text-black/60 animate-pulse" />
+                                </div>
+                            </div>
+                            <div className="absolute bottom-0 inset-x-0 flex justify-center">
+                                <span className="text-[6px] font-mono bg-black text-white px-1.5 py-0.5 rounded-sm">IMPACTO+</span>
                             </div>
                         </div>
                     )}
                     {type === 'conversion' && (
-                        <div className="w-full space-y-2">
-                            {[1, 2, 3].map(i => (
-                                <div key={i} className="flex flex-col gap-0.5">
-                                    <div className="flex justify-between items-center">
-                                        <span className="text-[5px] font-mono text-black/40">{40 + i * 20}%</span>
+                        <div className="w-full flex h-full gap-2 items-center">
+                            <div className="flex-1 flex flex-col gap-2">
+                                {[70, 45, 30].map((w, i) => (
+                                    <div key={i} className="h-2 bg-black/5 rounded-full overflow-hidden relative">
+                                        <div className="absolute inset-y-0 left-0 bg-black/15 animate-grow-horizontal" style={{ width: `${w}%`, animationDelay: `${i * 0.2}s` }}></div>
                                     </div>
-                                    <div className="w-full h-0.5 bg-black/5 rounded-full overflow-hidden">
-                                        <div className="h-full bg-black/20 animate-grow-horizontal" style={{ width: `${40 + i * 20}%`, animationDelay: `${i * 0.2}s` }}></div>
-                                    </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
+                            <div className="text-[6px] font-mono text-black/30 flex flex-col justify-between h-full py-1">
+                                <span>UX</span>
+                                <span>CTR</span>
+                                <span>CONV</span>
+                            </div>
                         </div>
                     )}
                     {type === 'reputation' && (
-                        <div className="flex flex-col items-center gap-1">
-                            <div className="flex gap-0.5">
-                                {[...Array(5)].map((_, i) => <Star key={i} className="w-2.5 h-2.5 text-black fill-black/80 animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />)}
+                        <div className="flex flex-col items-center justify-center h-full gap-2">
+                            <div className="flex gap-1">
+                                {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 text-black fill-black animate-pulse" style={{ animationDelay: `${i * 0.15}s` }} />)}
                             </div>
-                            <span className="text-sm font-mono text-black tracking-tighter">4.9/5.0</span>
-                            <div className="px-1.5 py-0.5 bg-black/5 rounded text-[5px] font-bold text-black/40 uppercase tracking-tighter animate-pulse">OPTIMIZADO</div>
+                            <div className="text-center">
+                                <span className="text-xl font-mono text-black font-bold block leading-none">4.9</span>
+                                <span className="text-[6px] font-mono text-black/40 uppercase">PUNTUACIÓN</span>
+                            </div>
                         </div>
                     )}
                     {(type === 'visibility' || type === 'reach') && (
-                        <div className="relative w-full h-full flex items-center justify-center">
-                            <div className="absolute inset-0 opacity-10">
-                                <svg width="100%" height="100%" viewBox="0 0 100 100">
-                                    <circle cx="50" cy="50" r="35" stroke="black" strokeWidth="0.5" fill="none" strokeDasharray="3 3" className="animate-spin-slow" />
-                                    <circle cx="50" cy="50" r="20" stroke="black" strokeWidth="0.5" fill="none" strokeDasharray="2 2" className="animate-spin-reverse" />
-                                </svg>
+                        <div className="relative w-full h-full flex flex-col items-center justify-center gap-2">
+                            <div className="relative w-12 h-12">
+                                <div className="absolute inset-0 rounded-full border border-black/5 animate-ping-slow"></div>
+                                <div className="absolute inset-2 rounded-full border border-black/10 animate-ping-slow" style={{ animationDelay: '0.5s' }}></div>
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <MapPin className="w-5 h-5 text-black/40" />
+                                </div>
                             </div>
-                            <div className="relative">
-                                <MapPin className="w-5 h-5 text-black/40 relative z-10" />
-                                <div className="absolute inset-0 bg-black/10 blur-md rounded-full animate-ping"></div>
-                            </div>
+                            <span className="text-[6px] font-mono text-black/40 uppercase tracking-tighter">ALCANCE LOCAL</span>
                         </div>
                     )}
                 </div>
 
-                <div className="grid grid-cols-2 gap-1">
-                    <div className="p-1.5 bg-black/[0.02] rounded border border-black/5 flex flex-col">
-                        <span className="text-[5px] text-black/30 uppercase font-bold mb-0.5">ESTADO</span>
-                        <div className="flex items-center gap-1">
-                            <div className="w-0.5 h-0.5 rounded-full bg-green-500"></div>
-                            <span className="text-[7px] font-mono text-black/60 uppercase">ACTIVO</span>
-                        </div>
+                <div className="grid grid-cols-2 gap-1.5">
+                    <div className="p-1 px-1.5 bg-black/[0.02] rounded border border-black/5 flex flex-col">
+                        <span className="text-[5px] text-black/40 uppercase font-black tracking-tighter">ESTADO</span>
+                        <span className="text-[7px] font-mono text-black/80 font-bold uppercase truncate">ACTIVO</span>
                     </div>
-                    <div className="p-1.5 bg-black/[0.02] rounded border border-black/5 flex flex-col">
-                        <span className="text-[5px] text-black/30 uppercase font-bold mb-0.5">NIVEL</span>
-                        <span className="text-[7px] font-mono text-black/60 uppercase">PICO</span>
+                    <div className="p-1 px-1.5 bg-black/[0.02] rounded border border-black/5 flex flex-col">
+                        <span className="text-[5px] text-black/40 uppercase font-black tracking-tighter">CALIDAD</span>
+                        <span className="text-[7px] font-mono text-black/80 font-bold uppercase">ALTA</span>
                     </div>
                 </div>
             </div>
@@ -310,26 +320,34 @@ const SuccessStories: React.FC = () => {
                                             </p>
 
                                             {/* Rectangular Technical Metric Card - Light Version - Horizontal */}
-                                            <div className="group relative bg-[#f8f9f8] rounded-xl p-6 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-lg w-full">
-                                                <div className="relative z-10 flex flex-row gap-8 items-center justify-between">
-                                                    {/* Metric List - 2x2 Grid */}
-                                                    <div className="flex-1 grid grid-cols-2 gap-x-10 gap-y-5">
-                                                        {item.metrics.map((metric, idx) => (
-                                                            <div key={idx} className="flex items-center gap-3.5 group/metric">
-                                                                <div className="w-[34px] h-[34px] rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
-                                                                    <metric.icon className="w-[18px] h-[18px] text-black" />
-                                                                </div>
-                                                                <div className="flex flex-col">
-                                                                    <span className="text-[9px] font-bold text-black uppercase tracking-widest mb-0.5">{metric.label}</span>
-                                                                    <span className="text-lg font-semibold text-gray-700 tracking-tight leading-none">{metric.value}</span>
-                                                                </div>
-                                                            </div>
-                                                        ))}
+                                            <div className="group relative bg-[#f8f9f8] rounded-xl p-6 md:p-7 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-lg w-full">
+                                                <div className="relative z-10">
+                                                    {/* Card Title */}
+                                                    <div className="flex items-center gap-2 mb-6 border-b border-black/5 pb-3">
+                                                        <div className="w-1.5 h-1.5 rounded-full bg-black"></div>
+                                                        <span className="text-[10px] font-bold text-black uppercase tracking-[0.2em]">Resultados Clave</span>
                                                     </div>
 
-                                                    {/* Smaller Technical graphic */}
-                                                    <div className="w-32 h-36 shrink-0">
-                                                        <CaseGraphic type={item.graphicType} />
+                                                    <div className="flex flex-row gap-8 items-center justify-between">
+                                                        {/* Metric List - 2x2 Grid */}
+                                                        <div className="flex-1 grid grid-cols-2 gap-x-10 gap-y-6">
+                                                            {item.metrics.map((metric, idx) => (
+                                                                <div key={idx} className="flex items-center gap-3.5 group/metric">
+                                                                    <div className="w-[34px] h-[34px] rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
+                                                                        <metric.icon className="w-[18px] h-[18px] text-black" />
+                                                                    </div>
+                                                                    <div className="flex flex-col">
+                                                                        <span className="text-[9px] font-bold text-black uppercase tracking-widest mb-0.5">{metric.label}</span>
+                                                                        <span className="text-lg font-semibold text-gray-700 tracking-tight leading-none">{metric.value}</span>
+                                                                    </div>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+
+                                                        {/* Smaller Technical graphic */}
+                                                        <div className="w-32 h-36 shrink-0">
+                                                            <CaseGraphic type={item.graphicType} />
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -386,6 +404,19 @@ const SuccessStories: React.FC = () => {
                 }
                 .animate-bounce-slow {
                     animation: bounce-slow 2s ease-in-out infinite;
+                }
+                @keyframes grow-vertical {
+                    from { height: 0; }
+                }
+                .animate-grow-vertical {
+                    animation: grow-vertical 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                }
+                @keyframes ping-slow {
+                    0% { transform: scale(1); opacity: 0.8; }
+                    100% { transform: scale(1.5); opacity: 0; }
+                }
+                .animate-ping-slow {
+                    animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
                 }
             `}} />
         </section>
