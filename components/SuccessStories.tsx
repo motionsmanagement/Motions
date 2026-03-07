@@ -32,7 +32,8 @@ const successCases: SuccessCase[] = [
         metrics: [
             { label: 'Conversión Web', value: '+140%', icon: MousePointer2 },
             { label: 'Engagement Social', value: '+35%', icon: Activity },
-            { label: 'Ticket Medio', value: '+18.5%', icon: TrendingUp }
+            { label: 'Ticket Medio', value: '+18.5%', icon: TrendingUp },
+            { label: 'Fidelización', value: '+22%', icon: Users }
         ]
     },
     {
@@ -47,7 +48,8 @@ const successCases: SuccessCase[] = [
         metrics: [
             { label: 'Alcance GMB', value: '+12.5k', icon: Users },
             { label: 'Reservas Online', value: '+45%', icon: CheckCircle2 },
-            { label: 'ROI Campaign', value: '4.2x', icon: Target }
+            { label: 'ROI Campaign', value: '4.2x', icon: Target },
+            { label: 'Llamadas', value: '+310', icon: Smartphone }
         ]
     },
     {
@@ -62,7 +64,8 @@ const successCases: SuccessCase[] = [
         metrics: [
             { label: 'Velocidad UX', value: '0.8s', icon: Smartphone },
             { label: 'Ventas Directas', value: '+60%', icon: TrendingUp },
-            { label: 'Bounce Rate', value: '-22%', icon: BarChart3 }
+            { label: 'Bounce Rate', value: '-22%', icon: BarChart3 },
+            { label: 'Mobile Traffic', value: '78%', icon: Smartphone }
         ]
     },
     {
@@ -77,7 +80,8 @@ const successCases: SuccessCase[] = [
         metrics: [
             { label: 'Rating Medio', value: '4.9★', icon: Star },
             { label: 'CTR Maps', value: '+24%', icon: MousePointer2 },
-            { label: 'Llamadas GMB', value: '+30%', icon: Users }
+            { label: 'Llamadas GMB', value: '+30%', icon: Users },
+            { label: 'Reseñas Mes', value: '+85', icon: MessageSquare }
         ]
     },
     {
@@ -92,7 +96,8 @@ const successCases: SuccessCase[] = [
         metrics: [
             { label: 'Visuales HD', value: '50+', icon: MapPin },
             { label: 'Tráfico Gourmet', value: '+30%', icon: Activity },
-            { label: 'Reach Total', value: '45k', icon: Search }
+            { label: 'Reach Total', value: '45k', icon: Search },
+            { label: 'CTR Imágenes', value: '+15%', icon: MousePointer2 }
         ]
     },
     {
@@ -107,7 +112,8 @@ const successCases: SuccessCase[] = [
         metrics: [
             { label: 'Posición Media', value: 'Top 3', icon: MapPin },
             { label: 'Búsquedas Dir.', value: '+18k', icon: Search },
-            { label: 'Visitas Locales', value: '+42%', icon: Users }
+            { label: 'Visitas Locales', value: '+42%', icon: Users },
+            { label: 'Acciones GMB', value: '+1.2k', icon: Target }
         ]
     }
 ];
@@ -304,15 +310,15 @@ const SuccessStories: React.FC = () => {
                                         {/* Rectangular Technical Metric Card - Light Version - Horizontal */}
                                         <div className="group relative bg-[#f8f9f8] rounded-xl p-5 md:p-5 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-lg w-full">
                                             <div className="relative z-10 flex flex-row gap-8 items-center justify-between">
-                                                {/* Metric List */}
-                                                <div className="flex-1 space-y-4">
+                                                {/* Metric List - 2x2 Grid */}
+                                                <div className="flex-1 grid grid-cols-2 gap-x-10 gap-y-5">
                                                     {item.metrics.map((metric, idx) => (
                                                         <div key={idx} className="flex items-center gap-3.5 group/metric">
-                                                            <div className="w-8 h-8 rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center transition-all duration-500">
+                                                            <div className="w-8 h-8 rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
                                                                 <metric.icon className="w-4 h-4 text-black" />
                                                             </div>
                                                             <div className="flex flex-col">
-                                                                <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">{metric.label}</span>
+                                                                <span className="text-[9px] font-bold text-black/70 uppercase tracking-widest mb-0.5">{metric.label}</span>
                                                                 <span className="text-lg font-semibold text-black tracking-tight leading-none">{metric.value}</span>
                                                             </div>
                                                         </div>
