@@ -30,10 +30,10 @@ const successCases: SuccessCase[] = [
         description: 'Elevamos la identidad visual de la marca a través de un diseño publicitario sofisticado. Realizamos el diseño de banners de alta conversión para campañas digitales y un rediseño estratégico de la carta digital, mejorando la experiencia del comensal.',
         graphicType: 'brand',
         metrics: [
-            { label: 'Conversión Web', value: '+140%', icon: MousePointer2 },
-            { label: 'Engagement Social', value: '+35%', icon: Activity },
-            { label: 'Ticket Medio', value: '+18.5%', icon: TrendingUp },
-            { label: 'Fidelización', value: '+22%', icon: Users }
+            { label: 'Conversión', value: '+140%', icon: MousePointer2 },
+            { label: 'Engagement', value: '+35%', icon: Activity },
+            { label: 'Ticket', value: '+18%', icon: TrendingUp },
+            { label: 'Retención', value: '+22%', icon: Users }
         ]
     },
     {
@@ -46,9 +46,9 @@ const successCases: SuccessCase[] = [
         description: 'Estrategia integral de crecimiento 360°. Optimizamos su perfil en Google My Business y ejecutamos campañas de gran impacto en Google Maps y Meta Ads, potenciando su alcance local mediante colaboraciones estratégicas con micro-influencers del sector gastronómico.',
         graphicType: 'performance',
         metrics: [
-            { label: 'Alcance GMB', value: '+12.5k', icon: Users },
-            { label: 'Reservas Online', value: '+45%', icon: CheckCircle2 },
-            { label: 'ROI Campaign', value: '4.2x', icon: Target },
+            { label: 'Alcance', value: '+12k', icon: Users },
+            { label: 'Reservas', value: '+45%', icon: CheckCircle2 },
+            { label: 'ROI', value: '4.2x', icon: Target },
             { label: 'Llamadas', value: '+310', icon: Smartphone }
         ]
     },
@@ -62,10 +62,10 @@ const successCases: SuccessCase[] = [
         description: 'Transformación digital completa para reflejar su esencia exótica. Rediseñamos su plataforma web y reforzamos su identidad de marca, integrando servicios de fotografía gastronómica profesional y una optimización avanzada de su presencia en Google My Business.',
         graphicType: 'conversion',
         metrics: [
-            { label: 'Velocidad UX', value: '0.8s', icon: Smartphone },
-            { label: 'Ventas Directas', value: '+60%', icon: TrendingUp },
-            { label: 'Bounce Rate', value: '-22%', icon: BarChart3 },
-            { label: 'Mobile Traffic', value: '78%', icon: Smartphone }
+            { label: 'Velocidad', value: '0.8s', icon: Smartphone },
+            { label: 'Ventas', value: '+60%', icon: TrendingUp },
+            { label: 'Rebote', value: '-22%', icon: BarChart3 },
+            { label: 'Mobile', value: '78%', icon: Smartphone }
         ]
     },
     {
@@ -78,10 +78,10 @@ const successCases: SuccessCase[] = [
         description: 'Refuerzo de la confianza del cliente y atractivo visual. Implementamos una gestión profesional de reseñas para mejorar el ranking local, complementado con el diseño de piezas publicitarias dinámicas y la optimización técnica de Google My Business.',
         graphicType: 'reputation',
         metrics: [
-            { label: 'Rating Medio', value: '4.9★', icon: Star },
+            { label: 'Rating', value: '4.9★', icon: Star },
             { label: 'CTR Maps', value: '+24%', icon: MousePointer2 },
-            { label: 'Llamadas GMB', value: '+30%', icon: Users },
-            { label: 'Reseñas Mes', value: '+85', icon: MessageSquare }
+            { label: 'Leads', value: '+30%', icon: Users },
+            { label: 'Reseñas', value: '+85', icon: MessageSquare }
         ]
     },
     {
@@ -94,10 +94,10 @@ const successCases: SuccessCase[] = [
         description: 'Capturamos la excelencia culinaria mediante fotografía artística de alta definición. Esta renovación visual se integró con una optimización exhaustiva del perfil de Google My Business, logrando atraer a un público más cualificado y gourmet.',
         graphicType: 'visibility',
         metrics: [
-            { label: 'Visuales HD', value: '50+', icon: MapPin },
-            { label: 'Tráfico Gourmet', value: '+30%', icon: Activity },
-            { label: 'Reach Total', value: '45k', icon: Search },
-            { label: 'CTR Imágenes', value: '+15%', icon: MousePointer2 }
+            { label: 'Fotos HD', value: '50+', icon: MapPin },
+            { label: 'Tráfico', value: '+30%', icon: Activity },
+            { label: 'Alcance', value: '45k', icon: Search },
+            { label: 'Visitas', value: '+15%', icon: MousePointer2 }
         ]
     },
     {
@@ -110,10 +110,10 @@ const successCases: SuccessCase[] = [
         description: 'Dominio estratégico del ecosistema de búsqueda local. Ejecutamos una optimización técnica avanzada de Google My Business vinculada a una estrategia de posicionamiento pagado en Google Maps, garantizando los primeros puestos en búsquedas clave.',
         graphicType: 'reach',
         metrics: [
-            { label: 'Posición Media', value: 'Top 3', icon: MapPin },
-            { label: 'Búsquedas Dir.', value: '+18k', icon: Search },
-            { label: 'Visitas Locales', value: '+42%', icon: Users },
-            { label: 'Acciones GMB', value: '+1.2k', icon: Target }
+            { label: 'Ranking', value: 'Top 3', icon: MapPin },
+            { label: 'Búsquedas', value: '+18k', icon: Search },
+            { label: 'Visitas', value: '+42%', icon: Users },
+            { label: 'Acciones', value: '+1.2k', icon: Target }
         ]
     }
 ];
@@ -126,7 +126,7 @@ const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) =
                     <div className="w-1 h-1 rounded-full bg-black/20 animate-pulse"></div>
                     <div className="w-1 h-1 rounded-full bg-black/10"></div>
                 </div>
-                <span className="text-[6px] font-mono text-black/30 uppercase tracking-widest">REAL_TIME_DATA</span>
+                <span className="text-[7px] font-mono text-black/30 uppercase tracking-widest">MÉTRICAS_VIVO</span>
             </div>
 
             <div className="flex-1 flex flex-col gap-2">
@@ -167,7 +167,8 @@ const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) =
                             <div className="flex gap-0.5">
                                 {[...Array(5)].map((_, i) => <Star key={i} className="w-2.5 h-2.5 text-black fill-black/80 animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />)}
                             </div>
-                            <span className="text-lg font-mono text-black tracking-tighter">4.9</span>
+                            <span className="text-sm font-mono text-black tracking-tighter">4.9/5.0</span>
+                            <div className="px-1.5 py-0.5 bg-black/5 rounded text-[5px] font-bold text-black/40 uppercase tracking-tighter animate-pulse">OPTIMIZADO</div>
                         </div>
                     )}
                     {(type === 'visibility' || type === 'reach') && (
@@ -188,17 +189,22 @@ const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) =
 
                 <div className="grid grid-cols-2 gap-1">
                     <div className="p-1.5 bg-black/[0.02] rounded border border-black/5 flex flex-col">
-                        <span className="text-[5px] text-black/30 uppercase font-bold mb-0.5">SYNC</span>
+                        <span className="text-[5px] text-black/30 uppercase font-bold mb-0.5">ESTADO</span>
                         <div className="flex items-center gap-1">
                             <div className="w-0.5 h-0.5 rounded-full bg-green-500"></div>
-                            <span className="text-[7px] font-mono text-black/60 uppercase">ACTIVE</span>
+                            <span className="text-[7px] font-mono text-black/60 uppercase">ACTIVO</span>
                         </div>
                     </div>
                     <div className="p-1.5 bg-black/[0.02] rounded border border-black/5 flex flex-col">
-                        <span className="text-[5px] text-black/30 uppercase font-bold mb-0.5">LEVEL</span>
-                        <span className="text-[7px] font-mono text-black/60 uppercase">PEAK</span>
+                        <span className="text-[5px] text-black/30 uppercase font-bold mb-0.5">NIVEL</span>
+                        <span className="text-[7px] font-mono text-black/60 uppercase">PICO</span>
                     </div>
                 </div>
+            </div>
+
+            <div className="mt-2.5 flex items-center justify-between text-[5px] font-mono text-black/15 uppercase tracking-widest">
+                <span>RETRANSMISIÓN_TIEMPO_REAL</span>
+                <span>ID_2025</span>
             </div>
         </div>
     );
@@ -318,7 +324,7 @@ const SuccessStories: React.FC = () => {
                                                                 <metric.icon className="w-4 h-4 text-black" />
                                                             </div>
                                                             <div className="flex flex-col">
-                                                                <span className="text-[9px] font-bold text-black/70 uppercase tracking-widest mb-0.5">{metric.label}</span>
+                                                                <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest mb-0.5">{metric.label}</span>
                                                                 <span className="text-lg font-semibold text-black tracking-tight leading-none">{metric.value}</span>
                                                             </div>
                                                         </div>
