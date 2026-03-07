@@ -114,88 +114,92 @@ const successCases: SuccessCase[] = [
 
 const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) => {
     return (
-        <div className="relative w-full h-full bg-[#111] rounded-3xl border border-white/5 overflow-hidden flex flex-col p-4">
-            <div className="flex justify-between items-center mb-4 border-b border-white/5 pb-2">
+        <div className="relative w-full h-full bg-[#111] rounded-2xl border border-white/5 overflow-hidden flex flex-col p-3">
+            <div className="flex justify-between items-center mb-3 border-b border-white/5 pb-1.5">
                 <div className="flex gap-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
-                    <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                    <div className="w-1 h-1 rounded-full bg-white/40 animate-pulse"></div>
+                    <div className="w-1 h-1 rounded-full bg-white/20"></div>
                 </div>
-                <span className="text-[8px] font-mono text-white/30 uppercase tracking-widest">RESULTADOS_ANALÍTICA_V2</span>
+                <span className="text-[7px] font-mono text-white/30 uppercase tracking-widest">LIVE_METRICS</span>
             </div>
 
-            <div className="flex-1 flex flex-col gap-3">
-                {/* Simulated Data Visualization */}
-                <div className="flex-1 rounded-2xl bg-white/[0.03] border border-white/5 relative overflow-hidden flex items-center justify-center p-4">
+            <div className="flex-1 flex flex-col gap-2">
+                <div className="flex-1 rounded-xl bg-white/[0.02] border border-white/5 relative overflow-hidden flex items-center justify-center p-3">
                     {type === 'performance' && (
-                        <div className="w-full h-full flex items-end gap-2 justify-center">
-                            {[40, 70, 45, 90, 60, 85].map((h, i) => (
-                                <div key={i} className="flex-1 bg-white/10 rounded-t-sm relative group/bar overflow-hidden" style={{ height: `${h}%` }}>
-                                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/bar:translate-y-0 transition-transform duration-500"></div>
+                        <div className="w-full h-full flex items-end gap-1.5 justify-center">
+                            {[40, 75, 50, 95, 65, 85].map((h, i) => (
+                                <div key={i} className="flex-1 bg-white/10 rounded-t-[1px] relative group/bar overflow-hidden" style={{ height: `${h}%` }}>
+                                    <div className="absolute inset-0 bg-white/30 translate-y-full group-hover/bar:translate-y-0 transition-transform duration-500 animate-bounce-slow" style={{ animationDelay: `${i * 0.1}s` }}></div>
                                 </div>
                             ))}
                         </div>
                     )}
                     {type === 'brand' && (
                         <div className="relative w-full h-full flex items-center justify-center">
-                            <div className="w-24 h-24 rounded-full border border-white/10 border-dashed animate-spin-slow"></div>
-                            <div className="absolute w-16 h-16 rounded-full border-2 border-white/30 border-t-white flex items-center justify-center">
-                                <Activity className="w-6 h-6 text-white/80" />
+                            <div className="w-16 h-16 rounded-full border border-white/10 border-dashed animate-spin-slow"></div>
+                            <div className="absolute w-12 h-12 rounded-full border-2 border-white/20 border-t-white flex items-center justify-center">
+                                <Activity className="w-4 h-4 text-white/80 animate-pulse" />
                             </div>
                         </div>
                     )}
                     {type === 'conversion' && (
-                        <div className="w-full space-y-3">
+                        <div className="w-full space-y-2.5">
                             {[1, 2, 3].map(i => (
-                                <div key={i} className="flex items-center gap-3">
-                                    <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
-                                        <div className="h-full bg-white/30 animate-load-slow" style={{ width: `${40 + i * 20}%`, animationDelay: `${i * 0.2}s` }}></div>
+                                <div key={i} className="flex flex-col gap-1">
+                                    <div className="flex justify-between items-center">
+                                        <div className="w-1 h-1 rounded-full bg-white/40"></div>
+                                        <span className="text-[6px] font-mono text-white/40">{40 + i * 20}%</span>
                                     </div>
-                                    <span className="text-[8px] font-mono text-white/40">{40 + i * 20}%</span>
+                                    <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+                                        <div className="h-full bg-white/30 animate-grow-horizontal" style={{ width: `${40 + i * 20}%`, animationDelay: `${i * 0.2}s` }}></div>
+                                    </div>
                                 </div>
                             ))}
                         </div>
                     )}
                     {type === 'reputation' && (
-                        <div className="flex flex-col items-center gap-2">
-                            <div className="flex gap-1">
-                                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 text-white fill-white" />)}
+                        <div className="flex flex-col items-center gap-1.5">
+                            <div className="flex gap-0.5">
+                                {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 text-white fill-white animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />)}
                             </div>
-                            <span className="text-2xl font-mono text-white">4.9/5.0</span>
-                            <div className="px-3 py-1 bg-white/10 rounded-full text-[8px] font-bold text-white uppercase tracking-tighter">EXCENTE_NIVEL</div>
+                            <span className="text-xl font-mono text-white tracking-tighter">4.9</span>
+                            <div className="px-2 py-0.5 bg-white/10 rounded-full text-[6px] font-bold text-white uppercase tracking-tighter animate-pulse">OPTIMIZED</div>
                         </div>
                     )}
-                    {type === 'visibility' || type === 'reach' && (
+                    {(type === 'visibility' || type === 'reach') && (
                         <div className="relative w-full h-full flex items-center justify-center">
                             <div className="absolute inset-0 opacity-10">
                                 <svg width="100%" height="100%" viewBox="0 0 100 100">
-                                    <circle cx="50" cy="50" r="40" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="2 2" />
-                                    <circle cx="50" cy="50" r="25" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="2 2" />
+                                    <circle cx="50" cy="50" r="35" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="3 3" className="animate-spin-slow" />
+                                    <circle cx="50" cy="50" r="20" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="2 2" className="animate-spin-reverse" />
                                 </svg>
                             </div>
-                            <MapPin className="w-8 h-8 text-white/50" />
-                            <div className="absolute w-12 h-12 rounded-full border border-white/40 animate-ping"></div>
+                            <div className="relative">
+                                <MapPin className="w-6 h-6 text-white/60 relative z-10" />
+                                <div className="absolute inset-0 bg-white/20 blur-md rounded-full animate-ping"></div>
+                            </div>
                         </div>
                     )}
-
-                    {/* Interior Vignette */}
-                    <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/40 to-transparent"></div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2">
-                    <div className="p-3 bg-white/5 rounded-xl border border-white/5 flex flex-col gap-1">
-                        <span className="text-[7px] text-white/30 uppercase font-bold tracking-tighter">EFICIENCIA_MES</span>
-                        <span className="text-xs font-mono text-white">98.4%</span>
+                <div className="grid grid-cols-2 gap-1.5">
+                    <div className="p-2 bg-white/5 rounded-lg border border-white/5 flex flex-col">
+                        <span className="text-[6px] text-white/20 uppercase font-bold mb-0.5">STATUS</span>
+                        <div className="flex items-center gap-1">
+                            <div className="w-1 h-1 rounded-full bg-green-500 animate-pulse"></div>
+                            <span className="text-[8px] font-mono text-white">ACTIVE</span>
+                        </div>
                     </div>
-                    <div className="p-3 bg-white/5 rounded-xl border border-white/5 flex flex-col gap-1">
-                        <span className="text-[7px] text-white/30 uppercase font-bold tracking-tighter">ESTADO_ACTIVO</span>
-                        <span className="text-xs font-mono text-white">OPTIMIZADO</span>
+                    <div className="p-2 bg-white/5 rounded-lg border border-white/5 flex flex-col">
+                        <span className="text-[6px] text-white/20 uppercase font-bold mb-0.5">PEAK</span>
+                        <span className="text-[8px] font-mono text-white">MAX_LVL</span>
                     </div>
                 </div>
             </div>
 
-            <div className="mt-4 flex items-center justify-between text-[7px] font-mono text-white/20 uppercase tracking-widest">
-                <span>ESTADÍSTICAS_TIEMPO_REAL</span>
-                <span>2025_REF</span>
+            <div className="mt-3 flex items-center justify-between text-[6px] font-mono text-white/15 uppercase tracking-widest">
+                <span>REAL_TIME_STREAM</span>
+                <span>2025_ID</span>
             </div>
         </div>
     );
@@ -300,45 +304,44 @@ const SuccessStories: React.FC = () => {
                                     </div>
 
                                     <div className="flex flex-col justify-center">
-                                        <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-10 max-w-lg">
+                                        <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-8 max-w-lg">
                                             {item.description}
                                         </p>
 
-                                        {/* Redesigned Technical Metric Card */}
-                                        <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 border border-white/10 shadow-2xl overflow-hidden transition-transform duration-500 hover:scale-[1.01]">
-                                            <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
+                                        {/* Compact Technical Metric Card */}
+                                        <div className="group relative bg-[#0D0D0D] rounded-3xl p-6 md:p-8 border border-white/10 shadow-xl overflow-hidden transition-all duration-500 hover:border-white/20 max-w-lg mx-0">
+                                            <div className="relative z-10 flex flex-col sm:flex-row gap-6 items-center">
                                                 {/* Metric List */}
-                                                <div className="flex-1 space-y-7 w-full">
+                                                <div className="flex-1 space-y-5 w-full">
                                                     {item.metrics.map((metric, idx) => (
-                                                        <div key={idx} className="flex items-center gap-4 group/metric">
-                                                            <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-500 group-hover/metric:bg-white group-hover/metric:text-black">
-                                                                <metric.icon className="w-5 h-5" />
+                                                        <div key={idx} className="flex items-center gap-3.5 group/metric">
+                                                            <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-500 group-hover/metric:bg-white group-hover/metric:text-black">
+                                                                <metric.icon className="w-4 h-4" />
                                                             </div>
                                                             <div className="flex flex-col">
-                                                                <span className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] mb-1">{metric.label}</span>
-                                                                <span className="text-xl font-semibold text-white tracking-tight">{metric.value}</span>
+                                                                <span className="text-[9px] font-bold text-white/30 uppercase tracking-widest mb-0.5">{metric.label}</span>
+                                                                <span className="text-lg font-semibold text-white tracking-tight">{metric.value}</span>
                                                             </div>
                                                         </div>
                                                     ))}
                                                 </div>
 
-                                                {/* Technical graphic */}
-                                                <div className="w-full md:w-60 h-64 shrink-0 transition-transform duration-1000 group-hover:scale-105">
+                                                {/* Smaller Technical graphic */}
+                                                <div className="w-full sm:w-44 h-48 shrink-0">
                                                     <CaseGraphic type={item.graphicType} />
                                                 </div>
                                             </div>
 
                                             {/* Subtitle bottom info */}
-                                            <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+                                            <div className="mt-6 pt-5 border-t border-white/5 flex items-center justify-between">
                                                 <div className="flex items-center gap-2">
-                                                    <div className="w-2 h-2 rounded-full bg-white/40 animate-pulse"></div>
-                                                    <span className="text-[9px] font-mono text-white/20 uppercase tracking-widest">Monitoreo de Impacto Realizado</span>
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-white/30 animate-pulse"></div>
+                                                    <span className="text-[8px] font-mono text-white/15 uppercase tracking-wider">LIVE_DATA_STREAM</span>
                                                 </div>
-                                                <span className="text-[9px] font-mono text-white/20 uppercase tracking-widest">{item.title}_DATA_V1.0</span>
                                             </div>
 
-                                            {/* Subtle scan glow */}
-                                            <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.03] to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                                            {/* Subtle glow */}
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-[80px] rounded-full pointer-events-none group-hover:bg-white/10 transition-colors duration-700"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -367,15 +370,28 @@ const SuccessStories: React.FC = () => {
                     from { transform: rotate(0deg); }
                     to { transform: rotate(360deg); }
                 }
+                @keyframes spin-reverse {
+                    from { transform: rotate(360deg); }
+                    to { transform: rotate(0deg); }
+                }
                 .animate-spin-slow {
                     animation: spin-slow 12s linear infinite;
                 }
-                @keyframes pulse-once {
-                    0%, 100% { opacity: 0.3; }
-                    50% { opacity: 1; }
+                .animate-spin-reverse {
+                    animation: spin-reverse 8s linear infinite;
                 }
-                .animate-pulse-once {
-                    animation: pulse-once 3s ease-in-out infinite;
+                @keyframes grow-horizontal {
+                    from { width: 0; }
+                }
+                .animate-grow-horizontal {
+                    animation: grow-horizontal 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                }
+                @keyframes bounce-slow {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-3px); }
+                }
+                .animate-bounce-slow {
+                    animation: bounce-slow 2s ease-in-out infinite;
                 }
             `}} />
         </section>
@@ -383,4 +399,3 @@ const SuccessStories: React.FC = () => {
 };
 
 export default SuccessStories;
-
