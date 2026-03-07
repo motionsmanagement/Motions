@@ -30,19 +30,15 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-between gap-8 w-full">
-          <button className="w-fit sm:w-auto px-6 md:px-12 py-3.5 md:py-5 rounded-full bg-black/40 backdrop-blur-xl border border-white/30 text-white text-base md:text-lg font-bold hover:scale-105 hover:bg-black/50 transition-all shadow-[0_20px_50px_rgba(0,0,0,0.3)] tracking-tight">
-            Llamar ahora
-          </button>
-
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 w-full">
           <div className="liquid-glass-dark rounded-[2rem] md:rounded-[2.5rem] p-4 md:p-5 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8 md:px-8 max-w-[95%] md:max-w-none">
             <div className="flex items-center gap-3 text-white">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
                 <Brain className="w-4.5 h-4.5 md:w-5 md:h-5 text-white/80" />
               </div>
               <div>
-                <p className="text-sm md:text-sm font-semibold tracking-tight leading-tight">Estrategia personalizada</p>
-                <p className="text-xs md:text-xs text-white/60 leading-tight">para tu restaurante</p>
+                <p className="text-sm md:text-sm font-semibold tracking-tight leading-tight">Marketing para Hostelería</p>
+                <p className="text-xs md:text-xs text-white/60 leading-tight">Especialistas en restauración</p>
               </div>
             </div>
 
