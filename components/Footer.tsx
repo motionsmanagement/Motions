@@ -15,14 +15,6 @@ const Footer: React.FC = () => {
             <p className="text-gray-500 text-base leading-relaxed max-w-xs">
               Especialistas en marketing digital estratégico para el sector gastronómico. Elevamos la presencia de tu restaurante y convertimos clics en reservas.
             </p>
-            <div className="flex gap-5">
-              <a href="#" className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center hover:bg-black hover:text-white transition-all">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center hover:bg-black hover:text-white transition-all">
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
           {/* Soluciones */}
@@ -30,9 +22,11 @@ const Footer: React.FC = () => {
             <h5 className="text-black font-semibold mb-8 text-sm uppercase tracking-widest">Soluciones</h5>
             <ul className="space-y-4">
               <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Google My Business</Link></li>
-              <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">SEO Local</Link></li>
-              <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Diseño Web Gourmet</Link></li>
-              <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Ads para Restaurantes</Link></li>
+              <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Sitios Web para Rest.</Link></li>
+              <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Branding e Identidad</Link></li>
+              <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Diseño Gráfico</Link></li>
+              <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Integración con IA</Link></li>
+              <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Gestión de RRSS</Link></li>
             </ul>
           </div>
 
