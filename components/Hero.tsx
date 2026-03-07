@@ -25,12 +25,12 @@ const Hero: React.FC = () => {
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-0 mt-8 md:mt-16">
             <p className="text-white/80 text-base md:text-xl max-w-2xl leading-relaxed tracking-tight text-left">
-              Llenamos tu restaurante con clientes locales. Google My Business optimizado y un sitio web que convierte.
+              Elevamos tu restaurante con branding estratégico, diseño web de alta conversión y soluciones digitales avanzadas para maximizar tu visibilidad y reservas.
             </p>
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-start justify-start gap-8 w-full">
+        <div className="hidden md:flex flex-col lg:flex-row items-start justify-start gap-8 w-full">
           <div className="liquid-glass-dark rounded-[2rem] md:rounded-[2.5rem] p-4 md:p-5 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8 max-w-[95%] md:max-w-none">
             <div className="flex items-center gap-3 text-white">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
