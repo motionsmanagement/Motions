@@ -190,8 +190,8 @@ const SuccessStories: React.FC = () => {
                                                     <TrendingUp className="w-5 h-5 text-gray-700" />
                                                 </div>
                                                 <div>
-                                                    <h4 className="text-xs font-bold text-black mb-1.5 tracking-widest">Impacto</h4>
-                                                    <p className="text-gray-500 text-sm font-medium">{item.impact}</p>
+                                                    <h4 className="text-[10px] font-bold text-black/40 mb-1 tracking-[0.2em] uppercase">Impacto</h4>
+                                                    <p className="text-[#111] text-base font-medium tracking-tight whitespace-nowrap">{item.impact}</p>
                                                 </div>
                                             </div>
                                             <div className="space-y-4">
@@ -199,8 +199,8 @@ const SuccessStories: React.FC = () => {
                                                     <CheckCircle2 className="w-5 h-5 text-gray-700" />
                                                 </div>
                                                 <div>
-                                                    <h4 className="text-xs font-bold text-black mb-1.5 tracking-widest">Resultado</h4>
-                                                    <p className="text-gray-500 text-sm font-medium">{item.result}</p>
+                                                    <h4 className="text-[10px] font-bold text-black/40 mb-1 tracking-[0.2em] uppercase">Resultado</h4>
+                                                    <p className="text-[#111] text-base font-medium tracking-tight whitespace-nowrap">{item.result}</p>
                                                 </div>
                                             </div>
                                         </div>
