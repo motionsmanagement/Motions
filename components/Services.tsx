@@ -195,20 +195,20 @@ const Services: React.FC = () => {
 
                             {/* Card Content */}
                             <div className="relative h-full z-10 p-8 flex flex-col justify-end">
-                                <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/30 mb-3 block">
+                                <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/70 mb-3 block">
                                     {service.tag}
                                 </span>
 
-                                <h3 className="text-2xl font-medium text-white mb-4 tracking-tight">
+                                <h3 className="text-2xl font-semibold text-white mb-4 tracking-tight">
                                     {service.title}
                                 </h3>
 
-                                <p className="text-[13.5px] text-white/40 leading-relaxed mb-8 group-hover:text-white/60 transition-colors">
+                                <p className="text-[13.5px] text-white/70 leading-relaxed mb-8 group-hover:text-white/90 transition-colors">
                                     {service.description}
                                 </p>
 
                                 <div className="pt-6 border-t border-white/5 flex items-center justify-between">
-                                    <span className="text-[9px] font-mono font-medium text-white/20 uppercase tracking-widest">{service.stats}</span>
+                                    <span className="text-[9px] font-mono font-medium text-white/50 uppercase tracking-widest">{service.stats}</span>
                                     <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 hover:bg-white hover:text-black">
                                         <ArrowRight className="w-4 h-4" />
                                     </div>

@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
               </div>
               <div>
                 <p className="text-xs md:text-sm font-semibold tracking-tight leading-tight">Estrategia personalizada</p>
-                <p className="text-[10px] md:text-xs text-white/40 leading-tight">para tu restaurante</p>
+                <p className="text-[10px] md:text-xs text-white/60 leading-tight">para tu restaurante</p>
               </div>
             </div>
 
@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
               </div>
               <div>
                 <p className="text-xs md:text-sm font-semibold tracking-tight leading-tight">Resultados medibles</p>
-                <p className="text-[10px] md:text-xs text-white/40 leading-tight">más visibilidad y ventas</p>
+                <p className="text-[10px] md:text-xs text-white/60 leading-tight">más visibilidad y ventas</p>
               </div>
             </div>
 
@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
               </div>
               <div>
                 <p className="text-xs md:text-sm font-semibold tracking-tight leading-tight">Presencia digital completa</p>
-                <p className="text-[10px] md:text-xs text-white/40 leading-tight">Google Maps + Web optimizada</p>
+                <p className="text-[10px] md:text-xs text-white/60 leading-tight">Google Maps + Web optimizada</p>
               </div>
             </div>
           </div>

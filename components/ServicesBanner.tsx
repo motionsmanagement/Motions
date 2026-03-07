@@ -132,7 +132,7 @@ const ServicesBanner: React.FC = () => {
                         <span style={{
                             display: 'inline-flex', alignItems: 'center',
                             fontSize: '10px', fontWeight: 600, letterSpacing: '0.06em',
-                            textTransform: 'uppercase', color: 'rgba(255,255,255,0.68)',
+                            textTransform: 'uppercase', color: 'rgba(255,255,255,0.85)',
                             background: 'rgba(255,255,255,0.1)',
                             border: '1px solid rgba(255,255,255,0.18)',
                             borderRadius: '999px', padding: '3px 10px', width: 'fit-content',
@@ -146,11 +146,11 @@ const ServicesBanner: React.FC = () => {
                             letterSpacing: '-0.04em', color: '#fff', margin: 0,
                         }}>
                             Visibilidad, diseño<br />
-                            <span style={{ color: 'rgba(255,255,255,0.62)' }}>y crecimiento digital.</span>
+                            <span style={{ color: 'rgba(255,255,255,0.82)' }}>y crecimiento digital.</span>
                         </h2>
 
                         <p style={{
-                            fontSize: '13.5px', color: 'rgba(255,255,255,0.52)',
+                            fontSize: '13.5px', color: 'rgba(255,255,255,0.78)',
                             lineHeight: 1.6, margin: 0,
                         }}>
                             Todo lo que tu restaurante necesita para destacar online, en un solo lugar.
@@ -227,7 +227,7 @@ const ServicePill: React.FC<PillProps> = ({ service, visible, delay }) => (
                 {service.label}
             </span>
             <span style={{
-                fontSize: '10px', color: 'rgba(255,255,255,0.48)',
+                fontSize: '10px', color: 'rgba(255,255,255,0.72)',
                 lineHeight: 1.2, letterSpacing: '-0.01em',
                 whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
             }}>

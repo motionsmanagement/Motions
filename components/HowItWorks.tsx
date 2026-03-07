@@ -22,10 +22,10 @@ const HowItWorks: React.FC = () => {
           {/* Card 1: Auditoría */}
           <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 pb-6 flex flex-col min-h-[480px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
             <div className="relative z-10 mb-1">
-              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
+              <h3 className="text-2xl xl:text-3xl font-semibold text-white leading-tight mb-4 whitespace-nowrap">
                 Auditoría Local GMB
               </h3>
-              <p className="text-white/40 text-[13px] leading-relaxed line-clamp-3">
+              <p className="text-white/70 text-[13px] leading-relaxed line-clamp-3">
                 Evaluamos el posicionamiento de tu ficha en Google Maps y la calidad de tus reseñas para identificar los puntos de mejora inmediata.
               </p>
             </div>
@@ -78,10 +78,10 @@ const HowItWorks: React.FC = () => {
           {/* Card 2: Desarrollo */}
           <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 pb-6 flex flex-col min-h-[480px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
             <div className="relative z-10 mb-1">
-              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
+              <h3 className="text-2xl xl:text-3xl font-semibold text-white leading-tight mb-4 whitespace-nowrap">
                 Plataforma de Reservas
               </h3>
-              <p className="text-white/40 text-[13px] leading-relaxed line-clamp-3">
+              <p className="text-white/70 text-[13px] leading-relaxed line-clamp-3">
                 Desarrollamos tu sitio web especializado con carta digital interactiva, optimizado para convertir visitas en reservas sin comisiones locales.
               </p>
             </div>
@@ -163,10 +163,10 @@ const HowItWorks: React.FC = () => {
           {/* Card 3: Crecimiento - Rediseñado con menos movimiento y en español */}
           <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 pb-6 flex flex-col min-h-[480px] transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl overflow-hidden">
             <div className="relative z-10 mb-1">
-              <h3 className="text-2xl xl:text-3xl font-medium text-white leading-tight mb-4 whitespace-nowrap">
+              <h3 className="text-2xl xl:text-3xl font-semibold text-white leading-tight mb-4 whitespace-nowrap">
                 Escalamiento y ROI
               </h3>
-              <p className="text-white/40 text-[13px] leading-relaxed line-clamp-3">
+              <p className="text-white/70 text-[13px] leading-relaxed line-clamp-3">
                 Implementamos estrategias de escalado basadas en datos reales para maximizar el retorno de tu inversión y el flujo de clientes.
               </p>
             </div>
