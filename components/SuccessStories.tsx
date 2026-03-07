@@ -301,15 +301,15 @@ const SuccessStories: React.FC = () => {
                                             {item.description}
                                         </p>
 
-                                        {/* Rectangular Technical Metric Card - Light Version */}
-                                        <div className="group relative bg-[#f8f9f8] rounded-2xl p-6 md:p-6 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-sm w-full lg:w-auto min-w-[320px]">
-                                            <div className="relative z-10 flex flex-row gap-6 items-center justify-between">
+                                        {/* Rectangular Technical Metric Card - Light Version - Narrower */}
+                                        <div className="group relative bg-[#f8f9f8] rounded-xl p-5 md:p-5 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-[280px] w-full">
+                                            <div className="relative z-10 flex flex-col gap-6 items-center">
                                                 {/* Metric List */}
-                                                <div className="flex-1 space-y-4">
+                                                <div className="flex-1 space-y-4 w-full">
                                                     {item.metrics.map((metric, idx) => (
-                                                        <div key={idx} className="flex items-center gap-3 group/metric">
-                                                            <div className="w-8 h-8 rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center transition-all duration-500 group-hover/metric:bg-black group-hover/metric:text-white">
-                                                                <metric.icon className="w-4 h-4 text-black group-hover/metric:text-white" />
+                                                        <div key={idx} className="flex items-center gap-3.5 group/metric">
+                                                            <div className="w-8 h-8 rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center transition-all duration-500">
+                                                                <metric.icon className="w-4 h-4 text-black" />
                                                             </div>
                                                             <div className="flex flex-col">
                                                                 <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">{metric.label}</span>
@@ -320,16 +320,16 @@ const SuccessStories: React.FC = () => {
                                                 </div>
 
                                                 {/* Smaller Technical graphic */}
-                                                <div className="w-32 h-36 shrink-0">
+                                                <div className="w-full h-32 shrink-0">
                                                     <CaseGraphic type={item.graphicType} />
                                                 </div>
                                             </div>
 
                                             {/* Subtitle bottom info */}
-                                            <div className="mt-5 pt-4 border-t border-black/5 flex items-center justify-between">
+                                            <div className="mt-4 pt-4 border-t border-black/5 flex items-center justify-between">
                                                 <div className="flex items-center gap-1.5">
                                                     <div className="w-1 h-1 rounded-full bg-black/20 animate-pulse"></div>
-                                                    <span className="text-[7px] font-mono text-gray-400 uppercase tracking-wider">SECURE_METRIC_FEED</span>
+                                                    <span className="text-[7px] font-mono text-gray-400 uppercase tracking-wider">SYNC_STREAM</span>
                                                 </div>
                                             </div>
 
