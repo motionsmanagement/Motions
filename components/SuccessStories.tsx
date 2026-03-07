@@ -201,11 +201,6 @@ const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) =
                     </div>
                 </div>
             </div>
-
-            <div className="mt-2 flex items-center justify-between text-[5px] font-mono text-black/10 uppercase tracking-widest">
-                <span>TIEMPO_REAL</span>
-                <span>ID_25</span>
-            </div>
         </div>
     );
 };
@@ -309,44 +304,38 @@ const SuccessStories: React.FC = () => {
                                     </div>
 
                                     <div className="flex flex-col justify-between items-start">
-                                        <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-8 max-w-lg">
-                                            {item.description}
-                                        </p>
+                                        <div className="w-full h-full flex flex-col">
+                                            <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-8 max-w-lg">
+                                                {item.description}
+                                            </p>
 
-                                        {/* Rectangular Technical Metric Card - Light Version - Horizontal */}
-                                        <div className="group relative bg-[#f8f9f8] rounded-xl p-5 md:p-5 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-lg w-full">
-                                            <div className="relative z-10 flex flex-row gap-8 items-center justify-between">
-                                                {/* Metric List - 2x2 Grid */}
-                                                <div className="flex-1 grid grid-cols-2 gap-x-10 gap-y-5">
-                                                    {item.metrics.map((metric, idx) => (
-                                                        <div key={idx} className="flex items-center gap-3.5 group/metric">
-                                                            <div className="w-8 h-8 rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
-                                                                <metric.icon className="w-4 h-4 text-black" />
+                                            {/* Rectangular Technical Metric Card - Light Version - Horizontal */}
+                                            <div className="group relative bg-[#f8f9f8] rounded-xl p-6 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-lg w-full">
+                                                <div className="relative z-10 flex flex-row gap-8 items-center justify-between">
+                                                    {/* Metric List - 2x2 Grid */}
+                                                    <div className="flex-1 grid grid-cols-2 gap-x-10 gap-y-5">
+                                                        {item.metrics.map((metric, idx) => (
+                                                            <div key={idx} className="flex items-center gap-3.5 group/metric">
+                                                                <div className="w-8 h-8 rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
+                                                                    <metric.icon className="w-4 h-4 text-black" />
+                                                                </div>
+                                                                <div className="flex flex-col">
+                                                                    <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest mb-0.5">{metric.label}</span>
+                                                                    <span className="text-lg font-semibold text-black tracking-tight leading-none">{metric.value}</span>
+                                                                </div>
                                                             </div>
-                                                            <div className="flex flex-col">
-                                                                <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest mb-0.5">{metric.label}</span>
-                                                                <span className="text-lg font-semibold text-black tracking-tight leading-none">{metric.value}</span>
-                                                            </div>
-                                                        </div>
-                                                    ))}
+                                                        ))}
+                                                    </div>
+
+                                                    {/* Smaller Technical graphic */}
+                                                    <div className="w-32 h-36 shrink-0">
+                                                        <CaseGraphic type={item.graphicType} />
+                                                    </div>
                                                 </div>
 
-                                                {/* Smaller Technical graphic */}
-                                                <div className="w-32 h-36 shrink-0">
-                                                    <CaseGraphic type={item.graphicType} />
-                                                </div>
+                                                {/* Subtle scan animation light */}
+                                                <div className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-black/[0.01] to-transparent group-hover:left-[100%] transition-all duration-1000 ease-in-out"></div>
                                             </div>
-
-                                            {/* Minimal footer info */}
-                                            <div className="mt-3 pt-3 border-t border-black/5 flex items-center">
-                                                <div className="flex items-center gap-1.5">
-                                                    <div className="w-1 h-1 rounded-full bg-green-500/40 animate-pulse"></div>
-                                                    <span className="text-[6px] font-mono text-gray-400 uppercase tracking-widest">LIVE_DATA</span>
-                                                </div>
-                                            </div>
-
-                                            {/* Sutil scan animation light */}
-                                            <div className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-black/[0.01] to-transparent group-hover:left-[100%] transition-all duration-1000 ease-in-out"></div>
                                         </div>
                                     </div>
                                 </div>
