@@ -114,92 +114,85 @@ const successCases: SuccessCase[] = [
 
 const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) => {
     return (
-        <div className="relative w-full h-full bg-[#111] rounded-2xl border border-white/5 overflow-hidden flex flex-col p-3">
-            <div className="flex justify-between items-center mb-3 border-b border-white/5 pb-1.5">
+        <div className="relative w-full h-full bg-white/50 rounded-xl border border-black/5 overflow-hidden flex flex-col p-3">
+            <div className="flex justify-between items-center mb-2.5 border-b border-black/5 pb-1.5">
                 <div className="flex gap-1">
-                    <div className="w-1 h-1 rounded-full bg-white/40 animate-pulse"></div>
-                    <div className="w-1 h-1 rounded-full bg-white/20"></div>
+                    <div className="w-1 h-1 rounded-full bg-black/20 animate-pulse"></div>
+                    <div className="w-1 h-1 rounded-full bg-black/10"></div>
                 </div>
-                <span className="text-[7px] font-mono text-white/30 uppercase tracking-widest">LIVE_METRICS</span>
+                <span className="text-[6px] font-mono text-black/30 uppercase tracking-widest">REAL_TIME_DATA</span>
             </div>
 
             <div className="flex-1 flex flex-col gap-2">
-                <div className="flex-1 rounded-xl bg-white/[0.02] border border-white/5 relative overflow-hidden flex items-center justify-center p-3">
+                <div className="flex-1 rounded-lg bg-black/[0.02] border border-black/[0.03] relative overflow-hidden flex items-center justify-center p-2.5">
                     {type === 'performance' && (
-                        <div className="w-full h-full flex items-end gap-1.5 justify-center">
+                        <div className="w-full h-full flex items-end gap-1 justify-center">
                             {[40, 75, 50, 95, 65, 85].map((h, i) => (
-                                <div key={i} className="flex-1 bg-white/10 rounded-t-[1px] relative group/bar overflow-hidden" style={{ height: `${h}%` }}>
-                                    <div className="absolute inset-0 bg-white/30 translate-y-full group-hover/bar:translate-y-0 transition-transform duration-500 animate-bounce-slow" style={{ animationDelay: `${i * 0.1}s` }}></div>
+                                <div key={i} className="flex-1 bg-black/5 rounded-t-[1px] relative group/bar overflow-hidden" style={{ height: `${h}%` }}>
+                                    <div className="absolute inset-0 bg-black/20 translate-y-full group-hover/bar:translate-y-0 transition-transform duration-500 animate-bounce-slow" style={{ animationDelay: `${i * 0.1}s` }}></div>
                                 </div>
                             ))}
                         </div>
                     )}
                     {type === 'brand' && (
                         <div className="relative w-full h-full flex items-center justify-center">
-                            <div className="w-16 h-16 rounded-full border border-white/10 border-dashed animate-spin-slow"></div>
-                            <div className="absolute w-12 h-12 rounded-full border-2 border-white/20 border-t-white flex items-center justify-center">
-                                <Activity className="w-4 h-4 text-white/80 animate-pulse" />
+                            <div className="w-14 h-14 rounded-full border border-black/5 border-dashed animate-spin-slow"></div>
+                            <div className="absolute w-10 h-10 rounded-full border border-black/10 border-t-black/40 flex items-center justify-center">
+                                <Activity className="w-3.5 h-3.5 text-black/60 animate-pulse" />
                             </div>
                         </div>
                     )}
                     {type === 'conversion' && (
-                        <div className="w-full space-y-2.5">
+                        <div className="w-full space-y-2">
                             {[1, 2, 3].map(i => (
-                                <div key={i} className="flex flex-col gap-1">
+                                <div key={i} className="flex flex-col gap-0.5">
                                     <div className="flex justify-between items-center">
-                                        <div className="w-1 h-1 rounded-full bg-white/40"></div>
-                                        <span className="text-[6px] font-mono text-white/40">{40 + i * 20}%</span>
+                                        <span className="text-[5px] font-mono text-black/40">{40 + i * 20}%</span>
                                     </div>
-                                    <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
-                                        <div className="h-full bg-white/30 animate-grow-horizontal" style={{ width: `${40 + i * 20}%`, animationDelay: `${i * 0.2}s` }}></div>
+                                    <div className="w-full h-0.5 bg-black/5 rounded-full overflow-hidden">
+                                        <div className="h-full bg-black/20 animate-grow-horizontal" style={{ width: `${40 + i * 20}%`, animationDelay: `${i * 0.2}s` }}></div>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     )}
                     {type === 'reputation' && (
-                        <div className="flex flex-col items-center gap-1.5">
+                        <div className="flex flex-col items-center gap-1">
                             <div className="flex gap-0.5">
-                                {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 text-white fill-white animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />)}
+                                {[...Array(5)].map((_, i) => <Star key={i} className="w-2.5 h-2.5 text-black fill-black/80 animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />)}
                             </div>
-                            <span className="text-xl font-mono text-white tracking-tighter">4.9</span>
-                            <div className="px-2 py-0.5 bg-white/10 rounded-full text-[6px] font-bold text-white uppercase tracking-tighter animate-pulse">OPTIMIZED</div>
+                            <span className="text-lg font-mono text-black tracking-tighter">4.9</span>
                         </div>
                     )}
                     {(type === 'visibility' || type === 'reach') && (
                         <div className="relative w-full h-full flex items-center justify-center">
                             <div className="absolute inset-0 opacity-10">
                                 <svg width="100%" height="100%" viewBox="0 0 100 100">
-                                    <circle cx="50" cy="50" r="35" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="3 3" className="animate-spin-slow" />
-                                    <circle cx="50" cy="50" r="20" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="2 2" className="animate-spin-reverse" />
+                                    <circle cx="50" cy="50" r="35" stroke="black" strokeWidth="0.5" fill="none" strokeDasharray="3 3" className="animate-spin-slow" />
+                                    <circle cx="50" cy="50" r="20" stroke="black" strokeWidth="0.5" fill="none" strokeDasharray="2 2" className="animate-spin-reverse" />
                                 </svg>
                             </div>
                             <div className="relative">
-                                <MapPin className="w-6 h-6 text-white/60 relative z-10" />
-                                <div className="absolute inset-0 bg-white/20 blur-md rounded-full animate-ping"></div>
+                                <MapPin className="w-5 h-5 text-black/40 relative z-10" />
+                                <div className="absolute inset-0 bg-black/10 blur-md rounded-full animate-ping"></div>
                             </div>
                         </div>
                     )}
                 </div>
 
-                <div className="grid grid-cols-2 gap-1.5">
-                    <div className="p-2 bg-white/5 rounded-lg border border-white/5 flex flex-col">
-                        <span className="text-[6px] text-white/20 uppercase font-bold mb-0.5">STATUS</span>
+                <div className="grid grid-cols-2 gap-1">
+                    <div className="p-1.5 bg-black/[0.02] rounded border border-black/5 flex flex-col">
+                        <span className="text-[5px] text-black/30 uppercase font-bold mb-0.5">SYNC</span>
                         <div className="flex items-center gap-1">
-                            <div className="w-1 h-1 rounded-full bg-green-500 animate-pulse"></div>
-                            <span className="text-[8px] font-mono text-white">ACTIVE</span>
+                            <div className="w-0.5 h-0.5 rounded-full bg-green-500"></div>
+                            <span className="text-[7px] font-mono text-black/60 uppercase">ACTIVE</span>
                         </div>
                     </div>
-                    <div className="p-2 bg-white/5 rounded-lg border border-white/5 flex flex-col">
-                        <span className="text-[6px] text-white/20 uppercase font-bold mb-0.5">PEAK</span>
-                        <span className="text-[8px] font-mono text-white">MAX_LVL</span>
+                    <div className="p-1.5 bg-black/[0.02] rounded border border-black/5 flex flex-col">
+                        <span className="text-[5px] text-black/30 uppercase font-bold mb-0.5">LEVEL</span>
+                        <span className="text-[7px] font-mono text-black/60 uppercase">PEAK</span>
                     </div>
                 </div>
-            </div>
-
-            <div className="mt-3 flex items-center justify-between text-[6px] font-mono text-white/15 uppercase tracking-widest">
-                <span>REAL_TIME_STREAM</span>
-                <span>2025_ID</span>
             </div>
         </div>
     );
@@ -303,45 +296,45 @@ const SuccessStories: React.FC = () => {
                                         <div className="absolute inset-0 bg-black/10 transition-opacity opacity-0 group-hover/img:opacity-100"></div>
                                     </div>
 
-                                    <div className="flex flex-col justify-between">
-                                        <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-8">
+                                    <div className="flex flex-col justify-between items-start">
+                                        <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-8 max-w-lg">
                                             {item.description}
                                         </p>
 
-                                        {/* Rectangular Technical Metric Card - Aligned with Image bottom */}
-                                        <div className="group relative bg-[#0D0D0D] rounded-2xl p-6 md:p-7 border border-white/10 shadow-xl overflow-hidden transition-all duration-500 hover:border-white/20 w-full">
-                                            <div className="relative z-10 flex flex-col sm:flex-row gap-8 items-center">
+                                        {/* Rectangular Technical Metric Card - Light Version */}
+                                        <div className="group relative bg-[#f8f9f8] rounded-2xl p-6 md:p-6 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-sm w-full lg:w-auto min-w-[320px]">
+                                            <div className="relative z-10 flex flex-row gap-6 items-center justify-between">
                                                 {/* Metric List */}
-                                                <div className="flex-1 space-y-6 w-full">
+                                                <div className="flex-1 space-y-4">
                                                     {item.metrics.map((metric, idx) => (
-                                                        <div key={idx} className="flex items-center gap-4 group/metric">
-                                                            <div className="w-9 h-9 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center transition-all duration-500 group-hover/metric:bg-white group-hover/metric:text-black">
-                                                                <metric.icon className="w-4.5 h-4.5 text-white group-hover/metric:text-black" />
+                                                        <div key={idx} className="flex items-center gap-3 group/metric">
+                                                            <div className="w-8 h-8 rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center transition-all duration-500 group-hover/metric:bg-black group-hover/metric:text-white">
+                                                                <metric.icon className="w-4 h-4 text-black group-hover/metric:text-white" />
                                                             </div>
                                                             <div className="flex flex-col">
-                                                                <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">{metric.label}</span>
-                                                                <span className="text-xl font-semibold text-white tracking-tight">{metric.value}</span>
+                                                                <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">{metric.label}</span>
+                                                                <span className="text-lg font-semibold text-black tracking-tight leading-none">{metric.value}</span>
                                                             </div>
                                                         </div>
                                                     ))}
                                                 </div>
 
                                                 {/* Smaller Technical graphic */}
-                                                <div className="w-full sm:w-48 h-44 shrink-0">
+                                                <div className="w-32 h-36 shrink-0">
                                                     <CaseGraphic type={item.graphicType} />
                                                 </div>
                                             </div>
 
                                             {/* Subtitle bottom info */}
-                                            <div className="mt-5 pt-4 border-t border-white/5 flex items-center justify-between">
-                                                <div className="flex items-center gap-2">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-white/30 animate-pulse"></div>
-                                                    <span className="text-[8px] font-mono text-white/20 uppercase tracking-wider">LIVE_DATA_STREAM // {item.title}</span>
+                                            <div className="mt-5 pt-4 border-t border-black/5 flex items-center justify-between">
+                                                <div className="flex items-center gap-1.5">
+                                                    <div className="w-1 h-1 rounded-full bg-black/20 animate-pulse"></div>
+                                                    <span className="text-[7px] font-mono text-gray-400 uppercase tracking-wider">SECURE_METRIC_FEED</span>
                                                 </div>
                                             </div>
 
-                                            {/* Subtle scan animation */}
-                                            <div className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/[0.03] to-transparent group-hover:left-[100%] transition-all duration-1000 ease-in-out"></div>
+                                            {/* Sutil scan animation light */}
+                                            <div className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-black/[0.01] to-transparent group-hover:left-[100%] transition-all duration-1000 ease-in-out"></div>
                                         </div>
                                     </div>
                                 </div>
