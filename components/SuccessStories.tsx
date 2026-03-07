@@ -120,96 +120,69 @@ const successCases: SuccessCase[] = [
 
 const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) => {
     return (
-        <div className="relative w-full h-full bg-white/50 rounded-xl border border-black/10 overflow-hidden flex flex-col p-3">
-            <div className="flex justify-between items-center mb-2.5 border-b border-black/10 pb-1.5">
-                <div className="flex gap-1">
-                    <div className="w-1 h-1 rounded-full bg-black/40 animate-pulse"></div>
-                    <div className="w-1 h-1 rounded-full bg-black/20"></div>
+        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+            {/* Background Geometric Elements (Shared) */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-[0.03]">
+                <div className="w-full h-full border border-black rounded-full scale-110"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-[1px] h-full bg-black"></div>
+                    <div className="h-[1px] w-full bg-black"></div>
                 </div>
-                <span className="text-[7px] font-mono text-black/50 uppercase tracking-widest">MÉTRICAS_VIVO</span>
             </div>
 
-            <div className="flex-1 flex flex-col gap-2">
-                <div className="flex-1 rounded-lg bg-black/[0.04] border border-black/[0.08] relative overflow-hidden flex items-center justify-center p-2.5">
-                    {type === 'performance' && (
-                        <div className="w-full h-full flex flex-col justify-end gap-1.5">
-                            <div className="flex items-end gap-1 h-full">
-                                {[35, 60, 45, 85, 55, 100].map((h, i) => (
-                                    <div key={i} className="flex-1 bg-black/10 rounded-t-[1px] relative overflow-hidden" style={{ height: `${h}%` }}>
-                                        <div className="absolute inset-x-0 bottom-0 bg-black/30 animate-grow-vertical" style={{ animationDelay: `${i * 0.1}s`, height: '100%' }}></div>
-                                    </div>
+            <div className="relative z-10 w-full h-full flex items-center justify-center">
+                {type === 'performance' && (
+                    <div className="relative flex items-center justify-center w-full h-full">
+                        <svg width="60" height="40" viewBox="0 0 60 40" className="overflow-visible">
+                            <path
+                                d="M 0 35 Q 15 35 30 20 T 60 5"
+                                fill="none"
+                                stroke="black"
+                                strokeWidth="1.5"
+                                className="opacity-20 animate-draw-path"
+                            />
+                            <circle cx="60" cy="5" r="3" className="fill-black opacity-30 animate-pulse" />
+                        </svg>
+                    </div>
+                )}
+                {type === 'brand' && (
+                    <div className="relative flex items-center justify-center w-full h-full">
+                        <div className="w-12 h-12 border border-black/10 rotate-45 flex items-center justify-center">
+                            <div className="w-8 h-8 border border-black/5 flex items-center justify-center animate-spin-slow">
+                                <Activity className="w-4 h-4 text-black/40 rotate-[-45deg]" />
+                            </div>
+                        </div>
+                    </div>
+                )}
+                {type === 'conversion' && (
+                    <div className="relative flex items-center justify-center w-full h-full">
+                        <div className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center">
+                            <Target className="w-5 h-5 text-black/30 animate-pulse" />
+                            <div className="absolute inset-0 rounded-full border border-black/5 animate-ping-slow"></div>
+                        </div>
+                    </div>
+                )}
+                {type === 'reputation' && (
+                    <div className="relative flex items-center justify-center w-full h-full">
+                        <div className="flex flex-col items-center gap-1.5">
+                            <Star className="w-6 h-6 text-black/30 fill-black/5" />
+                            <div className="flex gap-0.5">
+                                {[...Array(3)].map((_, i) => (
+                                    <div key={i} className="w-1 h-1 rounded-full bg-black/20 animate-bounce" style={{ animationDelay: `${i * 0.2}s` }}></div>
                                 ))}
                             </div>
-                            <div className="flex justify-between border-t border-black/10 pt-1">
-                                <span className="text-[5px] font-mono text-black/60">MAR</span>
-                                <span className="text-[5px] font-mono text-black/60">HOY</span>
-                            </div>
                         </div>
-                    )}
-                    {type === 'brand' && (
-                        <div className="relative w-full h-full flex items-center justify-center">
-                            <div className="w-16 h-16 rounded-full border border-black/15 border-dashed animate-spin-slow"></div>
-                            <div className="absolute w-12 h-12 rounded-full border border-black/20 flex items-center justify-center">
-                                <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center">
-                                    <Activity className="w-4 h-4 text-black/80 animate-pulse" />
-                                </div>
-                            </div>
-                            <div className="absolute bottom-0 inset-x-0 flex justify-center">
-                                <span className="text-[6px] font-mono bg-black text-white px-1.5 py-0.5 rounded-sm">IMPACTO+</span>
-                            </div>
-                        </div>
-                    )}
-                    {type === 'conversion' && (
-                        <div className="w-full flex h-full gap-2 items-center">
-                            <div className="flex-1 flex flex-col gap-2">
-                                {[70, 45, 30].map((w, i) => (
-                                    <div key={i} className="h-2 bg-black/10 rounded-full overflow-hidden relative">
-                                        <div className="absolute inset-y-0 left-0 bg-black/30 animate-grow-horizontal" style={{ width: `${w}%`, animationDelay: `${i * 0.2}s` }}></div>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="text-[6px] font-mono text-black/50 flex flex-col justify-between h-full py-1">
-                                <span>UX</span>
-                                <span>CTR</span>
-                                <span>CONV</span>
-                            </div>
-                        </div>
-                    )}
-                    {type === 'reputation' && (
-                        <div className="flex flex-col items-center justify-center h-full gap-2">
-                            <div className="flex gap-1">
-                                {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 text-black fill-black animate-pulse" style={{ animationDelay: `${i * 0.15}s` }} />)}
-                            </div>
-                            <div className="text-center">
-                                <span className="text-xl font-mono text-black font-bold block leading-none">4.8</span>
-                                <span className="text-[6px] font-mono text-black/60 uppercase font-bold">PUNTUACIÓN</span>
-                            </div>
-                        </div>
-                    )}
-                    {(type === 'visibility' || type === 'reach') && (
-                        <div className="relative w-full h-full flex flex-col items-center justify-center gap-2">
-                            <div className="relative w-12 h-12">
-                                <div className="absolute inset-0 rounded-full border border-black/10 animate-ping-slow"></div>
-                                <div className="absolute inset-2 rounded-full border border-black/20 animate-ping-slow" style={{ animationDelay: '0.5s' }}></div>
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <MapPin className="w-5 h-5 text-black/60" />
-                                </div>
-                            </div>
-                            <span className="text-[6px] font-mono text-black/60 uppercase tracking-tighter font-bold">ALCANCE LOCAL</span>
-                        </div>
-                    )}
-                </div>
-
-                <div className="grid grid-cols-2 gap-1.5">
-                    <div className="p-1 px-1.5 bg-black/[0.04] rounded border border-black/10 flex flex-col">
-                        <span className="text-[5px] text-black/50 uppercase font-black tracking-tighter">ESTADO</span>
-                        <span className="text-[7px] font-mono text-black/90 font-bold uppercase truncate">ACTIVO</span>
                     </div>
-                    <div className="p-1 px-1.5 bg-black/[0.04] rounded border border-black/10 flex flex-col">
-                        <span className="text-[5px] text-black/50 uppercase font-black tracking-tighter">CALIDAD</span>
-                        <span className="text-[7px] font-mono text-black/90 font-bold uppercase">ALTA</span>
+                )}
+                {(type === 'visibility' || type === 'reach') && (
+                    <div className="relative flex items-center justify-center w-full h-full">
+                        <div className="relative w-14 h-14 flex items-center justify-center">
+                            <div className="absolute inset-0 border border-black/5 rounded-full animate-spin-slow"></div>
+                            <MapPin className="w-5 h-5 text-black/30" />
+                            <div className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-black/20 animate-pulse"></div>
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
         </div>
     );
@@ -405,11 +378,13 @@ const SuccessStories: React.FC = () => {
                 .animate-bounce-slow {
                     animation: bounce-slow 2s ease-in-out infinite;
                 }
-                @keyframes grow-vertical {
-                    from { height: 0; }
+                @keyframes draw-path {
+                    from { stroke-dasharray: 0 100; stroke-dashoffset: 0; }
+                    to { stroke-dasharray: 100 0; stroke-dashoffset: 0; }
                 }
-                .animate-grow-vertical {
-                    animation: grow-vertical 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                .animate-draw-path {
+                    stroke-dasharray: 100 100;
+                    animation: draw-path 2s ease-out forwards;
                 }
                 @keyframes ping-slow {
                     0% { transform: scale(1); opacity: 0.8; }
