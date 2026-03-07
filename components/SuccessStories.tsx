@@ -184,24 +184,37 @@ const SuccessStories: React.FC = () => {
                                             {item.description}
                                         </p>
 
-                                        <div className="grid grid-cols-2 gap-8">
-                                            <div className="space-y-4">
-                                                <div className="w-10 h-10 bg-[#f3f4f1] rounded-xl flex items-center justify-center">
-                                                    <TrendingUp className="w-5 h-5 text-gray-700" />
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                                            {/* Liquid Glass Metric Card: Impacto */}
+                                            <div className="group/metric relative p-6 rounded-[2rem] bg-gradient-to-br from-white to-[#f3f4f1]/50 border border-[#e5e7eb] shadow-sm overflow-hidden transition-all duration-500 hover:shadow-xl hover:border-black/10">
+                                                <div className="absolute inset-0 bg-white/40 backdrop-blur-xl opacity-0 group-hover/metric:opacity-100 transition-opacity duration-500"></div>
+                                                <div className="relative z-10">
+                                                    <div className="w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-6 group-hover/metric:scale-110 transition-transform duration-500">
+                                                        <TrendingUp className="w-5 h-5 text-black" />
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="text-[10px] font-bold text-black/40 mb-2 tracking-[0.2em] uppercase">Impacto Obtenido</h4>
+                                                        <p className="text-xl font-semibold text-black tracking-tight leading-tight">{item.impact}</p>
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    <h4 className="text-[10px] font-bold text-black/40 mb-1 tracking-[0.2em] uppercase">Impacto</h4>
-                                                    <p className="text-[#111] text-base font-medium tracking-tight whitespace-nowrap">{item.impact}</p>
-                                                </div>
+                                                {/* Decorative element */}
+                                                <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-black/[0.02] rounded-full blur-2xl group-hover/metric:bg-black/[0.05] transition-colors"></div>
                                             </div>
-                                            <div className="space-y-4">
-                                                <div className="w-10 h-10 bg-[#f3f4f1] rounded-xl flex items-center justify-center">
-                                                    <CheckCircle2 className="w-5 h-5 text-gray-700" />
+
+                                            {/* Liquid Glass Metric Card: Resultado */}
+                                            <div className="group/metric relative p-6 rounded-[2rem] bg-gradient-to-br from-white to-[#f3f4f1]/50 border border-[#e5e7eb] shadow-sm overflow-hidden transition-all duration-500 hover:shadow-xl hover:border-black/10">
+                                                <div className="absolute inset-0 bg-white/40 backdrop-blur-xl opacity-0 group-hover/metric:opacity-100 transition-opacity duration-500"></div>
+                                                <div className="relative z-10">
+                                                    <div className="w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-6 group-hover/metric:scale-110 transition-transform duration-500">
+                                                        <CheckCircle2 className="w-5 h-5 text-black" />
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="text-[10px] font-bold text-black/40 mb-2 tracking-[0.2em] uppercase">Resultado Final</h4>
+                                                        <p className="text-xl font-semibold text-black tracking-tight leading-tight">{item.result}</p>
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    <h4 className="text-[10px] font-bold text-black/40 mb-1 tracking-[0.2em] uppercase">Resultado</h4>
-                                                    <p className="text-[#111] text-base font-medium tracking-tight whitespace-nowrap">{item.result}</p>
-                                                </div>
+                                                {/* Decorative element */}
+                                                <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-black/[0.02] rounded-full blur-2xl group-hover/metric:bg-black/[0.05] transition-colors"></div>
                                             </div>
                                         </div>
                                     </div>
