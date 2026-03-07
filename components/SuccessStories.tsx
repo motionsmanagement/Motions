@@ -17,6 +17,8 @@ interface SuccessCase {
     description: string;
     metrics: SuccessMetric[];
     graphicType: 'performance' | 'visibility' | 'conversion' | 'reputation' | 'brand' | 'reach';
+    services: string[];
+    outcome: string;
 }
 
 const successCases: SuccessCase[] = [
@@ -33,7 +35,9 @@ const successCases: SuccessCase[] = [
             { label: 'Conversión', value: '+24%', icon: MousePointer2 },
             { label: 'Engagement', value: '+15%', icon: Activity },
             { label: 'Retención', value: '+18%', icon: Users }
-        ]
+        ],
+        services: ['Identidad Visual', 'Diseño Publicitario', 'Carta Digital'],
+        outcome: 'Unificación total de la imagen de marca y mejora en la experiencia del comensal digital.'
     },
     {
         id: '02',
@@ -42,13 +46,15 @@ const successCases: SuccessCase[] = [
         year: '2025',
         location: 'Boston, USA',
         image: '/o ya restaurant.jpg',
-        description: 'Estrategia integral de crecimiento 360°. Optimizamos su perfil en Google My Business y ejecutamos campañas de gran impacto en Google Maps y Meta Ads, potenciando su alcance local mediante colaboraciones estratégicas con micro-influencers del sector gastronómico.',
+        description: 'Estrategia integral de crecimiento 360°. Optimizamos su perfil en Google My Business y ejecutamos campañas de gran impacto en Google Maps y Meta Ads, potenciando su alcance local mediante colaboraciones estratégicas con micro-influencers.',
         graphicType: 'performance',
         metrics: [
             { label: 'Alcance', value: '+4.5k', icon: Users },
             { label: 'Reservas', value: '+18%', icon: CheckCircle2 },
             { label: 'Llamadas', value: '+85', icon: Smartphone }
-        ]
+        ],
+        services: ['SEO Local', 'Meta Ads', 'Influencer Marketing'],
+        outcome: 'Incremento sostenido en reservas directas y posicionamiento como referente local.'
     },
     {
         id: '03',
@@ -57,13 +63,15 @@ const successCases: SuccessCase[] = [
         year: '2025',
         location: 'Barcelona, España',
         image: '/boa bao.jpg',
-        description: 'Transformación digital completa para reflejar su esencia exótica. Rediseñamos su plataforma web y reforzamos su identidad de marca, integrando servicios de fotografía gastronómica profesional y una optimización avanzada de su presencia en Google My Business.',
+        description: 'Transformación digital completa para reflejar su esencia exótica. Rediseñamos su plataforma web y reforzamos su identidad de marca, integrando servicios de fotografía gastronómica profesional y una optimización avanzada de GMB.',
         graphicType: 'conversion',
         metrics: [
             { label: 'Velocidad', value: '1.2s', icon: Smartphone },
             { label: 'Ventas', value: '+22%', icon: TrendingUp },
             { label: 'Mobile', value: '72%', icon: Smartphone }
-        ]
+        ],
+        services: ['Web Design', 'UI/UX Gastronómico', 'GMB Pro'],
+        outcome: 'Plataforma de reservas de alta velocidad con conversión superior al promedio del sector.'
     },
     {
         id: '04',
@@ -72,13 +80,15 @@ const successCases: SuccessCase[] = [
         year: '2025',
         location: 'Málaga, España',
         image: '/byoko.jpg',
-        description: 'Refuerzo de la confianza del cliente y atractivo visual. Implementamos una gestión profesional de reseñas para mejorar el ranking local, complementado con el diseño de piezas publicitarias dinámicas y la optimización técnica de Google My Business.',
+        description: 'Refuerzo de la confianza del cliente y atractivo visual. Implementamos una gestión profesional de reseñas para mejorar el ranking local, complementado con el diseño de piezas publicitarias dinámicas y la optimización técnica.',
         graphicType: 'reputation',
         metrics: [
             { label: 'Visitas', value: '+210', icon: MousePointer2 },
             { label: 'CTR', value: '+12%', icon: Target },
             { label: 'Reseñas', value: '+32', icon: MessageSquare }
-        ]
+        ],
+        services: ['Reputation Management', 'Google Ads', 'Local SEO'],
+        outcome: 'Mejora del sentimiento de marca y aumento orgánico de visitas recurrentes.'
     },
     {
         id: '05',
@@ -87,13 +97,15 @@ const successCases: SuccessCase[] = [
         year: '2025',
         location: 'Bilbao, España',
         image: '/amaren.jpeg',
-        description: 'Capturamos la excelencia culinaria mediante fotografía artística de alta definición. Esta renovación visual se integró con una optimización exhaustiva del perfil de Google My Business, logrando atraer a un público más cualificado y gourmet.',
+        description: 'Capturamos la excelencia culinaria mediante fotografía artística de alta definición. Esta renovación visual se integró con una optimización exhaustiva del perfil de Google My Business, logrando atraer a un público gourmet.',
         graphicType: 'visibility',
         metrics: [
             { label: 'Fotos', value: '24+', icon: MapPin },
             { label: 'Tráfico', value: '+14%', icon: Activity },
             { label: 'Visitas', value: '+8%', icon: MousePointer2 }
-        ]
+        ],
+        services: ['Gastro Photography', 'Branding Digital', 'GMB'],
+        outcome: 'Impacto visual premium que atrae activamente a comensales de ticket medio-alto.'
     },
     {
         id: '06',
@@ -102,58 +114,17 @@ const successCases: SuccessCase[] = [
         year: '2025',
         location: 'Madrid, España',
         image: '/ardia.jpg',
-        description: 'Dominio estratégico del ecosistema de búsqueda local. Ejecutamos una optimización técnica avanzada de Google My Business vinculada a una estrategia de posicionamiento pagado en Google Maps, garantizando los primeros puestos en búsquedas clave.',
+        description: 'Dominio estratégico del ecosistema de búsqueda local. Ejecutamos una optimización técnica avanzada de Google My Business vinculada a una estrategia de posicionamiento pagado en Google Maps.',
         graphicType: 'reach',
         metrics: [
             { label: 'Ranking', value: 'Top 3', icon: MapPin },
             { label: 'Búsquedas', value: '+6.2k', icon: Search },
             { label: 'Acciones', value: '+450', icon: Target }
-        ]
+        ],
+        services: ['Technical SEO', 'Local Ads Strategy', 'Action Tracking'],
+        outcome: 'Liderazgo absoluto en el ranking TOP 3 para las búsquedas más relevantes de la zona.'
     }
 ];
-
-const LiquidGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) => {
-    return (
-        <div className="absolute inset-x-0 bottom-0 top-1/2 md:top-0 md:left-1/2 pointer-events-none overflow-hidden opacity-60">
-            {/* Organic Liquid Blobs */}
-            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 blur-[80px] rounded-full mix-blend-multiply opacity-20 animate-pulse
-                ${type === 'performance' ? 'bg-blue-200' :
-                    type === 'brand' ? 'bg-purple-200' :
-                        type === 'conversion' ? 'bg-emerald-200' :
-                            type === 'reputation' ? 'bg-orange-200' : 'bg-gray-200'}`}
-            />
-            <div className={`absolute top-1/3 left-2/3 -translate-x-1/2 -translate-y-1/2 w-48 h-48 blur-[60px] rounded-full mix-blend-multiply opacity-15 animate-bounce-slow
-                ${type === 'performance' ? 'bg-indigo-200' :
-                    type === 'brand' ? 'bg-pink-200' :
-                        type === 'conversion' ? 'bg-teal-200' :
-                            type === 'reputation' ? 'bg-yellow-200' : 'bg-neutral-200'}`}
-            />
-
-            {/* Glassy Floating Elements */}
-            <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-48 h-48">
-                    {/* Architectural Grid overlay */}
-                    <div className="absolute inset-0 border-[0.5px] border-black/[0.03] rounded-full scale-125"></div>
-                    <div className="absolute inset-0 border-[0.5px] border-black/[0.02] rounded-full scale-150"></div>
-
-                    {/* Floating Data Icons */}
-                    <div className="absolute top-0 right-0 w-12 h-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl shadow-xl flex items-center justify-center animate-bounce-slow">
-                        <Activity className="w-5 h-5 text-black/40" />
-                    </div>
-
-                    <div className="absolute bottom-8 -left-4 w-10 h-10 bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg flex items-center justify-center animate-pulse" style={{ animationDuration: '4s' }}>
-                        <MousePointer2 className="w-4 h-4 text-black/30" />
-                    </div>
-
-                    {/* Central Glass Disc */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/[0.05] backdrop-blur-[2px] border border-black/[0.03] rounded-full flex items-center justify-center">
-                        <div className="w-24 h-24 border border-black/[0.02] border-dashed rounded-full animate-spin-slow"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
 
 const SuccessStories: React.FC = () => {
     const [activeTab, setActiveTab] = useState('Todos');
@@ -253,22 +224,38 @@ const SuccessStories: React.FC = () => {
                                         <div className="absolute inset-0 bg-black/10 transition-opacity opacity-0 group-hover/img:opacity-100"></div>
                                     </div>
 
-                                    <div className="flex flex-col justify-between items-start relative min-h-[400px]">
-                                        {/* Background Liquid Glass Showcase */}
-                                        <LiquidGraphic type={item.graphicType} />
-
+                                    <div className="flex flex-col justify-between items-start relative min-h-[440px]">
                                         <div className="w-full h-full flex flex-col relative z-20">
-                                            <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-12 max-w-lg">
+                                            <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-10 max-w-xl">
                                                 {item.description}
                                             </p>
 
-                                            {/* Glassmorphic Results Row */}
-                                            <div className="group relative bg-white/40 backdrop-blur-xl rounded-2xl px-8 py-5 border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)] transition-all duration-500 hover:border-black/10 w-fit">
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full mb-12">
+                                                <div>
+                                                    <span className="text-[10px] font-bold text-black uppercase tracking-widest mb-4 block opacity-40">Servicios Aplicados</span>
+                                                    <div className="flex flex-wrap gap-2">
+                                                        {item.services.map((service, i) => (
+                                                            <span key={i} className="px-3 py-1 bg-black/[0.03] border border-black/5 rounded-full text-xs text-gray-600 font-medium">
+                                                                {service}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span className="text-[10px] font-bold text-black uppercase tracking-widest mb-4 block opacity-40">Impacto Logrado</span>
+                                                    <p className="text-sm text-gray-700 leading-relaxed font-medium">
+                                                        "{item.outcome}"
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            {/* Minimalist Results Row */}
+                                            <div className="group relative bg-[#fcfcfb] rounded-2xl px-8 py-5 border border-gray-200 shadow-sm transition-all duration-500 hover:border-black/10 w-fit">
                                                 <div className="flex items-center gap-10">
                                                     {item.metrics.map((metric, idx) => (
                                                         <div key={idx} className="flex items-center gap-4 group/metric">
-                                                            <div className="w-[36px] h-[36px] rounded-xl bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0 transition-transform group-hover/metric:scale-110">
-                                                                <metric.icon className="w-[18px] h-[18px] text-black" />
+                                                            <div className="w-9 h-9 rounded-xl bg-black/[0.02] border border-black/5 flex items-center justify-center shrink-0">
+                                                                <metric.icon className="w-4 h-4 text-black" />
                                                             </div>
                                                             <div className="flex flex-col">
                                                                 <span className="text-[9px] font-bold text-black uppercase tracking-widest mb-0.5 opacity-60">{metric.label}</span>
