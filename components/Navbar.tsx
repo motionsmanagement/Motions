@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,14 +12,11 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Force dark styling if not on home page or if scrolled
-  const showDarkStyles = !isHomePage || isScrolled;
-
-  const themeClass = showDarkStyles
+  const themeClass = isScrolled
     ? "bg-white/80 border-black/5 shadow-lg text-[#2D241E]"
     : "liquid-glass border-white/20 text-white";
 
-  const logoSrc = showDarkStyles ? "/motionsblack.png" : "/MotionsLogo.png";
+  const logoSrc = isScrolled ? "/motionsblack.png" : "/MotionsLogo.png";
 
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 transition-all duration-300">

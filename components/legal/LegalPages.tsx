@@ -10,7 +10,7 @@ const LegalPage: React.FC<{ title: string; children: React.ReactNode }> = ({ tit
             <main className="pt-40 pb-24 px-6 md:px-12">
                 <div className="max-w-4xl mx-auto">
                     <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-black mb-12">{title}</h1>
-                    <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-8">
+                    <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
                         {children}
                     </div>
                 </div>
@@ -22,95 +22,110 @@ const LegalPage: React.FC<{ title: string; children: React.ReactNode }> = ({ tit
 
 export const PrivacyPolicy: React.FC = () => (
     <LegalPage title="Política de Privacidad">
-        <section>
-            <h2 className="text-2xl font-semibold text-black mb-4">1. Identificación del Responsable</h2>
-            <p>Motions, con domicilio social en Madrid, España, y correo electrónico de contacto info@motions.es, informa a los usuarios del sitio web sobre su política respecto del tratamiento y protección de los datos de carácter personal de los usuarios y clientes que puedan ser recabados por la navegación o contratación de servicios a través de su sitio web.</p>
+        <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-black mb-4">1. Responsable del Tratamiento</h2>
+            <p>Motions, con domicilio en Madrid, España, y correo electrónico de contacto <strong>info@motions.es</strong>, es el responsable del tratamiento de sus datos personales recogidos a través de este sitio web. Nos comprometemos a garantizar la privacidad de nuestros usuarios y la protección de sus datos bajo el Reglamento General de Protección de Datos (RGPD).</p>
         </section>
-
-        <section>
-            <h2 className="text-2xl font-semibold text-black mb-4">2. Finalidad del Tratamiento de Datos</h2>
-            <p>Motions tiene el deber de informar a los usuarios de su sitio web acerca de la recogida de datos de carácter personal que pueden llevarse a cabo, bien sea mediante el envío de correo electrónico o al cumplimentar los formularios incluidos en el sitio web. En este sentido, Motions será considerada como responsable de los datos recabados mediante los medios anteriormente descritos.</p>
-            <p className="mt-4">A su vez Motions informa a los usuarios de que la finalidad del tratamiento de los datos recabados contempla: La atención de solicitudes realizadas por los usuarios, la inclusión en la agenda de contactos, la prestación de servicios, la gestión de la relación comercial y otras finalidades comerciales relacionadas con el sector del marketing para restauración.</p>
-        </section>
-
-        <section>
-            <h2 className="text-2xl font-semibold text-black mb-4">3. Comunicación de Información a Terceros</h2>
-            <p>Motions informa a los usuarios de que sus datos personales no serán cedidos a terceras organizaciones, con la salvedad de que dicha cesión de datos este amparada en una obligación legal o cuando la prestación de un servicio implique la necesidad de una relación contractual con un encargado de tratamiento.</p>
-        </section>
-
-        <section>
-            <h2 className="text-2xl font-semibold text-black mb-4">4. Derechos de los Usuarios</h2>
-            <p>La Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal concede a los interesados la posibilidad de ejercer una serie de derechos relacionados con el tratamiento de sus datos personales.</p>
-            <p className="mt-4">En tanto en cuanto los datos del usuario son objeto de tratamiento por parte de Motions. Los usuarios podrán ejercer los derechos de acceso, rectificación, cancelación y oposición de acuerdo con lo previsto en la normativa legal vigente en materia de protección de datos personales.</p>
-            <ul className="list-disc pl-6 mt-4 space-y-2 font-medium">
-                <li>Derecho de Acceso: Conocer si estamos tratando sus datos.</li>
-                <li>Derecho de Rectificación: Rectificar datos inexactos.</li>
-                <li>Derecho de Supresión (Olvido): Solicitar la eliminación de sus datos.</li>
-                <li>Derecho de Oposición: Oponerse a ciertos tratamientos.</li>
+        <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-black mb-4">2. Datos Recogidos y Finalidad</h2>
+            <p>Tratamos la información que nos facilita con las siguientes finalidades:</p>
+            <ul className="list-disc pl-6 space-y-2 mt-4">
+                <li>Gestión de solicitudes de información y consultas recibidas a través de formularios de contacto.</li>
+                <li>Prestación de servicios de marketing digital, SEO local y diseño web contratados.</li>
+                <li>Envío de comunicaciones comerciales y boletines informativos relacionados con el sector gastronómico, siempre que contemos con su consentimiento explícito.</li>
+                <li>Mejora de la experiencia de usuario y análisis estadístico de la navegación web.</li>
             </ul>
         </section>
-
-        <section>
-            <h2 className="text-2xl font-semibold text-black mb-4">5. Plazo de Conservación</h2>
-            <p>Los datos personales proporcionados se conservarán mientras se mantenga la relación comercial o durante los años necesarios para cumplir con las obligaciones legales.</p>
+        <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-black mb-4">3. Conservación de los Datos</h2>
+            <p>Los datos personales proporcionados se conservarán mientras se mantenga la relación comercial o durante el tiempo necesario para cumplir con las obligaciones legales. En el caso de suscripciones a boletines, los datos se mantendrán hasta que el interesado solicite su baja.</p>
+        </section>
+        <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-black mb-4">4. Legitimación del Tratamiento</h2>
+            <p>La base legal para el tratamiento de su información reside en:</p>
+            <ul className="list-disc pl-6 space-y-2 mt-4">
+                <li>El consentimiento del interesado para el envío de consultas o suscripciones.</li>
+                <li>La ejecución de un contrato de prestación de servicios.</li>
+                <li>El interés legítimo de Motions para mejorar sus servicios y seguridad.</li>
+            </ul>
+        </section>
+        <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-black mb-4">5. Derechos del Usuario</h2>
+            <p>Usted puede ejercer en cualquier momento sus derechos de:</p>
+            <ul className="list-disc pl-6 space-y-2 mt-4">
+                <li><strong>Acceso:</strong> Saber qué datos estamos tratando.</li>
+                <li><strong>Rectificación:</strong> Corregir datos inexactos.</li>
+                <li><strong>Supresión (Olvido):</strong> Solicitar la eliminación de sus datos.</li>
+                <li><strong>Oposición y Limitación:</strong> Oponerse al tratamiento para fines específicos.</li>
+                <li><strong>Portabilidad:</strong> Recibir sus datos en un formato estructurado.</li>
+            </ul>
+            <p className="mt-4">Para ejercer estos derechos, envíe un correo electrónico a <strong>info@motions.es</strong> adjuntando copia de su DNI o documento equivalente.</p>
         </section>
     </LegalPage>
 );
 
 export const CookiesPolicy: React.FC = () => (
     <LegalPage title="Política de Cookies">
-        <section>
-            <h2 className="text-2xl font-semibold text-black mb-4">¿Qué son las Cookies?</h2>
-            <p>Una cookie es un fichero que se descarga en su ordenador al acceder a determinadas páginas web. Las cookies permiten a una página web, entre otras cosas, almacenar y recuperar información sobre los hábitos de navegación de un usuario o de su equipo y, dependiendo de la información que contengan y de la forma en que utilice su equipo, pueden utilizarse para reconocer al usuario.</p>
-        </section>
+        <p className="mb-6">En Motions utilizamos cookies propias y de terceros para optimizar su experiencia de navegación y analizar el tráfico en nuestro sitio web. Una cookie es un pequeño archivo de texto que se descarga en su equipo al acceder a determinadas páginas web.</p>
 
-        <section>
-            <h2 className="text-2xl font-semibold text-black mb-4">Tipos de Cookies Utilizadas por Motions</h2>
-            <div className="space-y-4">
+        <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-black mb-4">Tipos de Cookies que utilizamos</h2>
+            <div className="space-y-6">
                 <div>
-                    <h3 className="text-xl font-medium text-black">1. Cookies Propias</h3>
-                    <p>Son aquellas que se envían al equipo terminal del usuario desde un equipo o dominio gestionado por el propio editor y desde el que se presta el servicio solicitado por el usuario.</p>
+                    <h3 className="text-xl font-medium text-black mb-2">1. Cookies Técnicas</h3>
+                    <p>Son aquellas esenciales para el correcto funcionamiento del sitio, permitiendo la navegación y el uso de las diferentes opciones o servicios que en ella existen.</p>
                 </div>
                 <div>
-                    <h3 className="text-xl font-medium text-black">2. Cookies de Terceros</h3>
-                    <p>Son aquellas que se envían al equipo terminal del usuario desde un equipo o dominio que no es gestionado por el editor, sino por otra entidad que trata los datos obtenidos través de las cookies.</p>
+                    <h3 className="text-xl font-medium text-black mb-2">2. Cookies de Personalización</h3>
+                    <p>Permiten al usuario acceder al servicio con algunas características de carácter general predefinidas en función de una serie de criterios en el terminal del usuario como el idioma.</p>
                 </div>
                 <div>
-                    <h3 className="text-xl font-medium text-black">3. Cookies de Análisis</h3>
-                    <p>Son aquellas que bien tratadas por nosotros o por terceros, nos permiten cuantificar el número de usuarios y así realizar la medición y análisis estadístico de la utilización que hacen los usuarios del servicio ofertado.</p>
+                    <h3 className="text-xl font-medium text-black mb-2">3. Cookies de Análisis (Analytics)</h3>
+                    <p>Nos permiten cuantificar el número de usuarios y realizar la medición y análisis estadístico de la utilización que hacen los usuarios de nuestra web para mejorar la oferta de servicios.</p>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2 className="text-2xl font-semibold text-black mb-4">Cómo Desactivar las Cookies</h2>
-            <p>Usted puede permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones del navegador instalado en su ordenador.</p>
-            <p className="mt-4 italic">Tenga en cuenta que si elimina o bloquea las cookies de este sitio web, es posible que algunas funciones no estén disponibles o que la calidad de la página web se vea afectada.</p>
+        <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-black mb-4">Gestión y Desactivación de Cookies</h2>
+            <p>El usuario puede, en cualquier momento, permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones del navegador instalado en su ordenador:</p>
+            <ul className="list-disc pl-6 space-y-2 mt-4">
+                <li><strong>Chrome:</strong> Configuración → Privacidad y seguridad → Cookies y otros datos de sitios.</li>
+                <li><strong>Safari:</strong> Preferencias → Privacidad → Bloquear todas las cookies.</li>
+                <li><strong>Firefox:</strong> Opciones → Privacidad y Seguridad → Cookies y datos del sitio.</li>
+            </ul>
+            <p className="mt-4 italic text-sm">Tenga en cuenta que la desactivación de algunas cookies puede impedir o dificultar la navegación o la prestación de los servicios ofrecidos en este sitio web.</p>
         </section>
     </LegalPage>
 );
 
 export const LegalNotice: React.FC = () => (
     <LegalPage title="Aviso Legal">
-        <section>
-            <h2 className="text-2xl font-semibold text-black mb-4">1. Datos Identificativos</h2>
-            <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, se reflejan los siguientes datos: la empresa titular de dominio web es Motions, con email de contacto info@motions.es, con sede en Madrid, España.</p>
+        <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-black mb-4">1. Información General</h2>
+            <p>En cumplimiento con el deber de información recogido en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE), se facilitan los siguientes datos informativos:</p>
+            <ul className="list-none space-y-2 mt-4">
+                <li><strong>Titular:</strong> Motions</li>
+                <li><strong>Domicilio:</strong> Madrid, España</li>
+                <li><strong>Email:</strong> info@motions.es</li>
+                <li><strong>Actividad:</strong> Agencia de Marketing Especializada en Restauración</li>
+            </ul>
         </section>
 
-        <section>
-            <h2 className="text-2xl font-semibold text-black mb-4">2. Propiedad Intelectual e Industrial</h2>
-            <p>Motions por sí o como cesionaria, es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos contenidos en la misma (a título enunciativo, imágenes, sonido, audio, vídeo, software o textos; marcas o logotipos, combinaciones de colores, estructura y diseño, selección de materiales usados, programas de ordenador necesarios para su funcionamiento, acceso y uso, etc.).</p>
-            <p className="mt-4">Todos los derechos reservados. Quedan expresamente prohibidas la reproducción, la distribución y la comunicación pública, incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de esta página web, con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización de Motions.</p>
+        <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-black mb-4">2. Condiciones de Uso</h2>
+            <p>El acceso y uso de este sitio web atribuyen la condición de USUARIO, que acepta los términos y condiciones aquí reflejados. El usuario se compromete a hacer un uso adecuado de los contenidos y servicios que Motions ofrece a través de su portal y a no emplearlos para incurrir en actividades ilícitas o contrarias a la buena fe y al ordenamiento legal.</p>
         </section>
 
-        <section>
-            <h2 className="text-2xl font-semibold text-black mb-4">3. Exclusión de Garantías y Responsabilidad</h2>
-            <p>Motions no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos o lesivos en los contenidos, a pesar de haber adoptado todas las medidas tecnológicas necesarias para evitarlo.</p>
+        <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-black mb-4">3. Propiedad Intelectual e Industrial</h2>
+            <p>Motions por sí o como cesionaria, es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos contenidos en la misma (a título enunciativo: imágenes, sonido, audio, vídeo, software o textos; marcas o logotipos, combinaciones de colores, estructura y diseño, etc.).</p>
+            <p className="mt-4">Queda expresamente prohibida la reproducción, distribución y comunicación pública de la totalidad o parte de los contenidos de esta página web con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización previa y por escrito de Motions.</p>
         </section>
 
-        <section>
-            <h2 className="text-2xl font-semibold text-black mb-4">4. Modificaciones</h2>
-            <p>Motions se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas en su portal, pudiendo cambiar, suprimir o añadir tanto los contenidos y servicios que se presten a través de la misma como la forma en la que éstos aparezcan presentados o localizados en su portal.</p>
+        <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-black mb-4">4. Exclusión de Garantías y Responsabilidad</h2>
+            <p>Motions no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos, a pesar de haber adoptado todas las medidas tecnológicas necesarias para evitarlo.</p>
         </section>
     </LegalPage>
 );
