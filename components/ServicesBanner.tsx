@@ -116,7 +116,7 @@ const ServicesBanner: React.FC = () => {
                     </div>
 
                     {/* RIGHT: Pills Grid - Full width on mobile, staggered on desktop */}
-                    <div className="flex flex-col gap-3 w-full md:w-auto items-center md:items-end overflow-x-auto pb-4 md:pb-0 scrollbar-hide">
+                    <div className="flex flex-col gap-3 w-full md:w-auto items-center md:items-end overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide">
                         {/* Mobile Grid / Desktop Layout */}
                         <div className="flex flex-col gap-3 w-full items-center md:items-end md:w-auto">
                             {/* Row 1 Content */}
