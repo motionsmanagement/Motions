@@ -17,68 +17,68 @@ const successCases: SuccessCase[] = [
     {
         id: '01',
         category: 'Google Maps',
-        title: 'La Terrazza Steakhouse',
+        title: 'O Ya',
         year: '2024',
         location: 'Madrid, España',
-        image: 'https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=800',
-        description: 'Transformamos una ficha de Google My Business estancada en una máquina de generar clientes. Implementamos una estrategia de contenido visual y SEO local que posicionó al restaurante como la primera opción en su zona.',
-        impact: '+45% de Reservas Mensuales',
-        result: 'Google Local Expert Partner'
+        image: '/o ya restaurant.jpg',
+        description: 'Estrategia integral de crecimiento 360°. Optimizamos su perfil en Google My Business y ejecutamos campañas de gran impacto en Google Maps y Meta Ads, potenciando su alcance local mediante colaboraciones estratégicas con micro-influencers del sector gastronómico.',
+        impact: 'Máxima Visibilidad Local',
+        result: 'ROI Publicitario Líder'
     },
     {
         id: '02',
-        category: 'Sitios Web',
-        title: 'Burger Lab Artistry',
-        year: '2023',
-        location: 'Barcelona, España',
-        image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&q=80&w=800',
-        description: 'Desarrollamos una plataforma de pedidos propia optimizada para móviles, eliminando la dependencia de apps de terceros. La velocidad de carga y la facilidad de uso dispararon las ventas directas desde el primer mes.',
-        impact: '+60% Ventas sin Comisiones',
-        result: 'Web Performance Gold'
+        category: 'Branding',
+        title: 'Honest Greens',
+        year: '2024',
+        location: 'Madrid, España',
+        image: '/honest greens.jpg',
+        description: 'Elevamos la identidad visual de la marca a través de un diseño publicitario sofisticado. Realizamos el diseño de banners de alta conversión para campañas digitales y un rediseño estratégico de la carta digital, mejorando la experiencia del comensal.',
+        impact: 'Identidad Visual Premium',
+        result: 'Diseño de Alto Impacto'
     },
     {
         id: '03',
-        category: 'Branding',
-        title: 'Origami Sushi & Lounge',
+        category: 'Sitios Web',
+        title: 'Boa-Bao',
         year: '2023',
-        location: 'Valencia, España',
-        image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&q=80&w=800',
-        description: 'Rebranding completo para elevar el posicionamiento del restaurante. Rediseñamos desde el logo hasta la carta física y digital, acompañando el proceso con fotografía gastronómica de alta gama.',
-        impact: '+35% Incremento Ticket Medio',
-        result: 'Design Excellence 2023'
+        location: 'Barcelona, España',
+        image: '/boa bao.jpg',
+        description: 'Transformación digital completa para reflejar su esencia exótica. Rediseñamos su plataforma web y reforzamos su identidad de marca, integrando servicios de fotografía gastronómica profesional y una optimización avanzada de su presencia en Google My Business.',
+        impact: '+50% Engagement Digital',
+        result: 'Presencia Global'
     },
     {
         id: '04',
         category: 'Google Maps',
-        title: 'El Pescador Gourmet',
+        title: 'Byoko',
         year: '2024',
-        location: 'Sevilla, España',
-        image: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&q=80&w=800',
-        description: 'Estrategia integral de reputación online. Pasamos de una puntuación de 3.8 a 4.9 gestionando profesionalmente las reseñas y generando un flujo constante de nuevas opiniones positivas.',
-        impact: '4.9★ Calificación Promedio',
-        result: 'Reputation Management Pro'
+        location: 'Málaga, España',
+        image: '/byoko.jpg',
+        description: 'Refuerzo de la confianza del cliente y atractivo visual. Implementamos una gestión profesional de reseñas para mejorar el ranking local, complementado con el diseño de piezas publicitarias dinámicas y la optimización técnica de Google My Business.',
+        impact: '4.9★ Calificación Media',
+        result: 'Confianza de Marca'
     },
     {
         id: '05',
-        category: 'Sitios Web',
-        title: 'Trattoria Bella Napoli',
-        year: '2023',
-        location: 'Málaga, España',
-        image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=800',
-        description: 'Digitalización completa de reservas. Implementamos un sistema que redujo las cancelaciones en un 30% mediante recordatorios automáticos y prepagos para grupos grandes.',
-        impact: '-30% No-Shows en Reservas',
-        result: 'Efficiency Award 2023'
+        category: 'Branding',
+        title: 'Amaren',
+        year: '2024',
+        location: 'Bilbao, España',
+        image: '/amaren.jpeg',
+        description: 'Capturamos la excelencia culinaria mediante fotografía artística de alta definición. Esta renovación visual se integró con una optimización exhaustiva del perfil de Google My Business, logrando atraer a un público más cualificado y gourmet.',
+        impact: 'Tráfico Cualificado +30%',
+        result: 'Excelencia Visual'
     },
     {
         id: '06',
-        category: 'Branding',
-        title: 'Green Leaf Vegan Café',
+        category: 'Google Maps',
+        title: 'Árdia',
         year: '2024',
-        location: 'Bilbao, España',
-        image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800',
-        description: 'Creación de marca desde cero para un nuevo concepto saludable. Establecimos una estética fresca y orgánica que resonó perfectamente con el público joven de la ciudad.',
-        impact: 'Sold Out Primera Semana',
-        result: 'Brand Identity Success'
+        location: 'Madrid, España',
+        image: '/ardia.jpg',
+        description: 'Dominio estratégico del ecosistema de búsqueda local. Ejecutamos una optimización técnica avanzada de Google My Business vinculada a una estrategia de posicionamiento pagado en Google Maps, garantizando los primeros puestos en búsquedas clave.',
+        impact: 'Dominio de Búsqueda Local',
+        result: 'Posicionamiento Top 1'
     }
 ];
 
