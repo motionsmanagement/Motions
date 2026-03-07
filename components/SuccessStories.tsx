@@ -316,12 +316,12 @@ const SuccessStories: React.FC = () => {
                                                     <div className="flex-1 grid grid-cols-2 gap-x-10 gap-y-5">
                                                         {item.metrics.map((metric, idx) => (
                                                             <div key={idx} className="flex items-center gap-3.5 group/metric">
-                                                                <div className="w-8 h-8 rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
-                                                                    <metric.icon className="w-4 h-4 text-black" />
+                                                                <div className="w-[34px] h-[34px] rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
+                                                                    <metric.icon className="w-[18px] h-[18px] text-black" />
                                                                 </div>
                                                                 <div className="flex flex-col">
-                                                                    <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest mb-0.5">{metric.label}</span>
-                                                                    <span className="text-lg font-semibold text-black tracking-tight leading-none">{metric.value}</span>
+                                                                    <span className="text-[9px] font-bold text-black uppercase tracking-widest mb-0.5">{metric.label}</span>
+                                                                    <span className="text-lg font-semibold text-gray-700 tracking-tight leading-none">{metric.value}</span>
                                                                 </div>
                                                             </div>
                                                         ))}
