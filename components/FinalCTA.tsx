@@ -3,7 +3,7 @@ import { Phone, MessageSquare } from 'lucide-react';
 
 const FinalCTA: React.FC = () => {
   return (
-    <section id="contact" className="relative py-44 px-6 md:px-12 overflow-hidden flex flex-col items-start text-left font-['Inter']">
+    <section id="contact" className="relative py-44 px-6 md:px-12 overflow-hidden flex flex-col items-start md:items-center text-left md:text-center font-['Inter']">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -22,18 +22,18 @@ const FinalCTA: React.FC = () => {
           y domina tu mercado local
         </h2>
 
-        <p className="text-white text-base md:text-lg mb-12 max-w-2xl leading-relaxed font-light">
+        <p className="text-white text-base md:text-lg mb-12 max-w-2xl md:mx-auto leading-relaxed font-light">
           Es el momento de dejar de ser invisible. Agenda una consulta gratuita<br className="hidden md:block" />
           y descubre cómo multiplicar tus reservas esta semana.
         </p>
 
-        <div className="flex flex-row items-center justify-start gap-4 mb-24 w-full">
-          <button className="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm sm:text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group flex-1 sm:flex-none justify-center">
+        <div className="flex flex-row items-center justify-start md:justify-center gap-4 mb-24 w-full">
+          <button className="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm sm:text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group flex-1 md:flex-none justify-center">
             <Phone className="w-4 h-4 group-hover:rotate-12 transition-transform" />
             Llámanos
           </button>
 
-          <button className="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm sm:text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group flex-1 sm:flex-none justify-center">
+          <button className="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm sm:text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group flex-1 md:flex-none justify-center">
             <MessageSquare className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
             Mensaje
           </button>
