@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, CheckCircle2, TrendingUp, ChevronRight, MessageSquare } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, TrendingUp, ChevronRight, MessageSquare, Activity, Users, Target, MousePointer2, Smartphone, BarChart3, Star, MapPin, Search } from 'lucide-react';
+
+interface SuccessMetric {
+    label: string;
+    value: string;
+    icon: React.ElementType;
+}
 
 interface SuccessCase {
     id: string;
@@ -9,8 +15,8 @@ interface SuccessCase {
     location: string;
     image: string;
     description: string;
-    impact: string;
-    result: string;
+    metrics: SuccessMetric[];
+    graphicType: 'performance' | 'visibility' | 'conversion' | 'reputation' | 'brand' | 'reach';
 }
 
 const successCases: SuccessCase[] = [
@@ -22,8 +28,12 @@ const successCases: SuccessCase[] = [
         location: 'Madrid, España',
         image: '/honest greens.jpg',
         description: 'Elevamos la identidad visual de la marca a través de un diseño publicitario sofisticado. Realizamos el diseño de banners de alta conversión para campañas digitales y un rediseño estratégico de la carta digital, mejorando la experiencia del comensal.',
-        impact: 'Identidad Visual Premium',
-        result: 'Diseño de Alto Impacto'
+        graphicType: 'brand',
+        metrics: [
+            { label: 'Conversión Web', value: '+140%', icon: MousePointer2 },
+            { label: 'Engagement Social', value: '+35%', icon: Activity },
+            { label: 'Ticket Medio', value: '+18.5%', icon: TrendingUp }
+        ]
     },
     {
         id: '02',
@@ -33,8 +43,12 @@ const successCases: SuccessCase[] = [
         location: 'Boston, USA',
         image: '/o ya restaurant.jpg',
         description: 'Estrategia integral de crecimiento 360°. Optimizamos su perfil en Google My Business y ejecutamos campañas de gran impacto en Google Maps y Meta Ads, potenciando su alcance local mediante colaboraciones estratégicas con micro-influencers del sector gastronómico.',
-        impact: 'Máxima Visibilidad Local',
-        result: 'ROI Publicitario Líder'
+        graphicType: 'performance',
+        metrics: [
+            { label: 'Alcance GMB', value: '+12.5k', icon: Users },
+            { label: 'Reservas Online', value: '+45%', icon: CheckCircle2 },
+            { label: 'ROI Campaign', value: '4.2x', icon: Target }
+        ]
     },
     {
         id: '03',
@@ -44,8 +58,12 @@ const successCases: SuccessCase[] = [
         location: 'Barcelona, España',
         image: '/boa bao.jpg',
         description: 'Transformación digital completa para reflejar su esencia exótica. Rediseñamos su plataforma web y reforzamos su identidad de marca, integrando servicios de fotografía gastronómica profesional y una optimización avanzada de su presencia en Google My Business.',
-        impact: '+50% Engagement Digital',
-        result: 'Presencia Global'
+        graphicType: 'conversion',
+        metrics: [
+            { label: 'Velocidad UX', value: '0.8s', icon: Smartphone },
+            { label: 'Ventas Directas', value: '+60%', icon: TrendingUp },
+            { label: 'Bounce Rate', value: '-22%', icon: BarChart3 }
+        ]
     },
     {
         id: '04',
@@ -55,8 +73,12 @@ const successCases: SuccessCase[] = [
         location: 'Málaga, España',
         image: '/byoko.jpg',
         description: 'Refuerzo de la confianza del cliente y atractivo visual. Implementamos una gestión profesional de reseñas para mejorar el ranking local, complementado con el diseño de piezas publicitarias dinámicas y la optimización técnica de Google My Business.',
-        impact: '4.9★ Calificación Media',
-        result: 'Confianza de Marca'
+        graphicType: 'reputation',
+        metrics: [
+            { label: 'Rating Medio', value: '4.9★', icon: Star },
+            { label: 'CTR Maps', value: '+24%', icon: MousePointer2 },
+            { label: 'Llamadas GMB', value: '+30%', icon: Users }
+        ]
     },
     {
         id: '05',
@@ -66,8 +88,12 @@ const successCases: SuccessCase[] = [
         location: 'Bilbao, España',
         image: '/amaren.jpeg',
         description: 'Capturamos la excelencia culinaria mediante fotografía artística de alta definición. Esta renovación visual se integró con una optimización exhaustiva del perfil de Google My Business, logrando atraer a un público más cualificado y gourmet.',
-        impact: 'Tráfico Cualificado +30%',
-        result: 'Excelencia Visual'
+        graphicType: 'visibility',
+        metrics: [
+            { label: 'Visuales HD', value: '50+', icon: MapPin },
+            { label: 'Tráfico Gourmet', value: '+30%', icon: Activity },
+            { label: 'Reach Total', value: '45k', icon: Search }
+        ]
     },
     {
         id: '06',
@@ -77,10 +103,103 @@ const successCases: SuccessCase[] = [
         location: 'Madrid, España',
         image: '/ardia.jpg',
         description: 'Dominio estratégico del ecosistema de búsqueda local. Ejecutamos una optimización técnica avanzada de Google My Business vinculada a una estrategia de posicionamiento pagado en Google Maps, garantizando los primeros puestos en búsquedas clave.',
-        impact: 'Dominio de Búsqueda Local',
-        result: 'Posicionamiento Top 1'
+        graphicType: 'reach',
+        metrics: [
+            { label: 'Posición Media', value: 'Top 3', icon: MapPin },
+            { label: 'Búsquedas Dir.', value: '+18k', icon: Search },
+            { label: 'Visitas Locales', value: '+42%', icon: Users }
+        ]
     }
 ];
+
+const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) => {
+    return (
+        <div className="relative w-full h-full bg-[#111] rounded-3xl border border-white/5 overflow-hidden flex flex-col p-4">
+            <div className="flex justify-between items-center mb-4 border-b border-white/5 pb-2">
+                <div className="flex gap-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                </div>
+                <span className="text-[8px] font-mono text-white/30 uppercase tracking-widest">RESULTADOS_ANALÍTICA_V2</span>
+            </div>
+
+            <div className="flex-1 flex flex-col gap-3">
+                {/* Simulated Data Visualization */}
+                <div className="flex-1 rounded-2xl bg-white/[0.03] border border-white/5 relative overflow-hidden flex items-center justify-center p-4">
+                    {type === 'performance' && (
+                        <div className="w-full h-full flex items-end gap-2 justify-center">
+                            {[40, 70, 45, 90, 60, 85].map((h, i) => (
+                                <div key={i} className="flex-1 bg-white/10 rounded-t-sm relative group/bar overflow-hidden" style={{ height: `${h}%` }}>
+                                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/bar:translate-y-0 transition-transform duration-500"></div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                    {type === 'brand' && (
+                        <div className="relative w-full h-full flex items-center justify-center">
+                            <div className="w-24 h-24 rounded-full border border-white/10 border-dashed animate-spin-slow"></div>
+                            <div className="absolute w-16 h-16 rounded-full border-2 border-white/30 border-t-white flex items-center justify-center">
+                                <Activity className="w-6 h-6 text-white/80" />
+                            </div>
+                        </div>
+                    )}
+                    {type === 'conversion' && (
+                        <div className="w-full space-y-3">
+                            {[1, 2, 3].map(i => (
+                                <div key={i} className="flex items-center gap-3">
+                                    <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                                        <div className="h-full bg-white/30 animate-load-slow" style={{ width: `${40 + i * 20}%`, animationDelay: `${i * 0.2}s` }}></div>
+                                    </div>
+                                    <span className="text-[8px] font-mono text-white/40">{40 + i * 20}%</span>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                    {type === 'reputation' && (
+                        <div className="flex flex-col items-center gap-2">
+                            <div className="flex gap-1">
+                                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 text-white fill-white" />)}
+                            </div>
+                            <span className="text-2xl font-mono text-white">4.9/5.0</span>
+                            <div className="px-3 py-1 bg-white/10 rounded-full text-[8px] font-bold text-white uppercase tracking-tighter">EXCENTE_NIVEL</div>
+                        </div>
+                    )}
+                    {type === 'visibility' || type === 'reach' && (
+                        <div className="relative w-full h-full flex items-center justify-center">
+                            <div className="absolute inset-0 opacity-10">
+                                <svg width="100%" height="100%" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="2 2" />
+                                    <circle cx="50" cy="50" r="25" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="2 2" />
+                                </svg>
+                            </div>
+                            <MapPin className="w-8 h-8 text-white/50" />
+                            <div className="absolute w-12 h-12 rounded-full border border-white/40 animate-ping"></div>
+                        </div>
+                    )}
+
+                    {/* Interior Vignette */}
+                    <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/40 to-transparent"></div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2">
+                    <div className="p-3 bg-white/5 rounded-xl border border-white/5 flex flex-col gap-1">
+                        <span className="text-[7px] text-white/30 uppercase font-bold tracking-tighter">EFICIENCIA_MES</span>
+                        <span className="text-xs font-mono text-white">98.4%</span>
+                    </div>
+                    <div className="p-3 bg-white/5 rounded-xl border border-white/5 flex flex-col gap-1">
+                        <span className="text-[7px] text-white/30 uppercase font-bold tracking-tighter">ESTADO_ACTIVO</span>
+                        <span className="text-xs font-mono text-white">OPTIMIZADO</span>
+                    </div>
+                </div>
+            </div>
+
+            <div className="mt-4 flex items-center justify-between text-[7px] font-mono text-white/20 uppercase tracking-widest">
+                <span>ESTADÍSTICAS_TIEMPO_REAL</span>
+                <span>2025_REF</span>
+            </div>
+        </div>
+    );
+};
 
 const SuccessStories: React.FC = () => {
     const [activeTab, setActiveTab] = useState('Todos');
@@ -167,16 +286,17 @@ const SuccessStories: React.FC = () => {
                                 </div>
 
                                 <div
-                                    className={`grid grid-cols-1 lg:grid-cols-2 gap-12 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded ? 'max-h-[1000px] opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2 pointer-events-none'
+                                    className={`grid grid-cols-1 lg:grid-cols-2 gap-12 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded ? 'max-h-[1400px] opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2 pointer-events-none'
                                         }`}
                                 >
-                                    <div className="rounded-2xl overflow-hidden aspect-[16/10] bg-gray-50">
+                                    <div className="rounded-2xl overflow-hidden aspect-[16/10] bg-gray-50 relative group/img">
                                         <img
                                             src={item.image}
                                             alt={item.title}
                                             className="w-full h-full object-cover rounded-2xl transition-transform duration-1000 ease-out"
                                             style={{ transform: isExpanded ? 'scale(1)' : 'scale(1.15)' }}
                                         />
+                                        <div className="absolute inset-0 bg-black/10 transition-opacity opacity-0 group-hover/img:opacity-100"></div>
                                     </div>
 
                                     <div className="flex flex-col justify-center">
@@ -184,38 +304,41 @@ const SuccessStories: React.FC = () => {
                                             {item.description}
                                         </p>
 
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-                                            {/* Liquid Glass Metric Card: Impacto */}
-                                            <div className="group/metric relative p-6 rounded-[2rem] bg-gradient-to-br from-white to-[#f3f4f1]/50 border border-[#e5e7eb] shadow-sm overflow-hidden transition-all duration-500 hover:shadow-xl hover:border-black/10">
-                                                <div className="absolute inset-0 bg-white/40 backdrop-blur-xl opacity-0 group-hover/metric:opacity-100 transition-opacity duration-500"></div>
-                                                <div className="relative z-10">
-                                                    <div className="w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-6 group-hover/metric:scale-110 transition-transform duration-500">
-                                                        <TrendingUp className="w-5 h-5 text-black" />
-                                                    </div>
-                                                    <div>
-                                                        <h4 className="text-[10px] font-bold text-black/40 mb-2 tracking-[0.2em] uppercase">Impacto Obtenido</h4>
-                                                        <p className="text-xl font-semibold text-black tracking-tight leading-tight">{item.impact}</p>
-                                                    </div>
+                                        {/* Redesigned Technical Metric Card */}
+                                        <div className="group relative bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-10 border border-white/10 shadow-2xl overflow-hidden transition-transform duration-500 hover:scale-[1.01]">
+                                            <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
+                                                {/* Metric List */}
+                                                <div className="flex-1 space-y-7 w-full">
+                                                    {item.metrics.map((metric, idx) => (
+                                                        <div key={idx} className="flex items-center gap-4 group/metric">
+                                                            <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-500 group-hover/metric:bg-white group-hover/metric:text-black">
+                                                                <metric.icon className="w-5 h-5" />
+                                                            </div>
+                                                            <div className="flex flex-col">
+                                                                <span className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] mb-1">{metric.label}</span>
+                                                                <span className="text-xl font-semibold text-white tracking-tight">{metric.value}</span>
+                                                            </div>
+                                                        </div>
+                                                    ))}
                                                 </div>
-                                                {/* Decorative element */}
-                                                <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-black/[0.02] rounded-full blur-2xl group-hover/metric:bg-black/[0.05] transition-colors"></div>
+
+                                                {/* Technical graphic */}
+                                                <div className="w-full md:w-60 h-64 shrink-0 transition-transform duration-1000 group-hover:scale-105">
+                                                    <CaseGraphic type={item.graphicType} />
+                                                </div>
                                             </div>
 
-                                            {/* Liquid Glass Metric Card: Resultado */}
-                                            <div className="group/metric relative p-6 rounded-[2rem] bg-gradient-to-br from-white to-[#f3f4f1]/50 border border-[#e5e7eb] shadow-sm overflow-hidden transition-all duration-500 hover:shadow-xl hover:border-black/10">
-                                                <div className="absolute inset-0 bg-white/40 backdrop-blur-xl opacity-0 group-hover/metric:opacity-100 transition-opacity duration-500"></div>
-                                                <div className="relative z-10">
-                                                    <div className="w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-6 group-hover/metric:scale-110 transition-transform duration-500">
-                                                        <CheckCircle2 className="w-5 h-5 text-black" />
-                                                    </div>
-                                                    <div>
-                                                        <h4 className="text-[10px] font-bold text-black/40 mb-2 tracking-[0.2em] uppercase">Resultado Final</h4>
-                                                        <p className="text-xl font-semibold text-black tracking-tight leading-tight">{item.result}</p>
-                                                    </div>
+                                            {/* Subtitle bottom info */}
+                                            <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+                                                <div className="flex items-center gap-2">
+                                                    <div className="w-2 h-2 rounded-full bg-white/40 animate-pulse"></div>
+                                                    <span className="text-[9px] font-mono text-white/20 uppercase tracking-widest">Monitoreo de Impacto Realizado</span>
                                                 </div>
-                                                {/* Decorative element */}
-                                                <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-black/[0.02] rounded-full blur-2xl group-hover/metric:bg-black/[0.05] transition-colors"></div>
+                                                <span className="text-[9px] font-mono text-white/20 uppercase tracking-widest">{item.title}_DATA_V1.0</span>
                                             </div>
+
+                                            {/* Subtle scan glow */}
+                                            <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.03] to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -237,8 +360,27 @@ const SuccessStories: React.FC = () => {
                     </div>
                 )}
             </div>
+
+            <style dangerouslySetInnerHTML={{
+                __html: `
+                @keyframes spin-slow {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+                .animate-spin-slow {
+                    animation: spin-slow 12s linear infinite;
+                }
+                @keyframes pulse-once {
+                    0%, 100% { opacity: 0.3; }
+                    50% { opacity: 1; }
+                }
+                .animate-pulse-once {
+                    animation: pulse-once 3s ease-in-out infinite;
+                }
+            `}} />
         </section>
     );
 };
 
 export default SuccessStories;
+
