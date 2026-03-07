@@ -112,79 +112,44 @@ const successCases: SuccessCase[] = [
     }
 ];
 
-const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) => {
+const LiquidGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) => {
     return (
-        <div className="relative w-full h-full flex items-center justify-center">
-            {/* Unique, non-shared, clean artistic element */}
-            <div className="relative z-10 w-full h-full flex items-center justify-center">
-                {type === 'performance' && (
-                    <div className="relative w-full h-full flex items-center justify-center">
-                        <svg width="70" height="40" viewBox="0 0 70 40" className="overflow-visible">
-                            <path
-                                d="M 0 38 Q 20 38 40 18 T 70 5"
-                                fill="none"
-                                stroke="black"
-                                strokeWidth="2.5"
-                                className="opacity-15 animate-draw-path"
-                            />
-                            <path
-                                d="M 0 38 L 10 32 L 25 35 L 40 20 L 55 25 L 70 5"
-                                fill="none"
-                                stroke="black"
-                                strokeWidth="1"
-                                className="opacity-5"
-                            />
-                            <circle cx="70" cy="5" r="3.5" className="fill-black opacity-30 animate-pulse" />
-                            <circle cx="40" cy="18" r="2" className="fill-black/10" />
-                        </svg>
+        <div className="absolute inset-x-0 bottom-0 top-1/2 md:top-0 md:left-1/2 pointer-events-none overflow-hidden opacity-60">
+            {/* Organic Liquid Blobs */}
+            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 blur-[80px] rounded-full mix-blend-multiply opacity-20 animate-pulse
+                ${type === 'performance' ? 'bg-blue-200' :
+                    type === 'brand' ? 'bg-purple-200' :
+                        type === 'conversion' ? 'bg-emerald-200' :
+                            type === 'reputation' ? 'bg-orange-200' : 'bg-gray-200'}`}
+            />
+            <div className={`absolute top-1/3 left-2/3 -translate-x-1/2 -translate-y-1/2 w-48 h-48 blur-[60px] rounded-full mix-blend-multiply opacity-15 animate-bounce-slow
+                ${type === 'performance' ? 'bg-indigo-200' :
+                    type === 'brand' ? 'bg-pink-200' :
+                        type === 'conversion' ? 'bg-teal-200' :
+                            type === 'reputation' ? 'bg-yellow-200' : 'bg-neutral-200'}`}
+            />
+
+            {/* Glassy Floating Elements */}
+            <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative w-48 h-48">
+                    {/* Architectural Grid overlay */}
+                    <div className="absolute inset-0 border-[0.5px] border-black/[0.03] rounded-full scale-125"></div>
+                    <div className="absolute inset-0 border-[0.5px] border-black/[0.02] rounded-full scale-150"></div>
+
+                    {/* Floating Data Icons */}
+                    <div className="absolute top-0 right-0 w-12 h-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl shadow-xl flex items-center justify-center animate-bounce-slow">
+                        <Activity className="w-5 h-5 text-black/40" />
                     </div>
-                )}
-                {type === 'brand' && (
-                    <div className="relative w-full h-full flex items-center justify-center">
-                        <div className="relative w-16 h-16 flex items-center justify-center scale-75">
-                            <div className="absolute inset-0 border-[1.5px] border-black/10 rounded-xl rotate-12"></div>
-                            <div className="absolute inset-0 border border-black/5 rounded-xl -rotate-12"></div>
-                            <Activity className="w-7 h-7 text-black/40" />
-                            <div className="absolute -bottom-1 -right-1 w-2 h-2 rounded-full bg-black/10 animate-pulse"></div>
-                        </div>
+
+                    <div className="absolute bottom-8 -left-4 w-10 h-10 bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg flex items-center justify-center animate-pulse" style={{ animationDuration: '4s' }}>
+                        <MousePointer2 className="w-4 h-4 text-black/30" />
                     </div>
-                )}
-                {type === 'conversion' && (
-                    <div className="relative w-full h-full flex items-center justify-center">
-                        <div className="relative w-14 h-14 flex items-center justify-center">
-                            <svg width="60" height="60" className="absolute inset-0 rotate-[-15deg]">
-                                <rect x="15" y="15" width="30" height="30" fill="none" stroke="black" strokeWidth="1" className="opacity-10" />
-                                <circle cx="30" cy="30" r="12" fill="none" stroke="black" strokeWidth="2" className="opacity-20 animate-pulse" />
-                            </svg>
-                            <Target className="w-6 h-6 text-black/30 relative z-10" />
-                        </div>
+
+                    {/* Central Glass Disc */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/[0.05] backdrop-blur-[2px] border border-black/[0.03] rounded-full flex items-center justify-center">
+                        <div className="w-24 h-24 border border-black/[0.02] border-dashed rounded-full animate-spin-slow"></div>
                     </div>
-                )}
-                {type === 'reputation' && (
-                    <div className="relative w-full h-full flex items-center justify-center">
-                        <div className="relative flex flex-col items-center gap-1.5">
-                            <Star className="w-8 h-8 text-black/30 fill-black/5" />
-                            <div className="flex gap-1.5">
-                                {[100, 70, 85].map((w, i) => (
-                                    <div key={i} className="w-3 h-0.5 bg-black/20 rounded-full" style={{ opacity: w / 100 * 0.5 }}></div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                )}
-                {(type === 'visibility' || type === 'reach') && (
-                    <div className="relative w-full h-full flex items-center justify-center">
-                        <div className="relative w-16 h-16 flex items-center justify-center">
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-full h-full border border-black/[0.07] rounded-full animate-ping-slow"></div>
-                            </div>
-                            <div className="w-10 h-10 rounded-full bg-black/5 border border-black/10 flex items-center justify-center">
-                                <MapPin className="w-5 h-5 text-black/40" />
-                            </div>
-                            <div className="absolute top-1 right-2 w-1 h-1 rounded-full bg-black/20"></div>
-                        </div>
-                    </div>
-                )}
+                </div>
             </div>
         </div>
     );
@@ -288,26 +253,29 @@ const SuccessStories: React.FC = () => {
                                         <div className="absolute inset-0 bg-black/10 transition-opacity opacity-0 group-hover/img:opacity-100"></div>
                                     </div>
 
-                                    <div className="flex flex-col justify-between items-start">
-                                        <div className="w-full h-full flex flex-col">
-                                            <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-8 max-w-lg">
+                                    <div className="flex flex-col justify-between items-start relative min-h-[400px]">
+                                        {/* Background Liquid Glass Showcase */}
+                                        <LiquidGraphic type={item.graphicType} />
+
+                                        <div className="w-full h-full flex flex-col relative z-20">
+                                            <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-12 max-w-lg">
                                                 {item.description}
                                             </p>
 
-                                            {/* Minimalist Results Row */}
-                                            <div className="group relative bg-[#f8f9f8] rounded-xl px-6 py-4 border border-gray-200 shadow-sm transition-all duration-500 hover:border-black/10 w-fit">
-                                                <div className="flex items-center gap-8">
+                                            {/* Glassmorphic Results Row */}
+                                            <div className="group relative bg-white/40 backdrop-blur-xl rounded-2xl px-8 py-5 border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)] transition-all duration-500 hover:border-black/10 w-fit">
+                                                <div className="flex items-center gap-10">
                                                     {item.metrics.map((metric, idx) => (
-                                                        <div key={idx} className="flex items-center gap-3 group/metric">
-                                                            <div className="w-[30px] h-[30px] rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
-                                                                <metric.icon className="w-[15px] h-[15px] text-black" />
+                                                        <div key={idx} className="flex items-center gap-4 group/metric">
+                                                            <div className="w-[36px] h-[36px] rounded-xl bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0 transition-transform group-hover/metric:scale-110">
+                                                                <metric.icon className="w-[18px] h-[18px] text-black" />
                                                             </div>
                                                             <div className="flex flex-col">
-                                                                <span className="text-[8px] font-bold text-black uppercase tracking-widest mb-0.5">{metric.label}</span>
-                                                                <span className="text-base font-semibold text-gray-700 tracking-tight leading-none">{metric.value}</span>
+                                                                <span className="text-[9px] font-bold text-black uppercase tracking-widest mb-0.5 opacity-60">{metric.label}</span>
+                                                                <span className="text-lg font-semibold text-gray-800 tracking-tight leading-none">{metric.value}</span>
                                                             </div>
                                                             {idx < item.metrics.length - 1 && (
-                                                                <div className="ml-5 w-[1px] h-6 bg-black/10 shrink-0" />
+                                                                <div className="ml-6 w-[1px] h-8 bg-black/5 shrink-0" />
                                                             )}
                                                         </div>
                                                     ))}
