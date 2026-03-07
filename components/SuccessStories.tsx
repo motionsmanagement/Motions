@@ -303,45 +303,45 @@ const SuccessStories: React.FC = () => {
                                         <div className="absolute inset-0 bg-black/10 transition-opacity opacity-0 group-hover/img:opacity-100"></div>
                                     </div>
 
-                                    <div className="flex flex-col justify-center">
-                                        <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-8 max-w-lg">
+                                    <div className="flex flex-col justify-between">
+                                        <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-8">
                                             {item.description}
                                         </p>
 
-                                        {/* Compact Technical Metric Card */}
-                                        <div className="group relative bg-[#0D0D0D] rounded-3xl p-6 md:p-8 border border-white/10 shadow-xl overflow-hidden transition-all duration-500 hover:border-white/20 max-w-lg mx-0">
-                                            <div className="relative z-10 flex flex-col sm:flex-row gap-6 items-center">
+                                        {/* Rectangular Technical Metric Card - Aligned with Image bottom */}
+                                        <div className="group relative bg-[#0D0D0D] rounded-2xl p-6 md:p-7 border border-white/10 shadow-xl overflow-hidden transition-all duration-500 hover:border-white/20 w-full">
+                                            <div className="relative z-10 flex flex-col sm:flex-row gap-8 items-center">
                                                 {/* Metric List */}
-                                                <div className="flex-1 space-y-5 w-full">
+                                                <div className="flex-1 space-y-6 w-full">
                                                     {item.metrics.map((metric, idx) => (
-                                                        <div key={idx} className="flex items-center gap-3.5 group/metric">
-                                                            <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-500 group-hover/metric:bg-white group-hover/metric:text-black">
-                                                                <metric.icon className="w-4 h-4" />
+                                                        <div key={idx} className="flex items-center gap-4 group/metric">
+                                                            <div className="w-9 h-9 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center transition-all duration-500 group-hover/metric:bg-white group-hover/metric:text-black">
+                                                                <metric.icon className="w-4.5 h-4.5 text-white group-hover/metric:text-black" />
                                                             </div>
                                                             <div className="flex flex-col">
-                                                                <span className="text-[9px] font-bold text-white/30 uppercase tracking-widest mb-0.5">{metric.label}</span>
-                                                                <span className="text-lg font-semibold text-white tracking-tight">{metric.value}</span>
+                                                                <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">{metric.label}</span>
+                                                                <span className="text-xl font-semibold text-white tracking-tight">{metric.value}</span>
                                                             </div>
                                                         </div>
                                                     ))}
                                                 </div>
 
                                                 {/* Smaller Technical graphic */}
-                                                <div className="w-full sm:w-44 h-48 shrink-0">
+                                                <div className="w-full sm:w-48 h-44 shrink-0">
                                                     <CaseGraphic type={item.graphicType} />
                                                 </div>
                                             </div>
 
                                             {/* Subtitle bottom info */}
-                                            <div className="mt-6 pt-5 border-t border-white/5 flex items-center justify-between">
+                                            <div className="mt-5 pt-4 border-t border-white/5 flex items-center justify-between">
                                                 <div className="flex items-center gap-2">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-white/30 animate-pulse"></div>
-                                                    <span className="text-[8px] font-mono text-white/15 uppercase tracking-wider">LIVE_DATA_STREAM</span>
+                                                    <span className="text-[8px] font-mono text-white/20 uppercase tracking-wider">LIVE_DATA_STREAM // {item.title}</span>
                                                 </div>
                                             </div>
 
-                                            {/* Subtle glow */}
-                                            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-[80px] rounded-full pointer-events-none group-hover:bg-white/10 transition-colors duration-700"></div>
+                                            {/* Subtle scan animation */}
+                                            <div className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/[0.03] to-transparent group-hover:left-[100%] transition-all duration-1000 ease-in-out"></div>
                                         </div>
                                     </div>
                                 </div>
