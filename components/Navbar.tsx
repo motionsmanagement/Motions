@@ -1,5 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,14 +22,16 @@ const Navbar: React.FC = () => {
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 transition-all duration-300">
       <nav className={`rounded-full px-6 md:px-10 py-3 flex items-center justify-between w-full max-w-6xl backdrop-blur-xl border transition-all duration-300 ${themeClass}`}>
         <div className="flex items-center">
-          <img src={logoSrc} alt="Motions Logo" className="h-8 w-auto transition-opacity duration-300" />
+          <Link to="/">
+            <img src={logoSrc} alt="Motions Logo" className="h-8 w-auto transition-opacity duration-300" />
+          </Link>
         </div>
 
         <div className={`hidden md:flex items-center gap-8 font-medium text-sm transition-colors duration-300 ${isScrolled ? "text-[#2D241E]/80" : "text-white/80"}`}>
-          <a href="#services" className={`hover:text-current transition-colors tracking-tight ${isScrolled ? "hover:text-black" : "hover:text-white"}`}>Servicios</a>
-          <a href="#how-it-works" className={`hover:text-current transition-colors tracking-tight ${isScrolled ? "hover:text-black" : "hover:text-white"}`}>Cómo Funciona</a>
-          <a href="#projects" className={`hover:text-current transition-colors tracking-tight ${isScrolled ? "hover:text-black" : "hover:text-white"}`}>Proyectos</a>
-          <a href="#contact" className={`hover:text-current transition-colors tracking-tight ${isScrolled ? "hover:text-black" : "hover:text-white"}`}>Contacto</a>
+          <Link to="/#services" className={`hover:text-current transition-colors tracking-tight ${isScrolled ? "hover:text-black" : "hover:text-white"}`}>Servicios</Link>
+          <Link to="/#how-it-works" className={`hover:text-current transition-colors tracking-tight ${isScrolled ? "hover:text-black" : "hover:text-white"}`}>Cómo Funciona</Link>
+          <Link to="/#cases" className={`hover:text-current transition-colors tracking-tight ${isScrolled ? "hover:text-black" : "hover:text-white"}`}>Proyectos</Link>
+          <Link to="/#contact" className={`hover:text-current transition-colors tracking-tight ${isScrolled ? "hover:text-black" : "hover:text-white"}`}>Contacto</Link>
         </div>
 
         <div className="flex items-center gap-2 md:gap-3">

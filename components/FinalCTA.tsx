@@ -3,7 +3,7 @@ import { Phone, MessageSquare } from 'lucide-react';
 
 const FinalCTA: React.FC = () => {
   return (
-    <section className="relative py-44 px-6 md:px-12 overflow-hidden flex flex-col items-center text-center font-['Inter']">
+    <section id="contact" className="relative py-44 px-6 md:px-12 overflow-hidden flex flex-col items-center text-center font-['Inter']">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img

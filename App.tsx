@@ -1,23 +1,5 @@
-
 import React, { useEffect } from 'react';
-import {
-  ArrowRight,
-  ArrowLeft,
-  ChevronRight,
-  User,
-  Users,
-  HeartPulse,
-  Crosshair,
-  Brain,
-  Award,
-  Globe,
-  Calendar,
-  CheckCircle2,
-  Instagram,
-  Facebook,
-  Linkedin,
-  Clock
-} from 'lucide-react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 // Components
 import Navbar from './components/Navbar';
@@ -25,26 +7,62 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import ServicesBanner from './components/ServicesBanner';
 import HowItWorks from './components/HowItWorks';
-
 import SuccessStories from './components/SuccessStories';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 
-const App: React.FC = () => {
+// Legal Pages
+import { PrivacyPolicy, CookiesPolicy, LegalNotice } from './components/legal/LegalPages';
+
+// Scroll to top on route change
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo(0, 0);
+    } else {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [pathname, hash]);
+
+  return null;
+};
+
+const HomePage: React.FC = () => {
   return (
-    <div className="min-h-screen selection:bg-gray-200 selection:text-black">
+    <>
       <Navbar />
       <main>
         <Hero />
         <Services />
         <ServicesBanner />
         <HowItWorks />
-
         <SuccessStories />
         <FinalCTA />
       </main>
       <Footer />
-    </div>
+    </>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <div className="min-h-screen selection:bg-gray-200 selection:text-black">
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/privacidad" element={<PrivacyPolicy />} />
+          <Route path="/cookies" element={<CookiesPolicy />} />
+          <Route path="/aviso-legal" element={<LegalNotice />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
