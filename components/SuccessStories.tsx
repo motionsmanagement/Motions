@@ -121,79 +121,58 @@ const successCases: SuccessCase[] = [
 const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) => {
     return (
         <div className="relative w-full h-full flex items-center justify-center">
-            {/* Background Base Grid (Shared) */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-full h-full border border-black/[0.04] rounded-full scale-110"></div>
-                <div className="absolute w-full h-full flex items-center justify-center opacity-[0.05]">
-                    <div className="w-[1px] h-full bg-black"></div>
-                    <div className="h-[1px] w-full bg-black"></div>
-                    <div className="absolute w-3/4 h-3/4 border border-black border-dashed rounded-full animate-spin-slow"></div>
-                </div>
-            </div>
-
-            <div className="relative z-10 w-full h-full flex items-center justify-center scale-90">
+            {/* Unique, non-shared, clean artistic element */}
+            <div className="relative z-10 w-full h-full flex items-center justify-center">
                 {type === 'performance' && (
                     <div className="relative w-full h-full flex items-center justify-center">
-                        <svg width="80" height="50" viewBox="0 0 80 50" className="overflow-visible">
-                            <line x1="0" y1="45" x2="80" y2="45" stroke="black" strokeWidth="0.5" className="opacity-10" />
+                        <svg width="70" height="40" viewBox="0 0 70 40" className="overflow-visible">
                             <path
-                                d="M 0 45 L 20 35 L 40 38 L 60 15 L 80 18"
+                                d="M 0 38 Q 20 38 40 18 T 70 5"
+                                fill="none"
+                                stroke="black"
+                                strokeWidth="2.5"
+                                className="opacity-15 animate-draw-path"
+                            />
+                            <path
+                                d="M 0 38 L 10 32 L 25 35 L 40 20 L 55 25 L 70 5"
                                 fill="none"
                                 stroke="black"
                                 strokeWidth="1"
-                                className="opacity-10"
+                                className="opacity-5"
                             />
-                            <path
-                                d="M 0 45 Q 20 45 40 25 T 80 5"
-                                fill="none"
-                                stroke="black"
-                                strokeWidth="2"
-                                className="opacity-30 animate-draw-path"
-                            />
-                            <circle cx="80" cy="5" r="3" className="fill-black opacity-40 animate-pulse" />
-                            <text x="65" y="42" className="text-[5px] font-mono fill-black/30">AVG. UP</text>
+                            <circle cx="70" cy="5" r="3.5" className="fill-black opacity-30 animate-pulse" />
+                            <circle cx="40" cy="18" r="2" className="fill-black/10" />
                         </svg>
                     </div>
                 )}
                 {type === 'brand' && (
                     <div className="relative w-full h-full flex items-center justify-center">
-                        <div className="relative w-16 h-16 flex items-center justify-center">
-                            <div className="absolute inset-0 border border-black/10 rounded-full"></div>
-                            <div className="absolute inset-2 border border-black/5 rotate-45"></div>
-                            <div className="absolute inset-4 border border-black/10 rounded-sm animate-spin-slow"></div>
-                            <div className="w-8 h-8 rounded-full bg-black/5 border border-black/10 flex items-center justify-center">
-                                <Activity className="w-4 h-4 text-black/60" />
-                            </div>
-                            <span className="absolute -top-1 -right-1 text-[4px] font-mono text-black/40 tracking-widest">PROP. 1.618</span>
+                        <div className="relative w-16 h-16 flex items-center justify-center scale-75">
+                            <div className="absolute inset-0 border-[1.5px] border-black/10 rounded-xl rotate-12"></div>
+                            <div className="absolute inset-0 border border-black/5 rounded-xl -rotate-12"></div>
+                            <Activity className="w-7 h-7 text-black/40" />
+                            <div className="absolute -bottom-1 -right-1 w-2 h-2 rounded-full bg-black/10 animate-pulse"></div>
                         </div>
                     </div>
                 )}
                 {type === 'conversion' && (
                     <div className="relative w-full h-full flex items-center justify-center">
-                        <div className="relative w-16 h-16 flex items-center justify-center">
-                            <svg width="60" height="60" className="absolute inset-0">
-                                <circle cx="30" cy="30" r="28" fill="none" stroke="black" strokeWidth="0.5" strokeDasharray="2 2" className="opacity-10 animate-spin-slow" />
-                                <circle cx="30" cy="30" r="18" fill="none" stroke="black" strokeWidth="0.5" className="opacity-20" />
+                        <div className="relative w-14 h-14 flex items-center justify-center">
+                            <svg width="60" height="60" className="absolute inset-0 rotate-[-15deg]">
+                                <rect x="15" y="15" width="30" height="30" fill="none" stroke="black" strokeWidth="1" className="opacity-10" />
+                                <circle cx="30" cy="30" r="12" fill="none" stroke="black" strokeWidth="2" className="opacity-20 animate-pulse" />
                             </svg>
-                            <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center relative">
-                                <Target className="w-5 h-5 text-black/40 animate-pulse" />
-                                <div className="absolute -top-1 -left-1 w-2 h-2 rounded-full border border-black/20 animate-ping"></div>
-                            </div>
+                            <Target className="w-6 h-6 text-black/30 relative z-10" />
                         </div>
                     </div>
                 )}
                 {type === 'reputation' && (
                     <div className="relative w-full h-full flex items-center justify-center">
-                        <div className="relative flex flex-col items-center gap-2">
-                            <div className="w-12 h-12 flex items-center justify-center relative">
-                                <div className="absolute inset-0 border-t border-black/20 animate-spin-slow rounded-full"></div>
-                                <Star className="w-6 h-6 text-black/40 fill-black/5" />
-                            </div>
-                            <div className="flex gap-1">
-                                {[...Array(3)].map((_, i) => (
-                                    <div key={i} className="w-4 h-0.5 bg-black/10 rounded-full overflow-hidden">
-                                        <div className="h-full bg-black/30 animate-grow-horizontal shadow-[0_0_8px_black]" style={{ width: '80%', animationDelay: `${i * 0.2}s` }}></div>
-                                    </div>
+                        <div className="relative flex flex-col items-center gap-1.5">
+                            <Star className="w-8 h-8 text-black/30 fill-black/5" />
+                            <div className="flex gap-1.5">
+                                {[100, 70, 85].map((w, i) => (
+                                    <div key={i} className="w-3 h-0.5 bg-black/20 rounded-full" style={{ opacity: w / 100 * 0.5 }}></div>
                                 ))}
                             </div>
                         </div>
@@ -203,13 +182,12 @@ const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) =
                     <div className="relative w-full h-full flex items-center justify-center">
                         <div className="relative w-16 h-16 flex items-center justify-center">
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-full h-full border border-black/5 rounded-full animate-ping-slow"></div>
-                                <div className="w-2/3 h-2/3 border border-black/10 rounded-full animate-ping-slow" style={{ animationDelay: '1s' }}></div>
+                                <div className="w-full h-full border border-black/[0.07] rounded-full animate-ping-slow"></div>
                             </div>
-                            <div className="relative z-10 w-10 h-10 rounded-full bg-white border border-black/10 flex items-center justify-center shadow-sm">
-                                <MapPin className="w-5 h-5 text-black/50" />
+                            <div className="w-10 h-10 rounded-full bg-black/5 border border-black/10 flex items-center justify-center">
+                                <MapPin className="w-5 h-5 text-black/40" />
                             </div>
-                            <div className="absolute top-0 right-0 px-1 py-0.5 bg-black/[0.03] border border-black/5 rounded text-[4px] font-mono text-black/50">LOCAL_HUB</div>
+                            <div className="absolute top-1 right-2 w-1 h-1 rounded-full bg-black/20"></div>
                         </div>
                     </div>
                 )}
