@@ -202,9 +202,9 @@ const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) =
                 </div>
             </div>
 
-            <div className="mt-2.5 flex items-center justify-between text-[5px] font-mono text-black/15 uppercase tracking-widest">
-                <span>RETRANSMISIÓN_TIEMPO_REAL</span>
-                <span>ID_2025</span>
+            <div className="mt-2 flex items-center justify-between text-[5px] font-mono text-black/10 uppercase tracking-widest">
+                <span>TIEMPO_REAL</span>
+                <span>ID_25</span>
             </div>
         </div>
     );
@@ -337,11 +337,11 @@ const SuccessStories: React.FC = () => {
                                                 </div>
                                             </div>
 
-                                            {/* Subtitle bottom info */}
-                                            <div className="mt-4 pt-4 border-t border-black/5 flex items-center justify-between">
+                                            {/* Minimal footer info */}
+                                            <div className="mt-3 pt-3 border-t border-black/5 flex items-center">
                                                 <div className="flex items-center gap-1.5">
-                                                    <div className="w-1 h-1 rounded-full bg-black/20 animate-pulse"></div>
-                                                    <span className="text-[7px] font-mono text-gray-400 uppercase tracking-wider">SYNC_STREAM</span>
+                                                    <div className="w-1 h-1 rounded-full bg-green-500/40 animate-pulse"></div>
+                                                    <span className="text-[6px] font-mono text-gray-400 uppercase tracking-widest">LIVE_DATA</span>
                                                 </div>
                                             </div>
 
