@@ -205,7 +205,7 @@ const SuccessStories: React.FC = () => {
                                             <span className="text-xs md:text-sm font-medium w-auto md:w-32 truncate text-right">{item.location}</span>
                                         </div>
                                         <div className={`p-1.5 rounded-full border border-gray-100 transition-all duration-500 ${isExpanded ? 'bg-black border-black rotate-90' : 'bg-transparent'}`}>
-                                            <ChevronRight className={`w-4 h-4 transition-colors ${isExpanded ? 'text-white' : 'text-gray-400'}`} />
+                                            <ChevronRight className={`w-4 h-4 transition-colors ${isExpanded ? 'text-white' : 'text-gray-400'}`} strokeWidth={1} />
                                         </div>
                                     </div>
                                 </div>
@@ -258,7 +258,7 @@ const SuccessStories: React.FC = () => {
                                                         </div>
                                                         <div className="flex flex-col">
                                                             <span className="text-[10px] font-bold text-black uppercase tracking-widest mb-1 opacity-30">{metric.label}</span>
-                                                            <span className="text-xl font-semibold text-gray-900 tracking-tight leading-none">{metric.value}</span>
+                                                            <span className="text-xl font-medium text-gray-900 tracking-tight leading-none">{metric.value}</span>
                                                         </div>
                                                     </div>
                                                 ))}

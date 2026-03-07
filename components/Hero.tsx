@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       </div>
 
-      <div className="relative z-10 px-6 md:px-12 pb-16 md:pb-24 max-w-7xl mx-auto w-full flex flex-col items-center md:items-start text-center md:text-left">
+      <div className="relative z-10 px-6 md:px-12 pb-16 md:pb-24 max-w-7xl mx-auto w-full flex flex-col items-start text-left">
         <div className="max-w-4xl mb-12">
           <h1 className="text-[2.65rem] sm:text-5xl md:text-[5.5rem] leading-[1.05] text-white mb-6 tracking-tight">
             Más Clientes para<br />
@@ -24,14 +24,14 @@ const Hero: React.FC = () => {
           </h1>
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-0 mt-8 md:mt-16">
-            <p className="text-white/80 text-base md:text-xl max-w-2xl leading-relaxed tracking-tight px-4 md:px-0">
+            <p className="text-white/80 text-base md:text-xl max-w-2xl leading-relaxed tracking-tight text-left">
               Llenamos tu restaurante con clientes locales. Google My Business optimizado y un sitio web que convierte.
             </p>
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center md:items-start justify-center md:justify-start gap-8 w-full">
-          <div className="liquid-glass-dark rounded-[2rem] md:rounded-[2.5rem] p-4 md:p-5 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8 md:px-8 max-w-[95%] md:max-w-none">
+        <div className="flex flex-col lg:flex-row items-start justify-start gap-8 w-full">
+          <div className="liquid-glass-dark rounded-[2rem] md:rounded-[2.5rem] p-4 md:p-5 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8 max-w-[95%] md:max-w-none">
             <div className="flex items-center gap-3 text-white">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
                 <Brain className="w-4.5 h-4.5 md:w-5 md:h-5 text-white/80" />

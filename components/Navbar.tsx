@@ -84,10 +84,10 @@ const Navbar: React.FC = () => {
             </Link>
           ))}
           <div className="flex flex-col gap-4 w-full mt-8">
-            <button className="w-full py-4 rounded-2xl bg-black text-white font-bold text-lg" onClick={() => setIsMenuOpen(false)}>
+            <button className="w-full py-4 rounded-full bg-black text-white font-bold text-lg" onClick={() => setIsMenuOpen(false)}>
               Empezar Ahora
             </button>
-            <button className="w-full py-4 rounded-2xl border border-black/10 text-black/60 font-semibold" onClick={() => setIsMenuOpen(false)}>
+            <button className="w-full py-4 rounded-full border border-black/10 text-black/60 font-semibold" onClick={() => setIsMenuOpen(false)}>
               Agendar Llamada
             </button>
           </div>
