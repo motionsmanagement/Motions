@@ -32,7 +32,6 @@ const successCases: SuccessCase[] = [
         metrics: [
             { label: 'Conversión', value: '+24%', icon: MousePointer2 },
             { label: 'Engagement', value: '+15%', icon: Activity },
-            { label: 'Ticket', value: '+9%', icon: TrendingUp },
             { label: 'Retención', value: '+18%', icon: Users }
         ]
     },
@@ -48,7 +47,6 @@ const successCases: SuccessCase[] = [
         metrics: [
             { label: 'Alcance', value: '+4.5k', icon: Users },
             { label: 'Reservas', value: '+18%', icon: CheckCircle2 },
-            { label: 'ROI', value: '2.8x', icon: Target },
             { label: 'Llamadas', value: '+85', icon: Smartphone }
         ]
     },
@@ -64,7 +62,6 @@ const successCases: SuccessCase[] = [
         metrics: [
             { label: 'Velocidad', value: '1.2s', icon: Smartphone },
             { label: 'Ventas', value: '+22%', icon: TrendingUp },
-            { label: 'Rebote', value: '-12%', icon: BarChart3 },
             { label: 'Mobile', value: '72%', icon: Smartphone }
         ]
     },
@@ -80,7 +77,6 @@ const successCases: SuccessCase[] = [
         metrics: [
             { label: 'Visitas', value: '+210', icon: MousePointer2 },
             { label: 'CTR', value: '+12%', icon: Target },
-            { label: 'Leads', value: '+18%', icon: Users },
             { label: 'Reseñas', value: '+32', icon: MessageSquare }
         ]
     },
@@ -96,7 +92,6 @@ const successCases: SuccessCase[] = [
         metrics: [
             { label: 'Fotos', value: '24+', icon: MapPin },
             { label: 'Tráfico', value: '+14%', icon: Activity },
-            { label: 'Alcance', value: '12k', icon: Search },
             { label: 'Visitas', value: '+8%', icon: MousePointer2 }
         ]
     },
@@ -112,7 +107,6 @@ const successCases: SuccessCase[] = [
         metrics: [
             { label: 'Ranking', value: 'Top 3', icon: MapPin },
             { label: 'Búsquedas', value: '+6.2k', icon: Search },
-            { label: 'Visitas', value: '+16%', icon: Users },
             { label: 'Acciones', value: '+450', icon: Target }
         ]
     }
@@ -300,40 +294,24 @@ const SuccessStories: React.FC = () => {
                                                 {item.description}
                                             </p>
 
-                                            {/* Rectangular Technical Metric Card - Light Version - Horizontal */}
-                                            <div className="group relative bg-[#f8f9f8] rounded-xl p-5 md:p-6 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-[420px] w-full">
-                                                <div className="relative z-10">
-                                                    {/* Card Title */}
-                                                    <div className="flex items-center gap-2 mb-4 border-b border-black/5 pb-2">
-                                                        <div className="w-1.5 h-1.5 rounded-full bg-black"></div>
-                                                        <span className="text-[10px] font-bold text-black uppercase tracking-[0.2em]">Resultados Clave</span>
-                                                    </div>
-
-                                                    <div className="flex flex-row gap-6 items-center justify-between">
-                                                        {/* Metric List - 2x2 Grid */}
-                                                        <div className="flex-1 grid grid-cols-2 gap-x-6 gap-y-4">
-                                                            {item.metrics.map((metric, idx) => (
-                                                                <div key={idx} className="flex items-center gap-2.5 group/metric">
-                                                                    <div className="w-[30px] h-[30px] rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
-                                                                        <metric.icon className="w-[15px] h-[15px] text-black" />
-                                                                    </div>
-                                                                    <div className="flex flex-col">
-                                                                        <span className="text-[8px] font-bold text-black uppercase tracking-widest mb-0.5">{metric.label}</span>
-                                                                        <span className="text-base font-semibold text-gray-700 tracking-tight leading-none">{metric.value}</span>
-                                                                    </div>
-                                                                </div>
-                                                            ))}
+                                            {/* Minimalist Results Row */}
+                                            <div className="group relative bg-[#f8f9f8] rounded-xl px-6 py-4 border border-gray-200 shadow-sm transition-all duration-500 hover:border-black/10 w-fit">
+                                                <div className="flex items-center gap-8">
+                                                    {item.metrics.map((metric, idx) => (
+                                                        <div key={idx} className="flex items-center gap-3 group/metric">
+                                                            <div className="w-[30px] h-[30px] rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
+                                                                <metric.icon className="w-[15px] h-[15px] text-black" />
+                                                            </div>
+                                                            <div className="flex flex-col">
+                                                                <span className="text-[8px] font-bold text-black uppercase tracking-widest mb-0.5">{metric.label}</span>
+                                                                <span className="text-base font-semibold text-gray-700 tracking-tight leading-none">{metric.value}</span>
+                                                            </div>
+                                                            {idx < item.metrics.length - 1 && (
+                                                                <div className="ml-5 w-[1px] h-6 bg-black/10 shrink-0" />
+                                                            )}
                                                         </div>
-
-                                                        {/* Smaller Technical graphic */}
-                                                        <div className="w-20 h-24 shrink-0">
-                                                            <CaseGraphic type={item.graphicType} />
-                                                        </div>
-                                                    </div>
+                                                    ))}
                                                 </div>
-
-                                                {/* Subtle scan animation light */}
-                                                <div className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-black/[0.01] to-transparent group-hover:left-[100%] transition-all duration-1000 ease-in-out"></div>
                                             </div>
                                         </div>
                                     </div>
