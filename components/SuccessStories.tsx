@@ -30,10 +30,10 @@ const successCases: SuccessCase[] = [
         description: 'Elevamos la identidad visual de la marca a través de un diseño publicitario sofisticado. Realizamos el diseño de banners de alta conversión para campañas digitales y un rediseño estratégico de la carta digital, mejorando la experiencia del comensal.',
         graphicType: 'brand',
         metrics: [
-            { label: 'Conversión', value: '+140%', icon: MousePointer2 },
-            { label: 'Engagement', value: '+35%', icon: Activity },
-            { label: 'Ticket', value: '+18%', icon: TrendingUp },
-            { label: 'Retención', value: '+22%', icon: Users }
+            { label: 'Conversión', value: '+24%', icon: MousePointer2 },
+            { label: 'Engagement', value: '+15%', icon: Activity },
+            { label: 'Ticket', value: '+9%', icon: TrendingUp },
+            { label: 'Retención', value: '+18%', icon: Users }
         ]
     },
     {
@@ -46,10 +46,10 @@ const successCases: SuccessCase[] = [
         description: 'Estrategia integral de crecimiento 360°. Optimizamos su perfil en Google My Business y ejecutamos campañas de gran impacto en Google Maps y Meta Ads, potenciando su alcance local mediante colaboraciones estratégicas con micro-influencers del sector gastronómico.',
         graphicType: 'performance',
         metrics: [
-            { label: 'Alcance', value: '+12k', icon: Users },
-            { label: 'Reservas', value: '+45%', icon: CheckCircle2 },
-            { label: 'ROI', value: '4.2x', icon: Target },
-            { label: 'Llamadas', value: '+310', icon: Smartphone }
+            { label: 'Alcance', value: '+4.5k', icon: Users },
+            { label: 'Reservas', value: '+18%', icon: CheckCircle2 },
+            { label: 'ROI', value: '2.8x', icon: Target },
+            { label: 'Llamadas', value: '+85', icon: Smartphone }
         ]
     },
     {
@@ -62,10 +62,10 @@ const successCases: SuccessCase[] = [
         description: 'Transformación digital completa para reflejar su esencia exótica. Rediseñamos su plataforma web y reforzamos su identidad de marca, integrando servicios de fotografía gastronómica profesional y una optimización avanzada de su presencia en Google My Business.',
         graphicType: 'conversion',
         metrics: [
-            { label: 'Velocidad', value: '0.8s', icon: Smartphone },
-            { label: 'Ventas', value: '+60%', icon: TrendingUp },
-            { label: 'Rebote', value: '-22%', icon: BarChart3 },
-            { label: 'Mobile', value: '78%', icon: Smartphone }
+            { label: 'Velocidad', value: '1.2s', icon: Smartphone },
+            { label: 'Ventas', value: '+22%', icon: TrendingUp },
+            { label: 'Rebote', value: '-12%', icon: BarChart3 },
+            { label: 'Mobile', value: '72%', icon: Smartphone }
         ]
     },
     {
@@ -78,10 +78,10 @@ const successCases: SuccessCase[] = [
         description: 'Refuerzo de la confianza del cliente y atractivo visual. Implementamos una gestión profesional de reseñas para mejorar el ranking local, complementado con el diseño de piezas publicitarias dinámicas y la optimización técnica de Google My Business.',
         graphicType: 'reputation',
         metrics: [
-            { label: 'Rating', value: '4.9★', icon: Star },
-            { label: 'CTR Maps', value: '+24%', icon: MousePointer2 },
-            { label: 'Leads', value: '+30%', icon: Users },
-            { label: 'Reseñas', value: '+85', icon: MessageSquare }
+            { label: 'Rating', value: '4.8★', icon: Star },
+            { label: 'CTR Maps', value: '+12%', icon: MousePointer2 },
+            { label: 'Leads', value: '+18%', icon: Users },
+            { label: 'Reseñas', value: '+32', icon: MessageSquare }
         ]
     },
     {
@@ -94,10 +94,10 @@ const successCases: SuccessCase[] = [
         description: 'Capturamos la excelencia culinaria mediante fotografía artística de alta definición. Esta renovación visual se integró con una optimización exhaustiva del perfil de Google My Business, logrando atraer a un público más cualificado y gourmet.',
         graphicType: 'visibility',
         metrics: [
-            { label: 'Fotos HD', value: '50+', icon: MapPin },
-            { label: 'Tráfico', value: '+30%', icon: Activity },
-            { label: 'Alcance', value: '45k', icon: Search },
-            { label: 'Visitas', value: '+15%', icon: MousePointer2 }
+            { label: 'Fotos HD', value: '24+', icon: MapPin },
+            { label: 'Tráfico', value: '+14%', icon: Activity },
+            { label: 'Alcance', value: '12k', icon: Search },
+            { label: 'Visitas', value: '+8%', icon: MousePointer2 }
         ]
     },
     {
@@ -111,47 +111,47 @@ const successCases: SuccessCase[] = [
         graphicType: 'reach',
         metrics: [
             { label: 'Ranking', value: 'Top 3', icon: MapPin },
-            { label: 'Búsquedas', value: '+18k', icon: Search },
-            { label: 'Visitas', value: '+42%', icon: Users },
-            { label: 'Acciones', value: '+1.2k', icon: Target }
+            { label: 'Búsquedas', value: '+6.2k', icon: Search },
+            { label: 'Visitas', value: '+16%', icon: Users },
+            { label: 'Acciones', value: '+450', icon: Target }
         ]
     }
 ];
 
 const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) => {
     return (
-        <div className="relative w-full h-full bg-white/50 rounded-xl border border-black/5 overflow-hidden flex flex-col p-3">
-            <div className="flex justify-between items-center mb-2.5 border-b border-black/5 pb-1.5">
+        <div className="relative w-full h-full bg-white/50 rounded-xl border border-black/10 overflow-hidden flex flex-col p-3">
+            <div className="flex justify-between items-center mb-2.5 border-b border-black/10 pb-1.5">
                 <div className="flex gap-1">
-                    <div className="w-1 h-1 rounded-full bg-black/20 animate-pulse"></div>
-                    <div className="w-1 h-1 rounded-full bg-black/10"></div>
+                    <div className="w-1 h-1 rounded-full bg-black/40 animate-pulse"></div>
+                    <div className="w-1 h-1 rounded-full bg-black/20"></div>
                 </div>
-                <span className="text-[7px] font-mono text-black/30 uppercase tracking-widest">MÉTRICAS_VIVO</span>
+                <span className="text-[7px] font-mono text-black/50 uppercase tracking-widest">MÉTRICAS_VIVO</span>
             </div>
 
             <div className="flex-1 flex flex-col gap-2">
-                <div className="flex-1 rounded-lg bg-black/[0.02] border border-black/[0.03] relative overflow-hidden flex items-center justify-center p-2.5">
+                <div className="flex-1 rounded-lg bg-black/[0.04] border border-black/[0.08] relative overflow-hidden flex items-center justify-center p-2.5">
                     {type === 'performance' && (
                         <div className="w-full h-full flex flex-col justify-end gap-1.5">
                             <div className="flex items-end gap-1 h-full">
                                 {[35, 60, 45, 85, 55, 100].map((h, i) => (
-                                    <div key={i} className="flex-1 bg-black/5 rounded-t-[1px] relative overflow-hidden" style={{ height: `${h}%` }}>
-                                        <div className="absolute inset-x-0 bottom-0 bg-black/20 animate-grow-vertical" style={{ animationDelay: `${i * 0.1}s`, height: '100%' }}></div>
+                                    <div key={i} className="flex-1 bg-black/10 rounded-t-[1px] relative overflow-hidden" style={{ height: `${h}%` }}>
+                                        <div className="absolute inset-x-0 bottom-0 bg-black/30 animate-grow-vertical" style={{ animationDelay: `${i * 0.1}s`, height: '100%' }}></div>
                                     </div>
                                 ))}
                             </div>
-                            <div className="flex justify-between border-t border-black/5 pt-1">
-                                <span className="text-[5px] font-mono text-black/40">MAR</span>
-                                <span className="text-[5px] font-mono text-black/40">HOY</span>
+                            <div className="flex justify-between border-t border-black/10 pt-1">
+                                <span className="text-[5px] font-mono text-black/60">MAR</span>
+                                <span className="text-[5px] font-mono text-black/60">HOY</span>
                             </div>
                         </div>
                     )}
                     {type === 'brand' && (
                         <div className="relative w-full h-full flex items-center justify-center">
-                            <div className="w-16 h-16 rounded-full border border-black/5 border-dashed animate-spin-slow"></div>
-                            <div className="absolute w-12 h-12 rounded-full border border-black/10 flex items-center justify-center">
-                                <div className="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center">
-                                    <Activity className="w-4 h-4 text-black/60 animate-pulse" />
+                            <div className="w-16 h-16 rounded-full border border-black/15 border-dashed animate-spin-slow"></div>
+                            <div className="absolute w-12 h-12 rounded-full border border-black/20 flex items-center justify-center">
+                                <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center">
+                                    <Activity className="w-4 h-4 text-black/80 animate-pulse" />
                                 </div>
                             </div>
                             <div className="absolute bottom-0 inset-x-0 flex justify-center">
@@ -163,12 +163,12 @@ const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) =
                         <div className="w-full flex h-full gap-2 items-center">
                             <div className="flex-1 flex flex-col gap-2">
                                 {[70, 45, 30].map((w, i) => (
-                                    <div key={i} className="h-2 bg-black/5 rounded-full overflow-hidden relative">
-                                        <div className="absolute inset-y-0 left-0 bg-black/15 animate-grow-horizontal" style={{ width: `${w}%`, animationDelay: `${i * 0.2}s` }}></div>
+                                    <div key={i} className="h-2 bg-black/10 rounded-full overflow-hidden relative">
+                                        <div className="absolute inset-y-0 left-0 bg-black/30 animate-grow-horizontal" style={{ width: `${w}%`, animationDelay: `${i * 0.2}s` }}></div>
                                     </div>
                                 ))}
                             </div>
-                            <div className="text-[6px] font-mono text-black/30 flex flex-col justify-between h-full py-1">
+                            <div className="text-[6px] font-mono text-black/50 flex flex-col justify-between h-full py-1">
                                 <span>UX</span>
                                 <span>CTR</span>
                                 <span>CONV</span>
@@ -181,33 +181,33 @@ const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) =
                                 {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 text-black fill-black animate-pulse" style={{ animationDelay: `${i * 0.15}s` }} />)}
                             </div>
                             <div className="text-center">
-                                <span className="text-xl font-mono text-black font-bold block leading-none">4.9</span>
-                                <span className="text-[6px] font-mono text-black/40 uppercase">PUNTUACIÓN</span>
+                                <span className="text-xl font-mono text-black font-bold block leading-none">4.8</span>
+                                <span className="text-[6px] font-mono text-black/60 uppercase font-bold">PUNTUACIÓN</span>
                             </div>
                         </div>
                     )}
                     {(type === 'visibility' || type === 'reach') && (
                         <div className="relative w-full h-full flex flex-col items-center justify-center gap-2">
                             <div className="relative w-12 h-12">
-                                <div className="absolute inset-0 rounded-full border border-black/5 animate-ping-slow"></div>
-                                <div className="absolute inset-2 rounded-full border border-black/10 animate-ping-slow" style={{ animationDelay: '0.5s' }}></div>
+                                <div className="absolute inset-0 rounded-full border border-black/10 animate-ping-slow"></div>
+                                <div className="absolute inset-2 rounded-full border border-black/20 animate-ping-slow" style={{ animationDelay: '0.5s' }}></div>
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <MapPin className="w-5 h-5 text-black/40" />
+                                    <MapPin className="w-5 h-5 text-black/60" />
                                 </div>
                             </div>
-                            <span className="text-[6px] font-mono text-black/40 uppercase tracking-tighter">ALCANCE LOCAL</span>
+                            <span className="text-[6px] font-mono text-black/60 uppercase tracking-tighter font-bold">ALCANCE LOCAL</span>
                         </div>
                     )}
                 </div>
 
                 <div className="grid grid-cols-2 gap-1.5">
-                    <div className="p-1 px-1.5 bg-black/[0.02] rounded border border-black/5 flex flex-col">
-                        <span className="text-[5px] text-black/40 uppercase font-black tracking-tighter">ESTADO</span>
-                        <span className="text-[7px] font-mono text-black/80 font-bold uppercase truncate">ACTIVO</span>
+                    <div className="p-1 px-1.5 bg-black/[0.04] rounded border border-black/10 flex flex-col">
+                        <span className="text-[5px] text-black/50 uppercase font-black tracking-tighter">ESTADO</span>
+                        <span className="text-[7px] font-mono text-black/90 font-bold uppercase truncate">ACTIVO</span>
                     </div>
-                    <div className="p-1 px-1.5 bg-black/[0.02] rounded border border-black/5 flex flex-col">
-                        <span className="text-[5px] text-black/40 uppercase font-black tracking-tighter">CALIDAD</span>
-                        <span className="text-[7px] font-mono text-black/80 font-bold uppercase">ALTA</span>
+                    <div className="p-1 px-1.5 bg-black/[0.04] rounded border border-black/10 flex flex-col">
+                        <span className="text-[5px] text-black/50 uppercase font-black tracking-tighter">CALIDAD</span>
+                        <span className="text-[7px] font-mono text-black/90 font-bold uppercase">ALTA</span>
                     </div>
                 </div>
             </div>
@@ -320,7 +320,7 @@ const SuccessStories: React.FC = () => {
                                             </p>
 
                                             {/* Rectangular Technical Metric Card - Light Version - Horizontal */}
-                                            <div className="group relative bg-[#f8f9f8] rounded-xl p-6 md:p-7 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-lg w-full">
+                                            <div className="group relative bg-[#f8f9f8] rounded-xl p-6 md:p-7 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-[440px] w-full">
                                                 <div className="relative z-10">
                                                     {/* Card Title */}
                                                     <div className="flex items-center gap-2 mb-6 border-b border-black/5 pb-3">
