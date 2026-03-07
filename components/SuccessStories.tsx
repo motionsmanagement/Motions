@@ -320,21 +320,21 @@ const SuccessStories: React.FC = () => {
                                             </p>
 
                                             {/* Rectangular Technical Metric Card - Light Version - Horizontal */}
-                                            <div className="group relative bg-[#f8f9f8] rounded-xl p-6 md:p-7 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-[360px] w-full">
+                                            <div className="group relative bg-[#f8f9f8] rounded-xl p-5 md:p-6 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-[420px] w-full">
                                                 <div className="relative z-10">
                                                     {/* Card Title */}
-                                                    <div className="flex items-center gap-2 mb-6 border-b border-black/5 pb-3">
+                                                    <div className="flex items-center gap-2 mb-4 border-b border-black/5 pb-2">
                                                         <div className="w-1.5 h-1.5 rounded-full bg-black"></div>
                                                         <span className="text-[10px] font-bold text-black uppercase tracking-[0.2em]">Resultados Clave</span>
                                                     </div>
 
                                                     <div className="flex flex-row gap-6 items-center justify-between">
                                                         {/* Metric List - 2x2 Grid */}
-                                                        <div className="flex-1 grid grid-cols-2 gap-x-6 gap-y-6">
+                                                        <div className="flex-1 grid grid-cols-2 gap-x-6 gap-y-4">
                                                             {item.metrics.map((metric, idx) => (
-                                                                <div key={idx} className="flex items-center gap-3 group/metric">
-                                                                    <div className="w-[32px] h-[32px] rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
-                                                                        <metric.icon className="w-[16px] h-[16px] text-black" />
+                                                                <div key={idx} className="flex items-center gap-2.5 group/metric">
+                                                                    <div className="w-[30px] h-[30px] rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
+                                                                        <metric.icon className="w-[15px] h-[15px] text-black" />
                                                                     </div>
                                                                     <div className="flex flex-col">
                                                                         <span className="text-[8px] font-bold text-black uppercase tracking-widest mb-0.5">{metric.label}</span>
@@ -345,7 +345,7 @@ const SuccessStories: React.FC = () => {
                                                         </div>
 
                                                         {/* Smaller Technical graphic */}
-                                                        <div className="w-24 h-28 shrink-0">
+                                                        <div className="w-20 h-24 shrink-0">
                                                             <CaseGraphic type={item.graphicType} />
                                                         </div>
                                                     </div>
