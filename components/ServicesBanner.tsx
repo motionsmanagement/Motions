@@ -118,15 +118,15 @@ const ServicesBanner: React.FC = () => {
                     {/* RIGHT: Pills Grid - Full width on mobile, staggered on desktop */}
                     <div className="flex flex-col gap-3 w-full md:w-auto items-center md:items-end overflow-x-auto pb-4 md:pb-0 scrollbar-hide">
                         {/* Mobile Grid / Desktop Layout */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-col gap-3 w-full md:w-auto">
+                        <div className="flex flex-col gap-3 w-full items-center md:items-end md:w-auto">
                             {/* Row 1 Content */}
-                            <div className="flex flex-col md:flex-row gap-3">
+                            <div className="flex flex-col md:flex-row gap-3 items-center md:items-start">
                                 {row1.map((s, i) => (
                                     <ServicePill key={s.label} service={s} visible={visible} delay={0.10 + i * 0.09} />
                                 ))}
                             </div>
                             {/* Row 2 Content */}
-                            <div className="flex flex-col md:flex-row gap-3 md:translate-x-[-110px]">
+                            <div className="flex flex-col md:flex-row gap-3 items-center md:items-start md:translate-x-[-110px]">
                                 {row2.map((s, i) => (
                                     <ServicePill key={s.label} service={s} visible={visible} delay={0.28 + i * 0.09} />
                                 ))}

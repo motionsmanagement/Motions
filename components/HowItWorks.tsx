@@ -184,27 +184,29 @@ const HowItWorks: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex-1 flex gap-4">
+              <div className="flex-1 flex flex-col md:flex-row gap-6 md:gap-4 overflow-visible">
                 {/* Left: ROI Circle (Subtle Animation) */}
-                <div className="w-28 flex flex-col items-center justify-center border-r border-white/10 pr-4 shrink-0">
-                  <div className="relative w-16 h-16 flex items-center justify-center">
+                <div className="w-full md:w-28 flex flex-row md:flex-col items-center justify-center md:border-r border-white/10 pb-4 md:pb-0 md:pr-4 shrink-0 border-b md:border-b-0">
+                  <div className="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90">
-                      <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="3" className="text-white/5" />
-                      <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="3" strokeDasharray="176" strokeDashoffset="44" className="text-white opacity-80" />
+                      <circle cx="28" cy="28" r="24" fill="none" stroke="currentColor" strokeWidth="3" className="text-white/5 md:hidden" />
+                      <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="3" className="hidden md:block text-white/5" />
+                      <circle cx="28" cy="28" r="24" fill="none" stroke="currentColor" strokeWidth="3" strokeDasharray="150" strokeDashoffset="37" className="text-white opacity-80 md:hidden" />
+                      <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="3" strokeDasharray="176" strokeDashoffset="44" className="hidden md:block text-white opacity-80" />
                     </svg>
                     <div className="flex flex-col items-center">
-                      <span className="text-xs font-mono text-white leading-none">4.2x</span>
+                      <span className="text-xs md:text-xs font-mono text-white leading-none">4.2x</span>
                       <span className="text-[6px] text-white/40 font-bold uppercase mt-1">ROI</span>
                     </div>
                   </div>
-                  <div className="mt-3 flex items-center gap-1.5 bg-white/10 px-2 py-1 rounded-full whitespace-nowrap">
+                  <div className="ml-4 md:ml-0 mt-0 md:mt-3 flex items-center gap-1.5 bg-white/10 px-2.5 py-1 rounded-full whitespace-nowrap">
                     <TrendingUp className="w-2 h-2 text-white" />
                     <span className="text-[7px] text-white font-mono tracking-tighter uppercase whitespace-nowrap">+12% MENSUAL</span>
                   </div>
                 </div>
 
                 {/* Right: Data Feed (Static + Slow animations) */}
-                <div className="flex-1 space-y-2.5">
+                <div className="flex-1 space-y-2 md:space-y-2.5">
                   <div className="bg-white/5 border border-white/5 rounded-lg p-2.5 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Users className="w-3 h-3 text-white/40" />
@@ -249,7 +251,7 @@ const HowItWorks: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-20 flex flex-col items-center">
+        <div className="mt-20 hidden md:flex flex-col items-center">
           <button className="flex items-center gap-3 px-10 py-4 bg-black text-white rounded-full font-semibold text-base shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:bg-neutral-900 hover:scale-105 active:scale-95 transition-all group">
             <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             Quiero potenciar mi restaurante
