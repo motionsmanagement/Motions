@@ -79,100 +79,58 @@ const ServicesBanner: React.FC = () => {
         <section
             ref={ref}
             aria-label="Servicios Banner"
-            style={{ position: 'relative', width: '100%', height: '400px', overflow: 'hidden', ...INTER }}
+            className="relative w-full min-h-[500px] md:h-[400px] overflow-hidden"
+            style={{ ...INTER }}
         >
             {/* Background image */}
             <img
                 src="/bannerz.jpg"
                 alt="Fondo banner"
-                style={{
-                    position: 'absolute', inset: 0,
-                    width: '100%', height: '100%',
-                    objectFit: 'cover', objectPosition: 'center',
-                    filter: 'brightness(0.52)', zIndex: 0,
-                }}
+                className="absolute inset-0 w-full h-full object-cover object-center z-0"
+                style={{ filter: 'brightness(0.52)' }}
                 loading="lazy"
             />
 
-            {/* Gradient — dark left → clear right */}
-            <div style={{
-                position: 'absolute', inset: 0,
-                background: 'linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.48) 32%, rgba(0,0,0,0.10) 62%, rgba(0,0,0,0) 100%)',
-                zIndex: 1,
-            }} />
+            {/* Gradient — dark left/top → clear */}
+            <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black/85 via-black/60 md:via-black/50 to-transparent z-10" />
 
-            {/* ── Centered content wrapper — max-width brings all elements inward ── */}
-            <div style={{
-                position: 'absolute', inset: 0, zIndex: 10,
-                display: 'flex', flexDirection: 'column',
-                maxWidth: '1280px',   // ← same as max-w-7xl in Services section
-                margin: '0 auto',
-                padding: '0 48px',    // ← same as px-12 in Services section
-                width: '100%',
-            }}>
-
-
-
-                {/* MAIN ROW: text left · cards right — vertically centred */}
-                <div style={{
-                    flex: 1,
-                    display: 'flex', alignItems: 'center',
-                    justifyContent: 'space-between',
-                    gap: '32px',
-                    paddingBottom: '8px',
-                }}>
+            {/* ── Centered content wrapper ── */}
+            <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-0 h-full flex items-center">
+                <div className="w-full flex flex-col md:flex-row items-center md:items-center justify-between gap-12 md:gap-8">
                     {/* LEFT: sub-tag + headline + description */}
-                    <div style={{
-                        display: 'flex', flexDirection: 'column', gap: '8px',
-                        maxWidth: '380px', flexShrink: 0,
-                        opacity: visible ? 1 : 0,
-                        transform: visible ? 'translateX(0)' : 'translateX(-20px)',
-                        transition: 'opacity 0.65s ease, transform 0.65s ease',
-                    }}>
-                        <span style={{
-                            display: 'inline-flex', alignItems: 'center',
-                            fontSize: '10px', fontWeight: 600, letterSpacing: '0.06em',
-                            textTransform: 'uppercase', color: 'rgba(255,255,255,0.85)',
-                            background: 'rgba(255,255,255,0.1)',
-                            border: '1px solid rgba(255,255,255,0.18)',
-                            borderRadius: '999px', padding: '3px 10px', width: 'fit-content',
-                        }}>
-                            Nuestros Servicios
-                        </span>
+                    <div className={`flex flex-col gap-6 md:gap-3 max-w-[500px] md:max-w-[380px] shrink-0 text-center md:text-left transition-all duration-1000 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+                        <div className="flex justify-center md:justify-start">
+                            <span className="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white/85 bg-white/10 border border-white/20 rounded-full px-4 py-1.5">
+                                Nuestros Servicios
+                            </span>
+                        </div>
 
-                        <h2 style={{
-                            fontSize: 'clamp(1.9rem, 3.4vw, 2.6rem)',
-                            fontWeight: 400, lineHeight: 1.1,
-                            letterSpacing: '-0.04em', color: '#fff', margin: 0,
-                        }}>
+                        <h2 className="text-3xl sm:text-4xl md:text-[2.6rem] font-medium leading-[1.1] tracking-tight text-white m-0">
                             Visibilidad, diseño<br />
-                            <span style={{ color: 'rgba(255,255,255,0.82)' }}>y crecimiento digital.</span>
+                            <span className="text-white/80">y crecimiento digital.</span>
                         </h2>
 
-                        <p style={{
-                            fontSize: '13.5px', color: 'rgba(255,255,255,0.78)',
-                            lineHeight: 1.6, margin: 0,
-                        }}>
+                        <p className="text-sm md:text-[13.5px] text-white/75 leading-relaxed m-0 px-4 md:px-0">
                             Todo lo que tu restaurante necesita para destacar online, en un solo lugar.
                         </p>
                     </div>
 
-                    {/* RIGHT: 2 rows of 3 glass pills */}
-                    <div style={{
-                        display: 'flex', flexDirection: 'column',
-                        gap: `${CARD_GAP}px`, alignItems: 'flex-end',
-                    }}>
-                        {/* Row 1 */}
-                        <div style={{ display: 'flex', gap: `${CARD_GAP}px` }}>
-                            {row1.map((s, i) => (
-                                <ServicePill key={s.label} service={s} visible={visible} delay={0.10 + i * 0.09} />
-                            ))}
-                        </div>
-                        {/* Row 2 — offset left for stagger effect */}
-                        <div style={{ display: 'flex', gap: `${CARD_GAP}px`, marginRight: `${(CARD_W + CARD_GAP) * 0.5}px` }}>
-                            {row2.map((s, i) => (
-                                <ServicePill key={s.label} service={s} visible={visible} delay={0.28 + i * 0.09} />
-                            ))}
+                    {/* RIGHT: Pills Grid - Full width on mobile, staggered on desktop */}
+                    <div className="flex flex-col gap-3 w-full md:w-auto items-center md:items-end overflow-x-auto pb-4 md:pb-0 scrollbar-hide">
+                        {/* Mobile Grid / Desktop Layout */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-col gap-3 w-full md:w-auto">
+                            {/* Row 1 Content */}
+                            <div className="flex flex-col md:flex-row gap-3">
+                                {row1.map((s, i) => (
+                                    <ServicePill key={s.label} service={s} visible={visible} delay={0.10 + i * 0.09} />
+                                ))}
+                            </div>
+                            {/* Row 2 Content */}
+                            <div className="flex flex-col md:flex-row gap-3 md:translate-x-[-110px]">
+                                {row2.map((s, i) => (
+                                    <ServicePill key={s.label} service={s} visible={visible} delay={0.28 + i * 0.09} />
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

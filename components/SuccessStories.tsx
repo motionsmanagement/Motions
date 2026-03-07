@@ -144,12 +144,12 @@ const SuccessStories: React.FC = () => {
         <section id="cases" className="py-24 px-6 md:px-12 bg-white font-['Inter']">
             <div className="max-w-7xl mx-auto">
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
-                    <div>
-                        <div className="inline-flex items-center bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6">
-                            <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Casos de Éxito</span>
+                <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-16 gap-8 text-center md:text-left">
+                    <div className="flex flex-col items-center md:items-start">
+                        <div className="inline-flex items-center bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6 text-center">
+                            <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest text-center">Casos de Éxito</span>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-[#111] leading-[1.1]">
+                        <h2 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-[#111] leading-[1.1]">
                             Proyectos con impacto,<br />
                             resultados visibles.
                         </h2>
@@ -192,7 +192,7 @@ const SuccessStories: React.FC = () => {
                             >
                                 {/* Header (Clickable) */}
                                 <div
-                                    className={`flex items-center justify-between cursor-pointer group ${!isExpanded ? 'py-7' : 'mb-10'}`}
+                                    className={`flex flex-col md:flex-row items-center justify-between cursor-pointer group gap-4 ${!isExpanded ? 'py-7' : 'mb-10 text-center md:text-left'}`}
                                     onClick={() => setExpandedId(isExpanded ? null : item.id)}
                                 >
                                     <h3 className={`text-xl md:text-2xl font-medium transition-all ${isExpanded ? 'text-black' : 'text-gray-500 group-hover:text-black'}`}>
@@ -200,9 +200,9 @@ const SuccessStories: React.FC = () => {
                                     </h3>
 
                                     <div className="flex items-center gap-4 md:gap-16">
-                                        <div className="flex items-center gap-12 text-black min-w-[140px] md:min-w-[200px] justify-end">
-                                            <span className="text-sm font-medium tabular-nums">{item.year}</span>
-                                            <span className="text-sm font-medium hidden md:block w-32 truncate text-right">{item.location}</span>
+                                        <div className="flex items-center gap-6 md:gap-12 text-black/50 md:text-black min-w-0 md:min-w-[200px] justify-center md:justify-end">
+                                            <span className="text-xs md:text-sm font-medium tabular-nums">{item.year}</span>
+                                            <span className="text-xs md:text-sm font-medium w-auto md:w-32 truncate text-right">{item.location}</span>
                                         </div>
                                         <div className={`p-1.5 rounded-full border border-gray-100 transition-all duration-500 ${isExpanded ? 'bg-black border-black rotate-90' : 'bg-transparent'}`}>
                                             <ChevronRight className={`w-4 h-4 transition-colors ${isExpanded ? 'text-white' : 'text-gray-400'}`} />

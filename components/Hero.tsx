@@ -16,22 +16,22 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       </div>
 
-      <div className="relative z-10 px-6 md:px-12 pb-16 md:pb-24 max-w-7xl mx-auto w-full">
+      <div className="relative z-10 px-6 md:px-12 pb-16 md:pb-24 max-w-7xl mx-auto w-full flex flex-col items-center md:items-start text-center md:text-left">
         <div className="max-w-4xl mb-12">
-          <h1 className="text-4xl md:text-[5.5rem] leading-[1.05] text-white mb-6">
+          <h1 className="text-[2.65rem] sm:text-5xl md:text-[5.5rem] leading-[1.05] text-white mb-6 tracking-tight">
             Más Clientes para<br />
             Tu Restaurante
           </h1>
 
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-0 mt-16">
-            <p className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed tracking-tight">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-0 mt-8 md:mt-16">
+            <p className="text-white/80 text-base md:text-xl max-w-2xl leading-relaxed tracking-tight px-4 md:px-0">
               Llenamos tu restaurante con clientes locales. Google My Business optimizado y un sitio web que convierte.
             </p>
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-          <button className="px-8 md:px-12 py-3 md:py-5 rounded-full bg-black/40 backdrop-blur-xl border border-white/30 text-white text-sm md:text-lg font-bold hover:scale-105 hover:bg-black/50 transition-all shadow-[0_20px_50px_rgba(0,0,0,0.3)] tracking-tight">
+        <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-between gap-8 w-full">
+          <button className="w-full sm:w-auto px-10 md:px-12 py-4 md:py-5 rounded-full bg-black/40 backdrop-blur-xl border border-white/30 text-white text-base md:text-lg font-bold hover:scale-105 hover:bg-black/50 transition-all shadow-[0_20px_50px_rgba(0,0,0,0.3)] tracking-tight">
             Llamar ahora
           </button>
 

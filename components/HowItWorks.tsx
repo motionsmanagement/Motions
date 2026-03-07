@@ -6,12 +6,12 @@ const HowItWorks: React.FC = () => {
     <section id="how-it-works" className="bg-white py-28 font-['Inter']">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         {/* Header Section */}
-        <div className="text-center mb-20 text-balance">
+        <div className="text-center mb-16 md:mb-20 text-balance flex flex-col items-center">
           {/* Tag font matching Casos de Éxito */}
           <div className="inline-flex items-center bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6">
             <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Metodología Especialista</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1]">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1]">
             Nuestro Proceso para<br />
             Optimizar tu Restaurante
           </h2>

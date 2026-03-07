@@ -165,15 +165,15 @@ const Services: React.FC = () => {
         <section id="services" className="py-24 px-6 md:px-12 bg-white font-['Inter']">
             <div className="max-w-7xl mx-auto">
                 {/* Header Section */}
-                <div className="mb-20 text-balance">
+                <div className="mb-20 text-balance flex flex-col items-center md:items-start text-center md:text-left">
                     <div className="inline-flex items-center bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6">
                         <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Servicios Especializados</span>
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1] mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1] mb-6">
                         Impulsa el crecimiento<br />
                         digital de tu restaurante.
                     </h2>
-                    <p className="text-lg text-gray-500 max-w-2xl leading-relaxed">
+                    <p className="text-base md:text-lg text-gray-500 max-w-2xl leading-relaxed">
                         Especialistas en transformar la presencia online de negocios gastronómicos, enfocándonos en atraer clientes y maximizar la rentabilidad.
                     </p>
                 </div>
