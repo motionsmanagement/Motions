@@ -83,7 +83,7 @@ const ServicesBanner: React.FC = () => {
         >
             {/* Background image */}
             <img
-                src="/Bannemotions.jpg"
+                src="/bannerp.jpg"
                 alt="Fondo banner"
                 style={{
                     position: 'absolute', inset: 0,
