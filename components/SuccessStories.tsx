@@ -53,7 +53,7 @@ const successCases: SuccessCase[] = [
             { label: 'Reservas', value: '+18%', icon: CheckCircle2 },
             { label: 'Llamadas', value: '+85', icon: Smartphone }
         ],
-        services: ['SEO Local', 'Meta Ads', 'Influencer Marketing'],
+        services: ['SEO Local', 'Meta Ads', 'Marketing de Influencers'],
         outcome: 'Incremento sostenido en reservas directas y posicionamiento como referente local.'
     },
     {
@@ -70,7 +70,7 @@ const successCases: SuccessCase[] = [
             { label: 'Ventas', value: '+22%', icon: TrendingUp },
             { label: 'Mobile', value: '72%', icon: Smartphone }
         ],
-        services: ['Web Design', 'UI/UX Gastronómico', 'GMB Pro'],
+        services: ['Diseño Web', 'UI/UX Gastronómico', 'Optimización GMB'],
         outcome: 'Plataforma de reservas de alta velocidad con conversión superior al promedio del sector.'
     },
     {
@@ -87,7 +87,7 @@ const successCases: SuccessCase[] = [
             { label: 'CTR', value: '+12%', icon: Target },
             { label: 'Reseñas', value: '+32', icon: MessageSquare }
         ],
-        services: ['Reputation Management', 'Google Ads', 'Local SEO'],
+        services: ['Gestión de Reputación', 'Google Ads', 'SEO Local'],
         outcome: 'Mejora del sentimiento de marca y aumento orgánico de visitas recurrentes.'
     },
     {
@@ -104,7 +104,7 @@ const successCases: SuccessCase[] = [
             { label: 'Tráfico', value: '+14%', icon: Activity },
             { label: 'Visitas', value: '+8%', icon: MousePointer2 }
         ],
-        services: ['Gastro Photography', 'Branding Digital', 'GMB'],
+        services: ['Fotografía Gastronómica', 'Branding Digital', 'Google My Business'],
         outcome: 'Impacto visual premium que atrae activamente a comensales de ticket medio-alto.'
     },
     {
@@ -121,7 +121,7 @@ const successCases: SuccessCase[] = [
             { label: 'Búsquedas', value: '+6.2k', icon: Search },
             { label: 'Acciones', value: '+450', icon: Target }
         ],
-        services: ['Technical SEO', 'Local Ads Strategy', 'Action Tracking'],
+        services: ['SEO Técnico', 'Estrategia de Ads Locales', 'Seguimiento de Acciones'],
         outcome: 'Liderazgo absoluto en el ranking TOP 3 para las búsquedas más relevantes de la zona.'
     }
 ];
@@ -249,24 +249,19 @@ const SuccessStories: React.FC = () => {
                                                 </div>
                                             </div>
 
-                                            {/* Minimalist Results Row */}
-                                            <div className="group relative bg-[#fcfcfb] rounded-2xl px-8 py-5 border border-gray-200 shadow-sm transition-all duration-500 hover:border-black/10 w-fit">
-                                                <div className="flex items-center gap-10">
-                                                    {item.metrics.map((metric, idx) => (
-                                                        <div key={idx} className="flex items-center gap-4 group/metric">
-                                                            <div className="w-9 h-9 rounded-xl bg-black/[0.02] border border-black/5 flex items-center justify-center shrink-0">
-                                                                <metric.icon className="w-4 h-4 text-black" />
-                                                            </div>
-                                                            <div className="flex flex-col">
-                                                                <span className="text-[9px] font-bold text-black uppercase tracking-widest mb-0.5 opacity-60">{metric.label}</span>
-                                                                <span className="text-lg font-semibold text-gray-800 tracking-tight leading-none">{metric.value}</span>
-                                                            </div>
-                                                            {idx < item.metrics.length - 1 && (
-                                                                <div className="ml-6 w-[1px] h-8 bg-black/5 shrink-0" />
-                                                            )}
+                                            {/* Minimalist Metrics Tags Row */}
+                                            <div className="flex flex-wrap items-center gap-x-12 gap-y-6">
+                                                {item.metrics.map((metric, idx) => (
+                                                    <div key={idx} className="flex items-center gap-3.5 group/metric">
+                                                        <div className="w-10 h-10 rounded-xl bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
+                                                            <metric.icon className="w-4.5 h-4.5 text-black" />
                                                         </div>
-                                                    ))}
-                                                </div>
+                                                        <div className="flex flex-col">
+                                                            <span className="text-[10px] font-bold text-black uppercase tracking-widest mb-1 opacity-30">{metric.label}</span>
+                                                            <span className="text-xl font-semibold text-gray-900 tracking-tight leading-none">{metric.value}</span>
+                                                        </div>
+                                                    </div>
+                                                ))}
                                             </div>
                                         </div>
                                     </div>
