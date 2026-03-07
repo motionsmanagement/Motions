@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-[#0A0A0A] pt-32 pb-6 px-6 md:px-12 font-['Inter'] overflow-hidden">
-      {/* Noise Overlay */}
+    <footer className="relative bg-[#0A0A0A] pt-32 pb-0 px-6 md:px-12 font-['Inter'] overflow-hidden rounded-t-[3.5rem] md:rounded-t-[5rem] mt-20">
+      {/* Noise Overlay - consistent with premium dark cards */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] contrast-150 brightness-100 mix-blend-screen overflow-hidden">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-[400%] h-[400%] absolute top-0 left-0">
           <filter id="noiseFilter">
@@ -16,10 +16,10 @@ const Footer: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Main Content: Anagram + Columns */}
-        <div className="flex flex-col md:flex-row gap-16 md:gap-32 mb-40">
+        <div className="flex flex-col md:flex-row gap-16 md:gap-32 mb-20 md:mb-32">
           {/* Anagram Square */}
           <div className="flex-shrink-0">
-            <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center overflow-hidden">
+            <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center overflow-hidden backdrop-blur-md">
               <img src="/anagram.png" alt="Anagram" className="w-7 h-7 object-contain opacity-80" />
             </div>
           </div>
@@ -48,33 +48,33 @@ const Footer: React.FC = () => {
             <div className="col-span-2 md:col-span-1">
               <h5 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-8">Social</h5>
               <ul className="space-y-4">
-                <li><a href="#" className="text-sm font-medium text-white/70 hover:text-white transition-colors">Instagram</a></li>
-                <li><a href="#" className="text-sm font-medium text-white/70 hover:text-white transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="text-sm font-medium text-white/70 hover:text-white transition-colors">TikTok</a></li>
+                <li><a href="#" className="text-sm font-medium text-white/70 hover:text-white transition-colors hover:translate-x-1 inline-block duration-300">Instagram</a></li>
+                <li><a href="#" className="text-sm font-medium text-white/70 hover:text-white transition-colors hover:translate-x-1 inline-block duration-300">LinkedIn</a></li>
+                <li><a href="#" className="text-sm font-medium text-white/70 hover:text-white transition-colors hover:translate-x-1 inline-block duration-300">TikTok</a></li>
               </ul>
             </div>
           </div>
         </div>
 
-        {/* Massive Brand Logo Section */}
-        <div className="relative pt-12">
+        {/* Massive Brand Logo Section - Positioned to be cut at the bottom */}
+        <div className="relative">
           <div className="w-full flex justify-center">
-            {/* Massive watermark effect behind the main logo */}
-            <h1 className="text-[15vw] md:text-[20vw] font-black text-white select-none tracking-tighter leading-none absolute -bottom-10 md:-bottom-24 pointer-events-none opacity-[0.02] blur-[1px]">
+            {/* Watermark خلفية */}
+            <h1 className="text-[20vw] font-black text-white select-none tracking-tighter leading-none absolute -bottom-[5vw] pointer-events-none opacity-[0.02] blur-[2px]">
               MOTIONS
             </h1>
             <img
               src="/MotionsLogo.png"
               alt="Motions Logo Full"
-              className="w-full h-auto opacity-100 relative z-10 translate-y-4 md:translate-y-8"
+              className="w-full h-auto opacity-100 relative z-10 translate-y-[15%] md:translate-y-[25%] pointer-events-none"
             />
           </div>
         </div>
 
-        {/* Minimal Copyright Row */}
-        <div className="mt-16 pt-8 flex flex-col md:flex-row items-center justify-between border-t border-white/5 text-[10px] font-medium text-white/20 uppercase tracking-widest">
+        {/* Minimal Copyright Row - Moved above the logo for better visibility if needed, or kept very minimal */}
+        <div className="relative z-20 pb-12 flex flex-col md:flex-row items-center justify-between border-t border-white/5 pt-8 text-[9px] font-medium text-white/20 uppercase tracking-[0.3em]">
           <p>© {new Date().getFullYear()} Motions Marketing. All rights reserved.</p>
-          <p className="mt-4 md:mt-0 font-bold text-white/30 tracking-[0.3em]">Specialized Agency</p>
+          <p className="mt-4 md:mt-0 font-bold opacity-30">Specialized Agency</p>
         </div>
       </div>
     </footer>
