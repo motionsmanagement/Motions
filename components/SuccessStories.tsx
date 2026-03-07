@@ -78,8 +78,8 @@ const successCases: SuccessCase[] = [
         description: 'Refuerzo de la confianza del cliente y atractivo visual. Implementamos una gestión profesional de reseñas para mejorar el ranking local, complementado con el diseño de piezas publicitarias dinámicas y la optimización técnica de Google My Business.',
         graphicType: 'reputation',
         metrics: [
-            { label: 'Rating', value: '4.8★', icon: Star },
-            { label: 'CTR Maps', value: '+12%', icon: MousePointer2 },
+            { label: 'Visitas', value: '+210', icon: MousePointer2 },
+            { label: 'CTR', value: '+12%', icon: Target },
             { label: 'Leads', value: '+18%', icon: Users },
             { label: 'Reseñas', value: '+32', icon: MessageSquare }
         ]
@@ -94,7 +94,7 @@ const successCases: SuccessCase[] = [
         description: 'Capturamos la excelencia culinaria mediante fotografía artística de alta definición. Esta renovación visual se integró con una optimización exhaustiva del perfil de Google My Business, logrando atraer a un público más cualificado y gourmet.',
         graphicType: 'visibility',
         metrics: [
-            { label: 'Fotos HD', value: '24+', icon: MapPin },
+            { label: 'Fotos', value: '24+', icon: MapPin },
             { label: 'Tráfico', value: '+14%', icon: Activity },
             { label: 'Alcance', value: '12k', icon: Search },
             { label: 'Visitas', value: '+8%', icon: MousePointer2 }
@@ -320,7 +320,7 @@ const SuccessStories: React.FC = () => {
                                             </p>
 
                                             {/* Rectangular Technical Metric Card - Light Version - Horizontal */}
-                                            <div className="group relative bg-[#f8f9f8] rounded-xl p-6 md:p-7 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-[440px] w-full">
+                                            <div className="group relative bg-[#f8f9f8] rounded-xl p-6 md:p-7 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-[360px] w-full">
                                                 <div className="relative z-10">
                                                     {/* Card Title */}
                                                     <div className="flex items-center gap-2 mb-6 border-b border-black/5 pb-3">
@@ -328,24 +328,24 @@ const SuccessStories: React.FC = () => {
                                                         <span className="text-[10px] font-bold text-black uppercase tracking-[0.2em]">Resultados Clave</span>
                                                     </div>
 
-                                                    <div className="flex flex-row gap-8 items-center justify-between">
+                                                    <div className="flex flex-row gap-6 items-center justify-between">
                                                         {/* Metric List - 2x2 Grid */}
-                                                        <div className="flex-1 grid grid-cols-2 gap-x-10 gap-y-6">
+                                                        <div className="flex-1 grid grid-cols-2 gap-x-6 gap-y-6">
                                                             {item.metrics.map((metric, idx) => (
-                                                                <div key={idx} className="flex items-center gap-3.5 group/metric">
-                                                                    <div className="w-[34px] h-[34px] rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
-                                                                        <metric.icon className="w-[18px] h-[18px] text-black" />
+                                                                <div key={idx} className="flex items-center gap-3 group/metric">
+                                                                    <div className="w-[32px] h-[32px] rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
+                                                                        <metric.icon className="w-[16px] h-[16px] text-black" />
                                                                     </div>
                                                                     <div className="flex flex-col">
-                                                                        <span className="text-[9px] font-bold text-black uppercase tracking-widest mb-0.5">{metric.label}</span>
-                                                                        <span className="text-lg font-semibold text-gray-700 tracking-tight leading-none">{metric.value}</span>
+                                                                        <span className="text-[8px] font-bold text-black uppercase tracking-widest mb-0.5">{metric.label}</span>
+                                                                        <span className="text-base font-semibold text-gray-700 tracking-tight leading-none">{metric.value}</span>
                                                                     </div>
                                                                 </div>
                                                             ))}
                                                         </div>
 
                                                         {/* Smaller Technical graphic */}
-                                                        <div className="w-32 h-36 shrink-0">
+                                                        <div className="w-24 h-28 shrink-0">
                                                             <CaseGraphic type={item.graphicType} />
                                                         </div>
                                                     </div>
