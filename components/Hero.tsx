@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 w-full">
+        <div className="flex flex-col lg:flex-row items-center md:items-start justify-center md:justify-start gap-8 w-full">
           <div className="liquid-glass-dark rounded-[2rem] md:rounded-[2.5rem] p-4 md:p-5 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8 md:px-8 max-w-[95%] md:max-w-none">
             <div className="flex items-center gap-3 text-white">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
