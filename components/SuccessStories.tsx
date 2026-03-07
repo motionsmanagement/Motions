@@ -301,11 +301,11 @@ const SuccessStories: React.FC = () => {
                                             {item.description}
                                         </p>
 
-                                        {/* Rectangular Technical Metric Card - Light Version - Narrower */}
-                                        <div className="group relative bg-[#f8f9f8] rounded-xl p-5 md:p-5 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-[280px] w-full">
-                                            <div className="relative z-10 flex flex-col gap-6 items-center">
+                                        {/* Rectangular Technical Metric Card - Light Version - Horizontal */}
+                                        <div className="group relative bg-[#f8f9f8] rounded-xl p-5 md:p-5 border border-gray-200 shadow-sm overflow-hidden transition-all duration-500 hover:border-black/10 max-w-lg w-full">
+                                            <div className="relative z-10 flex flex-row gap-8 items-center justify-between">
                                                 {/* Metric List */}
-                                                <div className="flex-1 space-y-4 w-full">
+                                                <div className="flex-1 space-y-4">
                                                     {item.metrics.map((metric, idx) => (
                                                         <div key={idx} className="flex items-center gap-3.5 group/metric">
                                                             <div className="w-8 h-8 rounded-lg bg-black/[0.03] border border-black/5 flex items-center justify-center transition-all duration-500">
@@ -320,7 +320,7 @@ const SuccessStories: React.FC = () => {
                                                 </div>
 
                                                 {/* Smaller Technical graphic */}
-                                                <div className="w-full h-32 shrink-0">
+                                                <div className="w-32 h-36 shrink-0">
                                                     <CaseGraphic type={item.graphicType} />
                                                 </div>
                                             </div>
