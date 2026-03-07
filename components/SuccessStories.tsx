@@ -120,66 +120,96 @@ const successCases: SuccessCase[] = [
 
 const CaseGraphic: React.FC<{ type: SuccessCase['graphicType'] }> = ({ type }) => {
     return (
-        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-            {/* Background Geometric Elements (Shared) */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-[0.03]">
-                <div className="w-full h-full border border-black rounded-full scale-110"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative w-full h-full flex items-center justify-center">
+            {/* Background Base Grid (Shared) */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-full h-full border border-black/[0.04] rounded-full scale-110"></div>
+                <div className="absolute w-full h-full flex items-center justify-center opacity-[0.05]">
                     <div className="w-[1px] h-full bg-black"></div>
                     <div className="h-[1px] w-full bg-black"></div>
+                    <div className="absolute w-3/4 h-3/4 border border-black border-dashed rounded-full animate-spin-slow"></div>
                 </div>
             </div>
 
-            <div className="relative z-10 w-full h-full flex items-center justify-center">
+            <div className="relative z-10 w-full h-full flex items-center justify-center scale-90">
                 {type === 'performance' && (
-                    <div className="relative flex items-center justify-center w-full h-full">
-                        <svg width="60" height="40" viewBox="0 0 60 40" className="overflow-visible">
+                    <div className="relative w-full h-full flex items-center justify-center">
+                        <svg width="80" height="50" viewBox="0 0 80 50" className="overflow-visible">
+                            <line x1="0" y1="45" x2="80" y2="45" stroke="black" strokeWidth="0.5" className="opacity-10" />
                             <path
-                                d="M 0 35 Q 15 35 30 20 T 60 5"
+                                d="M 0 45 L 20 35 L 40 38 L 60 15 L 80 18"
                                 fill="none"
                                 stroke="black"
-                                strokeWidth="1.5"
-                                className="opacity-20 animate-draw-path"
+                                strokeWidth="1"
+                                className="opacity-10"
                             />
-                            <circle cx="60" cy="5" r="3" className="fill-black opacity-30 animate-pulse" />
+                            <path
+                                d="M 0 45 Q 20 45 40 25 T 80 5"
+                                fill="none"
+                                stroke="black"
+                                strokeWidth="2"
+                                className="opacity-30 animate-draw-path"
+                            />
+                            <circle cx="80" cy="5" r="3" className="fill-black opacity-40 animate-pulse" />
+                            <text x="65" y="42" className="text-[5px] font-mono fill-black/30">AVG. UP</text>
                         </svg>
                     </div>
                 )}
                 {type === 'brand' && (
-                    <div className="relative flex items-center justify-center w-full h-full">
-                        <div className="w-12 h-12 border border-black/10 rotate-45 flex items-center justify-center">
-                            <div className="w-8 h-8 border border-black/5 flex items-center justify-center animate-spin-slow">
-                                <Activity className="w-4 h-4 text-black/40 rotate-[-45deg]" />
+                    <div className="relative w-full h-full flex items-center justify-center">
+                        <div className="relative w-16 h-16 flex items-center justify-center">
+                            <div className="absolute inset-0 border border-black/10 rounded-full"></div>
+                            <div className="absolute inset-2 border border-black/5 rotate-45"></div>
+                            <div className="absolute inset-4 border border-black/10 rounded-sm animate-spin-slow"></div>
+                            <div className="w-8 h-8 rounded-full bg-black/5 border border-black/10 flex items-center justify-center">
+                                <Activity className="w-4 h-4 text-black/60" />
                             </div>
+                            <span className="absolute -top-1 -right-1 text-[4px] font-mono text-black/40 tracking-widest">PROP. 1.618</span>
                         </div>
                     </div>
                 )}
                 {type === 'conversion' && (
-                    <div className="relative flex items-center justify-center w-full h-full">
-                        <div className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center">
-                            <Target className="w-5 h-5 text-black/30 animate-pulse" />
-                            <div className="absolute inset-0 rounded-full border border-black/5 animate-ping-slow"></div>
+                    <div className="relative w-full h-full flex items-center justify-center">
+                        <div className="relative w-16 h-16 flex items-center justify-center">
+                            <svg width="60" height="60" className="absolute inset-0">
+                                <circle cx="30" cy="30" r="28" fill="none" stroke="black" strokeWidth="0.5" strokeDasharray="2 2" className="opacity-10 animate-spin-slow" />
+                                <circle cx="30" cy="30" r="18" fill="none" stroke="black" strokeWidth="0.5" className="opacity-20" />
+                            </svg>
+                            <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center relative">
+                                <Target className="w-5 h-5 text-black/40 animate-pulse" />
+                                <div className="absolute -top-1 -left-1 w-2 h-2 rounded-full border border-black/20 animate-ping"></div>
+                            </div>
                         </div>
                     </div>
                 )}
                 {type === 'reputation' && (
-                    <div className="relative flex items-center justify-center w-full h-full">
-                        <div className="flex flex-col items-center gap-1.5">
-                            <Star className="w-6 h-6 text-black/30 fill-black/5" />
-                            <div className="flex gap-0.5">
+                    <div className="relative w-full h-full flex items-center justify-center">
+                        <div className="relative flex flex-col items-center gap-2">
+                            <div className="w-12 h-12 flex items-center justify-center relative">
+                                <div className="absolute inset-0 border-t border-black/20 animate-spin-slow rounded-full"></div>
+                                <Star className="w-6 h-6 text-black/40 fill-black/5" />
+                            </div>
+                            <div className="flex gap-1">
                                 {[...Array(3)].map((_, i) => (
-                                    <div key={i} className="w-1 h-1 rounded-full bg-black/20 animate-bounce" style={{ animationDelay: `${i * 0.2}s` }}></div>
+                                    <div key={i} className="w-4 h-0.5 bg-black/10 rounded-full overflow-hidden">
+                                        <div className="h-full bg-black/30 animate-grow-horizontal shadow-[0_0_8px_black]" style={{ width: '80%', animationDelay: `${i * 0.2}s` }}></div>
+                                    </div>
                                 ))}
                             </div>
                         </div>
                     </div>
                 )}
                 {(type === 'visibility' || type === 'reach') && (
-                    <div className="relative flex items-center justify-center w-full h-full">
-                        <div className="relative w-14 h-14 flex items-center justify-center">
-                            <div className="absolute inset-0 border border-black/5 rounded-full animate-spin-slow"></div>
-                            <MapPin className="w-5 h-5 text-black/30" />
-                            <div className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-black/20 animate-pulse"></div>
+                    <div className="relative w-full h-full flex items-center justify-center">
+                        <div className="relative w-16 h-16 flex items-center justify-center">
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="w-full h-full border border-black/5 rounded-full animate-ping-slow"></div>
+                                <div className="w-2/3 h-2/3 border border-black/10 rounded-full animate-ping-slow" style={{ animationDelay: '1s' }}></div>
+                            </div>
+                            <div className="relative z-10 w-10 h-10 rounded-full bg-white border border-black/10 flex items-center justify-center shadow-sm">
+                                <MapPin className="w-5 h-5 text-black/50" />
+                            </div>
+                            <div className="absolute top-0 right-0 px-1 py-0.5 bg-black/[0.03] border border-black/5 rounded text-[4px] font-mono text-black/50">LOCAL_HUB</div>
                         </div>
                     </div>
                 )}
