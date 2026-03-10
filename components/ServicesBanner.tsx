@@ -89,12 +89,12 @@ const ServicesBanner: React.FC = () => {
                 src="/views.jpg"
                 alt="Fondo banner"
                 className="absolute inset-0 w-full h-full object-cover object-center z-0"
-                style={{ filter: 'brightness(0.65)' }}
+                style={{ filter: 'brightness(0.80)' }}
                 loading="lazy"
             />
 
             {/* Gradient — dark left/top → clear */}
-            <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black/70 via-black/40 md:via-black/30 to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black/65 via-black/30 md:via-black/20 to-transparent z-10" />
 
             {/* ── Centered content wrapper ── */}
             <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-0 h-full flex items-center">
