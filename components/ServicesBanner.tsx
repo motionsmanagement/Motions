@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-// Build trigger: Final Version with 6 services, glass pills and SVGs
 
 // ── SVG icons (white stroke) ─────────────────────────────────────────────────
 const IconMapPin = () => (
@@ -41,7 +40,7 @@ const IconShare = () => (
     </svg>
 );
 
-// ── 6 services in 2 rows of 3 ────────────────────────────────────────────────
+// ── 6 services ───────────────────────────────────────────────────────────────
 const row1 = [
     { label: 'Google My Business', phrase: 'Visibilidad local garantizada', Icon: IconMapPin },
     { label: 'Sitios Web para Rest.', phrase: 'Tu web lista para convertir', Icon: IconGlobe },
@@ -53,15 +52,6 @@ const row2 = [
     { label: 'Gestión de Redes Sociales', phrase: 'Comunidad que convierte', Icon: IconShare },
 ];
 
-// Desktop pill size
-const CARD_W = 210;
-const CARD_H = 68;
-const CARD_GAP = 10;
-
-// Mobile pill dimensions
-const MOBILE_CARD_H = 72;
-
-// Shared Inter font style (matches rest of the site)
 const INTER: React.CSSProperties = { fontFamily: "'Inter', sans-serif" };
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -71,9 +61,7 @@ const ServicesBanner: React.FC = () => {
 
     useEffect(() => {
         const observer = new IntersectionObserver(
-            ([entry]) => {
-                setVisible(entry.isIntersecting);
-            },
+            ([entry]) => setVisible(entry.isIntersecting),
             { threshold: 0.15 }
         );
         if (ref.current) observer.observe(ref.current);
@@ -84,60 +72,55 @@ const ServicesBanner: React.FC = () => {
         <section
             ref={ref}
             aria-label="Servicios Banner"
-            className="relative w-full min-h-[500px] md:h-[400px] overflow-hidden"
+            className="relative w-full min-h-[560px] md:h-[400px] overflow-hidden"
             style={{ ...INTER }}
         >
-            {/* Background image */}
+            {/* Background image — 30% left on mobile to show center-left */}
             <img
                 src="/Bannerservices.jpg"
                 alt="Fondo banner"
-                className="absolute inset-0 w-full h-full object-cover object-center z-0"
-                style={{ filter: 'brightness(0.80)' }}
+                className="absolute inset-0 w-full h-full object-cover z-0"
+                style={{ filter: 'brightness(0.80)', objectPosition: '30% center' }}
                 loading="lazy"
             />
 
-            {/* Gradient — dark left/top → clear */}
-            <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black/65 via-black/30 md:via-black/20 to-transparent z-10" />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black/70 via-black/40 md:via-black/20 to-transparent z-10" />
 
-            {/* ── Centered content wrapper ── */}
-            <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-0 h-full flex items-center">
-                <div className="w-full flex flex-col md:flex-row items-center md:items-center justify-between gap-12 md:gap-8">
-                    {/* LEFT: sub-tag + headline + description */}
-                    <div className={`flex flex-col gap-6 md:gap-3 max-w-[500px] md:max-w-[380px] shrink-0 text-left transition-all duration-700 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'}`}>
-                        <div className="flex justify-start">
-                            <span className="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white/85 bg-white/10 border border-white/20 rounded-full px-4 py-1.5">
-                                Nuestros Servicios
-                            </span>
-                        </div>
+            {/* Content wrapper */}
+            <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 py-14 md:py-0 h-full flex items-center">
+                <div className="w-full flex flex-col md:flex-row items-center md:items-center justify-between gap-10 md:gap-8">
 
+                    {/* LEFT: text — centered on mobile, left-aligned on desktop */}
+                    <div className={`flex flex-col gap-4 md:gap-3 max-w-full md:max-w-[380px] shrink-0 text-center md:text-left items-center md:items-start transition-all duration-700 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'}`}>
+                        <span className="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white/85 bg-white/10 border border-white/20 rounded-full px-4 py-1.5">
+                            Nuestros Servicios
+                        </span>
                         <h2 className="text-3xl sm:text-4xl md:text-[2.6rem] font-medium leading-[1.1] tracking-tight text-white m-0">
                             Visibilidad, diseño<br />
                             <span className="text-white/80">y crecimiento digital.</span>
                         </h2>
-
-                        <p className="text-sm md:text-[13.5px] text-white/75 leading-relaxed m-0 md:px-0">
+                        <p className="text-sm md:text-[13.5px] text-white/75 leading-relaxed m-0">
                             Todo lo que tu restaurante necesita para destacar online, en un solo lugar.
                         </p>
                     </div>
 
-                    {/* RIGHT: Pills Grid - Full width on mobile, staggered on desktop */}
-                    <div className="flex flex-col gap-3 w-full md:w-auto items-center md:items-end overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide">
-                        {/* Mobile Grid / Desktop Layout */}
-                        <div className="flex flex-col gap-3 w-full items-center md:items-end md:w-auto">
-                            {/* Row 1 Content */}
-                            <div className="flex flex-col md:flex-row gap-3 items-center w-full md:items-start md:w-auto">
-                                {row1.map((s, i) => (
-                                    <ServicePill key={s.label} service={s} visible={visible} delay={0.10 + i * 0.09} />
-                                ))}
-                            </div>
-                            {/* Row 2 Content */}
-                            <div className="flex flex-col md:flex-row gap-3 items-center w-full md:items-start md:w-auto md:translate-x-[-110px]">
-                                {row2.map((s, i) => (
-                                    <ServicePill key={s.label} service={s} visible={visible} delay={0.28 + i * 0.09} />
-                                ))}
-                            </div>
+                    {/* RIGHT: pills — centered column on mobile, staggered grid on desktop */}
+                    <div className="flex flex-col gap-3 w-full md:w-auto items-center md:items-end">
+                        {/* Row 1 */}
+                        <div className="flex flex-col md:flex-row gap-3 items-center w-full md:w-auto md:items-start">
+                            {row1.map((s, i) => (
+                                <ServicePill key={s.label} service={s} visible={visible} delay={0.10 + i * 0.09} />
+                            ))}
+                        </div>
+                        {/* Row 2 — nudged left on desktop only */}
+                        <div className="flex flex-col md:flex-row gap-3 items-center w-full md:w-auto md:items-start md:-translate-x-[110px]">
+                            {row2.map((s, i) => (
+                                <ServicePill key={s.label} service={s} visible={visible} delay={0.28 + i * 0.09} />
+                            ))}
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -152,12 +135,13 @@ interface PillProps {
 }
 
 const ServicePill: React.FC<PillProps> = ({ service, visible, delay }) => (
+    // w-fit on mobile so pill tightly wraps content. Fixed 210px on desktop.
     <div
-        className="w-full max-w-[340px] md:w-auto mx-auto md:mx-0"
+        className="w-fit md:w-[210px]"
         style={{
-            height: '72px',
-            display: 'flex', alignItems: 'center', gap: '14px',
-            padding: '0 20px 0 14px',
+            height: '64px',
+            display: 'inline-flex', alignItems: 'center', gap: '12px',
+            padding: '0 18px 0 10px',
             borderRadius: '999px',
             background: 'rgba(255,255,255,0.10)',
             backdropFilter: 'blur(22px) saturate(160%)',
@@ -174,7 +158,7 @@ const ServicePill: React.FC<PillProps> = ({ service, visible, delay }) => (
         {/* Icon circle */}
         <span style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            width: '36px', height: '36px', borderRadius: '50%',
+            width: '34px', height: '34px', borderRadius: '50%',
             background: 'rgba(255,255,255,0.12)',
             border: '1px solid rgba(255,255,255,0.18)',
             flexShrink: 0,
@@ -183,18 +167,16 @@ const ServicePill: React.FC<PillProps> = ({ service, visible, delay }) => (
         </span>
 
         {/* Text */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', minWidth: 0 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
             <span style={{
-                fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.95)',
-                lineHeight: 1.2, letterSpacing: '-0.02em',
-                whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
+                fontSize: '12.5px', fontWeight: 600, color: 'rgba(255,255,255,0.95)',
+                lineHeight: 1.2, letterSpacing: '-0.02em', whiteSpace: 'nowrap',
             }}>
                 {service.label}
             </span>
             <span style={{
-                fontSize: '11px', color: 'rgba(255,255,255,0.72)',
-                lineHeight: 1.2, letterSpacing: '-0.01em',
-                whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
+                fontSize: '10.5px', color: 'rgba(255,255,255,0.70)',
+                lineHeight: 1.2, letterSpacing: '-0.01em', whiteSpace: 'nowrap',
             }}>
                 {service.phrase}
             </span>
