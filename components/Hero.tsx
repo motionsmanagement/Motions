@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-0 mt-8 md:mt-16">
             <p className="text-white/80 text-base md:text-xl max-w-2xl leading-relaxed tracking-tight text-left">
-              Más reservas, más mesas llenas. Posicionamos tu restaurante en Google, creamos tu web y construimos una marca que la gente recuerda.
+              Convertimos tu presencia digital en un canal de captación real. Más visibilidad en Google, más reservas directas, menos dependencia de plataformas de terceros.
             </p>
           </div>
         </div>
