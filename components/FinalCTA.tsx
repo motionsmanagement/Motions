@@ -2,8 +2,20 @@ import React from 'react';
 import { Phone, MessageSquare } from 'lucide-react';
 
 const FinalCTA: React.FC = () => {
+  const [visible, setVisible] = React.useState(false);
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="contact" className="relative py-44 px-6 md:px-12 overflow-hidden flex flex-col items-start md:items-center text-left md:text-center font-['Inter']">
+    <section id="contact" ref={ref} className="relative py-44 px-6 md:px-12 overflow-hidden flex flex-col items-start md:items-center text-left md:text-center font-['Inter']">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -15,7 +27,7 @@ const FinalCTA: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70"></div>
       </div>
 
-      <div className="relative z-10 max-w-4xl w-full">
+      <div className={`relative z-10 max-w-4xl w-full transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
         {/* Smaller 2-line title */}
         <h2 className="text-3xl sm:text-4xl md:text-6xl text-white mb-6 leading-[1.15] font-medium tracking-tight">
           Transforma tu restaurante<br />

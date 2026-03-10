@@ -3,8 +3,20 @@ import React from 'react';
 import { Brain, Award, Globe } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const [visible, setVisible] = React.useState(false);
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex flex-col justify-end">
+    <section ref={ref} className="relative min-h-screen flex flex-col justify-end">
       {/* Background Image Placeholder */}
       <div className="absolute inset-0 z-0">
         <img
@@ -16,7 +28,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       </div>
 
-      <div className="relative z-10 px-6 md:px-12 pb-16 md:pb-24 max-w-7xl mx-auto w-full flex flex-col items-start text-left">
+      <div className={`relative z-10 px-6 md:px-12 pb-16 md:pb-24 max-w-7xl mx-auto w-full flex flex-col items-start text-left transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
         <div className="max-w-4xl mb-12">
           <h1 className="text-[2.65rem] sm:text-5xl md:text-[5.5rem] leading-[1.05] text-white mb-6 tracking-tight">
             Más Clientes para<br />

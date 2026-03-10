@@ -140,9 +140,21 @@ const SuccessStories: React.FC = () => {
     // Show 4 by default, show all if showAll is true
     const displayedCases = showAll ? filteredCasesByTab : filteredCasesByTab.slice(0, 4);
 
+    const [visible, setVisible] = React.useState(false);
+    const ref = React.useRef<HTMLDivElement>(null);
+
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => setVisible(entry.isIntersecting),
+            { threshold: 0.1 }
+        );
+        if (ref.current) observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section id="cases" className="py-24 px-6 md:px-12 bg-white font-['Inter']">
-            <div className="max-w-7xl mx-auto">
+        <section id="cases" ref={ref} className="py-24 px-6 md:px-12 bg-white font-['Inter']">
+            <div className={`max-w-7xl mx-auto transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-16 gap-8 text-center md:text-left">
                     <div className="flex flex-col items-center md:items-start">

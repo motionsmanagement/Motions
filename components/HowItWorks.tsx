@@ -2,9 +2,21 @@ import React from 'react';
 import { Phone, TrendingUp, Search, MapPin, ArrowRight, UtensilsCrossed, BarChart3, Target, MousePointer2, Smartphone, Star, PhoneCall, Users, Calendar, CheckCircle2, Clock, Zap, ShieldCheck, Loader2, Sparkles, Activity } from 'lucide-react';
 
 const HowItWorks: React.FC = () => {
+  const [visible, setVisible] = React.useState(false);
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="how-it-works" className="bg-white py-28 font-['Inter']">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+    <section id="how-it-works" ref={ref} className="bg-white py-28 font-['Inter']">
+      <div className={`max-w-[1440px] mx-auto px-6 md:px-12 transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
         {/* Header Section */}
         <div className="text-center mb-16 md:mb-20 text-balance flex flex-col items-center">
           {/* Tag font matching Casos de Éxito */}
@@ -40,7 +52,7 @@ const HowItWorks: React.FC = () => {
                 </div>
               </div>
 
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-1/2 w-full animate-scan pointer-events-none"></div>
+              <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-1/2 w-full pointer-events-none ${visible ? 'animate-scan' : ''}`}></div>
 
               <div className="relative space-y-4">
                 <div className="flex items-center justify-between">
@@ -68,7 +80,7 @@ const HowItWorks: React.FC = () => {
                     <span className="tabular-nums">4.8★</span>
                   </div>
                   <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                    <div className="h-full w-[94%] bg-white/60 animate-load-slow"></div>
+                    <div className={`h-full w-[94%] bg-white/60 ${visible ? 'animate-load-slow' : ''}`}></div>
                   </div>
                 </div>
               </div>
@@ -99,7 +111,7 @@ const HowItWorks: React.FC = () => {
               <div className="flex gap-6 h-full relative">
                 {/* Mobile Device */}
                 <div className="w-24 h-36 border-x border-t border-white/20 rounded-t-xl bg-black/60 shrink-0 relative overflow-hidden mt-2 shadow-2xl">
-                  <div className="absolute inset-0 p-2 space-y-2 animate-mobile-step-1">
+                  <div className={`absolute inset-0 p-2 space-y-2 ${visible ? 'animate-mobile-step-1' : ''}`}>
                     <div className="h-1.5 w-1/2 bg-white/20 rounded-full"></div>
                     <div className="aspect-square w-full bg-white/10 rounded-lg flex items-center justify-center">
                       <UtensilsCrossed className="w-5 h-5 text-white/20" />
@@ -109,16 +121,16 @@ const HowItWorks: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="absolute inset-0 bg-white flex flex-col items-center justify-center p-3 animate-mobile-step-2 opacity-0">
+                  <div className={`absolute inset-0 bg-white flex flex-col items-center justify-center p-3 opacity-0 ${visible ? 'animate-mobile-step-2' : ''}`}>
                     <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center mb-3 shadow-xl">
-                      <CheckCircle2 className="w-6 h-6 text-white animate-check-pop" />
+                      <CheckCircle2 className={`w-6 h-6 text-white ${visible ? 'animate-check-pop' : ''}`} />
                     </div>
                     <h4 className="text-black text-[9px] font-black uppercase tracking-widest text-center leading-none mb-2">Reserva<br />Confirmada</h4>
                     <div className="h-[1px] w-8 bg-black/10 mb-2"></div>
                     <Sparkles className="absolute top-2 right-2 w-3 h-3 text-black/20 animate-pulse" />
                   </div>
 
-                  <div className="absolute top-0 left-0 h-[1.5px] bg-white/60 animate-sync-loader"></div>
+                  <div className={`absolute top-0 left-0 h-[1.5px] bg-white/60 ${visible ? 'animate-sync-loader' : ''}`}></div>
                 </div>
 
                 {/* Information Boxes */}
@@ -245,7 +257,7 @@ const HowItWorks: React.FC = () => {
               </div>
 
               {/* Very subtle scanning effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent w-full h-full -skew-x-12 translate-x-[-200%] animate-scan-slow pointer-events-none"></div>
+              <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent w-full h-full -skew-x-12 translate-x-[-200%] pointer-events-none ${visible ? 'animate-scan-slow' : ''}`}></div>
             </div>
           </div>
         </div>
