@@ -86,7 +86,7 @@ const ServicesBanner: React.FC = () => {
         >
             {/* Background image */}
             <img
-                src="/Restaurant.jpg"
+                src="/restaurantevip.jpg"
                 alt="Fondo banner"
                 className="absolute inset-0 w-full h-full object-cover object-center z-0"
                 style={{ filter: 'brightness(0.65)' }}
