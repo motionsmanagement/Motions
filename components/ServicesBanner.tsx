@@ -53,10 +53,13 @@ const row2 = [
     { label: 'Gestión de Redes Sociales', phrase: 'Comunidad que convierte', Icon: IconShare },
 ];
 
-// All pills exactly the same size
+// Desktop pill size
 const CARD_W = 210;
 const CARD_H = 68;
 const CARD_GAP = 10;
+
+// Mobile pill dimensions
+const MOBILE_CARD_H = 72;
 
 // Shared Inter font style (matches rest of the site)
 const INTER: React.CSSProperties = { fontFamily: "'Inter', sans-serif" };
@@ -86,7 +89,7 @@ const ServicesBanner: React.FC = () => {
         >
             {/* Background image */}
             <img
-                src="/views.jpg"
+                src="/Bannerservices.jpg"
                 alt="Fondo banner"
                 className="absolute inset-0 w-full h-full object-cover object-center z-0"
                 style={{ filter: 'brightness(0.80)' }}
@@ -118,17 +121,17 @@ const ServicesBanner: React.FC = () => {
                     </div>
 
                     {/* RIGHT: Pills Grid - Full width on mobile, staggered on desktop */}
-                    <div className="flex flex-col gap-3 w-full md:w-auto items-start md:items-end overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide">
+                    <div className="flex flex-col gap-3 w-full md:w-auto items-center md:items-end overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide">
                         {/* Mobile Grid / Desktop Layout */}
-                        <div className="flex flex-col gap-3 w-full items-start md:items-end md:w-auto">
+                        <div className="flex flex-col gap-3 w-full items-center md:items-end md:w-auto">
                             {/* Row 1 Content */}
-                            <div className="flex flex-col md:flex-row gap-3 items-start md:items-start">
+                            <div className="flex flex-col md:flex-row gap-3 items-center w-full md:items-start md:w-auto">
                                 {row1.map((s, i) => (
                                     <ServicePill key={s.label} service={s} visible={visible} delay={0.10 + i * 0.09} />
                                 ))}
                             </div>
                             {/* Row 2 Content */}
-                            <div className="flex flex-col md:flex-row gap-3 items-start md:items-start md:translate-x-[-110px]">
+                            <div className="flex flex-col md:flex-row gap-3 items-center w-full md:items-start md:w-auto md:translate-x-[-110px]">
                                 {row2.map((s, i) => (
                                     <ServicePill key={s.label} service={s} visible={visible} delay={0.28 + i * 0.09} />
                                 ))}
@@ -149,27 +152,29 @@ interface PillProps {
 }
 
 const ServicePill: React.FC<PillProps> = ({ service, visible, delay }) => (
-    <div style={{
-        width: `${CARD_W}px`,
-        height: `${CARD_H}px`,
-        display: 'flex', alignItems: 'center', gap: '10px',
-        padding: '0 16px 0 9px',
-        borderRadius: '999px',
-        background: 'rgba(255,255,255,0.10)',
-        backdropFilter: 'blur(22px) saturate(160%)',
-        WebkitBackdropFilter: 'blur(22px) saturate(160%)',
-        border: '1px solid rgba(255,255,255,0.22)',
-        boxShadow: '0 4px 24px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.12)',
-        cursor: 'default', userSelect: 'none', flexShrink: 0, boxSizing: 'border-box',
-        fontFamily: "'Inter', sans-serif",
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0) scale(1)' : 'translateY(14px) scale(0.96)',
-        transition: `opacity 0.7s ease ${delay}s, transform 0.7s ease ${delay}s`,
-    }}>
+    <div
+        className="w-full max-w-[340px] md:w-auto mx-auto md:mx-0"
+        style={{
+            height: '72px',
+            display: 'flex', alignItems: 'center', gap: '14px',
+            padding: '0 20px 0 14px',
+            borderRadius: '999px',
+            background: 'rgba(255,255,255,0.10)',
+            backdropFilter: 'blur(22px) saturate(160%)',
+            WebkitBackdropFilter: 'blur(22px) saturate(160%)',
+            border: '1px solid rgba(255,255,255,0.22)',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.12)',
+            cursor: 'default', userSelect: 'none', boxSizing: 'border-box',
+            fontFamily: "'Inter', sans-serif",
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0) scale(1)' : 'translateY(14px) scale(0.96)',
+            transition: `opacity 0.7s ease ${delay}s, transform 0.7s ease ${delay}s`,
+        }}
+    >
         {/* Icon circle */}
         <span style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            width: '32px', height: '32px', borderRadius: '50%',
+            width: '36px', height: '36px', borderRadius: '50%',
             background: 'rgba(255,255,255,0.12)',
             border: '1px solid rgba(255,255,255,0.18)',
             flexShrink: 0,
@@ -178,16 +183,16 @@ const ServicePill: React.FC<PillProps> = ({ service, visible, delay }) => (
         </span>
 
         {/* Text */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', minWidth: 0 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', minWidth: 0 }}>
             <span style={{
-                fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.95)',
+                fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.95)',
                 lineHeight: 1.2, letterSpacing: '-0.02em',
                 whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
             }}>
                 {service.label}
             </span>
             <span style={{
-                fontSize: '10px', color: 'rgba(255,255,255,0.72)',
+                fontSize: '11px', color: 'rgba(255,255,255,0.72)',
                 lineHeight: 1.2, letterSpacing: '-0.01em',
                 whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
             }}>

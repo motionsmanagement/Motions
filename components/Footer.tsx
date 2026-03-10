@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
               <img src="/motionsblack.png" alt="Motions Logo" className="h-10 w-auto" />
             </Link>
             <p className="text-gray-500 text-base leading-relaxed max-w-xs">
-              Especialistas en marketing digital estratégico para el sector gastronómico. Elevamos la presencia de tu restaurante y convertimos clics en reservas.
+              Dedicados al sector gastronómico, mejoramos tu presencia digital y convertimos clics en reservas.
             </p>
           </div>
 
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="pt-12 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-6 text-gray-400 text-[13px] font-medium">
-          <p>© {new Date().getFullYear()} Motions. Especialistas en Marketing Gastronómico.</p>
+          <p className="text-center md:text-left">© {new Date().getFullYear()} Motions. Todos los derechos reservados.</p>
           <div className="flex gap-8">
             <Link to="/aviso-legal" className="hover:text-black transition-colors">Aviso Legal</Link>
             <Link to="/privacidad" className="hover:text-black transition-colors">Privacidad</Link>

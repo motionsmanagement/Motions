@@ -140,18 +140,22 @@ const Services: React.FC = () => {
             tag: "DISEÑO",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-                    <div className={`w-48 h-48 border-[0.5px] border-white/10 rounded-full absolute transition-all duration-1000 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}></div>
-                    <div className={`w-32 h-32 border-[0.5px] border-white/10 rotate-45 absolute transition-all duration-1000 delay-200 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}></div>
-                    <div className={`relative w-24 h-24 border border-white/20 flex items-center justify-center transition-all duration-1000 delay-400 ${isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}>
-                        <div className="absolute -top-1 -left-1 w-2 h-2 border border-white/40 bg-[#0A0A0A]"></div>
-                        <div className="absolute -top-1 -right-1 w-2 h-2 border border-white/40 bg-[#0A0A0A]"></div>
-                        <div className="absolute -bottom-1 -left-1 w-2 h-2 border border-white/40 bg-[#0A0A0A]"></div>
-                        <div className="absolute -bottom-1 -right-1 w-2 h-2 border border-white/40 bg-[#0A0A0A]"></div>
-                        <Palette className="w-8 h-8 text-white/30" />
+                    {/* Ambient glow behind everything */}
+                    <div className={`absolute w-40 h-40 rounded-full bg-white/10 blur-3xl ${isVisible ? 'animate-pulse' : ''}`} style={{ animationDuration: '3s' }}></div>
+
+                    <div className={`w-48 h-48 border-[0.5px] border-white/20 rounded-full absolute transition-all duration-1000 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}></div>
+                    <div className={`w-32 h-32 border-[0.5px] border-white/20 rotate-45 absolute transition-all duration-1000 delay-200 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}></div>
+                    <div className={`relative w-24 h-24 border border-white/40 flex items-center justify-center transition-all duration-1000 delay-400 ${isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}>
+                        <div className="absolute inset-0 bg-white/5 blur-md"></div>
+                        <div className="absolute -top-1 -left-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
+                        <div className="absolute -top-1 -right-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
+                        <div className="absolute -bottom-1 -left-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
+                        <div className="absolute -bottom-1 -right-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
+                        <Palette className={`w-8 h-8 text-white/70 transition-all duration-1000 ${isVisible ? 'text-white/80' : 'text-white/20'}`} style={{ filter: isVisible ? 'drop-shadow(0 0 8px rgba(255,255,255,0.5))' : 'none' }} />
                     </div>
-                    <div className={`w-full h-[0.5px] bg-white/10 absolute transition-all duration-1000 delay-600 ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}></div>
-                    <div className={`w-[0.5px] h-full bg-white/10 absolute transition-all duration-1000 delay-600 ${isVisible ? 'scale-y-100' : 'scale-y-0'}`}></div>
-                    <div className={`absolute top-1/4 right-8 font-mono text-[6px] text-white/20 tracking-widest uppercase transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>Proportion: 1.618</div>
+                    <div className={`w-full h-[0.5px] bg-white/15 absolute transition-all duration-1000 delay-600 ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}></div>
+                    <div className={`w-[0.5px] h-full bg-white/15 absolute transition-all duration-1000 delay-600 ${isVisible ? 'scale-y-100' : 'scale-y-0'}`}></div>
+                    <div className={`absolute top-1/4 right-8 font-mono text-[6px] text-white/40 tracking-widest uppercase transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>Proportion: 1.618</div>
                 </div>
             )
         }
@@ -203,11 +207,8 @@ const Services: React.FC = () => {
                                     {service.description}
                                 </p>
 
-                                <div className="pt-6 border-t border-white/5 flex items-center justify-between">
+                                <div className="pt-6 border-t border-white/5">
                                     <span className="text-[9px] font-mono font-medium text-white/50 uppercase tracking-widest">{service.stats}</span>
-                                    <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 hover:bg-white hover:text-black">
-                                        <ArrowRight className="w-4 h-4" />
-                                    </div>
                                 </div>
                             </div>
 
