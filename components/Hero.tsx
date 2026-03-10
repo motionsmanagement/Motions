@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       </div>
 
-      <div className={`relative z-10 px-6 md:px-12 pb-16 md:pb-24 max-w-7xl mx-auto w-full flex flex-col items-start text-left transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+      <div className={`relative z-10 px-6 md:px-12 pb-16 md:pb-24 max-w-7xl mx-auto w-full flex flex-col items-start text-left transition-all duration-700 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="max-w-4xl mb-12">
           <h1 className="text-[2.65rem] sm:text-5xl md:text-[5.5rem] leading-[1.05] text-white mb-6 tracking-tight">
             Más Clientes para<br />

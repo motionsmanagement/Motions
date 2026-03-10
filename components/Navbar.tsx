@@ -20,11 +20,14 @@ const Navbar: React.FC = () => {
     setIsMenuOpen(false);
   }, [location]);
 
-  const themeClass = isScrolled
+  const isLegalPage = ['/privacidad', '/cookies', '/aviso-legal'].includes(location.pathname);
+  const showDarkNavbar = isScrolled || isLegalPage;
+
+  const themeClass = showDarkNavbar
     ? "bg-white/80 border-black/5 shadow-lg text-[#2D241E]"
     : "liquid-glass border-white/20 text-white";
 
-  const logoSrc = isScrolled ? "/motionsblack.png" : "/MotionsLogo.png";
+  const logoSrc = showDarkNavbar ? "/motionsblack.png" : "/MotionsLogo.png";
 
   const navLinks = [
     { name: "Servicios", href: "/#services" },
@@ -43,25 +46,25 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          <div className={`hidden md:flex items-center gap-8 font-medium text-sm transition-colors duration-300 ${isScrolled ? "text-[#2D241E]/80" : "text-white/80"}`}>
+          <div className={`hidden md:flex items-center gap-8 font-medium text-sm transition-colors duration-300 ${showDarkNavbar ? "text-[#2D241E]/80" : "text-white/80"}`}>
             {navLinks.map((link) => (
-              <Link key={link.name} to={link.href} className={`hover:text-current transition-colors tracking-tight ${isScrolled ? "hover:text-black" : "hover:text-white"}`}>
+              <Link key={link.name} to={link.href} className={`hover:text-current transition-colors tracking-tight ${showDarkNavbar ? "hover:text-black" : "hover:text-white"}`}>
                 {link.name}
               </Link>
             ))}
           </div>
 
           <div className="flex items-center gap-2 md:gap-3">
-            <button className={`hidden lg:block px-4 md:px-5 py-2 rounded-full border text-xs md:text-sm font-medium transition-all tracking-tight ${isScrolled ? "border-black/10 text-black/90 hover:bg-black/5" : "border-white/20 text-white/90 hover:bg-white/10"}`}>
+            <button className={`hidden lg:block px-4 md:px-5 py-2 rounded-full border text-xs md:text-sm font-medium transition-all tracking-tight ${showDarkNavbar ? "border-black/10 text-black/90 hover:bg-black/5" : "border-white/20 text-white/90 hover:bg-white/10"}`}>
               Agendar Llamada
             </button>
-            <button className={`px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-semibold transition-all shadow-lg tracking-tight ${isScrolled ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}>
+            <button className={`px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-semibold transition-all shadow-lg tracking-tight ${showDarkNavbar ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}>
               Empezar Ahora
             </button>
 
             {/* Mobile Menu Toggle */}
             <button
-              className="md:hidden p-1.5"
+              className={`md:hidden p-1.5 transition-colors ${(showDarkNavbar || isMenuOpen) ? "text-black" : "text-white"}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

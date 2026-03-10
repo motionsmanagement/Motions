@@ -100,8 +100,8 @@ const ServicesBanner: React.FC = () => {
             <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-0 h-full flex items-center">
                 <div className="w-full flex flex-col md:flex-row items-center md:items-center justify-between gap-12 md:gap-8">
                     {/* LEFT: sub-tag + headline + description */}
-                    <div className={`flex flex-col gap-6 md:gap-3 max-w-[500px] md:max-w-[380px] shrink-0 text-center md:text-left transition-all duration-1000 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-                        <div className="flex justify-center md:justify-start">
+                    <div className={`flex flex-col gap-6 md:gap-3 max-w-[500px] md:max-w-[380px] shrink-0 text-left transition-all duration-700 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'}`}>
+                        <div className="flex justify-start">
                             <span className="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white/85 bg-white/10 border border-white/20 rounded-full px-4 py-1.5">
                                 Nuestros Servicios
                             </span>
@@ -112,23 +112,23 @@ const ServicesBanner: React.FC = () => {
                             <span className="text-white/80">y crecimiento digital.</span>
                         </h2>
 
-                        <p className="text-sm md:text-[13.5px] text-white/75 leading-relaxed m-0 px-4 md:px-0">
+                        <p className="text-sm md:text-[13.5px] text-white/75 leading-relaxed m-0 md:px-0">
                             Todo lo que tu restaurante necesita para destacar online, en un solo lugar.
                         </p>
                     </div>
 
                     {/* RIGHT: Pills Grid - Full width on mobile, staggered on desktop */}
-                    <div className="flex flex-col gap-3 w-full md:w-auto items-center md:items-end overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide">
+                    <div className="flex flex-col gap-3 w-full md:w-auto items-start md:items-end overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide">
                         {/* Mobile Grid / Desktop Layout */}
-                        <div className="flex flex-col gap-3 w-full items-center md:items-end md:w-auto">
+                        <div className="flex flex-col gap-3 w-full items-start md:items-end md:w-auto">
                             {/* Row 1 Content */}
-                            <div className="flex flex-col md:flex-row gap-3 items-center md:items-start">
+                            <div className="flex flex-col md:flex-row gap-3 items-start md:items-start">
                                 {row1.map((s, i) => (
                                     <ServicePill key={s.label} service={s} visible={visible} delay={0.10 + i * 0.09} />
                                 ))}
                             </div>
                             {/* Row 2 Content */}
-                            <div className="flex flex-col md:flex-row gap-3 items-center md:items-start md:translate-x-[-110px]">
+                            <div className="flex flex-col md:flex-row gap-3 items-start md:items-start md:translate-x-[-110px]">
                                 {row2.map((s, i) => (
                                     <ServicePill key={s.label} service={s} visible={visible} delay={0.28 + i * 0.09} />
                                 ))}
@@ -164,7 +164,7 @@ const ServicePill: React.FC<PillProps> = ({ service, visible, delay }) => (
         fontFamily: "'Inter', sans-serif",
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0) scale(1)' : 'translateY(14px) scale(0.96)',
-        transition: `opacity 0.45s ease ${delay}s, transform 0.45s ease ${delay}s`,
+        transition: `opacity 0.7s ease ${delay}s, transform 0.7s ease ${delay}s`,
     }}>
         {/* Icon circle */}
         <span style={{

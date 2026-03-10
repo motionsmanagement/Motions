@@ -27,7 +27,7 @@ const FinalCTA: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70"></div>
       </div>
 
-      <div className={`relative z-10 max-w-4xl w-full transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+      <div className={`relative z-10 max-w-4xl w-full transition-all duration-700 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {/* Smaller 2-line title */}
         <h2 className="text-3xl sm:text-4xl md:text-6xl text-white mb-6 leading-[1.15] font-medium tracking-tight">
           Transforma tu restaurante<br />

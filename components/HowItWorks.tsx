@@ -16,7 +16,7 @@ const HowItWorks: React.FC = () => {
 
   return (
     <section id="how-it-works" ref={ref} className="bg-white py-28 font-['Inter']">
-      <div className={`max-w-[1440px] mx-auto px-6 md:px-12 transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+      <div className={`max-w-[1440px] mx-auto px-6 md:px-12 transition-all duration-700 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {/* Header Section */}
         <div className="text-center mb-16 md:mb-20 text-balance flex flex-col items-center">
           {/* Tag font matching Casos de Éxito */}

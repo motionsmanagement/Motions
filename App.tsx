@@ -19,26 +19,15 @@ const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    // Disable browser's default scroll restoration
-    if ('scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual';
-    }
-
-    const scrollToTop = () => {
-      if (!hash) {
-        window.scrollTo(0, 0);
-      } else {
-        const id = hash.replace('#', '');
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
+    if (!hash) {
+      window.scrollTo(0, 0);
+    } else {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
       }
-    };
-
-    // Small delay to ensure content is rendered and browser restoration is over
-    const timer = setTimeout(scrollToTop, 100);
-    return () => clearTimeout(timer);
+    }
   }, [pathname, hash]);
 
   return null;
