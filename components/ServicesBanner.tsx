@@ -1,55 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
-
-// ── SVG icons (white stroke) ─────────────────────────────────────────────────
-const IconMapPin = () => (
-    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="white" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M8.5 1.5C6.015 1.5 4 3.515 4 6c0 4 4.5 9.5 4.5 9.5S13 10 13 6c0-2.485-2.015-4.5-4.5-4.5z" />
-        <circle cx="8.5" cy="6" r="1.6" />
-    </svg>
-);
-const IconGlobe = () => (
-    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="white" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="8.5" cy="8.5" r="6.5" />
-        <path d="M2 8.5h13M8.5 2C6.8 4.3 6 6.4 6 8.5s.8 4.2 2.5 6.5M8.5 2C10.2 4.3 11 6.4 11 8.5s-.8 4.2-2.5 6.5" />
-    </svg>
-);
-const IconDiamond = () => (
-    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="white" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M8.5 2L15 7l-6.5 8L2 7z" />
-        <path d="M2 7h13" />
-    </svg>
-);
-const IconPen = () => (
-    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="white" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M13 2.5l1.5 1.5L5 13.5H3v-2L13 2.5z" />
-        <path d="M11.5 4l1.5 1.5" />
-    </svg>
-);
-const IconCpu = () => (
-    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="white" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="5.5" y="5.5" width="6" height="6" rx="1.2" />
-        <path d="M7.5 5.5V3.5M9.5 5.5V3.5M7.5 13.5v-2M9.5 13.5v-2M5.5 7.5H3.5M5.5 9.5H3.5M13.5 7.5h-2M13.5 9.5h-2" />
-    </svg>
-);
-const IconShare = () => (
-    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="white" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12.5" cy="3.5" r="1.5" />
-        <circle cx="12.5" cy="13.5" r="1.5" />
-        <circle cx="4.5" cy="8.5" r="1.5" />
-        <path d="M6 7.8l5-2.6M5.5 9.2l5.5 2.4" />
-    </svg>
-);
+import { MapPin, Globe, Gem, Palette, Bot, Share2 } from 'lucide-react';
 
 // ── 6 services ───────────────────────────────────────────────────────────────
 const row1 = [
-    { label: 'Google My Business', phrase: 'Visibilidad local garantizada', Icon: IconMapPin },
-    { label: 'Sitios Web', phrase: 'Tu web lista para convertir', Icon: IconGlobe },
-    { label: 'Branding', phrase: 'Una marca que deja huella', Icon: IconDiamond },
+    { label: 'Google Business', phrase: 'Presencia local destacada', Icon: MapPin },
+    { label: 'Sitios Web', phrase: 'Páginas que convierten', Icon: Globe },
+    { label: 'Branding', phrase: 'Identidad que enamora', Icon: Gem },
 ];
 const row2 = [
-    { label: 'Diseño Gráfico', phrase: 'Piezas que comunican y venden', Icon: IconPen },
-    { label: 'Integración IA', phrase: 'Automatiza, escala, crece', Icon: IconCpu },
-    { label: 'Redes Sociales', phrase: 'Comunidad que convierte', Icon: IconShare },
+    { label: 'Diseño Gráfico', phrase: 'Creatividad para vender', Icon: Palette },
+    { label: 'Integración IA', phrase: 'Tecnología a tu favor', Icon: Bot },
+    { label: 'Redes Sociales', phrase: 'Comunidades activas', Icon: Share2 },
 ];
 
 const INTER: React.CSSProperties = { fontFamily: "'Inter', sans-serif" };
@@ -72,7 +33,7 @@ const ServicesBanner: React.FC = () => {
         <section
             ref={ref}
             aria-label="Servicios Banner"
-            className="relative w-full min-h-[560px] md:h-[400px] overflow-hidden"
+            className="relative w-full min-h-[640px] lg:min-h-[460px] overflow-hidden"
             style={{ ...INTER }}
         >
             {/* Background image — 30% left on mobile to show center-left */}
@@ -85,14 +46,14 @@ const ServicesBanner: React.FC = () => {
             />
 
             {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black/70 via-black/40 md:via-black/20 to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black/80 via-black/50 lg:via-black/30 to-transparent z-10" />
 
             {/* Content wrapper */}
-            <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 py-14 md:py-0 h-full flex items-center">
-                <div className="w-full flex flex-col md:flex-row items-center md:items-center justify-between gap-10 md:gap-8">
+            <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 py-16 lg:py-0 h-full flex items-center justify-center">
+                <div className="w-full flex flex-col lg:flex-row items-center lg:items-center justify-between gap-12 lg:gap-8">
 
                     {/* LEFT: text — centered on mobile, left-aligned on desktop */}
-                    <div className={`flex flex-col gap-4 md:gap-3 max-w-full md:max-w-[380px] shrink-0 text-center md:text-left items-center md:items-start transition-all duration-700 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'}`}>
+                    <div className={`flex flex-col gap-4 lg:gap-3 max-w-full lg:max-w-[400px] shrink-0 text-center lg:text-left items-center lg:items-start transition-all duration-700 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'}`}>
                         <span className="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white/85 bg-white/10 border border-white/20 rounded-full px-4 py-1.5">
                             Nuestros Servicios
                         </span>
@@ -100,21 +61,21 @@ const ServicesBanner: React.FC = () => {
                             Visibilidad, diseño<br />
                             <span className="text-white">y crecimiento digital.</span>
                         </h2>
-                        <p className="text-sm md:text-[13.5px] text-white/75 leading-relaxed m-0">
+                        <p className="text-sm md:text-[14.5px] text-white/80 leading-relaxed m-0 max-w-[320px] lg:max-w-none">
                             Todo lo que tu restaurante necesita para destacar online, en un solo lugar.
                         </p>
                     </div>
 
                     {/* RIGHT: pills — centered column on mobile, staggered grid on desktop */}
-                    <div className="flex flex-col gap-3 w-full md:w-auto items-center md:items-end">
+                    <div className="flex flex-col gap-3 sm:gap-4 w-full lg:w-auto items-center lg:items-end">
                         {/* Row 1 */}
-                        <div className="flex flex-col md:flex-row gap-3 items-center w-full md:w-auto md:items-start">
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center w-full sm:w-auto sm:justify-center lg:justify-end">
                             {row1.map((s, i) => (
                                 <ServicePill key={s.label} service={s} visible={visible} delay={0.10 + i * 0.09} />
                             ))}
                         </div>
                         {/* Row 2 — nudged left on desktop only */}
-                        <div className="flex flex-col md:flex-row gap-3 items-center w-full md:w-auto md:items-start md:-translate-x-[110px]">
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center w-full sm:w-auto sm:justify-center lg:justify-end lg:-translate-x-[40px]">
                             {row2.map((s, i) => (
                                 <ServicePill key={s.label} service={s} visible={visible} delay={0.28 + i * 0.09} />
                             ))}
@@ -129,7 +90,7 @@ const ServicesBanner: React.FC = () => {
 
 // ── Glass pill card ───────────────────────────────────────────────────────────
 interface PillProps {
-    service: { label: string; phrase: string; Icon: React.FC };
+    service: { label: string; phrase: string; Icon: any };
     visible: boolean;
     delay: number;
 }
@@ -137,17 +98,18 @@ interface PillProps {
 const ServicePill: React.FC<PillProps> = ({ service, visible, delay }) => (
     // Uniform fixed width for all pills across mobile and desktop
     <div
-        className="w-[260px] md:w-[240px]"
+        className="w-[245px] sm:w-[220px] lg:w-[235px]"
         style={{
             height: '64px',
-            display: 'inline-flex', alignItems: 'center', gap: '12px',
-            padding: '0 18px 0 10px',
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start',
+            gap: '14px',
+            padding: '0 18px', // Symmetric padding!
             borderRadius: '999px',
-            background: 'rgba(255,255,255,0.10)',
+            background: 'rgba(255,255,255,0.08)',
             backdropFilter: 'blur(22px) saturate(160%)',
             WebkitBackdropFilter: 'blur(22px) saturate(160%)',
-            border: '1px solid rgba(255,255,255,0.22)',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.12)',
+            border: '1px solid rgba(255,255,255,0.18)',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)',
             cursor: 'default', userSelect: 'none', boxSizing: 'border-box',
             fontFamily: "'Inter', sans-serif",
             opacity: visible ? 1 : 0,
@@ -158,24 +120,24 @@ const ServicePill: React.FC<PillProps> = ({ service, visible, delay }) => (
         {/* Icon circle */}
         <span style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            width: '34px', height: '34px', borderRadius: '50%',
-            background: 'rgba(255,255,255,0.12)',
-            border: '1px solid rgba(255,255,255,0.18)',
+            width: '36px', height: '36px', borderRadius: '50%',
+            background: 'rgba(255,255,255,0.1)',
+            border: '1px solid rgba(255,255,255,0.12)',
             flexShrink: 0,
         }}>
-            <service.Icon />
+            <service.Icon size={18} strokeWidth={1.5} color="rgba(255,255,255,0.9)" />
         </span>
 
         {/* Text */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', alignItems: 'flex-start' }}>
             <span style={{
-                fontSize: '12.5px', fontWeight: 600, color: 'rgba(255,255,255,0.95)',
+                fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.95)',
                 lineHeight: 1.2, letterSpacing: '-0.02em', whiteSpace: 'nowrap',
             }}>
                 {service.label}
             </span>
             <span style={{
-                fontSize: '10.5px', color: 'rgba(255,255,255,0.70)',
+                fontSize: '11px', color: 'rgba(255,255,255,0.70)',
                 lineHeight: 1.2, letterSpacing: '-0.01em', whiteSpace: 'nowrap',
             }}>
                 {service.phrase}
