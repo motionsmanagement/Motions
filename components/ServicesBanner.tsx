@@ -53,7 +53,7 @@ const ServicesBanner: React.FC = () => {
                 <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
 
                     {/* LEFT: text — centered on mobile, left-aligned on desktop */}
-                    <div className={`flex flex-col gap-4 lg:gap-3 max-w-full lg:max-w-[400px] shrink-0 text-center lg:text-left items-center lg:items-start transition-all duration-700 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'}`}>
+                    <div className={`flex flex-col gap-4 lg:gap-3 max-w-full lg:max-w-[400px] shrink-0 text-center lg:text-left items-center lg:items-start lg:-ml-6 xl:-ml-10 transition-all duration-700 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'}`}>
                         <span className="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white/85 bg-white/10 border border-white/20 rounded-full px-4 py-1.5">
                             Nuestros Servicios
                         </span>
