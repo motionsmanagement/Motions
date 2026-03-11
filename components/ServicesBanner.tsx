@@ -3,14 +3,14 @@ import { MapPin, Globe, Gem, Palette, Bot, Share2 } from 'lucide-react';
 
 // ── 6 services ───────────────────────────────────────────────────────────────
 const row1 = [
-    { label: 'Google Business', phrase: 'Presencia local destacada', Icon: MapPin },
-    { label: 'Sitios Web', phrase: 'Páginas que convierten', Icon: Globe },
-    { label: 'Branding', phrase: 'Identidad que enamora', Icon: Gem },
+    { label: 'Google My Business', phrase: 'Optimización local para destacar', Icon: MapPin },
+    { label: 'Diseño de Sitios Web', phrase: 'Páginas rápidas que convierten', Icon: Globe },
+    { label: 'Branding e Identidad', phrase: 'Una marca visual que enamora', Icon: Gem },
 ];
 const row2 = [
-    { label: 'Diseño Gráfico', phrase: 'Creatividad para vender', Icon: Palette },
-    { label: 'Integración IA', phrase: 'Tecnología a tu favor', Icon: Bot },
-    { label: 'Redes Sociales', phrase: 'Comunidades activas', Icon: Share2 },
+    { label: 'Diseño Gráfico Profesional', phrase: 'Creatividad para vender más', Icon: Palette },
+    { label: 'Integración Inteligencia AI', phrase: 'Tecnología y auto-respuestas', Icon: Bot },
+    { label: 'Gestión Redes Sociales', phrase: 'Crecimiento de comunidad activa', Icon: Share2 },
 ];
 
 const INTER: React.CSSProperties = { fontFamily: "'Inter', sans-serif" };
@@ -33,7 +33,7 @@ const ServicesBanner: React.FC = () => {
         <section
             ref={ref}
             aria-label="Servicios Banner"
-            className="relative w-full min-h-[640px] lg:min-h-[460px] overflow-hidden"
+            className="relative w-full min-h-[640px] lg:min-h-[460px] overflow-hidden flex flex-col justify-center"
             style={{ ...INTER }}
         >
             {/* Background image — 30% left on mobile to show center-left */}
@@ -49,8 +49,8 @@ const ServicesBanner: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black/80 via-black/50 lg:via-black/30 to-transparent z-10" />
 
             {/* Content wrapper */}
-            <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 py-16 lg:py-0 h-full flex items-center justify-center">
-                <div className="w-full flex flex-col lg:flex-row items-center lg:items-center justify-between gap-12 lg:gap-8">
+            <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 py-16 lg:py-12 flex items-center justify-center">
+                <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
 
                     {/* LEFT: text — centered on mobile, left-aligned on desktop */}
                     <div className={`flex flex-col gap-4 lg:gap-3 max-w-full lg:max-w-[400px] shrink-0 text-center lg:text-left items-center lg:items-start transition-all duration-700 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'}`}>
@@ -98,7 +98,7 @@ interface PillProps {
 const ServicePill: React.FC<PillProps> = ({ service, visible, delay }) => (
     // Uniform fixed width for all pills across mobile and desktop
     <div
-        className="w-[245px] sm:w-[220px] lg:w-[235px]"
+        className="w-[280px]"
         style={{
             height: '64px',
             display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start',
