@@ -43,13 +43,13 @@ const IconShare = () => (
 // ── 6 services ───────────────────────────────────────────────────────────────
 const row1 = [
     { label: 'Google My Business', phrase: 'Visibilidad local garantizada', Icon: IconMapPin },
-    { label: 'Sitios Web para Rest.', phrase: 'Tu web lista para convertir', Icon: IconGlobe },
-    { label: 'Branding e Identidad', phrase: 'Una marca que deja huella', Icon: IconDiamond },
+    { label: 'Sitios Web', phrase: 'Tu web lista para convertir', Icon: IconGlobe },
+    { label: 'Branding', phrase: 'Una marca que deja huella', Icon: IconDiamond },
 ];
 const row2 = [
     { label: 'Diseño Gráfico', phrase: 'Piezas que comunican y venden', Icon: IconPen },
-    { label: 'Integración con IA', phrase: 'Automatiza, escala, crece', Icon: IconCpu },
-    { label: 'Gestión de Redes Sociales', phrase: 'Comunidad que convierte', Icon: IconShare },
+    { label: 'Integración IA', phrase: 'Automatiza, escala, crece', Icon: IconCpu },
+    { label: 'Redes Sociales', phrase: 'Comunidad que convierte', Icon: IconShare },
 ];
 
 const INTER: React.CSSProperties = { fontFamily: "'Inter', sans-serif" };
@@ -77,7 +77,7 @@ const ServicesBanner: React.FC = () => {
         >
             {/* Background image — 30% left on mobile to show center-left */}
             <img
-                src="/Bannerservices.jpg"
+                src="/banner.jpg"
                 alt="Fondo banner"
                 className="absolute inset-0 w-full h-full object-cover z-0"
                 style={{ filter: 'brightness(0.80)', objectPosition: '30% center' }}
@@ -98,7 +98,7 @@ const ServicesBanner: React.FC = () => {
                         </span>
                         <h2 className="text-3xl sm:text-4xl md:text-[2.6rem] font-medium leading-[1.1] tracking-tight text-white m-0">
                             Visibilidad, diseño<br />
-                            <span className="text-white/80">y crecimiento digital.</span>
+                            <span className="text-white">y crecimiento digital.</span>
                         </h2>
                         <p className="text-sm md:text-[13.5px] text-white/75 leading-relaxed m-0">
                             Todo lo que tu restaurante necesita para destacar online, en un solo lugar.
@@ -135,9 +135,9 @@ interface PillProps {
 }
 
 const ServicePill: React.FC<PillProps> = ({ service, visible, delay }) => (
-    // w-fit on mobile so pill tightly wraps content. Fixed 210px on desktop.
+    // Uniform fixed width for all pills across mobile and desktop
     <div
-        className="w-fit md:w-[210px]"
+        className="w-[260px] md:w-[240px]"
         style={{
             height: '64px',
             display: 'inline-flex', alignItems: 'center', gap: '12px',
