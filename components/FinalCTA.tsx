@@ -19,7 +19,7 @@ const FinalCTA: React.FC = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/new.jpg"
+          src="/Adbanner.jpg"
           alt="Final CTA background"
           className="w-full h-full object-cover brightness-[0.55]"
           loading="lazy"
@@ -30,13 +30,13 @@ const FinalCTA: React.FC = () => {
       <div className={`relative z-10 max-w-4xl w-full transition-all duration-700 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {/* Smaller 2-line title */}
         <h2 className="text-3xl sm:text-4xl md:text-6xl text-white mb-6 leading-[1.15] font-medium tracking-tight">
-          Transforma tu restaurante<br />
-          y domina tu mercado local
+          Lleva tu restaurante<br />
+          al siguiente nivel
         </h2>
 
         <p className="text-white text-base md:text-lg mb-12 max-w-2xl md:mx-auto leading-relaxed font-light">
-          Es el momento de dejar de ser invisible. Agenda una consulta gratuita<br className="hidden md:block" />
-          y descubre cómo multiplicar tus reservas esta semana.
+          Especialistas en marketing gastronómico. Creamos sistemas digitales<br className="hidden md:block" />
+          diseñados para convertir simples visitas online en reservas reales.
         </p>
 
         <div className="flex flex-row items-center justify-start md:justify-center gap-4 mb-24 w-full">
