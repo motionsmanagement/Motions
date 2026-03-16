@@ -15,16 +15,16 @@ const FinalCTA: React.FC = () => {
   }, []);
 
   return (
-    <section id="contact" ref={ref} className="relative py-44 px-6 md:px-12 overflow-hidden flex flex-col items-start md:items-center text-left md:text-center font-['Inter']">
+    <section id="contact" ref={ref} className="relative py-44 px-6 md:px-12 overflow-hidden flex flex-col items-center text-center font-['Inter']">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src="/Adbanner.jpg"
           alt="Final CTA background"
-          className="w-full h-full object-cover brightness-[0.7]"
+          className="w-full h-full object-cover brightness-[0.4]"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
       <div className={`relative z-10 max-w-4xl w-full transition-all duration-700 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -34,12 +34,12 @@ const FinalCTA: React.FC = () => {
           al siguiente nivel
         </h2>
 
-        <p className="text-white text-base md:text-lg mb-12 max-w-2xl md:mx-auto leading-relaxed font-light">
+        <p className="text-white text-base md:text-lg mb-12 max-w-2xl mx-auto leading-relaxed font-light">
           Especialistas en marketing gastronómico. Creamos sistemas digitales<br className="hidden md:block" />
           diseñados para convertir simples visitas online en reservas reales.
         </p>
 
-        <div className="flex flex-row items-center justify-start md:justify-center gap-4 mb-24 w-full">
+        <div className="flex flex-row items-center justify-center gap-4 mb-24 w-full">
           <button className="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm sm:text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group flex-1 md:flex-none justify-center">
             <Phone className="w-4 h-4 group-hover:rotate-12 transition-transform" />
             Llámanos
