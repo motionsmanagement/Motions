@@ -1,4 +1,5 @@
 import React from 'react';
+import { ChevronRight } from 'lucide-react';
 
 const col1 = [
   '/pf1.jpg',
@@ -20,7 +21,7 @@ const col3 = [
 
 const RecentWorks: React.FC = () => {
   return (
-    <section className="relative py-12 bg-white overflow-hidden font-['Inter']">
+    <section className="relative py-24 bg-white overflow-hidden font-['Inter']">
       <style>{`
         @keyframes scrollUp {
           0% { transform: translateY(0); }
@@ -38,10 +39,27 @@ const RecentWorks: React.FC = () => {
         }
       `}</style>
 
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        {/* Header Section */}
+        <div className="flex flex-col items-center text-center mb-16 md:mb-20">
+          <div className="inline-flex items-center bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6">
+            <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Nuestros Proyectos</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-[#111] leading-[1.1] mb-6">
+            Diseño que cautiva,<br />
+            resultados que escalan.
+          </h2>
+          <p className="text-base md:text-lg text-gray-500 max-w-2xl leading-relaxed">
+            Una selección de nuestros trabajos más recientes ayudando a restaurantes a destacar en el ecosistema digital.
+          </p>
+        </div>
+      </div>
+
+      {/* Banner Section - Full Width inside its own container */}
       <div className="relative w-full h-[350px] md:h-[450px] overflow-hidden">
-        {/* Even more subtle Edge Masks */}
-        <div className="absolute left-0 right-0 top-0 h-12 bg-gradient-to-b from-white via-white/10 to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute left-0 right-0 bottom-0 h-12 bg-gradient-to-t from-white via-white/10 to-transparent z-10 pointer-events-none"></div>
+        {/* Subtle Edge Masks */}
+        <div className="absolute left-0 right-0 top-0 h-16 bg-gradient-to-b from-white via-white/10 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute left-0 right-0 bottom-0 h-16 bg-gradient-to-t from-white via-white/10 to-transparent z-10 pointer-events-none"></div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 h-full relative z-0 max-w-7xl mx-auto px-4">
           {/* Column 1 */}
@@ -72,7 +90,7 @@ const RecentWorks: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 3 - Visible on Desktop */}
+          {/* Column 3 (Desktop) */}
           <div className="relative h-[200%] w-full pt-8 hidden md:block">
             <div className="flex flex-col gap-4 md:gap-8 w-full animate-scroll-up">
               {[...col3, ...col3].map((src, index) => (
@@ -86,6 +104,14 @@ const RecentWorks: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Footer CTA */}
+      <div className="mt-16 flex justify-center">
+        <button className="flex items-center gap-2 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg">
+          Ver todos los proyectos
+          <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </button>
       </div>
     </section>
   );
