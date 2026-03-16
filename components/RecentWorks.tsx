@@ -4,7 +4,7 @@ import { ChevronRight } from 'lucide-react';
 const col1 = [
   '/pf1.jpg',
   '/pj3.jpg',
-  '/pj5.jpg',
+  '/pj7.jpg',
 ];
 
 const col2 = [
@@ -14,7 +14,7 @@ const col2 = [
 ];
 
 const col3 = [
-  '/pj7.jpg',
+  '/pj5.jpg',
   '/jp8.jpg',
   '/pj9.jpg',
 ];
