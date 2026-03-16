@@ -4,18 +4,14 @@ const col1 = [
   '/pf1.jpg',
   '/pj3.jpg',
   '/pj5.jpg',
-  '/pj6.jpg',
-  '/honest greens.jpg',
-  '/amaren.jpeg',
+  '/pj7.jpg',
 ];
 
 const col2 = [
   '/pj2.jpg',
   '/pj4 (1).jpg',
-  '/pj7.jpg',
-  '/boa bao.jpg',
-  '/ardia.jpg',
-  '/byoko.jpg',
+  '/pj6.jpg',
+  '/jp8.jpg',
 ];
 
 const RecentWorks: React.FC = () => {
@@ -30,32 +26,15 @@ const RecentWorks: React.FC = () => {
           0% { transform: translateY(-50%); }
           100% { transform: translateY(0%); }
         }
-        @keyframes shimmer {
-          0% { transform: translateX(-100%) rotate(-45deg); }
-          100% { transform: translateX(100%) rotate(-45deg); }
-        }
         .animate-scroll-up {
-          animation: scrollUp 60s linear infinite;
+          animation: scrollUp 45s linear infinite;
         }
         .animate-scroll-down {
-          animation: scrollDown 65s linear infinite;
+          animation: scrollDown 45s linear infinite;
         }
       `}</style>
 
-      {/* Full width container, no max-w, reduced height */}
       <div className="relative w-full h-[350px] md:h-[450px] overflow-hidden">
-        
-        {/* Pill matching FinalCTA style */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-2.5 rounded-full relative overflow-hidden shadow-2xl">
-            {/* Inner glow/shimmer preserved but matching theme */}
-            <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent animate-[shimmer_4s_infinite]" />
-            <span className="text-white text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-center block whitespace-nowrap drop-shadow-lg">
-              Proyectos Recientes
-            </span>
-          </div>
-        </div>
-
         {/* Reduced Edge Masks */}
         <div className="absolute left-0 right-0 top-0 h-16 bg-gradient-to-b from-white via-white/30 to-transparent z-10 pointer-events-none"></div>
         <div className="absolute left-0 right-0 bottom-0 h-16 bg-gradient-to-t from-white via-white/30 to-transparent z-10 pointer-events-none"></div>
