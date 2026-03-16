@@ -50,29 +50,29 @@ const RecentWorks: React.FC = () => {
       {/* Full width container, no max-w, reduced height */}
       <div className="relative w-full h-[350px] md:h-[450px] overflow-hidden">
         
-        {/* Liquid Glass Badge */}
+        {/* Much smaller Liquid Glass Badge */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
-          <div className="liquid-glass px-10 md:px-14 py-5 md:py-7 rounded-full relative overflow-hidden">
+          <div className="liquid-glass px-6 md:px-8 py-2 md:py-3 rounded-full relative overflow-hidden">
             {/* Inner glow/shimmer */}
             <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-[shimmer_4s_infinite]" />
-            <span className="text-white text-base md:text-xl font-light tracking-[0.4em] uppercase text-center block whitespace-nowrap drop-shadow-lg">
+            <span className="text-white text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-center block whitespace-nowrap drop-shadow-lg">
               Proyectos Recientes
             </span>
           </div>
         </div>
 
-        {/* Improved Edge Masks - White to blend with section bg */}
+        {/* Edge Masks */}
         <div className="absolute left-0 right-0 top-0 h-24 bg-gradient-to-b from-white via-white/60 to-transparent z-10 pointer-events-none"></div>
         <div className="absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-t from-white via-white/60 to-transparent z-10 pointer-events-none"></div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 h-full relative z-0">
+        <div className="grid grid-cols-2 gap-4 md:gap-8 h-full relative z-0 max-w-7xl mx-auto px-4">
           {/* Column 1 */}
           <div className="relative h-[200%] w-full">
-            <div className="flex flex-col gap-4 w-full animate-scroll-up">
+            <div className="flex flex-col gap-4 md:gap-8 w-full animate-scroll-up">
               {[...col1, ...col2, ...col1, ...col2].map((src, index) => (
                 <div 
                   key={`col1-${index}`} 
-                  className="w-full flex-shrink-0 overflow-hidden rounded-2xl shadow-md bg-gray-50"
+                  className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50"
                 >
                   <img src={src} alt="Motions Project" className="w-full h-auto object-cover" />
                 </div>
@@ -82,53 +82,11 @@ const RecentWorks: React.FC = () => {
 
           {/* Column 2 */}
           <div className="relative h-[200%] w-full pt-12">
-            <div className="flex flex-col gap-4 w-full animate-scroll-down">
+            <div className="flex flex-col gap-4 md:gap-8 w-full animate-scroll-down">
               {[...col2, ...col1, ...col2, ...col1].map((src, index) => (
                 <div 
                   key={`col2-${index}`} 
-                  className="w-full flex-shrink-0 overflow-hidden rounded-2xl shadow-md bg-gray-50"
-                >
-                  <img src={src} alt="Motions Project" className="w-full h-auto object-cover" />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Column 3 (Desktop) */}
-          <div className="relative h-[200%] w-full hidden md:block pt-4">
-            <div className="flex flex-col gap-4 w-full animate-scroll-up">
-              {[...col1, ...col2, ...col1, ...col2].reverse().map((src, index) => (
-                <div 
-                  key={`col3-${index}`} 
-                  className="w-full flex-shrink-0 overflow-hidden rounded-2xl shadow-md bg-gray-50"
-                >
-                  <img src={src} alt="Motions Project" className="w-full h-auto object-cover" />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Column 4 (Desktop) */}
-          <div className="relative h-[200%] w-full hidden md:block pt-20">
-            <div className="flex flex-col gap-4 w-full animate-scroll-down">
-              {[...col2, ...col1, ...col2, ...col1].reverse().map((src, index) => (
-                <div 
-                  key={`col4-${index}`} 
-                  className="w-full flex-shrink-0 overflow-hidden rounded-2xl shadow-md bg-gray-50"
-                >
-                  <img src={src} alt="Motions Project" className="w-full h-auto object-cover" />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Column 5 (Large Screens) */}
-          <div className="relative h-[200%] w-full hidden lg:block pt-8">
-            <div className="flex flex-col gap-4 w-full animate-scroll-up">
-              {[...col1, ...col2, ...col1, ...col2].map((src, index) => (
-                <div 
-                  key={`col5-${index}`} 
-                  className="w-full flex-shrink-0 overflow-hidden rounded-2xl shadow-md bg-gray-50"
+                  className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50"
                 >
                   <img src={src} alt="Motions Project" className="w-full h-auto object-cover" />
                 </div>
