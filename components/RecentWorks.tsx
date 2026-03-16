@@ -43,14 +43,14 @@ const RecentWorks: React.FC = () => {
         {/* Header Section */}
         <div className="flex flex-col items-center text-center mb-16 md:mb-20">
           <div className="inline-flex items-center bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6">
-            <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Nuestros Proyectos</span>
+            <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Impulso Gastronómico Digital</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-[#111] leading-[1.1] mb-6">
             Diseño que cautiva,<br />
             resultados que escalan.
           </h2>
           <p className="text-base md:text-lg text-gray-500 max-w-2xl leading-relaxed">
-            Una selección de nuestros trabajos más recientes ayudando a restaurantes a destacar en el ecosistema digital.
+            Estrategias visuales y técnicas diseñadas para que tu restaurante destaque en el ecosistema digital.
           </p>
         </div>
       </div>
