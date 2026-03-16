@@ -5,13 +5,17 @@ const col1 = [
   '/pj3.jpg',
   '/pj5.jpg',
   '/pj6.jpg',
+  '/honest greens.jpg',
+  '/amaren.jpeg',
 ];
 
 const col2 = [
   '/pj2.jpg',
   '/pj4 (1).jpg',
   '/pj7.jpg',
-  '/pf1.jpg',
+  '/boa bao.jpg',
+  '/ardia.jpg',
+  '/byoko.jpg',
 ];
 
 const RecentWorks: React.FC = () => {
@@ -31,45 +35,36 @@ const RecentWorks: React.FC = () => {
           100% { transform: translateX(100%) rotate(-45deg); }
         }
         .animate-scroll-up {
-          animation: scrollUp 50s linear infinite;
+          animation: scrollUp 60s linear infinite;
         }
         .animate-scroll-down {
-          animation: scrollDown 55s linear infinite;
-        }
-        .liquid-glass {
-          background: rgba(255, 255, 255, 0.03);
-          backdrop-filter: blur(24px);
-          -webkit-backdrop-filter: blur(24px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          box-shadow: 
-            0 8px 32px 0 rgba(0, 0, 0, 0.1),
-            inset 0 0 32px 0 rgba(255, 255, 255, 0.05);
+          animation: scrollDown 65s linear infinite;
         }
       `}</style>
 
       {/* Full width container, no max-w, reduced height */}
       <div className="relative w-full h-[350px] md:h-[450px] overflow-hidden">
         
-        {/* Much smaller Liquid Glass Badge */}
+        {/* Pill matching FinalCTA style */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
-          <div className="liquid-glass px-6 md:px-8 py-2 md:py-3 rounded-full relative overflow-hidden">
-            {/* Inner glow/shimmer */}
-            <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-[shimmer_4s_infinite]" />
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-2.5 rounded-full relative overflow-hidden shadow-2xl">
+            {/* Inner glow/shimmer preserved but matching theme */}
+            <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent animate-[shimmer_4s_infinite]" />
             <span className="text-white text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-center block whitespace-nowrap drop-shadow-lg">
               Proyectos Recientes
             </span>
           </div>
         </div>
 
-        {/* Edge Masks */}
-        <div className="absolute left-0 right-0 top-0 h-24 bg-gradient-to-b from-white via-white/60 to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-t from-white via-white/60 to-transparent z-10 pointer-events-none"></div>
+        {/* Reduced Edge Masks */}
+        <div className="absolute left-0 right-0 top-0 h-16 bg-gradient-to-b from-white via-white/30 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute left-0 right-0 bottom-0 h-16 bg-gradient-to-t from-white via-white/30 to-transparent z-10 pointer-events-none"></div>
 
         <div className="grid grid-cols-2 gap-4 md:gap-8 h-full relative z-0 max-w-7xl mx-auto px-4">
           {/* Column 1 */}
           <div className="relative h-[200%] w-full">
             <div className="flex flex-col gap-4 md:gap-8 w-full animate-scroll-up">
-              {[...col1, ...col2, ...col1, ...col2].map((src, index) => (
+              {[...col1, ...col1].map((src, index) => (
                 <div 
                   key={`col1-${index}`} 
                   className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50"
@@ -81,9 +76,9 @@ const RecentWorks: React.FC = () => {
           </div>
 
           {/* Column 2 */}
-          <div className="relative h-[200%] w-full pt-12">
+          <div className="relative h-[200%] w-full pt-16">
             <div className="flex flex-col gap-4 md:gap-8 w-full animate-scroll-down">
-              {[...col2, ...col1, ...col2, ...col1].map((src, index) => (
+              {[...col2, ...col2].map((src, index) => (
                 <div 
                   key={`col2-${index}`} 
                   className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50"
