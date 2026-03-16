@@ -50,13 +50,6 @@ const FinalCTA: React.FC = () => {
             Mensaje
           </button>
         </div>
-
-        <div className="flex flex-col md:flex-row items-center justify-between w-full text-white text-[10px] tracking-[0.2em] uppercase font-bold gap-10 opacity-70">
-          <a href="#" className="hover:opacity-100 transition-opacity border-b border-white/30 pb-1">¿Tienes alguna pregunta?</a>
-          <a href="#" className="flex items-center gap-3 hover:opacity-100 transition-opacity">
-            REVISA NUESTRAS <span className="underline decoration-white/40 underline-offset-4">PREGUNTAS FRECUENTES</span>
-          </a>
-        </div>
       </div>
     </section>
   );
