@@ -2,21 +2,21 @@ import React from 'react';
 import { ChevronRight } from 'lucide-react';
 
 const col1 = [
-  '/pf1.jpg',
   '/pjj1.png',
-  '/pj7.jpg',
+  '/pjj4.png',
+  '/pjj7.png',
 ];
 
 const col2 = [
-  '/pj2.jpg',
-  '/pj4 (1).jpg',
-  '/pj6.jpg',
+  '/pjj2.png',
+  '/pjj5.png',
+  '/pjj9.png',
 ];
 
 const col3 = [
-  '/pj5.jpg',
-  '/jp8.jpg',
-  '/pj9.jpg',
+  '/pjj3.png',
+  '/pjj6.png',
+  '/pjji8.png',
 ];
 
 const RecentWorks: React.FC = () => {
