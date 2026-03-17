@@ -50,7 +50,7 @@ const RecentWorks: React.FC = () => {
             resultados que escalan.
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl leading-relaxed font-normal">
-            Una selección de nuestros trabajos ayudando a restaurantes a destacar en el ecosistema digital.
+            Creamos experiencias visuales únicas que captan la atención de tus clientes e impulsan el crecimiento real de tu restaurante.
           </p>
         </div>
       </div>
