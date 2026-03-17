@@ -24,18 +24,20 @@ const RecentWorks: React.FC = () => {
     <section className="relative py-24 bg-white overflow-hidden font-['Inter']">
       <style>{`
         @keyframes scrollUp {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(-50%); }
+          from { transform: translateY(0); }
+          to { transform: translateY(-50%); }
         }
         @keyframes scrollDown {
-          0% { transform: translateY(-50%); }
-          100% { transform: translateY(0%); }
+          from { transform: translateY(-50%); }
+          to { transform: translateY(0); }
         }
         .animate-scroll-up {
           animation: scrollUp 40s linear infinite;
+          will-change: transform;
         }
         .animate-scroll-down {
           animation: scrollDown 45s linear infinite;
+          will-change: transform;
         }
       `}</style>
 
@@ -63,42 +65,42 @@ const RecentWorks: React.FC = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 h-full relative z-0 max-w-7xl mx-auto px-4">
           {/* Column 1 */}
-          <div className="relative h-[200%] w-full">
+          <div className="relative w-full">
             <div className="flex flex-col gap-4 md:gap-8 w-full animate-scroll-up">
               {[...col1, ...col1].map((src, index) => (
                 <div 
                   key={`col1-${index}`} 
-                  className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50"
+                  className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50 aspect-[16/10]"
                 >
-                  <img src={src} alt="Motions Project" className="w-full h-auto object-cover" />
+                  <img src={src} alt="Motions Project" className="w-full h-full object-cover" loading="eager" />
                 </div>
               ))}
             </div>
           </div>
 
           {/* Column 2 */}
-          <div className="relative h-[200%] w-full pt-16">
+          <div className="relative w-full pt-16">
             <div className="flex flex-col gap-4 md:gap-8 w-full animate-scroll-down">
               {[...col2, ...col2].map((src, index) => (
                 <div 
                   key={`col2-${index}`} 
-                  className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50"
+                  className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50 aspect-[16/10]"
                 >
-                  <img src={src} alt="Motions Project" className="w-full h-auto object-cover" />
+                  <img src={src} alt="Motions Project" className="w-full h-full object-cover" loading="eager" />
                 </div>
               ))}
             </div>
           </div>
 
           {/* Column 3 (Desktop) */}
-          <div className="relative h-[200%] w-full pt-8 hidden md:block">
+          <div className="relative w-full pt-8 hidden md:block">
             <div className="flex flex-col gap-4 md:gap-8 w-full animate-scroll-up">
               {[...col3, ...col3].map((src, index) => (
                 <div 
                   key={`col3-${index}`} 
-                  className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50"
+                  className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50 aspect-[16/10]"
                 >
-                  <img src={src} alt="Motions Project" className="w-full h-auto object-cover" />
+                  <img src={src} alt="Motions Project" className="w-full h-full object-cover" loading="eager" />
                 </div>
               ))}
             </div>
