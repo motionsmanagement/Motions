@@ -3,7 +3,7 @@ import { ChevronRight } from 'lucide-react';
 
 const col1 = [
   '/pf1.jpg',
-  '/pj3.jpg',
+  '/pjj1.png',
   '/pj7.jpg',
 ];
 
