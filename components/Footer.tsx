@@ -45,21 +45,38 @@ const Footer: React.FC = () => {
           <div>
             <h5 className="text-black font-semibold mb-8 text-sm uppercase tracking-widest">Contacto</h5>
             <ul className="space-y-4">
-              <li className="flex items-center gap-3 text-gray-600">
-                <Mail className="w-4 h-4" />
-                <div className="flex flex-col gap-1">
-                  <a href="mailto:contacto@motions.es" className="hover:text-black transition-colors">contacto@motions.es</a>
-                  <span className="text-[11px] text-gray-400">Ventas: <a href="mailto:ventas@motions.es" className="hover:text-black transition-colors">ventas@motions.es</a></span>
-                  <span className="text-[11px] text-gray-400">Clientes: <a href="mailto:clientes@motions.es" className="hover:text-black transition-colors">clientes@motions.es</a></span>
+              <li className="space-y-4">
+                <div className="flex items-start gap-3 text-gray-600">
+                  <Mail className="w-4 h-4 mt-1 shrink-0" />
+                  <div className="grid gap-4">
+                    <div className="flex flex-col">
+                      <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">General</span>
+                      <a href="mailto:contacto@motions.es" className="text-[14px] hover:text-black transition-colors">contacto@motions.es</a>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Ventas</span>
+                      <a href="mailto:ventas@motions.es" className="text-[14px] hover:text-black transition-colors">ventas@motions.es</a>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Soporte</span>
+                      <a href="mailto:clientes@motions.es" className="text-[14px] hover:text-black transition-colors">clientes@motions.es</a>
+                    </div>
+                  </div>
                 </div>
               </li>
               <li className="flex items-center gap-3 text-gray-600">
-                <Phone className="w-4 h-4" />
-                <a href="tel:+919610420" className="hover:text-black transition-colors">+919 61 04 20</a>
+                <Phone className="w-4 h-4 shrink-0" />
+                <div className="flex flex-col">
+                  <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Llámanos</span>
+                  <a href="tel:+919610420" className="text-[14px] hover:text-black transition-colors font-medium">+919 61 04 20</a>
+                </div>
               </li>
               <li className="flex items-center gap-3 text-gray-600">
-                <MapPin className="w-4 h-4" />
-                <span>Madrid, España</span>
+                <MapPin className="w-4 h-4 shrink-0" />
+                <div className="flex flex-col">
+                  <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Localización</span>
+                  <span className="text-[14px]">Madrid, España</span>
+                </div>
               </li>
               <li className="pt-4">
                 <a href="#contact" className="inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white rounded-full text-xs font-semibold hover:bg-gray-800 transition-all">
