@@ -88,10 +88,10 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-gray-50 flex flex-col md:flex-row items-center justify-between gap-8 text-gray-400 text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.15em]">
+        <div className="pt-12 border-t border-gray-50 flex flex-col md:flex-row items-center justify-between gap-8 text-gray-400 text-[11px] sm:text-[12px] font-normal tracking-tight">
           <p className="text-center md:text-left">© {new Date().getFullYear()} Motions. Todos los derechos reservados.</p>
           <div className="flex gap-8">
-            <Link to="/aviso-legal" className="hover:text-black transition-colors">Aviso Legal</Link>
+            <Link to="/aviso-legal" className="hover:text-black transition-colors">Aviso legal</Link>
             <Link to="/privacidad" className="hover:text-black transition-colors">Privacidad</Link>
             <Link to="/cookies" className="hover:text-black transition-colors">Cookies</Link>
           </div>
