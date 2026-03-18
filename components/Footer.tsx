@@ -44,38 +44,38 @@ const Footer: React.FC = () => {
           {/* Contacto */}
           <div>
             <h5 className="text-black font-semibold mb-8 text-sm uppercase tracking-widest">Contacto</h5>
-            <ul className="space-y-4">
+            <ul className="space-y-6">
               <li className="space-y-4">
-                <div className="flex items-start gap-3 text-gray-600">
-                  <Mail className="w-4 h-4 mt-1 shrink-0" />
-                  <div className="grid gap-4">
-                    <div className="flex flex-col">
-                      <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">General</span>
-                      <a href="mailto:contacto@motions.es" className="text-gray-600 hover:text-black transition-colors">contacto@motions.es</a>
+                <div className="flex items-start gap-4 text-gray-600">
+                  <Mail className="w-4 h-4 mt-2 shrink-0 opacity-40" />
+                  <div className="grid gap-5">
+                    <div className="flex flex-col items-start">
+                      <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">General</span>
+                      <a href="mailto:contacto@motions.es" className="text-gray-600 hover:text-black transition-colors text-[13px]">contacto@motions.es</a>
                     </div>
-                    <div className="flex flex-col">
-                      <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Ventas</span>
-                      <a href="mailto:ventas@motions.es" className="text-gray-600 hover:text-black transition-colors">ventas@motions.es</a>
+                    <div className="flex flex-col items-start">
+                      <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">Ventas</span>
+                      <a href="mailto:ventas@motions.es" className="text-gray-600 hover:text-black transition-colors text-[13px]">ventas@motions.es</a>
                     </div>
-                    <div className="flex flex-col">
-                      <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Soporte</span>
-                      <a href="mailto:clientes@motions.es" className="text-gray-600 hover:text-black transition-colors">clientes@motions.es</a>
+                    <div className="flex flex-col items-start">
+                      <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">Soporte</span>
+                      <a href="mailto:clientes@motions.es" className="text-gray-600 hover:text-black transition-colors text-[13px]">clientes@motions.es</a>
                     </div>
                   </div>
                 </div>
               </li>
-              <li className="flex items-center gap-3 text-gray-600">
-                <Phone className="w-4 h-4 shrink-0" />
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Llámanos</span>
-                  <a href="tel:+919610420" className="text-gray-600 hover:text-black transition-colors font-medium">+919 61 04 20</a>
+              <li className="flex items-start gap-4 text-gray-600">
+                <Phone className="w-4 h-4 mt-1 shrink-0 opacity-40" />
+                <div className="flex flex-col items-start">
+                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">Llámanos</span>
+                  <a href="tel:+919610420" className="text-gray-600 hover:text-black transition-colors font-medium text-[13px]">+919 61 04 20</a>
                 </div>
               </li>
-              <li className="flex items-center gap-3 text-gray-600">
-                <MapPin className="w-4 h-4 shrink-0" />
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Localización</span>
-                  <span className="text-gray-600">Madrid, España</span>
+              <li className="flex items-start gap-4 text-gray-600">
+                <MapPin className="w-4 h-4 mt-1 shrink-0 opacity-40" />
+                <div className="flex flex-col items-start">
+                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">Localización</span>
+                  <span className="text-gray-600 text-[13px]">Madrid, España</span>
                 </div>
               </li>
               <li className="pt-4">
