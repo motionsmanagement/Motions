@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
 
           {/* Soluciones */}
           <div>
-            <h5 className="text-black font-semibold mb-8 text-sm uppercase tracking-widest">Soluciones</h5>
+            <h5 className="text-black font-semibold mb-8 text-sm uppercase tracking-widest">Servicios</h5>
             <ul className="space-y-4">
               <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Google My Business</Link></li>
               <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Sitios Web para Rest.</Link></li>
