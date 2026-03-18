@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, MessageCircle, Mail, MapPin } from 'lucide-react';
+import { Instagram, Linkedin, MessageCircle, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -47,7 +47,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-gray-600">
                 <Mail className="w-4 h-4" />
-                <span>info@motions.es</span>
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:contacto@motions.es" className="hover:text-black transition-colors">contacto@motions.es</a>
+                  <span className="text-[11px] text-gray-400">Ventas: <a href="mailto:ventas@motions.es" className="hover:text-black transition-colors">ventas@motions.es</a></span>
+                  <span className="text-[11px] text-gray-400">Clientes: <a href="mailto:clientes@motions.es" className="hover:text-black transition-colors">clientes@motions.es</a></span>
+                </div>
+              </li>
+              <li className="flex items-center gap-3 text-gray-600">
+                <Phone className="w-4 h-4" />
+                <a href="tel:+919610420" className="hover:text-black transition-colors">+919 61 04 20</a>
               </li>
               <li className="flex items-center gap-3 text-gray-600">
                 <MapPin className="w-4 h-4" />

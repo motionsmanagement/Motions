@@ -24,7 +24,7 @@ export const PrivacyPolicy: React.FC = () => (
     <LegalPage title="Política de Privacidad">
         <section className="mb-8">
             <h2 className="text-2xl font-semibold text-black mb-4">1. Responsable del Tratamiento</h2>
-            <p>Motions, con domicilio en Madrid, España, y correo electrónico de contacto <strong>info@motions.es</strong>, es el responsable del tratamiento de sus datos personales recogidos a través de este sitio web. Nos comprometemos a garantizar la privacidad de nuestros usuarios y la protección de sus datos bajo el Reglamento General de Protección de Datos (RGPD).</p>
+            <p>Motions, con domicilio en Madrid, España, y correo electrónico de contacto <strong>contacto@motions.es</strong>, es el responsable del tratamiento de sus datos personales recogidos a través de este sitio web. Nos comprometemos a garantizar la privacidad de nuestros usuarios y la protección de sus datos bajo el Reglamento General de Protección de Datos (RGPD).</p>
         </section>
         <section className="mb-8">
             <h2 className="text-2xl font-semibold text-black mb-4">2. Datos Recogidos y Finalidad</h2>
@@ -59,7 +59,7 @@ export const PrivacyPolicy: React.FC = () => (
                 <li><strong>Oposición y Limitación:</strong> Oponerse al tratamiento para fines específicos.</li>
                 <li><strong>Portabilidad:</strong> Recibir sus datos en un formato estructurado.</li>
             </ul>
-            <p className="mt-4">Para ejercer estos derechos, envíe un correo electrónico a <strong>info@motions.es</strong> adjuntando copia de su DNI o documento equivalente.</p>
+            <p className="mt-4">Para ejercer estos derechos, envíe un correo electrónico a <strong>contacto@motions.es</strong> adjuntando copia de su DNI o documento equivalente.</p>
         </section>
     </LegalPage>
 );
@@ -107,7 +107,7 @@ export const LegalNotice: React.FC = () => (
             <ul className="list-none space-y-2 mt-4">
                 <li><strong>Titular:</strong> Motions</li>
                 <li><strong>Domicilio:</strong> Madrid, España</li>
-                <li><strong>Email:</strong> info@motions.es</li>
+                <li><strong>Email:</strong> contacto@motions.es</li>
                 <li><strong>Actividad:</strong> Agencia de Marketing Especializada en Restauración</li>
             </ul>
         </section>
