@@ -17,16 +17,16 @@ const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Soluciones */}
+          {/* Servicios */}
           <div>
             <h5 className="text-black font-semibold mb-8 text-sm uppercase tracking-widest">Servicios</h5>
             <ul className="space-y-4">
               <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Google My Business</Link></li>
-              <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Sitios Web para Rest.</Link></li>
+              <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Diseño Web Premium</Link></li>
               <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Branding e Identidad</Link></li>
-              <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Diseño Gráfico</Link></li>
               <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Integración con IA</Link></li>
-              <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Gestión de RRSS</Link></li>
+              <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">SEO Gastronómico</Link></li>
+              <li><Link to="/#services" className="text-gray-600 hover:text-black transition-colors">Estrategia Digital</Link></li>
             </ul>
           </div>
 
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li><Link to="/" className="text-gray-600 hover:text-black transition-colors">Inicio</Link></li>
               <li><Link to="/#how-it-works" className="text-gray-600 hover:text-black transition-colors">Metodología</Link></li>
-              <li><Link to="/#cases" className="text-gray-600 hover:text-black transition-colors">Casos de Éxito</Link></li>
+              <li><Link to="/#cases" className="text-gray-600 hover:text-black transition-colors">Proyectos</Link></li>
               <li><Link to="/#contact" className="text-gray-600 hover:text-black transition-colors">Contacto</Link></li>
             </ul>
           </div>
@@ -51,15 +51,15 @@ const Footer: React.FC = () => {
                   <div className="grid gap-4">
                     <div className="flex flex-col">
                       <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">General</span>
-                      <a href="mailto:contacto@motions.es" className="text-[14px] hover:text-black transition-colors">contacto@motions.es</a>
+                      <a href="mailto:contacto@motions.es" className="text-gray-600 hover:text-black transition-colors">contacto@motions.es</a>
                     </div>
                     <div className="flex flex-col">
                       <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Ventas</span>
-                      <a href="mailto:ventas@motions.es" className="text-[14px] hover:text-black transition-colors">ventas@motions.es</a>
+                      <a href="mailto:ventas@motions.es" className="text-gray-600 hover:text-black transition-colors">ventas@motions.es</a>
                     </div>
                     <div className="flex flex-col">
                       <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Soporte</span>
-                      <a href="mailto:clientes@motions.es" className="text-[14px] hover:text-black transition-colors">clientes@motions.es</a>
+                      <a href="mailto:clientes@motions.es" className="text-gray-600 hover:text-black transition-colors">clientes@motions.es</a>
                     </div>
                   </div>
                 </div>
@@ -68,14 +68,14 @@ const Footer: React.FC = () => {
                 <Phone className="w-4 h-4 shrink-0" />
                 <div className="flex flex-col">
                   <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Llámanos</span>
-                  <a href="tel:+919610420" className="text-[14px] hover:text-black transition-colors font-medium">+919 61 04 20</a>
+                  <a href="tel:+919610420" className="text-gray-600 hover:text-black transition-colors font-medium">+919 61 04 20</a>
                 </div>
               </li>
               <li className="flex items-center gap-3 text-gray-600">
                 <MapPin className="w-4 h-4 shrink-0" />
                 <div className="flex flex-col">
                   <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Localización</span>
-                  <span className="text-[14px]">Madrid, España</span>
+                  <span className="text-gray-600">Madrid, España</span>
                 </div>
               </li>
               <li className="pt-4">
