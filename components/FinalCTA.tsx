@@ -21,10 +21,10 @@ const FinalCTA: React.FC = () => {
         <img
           src="/Adbanner.jpg"
           alt="Final CTA background"
-          className="w-full h-full object-cover brightness-[0.55]"
+          className="w-full h-full object-cover brightness-[0.65]"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
       <div className={`relative z-10 max-w-4xl w-full transition-all duration-700 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
