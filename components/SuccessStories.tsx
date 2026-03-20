@@ -288,10 +288,10 @@ const SuccessStories: React.FC = () => {
                     <div className="mt-16 flex justify-center">
                         <button
                             onClick={() => setShowAll(true)}
-                            className="flex items-center gap-2 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg"
+                            className="flex items-center gap-3 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg"
                         >
                             Ver más proyectos
-                            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            <img src="/anagram.png" alt="Motions Anagram" className="w-5 h-5 invert brightness-0 group-hover:rotate-12 transition-transform" />
                         </button>
                     </div>
                 )}

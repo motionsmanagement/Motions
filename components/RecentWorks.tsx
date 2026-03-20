@@ -113,19 +113,21 @@ const RecentWorks: React.FC = () => {
         {/* Desktop Link */}
         <a 
           href="#contact" 
-          className="hidden md:flex items-center gap-2 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg"
+          className="hidden md:flex items-center gap-3 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg"
         >
           Solicitar presupuesto
-          <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <img src="/anagram.png" alt="Motions Anagram" className="w-5 h-5 invert brightness-0 group-hover:rotate-12 transition-transform" />
         </a>
         
         {/* Mobile Link (WhatsApp) */}
         <a 
           href="https://wa.me/34919610420" 
-          className="md:hidden flex items-center gap-2 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="md:hidden flex items-center gap-3 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg"
         >
           Solicitar presupuesto
-          <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <img src="/anagram.png" alt="Motions Anagram" className="w-5 h-5 invert brightness-0 group-hover:rotate-12 transition-transform" />
         </a>
       </div>
     </section>

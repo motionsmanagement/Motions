@@ -67,7 +67,7 @@ const FinalCTA: React.FC = () => {
 
               {/* Premium Copy - Centered */}
               <div className="mb-12 text-center">
-                <h2 className="text-3xl md:text-5xl lg:text-6xl text-black font-semibold mb-6 tracking-tight leading-[1.05]">
+                <h2 className="text-3xl md:text-5xl lg:text-6xl text-black font-medium mb-6 tracking-tight leading-[1.05]">
                   Lleva tu restaurante <br className="hidden md:block" /> al siguiente nivel
                 </h2>
                 <p className="text-gray-500 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed font-light px-4">
@@ -150,7 +150,7 @@ const FinalCTA: React.FC = () => {
                       <span className="hidden md:inline">Solicitar presupuesto y auditoría</span>
                     </span>
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-black shadow-inner">
-                      <ChevronRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-0.5 transition-transform" />
+                      <img src="/anagram.png" alt="Motions Anagram" className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform opacity-80" />
                     </div>
                   </button>
                 </div>

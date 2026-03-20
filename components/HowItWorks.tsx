@@ -262,12 +262,16 @@ const HowItWorks: React.FC = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-20 hidden md:flex flex-col items-center">
-          <button className="flex items-center gap-3 px-10 py-4 bg-black text-white rounded-full font-semibold text-base shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:bg-neutral-900 hover:scale-105 active:scale-95 transition-all group">
-            <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+        <div className="mt-20 flex flex-col items-center">
+          <a 
+            href="https://wa.me/34919610420" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 px-10 py-4 bg-black text-white rounded-full font-semibold text-base shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:bg-neutral-900 hover:scale-105 active:scale-95 transition-all group"
+          >
             Quiero potenciar mi restaurante
-          </button>
+            <img src="/anagram.png" alt="Motions Anagram" className="w-5 h-5 invert brightness-0 group-hover:rotate-12 transition-transform" />
+          </a>
         </div>
       </div>
 
