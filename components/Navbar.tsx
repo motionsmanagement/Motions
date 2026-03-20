@@ -83,12 +83,13 @@ const Navbar: React.FC = () => {
       <div className={`fixed inset-0 z-[100] bg-white transition-all duration-500 md:hidden ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
         <div className="flex flex-col h-full px-8 pt-24 pb-12 overflow-y-auto">
           {/* Main Navigation Links */}
-          <div className="flex flex-col gap-6 text-left mb-12">
+          {/* Main Navigation Links */}
+          <div className="flex flex-col gap-8 text-left mb-12">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-2xl font-semibold text-black tracking-tight flex items-center justify-between group"
+                className="text-3xl font-semibold text-black tracking-tight flex items-center justify-between group"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
@@ -97,32 +98,53 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* Mobile Main CTA */}
-          <div className="flex flex-col gap-3 w-full mb-12">
+          {/* Quick Choice Buttons - Restored Horizontal */}
+          <div className="flex gap-3 w-full mb-10">
             <a 
               href="https://wa.me/34919610420" 
-              className="w-full py-4 rounded-full bg-black text-white font-semibold text-base text-center shadow-xl active:scale-95 transition-all" 
+              className="flex-1 py-3.5 rounded-full bg-black text-white font-semibold text-sm text-center shadow-xl active:scale-95 transition-all" 
               onClick={() => setIsMenuOpen(false)}
             >
               Empezar Ahora
             </a>
+            <a 
+              href="tel:+34919610420" 
+              className="flex-1 py-3.5 rounded-full border border-black/10 text-black font-semibold text-sm text-center active:scale-95 transition-all" 
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Llamar
+            </a>
           </div>
 
-          {/* Support Buttons - Pills at Bottom */}
+          {/* New Promo Banner */}
+          <div className="relative mb-12 rounded-[2rem] overflow-hidden group">
+            <img src="/promo_overlay.jpg" alt="Promo Promo" className="w-full h-40 object-cover brightness-75 group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
+              <span className="text-white/80 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">Oferta exclusiva</span>
+              <h4 className="text-white text-2xl font-bold leading-tight">
+                Obtén un 10% <br /> de descuento
+              </h4>
+            </div>
+            <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-md border border-white/30 rounded-full px-3 py-1">
+              <span className="text-white text-[10px] font-bold">Limitado</span>
+            </div>
+          </div>
+
+          {/* Support Buttons - Black & White Pills at Bottom */}
           <div className="mt-auto pt-8 border-t border-black/5">
             <div className="flex gap-2">
               <a 
                 href="https://wa.me/34919610420" 
-                className="flex-1 py-3 px-4 rounded-full bg-[#f3f4f1] border border-gray-100 flex items-center justify-center gap-2 text-black text-xs font-semibold active:bg-gray-100 transition-colors"
+                className="flex-1 py-3 px-4 rounded-full bg-black text-white flex items-center justify-center gap-2 text-xs font-semibold active:opacity-80 transition-opacity"
               >
                 <MessageCircle className="w-4 h-4 text-[#25D366]" />
                 WhatsApp
               </a>
               <a 
                 href="mailto:contacto@motions.es" 
-                className="flex-1 py-3 px-4 rounded-full bg-[#f3f4f1] border border-gray-100 flex items-center justify-center gap-2 text-black text-xs font-semibold active:bg-gray-100 transition-colors"
+                className="flex-1 py-3 px-4 rounded-full bg-black text-white flex items-center justify-center gap-2 text-xs font-semibold active:opacity-80 transition-opacity"
               >
-                <Mail className="w-4 h-4 opacity-40" />
+                <Mail className="w-4 h-4 text-white/60" />
                 Email
               </a>
             </div>
