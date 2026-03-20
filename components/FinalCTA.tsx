@@ -168,9 +168,9 @@ const FinalCTA: React.FC = () => {
                 <Check className="w-10 h-10 text-white" />
               </div>
             </div>
-            <h3 className="text-3xl md:text-5xl font-bold text-black mb-4 tracking-tight">¡Solicitud recibida!</h3>
-            <p className="text-gray-500 text-lg max-w-sm mx-auto leading-relaxed text-center">
-              Gracias por confiar en Motions. Uno de nuestros especialistas te contactará en menos de 24 horas.
+            <h3 className="text-3xl md:text-5xl font-medium text-black mb-4 tracking-tight">¡Solicitud recibida!</h3>
+            <p className="text-gray-500 text-lg max-w-lg mx-auto leading-relaxed text-center">
+              Gracias por confiar en Motions. <br className="hidden md:block" />Uno de nuestros especialistas te contactará en menos de 24 horas.
             </p>
             <button 
               onClick={() => setIsSubmitted(false)}
