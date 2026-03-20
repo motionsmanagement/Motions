@@ -162,7 +162,7 @@ const Services: React.FC = () => {
     ];
 
     return (
-        <section id="services" ref={ref} className="py-24 px-6 md:px-12 bg-white font-['Inter']">
+        <section id="servicios" ref={ref} className="py-24 px-6 md:px-12 bg-white font-['Inter']">
             <div className={`max-w-7xl mx-auto transition-all duration-700 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 {/* Header Section */}
                 <div className="mb-20 text-balance flex flex-col items-center md:items-start text-center md:text-left">

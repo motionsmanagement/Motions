@@ -112,7 +112,7 @@ const RecentWorks: React.FC = () => {
       <div className="mt-16 flex justify-center">
         {/* Desktop Link */}
         <a 
-          href="#contact" 
+          href="#contacto" 
           className="hidden md:flex items-center gap-3 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg"
         >
           Solicitar presupuesto

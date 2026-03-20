@@ -39,10 +39,10 @@ const Navbar: React.FC = () => {
   const logoSrc = showDarkNavbar ? "/motionsblack.png" : "/MotionsLogo.png";
 
   const navLinks = [
-    { name: "Servicios", href: "/#services" },
-    { name: "Cómo Funciona", href: "/#how-it-works" },
-    { name: "Proyectos", href: "/#cases" },
-    { name: "Contacto", href: "/#contact" },
+    { name: "Servicios", href: "/#servicios" },
+    { name: "Cómo Funciona", href: "/#como-funciona" },
+    { name: "Proyectos", href: "/#proyectos" },
+    { name: "Contacto", href: "/#contacto" },
   ];
 
   return (
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
             <a href="tel:+34919610420" className={`hidden lg:block px-4 md:px-5 py-2 rounded-full border text-xs md:text-sm font-medium transition-all tracking-tight ${showDarkNavbar ? "border-black/10 text-black/90 hover:bg-black/5" : "border-white/20 text-white/90 hover:bg-white/10"}`}>
               +34 919 61 04 20
             </a>
-            <a href="#contact" className={`hidden md:block px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-semibold transition-all shadow-lg tracking-tight ${showDarkNavbar ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}>
+            <a href="#contacto" className={`hidden md:block px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-semibold transition-all shadow-lg tracking-tight ${showDarkNavbar ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}>
               Empezar Ahora
             </a>
 

@@ -41,7 +41,7 @@ const FinalCTA: React.FC = () => {
   };
 
   return (
-    <section id="contact" ref={ref} className="relative py-24 md:py-36 px-6 md:px-12 overflow-hidden flex flex-col items-center justify-center font-['Inter']">
+    <section id="contacto" ref={ref} className="relative py-24 md:py-36 px-6 md:px-12 overflow-hidden flex flex-col items-center justify-center font-['Inter']">
       {/* Background Image - High Visibility */}
       <div className="absolute inset-0 z-0">
         <img

@@ -44,14 +44,14 @@ const Hero: React.FC = () => {
           {/* Dual Buttons - Horizontal on all screens */}
           <div className="flex flex-row items-center justify-center gap-3 sm:gap-4">
             <a 
-              href="#contact" 
+              href="#contacto" 
               className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-semibold text-xs sm:text-sm transition-all hover:bg-white/20 hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-2xl"
             >
               Empezar ahora
               <img src="/anagram.png" alt="Motions Anagram" className="w-3.5 h-3.5 sm:w-4 sm:h-4 invert brightness-0" />
             </a>
             <a 
-              href="#services" 
+              href="#servicios" 
               className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white text-black rounded-full font-semibold text-xs sm:text-sm shadow-2xl transition-all hover:bg-white/90 hover:scale-105 active:scale-95 flex items-center justify-center"
             >
               Saber más
