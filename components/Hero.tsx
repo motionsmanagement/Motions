@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
 
       <div className={`relative z-10 px-6 md:px-12 w-full max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="max-w-4xl w-full">
-          <h1 className="text-4xl sm:text-5xl md:text-[5.5rem] lg:text-[6rem] leading-[1.15] text-white mb-8 tracking-tight font-medium md:font-normal">
+          <h1 className="text-4xl sm:text-5xl md:text-[4.5rem] lg:text-[5rem] leading-[1.15] text-white mb-8 tracking-tight font-medium md:font-normal">
             Más Clientes para<br />
             Tu Restaurante
           </h1>
