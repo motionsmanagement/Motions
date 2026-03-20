@@ -116,19 +116,20 @@ const Navbar: React.FC = () => {
             </a>
           </div>
 
-          {/* New Promo Banner */}
-          <div className="relative mb-12 rounded-[2rem] overflow-hidden group">
-            <img src="/promo_overlay.jpg" alt="Promo Promo" className="w-full h-40 object-cover brightness-75 group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
-              <span className="text-white/80 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">Oferta exclusiva</span>
-              <h4 className="text-white text-2xl font-bold leading-tight">
+          {/* New Promo Banner - Linked to WhatsApp */}
+          <a 
+            href="https://wa.me/34919610420" 
+            className="relative mb-12 rounded-[2rem] overflow-hidden group block shadow-2xl"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <img src="/menuside.jpg" alt="Obtén Descuento" className="w-full h-44 object-cover brightness-75 group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+              <span className="text-white/60 text-[10px] font-bold uppercase tracking-[0.2em] mb-2 leading-none">Oferta especial</span>
+              <h4 className="text-white text-3xl font-extrabold leading-[1.1] tracking-tight">
                 Obtén un 10% <br /> de descuento
               </h4>
             </div>
-            <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-md border border-white/30 rounded-full px-3 py-1">
-              <span className="text-white text-[10px] font-bold">Limitado</span>
-            </div>
-          </div>
+          </a>
 
           {/* Support Buttons - Black & White Pills at Bottom */}
           <div className="mt-auto pt-8 border-t border-black/5">
@@ -137,7 +138,7 @@ const Navbar: React.FC = () => {
                 href="https://wa.me/34919610420" 
                 className="flex-1 py-3 px-4 rounded-full bg-black text-white flex items-center justify-center gap-2 text-xs font-semibold active:opacity-80 transition-opacity"
               >
-                <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                <MessageCircle className="w-4 h-4 text-white" />
                 WhatsApp
               </a>
               <a 
