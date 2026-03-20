@@ -40,56 +40,32 @@ const FinalCTA: React.FC = () => {
   };
 
   return (
-    <section id="contact" ref={ref} className="relative py-24 md:py-32 px-6 md:px-12 overflow-hidden flex flex-col items-center font-['Inter']">
-      {/* Background Image with Darker Overlay for Contrast */}
+    <section id="contact" ref={ref} className="relative py-28 md:py-40 px-6 md:px-12 overflow-hidden flex flex-col items-center justify-center font-['Inter']">
+      {/* Brighter Background Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src="/Adbanner.jpg"
           alt="Final CTA background"
-          className="w-full h-full object-cover brightness-[0.4]"
+          className="w-full h-full object-cover brightness-[0.7]"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
-      <div className={`relative z-10 max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <div className={`relative z-10 max-w-2xl w-full transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         
-        {/* Left Side: Text & Quick Links */}
-        <div className="text-white">
-          <h2 className="text-4xl md:text-7xl font-medium tracking-tight leading-[1.05] mb-8">
-            Lleva tu restaurante<br />
-            al siguiente nivel
-          </h2>
-          <p className="text-lg md:text-xl text-white/70 max-w-xl leading-relaxed font-light mb-12">
-            Especialistas en marketing gastronómico. Creamos sistemas digitales diseñados para convertir simples visitas online en reservas reales.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-auto">
-            <div className="flex flex-col">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold mb-3">Contacto Directo</span>
-              <div className="flex items-center gap-4">
-                <a href="https://wa.me/34919610420" className="flex items-center gap-2 text-white/90 hover:text-white transition-colors group">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
-                    <MessageSquare className="w-4 h-4" />
-                  </div>
-                  <span className="text-sm font-medium">WhatsApp</span>
-                </a>
-                <a href="tel:+34919610420" className="flex items-center gap-2 text-white/90 hover:text-white transition-colors group">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
-                    <Phone className="w-4 h-4" />
-                  </div>
-                  <span className="text-sm font-medium">Llamar ahora</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Side: Contact Form Card */}
-        <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] relative overflow-hidden">
+        {/* Centralized Contact Form Card */}
+        <div className="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] relative overflow-hidden">
           <div className="relative z-10">
-            <h3 className="text-2xl md:text-3xl text-black font-semibold mb-2 tracking-tight">Solicitar información</h3>
-            <p className="text-gray-500 text-sm mb-10">Completa el formulario y crearemos un plan personalizado para ti.</p>
+            {/* Header Content moved inside */}
+            <div className="mb-10 text-center">
+              <h2 className="text-3xl md:text-5xl text-black font-semibold mb-4 tracking-tight leading-tight">
+                Lleva tu restaurante al siguiente nivel
+              </h2>
+              <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto leading-relaxed">
+                Transformamos tu presencia online en reservas reales. Completa el formulario y crearemos un plan para ti.
+              </p>
+            </div>
 
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -112,7 +88,7 @@ const FinalCTA: React.FC = () => {
               </div>
 
               <div className="relative flex gap-3 items-end">
-                <div className="relative group">
+                <div className="relative group shrink-0">
                   <select 
                     value={countryCode}
                     onChange={(e) => setCountryCode(e.target.value)}
@@ -121,10 +97,6 @@ const FinalCTA: React.FC = () => {
                     <option value="+34">🇪🇸 +34</option>
                     <option value="+1">🇺🇸 +1</option>
                     <option value="+44">🇬🇧 +44</option>
-                    <option value="+33">🇫🇷 +33</option>
-                    <option value="+49">🇩🇪 +49</option>
-                    <option value="+39">🇮🇹 +39</option>
-                    <option value="+52">🇲🇽 +52</option>
                   </select>
                   <div className="absolute right-0 bottom-4 pointer-events-none text-gray-400">
                     <ChevronRight className="w-3 h-3 rotate-90" />
@@ -140,17 +112,17 @@ const FinalCTA: React.FC = () => {
 
               {/* Service Selection Pills */}
               <div className="space-y-4">
-                <label className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">Servicios de interés</label>
+                <label className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">¿En qué podemos ayudarte?</label>
                 <div className="flex flex-wrap gap-2">
                   {services.map((service) => (
                     <button
                       key={service}
                       type="button"
                       onClick={() => toggleService(service)}
-                      className={`px-4 py-2 rounded-full text-xs font-semibold border transition-all duration-300 flex items-center gap-2 ${
+                      className={`px-4 py-2 rounded-full text-[11px] font-bold border transition-all duration-300 flex items-center gap-2 ${
                         selectedServices.includes(service)
                           ? "bg-black border-black text-white shadow-lg scale-95"
-                          : "bg-white border-gray-100 text-gray-500 hover:border-gray-300"
+                          : "bg-white border-gray-100 text-gray-500 hover:border-gray-300 hover:bg-gray-50 uppercase tracking-tighter"
                       }`}
                     >
                       {selectedServices.includes(service) && <Check className="w-3 h-3" />}
@@ -163,18 +135,29 @@ const FinalCTA: React.FC = () => {
               <div className="pt-6">
                 <button 
                   type="submit" 
-                  className="bg-black text-white rounded-full pl-8 pr-2 py-2 flex items-center justify-between gap-4 group hover:bg-neutral-800 transition-all hover:scale-[1.02] active:scale-95 w-full md:w-auto"
+                  className="bg-black text-white rounded-full pl-8 pr-2 py-2 flex items-center justify-between gap-4 group hover:bg-neutral-800 transition-all hover:scale-[1.02] active:scale-95 w-full"
                 >
-                  <span className="font-semibold tracking-tight">Enviar mensaje</span>
+                  <span className="font-semibold tracking-tight">Enviar mensaje ahora</span>
                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black">
                     <ChevronRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
                   </div>
                 </button>
               </div>
 
-              <p className="text-[10px] text-gray-400 leading-relaxed pt-4">
-                Al enviar este formulario, aceptas nuestra política de privacidad y el tratamiento de tus datos para fines de contacto comercial.
-              </p>
+              {/* Secondary Contact Options inside card */}
+              <div className="pt-8 border-t border-gray-50 flex flex-col sm:flex-row items-center justify-center gap-8">
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">Otras vías:</span>
+                <div className="flex items-center gap-6">
+                  <a href="https://wa.me/34919610420" className="flex items-center gap-2 text-gray-400 hover:text-black transition-colors font-medium text-xs">
+                    <MessageSquare className="w-4 h-4 text-green-500" />
+                    WhatsApp
+                  </a>
+                  <a href="tel:+34919610420" className="flex items-center gap-2 text-gray-400 hover:text-black transition-colors font-medium text-xs">
+                    <Phone className="w-4 h-4 text-black" />
+                    Llamar
+                  </a>
+                </div>
+              </div>
             </form>
           </div>
         </div>
