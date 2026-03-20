@@ -51,15 +51,15 @@ const Footer: React.FC = () => {
                   <div className="grid gap-5">
                     <div className="flex flex-col items-start">
                       <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">General</span>
-                      <a href="mailto:contacto@motions.es" className="text-gray-600 hover:text-black transition-colors text-[13px]">contacto@motions.es</a>
+                      <a href="mailto:contacto@motions.es" className="text-gray-600 hover:text-black transition-colors text-base">contacto@motions.es</a>
                     </div>
                     <div className="flex flex-col items-start">
                       <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">Ventas</span>
-                      <a href="mailto:ventas@motions.es" className="text-gray-600 hover:text-black transition-colors text-[13px]">ventas@motions.es</a>
+                      <a href="mailto:ventas@motions.es" className="text-gray-600 hover:text-black transition-colors text-base">ventas@motions.es</a>
                     </div>
                     <div className="flex flex-col items-start">
                       <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">Soporte</span>
-                      <a href="mailto:clientes@motions.es" className="text-gray-600 hover:text-black transition-colors text-[13px]">clientes@motions.es</a>
+                      <a href="mailto:clientes@motions.es" className="text-gray-600 hover:text-black transition-colors text-base">clientes@motions.es</a>
                     </div>
                   </div>
                 </div>
@@ -68,14 +68,14 @@ const Footer: React.FC = () => {
                 <Phone className="w-4 h-4 mt-1 shrink-0 opacity-40" />
                 <div className="flex flex-col items-start">
                   <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">Llámanos</span>
-                  <a href="https://wa.me/34919610420" className="text-gray-600 hover:text-black transition-colors text-[13px] font-medium">+34 919 61 04 20</a>
+                  <a href="https://wa.me/34919610420" className="text-gray-600 hover:text-black transition-colors text-base font-medium">+34 919 61 04 20</a>
                 </div>
               </li>
               <li className="flex items-start gap-4 text-gray-600">
                 <MapPin className="w-4 h-4 mt-1 shrink-0 opacity-40" />
                 <div className="flex flex-col items-start">
                   <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">Localización</span>
-                  <span className="text-gray-600 text-[13px]">Madrid, España</span>
+                  <span className="text-gray-600 text-base font-serif italic">Madrid, España</span>
                 </div>
               </li>
               <li className="pt-4">

@@ -61,8 +61,8 @@ const FinalCTA: React.FC = () => {
           {!isSubmitted ? (
             <div className="relative z-10 w-full transition-all duration-500 animate-in fade-in slide-in-from-bottom-4">
               {/* Motions Logo - Centered */}
-              <div className="flex justify-center mb-8">
-                <img src="/motionsblack.png" alt="Motions Logo" className="h-7 md:h-9 w-auto" />
+              <div className="flex justify-center mb-10">
+                <img src="/motionsblack.png" alt="Motions Logo" className="h-9 md:h-12 w-auto" />
               </div>
 
               {/* Premium Copy - Centered */}
@@ -81,7 +81,7 @@ const FinalCTA: React.FC = () => {
                     <input 
                       type="text" 
                       placeholder="Tu nombre" 
-                      className="w-full bg-transparent border-b border-gray-100 py-3 text-black text-base md:text-lg placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
+                      className="w-full bg-transparent border-b border-gray-100 py-3 text-black text-base md:text-lg placeholder:text-gray-500 focus:outline-none focus:border-black transition-colors"
                       required
                     />
                   </div>
@@ -89,7 +89,7 @@ const FinalCTA: React.FC = () => {
                     <input 
                       type="email" 
                       placeholder="Correo electrónico" 
-                      className="w-full bg-transparent border-b border-gray-100 py-3 text-black text-base md:text-lg placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
+                      className="w-full bg-transparent border-b border-gray-100 py-3 text-black text-base md:text-lg placeholder:text-gray-500 focus:outline-none focus:border-black transition-colors"
                       required
                     />
                   </div>
@@ -113,12 +113,12 @@ const FinalCTA: React.FC = () => {
                   <input 
                     type="tel" 
                     placeholder="Número de teléfono" 
-                    className="flex-1 bg-transparent border-b border-gray-100 py-3 text-black text-base md:text-lg placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
+                    className="flex-1 bg-transparent border-b border-gray-100 py-3 text-black text-base md:text-lg placeholder:text-gray-500 focus:outline-none focus:border-black transition-colors"
                     required
                   />
                 </div>
 
-                {/* Service Selection Pills - Left Aligned and Darker */}
+                {/* Service Selection Pills - Left Aligned and Medium Contrast */}
                 <div className="space-y-4">
                   <label className="text-xs md:text-sm font-semibold text-black/80 block text-left pl-1">¿En qué podemos ayudarte?</label>
                   <div className="flex flex-wrap gap-2 justify-start">
@@ -127,10 +127,10 @@ const FinalCTA: React.FC = () => {
                         key={service}
                         type="button"
                         onClick={() => toggleService(service)}
-                        className={`px-5 py-2 rounded-full text-xs md:text-[13px] font-bold border transition-all duration-300 flex items-center gap-2 ${
+                        className={`px-5 py-2 rounded-full text-xs md:text-[13px] font-semibold border transition-all duration-300 flex items-center gap-2 ${
                           selectedServices.includes(service)
                             ? "bg-black border-black text-white shadow-lg scale-95"
-                            : "bg-white border-black/20 text-black hover:border-black/40"
+                            : "bg-white border-gray-300 text-gray-600 hover:border-black/40"
                         }`}
                       >
                         {selectedServices.includes(service) && <Check className="w-4 h-4" />}
