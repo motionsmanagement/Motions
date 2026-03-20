@@ -67,26 +67,18 @@ const Footer: React.FC = () => {
               <li className="flex items-start gap-4 text-gray-600">
                 <Phone className="w-4 h-4 mt-1 shrink-0 opacity-40" />
                 <div className="flex flex-col items-start">
-                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">Llámanos</span>
-                  <a href="https://wa.me/34919610420" className="text-gray-600 hover:text-black transition-colors text-base font-medium">+34 919 61 04 20</a>
+                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">WhatsApp</span>
+                  <a href="https://wa.me/34919610420" className="text-gray-600 hover:text-black transition-colors text-base font-medium flex items-center gap-2">
+                    +34 919 61 04 20
+                  </a>
                 </div>
               </li>
               <li className="flex items-start gap-4 text-gray-600">
                 <MapPin className="w-4 h-4 mt-1 shrink-0 opacity-40" />
                 <div className="flex flex-col items-start">
-                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">Localización</span>
+                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">Localización</span>
                   <span className="text-gray-600 text-base">Madrid, España</span>
                 </div>
-              </li>
-              <li className="pt-4 flex flex-row flex-wrap lg:flex-col gap-2">
-                <a href="#contact" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-black text-white rounded-full text-xs font-semibold hover:bg-gray-800 transition-all w-auto shadow-md">
-                  <Mail className="w-4 h-4" />
-                  Agendar consulta
-                </a>
-                <a href="https://wa.me/34919610420" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-black text-white rounded-full text-xs font-semibold hover:bg-gray-800 transition-all w-auto shadow-md">
-                  <MessageCircle className="w-4 h-4 text-white" />
-                  WhatsApp
-                </a>
               </li>
             </ul>
           </div>

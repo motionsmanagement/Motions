@@ -128,18 +128,27 @@ const Navbar: React.FC = () => {
             </a>
           </div>
 
-          {/* New Promo Banner - Linked to WhatsApp (Improved visibility) */}
+          {/* New Promo Banner - Linked to WhatsApp (Max Visibility) */}
           <a 
             href="https://wa.me/34919610420" 
-            className="relative mb-8 rounded-[2.5rem] overflow-hidden group block shadow-[0_32px_64px_-16px_rgba(0,0,0,0.25)] border border-black/[0.03]"
+            className="relative mb-8 rounded-[2.5rem] overflow-hidden group block shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-black/[0.03]"
             onClick={() => setIsMenuOpen(false)}
           >
-            <img src="/menuside.jpg" alt="Oferta Especial" className="w-full h-64 object-cover brightness-75 group-hover:scale-105 transition-transform duration-1000" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-8">
-              <span className="text-white/60 text-[11px] font-bold uppercase tracking-[0.3em] mb-3 leading-none">Promoción exclusiva</span>
-              <h4 className="text-white text-3xl md:text-4xl font-extrabold leading-[1.05] tracking-tight">
+            <img src="/menuside.jpg" alt="Oferta Especial" className="w-full h-80 object-cover brightness-[0.8] group-hover:scale-105 transition-transform duration-[1.5s]" />
+            
+            {/* Overlay Content */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8">
+              <h4 className="text-white text-4xl font-extrabold leading-[1.05] tracking-tight mb-8">
                 Obtén un 10% <br /> de descuento
               </h4>
+
+              {/* Premium Button Style Overlay */}
+              <div className="bg-black text-white rounded-full pl-6 pr-1.5 py-1.5 flex items-center justify-between gap-4 w-fit shadow-2xl">
+                <span className="text-sm font-bold tracking-tight">Obtener ahora</span>
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black">
+                  <ChevronRight className="w-4 h-4" />
+                </div>
+              </div>
             </div>
           </a>
         </div>
