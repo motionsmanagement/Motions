@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
   }, [location]);
 
   const isLegalPage = ['/privacidad', '/cookies', '/aviso-legal'].includes(location.pathname);
-  const showDarkNavbar = isScrolled || isLegalPage;
+  const showDarkNavbar = isScrolled || isLegalPage || isMenuOpen;
 
   const themeClass = showDarkNavbar
     ? "bg-white/80 border-black/5 shadow-lg text-[#2D241E]"
