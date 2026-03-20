@@ -67,9 +67,16 @@ const Footer: React.FC = () => {
               <li className="flex items-start gap-4 text-gray-600">
                 <Phone className="w-4 h-4 mt-1 shrink-0 opacity-40" />
                 <div className="flex flex-col items-start">
-                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">WhatsApp</span>
-                  <a href="https://wa.me/34919610420" className="text-gray-600 hover:text-black transition-colors text-base font-medium flex items-center gap-2">
+                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">Llamadas</span>
+                  <a href="tel:+34919610420" className="text-gray-600 hover:text-black transition-colors text-base font-medium mb-3">
                     +34 919 61 04 20
+                  </a>
+                  <a 
+                    href="https://wa.me/34919610420" 
+                    className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full text-[11px] font-semibold hover:bg-gray-800 transition-all shadow-md group"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5 text-white" />
+                    Mandar un mensaje
                   </a>
                 </div>
               </li>

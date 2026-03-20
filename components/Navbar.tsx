@@ -94,9 +94,9 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        <div className="flex flex-col h-full px-8 pt-32 pb-12 overflow-y-auto">
+        <div className="flex flex-col h-full px-8 pt-24 pb-8 overflow-hidden">
           {/* Main Navigation Links */}
-          <div className="flex flex-col gap-10 text-left mb-16">
+          <div className="flex flex-col gap-9 text-left mb-10">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -105,13 +105,13 @@ const Navbar: React.FC = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
-                <ChevronRight className="w-6 h-6 text-black/20 group-hover:text-black transition-colors" />
+                <ChevronRight className="w-5 h-5 text-black/20 group-hover:text-black transition-colors" />
               </Link>
             ))}
           </div>
 
-          {/* Quick Choice Buttons - Restored Horizontal */}
-          <div className="flex gap-3 w-full mb-10">
+          {/* Quick Choice Buttons */}
+          <div className="flex gap-3 w-full mb-8">
             <a 
               href="https://wa.me/34919610420" 
               className="flex-1 py-4 rounded-full bg-black text-white font-semibold text-sm text-center shadow-2xl active:scale-95 transition-all" 
@@ -128,24 +128,24 @@ const Navbar: React.FC = () => {
             </a>
           </div>
 
-          {/* New Promo Banner - Linked to WhatsApp (Max Visibility) */}
+          {/* New Promo Banner - Linked to WhatsApp (Optimal visibility) */}
           <a 
             href="https://wa.me/34919610420" 
-            className="relative mb-8 rounded-[2.5rem] overflow-hidden group block shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-black/[0.03]"
+            className="flex-1 relative rounded-[2.5rem] overflow-hidden group block shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-black/[0.03]"
             onClick={() => setIsMenuOpen(false)}
           >
-            <img src="/menuside.jpg" alt="Oferta Especial" className="w-full h-80 object-cover brightness-[0.8] group-hover:scale-105 transition-transform duration-[1.5s]" />
+            <img src="/menuside.jpg" alt="Obtén Descuento" className="absolute inset-0 w-full h-full object-cover brightness-[0.7] group-hover:scale-105 transition-transform duration-[1.5s]" />
             
-            {/* Overlay Content */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8">
-              <h4 className="text-white text-4xl font-extrabold leading-[1.05] tracking-tight mb-8">
+            {/* Overlay Content - Bottom Aligned */}
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-7 flex flex-col justify-end">
+              <h4 className="text-white text-[1.75rem] font-extrabold leading-[1.05] tracking-tight mb-5 px-1">
                 Obtén un 10% <br /> de descuento
               </h4>
 
               {/* Premium Button Style Overlay */}
-              <div className="bg-black text-white rounded-full pl-6 pr-1.5 py-1.5 flex items-center justify-between gap-4 w-fit shadow-2xl">
-                <span className="text-sm font-bold tracking-tight">Obtener ahora</span>
-                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black">
+              <div className="bg-black/90 text-white rounded-full pl-5 pr-1.5 py-1.5 flex items-center justify-between gap-3 w-fit shadow-2xl backdrop-blur-md border border-white/10 ml-1">
+                <span className="text-[11px] font-bold tracking-tight">Obtener ahora</span>
+                <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center text-black">
                   <ChevronRight className="w-4 h-4" />
                 </div>
               </div>
