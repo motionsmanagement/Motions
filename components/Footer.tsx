@@ -78,14 +78,14 @@ const Footer: React.FC = () => {
                   <span className="text-gray-600 text-base">Madrid, España</span>
                 </div>
               </li>
-              <li className="pt-4 flex flex-col gap-3">
-                <a href="#contact" className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-black text-white rounded-full text-xs font-semibold hover:bg-gray-800 transition-all w-full md:w-auto shadow-md">
+              <li className="pt-4 flex flex-row flex-wrap lg:flex-col gap-2">
+                <a href="#contact" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-black text-white rounded-full text-xs font-semibold hover:bg-gray-800 transition-all w-auto shadow-md">
                   <Mail className="w-4 h-4" />
                   Agendar consulta
                 </a>
-                <a href="https://wa.me/34919610420" className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-black text-white rounded-full text-xs font-semibold hover:bg-gray-800 transition-all w-full md:w-auto shadow-md">
+                <a href="https://wa.me/34919610420" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-black text-white rounded-full text-xs font-semibold hover:bg-gray-800 transition-all w-auto shadow-md">
                   <MessageCircle className="w-4 h-4 text-white" />
-                  WhatsApp Business
+                  WhatsApp
                 </a>
               </li>
             </ul>

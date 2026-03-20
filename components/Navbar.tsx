@@ -81,10 +81,22 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 z-[100] bg-white transition-all duration-500 md:hidden ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
-        <div className="flex flex-col h-full px-8 pt-24 pb-12 overflow-y-auto">
+        {/* Top Header inside Overlay */}
+        <div className="absolute top-0 left-0 right-0 h-20 px-8 flex justify-between items-center bg-white border-b border-black/[0.03]">
+          <Link to="/" onClick={() => setIsMenuOpen(false)}>
+            <img src="/motionsblack.png" alt="Motions Logo" className="h-7 w-auto" />
+          </Link>
+          <button 
+            onClick={() => setIsMenuOpen(false)}
+            className="p-2 -mr-2 text-black hover:opacity-70 transition-opacity"
+          >
+            <X className="w-8 h-8" />
+          </button>
+        </div>
+
+        <div className="flex flex-col h-full px-8 pt-32 pb-12 overflow-y-auto">
           {/* Main Navigation Links */}
-          {/* Main Navigation Links */}
-          <div className="flex flex-col gap-8 text-left mb-12">
+          <div className="flex flex-col gap-10 text-left mb-16">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -93,7 +105,7 @@ const Navbar: React.FC = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
-                <ChevronRight className="w-5 h-5 text-black/20 group-hover:text-black transition-colors" />
+                <ChevronRight className="w-6 h-6 text-black/20 group-hover:text-black transition-colors" />
               </Link>
             ))}
           </div>
@@ -102,54 +114,34 @@ const Navbar: React.FC = () => {
           <div className="flex gap-3 w-full mb-10">
             <a 
               href="https://wa.me/34919610420" 
-              className="flex-1 py-3.5 rounded-full bg-black text-white font-semibold text-sm text-center shadow-xl active:scale-95 transition-all" 
+              className="flex-1 py-4 rounded-full bg-black text-white font-semibold text-sm text-center shadow-2xl active:scale-95 transition-all" 
               onClick={() => setIsMenuOpen(false)}
             >
               Empezar Ahora
             </a>
             <a 
               href="tel:+34919610420" 
-              className="flex-1 py-3.5 rounded-full border border-black/10 text-black font-semibold text-sm text-center active:scale-95 transition-all" 
+              className="flex-1 py-4 rounded-full border border-black/10 text-black font-semibold text-sm text-center active:scale-95 transition-all" 
               onClick={() => setIsMenuOpen(false)}
             >
               Llamar
             </a>
           </div>
 
-          {/* New Promo Banner - Linked to WhatsApp */}
+          {/* New Promo Banner - Linked to WhatsApp (Improved visibility) */}
           <a 
             href="https://wa.me/34919610420" 
-            className="relative mb-12 rounded-[2rem] overflow-hidden group block shadow-2xl"
+            className="relative mb-8 rounded-[2.5rem] overflow-hidden group block shadow-[0_32px_64px_-16px_rgba(0,0,0,0.25)] border border-black/[0.03]"
             onClick={() => setIsMenuOpen(false)}
           >
-            <img src="/menuside.jpg" alt="Obtén Descuento" className="w-full h-44 object-cover brightness-75 group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
-              <span className="text-white/60 text-[10px] font-bold uppercase tracking-[0.2em] mb-2 leading-none">Oferta especial</span>
-              <h4 className="text-white text-3xl font-extrabold leading-[1.1] tracking-tight">
+            <img src="/menuside.jpg" alt="Oferta Especial" className="w-full h-64 object-cover brightness-75 group-hover:scale-105 transition-transform duration-1000" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-8">
+              <span className="text-white/60 text-[11px] font-bold uppercase tracking-[0.3em] mb-3 leading-none">Promoción exclusiva</span>
+              <h4 className="text-white text-3xl md:text-4xl font-extrabold leading-[1.05] tracking-tight">
                 Obtén un 10% <br /> de descuento
               </h4>
             </div>
           </a>
-
-          {/* Support Buttons - Black & White Pills at Bottom */}
-          <div className="mt-auto pt-8 border-t border-black/5">
-            <div className="flex gap-2">
-              <a 
-                href="https://wa.me/34919610420" 
-                className="flex-1 py-3 px-4 rounded-full bg-black text-white flex items-center justify-center gap-2 text-xs font-semibold active:opacity-80 transition-opacity"
-              >
-                <MessageCircle className="w-4 h-4 text-white" />
-                WhatsApp
-              </a>
-              <a 
-                href="mailto:contacto@motions.es" 
-                className="flex-1 py-3 px-4 rounded-full bg-black text-white flex items-center justify-center gap-2 text-xs font-semibold active:opacity-80 transition-opacity"
-              >
-                <Mail className="w-4 h-4 text-white/60" />
-                Email
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </>
