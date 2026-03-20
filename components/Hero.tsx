@@ -29,33 +29,30 @@ const Hero: React.FC = () => {
       </div>
 
       <div className={`relative z-10 px-6 md:px-12 flex flex-col items-center text-center transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <div className="max-w-5xl">
-          <h1 className="text-[2.65rem] sm:text-5xl md:text-[5.5rem] lg:text-[6.5rem] leading-[1.05] text-white mb-8 tracking-tighter font-medium">
+        <div className="max-w-4xl">
+          <h1 className="text-[2.25rem] sm:text-4xl md:text-[5rem] lg:text-[5.5rem] leading-[1.05] text-white mb-6 tracking-tighter font-medium">
             Más Clientes para<br />
             Tu Restaurante
           </h1>
 
-          <div className="mb-12">
-            <p className="text-white/80 text-base md:text-xl max-w-3xl mx-auto leading-relaxed tracking-tight">
-              Especialistas en restauración. Resultados medibles. <br className="hidden md:block" />
-              Más visibilidad y ventas. Presencia digital completa: Google Maps + Web optimizada.
+          <div className="mb-10">
+            <p className="text-white/80 text-sm sm:text-base md:text-xl max-w-2xl mx-auto leading-relaxed tracking-tight">
+              Dedicados al sector gastronómico, mejoramos tu presencia digital y convertimos visitas online en reservas.
             </p>
           </div>
 
-          {/* New Dual Buttons - Premium Centered Layout */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* Dual Buttons - Horizontal on all screens */}
+          <div className="flex flex-row items-center justify-center gap-3 sm:gap-4">
             <a 
-              href="https://wa.me/34919610420" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto px-10 py-4 bg-black text-white rounded-full font-semibold text-base transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-2xl border border-white/5"
+              href="#contact" 
+              className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-semibold text-xs sm:text-sm transition-all hover:bg-white/20 hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-2xl"
             >
               Empezar ahora
-              <img src="/anagram.png" alt="Motions Anagram" className="w-5 h-5 invert brightness-0" />
+              <img src="/anagram.png" alt="Motions Anagram" className="w-3.5 h-3.5 sm:w-4 sm:h-4 invert brightness-0" />
             </a>
             <a 
-              href="#cases" 
-              className="w-full sm:w-auto px-10 py-4 bg-white text-black rounded-full font-semibold text-base shadow-2xl transition-all hover:bg-white/90 hover:scale-105 active:scale-95 text-center"
+              href="#services" 
+              className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white text-black rounded-full font-semibold text-xs sm:text-sm shadow-2xl transition-all hover:bg-white/90 hover:scale-105 active:scale-95 flex items-center justify-center"
             >
               Saber más
             </a>
