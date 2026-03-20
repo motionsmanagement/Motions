@@ -56,8 +56,8 @@ const Navbar: React.FC = () => {
 
           <div className="flex items-center gap-2 md:gap-3">
             {/* Desktop CTAs */}
-            <a href="#contact" className={`hidden lg:block px-4 md:px-5 py-2 rounded-full border text-xs md:text-sm font-medium transition-all tracking-tight ${showDarkNavbar ? "border-black/10 text-black/90 hover:bg-black/5" : "border-white/20 text-white/90 hover:bg-white/10"}`}>
-              Agendar Llamada
+            <a href="tel:+34919610420" className={`hidden lg:block px-4 md:px-5 py-2 rounded-full border text-xs md:text-sm font-medium transition-all tracking-tight ${showDarkNavbar ? "border-black/10 text-black/90 hover:bg-black/5" : "border-white/20 text-white/90 hover:bg-white/10"}`}>
+              +34 919 61 04 20
             </a>
             <a href="#contact" className={`hidden md:block px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-semibold transition-all shadow-lg tracking-tight ${showDarkNavbar ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}>
               Empezar Ahora
@@ -96,8 +96,8 @@ const Navbar: React.FC = () => {
             <a href="https://wa.me/34919610420" className="w-full py-4 rounded-full bg-black text-white font-bold text-lg" onClick={() => setIsMenuOpen(false)}>
               Empezar Ahora
             </a>
-            <a href="https://wa.me/34919610420" className="w-full py-4 rounded-full border border-black/10 text-black/60 font-semibold" onClick={() => setIsMenuOpen(false)}>
-              Agendar Llamada
+            <a href="tel:+34919610420" className="w-full py-4 rounded-full border border-black/10 text-black/60 font-semibold" onClick={() => setIsMenuOpen(false)}>
+              +34 919 61 04 20
             </a>
           </div>
         </div>
