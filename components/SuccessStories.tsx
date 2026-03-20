@@ -261,12 +261,12 @@ const SuccessStories: React.FC = () => {
                                                 </div>
                                             </div>
 
-                                            {/* Aesthetic Black Pill Metrics Row */}
-                                            <div className="flex flex-wrap items-center gap-2.5">
+                                            {/* Minimalist Black Pill Metrics Row */}
+                                            <div className="flex flex-wrap items-center gap-2">
                                                 {item.metrics.map((metric, idx) => (
-                                                    <div key={idx} className="flex items-center gap-2 px-4 py-2 bg-black border border-white/10 rounded-full shadow-lg hover:scale-105 hover:bg-neutral-900 transition-all duration-300">
-                                                        <span className="text-[11px] font-medium text-white/50 lowercase first-letter:uppercase tracking-tight">{metric.label}</span>
-                                                        <span className="text-[13px] font-extrabold text-white tabular-nums">{metric.value}</span>
+                                                    <div key={idx} className="flex items-center gap-2 px-4 py-1.5 bg-black border border-white/10 rounded-full shadow-sm">
+                                                        <span className="text-[11px] font-medium text-white/70 lowercase first-letter:uppercase tracking-tight">{metric.label}</span>
+                                                        <span className="text-[11px] font-medium text-white tabular-nums">{metric.value}</span>
                                                     </div>
                                                 ))}
                                             </div>
