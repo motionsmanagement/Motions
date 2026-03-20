@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black/80"></div>
       </div>
 
-      <div className={`relative z-10 px-6 md:px-12 w-full max-w-7xl mx-auto flex flex-col items-start text-left transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <div className={`relative z-10 px-6 md:px-12 w-full max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="max-w-4xl w-full">
           <h1 className="text-4xl sm:text-5xl md:text-[5.5rem] lg:text-[6rem] leading-[1.15] text-white mb-8 tracking-tight font-medium md:font-normal">
             Más Clientes para<br />
@@ -36,13 +36,13 @@ const Hero: React.FC = () => {
           </h1>
 
           <div className="mb-10 w-full">
-            <p className="text-white/80 text-sm sm:text-base md:text-xl max-w-2xl leading-relaxed tracking-tight">
+            <p className="text-white/80 text-sm sm:text-base md:text-xl max-w-2xl mx-auto md:mx-0 leading-relaxed tracking-tight">
               Dedicados al sector gastronómico, mejoramos tu presencia digital y convertimos visitas online en reservas.
             </p>
           </div>
 
           {/* Dual Buttons - Horizontal on all screens */}
-          <div className="flex flex-row items-center justify-start gap-3 sm:gap-4 w-full">
+          <div className="flex flex-row items-center justify-center md:justify-start gap-3 sm:gap-4 w-full">
             <a 
               href="#contacto" 
               className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-semibold text-xs sm:text-sm transition-all hover:bg-white/20 hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-2xl"
