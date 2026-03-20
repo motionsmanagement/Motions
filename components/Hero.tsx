@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex flex-col justify-end">
+    <section ref={ref} className="relative min-h-screen flex flex-col items-center justify-center pt-20">
       {/* Background Image Placeholder */}
       <div className="absolute inset-0 z-0">
         <img
@@ -25,58 +25,40 @@ const Hero: React.FC = () => {
           className="w-full h-full object-cover brightness-[0.7]"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black/80"></div>
       </div>
 
-      <div className={`relative z-10 px-6 md:px-12 pb-16 md:pb-24 max-w-7xl mx-auto w-full flex flex-col items-start text-left transition-all duration-700 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <div className="max-w-4xl mb-12">
-          <h1 className="text-[2.65rem] sm:text-5xl md:text-[5.5rem] leading-[1.05] text-white mb-6 tracking-tight">
+      <div className={`relative z-10 px-6 md:px-12 flex flex-col items-center text-center transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className="max-w-5xl">
+          <h1 className="text-[2.65rem] sm:text-5xl md:text-[5.5rem] lg:text-[6.5rem] leading-[1.05] text-white mb-8 tracking-tighter font-medium">
             Más Clientes para<br />
             Tu Restaurante
           </h1>
 
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-0 mt-8 md:mt-16">
-            <p className="text-white/80 text-base md:text-xl max-w-2xl leading-relaxed tracking-tight text-left">
-              Dedicados al sector gastronómico, mejoramos tu presencia digital y convertimos visitas online en reservas.
+          <div className="mb-12">
+            <p className="text-white/80 text-base md:text-xl max-w-3xl mx-auto leading-relaxed tracking-tight">
+              Especialistas en restauración. Resultados medibles. <br className="hidden md:block" />
+              Más visibilidad y ventas. Presencia digital completa: Google Maps + Web optimizada.
             </p>
           </div>
-        </div>
 
-        <div className="hidden md:flex flex-col lg:flex-row items-start justify-start gap-8 w-full md:-ml-5">
-          <div className="liquid-glass-dark rounded-[2rem] md:rounded-[2.5rem] p-4 md:p-5 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8 max-w-[95%] md:max-w-none">
-            <div className="flex items-center gap-3 text-white">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                <Brain className="w-4.5 h-4.5 md:w-5 md:h-5 text-white/80" />
-              </div>
-              <div>
-                <p className="text-sm md:text-sm font-semibold tracking-tight leading-tight">Marketing para Hostelería</p>
-                <p className="text-xs md:text-xs text-white/60 leading-tight">Especialistas en restauración</p>
-              </div>
-            </div>
-
-            <div className="hidden md:block w-px h-10 bg-white/10"></div>
-
-            <div className="flex items-center gap-3 text-white">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                <Award className="w-4.5 h-4.5 md:w-5 md:h-5 text-white/80" />
-              </div>
-              <div>
-                <p className="text-sm md:text-sm font-semibold tracking-tight leading-tight">Resultados medibles</p>
-                <p className="text-xs md:text-xs text-white/60 leading-tight">más visibilidad y ventas</p>
-              </div>
-            </div>
-
-            <div className="hidden md:block w-px h-10 bg-white/10"></div>
-
-            <div className="flex items-center gap-3 text-white">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                <Globe className="w-4.5 h-4.5 md:w-5 md:h-5 text-white/80" />
-              </div>
-              <div>
-                <p className="text-sm md:text-sm font-semibold tracking-tight leading-tight">Presencia digital completa</p>
-                <p className="text-xs md:text-xs text-white/60 leading-tight">Google Maps + Web optimizada</p>
-              </div>
-            </div>
+          {/* New Dual Buttons - Premium Centered Layout */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a 
+              href="https://wa.me/34919610420" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-10 py-4 bg-black text-white rounded-full font-semibold text-base transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-2xl border border-white/5"
+            >
+              Empezar ahora
+              <img src="/anagram.png" alt="Motions Anagram" className="w-5 h-5 invert brightness-0" />
+            </a>
+            <a 
+              href="#cases" 
+              className="w-full sm:w-auto px-10 py-4 bg-white text-black rounded-full font-semibold text-base shadow-2xl transition-all hover:bg-white/90 hover:scale-105 active:scale-95 text-center"
+            >
+              Saber más
+            </a>
           </div>
         </div>
       </div>
