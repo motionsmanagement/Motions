@@ -110,10 +110,23 @@ const RecentWorks: React.FC = () => {
 
       {/* Footer CTA */}
       <div className="mt-16 flex justify-center">
-        <button className="flex items-center gap-2 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg">
+        {/* Desktop Link */}
+        <a 
+          href="#contact" 
+          className="hidden md:flex items-center gap-2 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg"
+        >
           Solicitar presupuesto
           <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </button>
+        </a>
+        
+        {/* Mobile Link (WhatsApp) */}
+        <a 
+          href="https://wa.me/34919610420" 
+          className="md:hidden flex items-center gap-2 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg"
+        >
+          Solicitar presupuesto
+          <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </a>
       </div>
     </section>
   );

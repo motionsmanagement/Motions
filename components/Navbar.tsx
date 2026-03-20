@@ -55,12 +55,18 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2 md:gap-3">
-            <button className={`hidden lg:block px-4 md:px-5 py-2 rounded-full border text-xs md:text-sm font-medium transition-all tracking-tight ${showDarkNavbar ? "border-black/10 text-black/90 hover:bg-black/5" : "border-white/20 text-white/90 hover:bg-white/10"}`}>
+            {/* Desktop CTAs */}
+            <a href="#contact" className={`hidden lg:block px-4 md:px-5 py-2 rounded-full border text-xs md:text-sm font-medium transition-all tracking-tight ${showDarkNavbar ? "border-black/10 text-black/90 hover:bg-black/5" : "border-white/20 text-white/90 hover:bg-white/10"}`}>
               Agendar Llamada
-            </button>
-            <button className={`px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-semibold transition-all shadow-lg tracking-tight ${showDarkNavbar ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}>
+            </a>
+            <a href="#contact" className={`hidden md:block px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-semibold transition-all shadow-lg tracking-tight ${showDarkNavbar ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}>
               Empezar Ahora
-            </button>
+            </a>
+
+            {/* Mobile CTAs (Direct to WhatsApp) */}
+            <a href="https://wa.me/34919610420" className={`md:hidden px-4 py-2 rounded-full text-xs font-semibold transition-all shadow-lg tracking-tight ${showDarkNavbar ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}>
+              Empezar Ahora
+            </a>
 
             {/* Mobile Menu Toggle */}
             <button
@@ -87,12 +93,12 @@ const Navbar: React.FC = () => {
             </Link>
           ))}
           <div className="flex flex-col gap-4 w-full mt-8">
-            <button className="w-full py-4 rounded-full bg-black text-white font-bold text-lg" onClick={() => setIsMenuOpen(false)}>
+            <a href="https://wa.me/34919610420" className="w-full py-4 rounded-full bg-black text-white font-bold text-lg" onClick={() => setIsMenuOpen(false)}>
               Empezar Ahora
-            </button>
-            <button className="w-full py-4 rounded-full border border-black/10 text-black/60 font-semibold" onClick={() => setIsMenuOpen(false)}>
+            </a>
+            <a href="https://wa.me/34919610420" className="w-full py-4 rounded-full border border-black/10 text-black/60 font-semibold" onClick={() => setIsMenuOpen(false)}>
               Agendar Llamada
-            </button>
+            </a>
           </div>
         </div>
       </div>

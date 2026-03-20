@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
                 <Phone className="w-4 h-4 mt-1 shrink-0 opacity-40" />
                 <div className="flex flex-col items-start">
                   <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">Llámanos</span>
-                  <a href="tel:+919610420" className="text-gray-600 hover:text-black transition-colors font-medium text-[13px]">+919 61 04 20</a>
+                  <a href="https://wa.me/34919610420" className="text-gray-600 hover:text-black transition-colors text-[13px] font-medium">+34 919 61 04 20</a>
                 </div>
               </li>
               <li className="flex items-start gap-4 text-gray-600">

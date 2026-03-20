@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MessageSquare } from 'lucide-react';
+import { Phone, MessageSquare, Mail } from 'lucide-react';
 
 const FinalCTA: React.FC = () => {
   const [visible, setVisible] = React.useState(false);
@@ -39,16 +39,31 @@ const FinalCTA: React.FC = () => {
           diseñados para convertir simples visitas online en reservas reales.
         </p>
 
-        <div className="flex flex-row items-center justify-center gap-4 mb-24 w-full">
-          <button className="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm sm:text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group flex-1 md:flex-none justify-center">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-24 w-full">
+          <a 
+            href="tel:+34919610420" 
+            className="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm sm:text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group w-full md:w-auto justify-center"
+          >
             <Phone className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-            Llámanos
-          </button>
+            <span className="md:hidden">Llámanos</span>
+            <span className="hidden md:block">+34 919 61 04 20</span>
+          </a>
 
-          <button className="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm sm:text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group flex-1 md:flex-none justify-center">
+          <a 
+            href="https://wa.me/34919610420"
+            className="md:hidden flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm sm:text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group w-full justify-center"
+          >
             <MessageSquare className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
             Mensaje
-          </button>
+          </a>
+
+          <a 
+            href="mailto:contacto@motions.es"
+            className="hidden md:flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm sm:text-lg font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl group w-auto justify-center"
+          >
+            <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
+            contacto@motions.es
+          </a>
         </div>
       </div>
     </section>
