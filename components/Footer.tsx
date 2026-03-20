@@ -46,26 +46,24 @@ const Footer: React.FC = () => {
             <h5 className="text-black font-semibold mb-8 text-sm uppercase tracking-widest">Contacto</h5>
             <ul className="space-y-6">
               <li className="space-y-4">
-                <div className="flex items-start gap-4 text-gray-600">
-                  <Mail className="w-4 h-4 mt-2 shrink-0 opacity-40" />
+                <div className="flex items-start text-gray-600">
                   <div className="grid gap-5">
                     <div className="flex flex-col items-start">
-                      <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">General</span>
-                      <a href="mailto:contacto@motions.es" className="text-gray-600 hover:text-black transition-colors text-base">contacto@motions.es</a>
+                      <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">General</span>
+                      <a href="mailto:contacto@motions.es" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition-colors text-base">contacto@motions.es</a>
                     </div>
                     <div className="flex flex-col items-start">
-                      <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">Ventas</span>
-                      <a href="mailto:ventas@motions.es" className="text-gray-600 hover:text-black transition-colors text-base">ventas@motions.es</a>
+                      <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">Ventas</span>
+                      <a href="mailto:ventas@motions.es" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition-colors text-base">ventas@motions.es</a>
                     </div>
                     <div className="flex flex-col items-start">
-                      <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">Soporte</span>
-                      <a href="mailto:clientes@motions.es" className="text-gray-600 hover:text-black transition-colors text-base">clientes@motions.es</a>
+                      <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">Soporte</span>
+                      <a href="mailto:clientes@motions.es" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition-colors text-base">clientes@motions.es</a>
                     </div>
                   </div>
                 </div>
               </li>
-              <li className="flex items-start gap-4 text-gray-600">
-                <Phone className="w-4 h-4 mt-1 shrink-0 opacity-40" />
+              <li className="flex items-start text-gray-600">
                 <div className="flex flex-col items-start">
                   <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">Llamadas</span>
                   <a href="tel:+34919610420" className="text-gray-600 hover:text-black transition-colors text-base font-medium mb-3">
@@ -73,15 +71,16 @@ const Footer: React.FC = () => {
                   </a>
                   <a 
                     href="https://wa.me/34919610420" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2.5 px-5 py-2.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-gray-800 transition-all shadow-md group"
                   >
-                    <MessageCircle className="w-4 h-4 text-white" />
+                    <img src="/anagram.png" alt="Motions Anagram" className="w-5 h-5 invert brightness-0" />
                     Mandar un mensaje
                   </a>
                 </div>
               </li>
-              <li className="flex items-start gap-4 text-gray-600">
-                <MapPin className="w-4 h-4 mt-1 shrink-0 opacity-40" />
+              <li className="flex items-start text-gray-600">
                 <div className="flex flex-col items-start">
                   <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">Localización</span>
                   <span className="text-gray-600 text-base">Madrid, España</span>

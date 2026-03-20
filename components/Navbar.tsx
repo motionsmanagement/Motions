@@ -123,6 +123,8 @@ const Navbar: React.FC = () => {
           <div className="flex gap-3 w-full mb-8">
             <a 
               href="https://wa.me/34919610420" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex-1 py-4 rounded-full bg-black text-white font-semibold text-sm text-center shadow-2xl active:scale-95 transition-all" 
               onClick={() => setIsMenuOpen(false)}
             >
@@ -140,6 +142,8 @@ const Navbar: React.FC = () => {
           {/* New Promo Banner - Linked to WhatsApp (Optimal visibility) */}
           <a 
             href="https://wa.me/34919610420" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-1 relative rounded-[2.5rem] overflow-hidden group block shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-black/[0.03]"
             onClick={() => setIsMenuOpen(false)}
           >
