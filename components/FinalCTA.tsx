@@ -150,7 +150,7 @@ const FinalCTA: React.FC = () => {
                       <span className="hidden md:inline">Solicitar presupuesto y auditoría</span>
                     </span>
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-black shadow-inner">
-                      <img src="/anagram.png" alt="Motions Anagram" className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform opacity-80" />
+                      <img src="/anagram2.png" alt="Motions Anagram" className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform opacity-100" />
                     </div>
                   </button>
                 </div>

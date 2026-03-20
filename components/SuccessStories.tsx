@@ -261,17 +261,12 @@ const SuccessStories: React.FC = () => {
                                                 </div>
                                             </div>
 
-                                            {/* Minimalist Metrics Tags Row */}
-                                            <div className="flex flex-wrap items-center gap-x-12 gap-y-6">
+                                            {/* Premium Pill Metrics Row */}
+                                            <div className="flex flex-wrap items-center gap-3">
                                                 {item.metrics.map((metric, idx) => (
-                                                    <div key={idx} className="flex items-center gap-3.5 group/metric">
-                                                        <div className="w-10 h-10 rounded-xl bg-black/[0.03] border border-black/5 flex items-center justify-center shrink-0">
-                                                            <metric.icon className="w-4.5 h-4.5 text-black" />
-                                                        </div>
-                                                        <div className="flex flex-col">
-                                                            <span className="text-[10px] font-bold text-black uppercase tracking-widest mb-1 opacity-30">{metric.label}</span>
-                                                            <span className="text-xl font-medium text-gray-900 tracking-tight leading-none">{metric.value}</span>
-                                                        </div>
+                                                    <div key={idx} className="flex items-center gap-2 px-5 py-2.5 bg-black/[0.03] border border-black/5 rounded-full group/metric hover:bg-black hover:text-white transition-all duration-300 shadow-sm">
+                                                        <span className="text-[10px] font-bold uppercase tracking-[0.1em] opacity-50 group-hover:text-white group-hover:opacity-80">{metric.label}</span>
+                                                        <span className="text-sm font-extrabold tracking-tight tabular-nums">{metric.value}</span>
                                                     </div>
                                                 ))}
                                             </div>
