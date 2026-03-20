@@ -15,10 +15,19 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close menu on navigation
+  // Close menu on navigation and handle body scroll
   useEffect(() => {
     setIsMenuOpen(false);
+    document.body.style.overflow = 'auto'; // Reset on navigation
   }, [location]);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isMenuOpen]);
 
   const isLegalPage = ['/privacidad', '/cookies', '/aviso-legal'].includes(location.pathname);
   const showDarkNavbar = isScrolled || isLegalPage || isMenuOpen;
@@ -142,10 +151,10 @@ const Navbar: React.FC = () => {
                 Obtén un 10% <br /> de descuento
               </h4>
 
-              {/* Premium Button Style Overlay */}
-              <div className="bg-black/90 text-white rounded-full pl-5 pr-1.5 py-1.5 flex items-center justify-between gap-3 w-fit shadow-2xl backdrop-blur-md border border-white/10 ml-1">
+              {/* Premium Inverted Button Style Overlay */}
+              <div className="bg-white/95 text-black rounded-full pl-5 pr-1.5 py-1.5 flex items-center justify-between gap-3 w-fit shadow-2xl backdrop-blur-md border border-black/5 ml-1">
                 <span className="text-[11px] font-bold tracking-tight">Obtener ahora</span>
-                <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center text-black">
+                <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center text-white">
                   <ChevronRight className="w-4 h-4" />
                 </div>
               </div>

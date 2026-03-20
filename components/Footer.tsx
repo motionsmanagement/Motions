@@ -73,9 +73,9 @@ const Footer: React.FC = () => {
                   </a>
                   <a 
                     href="https://wa.me/34919610420" 
-                    className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full text-[11px] font-semibold hover:bg-gray-800 transition-all shadow-md group"
+                    className="flex items-center gap-2.5 px-5 py-2.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-gray-800 transition-all shadow-md group"
                   >
-                    <MessageCircle className="w-3.5 h-3.5 text-white" />
+                    <MessageCircle className="w-4 h-4 text-white" />
                     Mandar un mensaje
                   </a>
                 </div>
