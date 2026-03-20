@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight, MessageCircle, Mail } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -83,46 +83,48 @@ const Navbar: React.FC = () => {
       <div className={`fixed inset-0 z-[100] bg-white transition-all duration-500 md:hidden ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
         <div className="flex flex-col h-full px-8 pt-24 pb-12 overflow-y-auto">
           {/* Main Navigation Links */}
-          <div className="flex flex-col gap-8 text-left mb-16">
+          <div className="flex flex-col gap-6 text-left mb-12">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-4xl font-semibold text-black tracking-tight flex items-center justify-between group"
+                className="text-2xl font-semibold text-black tracking-tight flex items-center justify-between group"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
-                <ChevronRight className="w-6 h-6 text-black/20 group-hover:text-black transition-colors" />
+                <ChevronRight className="w-5 h-5 text-black/20 group-hover:text-black transition-colors" />
               </Link>
             ))}
           </div>
 
-          {/* Mobile CTAs - Horizontal & Smaller */}
-          <div className="flex gap-3 w-full mb-12">
+          {/* Mobile Main CTA */}
+          <div className="flex flex-col gap-3 w-full mb-12">
             <a 
               href="https://wa.me/34919610420" 
-              className="flex-1 py-3.5 rounded-full bg-black text-white font-semibold text-sm text-center shadow-xl active:scale-95 transition-all" 
+              className="w-full py-4 rounded-full bg-black text-white font-semibold text-base text-center shadow-xl active:scale-95 transition-all" 
               onClick={() => setIsMenuOpen(false)}
             >
               Empezar Ahora
             </a>
-            <a 
-              href="tel:+34919610420" 
-              className="flex-1 py-3.5 rounded-full border border-black/10 text-black font-semibold text-sm text-center active:scale-95 transition-all" 
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Llamar
-            </a>
           </div>
 
-          {/* Professional Footer Info */}
+          {/* Support Buttons - Pills at Bottom */}
           <div className="mt-auto pt-8 border-t border-black/5">
-            <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-black/40 mb-4 text-left font-['Inter']">Información de contacto</p>
-            <div className="flex flex-col gap-4 text-left">
-              <a href="mailto:contacto@motions.es" className="text-black text-lg font-medium">contacto@motions.es</a>
-              <p className="text-black/60 text-sm leading-relaxed max-w-[240px]">
-                C. de la Princesa, 31, local 1, <br /> Moncloa - Aravaca, 28008 Madrid
-              </p>
+            <div className="flex gap-2">
+              <a 
+                href="https://wa.me/34919610420" 
+                className="flex-1 py-3 px-4 rounded-full bg-[#f3f4f1] border border-gray-100 flex items-center justify-center gap-2 text-black text-xs font-semibold active:bg-gray-100 transition-colors"
+              >
+                <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                WhatsApp
+              </a>
+              <a 
+                href="mailto:contacto@motions.es" 
+                className="flex-1 py-3 px-4 rounded-full bg-[#f3f4f1] border border-gray-100 flex items-center justify-center gap-2 text-black text-xs font-semibold active:bg-gray-100 transition-colors"
+              >
+                <Mail className="w-4 h-4 opacity-40" />
+                Email
+              </a>
             </div>
           </div>
         </div>

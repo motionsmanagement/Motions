@@ -75,13 +75,17 @@ const Footer: React.FC = () => {
                 <MapPin className="w-4 h-4 mt-1 shrink-0 opacity-40" />
                 <div className="flex flex-col items-start">
                   <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1.5 leading-none">Localización</span>
-                  <span className="text-gray-600 text-base font-serif italic">Madrid, España</span>
+                  <span className="text-gray-600 text-base">Madrid, España</span>
                 </div>
               </li>
-              <li className="pt-4">
-                <a href="#contact" className="inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white rounded-full text-xs font-semibold hover:bg-gray-800 transition-all">
-                  <MessageCircle className="w-4 h-4" />
+              <li className="pt-4 flex flex-col gap-3">
+                <a href="#contact" className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-black text-white rounded-full text-xs font-semibold hover:bg-gray-800 transition-all w-full md:w-auto">
+                  <Mail className="w-4 h-4" />
                   Agendar consulta
+                </a>
+                <a href="https://wa.me/34919610420" className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#25D366] text-white rounded-full text-xs font-semibold hover:bg-[#20bd5a] transition-all w-full md:w-auto">
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp Business
                 </a>
               </li>
             </ul>
