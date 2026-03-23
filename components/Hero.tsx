@@ -36,9 +36,9 @@ const Hero: React.FC = () => {
           </h1>
 
           <div className="mb-10 w-full">
-            <p className="text-white/80 text-[14px] sm:text-base md:text-xl lg:text-[1.35rem] max-w-3xl mx-auto md:mx-0 leading-tight md:leading-relaxed tracking-tight">
-              Dedicados al sector gastronómico, mejoramos tu <br /> 
-              presencia digital y convertimos visitas en reservas.
+            <p className="text-white/80 text-[13.5px] sm:text-base md:text-xl lg:text-[1.35rem] max-w-3xl mx-auto md:mx-0 leading-tight md:leading-relaxed tracking-tight">
+              Dedicados al sector gastronómico, mejoramos tu presencia <br /> 
+              digital y convertimos visitas en reservas.
             </p>
           </div>
 
