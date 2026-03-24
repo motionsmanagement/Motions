@@ -24,20 +24,20 @@ interface SuccessCase {
 const successCases: SuccessCase[] = [
     {
         id: '01',
-        category: 'Branding',
-        title: 'Honest Greens',
+        category: 'Google Maps',
+        title: 'Byoko',
         year: '2025',
-        location: 'Madrid, España',
-        image: '/honest greens.jpg',
-        description: 'Elevamos la identidad visual de la marca a través de un diseño publicitario sofisticado. Realizamos el diseño de banners de alta conversión para campañas digitales y un rediseño estratégico de la carta digital, mejorando la experiencia del comensal.',
-        graphicType: 'brand',
+        location: 'Málaga, España',
+        image: '/byoko.jpg',
+        description: 'Refuerzo de la confianza del cliente y atractivo visual. Implementamos una gestión profesional de reseñas para mejorar el ranking local, complementado con el diseño de piezas publicitarias dinámicas y la optimización técnica.',
+        graphicType: 'reputation',
         metrics: [
-            { label: 'Conversión', value: '+24%', icon: MousePointer2 },
-            { label: 'Engagement', value: '+15%', icon: Activity },
-            { label: 'Retención', value: '+18%', icon: Users }
+            { label: 'Visitas', value: '+210', icon: MousePointer2 },
+            { label: 'CTR', value: '+12%', icon: Target },
+            { label: 'Reseñas', value: '+32', icon: MessageSquare }
         ],
-        services: ['Identidad Visual', 'Diseño Publicitario', 'Carta Digital'],
-        outcome: 'Unificación total de la imagen de marca y mejora en la experiencia del comensal digital.'
+        services: ['Gestión de Reputación', 'Google Ads', 'SEO Local'],
+        outcome: 'Mejora del sentimiento de marca y aumento orgánico de visitas recurrentes.'
     },
     {
         id: '02',
@@ -75,23 +75,6 @@ const successCases: SuccessCase[] = [
     },
     {
         id: '04',
-        category: 'Google Maps',
-        title: 'Byoko',
-        year: '2025',
-        location: 'Málaga, España',
-        image: '/byoko.jpg',
-        description: 'Refuerzo de la confianza del cliente y atractivo visual. Implementamos una gestión profesional de reseñas para mejorar el ranking local, complementado con el diseño de piezas publicitarias dinámicas y la optimización técnica.',
-        graphicType: 'reputation',
-        metrics: [
-            { label: 'Visitas', value: '+210', icon: MousePointer2 },
-            { label: 'CTR', value: '+12%', icon: Target },
-            { label: 'Reseñas', value: '+32', icon: MessageSquare }
-        ],
-        services: ['Gestión de Reputación', 'Google Ads', 'SEO Local'],
-        outcome: 'Mejora del sentimiento de marca y aumento orgánico de visitas recurrentes.'
-    },
-    {
-        id: '05',
         category: 'Branding',
         title: 'Amaren',
         year: '2025',
@@ -108,7 +91,7 @@ const successCases: SuccessCase[] = [
         outcome: 'Impacto visual premium que atrae activamente a comensales de ticket medio-alto.'
     },
     {
-        id: '06',
+        id: '05',
         category: 'Google Maps',
         title: 'Árdia',
         year: '2025',
