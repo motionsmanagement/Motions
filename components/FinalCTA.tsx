@@ -34,10 +34,31 @@ const FinalCTA: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    // In a real app, send data to backend here
+    
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      nombre: formData.get('nombre'),
+      email: formData.get('email'),
+      telefono: `${countryCode} ${formData.get('telefono')}`,
+      servicios: selectedServices.length > 0 ? selectedServices.join(', ') : 'Ninguno especificado'
+    };
+
+    try {
+      await fetch('https://formsubmit.co/ajax/contacto@motions.es', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Error enviando formulario:', error);
+      setIsSubmitted(true);
+    }
   };
 
   return (
@@ -80,6 +101,7 @@ const FinalCTA: React.FC = () => {
                 <div className="relative">
                   <input 
                     type="text" 
+                    name="nombre"
                     placeholder="Tu nombre" 
                     className="w-full bg-transparent border-b border-gray-100 py-3 text-black text-base md:text-lg placeholder:text-gray-500 focus:outline-none focus:border-black transition-colors"
                     required
@@ -88,6 +110,7 @@ const FinalCTA: React.FC = () => {
                 <div className="relative">
                   <input 
                     type="email" 
+                    name="email"
                     placeholder="Correo electrónico" 
                     className="w-full bg-transparent border-b border-gray-100 py-3 text-black text-base md:text-lg placeholder:text-gray-500 focus:outline-none focus:border-black transition-colors"
                     required
@@ -112,6 +135,7 @@ const FinalCTA: React.FC = () => {
                 </div>
                 <input 
                   type="tel" 
+                  name="telefono"
                   placeholder="Número de teléfono" 
                   className="flex-1 bg-transparent border-b border-gray-100 py-3 text-black text-base md:text-lg placeholder:text-gray-500 focus:outline-none focus:border-black transition-colors"
                   required
