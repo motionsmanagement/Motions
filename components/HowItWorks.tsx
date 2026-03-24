@@ -262,7 +262,7 @@ const HowItWorks: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-20 flex flex-col items-center">
+        <div className="mt-20 hidden md:flex flex-col items-center">
           <a 
             href="https://wa.me/34919610420" 
             target="_blank"
