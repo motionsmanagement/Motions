@@ -16,11 +16,30 @@ const HowItWorks: React.FC = () => {
 
   return (
     <>
-      <div className="w-full">
+      <div className="w-full relative group">
         <picture>
           <source media="(min-width: 768px)" srcSet="/adbannermotionswebsite.jpg" />
           <img src="/adbannermobilemotions.jpg" alt="Motions Banner Metodología" className="w-full h-auto object-cover" />
         </picture>
+        
+        {/* Absolute perfectly placed layout for horizontal CTAs */}
+        <div className="absolute inset-0 w-full h-full flex flex-row items-end justify-center pb-[8%] md:pb-[6%] gap-3 md:gap-6 px-4">
+          <a 
+            href="#contacto" 
+            className="flex items-center justify-center gap-2 px-5 py-2.5 md:px-10 md:py-4 bg-black text-white rounded-full text-[11px] md:text-sm font-semibold hover:bg-neutral-900 transition-all hover:scale-105 active:scale-95 shadow-2xl border border-white/10 backdrop-blur-sm"
+          >
+            Solicitar Presupuesto
+          </a>
+          
+          <a 
+            href="https://wa.me/34919610420" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 px-5 py-2.5 md:px-10 md:py-4 bg-white text-black rounded-full text-[11px] md:text-sm font-semibold hover:bg-gray-50 transition-all hover:scale-105 active:scale-95 shadow-2xl border border-black/5"
+          >
+            Contactar por WhatsApp
+          </a>
+        </div>
       </div>
       <section id="como-funciona" ref={ref} className="bg-white py-28 font-['Inter']">
       <div className={`max-w-[1440px] mx-auto px-6 md:px-12 transition-all duration-700 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
