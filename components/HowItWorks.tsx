@@ -26,7 +26,7 @@ const HowItWorks: React.FC = () => {
         <div className="absolute inset-0 w-full h-full flex flex-row items-end justify-center pb-[8%] md:pb-[6%] gap-3 md:gap-6 px-4">
           <a 
             href="#contacto" 
-            className="flex items-center justify-center gap-2 px-5 py-2.5 md:px-10 md:py-4 liquid-glass-dark text-white rounded-full text-[11px] md:text-sm font-semibold hover:bg-black/50 transition-all hover:scale-105 active:scale-95 shadow-2xl border border-white/20 backdrop-blur-xl"
+            className="flex items-center justify-center gap-2 px-5 py-2.5 md:px-10 md:py-4 bg-white/70 backdrop-blur-xl border border-white/60 text-black rounded-full text-[11px] md:text-sm font-bold hover:bg-white/90 transition-all hover:scale-105 active:scale-95 shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
           >
             Solicitar Presupuesto
           </a>
@@ -35,7 +35,7 @@ const HowItWorks: React.FC = () => {
             href="https://wa.me/34919610420" 
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-5 py-2.5 md:px-10 md:py-4 liquid-glass text-white rounded-full text-[11px] md:text-sm font-semibold hover:bg-white/20 transition-all hover:scale-105 active:scale-95 shadow-2xl border border-white/30 backdrop-blur-xl"
+            className="flex items-center justify-center gap-2 px-5 py-2.5 md:px-10 md:py-4 bg-black/50 backdrop-blur-xl border border-white/20 text-white rounded-full text-[11px] md:text-sm font-semibold hover:bg-black/70 transition-all hover:scale-105 active:scale-95 shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
           >
             Contactar por WhatsApp
           </a>
