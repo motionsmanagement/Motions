@@ -11,6 +11,7 @@ const col1 = [
   '/motions101.jpg',
   '/motions115.jpg',
   '/motions121.jpg',
+  '/motions122.jpg',
 ];
 
 const col2 = [
@@ -23,6 +24,7 @@ const col2 = [
   '/motions116.jpg',
   '/motions104.jpg',
   '/motions113.jpg',
+  '/motions123.jpg',
 ];
 
 const col3 = [
@@ -32,8 +34,10 @@ const col3 = [
   '/motions105b.jpg',
   '/motions114.jpg',
   '/motions120.jpg',
-  '/pjji8.png',
   '/motions107.jpg',
+  '/motions124.jpg',
+  '/motions125.jpg',
+  '/motions1127.jpg',
 ];
 
 const RecentWorks: React.FC = () => {
