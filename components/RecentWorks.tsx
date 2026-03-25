@@ -2,20 +2,36 @@ import React from 'react';
 import { ChevronRight } from 'lucide-react';
 
 const col1 = [
-  '/pjj1.png',
-  '/pjj4.png',
-  '/pjj7.png',
+  '/motions100.jpg',
+  '/motions101.jpg',
+  '/motions102.jpg',
+  '/motions103.jpg',
+  '/motions104.jpg',
+  '/motions105.jpg',
+  '/motions105b.jpg',
+  '/motions106.jpg',
 ];
 
 const col2 = [
-  '/pjj2.png',
-  '/pjj5.png',
-  '/pjj9.png',
+  '/motions107.jpg',
+  '/motions108.jpg',
+  '/motions109.jpg',
+  '/motions110.jpg',
+  '/motions111.jpg',
+  '/motions112.jpg',
+  '/motions113.jpg',
+  '/motions114.jpg',
+  '/pjj6.png',
 ];
 
 const col3 = [
+  '/motions115.jpg',
+  '/motions116.jpg',
+  '/motions117.jpg',
+  '/motions118.jpg',
+  '/motions119.jpg',
+  '/motions120.jpg',
   '/pjj3.png',
-  '/pjj6.png',
   '/pjji8.png',
 ];
 
