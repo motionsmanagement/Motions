@@ -12,6 +12,7 @@ const col1 = [
   '/motions115.jpg',
   '/motions121.jpg',
   '/motions122.jpg',
+  '/motions128.jpg',
 ];
 
 const col2 = [
@@ -25,6 +26,7 @@ const col2 = [
   '/motions104.jpg',
   '/motions113.jpg',
   '/motions123.jpg',
+  '/motions129.jpg',
 ];
 
 const col3 = [
