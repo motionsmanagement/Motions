@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
               href="#contacto" 
               className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-semibold text-xs sm:text-sm transition-all hover:bg-white/20 hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-2xl group/hero"
             >
-              Empezar ahora
+              Pedir presupuesto
               <svg 
                 viewBox="0 0 24 24" 
                 fill="none" 

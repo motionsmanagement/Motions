@@ -23,11 +23,12 @@ const AdBanner: React.FC = () => {
             </div>
 
             {/* Floating Action Buttons */}
-            <div className="absolute bottom-20 md:bottom-40 left-1/2 -translate-x-1/2 w-full max-w-[95%] md:max-w-xl flex flex-row items-center justify-center gap-1.5 md:gap-5 px-1.5 md:px-4">
+            {/* Floating Action Buttons */}
+            <div className="absolute bottom-28 md:bottom-48 left-1/2 -translate-x-1/2 w-full flex flex-row items-center justify-center gap-2.5 md:gap-6 px-4">
                 {/* Secondary Button */}
                 <a 
                     href="#contacto"
-                    className="flex-1 md:flex-initial md:min-w-[200px] px-2 md:px-8 py-3 md:py-3.5 bg-white text-black rounded-full font-semibold text-[10px] md:text-sm transition-all hover:bg-neutral-100 hover:scale-[1.05] active:scale-95 shadow-xl flex items-center justify-center text-center"
+                    className="px-5 md:px-10 py-3.5 bg-white text-black rounded-full font-semibold text-[10px] md:text-sm transition-all hover:bg-neutral-100 hover:scale-[1.05] active:scale-95 shadow-xl flex items-center justify-center text-center whitespace-nowrap"
                 >
                     Pedir presupuesto
                 </a>
@@ -35,7 +36,7 @@ const AdBanner: React.FC = () => {
                 {/* Primary Button */}
                 <a 
                     href="#servicios"
-                    className="flex-1 md:flex-initial md:min-w-[200px] px-2 md:px-8 py-3 md:py-3.5 bg-black text-white rounded-full font-semibold text-[10px] md:text-sm transition-all hover:bg-neutral-800 hover:scale-[1.05] active:scale-95 shadow-xl flex items-center justify-center gap-1 md:gap-3 border border-white/10 text-center"
+                    className="px-5 md:px-10 py-3.5 bg-black text-white rounded-full font-semibold text-[10px] md:text-sm transition-all hover:bg-neutral-800 hover:scale-[1.05] active:scale-95 shadow-xl flex items-center justify-center gap-1.5 md:gap-3 border border-white/10 text-center whitespace-nowrap"
                 >
                     Más información
                     <svg 
