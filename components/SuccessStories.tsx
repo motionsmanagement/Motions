@@ -39,7 +39,6 @@ const successCases: SuccessCase[] = [
         description: 'Diseño de una identidad visual inspirada en la tradición japonesa con un toque contemporáneo. Implementamos un sistema de diseño gráfico integral que abarca la carta del restaurante, señalética y elementos corporativos, enfocándonos en la elegancia y la legibilidad.',
         graphicType: 'visibility',
         metrics: [
-            { label: 'Posicionamiento', value: 'Top 3', icon: MapPin },
             { label: 'Búsquedas', value: '+5.2k', icon: Search },
             { label: 'Reservas', value: '+25%', icon: CheckCircle2 }
         ],
@@ -61,8 +60,7 @@ const successCases: SuccessCase[] = [
         graphicType: 'brand',
         metrics: [
             { label: 'Reconocimiento', value: '+35%', icon: Target },
-            { label: 'Visitas', value: '+22%', icon: TrendingUp },
-            { label: 'Opiniones', value: '10/10', icon: MessageSquare }
+            { label: 'Visitas', value: '+22%', icon: TrendingUp }
         ],
         services: ['Naming', 'Diseño de Logo', 'Identidad Visual', 'Diseño de Menú'],
         outcome: 'Identidad visual impactante que ha posicionado a la marca como referente en redes sociales.'
@@ -85,8 +83,7 @@ const successCases: SuccessCase[] = [
         graphicType: 'reputation',
         metrics: [
             { label: 'Interacciones', value: '+45%', icon: Users },
-            { label: 'Visitas', value: '+28%', icon: MousePointer2 },
-            { label: 'Interés', value: '+40%', icon: TrendingUp }
+            { label: 'Visitas', value: '+28%', icon: MousePointer2 }
         ],
         services: ['Branding Integral', 'Diseño Merchandising', 'Carta de Vinos', 'Diseño Social Media'],
         outcome: 'Ecosistema visual premium que refuerza el posicionamiento de lujo del restaurante.'
@@ -149,8 +146,7 @@ const successCases: SuccessCase[] = [
         graphicType: 'reach',
         metrics: [
             { label: 'Visitas Local', value: '+25%', icon: MapPin },
-            { label: 'Clicks', value: '+12%', icon: Target },
-            { label: 'Impacto Visual', value: '100%', icon: Star }
+            { label: 'Clicks', value: '+12%', icon: Target }
         ],
         services: ['Señalética', 'Gráficos para Local', 'Banners Web', 'Branding Steakhouse'],
         outcome: 'Un concepto visual alternativo y sofisticado que se traslada del local a la web.'
