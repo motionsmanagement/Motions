@@ -161,7 +161,7 @@ const FinalCTA: React.FC = () => {
               <div className="pt-6 flex justify-center">
                 <button 
                   type="submit" 
-                  className="bg-black text-white rounded-full pl-6 md:pl-10 pr-2 md:pr-2.5 py-2 md:py-2.5 flex items-center justify-center md:justify-between gap-3 md:gap-8 group hover:bg-neutral-800 transition-all hover:scale-[1.02] active:scale-95 w-auto shadow-xl mx-auto"
+                  className="bg-black text-white rounded-full pl-6 md:pl-10 pr-2 md:pr-2.5 py-2 md:py-2.5 flex items-center justify-center gap-3 md:gap-8 group hover:bg-neutral-800 transition-all hover:scale-[1.02] active:scale-95 shadow-xl"
                 >
                   <span className="font-semibold tracking-tight text-[14px] md:text-lg leading-tight">
                     <span className="md:hidden">Solicitar presupuesto</span>
