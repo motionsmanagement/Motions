@@ -86,7 +86,7 @@ const FinalCTA: React.FC = () => {
               <h2 className="text-2xl md:text-4xl lg:text-5xl text-black font-medium tracking-tight leading-tight mb-3">
                 Lleva tu restaurante al siguiente nivel
               </h2>
-              <p className="text-gray-500 text-[11px] md:text-sm max-w-2xl mx-auto leading-relaxed font-light px-4">
+              <p className="text-gray-600/80 text-[11px] md:text-[15px] max-w-xl md:max-w-2xl mx-auto leading-relaxed md:leading-normal font-light px-4">
                 Déjanos tus datos y te llamaremos en menos de 24 horas para entender las necesidades de tu negocio y crear un plan a medida.
               </p>
             </div>

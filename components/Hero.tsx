@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Brain, Award, Globe } from 'lucide-react';
+import { Brain, Award, Globe, ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [visible, setVisible] = React.useState(false);
@@ -46,10 +46,10 @@ const Hero: React.FC = () => {
           <div className="flex flex-row items-center justify-center md:justify-start gap-3 sm:gap-4 w-full">
             <a 
               href="#contacto" 
-              className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-semibold text-xs sm:text-sm transition-all hover:bg-white/20 hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-2xl"
+              className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-semibold text-xs sm:text-sm transition-all hover:bg-white/20 hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-2xl group/hero"
             >
               Empezar ahora
-              <img src="/anagram.png" alt="Motions Anagram" className="w-3.5 h-3.5 sm:w-4 sm:h-4 invert brightness-0" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/hero:translate-x-1 transition-transform" />
             </a>
             <a 
               href="#servicios" 
