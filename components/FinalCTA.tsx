@@ -139,7 +139,7 @@ const FinalCTA: React.FC = () => {
 
               {/* Service Selection Pills */}
               <div className="space-y-4 md:space-y-5">
-                <label className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest block text-left pl-0.5">¿En qué podemos ayudarte?</label>
+                <label className="text-sm md:text-base font-medium text-[#2D241E]/80 block text-left pl-0.5">¿En qué podemos ayudarte?</label>
                 <div className="flex flex-wrap gap-2 justify-start min-h-[40px]">
                   {services.map((service) => (
                     <button
