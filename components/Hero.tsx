@@ -49,7 +49,14 @@ const Hero: React.FC = () => {
               className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-semibold text-xs sm:text-sm transition-all hover:bg-white/20 hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-2xl group/hero"
             >
               Empezar ahora
-              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/hero:translate-x-1 transition-transform" />
+              <svg 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/hero:translate-x-1 transition-transform rotate-90"
+              >
+                <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </a>
             <a 
               href="#servicios" 
