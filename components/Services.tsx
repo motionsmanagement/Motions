@@ -16,90 +16,83 @@ const Services: React.FC = () => {
 
     const services = [
         {
-            title: "Google My Business",
-            description: "Optimizamos tu presencia local para que tu negocio sea the primera opción cuando los clientes busquen dónde comer.",
-            stats: "RANKING TOP 3",
-            tag: "SEO LOCAL",
+            title: "Página Web",
+            description: "Desarrollamos plataformas de alto rendimiento diseñadas para convertir usuarios en reservas directas para tu restaurante.",
+            stats: "ALTA CONVERSIÓN",
+            tag: "DISEÑO WEB",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center">
-                    <div className="relative w-44 h-44 flex items-center justify-center">
-                        <div className="absolute inset-0 opacity-10">
-                            <svg width="100%" height="100%" viewBox="0 0 100 100">
-                                <path d="M0 20 H100 M0 50 H100 M0 80 H100 M20 0 V100 M50 0 V100 M80 0 V100" stroke="white" strokeWidth="0.5" fill="none" />
-                            </svg>
+                    {/* Ambient glow */}
+                    <div className={`absolute w-48 h-48 rounded-full bg-white/5 blur-3xl ${isVisible ? 'animate-pulse' : ''}`} style={{ animationDuration: '4s' }}></div>
+
+                    <div className="relative w-[140px] flex flex-col gap-2">
+                        {/* Browser bar */}
+                        <div className={`w-full h-5 rounded-t-xl bg-white/5 border border-white/10 flex items-center px-2 gap-1 transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+                            <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                            <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                            <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                            <div className="flex-1 mx-1.5 h-2 rounded-full bg-white/[0.07]"></div>
                         </div>
 
-                        <div className="relative z-10 w-16 h-16 flex items-center justify-center">
-                            <div className={`absolute inset-0 bg-white/10 blur-2xl rounded-full ${isVisible ? 'animate-pulse' : ''}`}></div>
-                            <div className="relative w-full h-full bg-white/5 border border-white/20 rounded-3xl flex items-center justify-center backdrop-blur-md shadow-2xl">
-                                <div className="flex flex-col items-center gap-1">
-                                    <UtensilsCrossed className="w-5 h-5 text-white/90" />
-                                    <div className="flex gap-0.5">
-                                        {[...Array(5)].map((_, i) => <Star key={i} className="w-1 h-1 text-white/40 fill-white/20" />)}
-                                    </div>
+                        {/* Main screen */}
+                        <div className={`w-full rounded-b-xl bg-white/[0.03] border border-t-0 border-white/10 p-3 space-y-2 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+                            {/* Hero area */}
+                            <div className="w-full h-10 rounded-lg bg-white/[0.05] border border-white/[0.07] flex items-end p-1.5">
+                                <div className="space-y-0.5">
+                                    <div className="h-1 w-12 bg-white/30 rounded-full"></div>
+                                    <div className="h-1 w-8 bg-white/15 rounded-full"></div>
                                 </div>
                             </div>
-                            <div className={`absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center shadow-lg ${isVisible ? 'animate-bounce' : ''}`} style={{ animationDuration: '3s' }}>
-                                <CheckCircle2 className="w-2.5 h-2.5 text-black" />
+                            {/* CTA button */}
+                            <div className={`flex justify-center transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+                                <div className="px-4 py-1 bg-white rounded-full flex items-center gap-1">
+                                    <div className="w-8 h-1.5 bg-black/40 rounded-full"></div>
+                                    <MousePointer2 className="w-2 h-2 text-black/60" />
+                                </div>
+                            </div>
+                            {/* Cards row */}
+                            <div className="grid grid-cols-2 gap-1.5">
+                                {[...Array(2)].map((_, i) => (
+                                    <div key={i} className={`h-8 rounded-lg bg-white/[0.04] border border-white/[0.06] flex flex-col justify-center p-1.5 gap-0.5 transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: `${400 + i * 100}ms` }}>
+                                        <div className="h-1 w-full bg-white/20 rounded-full"></div>
+                                        <div className="h-1 w-2/3 bg-white/10 rounded-full"></div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
 
-                        <div className="absolute inset-0 border border-white/5 rounded-full scale-75"></div>
-                        <div className={`absolute inset-0 border border-white/[0.03] rounded-full scale-110 ${isVisible ? 'animate-ping' : ''}`} style={{ animationDuration: '4s' }}></div>
+                        {/* Floating metric badge */}
+                        <div className={`absolute -bottom-4 -right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-2 py-1.5 flex items-center gap-1.5 shadow-xl transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+                            <div className={`w-1.5 h-1.5 rounded-full bg-white ${isVisible ? 'animate-pulse' : ''}`}></div>
+                            <span className="text-[8px] font-bold text-white tracking-wide">+24% reservas</span>
+                        </div>
                     </div>
                 </div>
             )
         },
         {
-            title: "Página Web",
-            description: "Desarrollamos plataformas de alto rendimiento diseñadas para convertir usuarios en ventas directas para tu negocio.",
-            stats: "ALTA VELOCIDAD",
-            tag: "NÚCLEO WEB",
+            title: "Branding",
+            description: "Creamos una identidad visual impactante y profesional que diferencia a tu negocio de la competencia de forma única.",
+            stats: "IDENTIDAD PREMIUM",
+            tag: "DISEÑO",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
-                <div className="relative w-full h-full flex items-center justify-center p-12">
-                    <div className="w-full h-full border border-white/10 rounded-2xl bg-[#0A0A0A] relative overflow-hidden flex flex-col shadow-2xl">
-                        <div className="h-8 border-b border-white/5 flex items-center justify-between px-4 bg-white/[0.02]">
-                            <div className="w-12 h-1.5 bg-white/20 rounded-full"></div>
-                            <div className="flex gap-2">
-                                <div className="w-4 h-1.5 bg-white/10 rounded-full"></div>
-                                <div className="w-4 h-1.5 bg-white/10 rounded-full"></div>
-                            </div>
-                        </div>
+                <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+                    {/* Ambient glow behind everything */}
+                    <div className={`absolute w-40 h-40 rounded-full bg-white/10 blur-3xl ${isVisible ? 'animate-pulse' : ''}`} style={{ animationDuration: '3s' }}></div>
 
-                        <div className="flex-1 p-5 flex flex-col gap-4">
-                            <div className="space-y-2">
-                                <div className={`h-3 w-3/4 bg-white/20 rounded-full transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'}`}></div>
-                                <div className={`h-2 w-1/2 bg-white/10 rounded-full transition-all duration-1000 delay-100 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'}`}></div>
-                            </div>
-
-                            <div className={`mt-2 p-3 rounded-xl border border-white/10 bg-white/5 flex items-center justify-between transition-all duration-1000 delay-200 ${isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
-                                <div className="flex flex-col gap-1">
-                                    <span className="text-[7px] text-white/40 uppercase font-bold tracking-tighter">Reservar Mesa</span>
-                                    <div className="flex gap-1">
-                                        <Clock className="w-2 h-2 text-white/30" />
-                                        <div className="w-8 h-1 bg-white/20 rounded-full mt-0.5"></div>
-                                    </div>
-                                </div>
-                                <div className="px-3 py-1.5 bg-white rounded-lg flex items-center justify-center scale-90 transition-transform">
-                                    <MousePointer2 className="w-2.5 h-2.5 text-black" />
-                                </div>
-                            </div>
-
-                            <div className="grid grid-cols-2 gap-3">
-                                <div className="h-12 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center">
-                                    <div className={`w-6 h-6 rounded-full border border-white/10 border-dashed ${isVisible ? 'animate-[spin_10s_linear_infinite]' : ''}`}></div>
-                                </div>
-                                <div className="h-12 rounded-xl bg-white/[0.03] border border-white/5 p-2 space-y-1.5">
-                                    <div className={`h-1 w-full bg-white/10 rounded-full transition-all duration-1000 delay-300 ${isVisible ? 'scale-x-100' : 'scale-x-0'} origin-left`}></div>
-                                    <div className={`h-1 w-2/3 bg-white/10 rounded-full transition-all duration-1000 delay-400 ${isVisible ? 'scale-x-100' : 'scale-x-0'} origin-left`}></div>
-                                    <div className={`h-1 w-full bg-white/10 rounded-full transition-all duration-1000 delay-500 ${isVisible ? 'scale-x-100' : 'scale-x-0'} origin-left`}></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div className={`w-48 h-48 border-[0.5px] border-white/20 rounded-full absolute transition-all duration-1000 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}></div>
+                    <div className={`w-32 h-32 border-[0.5px] border-white/20 rotate-45 absolute transition-all duration-1000 delay-200 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}></div>
+                    <div className={`relative w-24 h-24 border border-white/40 flex items-center justify-center transition-all duration-1000 delay-400 ${isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}>
+                        <div className="absolute inset-0 bg-white/5 blur-md"></div>
+                        <div className="absolute -top-1 -left-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
+                        <div className="absolute -top-1 -right-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
+                        <div className="absolute -bottom-1 -left-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
+                        <div className="absolute -bottom-1 -right-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
+                        <Palette className={`w-8 h-8 text-white/70 transition-all duration-1000 ${isVisible ? 'text-white/80' : 'text-white/20'}`} style={{ filter: isVisible ? 'drop-shadow(0 0 8px rgba(255,255,255,0.5))' : 'none' }} />
                     </div>
-                    <div className={`absolute top-10 right-14 bg-white/10 backdrop-blur-md px-2 py-1 rounded-md border border-white/20 transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'}`}>
-                        <span className="text-[6px] font-mono text-white/60">UX_RESTAURANTE_V2</span>
-                    </div>
+                    <div className={`w-full h-[0.5px] bg-white/15 absolute transition-all duration-1000 delay-600 ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}></div>
+                    <div className={`w-[0.5px] h-full bg-white/15 absolute transition-all duration-1000 delay-600 ${isVisible ? 'scale-y-100' : 'scale-y-0'}`}></div>
+                    <div className={`absolute top-1/4 right-8 font-mono text-[6px] text-white/40 tracking-widest uppercase transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>Proportion: 1.618</div>
                 </div>
             )
         },
@@ -134,31 +127,40 @@ const Services: React.FC = () => {
             )
         },
         {
-            title: "Branding",
-            description: "Creamos una identidad visual impactante y profesional que diferencia a tu negocio de la competencia de forma única.",
-            stats: "IDENTIDAD PREMIUM",
-            tag: "DISEÑO",
+            title: "Google My Business",
+            description: "Optimizamos tu presencia local para que tu negocio sea la primera opción cuando los clientes busquen dónde comer.",
+            stats: "RANKING TOP 3",
+            tag: "SEO LOCAL",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
-                <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-                    {/* Ambient glow behind everything */}
-                    <div className={`absolute w-40 h-40 rounded-full bg-white/10 blur-3xl ${isVisible ? 'animate-pulse' : ''}`} style={{ animationDuration: '3s' }}></div>
+                <div className="relative w-full h-full flex items-center justify-center">
+                    <div className="relative w-44 h-44 flex items-center justify-center">
+                        <div className="absolute inset-0 opacity-10">
+                            <svg width="100%" height="100%" viewBox="0 0 100 100">
+                                <path d="M0 20 H100 M0 50 H100 M0 80 H100 M20 0 V100 M50 0 V100 M80 0 V100" stroke="white" strokeWidth="0.5" fill="none" />
+                            </svg>
+                        </div>
 
-                    <div className={`w-48 h-48 border-[0.5px] border-white/20 rounded-full absolute transition-all duration-1000 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}></div>
-                    <div className={`w-32 h-32 border-[0.5px] border-white/20 rotate-45 absolute transition-all duration-1000 delay-200 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}></div>
-                    <div className={`relative w-24 h-24 border border-white/40 flex items-center justify-center transition-all duration-1000 delay-400 ${isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}>
-                        <div className="absolute inset-0 bg-white/5 blur-md"></div>
-                        <div className="absolute -top-1 -left-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
-                        <div className="absolute -top-1 -right-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
-                        <div className="absolute -bottom-1 -left-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
-                        <div className="absolute -bottom-1 -right-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
-                        <Palette className={`w-8 h-8 text-white/70 transition-all duration-1000 ${isVisible ? 'text-white/80' : 'text-white/20'}`} style={{ filter: isVisible ? 'drop-shadow(0 0 8px rgba(255,255,255,0.5))' : 'none' }} />
+                        <div className="relative z-10 w-16 h-16 flex items-center justify-center">
+                            <div className={`absolute inset-0 bg-white/10 blur-2xl rounded-full ${isVisible ? 'animate-pulse' : ''}`}></div>
+                            <div className="relative w-full h-full bg-white/5 border border-white/20 rounded-3xl flex items-center justify-center backdrop-blur-md shadow-2xl">
+                                <div className="flex flex-col items-center gap-1">
+                                    <UtensilsCrossed className="w-5 h-5 text-white/90" />
+                                    <div className="flex gap-0.5">
+                                        {[...Array(5)].map((_, i) => <Star key={i} className="w-1 h-1 text-white/40 fill-white/20" />)}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={`absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center shadow-lg ${isVisible ? 'animate-bounce' : ''}`} style={{ animationDuration: '3s' }}>
+                                <CheckCircle2 className="w-2.5 h-2.5 text-black" />
+                            </div>
+                        </div>
+
+                        <div className="absolute inset-0 border border-white/5 rounded-full scale-75"></div>
+                        <div className={`absolute inset-0 border border-white/[0.03] rounded-full scale-110 ${isVisible ? 'animate-ping' : ''}`} style={{ animationDuration: '4s' }}></div>
                     </div>
-                    <div className={`w-full h-[0.5px] bg-white/15 absolute transition-all duration-1000 delay-600 ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}></div>
-                    <div className={`w-[0.5px] h-full bg-white/15 absolute transition-all duration-1000 delay-600 ${isVisible ? 'scale-y-100' : 'scale-y-0'}`}></div>
-                    <div className={`absolute top-1/4 right-8 font-mono text-[6px] text-white/40 tracking-widest uppercase transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>Proportion: 1.618</div>
                 </div>
             )
-        }
+        },
     ];
 
     return (
