@@ -16,7 +16,7 @@ const Services: React.FC = () => {
 
     const services = [
         {
-            title: "Sitios Web",
+            title: "Páginas Web",
             description: "Desarrollamos ecosistemas digitales de alto rendimiento enfocados en la conversión de reservas y experiencia del comensal.",
             stats: "ALTA VELOCIDAD",
             tag: "NÚCLEO WEB",
@@ -95,9 +95,9 @@ const Services: React.FC = () => {
             )
         },
         {
-            title: "SEO Locales",
+            title: "Google My Business",
             description: "Optimizamos tu perfil de Google para dominar las búsquedas locales y asegurar que seas la primera elección en tu zona.",
-            stats: "RANKING TOP 3",
+            stats: "SEO LOCAL",
             tag: "GOOGLE MY BUSINESS",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center">
@@ -130,7 +130,7 @@ const Services: React.FC = () => {
             )
         },
         {
-            title: "Integración IA",
+            title: "Integración con IA",
             description: "Implementamos soluciones autónomas para automatizar reservas, atención al cliente y optimizar procesos operativos internos.",
             stats: "AUTOTOMIZACIÓN IA",
             tag: "IA APLICADA",
