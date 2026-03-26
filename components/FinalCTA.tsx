@@ -13,8 +13,7 @@ const FinalCTA: React.FC = () => {
     "Diseño Web",
     "Branding",
     "Integración con IA",
-    "Diseño Gráfico",
-    "SEO Local"
+    "Diseño Gráfico"
   ];
 
   const toggleService = (service: string) => {
@@ -165,7 +164,8 @@ const FinalCTA: React.FC = () => {
                   className="bg-black text-white rounded-full pl-6 md:pl-8 pr-1.5 md:pr-2 py-1.5 md:py-2 flex items-center justify-between gap-4 md:gap-6 group hover:bg-neutral-800 transition-all hover:scale-[1.02] active:scale-95 w-full md:w-auto shadow-xl"
                 >
                   <span className="font-semibold tracking-tight text-[13px] md:text-lg leading-tight py-1 md:py-0">
-                    Solicitar presupuesto <br className="md:hidden" /> y auditoría
+                    <span className="md:hidden">Solicitar presupuesto</span>
+                    <span className="hidden md:inline">Solicitar presupuesto y auditoría</span>
                   </span>
                   <div className="w-9 h-9 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-black shadow-inner shrink-0">
                     <img src="/anagram2.png" alt="Motions Anagram" className="w-4 h-4 md:w-6 md:h-6 object-contain group-hover:rotate-12 transition-transform" />
