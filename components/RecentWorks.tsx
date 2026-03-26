@@ -16,7 +16,7 @@ const col1 = [
 ];
 
 const col2 = [
-  '/motions106.jpg',
+  '/motions140.jpg',
   '/motions108.jpg',
   '/motions119.jpg',
   '/pjj3.png',
