@@ -22,23 +22,23 @@ const AdBanner: React.FC = () => {
                 />
             </div>
 
-            {/* Floating Action Buttons - Bottom Center */}
-            <div className="absolute bottom-6 md:bottom-16 left-1/2 -translate-x-1/2 w-full max-w-[94%] md:max-w-xl flex flex-row items-center justify-center gap-3 px-4">
+            {/* Floating Action Buttons - Bottom Center Glassmorphism Style */}
+            <div className="absolute bottom-12 md:bottom-28 left-1/2 -translate-x-1/2 w-full max-w-[90%] md:max-w-xl flex flex-row items-center justify-center gap-3 md:gap-5 px-4">
                 <a 
-                    href="https://wa.me/34666666666" // Placeholder, user will provide
+                    href="https://wa.me/34666666666" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 md:flex-initial md:min-w-[220px] px-4 md:px-8 py-3 md:py-4 bg-white text-black rounded-full font-bold text-[10px] md:text-xs uppercase tracking-[0.15em] flex items-center justify-center gap-2 shadow-[0_20px_40px_-10px_rgba(255,255,255,0.3)] hover:bg-neutral-100 transition-all hover:scale-[1.03] active:scale-95 border border-white/10"
+                    className="flex-1 md:flex-initial md:min-w-[200px] px-4 md:px-8 py-3.5 md:py-4 bg-white/10 backdrop-blur-xl text-white rounded-full font-bold text-[9px] md:text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2 shadow-2xl hover:bg-white/20 transition-all hover:scale-[1.05] active:scale-95 border border-white/30"
                 >
-                    <MessageSquare className="w-3.5 h-3.5 md:w-4 md:h-4 stroke-[2.5]" />
+                    <MessageSquare className="w-4 h-4 md:w-5 md:h-5 stroke-[2]" />
                     WhatsApp
                 </a>
                 <a 
                     href="#contacto"
-                    className="flex-1 md:flex-initial md:min-w-[220px] px-4 md:px-8 py-3 md:py-4 bg-black text-white rounded-full font-bold text-[10px] md:text-xs uppercase tracking-[0.15em] flex items-center justify-center gap-2 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)] hover:bg-neutral-800 transition-all hover:scale-[1.03] active:scale-95 border border-white/5"
+                    className="flex-1 md:flex-initial md:min-w-[200px] px-4 md:px-8 py-3.5 md:py-4 bg-black/40 backdrop-blur-xl text-white rounded-full font-bold text-[9px] md:text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2 shadow-2xl hover:bg-black/60 transition-all hover:scale-[1.05] active:scale-95 border border-white/20"
                 >
-                    <Calendar className="w-3.5 h-3.5 md:w-4 md:h-4 stroke-[2.5]" />
-                    Solicitar Auditoría
+                    <Calendar className="w-4 h-4 md:w-5 md:h-5 stroke-[2]" />
+                    Auditoría
                 </a>
             </div>
         </section>
