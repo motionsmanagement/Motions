@@ -16,43 +16,8 @@ const Services: React.FC = () => {
 
     const services = [
         {
-            title: "Google My Business",
-            description: "Optimizamos tu presencia local para que tu negocio sea the primera opción cuando los clientes busquen dónde comer.",
-            stats: "RANKING TOP 3",
-            tag: "SEO LOCAL",
-            Illustration: ({ isVisible }: { isVisible: boolean }) => (
-                <div className="relative w-full h-full flex items-center justify-center">
-                    <div className="relative w-44 h-44 flex items-center justify-center">
-                        <div className="absolute inset-0 opacity-10">
-                            <svg width="100%" height="100%" viewBox="0 0 100 100">
-                                <path d="M0 20 H100 M0 50 H100 M0 80 H100 M20 0 V100 M50 0 V100 M80 0 V100" stroke="white" strokeWidth="0.5" fill="none" />
-                            </svg>
-                        </div>
-
-                        <div className="relative z-10 w-16 h-16 flex items-center justify-center">
-                            <div className={`absolute inset-0 bg-white/10 blur-2xl rounded-full ${isVisible ? 'animate-pulse' : ''}`}></div>
-                            <div className="relative w-full h-full bg-white/5 border border-white/20 rounded-3xl flex items-center justify-center backdrop-blur-md shadow-2xl">
-                                <div className="flex flex-col items-center gap-1">
-                                    <UtensilsCrossed className="w-5 h-5 text-white/90" />
-                                    <div className="flex gap-0.5">
-                                        {[...Array(5)].map((_, i) => <Star key={i} className="w-1 h-1 text-white/40 fill-white/20" />)}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={`absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center shadow-lg ${isVisible ? 'animate-bounce' : ''}`} style={{ animationDuration: '3s' }}>
-                                <CheckCircle2 className="w-2.5 h-2.5 text-black" />
-                            </div>
-                        </div>
-
-                        <div className="absolute inset-0 border border-white/5 rounded-full scale-75"></div>
-                        <div className={`absolute inset-0 border border-white/[0.03] rounded-full scale-110 ${isVisible ? 'animate-ping' : ''}`} style={{ animationDuration: '4s' }}></div>
-                    </div>
-                </div>
-            )
-        },
-        {
-            title: "Página Web",
-            description: "Desarrollamos plataformas de alto rendimiento diseñadas para convertir usuarios en ventas directas para tu negocio.",
+            title: "Sitios Web",
+            description: "Desarrollamos ecosistemas digitales de alto rendimiento enfocados en la conversión de reservas y experiencia del comensal.",
             stats: "ALTA VELOCIDAD",
             tag: "NÚCLEO WEB",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
@@ -104,10 +69,71 @@ const Services: React.FC = () => {
             )
         },
         {
-            title: "Integración con IA",
-            description: "Implementamos sistemas de inteligencia artificial para automatizar procesos y personalizar la experiencia de tus clientes.",
-            stats: "IA INTEGRADA",
-            tag: "AUTOMATIZACIÓN",
+            title: "Branding",
+            description: "Creamos identidades visuales que transmiten la esencia de tu cocina y posicionan tu restaurante como una marca de referencia.",
+            stats: "IDENTIDAD PREMIUM",
+            tag: "DISEÑO",
+            Illustration: ({ isVisible }: { isVisible: boolean }) => (
+                <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+                    {/* Ambient glow behind everything */}
+                    <div className={`absolute w-40 h-40 rounded-full bg-white/10 blur-3xl ${isVisible ? 'animate-pulse' : ''}`} style={{ animationDuration: '3s' }}></div>
+
+                    <div className={`w-48 h-48 border-[0.5px] border-white/20 rounded-full absolute transition-all duration-1000 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}></div>
+                    <div className={`w-32 h-32 border-[0.5px] border-white/20 rotate-45 absolute transition-all duration-1000 delay-200 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}></div>
+                    <div className={`relative w-24 h-24 border border-white/40 flex items-center justify-center transition-all duration-1000 delay-400 ${isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}>
+                        <div className="absolute inset-0 bg-white/5 blur-md"></div>
+                        <div className="absolute -top-1 -left-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
+                        <div className="absolute -top-1 -right-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
+                        <div className="absolute -bottom-1 -left-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
+                        <div className="absolute -bottom-1 -right-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
+                        <Palette className={`w-8 h-8 text-white/70 transition-all duration-1000 ${isVisible ? 'text-white/80' : 'text-white/20'}`} style={{ filter: isVisible ? 'drop-shadow(0 0 8px rgba(255,255,255,0.5))' : 'none' }} />
+                    </div>
+                    <div className={`w-full h-[0.5px] bg-white/15 absolute transition-all duration-1000 delay-600 ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}></div>
+                    <div className={`w-[0.5px] h-full bg-white/15 absolute transition-all duration-1000 delay-600 ${isVisible ? 'scale-y-100' : 'scale-y-0'}`}></div>
+                    <div className={`absolute top-1/4 right-8 font-mono text-[6px] text-white/40 tracking-widest uppercase transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>Proportion: 1.618</div>
+                </div>
+            )
+        },
+        {
+            title: "SEO Locales",
+            description: "Optimizamos tu perfil de Google para dominar las búsquedas locales y asegurar que seas la primera elección en tu zona.",
+            stats: "RANKING TOP 3",
+            tag: "GOOGLE MY BUSINESS",
+            Illustration: ({ isVisible }: { isVisible: boolean }) => (
+                <div className="relative w-full h-full flex items-center justify-center">
+                    <div className="relative w-44 h-44 flex items-center justify-center">
+                        <div className="absolute inset-0 opacity-10">
+                            <svg width="100%" height="100%" viewBox="0 0 100 100">
+                                <path d="M0 20 H100 M0 50 H100 M0 80 H100 M20 0 V100 M50 0 V100 M80 0 V100" stroke="white" strokeWidth="0.5" fill="none" />
+                            </svg>
+                        </div>
+
+                        <div className="relative z-10 w-16 h-16 flex items-center justify-center">
+                            <div className={`absolute inset-0 bg-white/10 blur-2xl rounded-full ${isVisible ? 'animate-pulse' : ''}`}></div>
+                            <div className="relative w-full h-full bg-white/5 border border-white/20 rounded-3xl flex items-center justify-center backdrop-blur-md shadow-2xl">
+                                <div className="flex flex-col items-center gap-1">
+                                    <UtensilsCrossed className="w-5 h-5 text-white/90" />
+                                    <div className="flex gap-0.5">
+                                        {[...Array(5)].map((_, i) => <Star key={i} className="w-1 h-1 text-white/40 fill-white/20" />)}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={`absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center shadow-lg ${isVisible ? 'animate-bounce' : ''}`} style={{ animationDuration: '3s' }}>
+                                <CheckCircle2 className="w-2.5 h-2.5 text-black" />
+                            </div>
+                        </div>
+
+                        <div className="absolute inset-0 border border-white/5 rounded-full scale-75"></div>
+                        <div className={`absolute inset-0 border border-white/[0.03] rounded-full scale-110 ${isVisible ? 'animate-ping' : ''}`} style={{ animationDuration: '4s' }}></div>
+                    </div>
+                </div>
+            )
+        },
+        {
+            title: "Integración IA",
+            description: "Implementamos soluciones autónomas para automatizar reservas, atención al cliente y optimizar procesos operativos internos.",
+            stats: "AUTOTOMIZACIÓN IA",
+            tag: "IA APLICADA",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                     <div className="flex gap-4">
@@ -130,32 +156,6 @@ const Services: React.FC = () => {
                         <line x1="0" y1="50%" x2="100%" y2="50%" stroke="white" strokeWidth="0.5" strokeDasharray="4 4" opacity="0.05" />
                     </svg>
                     <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white/5 blur-[50px] rounded-full ${isVisible ? 'animate-pulse' : ''}`}></div>
-                </div>
-            )
-        },
-        {
-            title: "Branding",
-            description: "Creamos una identidad visual impactante y profesional que diferencia a tu negocio de la competencia de forma única.",
-            stats: "IDENTIDAD PREMIUM",
-            tag: "DISEÑO",
-            Illustration: ({ isVisible }: { isVisible: boolean }) => (
-                <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-                    {/* Ambient glow behind everything */}
-                    <div className={`absolute w-40 h-40 rounded-full bg-white/10 blur-3xl ${isVisible ? 'animate-pulse' : ''}`} style={{ animationDuration: '3s' }}></div>
-
-                    <div className={`w-48 h-48 border-[0.5px] border-white/20 rounded-full absolute transition-all duration-1000 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}></div>
-                    <div className={`w-32 h-32 border-[0.5px] border-white/20 rotate-45 absolute transition-all duration-1000 delay-200 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}></div>
-                    <div className={`relative w-24 h-24 border border-white/40 flex items-center justify-center transition-all duration-1000 delay-400 ${isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}>
-                        <div className="absolute inset-0 bg-white/5 blur-md"></div>
-                        <div className="absolute -top-1 -left-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
-                        <div className="absolute -top-1 -right-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
-                        <div className="absolute -bottom-1 -left-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
-                        <div className="absolute -bottom-1 -right-1 w-2 h-2 border border-white/60 bg-[#0A0A0A]"></div>
-                        <Palette className={`w-8 h-8 text-white/70 transition-all duration-1000 ${isVisible ? 'text-white/80' : 'text-white/20'}`} style={{ filter: isVisible ? 'drop-shadow(0 0 8px rgba(255,255,255,0.5))' : 'none' }} />
-                    </div>
-                    <div className={`w-full h-[0.5px] bg-white/15 absolute transition-all duration-1000 delay-600 ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}></div>
-                    <div className={`w-[0.5px] h-full bg-white/15 absolute transition-all duration-1000 delay-600 ${isVisible ? 'scale-y-100' : 'scale-y-0'}`}></div>
-                    <div className={`absolute top-1/4 right-8 font-mono text-[6px] text-white/40 tracking-widest uppercase transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>Proportion: 1.618</div>
                 </div>
             )
         }
@@ -203,7 +203,7 @@ const Services: React.FC = () => {
                                     {service.title}
                                 </h3>
 
-                                <p className="text-[13.5px] text-white/70 leading-relaxed mb-8 group-hover:text-white/90 transition-colors">
+                                <p className="text-sm text-white/70 leading-relaxed mb-8 group-hover:text-white/90 transition-colors max-w-[90%]">
                                     {service.description}
                                 </p>
 
