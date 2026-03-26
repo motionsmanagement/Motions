@@ -79,6 +79,8 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Menu Toggle */}
             <button
+              aria-label={isMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
+              aria-expanded={isMenuOpen}
               className={`md:hidden p-1.5 transition-colors ${(showDarkNavbar || isMenuOpen) ? "text-black" : "text-white"}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
