@@ -17,7 +17,7 @@ const Services: React.FC = () => {
     const services = [
         {
             title: "Páginas Web",
-            description: "Desarrollamos ecosistemas digitales de alto rendimiento enfocados en la conversión de reservas y experiencia del comensal.",
+            description: "Plataformas de alto rendimiento orientadas a maximizar tus reservas directas.",
             stats: "ALTA VELOCIDAD",
             tag: "NÚCLEO WEB",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
@@ -70,7 +70,7 @@ const Services: React.FC = () => {
         },
         {
             title: "Branding",
-            description: "Creamos identidades visuales que transmiten la esencia de tu cocina y posicionan tu restaurante como una marca de referencia.",
+            description: "Creamos la identidad visual que posiciona a tu restaurante como marca de referencia.",
             stats: "IDENTIDAD PREMIUM",
             tag: "DISEÑO",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
@@ -96,7 +96,7 @@ const Services: React.FC = () => {
         },
         {
             title: "Google My Business",
-            description: "Optimizamos tu perfil de Google para dominar las búsquedas locales y asegurar que seas la primera elección en tu zona.",
+            description: "Dominamos las búsquedas locales para que siempre seas la primera opción en tu zona.",
             stats: "SEO LOCAL",
             tag: "GOOGLE MY BUSINESS",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
@@ -131,7 +131,7 @@ const Services: React.FC = () => {
         },
         {
             title: "Integración con IA",
-            description: "Implementamos soluciones autónomas para automatizar reservas, atención al cliente y optimizar procesos operativos internos.",
+            description: "Automatizamos tus procesos y atención al cliente para optimizar tu rentabilidad.",
             stats: "AUTOTOMIZACIÓN IA",
             tag: "IA APLICADA",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
@@ -166,15 +166,12 @@ const Services: React.FC = () => {
             <div className={`max-w-7xl mx-auto transition-all duration-700 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 {/* Header Section */}
                 <div className="mb-20 text-balance flex flex-col items-center md:items-start text-center md:text-left">
-                    <div className="inline-flex items-center bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6">
-                        <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Servicios Especializados</span>
-                    </div>
                     <h2 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1] mb-6">
                         Impulsa el crecimiento<br />
                         digital de tu restaurante.
                     </h2>
                     <p className="text-base md:text-lg text-gray-500 max-w-2xl leading-relaxed">
-                        Especialistas en transformar la presencia online de negocios gastronómicos, enfocándonos en atraer clientes y maximizar la rentabilidad.
+                        Transformamos la presencia online de negocios gastronómicos, enfocándonos en atraer clientes y maximizar la rentabilidad de tu negocio.
                     </p>
                 </div>
 
