@@ -23,10 +23,9 @@ const Services: React.FC = () => {
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                     {/* Deep glow core */}
-                    <div className={`absolute w-56 h-56 rounded-full bg-white/[0.06] blur-[60px] transition-all duration-2000 ${isVisible ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`} />
-                    <div className={`absolute w-32 h-32 rounded-full bg-white/[0.08] blur-3xl ${isVisible ? 'animate-pulse' : ''}`} style={{ animationDuration: '3s' }} />
+                    <div className={`absolute w-64 h-64 rounded-full bg-white/[0.07] blur-[70px] transition-all duration-2000 ${isVisible ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`} />
+                    <div className={`absolute w-36 h-36 rounded-full bg-white/[0.09] blur-3xl ${isVisible ? 'animate-pulse' : ''}`} style={{ animationDuration: '3s' }} />
 
-                    {/* Browser mockup - wider */}
                     <div className={`relative w-[88%] flex flex-col transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                         {/* Browser top bar */}
                         <div className="w-full h-6 rounded-t-2xl bg-white/[0.06] border border-white/[0.12] flex items-center px-3 gap-1.5">
@@ -42,7 +41,7 @@ const Services: React.FC = () => {
                         <div className={`w-full rounded-b-2xl bg-white/[0.025] border border-t-0 border-white/[0.1] p-3.5 space-y-2.5 transition-all duration-700 delay-150 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
                             {/* Hero image area */}
                             <div className="w-full h-14 rounded-xl bg-white/[0.04] border border-white/[0.07] flex items-center justify-between px-3 overflow-hidden relative">
-                                <div className={`absolute inset-0 bg-gradient-to-r from-white/[0.02] to-white/[0.07] ${isVisible ? 'animate-[shimmer_3s_ease-in-out_infinite]' : ''}`} />
+                                <div className={`absolute inset-0 bg-gradient-to-r from-white/[0.02] to-white/[0.07] transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`} />
                                 <div className="space-y-1 relative z-10">
                                     <div className="h-1.5 w-16 bg-white/35 rounded-full" />
                                     <div className="h-1 w-10 bg-white/20 rounded-full" />
@@ -130,74 +129,40 @@ const Services: React.FC = () => {
         {
             title: "Google My Business",
             description: "Optimizamos tu ficha de Google para que aparezcas primero cuando alguien cerca busca dónde comer.",
-            stats: "RANKING TOP 3",
+            stats: "VISIBILIDAD LOCAL",
             tag: "SEO LOCAL",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-                    {/* Radial glow */}
-                    <div className={`absolute w-52 h-52 rounded-full bg-white/[0.05] blur-[55px] transition-all duration-2000 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`} />
-                    <div className={`absolute w-28 h-28 rounded-full bg-white/[0.07] blur-2xl ${isVisible ? 'animate-pulse' : ''}`} style={{ animationDuration: '4s' }} />
+                    {/* Soft radial glow */}
+                    <div className={`absolute w-52 h-52 rounded-full bg-white/[0.06] blur-[60px] transition-all duration-2000 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`} />
+                    <div className={`absolute w-28 h-28 rounded-full bg-white/[0.08] blur-3xl ${isVisible ? 'animate-pulse' : ''}`} style={{ animationDuration: '4s' }} />
 
-                    {/* Map pin element */}
-                    <div className={`relative w-[80%] flex flex-col items-center gap-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                        {/* Search bar */}
-                        <div className={`w-full h-8 rounded-full bg-white/[0.06] border border-white/[0.12] flex items-center px-3 gap-2 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-                            <div className="w-3 h-3 rounded-full border border-white/30 flex-shrink-0" />
-                            <div className="h-1.5 flex-1 rounded-full bg-white/15" />
-                            <div className="w-5 h-5 rounded-full bg-white/10 flex-shrink-0" />
+                    {/* Ping rings */}
+                    <div className={`absolute w-32 h-32 rounded-full border border-white/[0.08] transition-all duration-1000 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`} />
+                    <div className={`absolute w-48 h-48 rounded-full border border-white/[0.05] transition-all duration-1000 delay-200 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`} />
+                    <div className={`absolute w-20 h-20 rounded-full border border-white/[0.12] ${isVisible ? 'animate-ping' : ''}`} style={{ animationDuration: '3s' }} />
+
+                    {/* Pin */}
+                    <div className={`relative flex flex-col items-center gap-1 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                        <div className={`w-14 h-14 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.15)] ${isVisible ? 'animate-pulse' : ''}`} style={{ animationDuration: '3s' }}>
+                            <UtensilsCrossed className="w-6 h-6 text-white/80" />
                         </div>
+                        <div className="w-px h-4 bg-gradient-to-b from-white/30 to-transparent" />
+                        <div className="w-1.5 h-1 rounded-full bg-white/20" />
 
-                        {/* Business card */}
-                        <div className={`w-full rounded-2xl bg-white/[0.04] border border-white/[0.1] overflow-hidden transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-                            {/* Top map strip */}
-                            <div className="w-full h-9 bg-white/[0.03] border-b border-white/[0.06] relative overflow-hidden flex items-center justify-center">
-                                <svg className="absolute inset-0 w-full h-full" opacity="0.08">
-                                    <line x1="20%" y1="0" x2="20%" y2="100%" stroke="white" strokeWidth="0.5" />
-                                    <line x1="50%" y1="0" x2="50%" y2="100%" stroke="white" strokeWidth="0.5" />
-                                    <line x1="80%" y1="0" x2="80%" y2="100%" stroke="white" strokeWidth="0.5" />
-                                    <line x1="0" y1="40%" x2="100%" y2="40%" stroke="white" strokeWidth="0.5" />
-                                    <line x1="0" y1="70%" x2="100%" y2="70%" stroke="white" strokeWidth="0.5" />
-                                </svg>
-                                {/* Pin */}
-                                <div className={`relative flex flex-col items-center transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}>
-                                    <div className={`w-5 h-5 rounded-full bg-white/90 flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.4)] ${isVisible ? 'animate-bounce' : ''}`} style={{ animationDuration: '2.5s' }}>
-                                        <UtensilsCrossed className="w-2.5 h-2.5 text-black" />
-                                    </div>
-                                    <div className="w-0.5 h-2 bg-white/50 mt-0.5" />
-                                </div>
-                            </div>
-
-                            {/* Business info */}
-                            <div className="p-3 space-y-2.5">
-                                <div className="space-y-1">
-                                    <div className="h-1.5 w-24 bg-white/30 rounded-full" />
-                                    <div className="flex items-center gap-1.5">
-                                        <div className="flex gap-0.5">
-                                            {[...Array(5)].map((_, i) => (
-                                                <div key={i} className={`w-2 h-2 transition-all duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: `${600 + i * 60}ms` }}>
-                                                    <Star className="w-full h-full text-white/60 fill-white/30" />
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <div className="h-1 w-6 bg-white/20 rounded-full" />
-                                    </div>
-                                </div>
-                                <div className="flex gap-1.5">
-                                    <div className={`flex-1 h-6 rounded-lg bg-white/90 flex items-center justify-center transition-all duration-500 delay-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-                                        <div className="h-1 w-10 bg-black/40 rounded-full" />
-                                    </div>
-                                    <div className={`flex-1 h-6 rounded-lg bg-white/[0.08] border border-white/[0.12] flex items-center justify-center transition-all duration-500 delay-800 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-                                        <div className="h-1 w-8 bg-white/30 rounded-full" />
-                                    </div>
-                                </div>
-                            </div>
+                        {/* Stars */}
+                        <div className={`flex gap-1 mt-2 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+                            {[...Array(5)].map((_, i) => (
+                                <Star key={i} className={`w-3 h-3 transition-all duration-300 ${isVisible ? 'text-white/70 fill-white/40' : 'text-white/10'}`} style={{ transitionDelay: `${600 + i * 80}ms` }} />
+                            ))}
                         </div>
+                        <div className={`text-[9px] font-mono text-white/40 tracking-widest mt-0.5 transition-all duration-700 delay-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>4.9 · 214 reseñas</div>
+                    </div>
 
-                        {/* Top 3 badge */}
-                        <div className={`absolute -top-2 -right-1 bg-white/10 backdrop-blur-xl border border-white/25 rounded-xl px-2.5 py-1.5 flex items-center gap-1.5 shadow-2xl transition-all duration-700 delay-900 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
-                            <div className={`w-1.5 h-1.5 rounded-full bg-white ${isVisible ? 'animate-pulse' : ''}`} style={{ animationDuration: '1.5s' }} />
-                            <span className="text-[9px] font-bold text-white/90 tracking-wide">#1 en Maps</span>
-                        </div>
+                    {/* Badge */}
+                    <div className={`absolute top-4 right-6 bg-white/[0.08] backdrop-blur-xl border border-white/20 rounded-xl px-2.5 py-1.5 flex items-center gap-1.5 shadow-xl transition-all duration-700 delay-800 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+                        <div className={`w-1.5 h-1.5 rounded-full bg-white ${isVisible ? 'animate-pulse' : ''}`} style={{ animationDuration: '1.5s' }} />
+                        <span className="text-[9px] font-bold text-white/90 tracking-wide">#1 Maps</span>
                     </div>
                 </div>
             )
