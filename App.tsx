@@ -9,6 +9,7 @@ import ServicesBanner from './components/ServicesBanner';
 import RecentWorks from './components/RecentWorks';
 import HowItWorks from './components/HowItWorks';
 import SuccessStories from './components/SuccessStories';
+import SpecialtyBanner from './components/SpecialtyBanner';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 
@@ -41,7 +42,8 @@ const HomePage: React.FC = () => {
       <main>
         <Hero />
         <Services />
-        <ServicesBanner />
+        <SpecialtyBanner />
+        {/* <ServicesBanner /> */}
         <RecentWorks />
         {/* <HowItWorks /> */}
         <SuccessStories />
