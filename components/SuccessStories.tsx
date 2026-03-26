@@ -9,7 +9,6 @@ interface SuccessMetric {
 
 interface SuccessCase {
     id: string;
-    category: string;
     title: string;
     year: string;
     location: string;
@@ -28,10 +27,9 @@ const Gem = ({ size, strokeWidth, color }: any) => (
 const successCases: SuccessCase[] = [
     {
         id: '01',
-        category: 'Branding',
         title: 'Burger Cartel',
         year: '2025',
-        location: 'Madrid, España',
+        location: 'Branding & Identidad',
         images: [
             '/Proyectos/burger cartel/motionsbc1.jpg',
             '/Proyectos/burger cartel/bcmotions.jpg',
@@ -42,18 +40,17 @@ const successCases: SuccessCase[] = [
         graphicType: 'brand',
         metrics: [
             { label: 'Reconocimiento', value: '+35%', icon: Target },
-            { label: 'Ventas', value: '+22%', icon: TrendingUp },
-            { label: 'Feedback', value: '10/10', icon: MessageSquare }
+            { label: 'Visitas', value: '+22%', icon: TrendingUp },
+            { label: 'Opiniones', value: '10/10', icon: MessageSquare }
         ],
-        services: ['Naming', 'Logo Design', 'Visual Identity', 'Menu Design'],
+        services: ['Naming', 'Diseño de Logo', 'Identidad Visual', 'Diseño de Menú'],
         outcome: 'Identidad visual impactante que ha posicionado a la marca como referente en redes sociales.'
     },
     {
         id: '02',
-        category: 'Branding',
         title: 'Lagotto',
         year: '2025',
-        location: 'Marbella, España',
+        location: 'Diseño de Marca 360º',
         images: [
             '/Proyectos/Lagotto/motionsl1.jpg',
             '/Proyectos/Lagotto/motionsl.jpg',
@@ -66,19 +63,18 @@ const successCases: SuccessCase[] = [
         description: 'Llevamos la sofisticación de Lagotto a cada punto de contacto con el cliente: desde el diseño editorial de sus cartas hasta la identidad visual en merchandising y etiquetas de vino premium. Una experiencia de marca 360º diseñada para el comensal más exigente.',
         graphicType: 'reputation',
         metrics: [
-            { label: 'Engagement', value: '+45%', icon: Users },
-            { label: 'Visitas', value: '+18%', icon: MousePointer2 },
-            { label: 'Ticket Medio', value: '+12%', icon: TrendingUp }
+            { label: 'Interacciones', value: '+45%', icon: Users },
+            { label: 'Visitas', value: '+28%', icon: MousePointer2 },
+            { label: 'Interés', value: '+40%', icon: TrendingUp }
         ],
-        services: ['Branding 360', 'Diseño Merch', 'Carta de Vinos', 'Social Media Design'],
+        services: ['Branding Integral', 'Diseño Merchandising', 'Carta de Vinos', 'Diseño Social Media'],
         outcome: 'Ecosistema visual premium que refuerza el posicionamiento de lujo del restaurante.'
     },
     {
         id: '03',
-        category: 'Google Maps',
         title: 'Kizuna',
         year: '2025',
-        location: 'Barcelona, España',
+        location: 'Estrategia SEO & Identidad',
         images: [
             '/Proyectos/Kizuna/motionsk1.jpg',
             '/Proyectos/Kizuna/motionsk.jpg',
@@ -88,19 +84,18 @@ const successCases: SuccessCase[] = [
         description: 'Diseño de una identidad visual inspirada en la tradición japonesa con un toque contemporáneo. Implementamos un sistema de diseño gráfico integral que abarca la carta del restaurante, señalética y elementos corporativos, enfocándonos en la elegancia y la legibilidad.',
         graphicType: 'visibility',
         metrics: [
-            { label: 'Ranking', value: 'Top 3', icon: MapPin },
+            { label: 'Posicionamiento', value: 'Top 3', icon: MapPin },
             { label: 'Búsquedas', value: '+5.2k', icon: Search },
-            { label: 'Reservas', value: '+15%', icon: CheckCircle2 }
+            { label: 'Reservas', value: '+25%', icon: CheckCircle2 }
         ],
-        services: ['Visual Identity', 'Menu Design', 'Local SEO', 'Signage Design'],
+        services: ['Identidad Visual', 'Diseño de Menú', 'SEO Local', 'Diseño de Señalética'],
         outcome: 'Aumento significativo en la visibilidad local y una imagen de marca coherente y profesional.'
     },
     {
         id: '04',
-        category: 'Sitios Web',
         title: 'Rancho',
         year: '2025',
-        location: 'Sevilla, España',
+        location: 'Diseño Web & Packaging',
         images: [
             '/Proyectos/Rancho/motionsr1.jpg',
             '/Proyectos/Rancho/morionsr4.jpg',
@@ -110,19 +105,18 @@ const successCases: SuccessCase[] = [
         description: 'Construcción de una marca vibrante que celebra la autenticidad mexicana. Desarrollamos la identidad visual completa, incluyendo el diseño de packaging para sus salsas picantes, papelería de servicio, presencia online y diseño de su sitio web de alto rendimiento.',
         graphicType: 'conversion',
         metrics: [
-            { label: 'Ventas Web', value: '+30%', icon: TrendingUp },
+            { label: 'Visitas Web', value: '+40%', icon: TrendingUp },
             { label: 'Velocidad', value: '0.9s', icon: Smartphone },
-            { label: 'Pedidos', value: '450/mes', icon: MousePointer2 }
+            { label: 'Conversión', value: '+20%', icon: MousePointer2 }
         ],
-        services: ['Web Design', 'Packaging Design', 'Bolsas y Merch', 'Logo Evolution'],
+        services: ['Diseño Web', 'Diseño de Packaging', 'Bolsas y Merch', 'Evolución de Logo'],
         outcome: 'Digitalización total con una web orientada a la conversión y un packaging que enamora.'
     },
     {
         id: '05',
-        category: 'Sitios Web',
         title: 'Chompo',
         year: '2025',
-        location: 'Valencia, España',
+        location: 'UX Design & Contenido',
         images: [
             '/Proyectos/chompo/motionscc1.jpg',
             '/Proyectos/chompo/motionscc3.jpg',
@@ -130,22 +124,21 @@ const successCases: SuccessCase[] = [
             '/Proyectos/chompo/motionscc6.jpg',
             '/Proyectos/chompo/motionscc8.jpg'
         ],
-        description: 'Especialistas en la creación de activos digitales para una de las marcas de burgers más dinámicas. Optimizamos la experiencia de usuario (UX) de su plataforma de pedidos y creamos contenido visual de alto impacto para potenciar su presencia en redes sociales.',
+        description: 'Impulsamos la presencia digital de Chompo capturando la esencia de sus productos mediante contenido visual de alto impacto y una interfaz de usuario optimizada para simplificar el proceso de pedido y aumentar la recurrencia.',
         graphicType: 'performance',
         metrics: [
-            { label: 'UX Rate', value: '98%', icon: Target },
-            { label: 'Alcance IG', value: '+120k', icon: Activity },
-            { label: 'Conversion', value: '+14%', icon: TrendingUp }
+            { label: 'Exp. Usuario', value: '98%', icon: Target },
+            { label: 'Alcance', value: '+120k', icon: Activity },
+            { label: 'Visitas', value: '+24%', icon: TrendingUp }
         ],
-        services: ['UX/UI Design', 'Fotografía Gastronómica', 'Social Media Ads', 'Web Banner Design'],
+        services: ['Diseño UX/UI', 'Fotografía Gastronómica', 'Social Media Ads', 'Diseño de Banners Web'],
         outcome: 'Plataforma digital optimizada que reduce la fricción en el pedido y aumenta el ticket medio.'
     },
     {
         id: '06',
-        category: 'Branding',
         title: 'Franks',
         year: '2025',
-        location: 'Madrid, España',
+        location: 'Gráficos de Local & Digital',
         images: [
             '/Proyectos/Franks/motionsf1.jpg',
             '/Proyectos/Franks/motionsf2.jpg',
@@ -156,18 +149,17 @@ const successCases: SuccessCase[] = [
         graphicType: 'reach',
         metrics: [
             { label: 'Visitas Local', value: '+25%', icon: MapPin },
-            { label: 'Banners CTR', value: '+8%', icon: Target },
-            { label: 'Diseño Local', value: '100%', icon: Star }
+            { label: 'Clicks', value: '+12%', icon: Target },
+            { label: 'Impacto Visual', value: '100%', icon: Star }
         ],
-        services: ['Señalética', 'Gráficos de Local', 'Web Banners', 'Steakhouse Branding'],
+        services: ['Señalética', 'Gráficos para Local', 'Banners Web', 'Branding Steakhouse'],
         outcome: 'Un concepto visual alternativo y sofisticado que se traslada del local a la web.'
     },
     {
         id: '07',
-        category: 'Branding',
         title: 'Blum',
         year: '2025',
-        location: 'Alicante, España',
+        location: 'Identidad & Fotografía',
         images: [
             '/Proyectos/blum/motionsb1.jpg',
             '/Proyectos/blum/motionsb.jpg',
@@ -176,19 +168,18 @@ const successCases: SuccessCase[] = [
         description: 'Redefinimos la cultura del café a través del diseño y la imagen. Realizamos el rediseño total de la identidad visual, centrándonos en la experiencia física de consumo (vasos, tickets, bolsas) y potenciando su alcance digital mediante fotografía profesional.',
         graphicType: 'visibility',
         metrics: [
-            { label: 'Followers', value: '+2.4k', icon: Users },
+            { label: 'Seguidores', value: '+2.4k', icon: Users },
             { label: 'Impresiones', value: '+80k', icon: Search },
-            { label: 'Branding', value: 'Premium', icon: Gem }
+            { label: 'Estética', value: 'Premium', icon: Gem }
         ],
-        services: ['Rediseño Identidad', 'Diseño Packaging', 'Fotografía de Producto', 'Insta Content'],
+        services: ['Rediseño Identidad', 'Diseño Packaging', 'Fotografía de Producto', 'Contenido Instagram'],
         outcome: 'Identidad refrescada que conecta con el público joven y potencia el "shareability" en redes.'
     },
     {
         id: '08',
-        category: 'Branding',
         title: 'Lungo',
         year: '2025',
-        location: 'Canarias, España',
+        location: 'Branding Minimalista',
         images: [
             '/Proyectos/lungo/motionsll1.jpg',
             '/Proyectos/lungo/motionsll3.jpg',
@@ -199,18 +190,17 @@ const successCases: SuccessCase[] = [
         graphicType: 'brand',
         metrics: [
             { label: 'Impacto', value: 'Alto', icon: Activity },
-            { label: 'Diseño Post', value: '12+', icon: Target },
-            { label: 'Branding', value: 'Minimal', icon: Star }
+            { label: 'Diseños', value: '12+', icon: Target },
+            { label: 'Consistencia', value: '100%', icon: Star }
         ],
-        services: ['Evolución Logo', 'Diseño de Posters', 'Branding de Vasos', 'Identidad Básica'],
+        services: ['Evolución de Logo', 'Diseño de Posters', 'Branding de Vasos', 'Identidad Corporativa'],
         outcome: 'Consistencia visual en todos los soportes físicos para una marca de café de especialidad.'
     },
     {
         id: '09',
-        category: 'Branding',
         title: 'Spark',
         year: '2025',
-        location: 'Global',
+        location: 'Packaging & Estrategia',
         images: [
             '/Proyectos/spark/motionss1.jpg',
             '/Proyectos/spark/motionss2.jpg',
@@ -220,11 +210,11 @@ const successCases: SuccessCase[] = [
         description: 'Posicionamos a Spark como referente en el mercado de Cold Brew mediante un diseño gráfico premium para su packaging. Desarrollamos la identidad de su producto estrella y creamos campañas visuales para redes sociales que resaltan la calidad del producto.',
         graphicType: 'visibility',
         metrics: [
-            { label: 'Ventas', value: '+40%', icon: TrendingUp },
-            { label: 'Post reach', value: '+50k', icon: Users },
-            { label: 'Packaging', value: 'Iconic', icon: Search }
+            { label: 'Visitas', value: '+40%', icon: TrendingUp },
+            { label: 'Alcance', value: '+50k', icon: Users },
+            { label: 'Identidad', value: 'Icónica', icon: Search }
         ],
-        services: ['Botella Design', 'Logo Design', 'Campaign Posters', 'Instagram Strategy'],
+        services: ['Diseño de Botella', 'Diseño de Logo', 'Posters de Campaña', 'Estrategia Instagram'],
         outcome: 'Packaging icónico que facilita la entrada del producto en tiendas gourmet y retail.'
     }
 ];
@@ -300,17 +290,10 @@ const SuccessImageCarousel: React.FC<{ images: string[]; active: boolean }> = ({
 };
 
 const SuccessStories: React.FC = () => {
-    const [activeTab, setActiveTab] = useState('Todos');
     const [expandedId, setExpandedId] = useState<string | null>(successCases[0].id);
     const [showAll, setShowAll] = useState(false);
 
-    const categories = ['Todos', 'Google Maps', 'Sitios Web', 'Branding'];
-
-    const filteredCasesByTab = activeTab === 'Todos'
-        ? successCases
-        : successCases.filter(c => c.category === activeTab);
-
-    const displayedCases = showAll ? filteredCasesByTab : filteredCasesByTab.slice(0, 4);
+    const displayedCases = showAll ? successCases : successCases.slice(0, 4);
 
     const [visible, setVisible] = React.useState(false);
     const ref = React.useRef<HTMLDivElement>(null);
@@ -338,30 +321,6 @@ const SuccessStories: React.FC = () => {
                             resultados visibles.
                         </h2>
                     </div>
-
-                    <div className="flex flex-col items-end gap-6 w-full md:w-auto">
-                        <div className="flex flex-wrap gap-6 border-b border-gray-100 pb-2 w-full md:w-auto justify-end">
-                            {categories.map((cat) => (
-                                <button
-                                    key={cat}
-                                    onClick={() => {
-                                        setActiveTab(cat);
-                                        const first = cat === 'Todos'
-                                            ? successCases[0]
-                                            : successCases.find(c => c.category === cat);
-                                        if (first) setExpandedId(first.id);
-                                    }}
-                                    className={`text-sm font-medium pb-2 transition-all relative ${activeTab === cat ? 'text-black' : 'text-gray-400 hover:text-gray-600'
-                                        }`}
-                                >
-                                    {cat}
-                                    {activeTab === cat && (
-                                        <div className="absolute bottom-[-1px] left-0 w-full h-0.5 bg-black" />
-                                    )}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
                 </div>
 
                 {/* Main List */}
@@ -386,7 +345,7 @@ const SuccessStories: React.FC = () => {
                                     <div className="flex items-center gap-4 md:gap-16">
                                         <div className="flex items-center gap-6 md:gap-12 text-black/50 md:text-black min-w-0 md:min-w-[200px] justify-center md:justify-end">
                                             <span className="text-xs md:text-sm font-medium tabular-nums">{item.year}</span>
-                                            <span className="text-xs md:text-sm font-medium w-auto md:w-32 truncate text-right">{item.location}</span>
+                                            <span className="text-xs md:text-sm font-medium w-auto md:w-48 truncate text-right">{item.location}</span>
                                         </div>
                                         <div className={`p-1.5 rounded-full border border-gray-100 transition-all duration-500 ${isExpanded ? 'bg-black border-black rotate-90' : 'bg-transparent'}`}>
                                             <ChevronRight className={`w-4 h-4 transition-colors ${isExpanded ? 'text-white' : 'text-gray-400'}`} strokeWidth={1} />
@@ -445,7 +404,7 @@ const SuccessStories: React.FC = () => {
                 </div>
 
                 {/* Show More Button */}
-                {!showAll && filteredCasesByTab.length > 4 && (
+                {!showAll && successCases.length > 4 && (
                     <div className="mt-16 flex justify-center">
                         <button
                             onClick={() => setShowAll(true)}
