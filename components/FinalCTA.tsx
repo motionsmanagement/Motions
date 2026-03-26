@@ -85,7 +85,7 @@ const FinalCTA: React.FC = () => {
               <h2 className="text-2xl md:text-3xl lg:text-4xl text-black font-medium tracking-tight leading-tight mb-4">
                 Lleva tu restaurante al siguiente nivel
               </h2>
-              <p className="text-gray-600/80 text-[11px] md:text-base max-w-xl md:max-w-2xl mx-auto leading-relaxed md:leading-normal font-light px-4">
+              <p className="text-gray-600/80 text-[13px] md:text-base max-w-xl md:max-w-2xl mx-auto leading-relaxed md:leading-normal font-light px-4">
                 <span className="md:hidden">Déjanos tus datos y te contactaremos en <br /> menos de 24 horas.</span>
                 <span className="hidden md:inline">Déjanos tus datos y te llamaremos en menos de 24 horas para entender las necesidades de tu negocio y crear un plan a medida.</span>
               </p>
@@ -161,14 +161,14 @@ const FinalCTA: React.FC = () => {
               <div className="pt-6 flex justify-center">
                 <button 
                   type="submit" 
-                  className="bg-black text-white rounded-full pl-6 md:pl-10 pr-2 md:pr-2.5 py-2 md:py-2.5 flex items-center justify-between gap-4 md:gap-8 group hover:bg-neutral-800 transition-all hover:scale-[1.02] active:scale-95 w-full md:w-auto shadow-xl"
+                  className="bg-black text-white rounded-full pl-6 md:pl-10 pr-2 md:pr-2.5 py-2 md:py-2.5 flex items-center justify-center md:justify-between gap-3 md:gap-8 group hover:bg-neutral-800 transition-all hover:scale-[1.02] active:scale-95 w-full md:w-auto shadow-xl"
                 >
-                  <span className="font-semibold tracking-tight text-[14px] md:text-lg leading-tight pl-2">
+                  <span className="font-semibold tracking-tight text-[14px] md:text-lg leading-tight">
                     <span className="md:hidden">Solicitar presupuesto</span>
                     <span className="hidden md:inline">Solicitar presupuesto y auditoría</span>
                   </span>
-                  <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center text-black shadow-inner shrink-0 scale-90 md:scale-100">
-                    <img src="/anagram2.png" alt="Motions Anagram" className="w-5 h-5 md:w-7 md:h-7 object-contain group-hover:rotate-12 transition-transform" />
+                  <div className="w-9 h-9 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center text-black shadow-inner shrink-0 scale-90 md:scale-100">
+                    <img src="/anagram2.png" alt="Motions Anagram" className="w-4 h-4 md:w-7 md:h-7 object-contain group-hover:rotate-12 transition-transform" />
                   </div>
                 </button>
               </div>
