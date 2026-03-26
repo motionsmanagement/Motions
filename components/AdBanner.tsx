@@ -22,23 +22,30 @@ const AdBanner: React.FC = () => {
                 />
             </div>
 
-            {/* Floating Action Buttons - Bottom Center Glassmorphism Style */}
-            <div className="absolute bottom-12 md:bottom-28 left-1/2 -translate-x-1/2 w-full max-w-[90%] md:max-w-xl flex flex-row items-center justify-center gap-3 md:gap-5 px-4">
-                <a 
-                    href="https://wa.me/34666666666" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 md:flex-initial md:min-w-[200px] px-4 md:px-8 py-3.5 md:py-4 bg-white/10 backdrop-blur-xl text-white rounded-full font-bold text-[9px] md:text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2 shadow-2xl hover:bg-white/20 transition-all hover:scale-[1.05] active:scale-95 border border-white/30"
-                >
-                    <MessageSquare className="w-4 h-4 md:w-5 md:h-5 stroke-[2]" />
-                    WhatsApp
-                </a>
+            {/* Floating Action Buttons */}
+            <div className="absolute bottom-10 md:bottom-24 left-1/2 -translate-x-1/2 w-full max-w-[90%] md:max-w-xl flex flex-row items-center justify-center gap-4 px-4">
+                {/* Desktop Specific Button */}
                 <a 
                     href="#contacto"
-                    className="flex-1 md:flex-initial md:min-w-[200px] px-4 md:px-8 py-3.5 md:py-4 bg-black/40 backdrop-blur-xl text-white rounded-full font-bold text-[9px] md:text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2 shadow-2xl hover:bg-black/60 transition-all hover:scale-[1.05] active:scale-95 border border-white/20"
+                    className="hidden md:flex min-w-[200px] px-8 py-3.5 bg-white text-black rounded-full font-semibold text-sm transition-all hover:bg-neutral-100 hover:scale-[1.05] active:scale-95 shadow-xl items-center justify-center"
                 >
-                    <Calendar className="w-4 h-4 md:w-5 md:h-5 stroke-[2]" />
-                    Auditoría
+                    Pedir presupuesto
+                </a>
+
+                {/* Primary Button (Visible on both) */}
+                <a 
+                    href="#servicios"
+                    className="flex-1 md:flex-initial md:min-w-[200px] px-6 md:px-8 py-3.5 bg-black text-white rounded-full font-semibold text-sm transition-all hover:bg-neutral-800 hover:scale-[1.05] active:scale-95 shadow-xl flex items-center justify-center gap-3 border border-white/10"
+                >
+                    Más información
+                    <svg 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className="w-4 h-4 transition-transform rotate-90"
+                    >
+                        <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                 </a>
             </div>
         </section>
