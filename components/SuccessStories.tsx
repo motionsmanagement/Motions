@@ -26,6 +26,27 @@ const Gem = ({ size, strokeWidth, color }: any) => (
 
 const successCases: SuccessCase[] = [
     {
+        id: '03',
+        title: 'Kizuna',
+        year: '2025',
+        location: 'Estrategia SEO & Identidad',
+        images: [
+            '/Proyectos/Kizuna/motionsk1.jpg',
+            '/Proyectos/Kizuna/motionsk.jpg',
+            '/Proyectos/Kizuna/motionsk2.jpg',
+            '/Proyectos/Kizuna/motionsk3.jpg'
+        ],
+        description: 'Diseño de una identidad visual inspirada en la tradición japonesa con un toque contemporáneo. Implementamos un sistema de diseño gráfico integral que abarca la carta del restaurante, señalética y elementos corporativos, enfocándonos en la elegancia y la legibilidad.',
+        graphicType: 'visibility',
+        metrics: [
+            { label: 'Posicionamiento', value: 'Top 3', icon: MapPin },
+            { label: 'Búsquedas', value: '+5.2k', icon: Search },
+            { label: 'Reservas', value: '+25%', icon: CheckCircle2 }
+        ],
+        services: ['Identidad Visual', 'Diseño de Menú', 'SEO Local', 'Diseño de Señalética'],
+        outcome: 'Aumento significativo en la visibilidad local y una imagen de marca coherente y profesional.'
+    },
+    {
         id: '01',
         title: 'Burger Cartel',
         year: '2025',
@@ -69,27 +90,6 @@ const successCases: SuccessCase[] = [
         ],
         services: ['Branding Integral', 'Diseño Merchandising', 'Carta de Vinos', 'Diseño Social Media'],
         outcome: 'Ecosistema visual premium que refuerza el posicionamiento de lujo del restaurante.'
-    },
-    {
-        id: '03',
-        title: 'Kizuna',
-        year: '2025',
-        location: 'Estrategia SEO & Identidad',
-        images: [
-            '/Proyectos/Kizuna/motionsk1.jpg',
-            '/Proyectos/Kizuna/motionsk.jpg',
-            '/Proyectos/Kizuna/motionsk2.jpg',
-            '/Proyectos/Kizuna/motionsk3.jpg'
-        ],
-        description: 'Diseño de una identidad visual inspirada en la tradición japonesa con un toque contemporáneo. Implementamos un sistema de diseño gráfico integral que abarca la carta del restaurante, señalética y elementos corporativos, enfocándonos en la elegancia y la legibilidad.',
-        graphicType: 'visibility',
-        metrics: [
-            { label: 'Posicionamiento', value: 'Top 3', icon: MapPin },
-            { label: 'Búsquedas', value: '+5.2k', icon: Search },
-            { label: 'Reservas', value: '+25%', icon: CheckCircle2 }
-        ],
-        services: ['Identidad Visual', 'Diseño de Menú', 'SEO Local', 'Diseño de Señalética'],
-        outcome: 'Aumento significativo en la visibilidad local y una imagen de marca coherente y profesional.'
     },
     {
         id: '04',
@@ -233,26 +233,33 @@ const SuccessImageCarousel: React.FC<{ images: string[]; active: boolean }> = ({
         setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
     };
 
-    if (!active) return null;
-
     return (
         <div className="relative w-full h-full overflow-hidden group/carousel bg-gray-50">
             {/* Main Image */}
             <div className="relative w-full h-full overflow-hidden">
-                {images.map((src, idx) => (
-                    <img
-                        key={src}
-                        src={src}
-                        alt={`Project view ${idx + 1}`}
-                        className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                            idx === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
-                        }`}
-                    />
-                ))}
+                {images.map((src, idx) => {
+                    // We only want to load the other images if active or if it's the first image
+                    // This balances performance and speed
+                    const shouldLoad = active || idx === 0;
+                    
+                    if (!shouldLoad && idx !== 0) return null;
+
+                    return (
+                        <img
+                            key={src}
+                            src={src}
+                            alt={`Vista del proyecto ${idx + 1}`}
+                            loading={idx === 0 ? "eager" : "lazy"}
+                            className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                                idx === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+                            }`}
+                        />
+                    );
+                })}
             </div>
 
-            {/* Navigation Buttons */}
-            {images.length > 1 && (
+            {/* Navigation Buttons (Only if active and multiple images) */}
+            {active && images.length > 1 && (
                 <>
                     <button
                         onClick={prevImage}
@@ -278,13 +285,13 @@ const SuccessImageCarousel: React.FC<{ images: string[]; active: boolean }> = ({
                             />
                         ))}
                     </div>
+
+                    {/* Number indicator */}
+                    <div className="absolute top-6 right-6 px-3 py-1 bg-black/30 backdrop-blur-md rounded-full text-[10px] font-bold text-white uppercase tracking-widest z-30">
+                        {currentIndex + 1} / {images.length}
+                    </div>
                 </>
             )}
-            
-            {/* Number indicator */}
-            <div className="absolute top-6 right-6 px-3 py-1 bg-black/30 backdrop-blur-md rounded-full text-[10px] font-bold text-white uppercase tracking-widest z-30">
-                {currentIndex + 1} / {images.length}
-            </div>
         </div>
     );
 };
