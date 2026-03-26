@@ -68,13 +68,29 @@ const Navbar: React.FC = () => {
             <a href="tel:+34919610420" className={`hidden lg:block px-4 md:px-5 py-2 rounded-full border text-xs md:text-sm font-medium transition-all tracking-tight ${showDarkNavbar ? "border-black/10 text-black/90 hover:bg-black/5" : "border-white/20 text-white/90 hover:bg-white/10"}`}>
               +34 919 61 04 20
             </a>
-            <a href="#contacto" className={`hidden md:block px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-semibold transition-all shadow-lg tracking-tight ${showDarkNavbar ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}>
+            <a href="#contacto" className={`hidden md:block px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-semibold transition-all shadow-lg tracking-tight flex items-center gap-2 ${showDarkNavbar ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}>
               Empezar Ahora
+              <svg 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="w-3.5 h-3.5 transition-transform rotate-90"
+              >
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </a>
 
             {/* Mobile CTAs (Direct to WhatsApp) */}
-            <a href="https://wa.me/34919610420" className={`md:hidden px-4 py-2 rounded-full text-xs font-semibold transition-all shadow-lg tracking-tight ${showDarkNavbar ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}>
+            <a href="https://wa.me/34919610420" className={`md:hidden px-4 py-2 rounded-full text-xs font-semibold transition-all shadow-lg tracking-tight flex items-center gap-2 ${showDarkNavbar ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}>
               Empezar Ahora
+              <svg 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="w-3 h-3 transition-transform rotate-90"
+              >
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </a>
 
             {/* Mobile Menu Toggle */}
@@ -125,17 +141,25 @@ const Navbar: React.FC = () => {
               href="https://wa.me/34919610420" 
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 py-4 rounded-full bg-black text-white font-semibold text-sm text-center shadow-2xl active:scale-95 transition-all" 
+              className="flex-1 py-4 px-2 rounded-full bg-black text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-2xl active:scale-95 transition-all text-center" 
               onClick={() => setIsMenuOpen(false)}
             >
               Empezar Ahora
+              <svg 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="w-3.5 h-3.5 transition-transform rotate-90"
+              >
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </a>
             <a 
               href="tel:+34919610420" 
-              className="flex-1 py-4 rounded-full border border-black/10 text-black font-semibold text-sm text-center active:scale-95 transition-all" 
+              className="flex-1 py-4 px-2 rounded-full border border-black/10 text-black font-bold text-xs flex items-center justify-center shadow-sm active:scale-95 transition-all text-center tracking-tight" 
               onClick={() => setIsMenuOpen(false)}
             >
-              Llamar
+              +34 919 61 04 20
             </a>
           </div>
 

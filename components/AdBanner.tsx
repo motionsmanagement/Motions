@@ -8,7 +8,7 @@ const AdBanner: React.FC = () => {
             {/* Desktop Version */}
             <div className="hidden md:block w-full">
                 <img 
-                    src="/adbannermotionswebsite.jpg" 
+                    src="/adbannermotionswebsite2.jpg" 
                     alt="Publicidad Motions" 
                     className="w-full h-auto object-cover"
                 />
