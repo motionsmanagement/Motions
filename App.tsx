@@ -41,7 +41,7 @@ const HomePage: React.FC = () => {
       <main>
         <Hero />
         <Services />
-        {/* <ServicesBanner /> */}
+        <ServicesBanner />
         <RecentWorks />
         {/* <HowItWorks /> */}
         <SuccessStories />

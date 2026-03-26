@@ -33,20 +33,22 @@ const ServicesBanner: React.FC = () => {
         <section
             ref={ref}
             aria-label="Servicios Banner"
-            className="relative w-full min-h-[640px] lg:min-h-[460px] overflow-hidden flex flex-col justify-center"
+            className="relative w-full min-h-[580px] lg:min-h-[440px] overflow-hidden flex flex-col justify-center"
             style={{ ...INTER }}
         >
-            {/* Background image — 30% left on mobile to show center-left */}
-            <img
-                src="/banner.jpg"
-                alt="Fondo banner"
-                className="absolute inset-0 w-full h-full object-cover z-0"
-                style={{ filter: 'brightness(0.80)', objectPosition: '30% center' }}
-                loading="lazy"
-            />
+            {/* Background images — Desktop and Mobile */}
+            <picture className="absolute inset-0 z-0">
+                <source media="(max-width: 768px)" srcSet="/adbannermobilemotions.jpg" />
+                <img
+                    src="/adbannermotionswebsite.jpg"
+                    alt="Fondo banner"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                />
+            </picture>
 
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black/80 via-black/50 lg:via-black/30 to-transparent z-10" />
+            {/* Subtle Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black/50 via-black/20 to-transparent z-10" />
 
             {/* Content wrapper */}
             <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 py-16 lg:py-12 flex items-center justify-center">
