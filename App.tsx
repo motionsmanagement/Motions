@@ -10,6 +10,7 @@ import RecentWorks from './components/RecentWorks';
 import HowItWorks from './components/HowItWorks';
 import SuccessStories from './components/SuccessStories';
 import FinalCTA from './components/FinalCTA';
+import AdBanner from './components/AdBanner';
 import Footer from './components/Footer';
 
 // Legal Pages
@@ -41,9 +42,8 @@ const HomePage: React.FC = () => {
       <main>
         <Hero />
         <Services />
-        {/* <ServicesBanner /> */}
+        <AdBanner />
         <RecentWorks />
-        {/* <HowItWorks /> */}
         <SuccessStories />
         <FinalCTA />
       </main>
