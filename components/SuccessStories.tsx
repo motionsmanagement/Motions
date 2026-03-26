@@ -418,7 +418,14 @@ const SuccessStories: React.FC = () => {
                             className="flex items-center gap-3 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg"
                         >
                             Ver más proyectos
-                            <img src="/anagram.png" alt="Motions Anagram" className="w-5 h-5 invert brightness-0 group-hover:rotate-12 transition-transform" />
+                            <svg 
+                                viewBox="0 0 24 24" 
+                                fill="none" 
+                                xmlns="http://www.w3.org/2000/svg" 
+                                className="w-4 h-4 group-hover:translate-x-1 transition-transform rotate-90"
+                            >
+                                <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
                         </button>
                     </div>
                 )}
