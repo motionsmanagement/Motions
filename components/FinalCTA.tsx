@@ -146,13 +146,12 @@ const FinalCTA: React.FC = () => {
                       key={service}
                       type="button"
                       onClick={() => toggleService(service)}
-                      className={`px-3 md:px-4 py-1.5 rounded-full text-[11px] md:text-xs font-semibold border transition-all duration-300 flex items-center gap-1.5 ${
+                      className={`px-3 md:px-4 py-1.5 rounded-full text-[11px] md:text-xs font-semibold border transition-all duration-300 ${
                         selectedServices.includes(service)
-                          ? "bg-black border-black text-white shadow-md active:scale-95"
+                          ? "bg-black border-black text-white shadow-md"
                           : "bg-gray-50/50 border-gray-100 text-gray-500 hover:border-black/20 hover:bg-white"
                       }`}
                     >
-                      {selectedServices.includes(service) && <Check className="w-3 h-3 shrink-0" />}
                       {service}
                     </button>
                   ))}
