@@ -81,12 +81,14 @@ const FinalCTA: React.FC = () => {
           
           {/* Form State */}
           <div className={`relative z-10 w-full transition-all duration-700 ${isSubmitted ? 'opacity-0 pointer-events-none scale-[0.98] blur-sm' : 'opacity-100 scale-100 blur-none'}`}>
-            {/* Motions Logo + Title Row */}
-            <div className="flex flex-col items-center mb-6 md:mb-8">
+            <div className="flex flex-col items-center mb-6 md:mb-8 text-center">
               <img src="/motionsblack.png" alt="Motions Logo" className="h-6 md:h-8 w-auto mb-4" />
-              <h2 className="text-2xl md:text-4xl lg:text-5xl text-black font-medium text-center tracking-tight leading-tight">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl text-black font-medium tracking-tight leading-tight mb-3">
                 Lleva tu restaurante al siguiente nivel
               </h2>
+              <p className="text-gray-500 text-[11px] md:text-sm max-w-xl mx-auto leading-relaxed font-light px-4">
+                Déjanos tus datos y te llamaremos en menos de 24 horas para entender las necesidades de tu negocio y crear un plan a medida.
+              </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
