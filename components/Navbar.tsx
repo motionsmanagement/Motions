@@ -29,8 +29,8 @@ const Navbar: React.FC = () => {
     }
   }, [isMenuOpen]);
 
-  const isLegalPage = ['/privacidad', '/cookies', '/aviso-legal'].includes(location.pathname);
-  const showDarkNavbar = isScrolled || isLegalPage || isMenuOpen;
+  const isWhiteBgPage = ['/privacidad', '/cookies', '/aviso-legal', '/unete'].includes(location.pathname);
+  const showDarkNavbar = isScrolled || isWhiteBgPage || isMenuOpen;
 
   const themeClass = showDarkNavbar
     ? "bg-white/80 border-black/5 shadow-lg text-[#2D241E]"
@@ -42,7 +42,6 @@ const Navbar: React.FC = () => {
     { name: "Servicios", href: "/#servicios" },
     { name: "Nuestra Especialidad", href: "/#trabajos" },
     { name: "Proyectos", href: "/#proyectos" },
-    { name: "Únete al equipo", href: "/unete" },
     { name: "Contacto", href: "/#contacto" },
   ];
 
