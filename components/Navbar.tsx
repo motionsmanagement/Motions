@@ -91,9 +91,12 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 z-[100] bg-white transition-all duration-500 md:hidden ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
+      <div 
+        className={`fixed inset-0 z-[100] bg-white md:hidden transition-all duration-[750ms] cubic-bezier(0.16,1,0.3,1) ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-[101%] pointer-events-none'}`}
+        style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+      >
         {/* Top Header inside Overlay */}
-        <div className="absolute top-0 left-0 right-0 h-20 px-8 flex justify-between items-center bg-white border-b border-black/[0.03]">
+        <div className="absolute top-0 left-0 right-0 h-20 px-8 flex justify-between items-center bg-white">
           <Link to="/" onClick={() => setIsMenuOpen(false)}>
             <img src="/motionsblack.png" alt="Motions Logo" className="h-7 w-auto" />
           </Link>
@@ -108,11 +111,15 @@ const Navbar: React.FC = () => {
         <div className="flex flex-col h-full px-8 pt-24 pb-8 overflow-hidden">
           {/* Main Navigation Links */}
           <div className="flex flex-col gap-9 text-left mb-10">
-            {navLinks.map((link) => (
+            {navLinks.map((link, index) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xl font-medium text-black tracking-tight flex items-center justify-between group"
+                className={`text-xl font-medium text-black tracking-tight flex items-center justify-between group transition-all duration-[800ms] ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ 
+                  transitionDelay: isMenuOpen ? `${index * 80 + 150}ms` : '0ms',
+                  transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                }}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
@@ -128,59 +135,59 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* Quick Choice Buttons */}
-          <div className="flex gap-3 w-full mb-8">
+          {/* Quick Choice Buttons & Banner with staggered reveal as well */}
+          <div className={`transition-all duration-[800ms] delay-[400ms] ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}>
+            <div className="flex gap-3 w-full mb-8">
+              <a 
+                href="https://wa.me/34919610420" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 py-4 px-2 rounded-full bg-black text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-2xl active:scale-95 transition-all text-center" 
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Empezar Ahora
+                <svg 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="w-3.5 h-3.5 transition-transform rotate-90"
+                >
+                    <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+              <a 
+                href="tel:+34919610420" 
+                className="flex-1 py-4 px-2 rounded-full border border-black/10 text-black font-bold text-xs flex items-center justify-center shadow-sm active:scale-95 transition-all text-center tracking-tight" 
+                onClick={() => setIsMenuOpen(false)}
+              >
+                +34 919 61 04 20
+              </a>
+            </div>
+
+            {/* New Promo Banner Link */}
             <a 
               href="https://wa.me/34919610420" 
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 py-4 px-2 rounded-full bg-black text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-2xl active:scale-95 transition-all text-center" 
+              className="relative rounded-[2.5rem] overflow-hidden group block shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-black/[0.03] h-48 sm:h-56"
               onClick={() => setIsMenuOpen(false)}
             >
-              Empezar Ahora
-              <svg 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="w-3.5 h-3.5 transition-transform rotate-90"
-              >
-                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
-            <a 
-              href="tel:+34919610420" 
-              className="flex-1 py-4 px-2 rounded-full border border-black/10 text-black font-bold text-xs flex items-center justify-center shadow-sm active:scale-95 transition-all text-center tracking-tight" 
-              onClick={() => setIsMenuOpen(false)}
-            >
-              +34 919 61 04 20
-            </a>
-          </div>
+              <img src="/menuside.jpg" alt="Obtén Descuento" className="absolute inset-0 w-full h-full object-cover brightness-[0.7] group-hover:scale-105 transition-transform duration-[1.5s]" />
+              
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-7 flex flex-col justify-end">
+                <h4 className="text-white text-[1.75rem] font-extrabold leading-[1.05] tracking-tight mb-5 px-1">
+                  Obtén un 10% <br /> de descuento
+                </h4>
 
-          {/* New Promo Banner - Linked to WhatsApp (Optimal visibility) */}
-          <a 
-            href="https://wa.me/34919610420" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 relative rounded-[2.5rem] overflow-hidden group block shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-black/[0.03]"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <img src="/menuside.jpg" alt="Obtén Descuento" className="absolute inset-0 w-full h-full object-cover brightness-[0.7] group-hover:scale-105 transition-transform duration-[1.5s]" />
-            
-            {/* Overlay Content - Bottom Aligned */}
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-7 flex flex-col justify-end">
-              <h4 className="text-white text-[1.75rem] font-extrabold leading-[1.05] tracking-tight mb-5 px-1">
-                Obtén un 10% <br /> de descuento
-              </h4>
-
-              {/* Premium Inverted Button Style Overlay */}
-              <div className="bg-white/95 text-black rounded-full pl-5 pr-1.5 py-1.5 flex items-center justify-between gap-3 w-fit shadow-2xl backdrop-blur-md border border-black/5 ml-1">
-                <span className="text-[11px] font-bold tracking-tight">Obtener ahora</span>
-                <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center text-white">
-                  <ChevronRight className="w-4 h-4" />
+                <div className="bg-white/95 text-black rounded-full pl-5 pr-1.5 py-1.5 flex items-center justify-between gap-3 w-fit shadow-2xl backdrop-blur-md border border-black/5 ml-1">
+                  <span className="text-[11px] font-bold tracking-tight">Obtener ahora</span>
+                  <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center text-white">
+                    <ChevronRight className="w-4 h-4" />
+                  </div>
                 </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
     </>
