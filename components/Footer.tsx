@@ -6,6 +6,17 @@ const Footer: React.FC = () => {
   const [visible, setVisible] = React.useState(false);
   const ref = React.useRef<HTMLElement>(null);
 
+  const handleScroll = (id: string) => (e: React.MouseEvent) => {
+    // Si estamos en la página de inicio, forzamos el scroll aunque el hash sea el mismo
+    if (window.location.pathname === '/') {
+      const element = document.getElementById(id.replace('#', ''));
+      if (element) {
+        e.preventDefault();
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setVisible(entry.isIntersecting),
@@ -44,12 +55,12 @@ const Footer: React.FC = () => {
           <div>
             <h5 className="text-black font-semibold mb-8 text-sm uppercase tracking-widest">Servicios</h5>
             <ul className="space-y-4">
-              <li><Link to="/#servicios" className="text-gray-600 hover:text-black transition-colors">Google My Business</Link></li>
-              <li><Link to="/#servicios" className="text-gray-600 hover:text-black transition-colors">Diseño Web Premium</Link></li>
-              <li><Link to="/#servicios" className="text-gray-600 hover:text-black transition-colors">Branding e Identidad</Link></li>
-              <li><Link to="/#servicios" className="text-gray-600 hover:text-black transition-colors">Integración con IA</Link></li>
-              <li><Link to="/#servicios" className="text-gray-600 hover:text-black transition-colors">SEO Gastronómico</Link></li>
-              <li><Link to="/#servicios" className="text-gray-600 hover:text-black transition-colors">Estrategia Digital</Link></li>
+              <li><Link to="/#servicios" onClick={handleScroll('servicios')} className="text-gray-600 hover:text-black transition-colors">Google My Business</Link></li>
+              <li><Link to="/#servicios" onClick={handleScroll('servicios')} className="text-gray-600 hover:text-black transition-colors">Diseño Web Premium</Link></li>
+              <li><Link to="/#servicios" onClick={handleScroll('servicios')} className="text-gray-600 hover:text-black transition-colors">Branding e Identidad</Link></li>
+              <li><Link to="/#servicios" onClick={handleScroll('servicios')} className="text-gray-600 hover:text-black transition-colors">Integración con IA</Link></li>
+              <li><Link to="/#servicios" onClick={handleScroll('servicios')} className="text-gray-600 hover:text-black transition-colors">SEO Gastronómico</Link></li>
+              <li><Link to="/#servicios" onClick={handleScroll('servicios')} className="text-gray-600 hover:text-black transition-colors">Estrategia Digital</Link></li>
             </ul>
           </div>
 
@@ -57,10 +68,10 @@ const Footer: React.FC = () => {
           <div>
             <h5 className="text-black font-semibold mb-8 text-sm uppercase tracking-widest">Navegación</h5>
             <ul className="space-y-4">
-              <li><Link to="/" className="text-gray-600 hover:text-black transition-colors">Inicio</Link></li>
+              <li><Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-600 hover:text-black transition-colors">Inicio</Link></li>
               <li><Link to="/unete" className="text-gray-600 hover:text-black transition-colors font-medium">Únete al equipo</Link></li>
-              <li><Link to="/#proyectos" className="text-gray-600 hover:text-black transition-colors">Proyectos</Link></li>
-              <li><Link to="/#contacto" className="text-gray-600 hover:text-black transition-colors">Contacto</Link></li>
+              <li><Link to="/#proyectos" onClick={handleScroll('proyectos')} className="text-gray-600 hover:text-black transition-colors">Proyectos</Link></li>
+              <li><Link to="/#contacto" onClick={handleScroll('contacto')} className="text-gray-600 hover:text-black transition-colors">Contacto</Link></li>
             </ul>
           </div>
 
