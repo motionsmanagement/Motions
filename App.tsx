@@ -11,8 +11,9 @@ import FinalCTA from './components/FinalCTA';
 import AdBanner from './components/AdBanner';
 import Footer from './components/Footer';
 
-// Legal Pages
+// Legal & Other Pages
 import { PrivacyPolicy, CookiesPolicy, LegalNotice } from './components/legal/LegalPages';
+import Careers from './components/Careers';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -57,6 +58,7 @@ const App: React.FC = () => {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/unete" element={<Careers />} />
           <Route path="/privacidad" element={<PrivacyPolicy />} />
           <Route path="/cookies" element={<CookiesPolicy />} />
           <Route path="/aviso-legal" element={<LegalNotice />} />
