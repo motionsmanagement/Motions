@@ -58,16 +58,20 @@ const RecentWorks: React.FC = () => {
           will-change: transform;
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
-          perspective: 1000;
-          -webkit-perspective: 1000;
+          perspective: 1000px;
+          -webkit-perspective: 1000px;
+          transform-style: preserve-3d;
+          image-rendering: -webkit-optimize-contrast;
         }
         .animate-scroll-down {
           animation: scrollDown 45s linear infinite;
           will-change: transform;
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
-          perspective: 1000;
-          -webkit-perspective: 1000;
+          perspective: 1000px;
+          -webkit-perspective: 1000px;
+          transform-style: preserve-3d;
+          image-rendering: -webkit-optimize-contrast;
         }
       `}</style>
 
