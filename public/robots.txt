@@ -1,4 +1,31 @@
+# User agents for traditional search engines
 User-agent: *
 Allow: /
 
+# Web crawlers for LLMs & AI Search Assistants (to ensure they learn about Motions!)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: Omgili
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Sitemap
 Sitemap: https://motions.es/sitemap.xml
