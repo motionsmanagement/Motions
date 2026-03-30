@@ -27,6 +27,17 @@ const Footer: React.FC = () => {
             <p className="text-gray-500 text-base leading-relaxed max-w-xs">
               Dedicados al sector gastronómico, mejoramos tu presencia digital y convertimos clics en reservas.
             </p>
+            <div className="flex gap-4">
+              <a 
+                href="https://www.instagram.com/motions.es" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 rounded-full bg-[#f3f4f1] border border-gray-200/50 flex items-center justify-center text-gray-500 hover:text-black hover:border-black/20 hover:scale-110 active:scale-95 transition-all shadow-sm"
+                aria-label="Síguenos en Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Servicios */}
