@@ -55,10 +55,12 @@
     <meta name="twitter:image:alt" content="Motions - Especialistas web y branding de restaurantes">
     <meta name="twitter:creator" content="@motions">
 
-    <!-- Favicon & Icons (Optimized for Google SERP) -->
+    <!-- Favicon & PWA Icons (Optimized for Google SERP & App Like Feel) -->
     <link rel="icon" type="image/png" sizes="512x512" href="/motionsblack.png">
     <link rel="apple-touch-icon" sizes="512x512" href="/motionsblack.png">
+    <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#000000">
+    <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
 
     <!-- Scroll Restoration -->
     <script>
@@ -76,6 +78,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
         }

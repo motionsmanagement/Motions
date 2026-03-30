@@ -1,0 +1,23 @@
+{
+  "name": "Motions",
+  "short_name": "Motions",
+  "description": "Motions: Especialistas en potenciar restaurantes con diseño web, branding e IA.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/motionsblack.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/motionsblack.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait",
+  "lang": "es-ES"
+}

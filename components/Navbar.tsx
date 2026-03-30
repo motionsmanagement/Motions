@@ -57,9 +57,9 @@ const Navbar: React.FC = () => {
 
           <div className={`hidden md:flex items-center gap-8 font-medium text-sm transition-colors duration-300 ${showDarkNavbar ? "text-[#2D241E]/80" : "text-white/80"}`}>
             {navLinks.map((link) => (
-              <Link key={link.name} to={link.href} className={`hover:text-current transition-colors tracking-tight ${showDarkNavbar ? "hover:text-black" : "hover:text-white"}`}>
+              <a key={link.name} href={link.href} className={`hover:text-current transition-colors tracking-tight ${showDarkNavbar ? "hover:text-black" : "hover:text-white"}`}>
                 {link.name}
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -109,15 +109,15 @@ const Navbar: React.FC = () => {
           {/* Main Navigation Links */}
           <div className="flex flex-col gap-9 text-left mb-10">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
-                to={link.href}
+                href={link.href}
                 className="text-3xl font-semibold text-black tracking-tight flex items-center justify-between group"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
                 <ChevronRight className="w-5 h-5 text-black/20 group-hover:text-black transition-colors" />
-              </Link>
+              </a>
             ))}
           </div>
 
