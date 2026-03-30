@@ -142,7 +142,7 @@ const Navbar: React.FC = () => {
                 href="https://wa.me/34919610420" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-4 px-2 rounded-full bg-black text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-2xl active:scale-95 transition-all text-center" 
+                className="flex-1 py-3.5 px-2 rounded-full bg-black text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-2xl active:scale-95 transition-all text-center" 
                 onClick={() => setIsMenuOpen(false)}
               >
                 Empezar Ahora
@@ -157,7 +157,7 @@ const Navbar: React.FC = () => {
               </a>
               <a 
                 href="tel:+34919610420" 
-                className="flex-1 py-4 px-2 rounded-full border border-black/10 text-black font-bold text-xs flex items-center justify-center shadow-sm active:scale-95 transition-all text-center tracking-tight" 
+                className="flex-1 py-3.5 px-2 rounded-full border border-black/10 text-black font-bold text-sm flex items-center justify-center shadow-sm active:scale-95 transition-all text-center tracking-tight" 
                 onClick={() => setIsMenuOpen(false)}
               >
                 +34 919 61 04 20
