@@ -43,7 +43,7 @@ const col3 = [
 
 const RecentWorks: React.FC = () => {
   return (
-    <section className="relative py-24 bg-white overflow-hidden font-['Inter']">
+    <section id="trabajos" className="relative py-24 bg-white overflow-hidden font-['Inter']">
       <style>{`
         @keyframes scrollUp {
           from { transform: translateY(0); }
