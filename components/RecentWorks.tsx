@@ -46,20 +46,28 @@ const RecentWorks: React.FC = () => {
     <section id="trabajos" className="relative py-24 bg-white overflow-hidden font-['Inter']">
       <style>{`
         @keyframes scrollUp {
-          from { transform: translateY(0); }
-          to { transform: translateY(-50%); }
+          from { transform: translate3d(0, 0, 0); }
+          to { transform: translate3d(0, -50%, 0); }
         }
         @keyframes scrollDown {
-          from { transform: translateY(-50%); }
-          to { transform: translateY(0); }
+          from { transform: translate3d(0, -50%, 0); }
+          to { transform: translate3d(0, 0, 0); }
         }
         .animate-scroll-up {
           animation: scrollUp 40s linear infinite;
           will-change: transform;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          perspective: 1000;
+          -webkit-perspective: 1000;
         }
         .animate-scroll-down {
           animation: scrollDown 45s linear infinite;
           will-change: transform;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          perspective: 1000;
+          -webkit-perspective: 1000;
         }
       `}</style>
 
