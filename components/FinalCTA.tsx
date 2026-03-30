@@ -73,7 +73,7 @@ const FinalCTA: React.FC = () => {
         <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
       </div>
 
-      <div className={`relative z-10 max-w-4xl w-full transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <div className={`relative z-10 max-w-4xl w-full transition-all duration-[1000ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
         
         {/* Centralized Horizontal Contact Form Card */}
         <div className="bg-white rounded-[2rem] p-6 md:p-12 shadow-[0_48px_80px_-20px_rgba(0,0,0,0.3)] relative overflow-hidden flex items-center justify-center">

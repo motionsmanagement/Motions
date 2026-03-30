@@ -3,9 +3,21 @@ import { Link } from 'react-router-dom';
 import { Instagram, Linkedin, MessageCircle, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const [visible, setVisible] = React.useState(false);
+  const ref = React.useRef<HTMLElement>(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <footer className="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-[#F1EFEA] font-['Inter']">
-      <div className="max-w-7xl mx-auto">
+    <footer ref={ref} className="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-[#F1EFEA] font-['Inter']">
+      <div className={`max-w-7xl mx-auto transition-all duration-[1000ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           {/* Logo & About */}
           <div className="flex flex-col gap-8">

@@ -328,20 +328,23 @@ const SuccessStories: React.FC = () => {
 
                 {/* Main List */}
                 <div className="border-t border-gray-100">
-                    {displayedCases.map((item) => {
+                    {displayedCases.map((item, index) => {
                         const isExpanded = expandedId === item.id;
                         return (
                             <div
                                 key={item.id}
-                                className={`border-b border-gray-100 transition-all duration-700 ease-in-out overflow-hidden ${isExpanded ? 'py-12 bg-white' : 'hover:bg-gray-50/50'
-                                    }`}
+                                className={`border-b border-gray-100 transition-all duration-[1000ms] overflow-hidden ${isExpanded ? 'py-12 bg-white' : 'hover:bg-gray-50/50'} ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                                style={{ 
+                                    transitionDelay: visible ? `${index * 100}ms` : '0ms',
+                                    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                                }}
                             >
                                 {/* Header (Clickable) */}
                                 <div
                                     className={`flex flex-col md:flex-row items-center justify-between cursor-pointer group gap-4 ${!isExpanded ? 'py-7' : 'mb-10 text-center md:text-left'}`}
                                     onClick={() => setExpandedId(isExpanded ? null : item.id)}
                                 >
-                                    <h3 className={`text-xl md:text-2xl font-medium transition-all ${isExpanded ? 'text-black' : 'text-gray-500 group-hover:text-black'}`}>
+                                    <h3 className={`text-xl md:text-2xl font-medium transition-all duration-500 ${isExpanded ? 'text-black' : 'text-gray-500 group-hover:text-black'}`}>
                                         {item.title}
                                     </h3>
 
@@ -350,7 +353,7 @@ const SuccessStories: React.FC = () => {
                                             <span className="text-xs md:text-sm font-medium tabular-nums">{item.year}</span>
                                             <span className="text-xs md:text-sm font-medium w-auto md:w-48 truncate text-right">{item.location}</span>
                                         </div>
-                                        <div className={`p-1.5 rounded-full border border-gray-100 transition-all duration-500 ${isExpanded ? 'bg-black border-black rotate-90' : 'bg-transparent'}`}>
+                                        <div className={`p-1.5 rounded-full border border-gray-100 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded ? 'bg-black border-black rotate-90' : 'bg-transparent'}`}>
                                             <ChevronRight className={`w-4 h-4 transition-colors ${isExpanded ? 'text-white' : 'text-gray-400'}`} strokeWidth={1} />
                                         </div>
                                     </div>

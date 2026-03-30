@@ -180,10 +180,14 @@ const Services: React.FC = () => {
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="group relative h-[440px] rounded-[2.5rem] border border-white/10 bg-[#0A0A0A] transition-all duration-700 cursor-default overflow-hidden shadow-2xl hover:-translate-y-2"
+                            className={`group relative h-[440px] rounded-[2.5rem] border border-white/10 bg-[#0A0A0A] transition-all duration-1000 cursor-default overflow-hidden shadow-2xl hover:-translate-y-2 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                            style={{ 
+                                transitionDelay: visible ? `${index * 150}ms` : '0ms',
+                                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                            }}
                         >
                             {/* Technical Visualization with fade-out */}
-                            <div className="absolute top-0 left-0 w-full h-[55%] pointer-events-none transition-transform duration-1000 group-hover:scale-105">
+                            <div className="absolute top-0 left-0 w-full h-[55%] pointer-events-none transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110">
                                 <service.Illustration isVisible={visible} />
                                 {/* Bottom Fade for legibility */}
                                 <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/90 to-transparent"></div>
@@ -200,7 +204,7 @@ const Services: React.FC = () => {
                                     {service.title}
                                 </h3>
 
-                                <p className="text-sm text-white/70 leading-relaxed mb-8 group-hover:text-white/90 transition-colors max-w-[90%]">
+                                <p className="text-sm text-white/70 leading-relaxed mb-8 group-hover:text-white/90 transition-colors duration-500 max-w-[90%]">
                                     {service.description}
                                 </p>
 
@@ -210,7 +214,7 @@ const Services: React.FC = () => {
                             </div>
 
                             {/* Subtle inner hover glow */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
                         </div>
                     ))}
                 </div>
