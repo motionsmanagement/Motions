@@ -112,11 +112,18 @@ const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-3xl font-semibold text-black tracking-tight flex items-center justify-between group"
+                className="text-xl font-medium text-black tracking-tight flex items-center justify-between group"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
-                <ChevronRight className="w-5 h-5 text-black/20 group-hover:text-black transition-colors" />
+                <svg 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="w-4 h-4 text-black/30 group-hover:text-black transition-transform rotate-90"
+                >
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </a>
             ))}
           </div>
