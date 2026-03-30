@@ -123,9 +123,9 @@ const Careers: React.FC = () => {
     <div className="bg-white min-h-screen font-['Inter'] selection:bg-black selection:text-white overflow-x-hidden">
       <Navbar />
       
-      <main className="pt-32 md:pt-48 pb-24">
+      <main className="pt-32 md:pt-48 pb-32">
         {/* Hero Section */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 md:mb-20 text-center">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16 md:mb-24 text-center">
           <div className={`inline-flex items-center bg-gray-50 border border-gray-200 px-4 py-1.5 rounded-full mb-8 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
              <div className="w-1.5 h-1.5 bg-black rounded-full animate-pulse mr-2" />
             <span className="text-[10px] font-bold text-black uppercase tracking-[0.2em]">Oportunidades Abiertas</span>
@@ -140,14 +140,14 @@ const Careers: React.FC = () => {
           </p>
         </div>
 
-        {/* Jobs List - Integrated Form Experience */}
-        <div className="max-w-4xl mx-auto px-6 md:px-10 space-y-4 mb-32">
+        {/* Jobs List - Perceptively better visibility */}
+        <div className="max-w-4xl mx-auto px-6 md:px-10 space-y-6 mb-32">
           {positions.map((job, index) => {
             const isExpanded = expandedId === job.id;
             return (
               <div 
                 key={job.id}
-                className={`group transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'} ${isExpanded ? 'bg-[#FAFAFA] rounded-[2rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.05)] border border-gray-100 p-6 md:p-10' : 'py-10 border-b border-gray-100'}`}
+                className={`group transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'} ${isExpanded ? 'bg-white rounded-[2.5rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] border border-gray-100 p-8 md:p-12' : 'py-10 border-b border-gray-100 hover:border-black/10'}`}
                 style={{ transitionDelay: isExpanded ? '0ms' : `${index * 80 + 400}ms` }}
               >
                 {/* Job Info Header */}
@@ -156,77 +156,80 @@ const Careers: React.FC = () => {
                     setExpandedId(isExpanded ? null : job.id);
                     setIsSubmitted(false);
                   }}
-                  className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 cursor-pointer"
+                  className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 cursor-pointer"
                 >
                   <div className="flex-1">
-                    <div className="flex flex-wrap items-center gap-3 mb-5">
+                    <div className="flex flex-wrap items-center gap-3 mb-6">
                       <span className={`text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest transition-all ${isExpanded ? 'bg-black text-white' : 'text-gray-400 bg-gray-50 border border-gray-100'}`}>{job.category}</span>
                       <span className="text-[10px] font-bold text-gray-300 bg-gray-50/50 px-3 py-1 rounded-full border border-gray-100 transition-all uppercase tracking-widest">{job.location}</span>
                       <span className="text-[10px] font-bold text-gray-300 bg-gray-50/50 px-3 py-1 rounded-full border border-gray-100 transition-all uppercase tracking-widest">{job.type}</span>
                     </div>
-                    <h3 className={`text-xl md:text-3xl font-medium text-black transition-all duration-500 tracking-tight leading-tight ${isExpanded ? 'text-black' : 'group-hover:text-black/60'}`}>
+                    <h3 className={`text-2xl md:text-3xl font-medium text-black transition-all duration-500 tracking-tight leading-tight ${isExpanded ? 'text-black' : 'group-hover:text-black/60'}`}>
                       {job.title}
                     </h3>
                   </div>
                   
                   <div className="flex items-center gap-6 w-full md:w-auto md:justify-end">
-                    <div className={`w-10 h-10 md:w-14 md:h-14 rounded-full border border-gray-100 flex items-center justify-center transition-all duration-500 ml-auto md:ml-0 shadow-sm ${isExpanded ? 'bg-black text-white rotate-90 border-black' : 'bg-white group-hover:bg-black group-hover:text-white group-hover:scale-110'}`}>
-                      {isExpanded ? <X className="w-4 h-4 md:w-6 md:h-6" /> : <ArrowRight className="w-4 h-4 md:w-6 md:h-6 transition-transform group-hover:-rotate-45" />}
+                    <div className={`w-12 h-12 md:w-16 md:h-16 rounded-full border border-gray-100 flex items-center justify-center transition-all duration-500 ml-auto md:ml-0 shadow-sm ${isExpanded ? 'bg-black text-white rotate-90 border-black' : 'bg-white group-hover:bg-black group-hover:text-white group-hover:scale-110'}`}>
+                      {isExpanded ? <X className="w-5 h-5 md:w-6 md:h-6" /> : <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:-rotate-45" />}
                     </div>
                   </div>
                 </div>
 
-                {/* Integrated Form Section */}
+                {/* Integrated Form Section - Optimized spacing & contrast */}
                 <div 
-                  className={`overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded ? 'max-h-[1200px] opacity-100 mt-12' : 'max-h-0 opacity-0 pointer-events-none'}`}
+                  className={`overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded ? 'max-h-[1500px] opacity-100 mt-16 pt-16 border-t border-gray-100' : 'max-h-0 opacity-0 pointer-events-none'}`}
                 >
-                  <div className="border-t border-gray-100 pt-12">
-                    {!isSubmitted ? (
-                      <>
-                        <div className="mb-16">
-                          <p className="text-gray-500 text-[15px] md:text-lg leading-relaxed max-w-2xl mb-12">
-                            {job.description}
-                          </p>
-                          <div className="h-px w-full bg-gray-50 mb-12" />
-                          <h4 className="text-2xl md:text-4xl font-medium text-black tracking-tighter mb-12">Envía tu postulación para <br /> <span className="text-gray-300">{job.title}</span></h4>
-                        </div>
+                  {!isSubmitted ? (
+                    <>
+                      <div className="mb-20">
+                        <p className="text-gray-500 text-lg md:text-xl leading-relaxed max-w-3xl mb-16">
+                          {job.description}
+                        </p>
+                        <h4 className="text-3xl md:text-5xl font-medium text-black tracking-tighter mb-16 leading-[1.1]">Envía tu postulación <br /> en un clic.</h4>
+                      </div>
 
-                        <form onSubmit={(e) => handleSubmit(e, job.title)} className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
-                          <div className="space-y-4">
-                            <label className="text-[11px] font-bold text-gray-500 uppercase tracking-[0.2em] block">Nombre Completo</label>
-                            <input required name="nombre" type="text" className="w-full bg-transparent border-b border-gray-200 pb-4 focus:outline-none focus:border-black transition-all text-xl md:text-2xl font-medium text-black placeholder:text-gray-200" placeholder="Escribe tu nombre..." />
+                      <div className="bg-[#fafaf9] rounded-[2rem] p-8 md:p-14 border border-gray-100 mb-4">
+                        <form onSubmit={(e) => handleSubmit(e, job.title)} className="grid grid-cols-1 gap-y-12">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+                             <div className="space-y-4">
+                              <label className="text-[11px] font-bold text-gray-500 uppercase tracking-[0.2em] block">Nombre Completo</label>
+                              <input required name="nombre" type="text" className="w-full bg-transparent border-b border-gray-200 pb-4 focus:outline-none focus:border-black transition-all text-xl md:text-2xl font-medium text-black placeholder:text-gray-200" placeholder="Escribe tu nombre..." />
+                            </div>
+                            <div className="space-y-4">
+                              <label className="text-[11px] font-bold text-gray-500 uppercase tracking-[0.2em] block">Email de Contacto</label>
+                              <input required name="email" type="email" className="w-full bg-transparent border-b border-gray-200 pb-4 focus:outline-none focus:border-black transition-all text-xl md:text-2xl font-medium text-black placeholder:text-gray-200" placeholder="hola@tuemail.com" />
+                            </div>
                           </div>
+                          
                           <div className="space-y-4">
-                            <label className="text-[11px] font-bold text-gray-500 uppercase tracking-[0.2em] block">Email de Contacto</label>
-                            <input required name="email" type="email" className="w-full bg-transparent border-b border-gray-200 pb-4 focus:outline-none focus:border-black transition-all text-xl md:text-2xl font-medium text-black placeholder:text-gray-200" placeholder="hola@tuemail.com" />
-                          </div>
-                          <div className="md:col-span-2 space-y-4">
                             <label className="text-[11px] font-bold text-gray-500 uppercase tracking-[0.2em] block">LinkedIn o Portfolio</label>
                             <input required name="linkedin" type="url" className="w-full bg-transparent border-b border-gray-200 pb-4 focus:outline-none focus:border-black transition-all text-xl md:text-2xl font-medium text-black placeholder:text-gray-200" placeholder="https://..." />
                           </div>
-                          <div className="md:col-span-2 space-y-4">
+                          
+                          <div className="space-y-4">
                             <label className="text-[11px] font-bold text-gray-500 uppercase tracking-[0.2em] block">Notas Adicionales / Presentación</label>
                             <textarea name="mensaje" rows={3} className="w-full bg-transparent border-b border-gray-200 pb-4 focus:outline-none focus:border-black transition-all text-xl md:text-2xl font-medium text-black resize-none placeholder:text-gray-200" placeholder="Cuéntanos por qué eres el perfil ideal..."></textarea>
                           </div>
 
-                          <div className="md:col-span-2 pt-12">
-                            <button type="submit" className="w-full md:w-auto px-12 py-5 bg-black text-white rounded-full font-bold text-base shadow-2xl hover:bg-neutral-800 transition-all hover:scale-[1.05] active:scale-95">
-                              Enviar Candidatura
+                          <div className="pt-10">
+                            <button type="submit" className="w-full md:w-auto px-16 py-6 bg-black text-white rounded-full font-bold text-base md:text-lg shadow-2xl hover:bg-neutral-800 transition-all hover:scale-[1.05] active:scale-95">
+                              Enviar Postulación
                             </button>
                           </div>
                         </form>
-                      </>
-                    ) : (
-                      <div className="flex flex-col items-center text-center py-16">
-                        <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center mb-10 shadow-3xl text-white">
-                          <Check className="w-10 h-10" />
-                        </div>
-                        <h2 className="text-3xl md:text-4xl font-medium text-black mb-6 tracking-tighter">Postulación Recibida</h2>
-                        <p className="text-gray-500 text-base md:text-lg max-w-sm mx-auto leading-relaxed">Gracias por tu interés. Nuestro equipo te contactará pronto si encajas con nuestra visión.</p>
-                        <button onClick={() => { setIsSubmitted(false); setExpandedId(null); }} className="mt-12 text-black font-bold text-[11px] uppercase tracking-widest border border-gray-200 px-10 py-4 rounded-full hover:bg-gray-50 transition-all">Cerrar</button>
                       </div>
-                    )}
-                  </div>
+                    </>
+                  ) : (
+                    <div className="flex flex-col items-center text-center py-20 bg-black text-white rounded-[2rem] shadow-3xl">
+                      <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-10 shadow-2xl text-black">
+                        <Check className="w-12 h-12" />
+                      </div>
+                      <h2 className="text-4xl md:text-5xl font-medium mb-6 tracking-tighter">Recibido con éxito.</h2>
+                      <p className="text-white/40 text-lg md:text-xl max-w-sm mx-auto leading-relaxed">Pronto revisaremos tu perfil y nos pondremos en contacto.</p>
+                      <button onClick={() => { setIsSubmitted(false); setExpandedId(null); }} className="mt-14 text-white font-bold text-[11px] uppercase tracking-widest border border-white/20 px-12 py-5 rounded-full hover:bg-white hover:text-black transition-all">Regresar</button>
+                    </div>
+                  )}
                 </div>
               </div>
             );
