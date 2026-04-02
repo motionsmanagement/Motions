@@ -173,7 +173,7 @@ const FinalCTA: React.FC = () => {
                 </button>
               </div>
 
-              <p className="text-[10px] md:text-xs text-gray-400 leading-relaxed pt-4 text-center font-light max-w-lg mx-auto opacity-80">
+              <p className="text-[9px] text-gray-400 pt-2 text-center font-light w-full opacity-60 whitespace-nowrap overflow-hidden text-ellipsis">
                 Al enviar, aceptas nuestra política de privacidad y el tratamiento de tus datos para el contacto.
               </p>
             </form>

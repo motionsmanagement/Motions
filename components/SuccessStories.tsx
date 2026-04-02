@@ -92,22 +92,21 @@ const successCases: SuccessCase[] = [
         id: '04',
         title: 'Rancho',
         year: '2025',
-        location: 'Diseño Web & Packaging',
+        location: 'Branding & Packaging',
         images: [
             '/Proyectos/Rancho/motionsr1.jpg',
             '/Proyectos/Rancho/morionsr4.jpg',
             '/Proyectos/Rancho/motionsr2.jpg',
             '/Proyectos/Rancho/motionsr3.jpg'
         ],
-        description: 'Construcción de una marca vibrante que celebra la autenticidad mexicana. Desarrollamos la identidad visual completa, incluyendo el diseño de packaging para sus salsas picantes, papelería de servicio, presencia online y diseño de su sitio web de alto rendimiento.',
-        graphicType: 'conversion',
+        description: 'Construcción de una marca vibrante que celebra la autenticidad mexicana. Desarrollamos la identidad visual completa, incluyendo el diseño de packaging premium para sus salsas picantes, papelería corporativa y merchandising de local.',
+        graphicType: 'brand',
         metrics: [
-            { label: 'Visitas Web', value: '+40%', icon: TrendingUp },
-            { label: 'Velocidad', value: '0.9s', icon: Smartphone },
-            { label: 'Conversión', value: '+20%', icon: MousePointer2 }
+            { label: 'Reconocimiento', value: 'Alto', icon: Target },
+            { label: 'Identidad', value: 'Fuerte', icon: Star }
         ],
-        services: ['Diseño Web', 'Diseño de Packaging', 'Bolsas y Merch', 'Evolución de Logo'],
-        outcome: 'Digitalización total con una web orientada a la conversión y un packaging que enamora.'
+        services: ['Identidad Visual', 'Diseño de Packaging', 'Bolsas y Merch', 'Evolución de Logo'],
+        outcome: 'Un diseño de marca y packaging con personalidad que enamora a primera vista del consumidor.'
     },
     {
         id: '05',
@@ -185,9 +184,9 @@ const successCases: SuccessCase[] = [
         description: 'Diseño de posters y elementos gráficos que elevan la experiencia diaria del café. Trabajamos en la evolución de su logotipo y en la aplicación de la marca sobre soportes de consumo masivo, manteniendo una estética minimalista y funcional.',
         graphicType: 'brand',
         metrics: [
-            { label: 'Impacto', value: 'Alto', icon: Activity },
+            { label: 'Fidelización', value: '+45%', icon: Users },
             { label: 'Diseños', value: '12+', icon: Target },
-            { label: 'Consistencia', value: '100%', icon: Star }
+            { label: 'Ventas T/A', value: '+18%', icon: TrendingUp }
         ],
         services: ['Evolución de Logo', 'Diseño de Posters', 'Branding de Vasos', 'Identidad Corporativa'],
         outcome: 'Consistencia visual en todos los soportes físicos para una marca de café de especialidad.'
@@ -208,7 +207,7 @@ const successCases: SuccessCase[] = [
         metrics: [
             { label: 'Visitas', value: '+40%', icon: TrendingUp },
             { label: 'Alcance', value: '+50k', icon: Users },
-            { label: 'Identidad', value: 'Icónica', icon: Search }
+            { label: 'Prestigio', value: 'Premium', icon: Gem }
         ],
         services: ['Diseño de Botella', 'Diseño de Logo', 'Posters de Campaña', 'Estrategia Instagram'],
         outcome: 'Packaging icónico que facilita la entrada del producto en tiendas gourmet y retail.'
