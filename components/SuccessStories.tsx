@@ -102,8 +102,8 @@ const successCases: SuccessCase[] = [
         description: 'Construcción de una marca vibrante que celebra la autenticidad mexicana. Desarrollamos la identidad visual completa, incluyendo el diseño de packaging premium para sus salsas picantes, papelería corporativa y merchandising de local.',
         graphicType: 'brand',
         metrics: [
-            { label: 'Reconocimiento', value: 'Alto', icon: Target },
-            { label: 'Identidad', value: 'Fuerte', icon: Star }
+            { label: 'Puntos Venta', value: '+15', icon: MapPin },
+            { label: 'Ventas (Retail)', value: '+35%', icon: TrendingUp }
         ],
         services: ['Identidad Visual', 'Diseño de Packaging', 'Bolsas y Merch', 'Evolución de Logo'],
         outcome: 'Un diseño de marca y packaging con personalidad que enamora a primera vista del consumidor.'
@@ -205,9 +205,9 @@ const successCases: SuccessCase[] = [
         description: 'Posicionamos a Spark como referente en el mercado de Cold Brew mediante un diseño gráfico premium para su packaging. Desarrollamos la identidad de su producto estrella y creamos campañas visuales para redes sociales que resaltan la calidad del producto.',
         graphicType: 'visibility',
         metrics: [
-            { label: 'Visitas', value: '+40%', icon: TrendingUp },
+            { label: 'Retailers', value: '12+', icon: MapPin },
             { label: 'Alcance', value: '+50k', icon: Users },
-            { label: 'Prestigio', value: 'Premium', icon: Gem }
+            { label: 'Engagement', value: '+65%', icon: Activity }
         ],
         services: ['Diseño de Botella', 'Diseño de Logo', 'Posters de Campaña', 'Estrategia Instagram'],
         outcome: 'Packaging icónico que facilita la entrada del producto en tiendas gourmet y retail.'
