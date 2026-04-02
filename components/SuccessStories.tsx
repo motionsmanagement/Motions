@@ -102,8 +102,8 @@ const successCases: SuccessCase[] = [
         description: 'Construcción de una marca vibrante que celebra la autenticidad mexicana. Desarrollamos la identidad visual completa, incluyendo el diseño de packaging premium para sus salsas picantes, papelería corporativa y merchandising de local.',
         graphicType: 'brand',
         metrics: [
-            { label: 'Puntos Venta', value: '+15', icon: MapPin },
-            { label: 'Ventas (Retail)', value: '+35%', icon: TrendingUp }
+            { label: 'Soportes Físicos', value: '8+', icon: Target },
+            { label: 'Activos de Marca', value: '40+', icon: Star }
         ],
         services: ['Identidad Visual', 'Diseño de Packaging', 'Bolsas y Merch', 'Evolución de Logo'],
         outcome: 'Un diseño de marca y packaging con personalidad que enamora a primera vista del consumidor.'
