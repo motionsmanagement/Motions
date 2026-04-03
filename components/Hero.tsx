@@ -20,8 +20,8 @@ const Hero: React.FC = () => {
       {/* Background Image Placeholder */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/steak.jpg"
-          alt="Steak gourmet"
+          src="/banner.jpg"
+          alt="Atmósfera gastronómica"
           className="w-full h-full object-cover brightness-[0.7]"
           loading="eager"
           fetchPriority="high"
