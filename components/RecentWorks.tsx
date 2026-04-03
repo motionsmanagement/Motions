@@ -46,32 +46,27 @@ const RecentWorks: React.FC = () => {
     <section id="trabajos" className="relative py-24 bg-white overflow-hidden font-['Inter']">
       <style>{`
         @keyframes scrollUp {
-          from { transform: translate3d(0, 0, 0); }
-          to { transform: translate3d(0, -50%, 0); }
+          from { transform: translateY(0); }
+          to { transform: translateY(-50%); }
         }
         @keyframes scrollDown {
-          from { transform: translate3d(0, -50%, 0); }
-          to { transform: translate3d(0, 0, 0); }
+          from { transform: translateY(-50%); }
+          to { transform: translateY(0); }
         }
         .animate-scroll-up {
-          animation: scrollUp 40s linear infinite;
-          will-change: transform;
-          backface-visibility: hidden;
-          -webkit-backface-visibility: hidden;
-          perspective: 1000px;
-          -webkit-perspective: 1000px;
-          transform-style: preserve-3d;
-          image-rendering: -webkit-optimize-contrast;
+          animation: scrollUp 60s linear infinite;
         }
         .animate-scroll-down {
-          animation: scrollDown 45s linear infinite;
+          animation: scrollDown 65s linear infinite;
+        }
+        .marquee-column {
           will-change: transform;
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
           perspective: 1000px;
           -webkit-perspective: 1000px;
-          transform-style: preserve-3d;
-          image-rendering: -webkit-optimize-contrast;
+          transform: translateZ(0); 
+          -webkit-transform: translateZ(0);
         }
       `}</style>
 
@@ -100,11 +95,11 @@ const RecentWorks: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 h-full relative z-0 max-w-7xl mx-auto px-4">
           {/* Column 1 */}
           <div className="relative w-full">
-            <div className="flex flex-col gap-4 md:gap-8 w-full animate-scroll-up">
+            <div className="flex flex-col w-full animate-scroll-up marquee-column">
               {[...col1, ...col1].map((src, index) => (
                 <div 
                   key={`col1-${index}`} 
-                  className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50 aspect-[16/10]"
+                  className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50 aspect-[16/10] mb-4 md:mb-8"
                 >
                   <img src={src} alt="Motions Project" className="w-full h-full object-cover" loading="eager" />
                 </div>
@@ -114,11 +109,11 @@ const RecentWorks: React.FC = () => {
 
           {/* Column 2 */}
           <div className="relative w-full pt-16">
-            <div className="flex flex-col gap-4 md:gap-8 w-full animate-scroll-down">
+            <div className="flex flex-col w-full animate-scroll-down marquee-column">
               {[...col2, ...col2].map((src, index) => (
                 <div 
                   key={`col2-${index}`} 
-                  className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50 aspect-[16/10]"
+                  className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50 aspect-[16/10] mb-4 md:mb-8"
                 >
                   <img src={src} alt="Motions Project" className="w-full h-full object-cover" loading="eager" />
                 </div>
@@ -128,11 +123,11 @@ const RecentWorks: React.FC = () => {
 
           {/* Column 3 (Desktop) */}
           <div className="relative w-full pt-8 hidden md:block">
-            <div className="flex flex-col gap-4 md:gap-8 w-full animate-scroll-up">
+            <div className="flex flex-col w-full animate-scroll-up marquee-column">
               {[...col3, ...col3].map((src, index) => (
                 <div 
                   key={`col3-${index}`} 
-                  className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50 aspect-[16/10]"
+                  className="w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-md bg-gray-50 aspect-[16/10] mb-4 md:mb-8"
                 >
                   <img src={src} alt="Motions Project" className="w-full h-full object-cover" loading="eager" />
                 </div>
