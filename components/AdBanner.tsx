@@ -28,7 +28,7 @@ const AdBanner: React.FC = () => {
                 {/* Mobile Version */}
                 <div className="md:hidden w-full">
                     <img 
-                        src="/adbannermobilemotions.jpg" 
+                        src="/motionsweb.jpg" 
                         alt="Publicidad Motions Mobile" 
                         className="w-full h-auto object-cover"
                     />
