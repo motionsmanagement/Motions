@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowUpRight, ArrowRight, CheckCircle2, TrendingUp, ChevronRight, MessageSquare, Activity, Users, Target, MousePointer2, Smartphone, BarChart3, Star, MapPin, Search, ChevronLeft } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, TrendingUp, ChevronRight, MessageSquare, Activity, Users, Target, MousePointer2, Smartphone, BarChart3, Star, MapPin, Search, ChevronLeft } from 'lucide-react';
 
 interface SuccessMetric {
     label: string;
@@ -141,7 +141,7 @@ const successCases: SuccessCase[] = [
             '/Proyectos/Franks/motionsf3.jpg',
             '/Proyectos/Franks/motionsf4.jpg'
         ],
-        description: 'Fusionamos estética industrial y elegancia asiática a través del diseño. Intervinimos el espacio físico con gráficos en cristales y señalética personalizada, complementado con el diseño de sopertes digitales y banners estratégicos para su canal de ventas online.',
+        description: 'Fusionamos estética industrial y elegancia asiática a través del diseño. Intervinimos el espacio físico con gráficos en cristales y señalética personalizada, complementado con el diseño de soportes digitales y banners estratégicos para su canal de ventas online.',
         graphicType: 'reach',
         metrics: [
             { label: 'Visitas Local', value: '+25%', icon: MapPin },
@@ -233,7 +233,10 @@ const SuccessImageCarousel: React.FC<{ images: string[]; active: boolean }> = ({
             {/* Main Image */}
             <div className="relative w-full h-full overflow-hidden">
                 {images.map((src, idx) => {
+                    // We only want to load the other images if active or if it's the first image
+                    // This balances performance and speed
                     const shouldLoad = active || idx === 0;
+                    
                     if (!shouldLoad && idx !== 0) return null;
 
                     return (
@@ -250,18 +253,18 @@ const SuccessImageCarousel: React.FC<{ images: string[]; active: boolean }> = ({
                 })}
             </div>
 
-            {/* Navigation (Only Desktop or when active) */}
-            {images.length > 1 && (
+            {/* Navigation Buttons (Only if active and multiple images) */}
+            {active && images.length > 1 && (
                 <>
                     <button
                         onClick={prevImage}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-white/40 z-30"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-white/40 z-30"
                     >
                         <ChevronLeft className="w-5 h-5" />
                     </button>
                     <button
                         onClick={nextImage}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-white/40 z-30"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-white/40 z-30"
                     >
                         <ChevronRight className="w-5 h-5" />
                     </button>
@@ -291,12 +294,13 @@ const SuccessImageCarousel: React.FC<{ images: string[]; active: boolean }> = ({
 const SuccessStories: React.FC = () => {
     const [expandedId, setExpandedId] = useState<string | null>(successCases[0].id);
     const [showAll, setShowAll] = useState(false);
-    const [visible, setVisible] = useState(false);
-    const ref = useRef<HTMLDivElement>(null);
 
     const displayedCases = showAll ? successCases : successCases.slice(0, 4);
 
-    useEffect(() => {
+    const [visible, setVisible] = React.useState(false);
+    const ref = React.useRef<HTMLDivElement>(null);
+
+    React.useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => setVisible(entry.isIntersecting),
             { threshold: 0.1 }
@@ -304,29 +308,6 @@ const SuccessStories: React.FC = () => {
         if (ref.current) observer.observe(ref.current);
         return () => observer.disconnect();
     }, []);
-
-    const handleToggle = (id: string, e: React.MouseEvent) => {
-        const isOpening = expandedId !== id;
-        setExpandedId(isOpening ? id : null);
-
-        // Mobile UX: Scroll to the item when opening
-        if (isOpening && window.innerWidth < 768) {
-            const container = e.currentTarget.closest('.project-item');
-            if (container) {
-                // We wait for the DOM to acknowledge the change and start opening
-                setTimeout(() => {
-                    const offset = 100; // Account for header or spacing
-                    const rect = container.getBoundingClientRect();
-                    const absoluteTop = rect.top + window.pageYOffset - offset;
-                    
-                    window.scrollTo({
-                        top: absoluteTop,
-                        behavior: 'smooth'
-                    });
-                }, 100);
-            }
-        }
-    };
 
     return (
         <section id="proyectos" ref={ref} className="py-24 px-6 md:px-12 bg-white font-['Inter']">
@@ -351,7 +332,7 @@ const SuccessStories: React.FC = () => {
                         return (
                             <div
                                 key={item.id}
-                                className={`project-item border-b border-gray-100 transition-all duration-[1000ms] overflow-hidden ${isExpanded ? 'py-12 bg-white' : 'hover:bg-gray-50/50'} ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                                className={`border-b border-gray-100 transition-all duration-[1000ms] overflow-hidden ${isExpanded ? 'py-12 bg-white' : 'hover:bg-gray-50/50'} ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                                 style={{ 
                                     transitionDelay: visible ? `${index * 100}ms` : '0ms',
                                     transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
@@ -360,7 +341,7 @@ const SuccessStories: React.FC = () => {
                                 {/* Header (Clickable) */}
                                 <div
                                     className={`flex flex-col md:flex-row items-center justify-between cursor-pointer group gap-4 ${!isExpanded ? 'py-7' : 'mb-10 text-center md:text-left'}`}
-                                    onClick={(e) => handleToggle(item.id, e)}
+                                    onClick={() => setExpandedId(isExpanded ? null : item.id)}
                                 >
                                     <h3 className={`text-xl md:text-2xl font-medium transition-all duration-500 ${isExpanded ? 'text-black' : 'text-gray-500 group-hover:text-black'}`}>
                                         {item.title}
@@ -387,38 +368,37 @@ const SuccessStories: React.FC = () => {
 
                                     <div className="flex flex-col justify-between items-start relative min-h-[440px]">
                                         <div className="w-full h-full flex flex-col relative z-20">
-                                            <div className="mb-10">
-                                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 border border-black/5 text-[10px] font-bold text-black uppercase tracking-widest mb-6">
-                                                    <Activity className="w-3 h-3" />
-                                                    El Reto
+                                            <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-10 max-w-xl">
+                                                {item.description}
+                                            </p>
+
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full mb-12">
+                                                <div>
+                                                    <span className="text-[10px] font-bold text-black uppercase tracking-widest mb-4 block opacity-40">Servicios Realizados</span>
+                                                    <div className="flex flex-wrap gap-2">
+                                                        {item.services.map((service, i) => (
+                                                            <span key={i} className="px-3 py-1 bg-black/[0.03] border border-black/5 rounded-full text-xs text-gray-600 font-medium">
+                                                                {service}
+                                                            </span>
+                                                        ))}
+                                                    </div>
                                                 </div>
-                                                <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-light">
-                                                    {item.description}
-                                                </p>
+                                                <div>
+                                                    <span className="text-[10px] font-bold text-black uppercase tracking-widest mb-4 block opacity-40">Impacto Logrado</span>
+                                                    <p className="text-sm text-gray-700 leading-relaxed font-medium">
+                                                        "{item.outcome}"
+                                                    </p>
+                                                </div>
                                             </div>
 
-                                            <div className="grid grid-cols-2 gap-8 mb-10 pt-10 border-t border-gray-100">
-                                                {item.metrics.map((metric, midx) => (
-                                                    <div key={midx} className="flex flex-col gap-1">
-                                                        <div className="flex items-center gap-2 text-black/40 mb-1">
-                                                            <metric.icon className="w-3.5 h-3.5" />
-                                                            <span className="text-[10px] font-bold uppercase tracking-widest">{metric.label}</span>
-                                                        </div>
-                                                        <span className="text-3xl md:text-4xl font-medium text-black tabular-nums tracking-tighter">
-                                                            {metric.value}
-                                                        </span>
+                                            {/* Minimalist Black Pill Metrics Row */}
+                                            <div className="flex flex-wrap items-center gap-2">
+                                                {item.metrics.map((metric, idx) => (
+                                                    <div key={idx} className="flex items-center gap-2 px-4 py-1.5 bg-black border border-white/10 rounded-full shadow-sm">
+                                                        <span className="text-xs sm:text-[13px] font-medium text-white lowercase first-letter:uppercase tracking-tight">{metric.label}</span>
+                                                        <span className="text-xs sm:text-[13px] font-medium text-white tabular-nums">{metric.value}</span>
                                                     </div>
                                                 ))}
-                                            </div>
-
-                                            <div className="mt-auto">
-                                                <div className="flex flex-wrap gap-2">
-                                                    {item.services.map((service, sidx) => (
-                                                        <span key={sidx} className="px-3 py-1.5 rounded-full border border-gray-100 text-[10px] font-semibold text-gray-500 uppercase tracking-wider">
-                                                            {service}
-                                                        </span>
-                                                    ))}
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -428,18 +408,72 @@ const SuccessStories: React.FC = () => {
                     })}
                 </div>
 
+                {/* Show More Button */}
                 {!showAll && successCases.length > 4 && (
                     <div className="mt-16 flex justify-center">
-                        <button 
+                        <button
                             onClick={() => setShowAll(true)}
-                            className="group flex items-center gap-3 px-8 py-4 bg-black text-white rounded-full font-bold text-sm transition-all hover:bg-neutral-800 hover:scale-[1.02] active:scale-95 shadow-xl"
+                            className="flex items-center gap-3 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg"
                         >
-                            Ver todos los proyectos
-                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                            Ver más proyectos
+                            <svg 
+                                viewBox="0 0 24 24" 
+                                fill="none" 
+                                xmlns="http://www.w3.org/2000/svg" 
+                                className="w-4 h-4 group-hover:translate-x-1 transition-transform rotate-90"
+                            >
+                                <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
                         </button>
                     </div>
                 )}
             </div>
+
+            <style dangerouslySetInnerHTML={{
+                __html: `
+                @keyframes spin-slow {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+                @keyframes spin-reverse {
+                    from { transform: rotate(360deg); }
+                    to { transform: rotate(0deg); }
+                }
+                .animate-spin-slow {
+                    animation: spin-slow 12s linear infinite;
+                }
+                .animate-spin-reverse {
+                    animation: spin-reverse 8s linear infinite;
+                }
+                @keyframes grow-horizontal {
+                    from { width: 0; }
+                }
+                .animate-grow-horizontal {
+                    animation: grow-horizontal 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                }
+                @keyframes bounce-slow {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-3px); }
+                }
+                .animate-bounce-slow {
+                    animation: bounce-slow 2s ease-in-out infinite;
+                }
+                @keyframes draw-path {
+                    from { stroke-dasharray: 0 100; stroke-dashoffset: 0; }
+                    to { stroke-dasharray: 100 0; stroke-dashoffset: 0; }
+                }
+                .animate-draw-path {
+                    stroke-dasharray: 100 100;
+                    animation: draw-path 2s ease-out forwards;
+                }
+                @keyframes ping-slow {
+                    0% { transform: scale(1); opacity: 0.8; }
+                    100% { transform: scale(1.5); opacity: 0; }
+                }
+                .animate-ping-slow {
+                    animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+                }
+            `}} />
         </section>
     );
 };
