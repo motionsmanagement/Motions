@@ -294,6 +294,22 @@ const SuccessImageCarousel: React.FC<{ images: string[]; active: boolean }> = ({
 const SuccessStories: React.FC = () => {
     const [expandedId, setExpandedId] = useState<string | null>(successCases[0].id);
     const [showAll, setShowAll] = useState(false);
+    const projectRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+
+    // Smooth scroll to project when expanded
+    useEffect(() => {
+        if (expandedId && projectRefs.current[expandedId]) {
+            const element = projectRefs.current[expandedId];
+            const navbarHeight = 100; // Offset for fixed navbar
+            const elementPosition = element?.getBoundingClientRect().top ?? 0;
+            const offsetPosition = elementPosition + window.pageYOffset - (window.innerHeight < 768 ? 80 : navbarHeight);
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }, [expandedId]);
 
     const displayedCases = showAll ? successCases : successCases.slice(0, 4);
 
@@ -332,6 +348,7 @@ const SuccessStories: React.FC = () => {
                         return (
                             <div
                                 key={item.id}
+                                ref={(el) => (projectRefs.current[item.id] = el)}
                                 className={`border-b border-gray-100 transition-all duration-[1000ms] overflow-hidden ${isExpanded ? 'py-12 bg-white' : 'hover:bg-gray-50/50'} ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                                 style={{ 
                                     transitionDelay: visible ? `${index * 100}ms` : '0ms',
