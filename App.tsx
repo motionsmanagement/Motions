@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
-// Components
+// Critical Components (Bundled with homepage)
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -11,9 +11,11 @@ import FinalCTA from './components/FinalCTA';
 import AdBanner from './components/AdBanner';
 import Footer from './components/Footer';
 
-// Legal & Other Pages
-import { PrivacyPolicy, CookiesPolicy, LegalNotice } from './components/legal/LegalPages';
-import Careers from './components/Careers';
+// Non-Critical Pages (Lazy Loaded)
+const Careers = lazy(() => import('./components/Careers'));
+const PrivacyPolicy = lazy(() => import('./components/legal/LegalPages').then(m => ({ default: m.PrivacyPolicy })));
+const CookiesPolicy = lazy(() => import('./components/legal/LegalPages').then(m => ({ default: m.CookiesPolicy })));
+const LegalNotice = lazy(() => import('./components/legal/LegalPages').then(m => ({ default: m.LegalNotice })));
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -56,13 +58,15 @@ const App: React.FC = () => {
     <Router>
       <div className="min-h-screen selection:bg-gray-200 selection:text-black">
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/unete" element={<Careers />} />
-          <Route path="/privacidad" element={<PrivacyPolicy />} />
-          <Route path="/cookies" element={<CookiesPolicy />} />
-          <Route path="/aviso-legal" element={<LegalNotice />} />
-        </Routes>
+        <Suspense fallback={<div className="min-h-screen bg-[#FBF9F6]" />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/unete" element={<Careers />} />
+            <Route path="/privacidad" element={<PrivacyPolicy />} />
+            <Route path="/cookies" element={<CookiesPolicy />} />
+            <Route path="/aviso-legal" element={<LegalNotice />} />
+          </Routes>
+        </Suspense>
       </div>
     </Router>
   );

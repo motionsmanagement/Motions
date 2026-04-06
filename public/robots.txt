@@ -28,4 +28,4 @@ User-agent: anthropic-ai
 Allow: /
 
 # Sitemap
-Sitemap: https://motions.es/sitemap.xml
+Sitemap: https://www.motions.es/sitemap.xml
