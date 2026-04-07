@@ -292,42 +292,17 @@ const SuccessImageCarousel: React.FC<{ images: string[]; active: boolean }> = ({
 };
 
 const SuccessStories: React.FC = () => {
-    const [expandedId, setExpandedId] = useState<string | null>(successCases[0].id);
+    const [expandedIds, setExpandedIds] = useState<string[]>([successCases[0].id]);
     const [showAll, setShowAll] = useState(false);
     const projectRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
-    const isInitialMount = useRef(true);
 
-    // Smooth scroll to project when expanded
-    useEffect(() => {
-        // Skip scroll on initial mount (first project is expanded by default)
-        if (isInitialMount.current) {
-            isInitialMount.current = false;
-            return;
-        }
-
-        if (expandedId && projectRefs.current[expandedId]) {
-            // Wait slightly for the expansion to begin and stabilize
-            const timer = setTimeout(() => {
-                const element = projectRefs.current[expandedId];
-                if (!element) return;
-
-                const navbarHeight = 100;
-                const isMobile = window.innerWidth < 768;
-                
-                // Use a more robust calculation for the absolute position
-                const rect = element.getBoundingClientRect();
-                const absoluteTop = rect.top + window.pageYOffset;
-                const offset = isMobile ? 80 : navbarHeight;
-                
-                window.scrollTo({
-                    top: absoluteTop - offset,
-                    behavior: 'smooth'
-                });
-            }, 100); // 100ms is enough to bypass the initial jitter
-
-            return () => clearTimeout(timer);
-        }
-    }, [expandedId]);
+    const toggleProject = (id: string) => {
+        setExpandedIds(prev => 
+            prev.includes(id) 
+                ? prev.filter(item => item !== id) 
+                : [...prev, id]
+        );
+    };
 
     const displayedCases = showAll ? successCases : successCases.slice(0, 4);
 
@@ -362,7 +337,7 @@ const SuccessStories: React.FC = () => {
                 {/* Main List */}
                 <div className="border-t border-gray-100">
                     {displayedCases.map((item, index) => {
-                        const isExpanded = expandedId === item.id;
+                        const isExpanded = expandedIds.includes(item.id);
                         return (
                             <div
                                 key={item.id}
@@ -376,7 +351,7 @@ const SuccessStories: React.FC = () => {
                                 {/* Header (Clickable) */}
                                 <div
                                     className={`flex flex-col md:flex-row items-center justify-between cursor-pointer group gap-4 ${!isExpanded ? 'py-7' : 'mb-10 text-center md:text-left'}`}
-                                    onClick={() => setExpandedId(isExpanded ? null : item.id)}
+                                    onClick={() => toggleProject(item.id)}
                                 >
                                     <h3 className={`text-xl md:text-2xl font-medium transition-all duration-500 ${isExpanded ? 'text-black' : 'text-gray-500 group-hover:text-black'}`}>
                                         {item.title}
