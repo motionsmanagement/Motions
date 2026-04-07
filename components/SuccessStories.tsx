@@ -295,9 +295,16 @@ const SuccessStories: React.FC = () => {
     const [expandedId, setExpandedId] = useState<string | null>(successCases[0].id);
     const [showAll, setShowAll] = useState(false);
     const projectRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+    const isInitialMount = useRef(true);
 
     // Smooth scroll to project when expanded
     useEffect(() => {
+        // Skip scroll on initial mount (first project is expanded by default)
+        if (isInitialMount.current) {
+            isInitialMount.current = false;
+            return;
+        }
+
         if (expandedId && projectRefs.current[expandedId]) {
             // Wait slightly for the expansion to begin and stabilize
             const timer = setTimeout(() => {
