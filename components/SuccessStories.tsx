@@ -299,15 +299,26 @@ const SuccessStories: React.FC = () => {
     // Smooth scroll to project when expanded
     useEffect(() => {
         if (expandedId && projectRefs.current[expandedId]) {
-            const element = projectRefs.current[expandedId];
-            const navbarHeight = 100; // Offset for fixed navbar
-            const elementPosition = element?.getBoundingClientRect().top ?? 0;
-            const offsetPosition = elementPosition + window.pageYOffset - (window.innerHeight < 768 ? 80 : navbarHeight);
+            // Wait slightly for the expansion to begin and stabilize
+            const timer = setTimeout(() => {
+                const element = projectRefs.current[expandedId];
+                if (!element) return;
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
+                const navbarHeight = 100;
+                const isMobile = window.innerWidth < 768;
+                
+                // Use a more robust calculation for the absolute position
+                const rect = element.getBoundingClientRect();
+                const absoluteTop = rect.top + window.pageYOffset;
+                const offset = isMobile ? 80 : navbarHeight;
+                
+                window.scrollTo({
+                    top: absoluteTop - offset,
+                    behavior: 'smooth'
+                });
+            }, 100); // 100ms is enough to bypass the initial jitter
+
+            return () => clearTimeout(timer);
         }
     }, [expandedId]);
 
