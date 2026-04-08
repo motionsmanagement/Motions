@@ -19,7 +19,6 @@ const Services: React.FC = () => {
             title: "Páginas Web",
             description: "Plataformas de alto rendimiento orientadas a maximizar tus reservas directas.",
             stats: "ALTA VELOCIDAD",
-            tag: "NÚCLEO WEB",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center p-12">
                     <div className="w-full h-full border border-white/10 rounded-2xl bg-[#0A0A0A] relative overflow-hidden flex flex-col shadow-2xl">
@@ -72,7 +71,6 @@ const Services: React.FC = () => {
             title: "Branding",
             description: "Creamos la identidad visual que posiciona a tu restaurante como marca de referencia.",
             stats: "IDENTIDAD PREMIUM",
-            tag: "DISEÑO",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                     {/* Ambient glow behind everything */}
@@ -98,7 +96,6 @@ const Services: React.FC = () => {
             title: "Google My Business",
             description: "Dominamos las búsquedas locales para que siempre seas la primera opción en tu zona.",
             stats: "SEO LOCAL",
-            tag: "GOOGLE MY BUSINESS",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center">
                     <div className="relative w-44 h-44 flex items-center justify-center">
@@ -133,7 +130,6 @@ const Services: React.FC = () => {
             title: "Integración con IA",
             description: "Automatizamos tus procesos y atención al cliente para optimizar tu rentabilidad.",
             stats: "AUTOTOMIZACIÓN IA",
-            tag: "IA APLICADA",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                     <div className="flex gap-4">
@@ -196,10 +192,6 @@ const Services: React.FC = () => {
 
                             {/* Card Content */}
                             <div className="relative h-full z-10 p-8 flex flex-col justify-end">
-                                <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/70 mb-3 block">
-                                    {service.tag}
-                                </span>
-
                                 <h3 className="text-2xl font-semibold text-white mb-4 tracking-tight">
                                     {service.title}
                                 </h3>
