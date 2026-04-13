@@ -103,7 +103,9 @@ const Careers: React.FC = () => {
       nombre: formData.get('nombre'),
       email: formData.get('email'),
       linkedin: formData.get('linkedin'),
-      mensaje: formData.get('mensaje')
+      mensaje: formData.get('mensaje'),
+      _subject: "💼 Nueva Candidatura Motions: " + jobTitle + " - " + formData.get('nombre'),
+      _template: "box"
     };
 
     try {

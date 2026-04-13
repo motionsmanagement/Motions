@@ -41,7 +41,9 @@ const FinalCTA: React.FC = () => {
       nombre: formData.get('nombre'),
       email: formData.get('email'),
       telefono: `${countryCode} ${formData.get('telefono')}`,
-      servicios: selectedServices.length > 0 ? selectedServices.join(', ') : 'Ninguno especificado'
+      servicios: selectedServices.length > 0 ? selectedServices.join(', ') : 'Ninguno especificado',
+      _subject: "🔥 Nuevo Lead o Presupuesto Motions - " + formData.get('nombre'),
+      _template: "box"
     };
 
     try {
