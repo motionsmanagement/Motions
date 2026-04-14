@@ -9,7 +9,7 @@ import ContactButton from './ContactButton';
 const BrandingPage: React.FC = () => {
   useSEO({
     title: 'Branding e Identidad Visual para Restaurantes | Motions',
-    description: 'Creamos la identidad visual que convierte tu restaurante en una marca reconocida. Logotipo, diseño de menús y materiales gráficos estratégicos.',
+    description: 'Creamos la identidad visual que convierte tu restaurante en una marca reconocida. Logotipo, diseño de menús y materiales de marca premium.',
     canonical: 'https://www.motions.es/servicios/branding-restaurantes',
   });
 
@@ -35,12 +35,12 @@ const BrandingPage: React.FC = () => {
                 <span className="text-[10px] font-bold text-black uppercase tracking-widest">Identidad & Concepto</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-black leading-[1.1] md:leading-[1.05] mb-8 max-w-4xl">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1] mb-8 max-w-4xl">
               Branding <br className="hidden md:block" />
               para Restaurantes
             </h1>
             
-            <p className="text-base md:text-xl text-gray-500/80 leading-relaxed mb-10 max-w-2xl font-light">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-10 max-w-2xl font-light">
                 Construimos marcas memorables que capturan la esencia de tu cocina. No solo diseñamos logos; creamos ecosistemas visuales premium.
             </p>
 
@@ -48,7 +48,7 @@ const BrandingPage: React.FC = () => {
               <ContactButton label="Crear mi identidad de marca" />
               <Link 
                 to="/#proyectos" 
-                className="w-full sm:w-auto px-6 py-3.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-center text-sm md:text-base flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 py-3 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-center text-sm flex items-center justify-center gap-2"
               >
                 Ver casos de éxito <ChevronRight className="w-4 h-4" />
               </Link>
@@ -57,7 +57,7 @@ const BrandingPage: React.FC = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-12 md:py-24 px-6 md:px-12 bg-[#0A0A0A] relative overflow-hidden">
+        <section className="py-12 md:py-20 px-6 md:px-12 bg-[#0A0A0A] relative overflow-hidden">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0 relative z-10">
             {[
               { num: '+40%', label: 'Aumento promedio en el valor percibido de la marca.' },
@@ -81,19 +81,19 @@ const BrandingPage: React.FC = () => {
                 <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-6">
                     Diferenciación real en un mundo visual.
                 </h2>
-                <p className="text-gray-400 text-base md:text-lg font-light">
+                <p className="text-gray-600 text-base md:text-lg font-light">
                     Tus clientes te juzgan antes de probar el primer bocado. Nos aseguramos de que su primera impresión sea inmejorable.
                 </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {features.map((f, i) => (
-                <div key={i} className="group p-8 bg-white rounded-[2rem] border border-gray-100 hover:border-black/5 transition-all duration-300">
-                  <div className="w-11 h-11 bg-[#FBF9F6] rounded-xl flex items-center justify-center text-black mb-6 group-hover:bg-black group-hover:text-white transition-colors duration-300">
+                <div key={i} className="group p-8 bg-white rounded-[2rem] border border-gray-100 transition-all duration-300">
+                  <div className="w-11 h-11 bg-black rounded-xl flex items-center justify-center text-white mb-6">
                     {f.icon}
                   </div>
                   <h3 className="text-lg font-semibold text-black mb-3 tracking-tight">{f.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed font-light">{f.desc}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed font-light">{f.desc}</p>
                 </div>
               ))}
             </div>
@@ -102,9 +102,9 @@ const BrandingPage: React.FC = () => {
 
         {/* Premium CTA */}
         <section className="pb-20 md:pb-32 px-6 md:px-12">
-          <div className="max-w-7xl mx-auto text-center md:text-left">
-            <div className="bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-20 relative overflow-hidden flex flex-col items-center md:items-start">
-                <div className="relative z-10 max-w-3xl">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-20 relative overflow-hidden flex flex-col items-center text-center">
+                <div className="relative z-10 max-w-3xl flex flex-col items-center">
                     <h2 className="text-3xl md:text-5xl font-medium text-white mb-6 tracking-tight leading-[1.2]">
                         Eleva tu marca a un nivel superior.
                     </h2>
