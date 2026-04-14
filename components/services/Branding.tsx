@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Palette, Layers, Type, Image, Heart, Award, ChevronRight } from 'lucide-react';
+import { Palette, Layers, Type, Image, Heart, Award } from 'lucide-react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import useSEO from './useSEO';
@@ -48,9 +48,9 @@ const BrandingPage: React.FC = () => {
               <ContactButton label="Crear mi marca" />
               <Link 
                 to="/" 
-                className="px-6 py-3 md:px-7 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-xs md:text-base flex items-center justify-center gap-2"
+                className="px-5 py-3 md:px-7 md:py-4 bg-black/[0.03] border border-black/5 text-gray-400 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[11px] md:text-base flex items-center justify-center whitespace-nowrap"
               >
-                Ver servicios <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
+                Ver servicios
               </Link>
             </div>
           </div>

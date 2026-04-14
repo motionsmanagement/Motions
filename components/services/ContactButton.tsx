@@ -38,13 +38,13 @@ const ContactButton: React.FC<ContactButtonProps> = ({ label, className = '' }) 
   return (
     <button
       onClick={handleClick}
-      className={`group relative flex items-center justify-between gap-4 pl-6 pr-1.5 py-1.5 rounded-full transition-all active:scale-[0.98] shadow-lg ${isWhite ? 'bg-white text-black hover:bg-gray-100' : 'bg-black text-white hover:bg-neutral-900'} ${className}`}
+      className={`group relative flex items-center justify-between gap-2.5 md:gap-4 pl-4 md:pl-6 pr-1 md:pr-1.5 py-1 md:py-1.5 rounded-full transition-all active:scale-[0.98] shadow-lg ${isWhite ? 'bg-white text-black hover:bg-gray-100' : 'bg-black text-white hover:bg-neutral-900'} ${className}`}
     >
-      <span className="font-semibold tracking-tight text-[13px] md:text-[15px]">
+      <span className="font-semibold tracking-tight text-[11px] md:text-[15px] whitespace-nowrap">
         {label}
       </span>
-      <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-transform group-hover:rotate-12 shrink-0 ${isWhite ? 'bg-black text-white' : 'bg-white text-black'}`}>
-        <img src="/anagram2.png" alt="" className={`w-4 h-4 md:w-5 md:h-5 object-contain ${isWhite ? 'brightness-0 invert' : ''}`} />
+      <div className={`w-7 h-7 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-transform group-hover:-rotate-45 shrink-0 ${isWhite ? 'bg-black text-white' : 'bg-white text-black'}`}>
+        <ArrowRight className="w-3.5 h-3.5 md:w-5 md:h-5" />
       </div>
     </button>
   );
