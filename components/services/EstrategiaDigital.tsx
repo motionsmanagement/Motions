@@ -29,22 +29,22 @@ const EstrategiaDigitalPage: React.FC = () => {
 
         {/* Hero Section */}
         <section className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12">
-          <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-            <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-black/[0.03] border border-black/5 mb-8">
+          <div className="max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="inline-flex items-center gap-2.5 pl-3.5 pr-4.5 py-2 rounded-full bg-black/[0.04] border border-black/5 mb-8 shadow-sm transition-all hover:bg-black/[0.06]">
                 <img src="/anagram.png" alt="" className="w-3.5 h-3.5 opacity-30" />
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap">Consultoría de Crecimiento</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap leading-none mt-0.5">Consultoría de Crecimiento</span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-7xl font-medium tracking-tight text-black leading-[1.05] mb-8 max-w-4xl">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1] mb-8 max-w-4xl">
               Estrategia Digital <br className="hidden md:block" />
               para Restaurantes
             </h1>
             
-            <p className="text-base md:text-xl text-gray-600 leading-relaxed mb-10 max-w-3xl font-light px-4">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-10 max-w-2xl font-light px-4 md:px-0">
                 No solo hacemos marketing; diseñamos sistemas de crecimiento. Unificamos todos tus canales digitales para convertirlos en una máquina de generar reservas.
             </p>
 
-            <div className="flex flex-row items-center gap-3 w-full justify-center px-4">
+            <div className="flex flex-row items-center gap-3 w-full justify-center md:justify-start px-4 md:px-0">
               <ContactButton label="Diseñar mi hoja" />
               <Link 
                 to="/" 
@@ -77,7 +77,7 @@ const EstrategiaDigitalPage: React.FC = () => {
         {/* Features Grid */}
         <section className="py-20 md:py-32 px-6 md:px-12">
           <div className="max-w-7xl mx-auto">
-            <div className="max-w-2xl mb-16 mx-auto text-center">
+            <div className="max-w-2xl mb-16 px-4 md:px-0">
                 <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-6">
                     Sin improvisación. Solo resultados escalables.
                 </h2>
@@ -102,7 +102,7 @@ const EstrategiaDigitalPage: React.FC = () => {
 
         {/* Roadmap Section */}
         <section className="py-20 md:py-32 px-6 md:px-12 bg-white border-y border-gray-100">
-          <div className="max-w-7xl mx-auto text-center px-6 md:px-0">
+          <div className="max-w-7xl mx-auto text-center md:text-left px-6 md:px-0">
             <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-16">
               Hoja de ruta digital.
             </h2>
