@@ -42,7 +42,6 @@ const col3 = [
   '/motions107.jpg',
   '/motions124.jpg',
   '/motions1127.jpg',
-  '/vvvv22.jpg',
   '/vvvvv3.jpg',
   '/vvvvv66.jpg',
   '/wewewe11.jpg',
