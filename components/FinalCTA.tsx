@@ -13,7 +13,8 @@ const FinalCTA: React.FC = () => {
     "Diseño Web",
     "Branding",
     "Integración con IA",
-    "Diseño Gráfico"
+    "SEO Gastronómico",
+    "Estrategia Digital"
   ];
 
   const toggleService = (service: string) => {
@@ -82,12 +83,11 @@ const FinalCTA: React.FC = () => {
           
           {/* Form State */}
           <div className={`relative z-10 w-full transition-all duration-700 ${isSubmitted ? 'opacity-0 pointer-events-none scale-[0.98] blur-sm' : 'opacity-100 scale-100 blur-none'}`}>
-            <div className="flex flex-col items-center mb-8 md:mb-10 text-center">
-              <img src="/motionsblack.png" alt="Motions Logo" className="h-6 md:h-8 w-auto mb-4" />
-              <h2 className="text-2xl md:text-3xl lg:text-4xl text-black font-medium tracking-tight leading-tight mb-4">
-                Lleva tu restaurante al siguiente nivel
+            <div className="flex flex-col items-center mb-8 md:mb-12 text-center">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl text-black font-medium tracking-tighter leading-[1.1] mb-6">
+                Lleva tu restaurante<br className="hidden md:block" /> al siguiente nivel
               </h2>
-              <p className="text-gray-600/80 text-[13px] md:text-base max-w-xl md:max-w-2xl mx-auto leading-relaxed md:leading-normal font-light px-4">
+              <p className="text-gray-600/80 text-[14px] md:text-lg max-w-xl md:max-w-3xl mx-auto leading-relaxed md:leading-normal font-light px-4">
                 <span className="md:hidden">Déjanos tus datos y te contactaremos en <br /> menos de 24 horas.</span>
                 <span className="hidden md:inline">Déjanos tus datos y te llamaremos en menos de 24 horas para entender las necesidades de tu negocio y crear un plan a medida.</span>
               </p>
@@ -170,7 +170,14 @@ const FinalCTA: React.FC = () => {
                     <span className="hidden md:inline">Solicitar presupuesto y auditoría</span>
                   </span>
                   <div className="w-9 h-9 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center text-black shadow-inner shrink-0 scale-90 md:scale-100">
-                    <img src="/anagram2.png" alt="Motions Anagram" className="w-4 h-4 md:w-7 md:h-7 object-contain group-hover:rotate-12 transition-transform" />
+                    <svg 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className="w-4 h-4 md:w-7 md:h-7 transition-transform rotate-90"
+                    >
+                        <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                   </div>
                 </button>
               </div>
