@@ -139,6 +139,9 @@ const FinalCTA: React.FC = () => {
                 />
               </div>
 
+              {/* Bot protection */}
+              <input type="text" name="_honey" style={{ display: 'none' }} />
+
               {/* Service Selection Pills */}
               <div className="space-y-4 md:space-y-5">
                 <label className="text-sm md:text-base font-medium text-[#2D241E]/80 block text-left pl-0.5">¿En qué podemos ayudarte?</label>
