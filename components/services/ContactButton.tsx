@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 
 interface ContactButtonProps {
   label: string;
@@ -43,8 +42,15 @@ const ContactButton: React.FC<ContactButtonProps> = ({ label, className = '' }) 
       <span className="font-semibold tracking-tight text-[11px] md:text-[15px] whitespace-nowrap">
         {label}
       </span>
-      <div className={`w-7 h-7 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-transform group-hover:-rotate-45 shrink-0 ${isWhite ? 'bg-black text-white' : 'bg-white text-black'}`}>
-        <ArrowRight className="w-3.5 h-3.5 md:w-5 md:h-5" />
+      <div className={`w-7 h-7 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-transform group-hover:rotate-0 shrink-0 ${isWhite ? 'bg-black text-white' : 'bg-white text-black'}`}>
+        <svg 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="w-3.5 h-3.5 md:w-5 md:h-5 transition-transform rotate-90"
+        >
+            <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
       </div>
     </button>
   );

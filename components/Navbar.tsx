@@ -235,20 +235,27 @@ const Navbar: React.FC = () => {
               href="https://wa.me/34919610420" 
               target="_blank"
               rel="noopener noreferrer"
-              className="relative rounded-[2.5rem] overflow-hidden group block shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-black/[0.03] h-48 sm:h-56"
+              className="relative rounded-[3rem] overflow-hidden group block shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-black/[0.03] h-64 sm:h-72 mb-10"
               onClick={() => setIsMenuOpen(false)}
             >
               <img src="/menuside.jpg" alt="Obtén Descuento" className="absolute inset-0 w-full h-full object-cover brightness-[0.7] group-hover:scale-105 transition-transform duration-[1.5s]" />
               
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-7 flex flex-col justify-end">
-                <h4 className="text-white text-[1.75rem] font-extrabold leading-[1.05] tracking-tight mb-5 px-1">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-8 flex flex-col justify-end">
+                <h4 className="text-white text-[1.85rem] font-bold leading-[1.05] tracking-tighter mb-6 px-1">
                   Obtén un 10% <br /> de descuento
                 </h4>
 
-                <div className="bg-white/95 text-black rounded-full pl-5 pr-1.5 py-1.5 flex items-center justify-between gap-3 w-fit shadow-2xl backdrop-blur-md border border-black/5 ml-1">
-                  <span className="text-[11px] font-bold tracking-tight">Obtener ahora</span>
-                  <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center text-white">
-                    <ChevronRight className="w-4 h-4" />
+                <div className="bg-white text-black rounded-full pl-6 pr-1.5 py-1.5 flex items-center justify-between gap-4 w-fit shadow-2xl backdrop-blur-md transition-all active:scale-95">
+                  <span className="text-[12px] font-bold tracking-tight">Cajear cupón</span>
+                  <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white">
+                    <svg 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className="w-4 h-4 transition-transform rotate-90"
+                    >
+                        <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                   </div>
                 </div>
               </div>

@@ -30,9 +30,9 @@ const BrandingPage: React.FC = () => {
         {/* Hero Section */}
         <section className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black mb-8 shadow-lg">
-                <img src="/anagram.png" alt="" className="w-3.5 h-3.5 invert brightness-0" />
-                <span className="text-[10px] font-bold text-white uppercase tracking-widest whitespace-nowrap">Identidad & Concepto</span>
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/[0.03] border border-black/5 mb-8">
+                <img src="/anagram.png" alt="" className="w-3.5 h-3.5 opacity-20" />
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest whitespace-nowrap">Identidad & Concepto</span>
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1] mb-8 max-w-4xl">
