@@ -17,6 +17,14 @@ const PrivacyPolicy = lazy(() => import('./components/legal/LegalPages').then(m 
 const CookiesPolicy = lazy(() => import('./components/legal/LegalPages').then(m => ({ default: m.CookiesPolicy })));
 const LegalNotice = lazy(() => import('./components/legal/LegalPages').then(m => ({ default: m.LegalNotice })));
 
+// Service Pages (Lazy Loaded for SEO)
+const GoogleMyBusinessPage = lazy(() => import('./components/services/GoogleMyBusiness'));
+const DisenoWebPage = lazy(() => import('./components/services/DisenoWeb'));
+const BrandingPage = lazy(() => import('./components/services/Branding'));
+const IntegracionIAPage = lazy(() => import('./components/services/IntegracionIA'));
+const SeoGastronomicoPage = lazy(() => import('./components/services/SeoGastronomico'));
+const EstrategiaDigitalPage = lazy(() => import('./components/services/EstrategiaDigital'));
+
 // Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -65,6 +73,13 @@ const App: React.FC = () => {
             <Route path="/privacidad" element={<PrivacyPolicy />} />
             <Route path="/cookies" element={<CookiesPolicy />} />
             <Route path="/aviso-legal" element={<LegalNotice />} />
+            {/* Service Pages - SEO Silos */}
+            <Route path="/servicios/google-my-business" element={<GoogleMyBusinessPage />} />
+            <Route path="/servicios/diseno-web-restaurantes" element={<DisenoWebPage />} />
+            <Route path="/servicios/branding-restaurantes" element={<BrandingPage />} />
+            <Route path="/servicios/integracion-ia" element={<IntegracionIAPage />} />
+            <Route path="/servicios/seo-gastronomico" element={<SeoGastronomicoPage />} />
+            <Route path="/servicios/estrategia-digital" element={<EstrategiaDigitalPage />} />
           </Routes>
         </Suspense>
       </div>
