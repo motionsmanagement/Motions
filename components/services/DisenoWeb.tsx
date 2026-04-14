@@ -46,10 +46,13 @@ const DisenoWebPage: React.FC = () => {
             </p>
 
             <div className="flex flex-row items-center gap-3 w-full justify-center md:justify-start px-4 md:px-0">
-              <ContactButton label="Solicitar proyecto" />
+              <ContactButton 
+                label="Solicitar proyecto" 
+                desktopLabel="Solicitar presupuesto para mi nueva web" 
+              />
               <Link 
                 to="/#proyectos" 
-                className="px-5 py-3 md:px-7 md:py-4 bg-black/[0.03] border border-black/5 text-gray-700 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[11px] md:text-[15px] flex items-center justify-center whitespace-nowrap"
+                className="px-4 py-2.5 md:px-6 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-700 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[11px] md:text-[15px] flex items-center justify-center whitespace-nowrap"
               >
                 Ver proyectos
               </Link>
@@ -90,7 +93,7 @@ const DisenoWebPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {features.map((f, i) => (
                 <div key={i} className="group p-8 bg-white rounded-[2rem] border border-gray-100 transition-all duration-300">
-                  <div className="w-11 h-11 bg-black rounded-xl flex items-center justify-center text-white mb-6">
+                  <div className="w-11 h-11 bg-[#F5F5F5] rounded-xl flex items-center justify-center text-black mb-6 group-hover:bg-black group-hover:text-white transition-colors duration-300">
                     {f.icon}
                   </div>
                   <h3 className="text-lg font-semibold text-black mb-3 tracking-tight">{f.title}</h3>
@@ -114,6 +117,7 @@ const DisenoWebPage: React.FC = () => {
                     </p>
                     <ContactButton
                         label="Comenzar mi proyecto"
+                        desktopLabel="Solicitar presupuesto para mi proyecto web"
                         className="bg-white text-black hover:bg-gray-100"
                     />
                 </div>

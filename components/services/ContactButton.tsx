@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 interface ContactButtonProps {
   label: string;
+  desktopLabel?: string;
   className?: string;
 }
 
@@ -11,7 +12,7 @@ interface ContactButtonProps {
  * home (scroll suave) como desde cualquier sub-página de servicios
  * (navega a / y luego hace scroll).
  */
-const ContactButton: React.FC<ContactButtonProps> = ({ label, className = '' }) => {
+const ContactButton: React.FC<ContactButtonProps> = ({ label, desktopLabel, className = '' }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -39,8 +40,9 @@ const ContactButton: React.FC<ContactButtonProps> = ({ label, className = '' }) 
       onClick={handleClick}
       className={`group relative flex items-center justify-between gap-2.5 md:gap-4 pl-4 md:pl-6 pr-1 md:pr-1.5 py-1 md:py-1.5 rounded-full transition-all active:scale-[0.98] shadow-lg ${isWhite ? 'bg-white text-black hover:bg-gray-100' : 'bg-black text-white hover:bg-neutral-900'} ${className}`}
     >
-      <span className="font-semibold tracking-tight text-[11px] md:text-[15px] whitespace-nowrap">
-        {label}
+      <span className="font-semibold tracking-tight text-[11px] md:text-[15px] whitespace-nowrap px-1">
+        <span className={desktopLabel ? "md:hidden" : ""}>{label}</span>
+        {desktopLabel && <span className="hidden md:inline">{desktopLabel}</span>}
       </span>
       <div className={`w-7 h-7 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-transform group-hover:rotate-0 shrink-0 ${isWhite ? 'bg-black text-white' : 'bg-white text-black'}`}>
         <svg 

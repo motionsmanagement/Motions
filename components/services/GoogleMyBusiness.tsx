@@ -46,10 +46,13 @@ const GoogleMyBusinessPage: React.FC = () => {
             </p>
 
             <div className="flex flex-row items-center gap-3 w-full justify-center md:justify-start px-4 md:px-0">
-              <ContactButton label="Multiplicar reservas" />
+              <ContactButton 
+                label="Multiplicar reservas" 
+                desktopLabel="Multiplicar las reservas de mi local" 
+              />
               <Link 
                 to="/" 
-                className="px-5 py-3 md:px-7 md:py-4 bg-black/[0.03] border border-black/5 text-gray-700 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[11px] md:text-[15px] flex items-center justify-center whitespace-nowrap"
+                className="px-4 py-2.5 md:px-6 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-700 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[11px] md:text-[15px] flex items-center justify-center whitespace-nowrap"
               >
                 Ver servicios
               </Link>
@@ -90,7 +93,7 @@ const GoogleMyBusinessPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {benefits.map((b, i) => (
                 <div key={i} className="group p-8 bg-white rounded-[2rem] border border-gray-100 transition-all duration-300">
-                  <div className="w-11 h-11 bg-black rounded-xl flex items-center justify-center text-white mb-6">
+                  <div className="w-11 h-11 bg-[#F5F5F5] rounded-xl flex items-center justify-center text-black mb-6 group-hover:bg-black group-hover:text-white transition-colors duration-300">
                     {b.icon}
                   </div>
                   <h3 className="text-lg font-semibold text-black mb-3 tracking-tight">{b.title}</h3>
@@ -110,10 +113,11 @@ const GoogleMyBusinessPage: React.FC = () => {
                         Si no apareces en el <span className="text-white/40">Top 3</span>, tus clientes están cenando en otro lugar.
                     </h2>
                     <p className="text-white/60 text-sm md:text-lg mb-10 font-light max-w-2xl leading-relaxed">
-                        El 80% de las búsquedas gastronómicas se deciden en los primeros tres resultados de Google Maps. Asegura tu lugar hoy mismo.
+                        El 80% de las búsquedas gastronómicas se deciden en los primeros tres resultados de Google Maps. Asegure tu lugar hoy mismo.
                     </p>
                     <ContactButton
                         label="Comenzar Auditoría Local"
+                        desktopLabel="Solicitar mi Auditoría Local Gratuita"
                         className="bg-white text-black hover:bg-gray-100"
                     />
                 </div>
