@@ -138,7 +138,7 @@ const DisenoWebPage: React.FC = () => {
                   className={`group p-8 bg-white rounded-[2rem] border border-gray-100 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('features') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                   style={{ transitionDelay: isVisible('features') ? `${i * 100}ms` : '0ms' }}
                 >
-                  <div className="w-11 h-11 bg-[#F5F5F5] rounded-xl flex items-center justify-center text-black mb-6 group-hover:bg-black group-hover:text-white transition-colors duration-300">
+                  <div className="w-11 h-11 bg-[#F5F5F5] rounded-xl flex items-center justify-center text-black mb-6">
                     {f.icon}
                   </div>
                   <h3 className="text-lg font-semibold text-black mb-3 tracking-tight">{f.title}</h3>
