@@ -28,14 +28,14 @@ const EstrategiaDigitalPage: React.FC = () => {
       <main className="bg-[#FBF9F6] font-['Inter']">
 
         {/* Hero */}
-        <section className="pt-40 pb-28 px-6 md:px-12 border-b border-gray-100">
+        <section className="pt-32 md:pt-40 pb-20 md:pb-28 px-6 md:px-12 border-b border-gray-100">
           <div className="max-w-7xl mx-auto">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black text-white text-[11px] font-semibold uppercase tracking-widest mb-10">
               <Activity className="w-3 h-3" /> Estrategia Digital
             </span>
-            <h1 className="text-5xl sm:text-6xl md:text-[80px] font-medium tracking-tight text-black leading-[1.02] mb-8 max-w-4xl">
+            <h1 className="text-4xl sm:text-6xl md:text-[80px] font-medium tracking-tight text-black leading-[1.02] mb-8 max-w-4xl">
               Estrategia Digital<br />
-              <span className="text-gray-300">para Restaurantes</span>
+              para Restaurantes
             </h1>
             <p className="text-lg md:text-xl text-gray-500 leading-relaxed mb-12 max-w-2xl">
               Diseñamos y ejecutamos la estrategia digital completa de tu restaurante: desde la captación hasta la fidelización, todo coordinado para maximizar tus resultados.
@@ -45,7 +45,7 @@ const EstrategiaDigitalPage: React.FC = () => {
                 label="Quiero mi estrategia digital"
                 className="px-8 py-4 bg-black text-white rounded-full font-semibold hover:bg-gray-900 transition-all shadow-sm hover:-translate-y-0.5"
               />
-              <Link to="/" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-semibold border border-gray-200 hover:border-gray-400 transition-all">
+              <Link to="/" className="inline-flex items-center gap-3 px-8 py-4 bg-black/[0.03] border border-black/5 text-gray-600 rounded-full font-semibold hover:bg-black/[0.06] transition-all">
                 Ver todos los servicios
               </Link>
             </div>
@@ -61,8 +61,8 @@ const EstrategiaDigitalPage: React.FC = () => {
               { num: '100%', label: 'Orientados a resultados reales' },
             ].map((s, i) => (
               <div key={i} className="flex flex-col items-center">
-                <span className="text-5xl md:text-6xl font-bold text-white mb-3">{s.num}</span>
-                <span className="text-white/40 text-sm max-w-[200px] font-mono uppercase tracking-widest">{s.label}</span>
+                <span className="text-3xl md:text-5xl font-medium text-white mb-2">{s.num}</span>
+                <span className="text-white/40 text-[10px] md:text-xs max-w-[200px] uppercase tracking-[0.2em]">{s.label}</span>
               </div>
             ))}
           </div>
