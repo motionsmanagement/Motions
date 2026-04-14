@@ -30,7 +30,7 @@ const BrandingPage: React.FC = () => {
         {/* Hero Section */}
         <section className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="mb-8 px-3.5 py-2 bg-[#EDEDED] rounded-full inline-flex items-center justify-center border border-black/[0.03]">
+            <div className="mb-8 pl-3.5 pr-2.5 py-2 bg-[#EDEDED] rounded-full inline-flex items-center justify-center border border-black/[0.03]">
                 <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.15em] leading-none">
                   Identidad & Concepto
                 </span>
@@ -110,7 +110,7 @@ const BrandingPage: React.FC = () => {
                         Eleva tu marca a un nivel superior.
                     </h2>
                     <p className="text-white/60 text-sm md:text-lg mb-10 font-light max-w-2xl leading-relaxed">
-                        Un buen diseño atrae. Un buen branding fideliza. Empecemos a construir tu legado hoy mismo.
+                        Un buen diseño atrae. Un buen branding fideliza. Empecemos a construir tu legacy hoy mismo.
                     </p>
                     <ContactButton
                         label="Definir mi Marca"
