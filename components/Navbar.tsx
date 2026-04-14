@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight, ArrowUpRight } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +20,7 @@ const Navbar: React.FC = () => {
   // Close menu on navigation and handle body scroll
   useEffect(() => {
     setIsMenuOpen(false);
+    setIsServicesOpen(false);
     document.body.style.overflow = 'auto'; // Reset on navigation
   }, [location]);
 
@@ -28,8 +31,6 @@ const Navbar: React.FC = () => {
       document.body.style.overflow = 'auto';
     }
   }, [isMenuOpen]);
-
-  const navigate = useNavigate();
 
   const isWhiteBgPage = location.pathname !== '/';
   const showDarkNavbar = isScrolled || isWhiteBgPage || isMenuOpen;
@@ -61,6 +62,15 @@ const Navbar: React.FC = () => {
     { name: "Nuestra Especialidad", href: "/#trabajos", section: "trabajos" },
     { name: "Proyectos", href: "/#proyectos", section: "proyectos" },
     { name: "Contacto", href: "/#contacto", section: "contacto" },
+  ];
+
+  const services = [
+    { name: "Google My Business", href: "/servicios/google-my-business" },
+    { name: "Diseño Web", href: "/servicios/diseno-web-restaurantes" },
+    { name: "Branding", href: "/servicios/branding-restaurantes" },
+    { name: "Integración IA", href: "/servicios/integracion-ia" },
+    { name: "SEO Gastronómico", href: "/servicios/seo-gastronomico" },
+    { name: "Estrategia Digital", href: "/servicios/estrategia-digital" },
   ];
 
   return (
@@ -135,31 +145,60 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        <div className="flex flex-col h-full px-8 pt-24 pb-8 overflow-hidden">
+        <div className="flex flex-col h-full px-8 pt-24 pb-8 overflow-y-auto overflow-x-hidden scrollbar-hide">
           {/* Main Navigation Links */}
-          <div className="flex flex-col gap-9 text-left mb-10">
-            {navLinks.map((link, index) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`text-2xl font-medium text-black tracking-tight flex items-center justify-between group transition-all duration-[800ms] ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                style={{ 
-                  transitionDelay: isMenuOpen ? `${index * 80 + 150}ms` : '0ms',
-                  transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
-                }}
-                onClick={handleNavToSection(link.section)}
-              >
-                {link.name}
-                <svg 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="w-4 h-4 text-black/30 group-hover:text-black transition-transform rotate-90"
-                > 
-                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </a>
-            ))}
+          <div className="flex flex-col gap-7 text-left mb-10">
+            {navLinks.map((link, index) => {
+              if (link.name === "Servicios") {
+                return (
+                  <div key={link.name} className="flex flex-col">
+                    <button
+                      onClick={() => setIsServicesOpen(!isServicesOpen)}
+                      className={`text-[1.75rem] font-medium text-black tracking-tight flex items-center justify-between group transition-all duration-[800ms] ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                      style={{ 
+                        transitionDelay: isMenuOpen ? `${index * 80 + 150}ms` : '0ms',
+                        transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                      }}
+                    >
+                      {link.name}
+                      <ChevronRight className={`w-6 h-6 text-black/20 transition-transform duration-500 ${isServicesOpen ? 'rotate-90' : ''}`} />
+                    </button>
+                    
+                    <div className={`grid transition-all duration-500 ease-in-out ${isServicesOpen ? 'grid-rows-[1fr] mt-6 opacity-100' : 'grid-rows-[0fr] mt-0 opacity-0 pointer-events-none'}`}>
+                      <div className="overflow-hidden">
+                        <div className="flex flex-col gap-4 pl-4 border-l-2 border-black/5">
+                          {services.map((service, sIndex) => (
+                            <Link
+                              key={service.name}
+                              to={service.href}
+                              onClick={() => setIsMenuOpen(false)}
+                              className="text-lg text-black/60 hover:text-black transition-colors py-1"
+                            >
+                              {service.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`text-[1.75rem] font-medium text-black tracking-tight flex items-center justify-between group transition-all duration-[800ms] ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  style={{ 
+                    transitionDelay: isMenuOpen ? `${index * 80 + 150}ms` : '0ms',
+                    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                  }}
+                  onClick={handleNavToSection(link.section)}
+                >
+                  {link.name}
+                  <ArrowUpRight className="w-5 h-5 text-black/20 group-hover:text-black transition-transform" />
+                </a>
+              );
+            })}
           </div>
 
           {/* Quick Choice Buttons & Banner with staggered reveal as well */}
