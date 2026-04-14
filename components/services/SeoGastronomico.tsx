@@ -37,8 +37,9 @@ const SeoGastronomicoPage: React.FC = () => {
         {/* Hero Section */}
         <section className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/[0.03] border border-black/5 mb-6">
-                <span className="text-[10px] font-bold text-black uppercase tracking-widest">Posicionamiento Orgánico</span>
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black mb-8 shadow-lg">
+                <img src="/anagram.png" alt="" className="w-3.5 h-3.5 invert brightness-0" />
+                <span className="text-[10px] font-bold text-white uppercase tracking-widest whitespace-nowrap">Posicionamiento Orgánico</span>
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1] mb-8 max-w-4xl">
@@ -46,15 +47,15 @@ const SeoGastronomicoPage: React.FC = () => {
               para Restaurantes
             </h1>
             
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-10 max-w-2xl font-light">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-10 max-w-2xl font-light px-4 md:px-0">
                 No pagues por cada clic. Conquista las primeras posiciones de Google orgánicamente y atrae a miles de clientes hambrientos cada mes de forma constante.
             </p>
 
-            <div className="flex flex-row items-center gap-3 w-full justify-center md:justify-start">
+            <div className="flex flex-row items-center gap-3 w-full justify-center md:justify-start px-4 md:px-0">
               <ContactButton label="Dominar Google" />
               <Link 
                 to="/" 
-                className="px-4 py-2.5 md:px-7 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[10px] md:text-base flex items-center justify-center gap-2"
+                className="px-6 py-3 md:px-7 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-xs md:text-base flex items-center justify-center gap-2"
               >
                 Ver servicios <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
               </Link>
@@ -106,17 +107,32 @@ const SeoGastronomicoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Keywords Cloud Section */}
-        <section className="py-20 md:py-32 px-6 md:px-12 bg-white border-y border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 md:px-0">
-            <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-10 text-center">
+        {/* Keywords Cloud Section - Improved for Mobile */}
+        <section className="py-20 md:py-32 bg-white border-y border-gray-100 overflow-hidden">
+          <div className="max-w-7xl mx-auto mb-16 px-6 md:px-0 text-center md:text-left">
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black">
               Tu marca en cada búsqueda relevante.
             </h2>
-            <div className="flex flex-wrap justify-center gap-3">
-              {keywords.map((kw, i) => (
-                <span key={i} className="px-5 py-2.5 bg-[#F8F9FA] border border-black/5 rounded-full text-xs md:text-sm text-gray-500 font-light hover:bg-black hover:text-white transition-all duration-300 cursor-default">
+          </div>
+          
+          <div className="relative group">
+            {/* Fade gradients at edges */}
+            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+            
+            <div className="flex animate-marquee-fast hover:[animation-play-state:paused] gap-4 w-fit whitespace-nowrap px-4 py-2">
+              {[...keywords, ...keywords].map((kw, i) => (
+                <div key={i} className="px-8 py-4 bg-[#F8F9FA] border border-black/[0.03] rounded-2xl md:rounded-full text-sm md:text-lg text-black font-medium hover:bg-black hover:text-white transition-all duration-500 cursor-default shadow-sm select-none">
                   {kw}
-                </span>
+                </div>
+              ))}
+            </div>
+            
+            <div className="flex animate-marquee-reverse-fast hover:[animation-play-state:paused] gap-4 w-fit whitespace-nowrap px-4 py-2 mt-4">
+              {[...keywords, ...keywords].reverse().map((kw, i) => (
+                <div key={i} className="px-8 py-4 bg-[#F8F9FA] border border-black/[0.03] rounded-2xl md:rounded-full text-sm md:text-lg text-black font-medium hover:bg-black hover:text-white transition-all duration-500 cursor-default shadow-sm select-none">
+                  {kw}
+                </div>
               ))}
             </div>
           </div>

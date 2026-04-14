@@ -30,8 +30,9 @@ const GoogleMyBusinessPage: React.FC = () => {
         {/* Hero Section */}
         <section className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/[0.03] border border-black/5 mb-6">
-                <span className="text-[10px] font-bold text-black uppercase tracking-widest">SEO Local & Maps</span>
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black mb-8 shadow-lg">
+                <img src="/anagram.png" alt="" className="w-3.5 h-3.5 invert brightness-0" />
+                <span className="text-[10px] font-bold text-white uppercase tracking-widest whitespace-nowrap">SEO Local & Maps</span>
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1] mb-8 max-w-4xl">
@@ -39,15 +40,15 @@ const GoogleMyBusinessPage: React.FC = () => {
               para Restaurantes
             </h1>
             
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-10 max-w-2xl font-light">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-10 max-w-2xl font-light px-4 md:px-0">
                 Dominamos las búsquedas locales para que tu restaurante sea siempre la primera opción. Transformamos tu ficha técnica en una herramienta de captación masiva.
             </p>
 
-            <div className="flex flex-row items-center gap-3 w-full justify-center md:justify-start">
-              <ContactButton label="Multiplicar mis reservas" />
+            <div className="flex flex-row items-center gap-3 w-full justify-center md:justify-start px-4 md:px-0">
+              <ContactButton label="Multiplicar reservas" />
               <Link 
                 to="/" 
-                className="px-4 py-2.5 md:px-7 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[10px] md:text-base flex items-center justify-center gap-2"
+                className="px-6 py-3 md:px-7 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-xs md:text-base flex items-center justify-center gap-2"
               >
                 Ver servicios <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
               </Link>
