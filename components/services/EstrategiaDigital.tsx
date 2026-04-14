@@ -13,6 +13,35 @@ const EstrategiaDigitalPage: React.FC = () => {
     canonical: 'https://www.motions.es/servicios/estrategia-digital',
   });
 
+  const [visibleItems, setVisibleItems] = React.useState<{[key: string]: boolean}>({});
+  const sectionRefs = React.useRef<{[key: string]: HTMLElement | null}>({});
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          const id = entry.target.getAttribute('data-section-id');
+          if (id) {
+            setVisibleItems(prev => ({ ...prev, [id]: entry.isIntersecting }));
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    Object.values(sectionRefs.current).forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const setRef = (id: string) => (el: HTMLElement | null) => {
+    sectionRefs.current[id] = el;
+  };
+
+  const isVisible = (id: string) => !!visibleItems[id];
+
   const features = [
     { icon: <Target className="w-5 h-5" />, title: 'Estrategia 360°', desc: 'Plan integral que unifica web, redes sociales, SEO, publicidad y reputación en una sola dirección.' },
     { icon: <Users className="w-5 h-5" />, title: 'Definición de Audiencia', desc: 'Identificamos y segmentamos a tu cliente ideal para que cada acción impacte donde importa.' },
@@ -28,8 +57,12 @@ const EstrategiaDigitalPage: React.FC = () => {
       <main className="bg-[#F8F9FA] font-['Inter'] overflow-hidden">
 
         {/* Hero Section */}
-        <section className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12">
-          <div className="max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left">
+        <section 
+          ref={setRef('hero')} 
+          data-section-id="hero"
+          className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12"
+        >
+          <div className={`max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             <div className="mb-8 pl-3.5 pr-2.5 py-2 bg-[#EDEDED] rounded-full inline-flex items-center justify-center border border-black/[0.03]">
                 <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.15em] leading-none">
                   Consultoría de Crecimiento
@@ -60,9 +93,13 @@ const EstrategiaDigitalPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Stats Section - Centered */}
-        <section className="py-12 md:py-20 px-6 md:px-12 bg-[#0A0A0A] relative overflow-hidden">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0 relative z-10">
+        {/* Stats Section */}
+        <section 
+          ref={setRef('stats')} 
+          data-section-id="stats"
+          className="py-12 md:py-20 px-6 md:px-12 bg-[#0A0A0A] relative overflow-hidden"
+        >
+          <div className={`max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0 relative z-10 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('stats') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             {[
               { num: '+120%', label: 'Crecimiento promedio en facturación atribuida a canales digitales.' },
               { num: '6 meses', label: 'Tiempo medio para alcanzar la madurez estratégica digital.' },
@@ -79,9 +116,13 @@ const EstrategiaDigitalPage: React.FC = () => {
         </section>
 
         {/* Features Grid */}
-        <section className="py-20 md:py-32 px-6 md:px-12">
+        <section 
+          ref={setRef('features')} 
+          data-section-id="features"
+          className="py-20 md:py-32 px-6 md:px-12"
+        >
           <div className="max-w-7xl mx-auto">
-            <div className="max-w-2xl mb-16 px-4 md:px-0">
+            <div className={`max-w-2xl mb-16 px-4 md:px-0 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('features') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
                 <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-6">
                     Sin improvisación. Solo resultados escalables.
                 </h2>
@@ -92,7 +133,11 @@ const EstrategiaDigitalPage: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {features.map((f, i) => (
-                <div key={i} className="group p-8 bg-white rounded-[2rem] border border-gray-100 transition-all duration-300">
+                <div 
+                  key={i} 
+                  className={`group p-8 bg-white rounded-[2rem] border border-gray-100 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('features') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                  style={{ transitionDelay: isVisible('features') ? `${i * 100}ms` : '0ms' }}
+                >
                   <div className="w-11 h-11 bg-[#F5F5F5] rounded-xl flex items-center justify-center text-black mb-6 group-hover:bg-black group-hover:text-white transition-colors duration-300">
                     {f.icon}
                   </div>
@@ -105,8 +150,12 @@ const EstrategiaDigitalPage: React.FC = () => {
         </section>
 
         {/* Roadmap Section */}
-        <section className="py-20 md:py-32 px-6 md:px-12 bg-white border-y border-gray-100">
-          <div className="max-w-7xl mx-auto text-center md:text-left px-6 md:px-0">
+        <section 
+          ref={setRef('roadmap')} 
+          data-section-id="roadmap"
+          className="py-20 md:py-32 px-6 md:px-12 bg-white border-y border-gray-100"
+        >
+          <div className={`max-w-7xl mx-auto text-center md:text-left px-6 md:px-0 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('roadmap') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-16">
               Hoja de ruta digital.
             </h2>
@@ -116,7 +165,11 @@ const EstrategiaDigitalPage: React.FC = () => {
                 { month: 'Mes 3 - 4', title: 'Activación & Captación', desc: 'Lanzamos campañas de alto impacto y activamos los embudos de conversión para atraer clientes.' },
                 { month: 'Mes 5 - 6', title: 'Escala & Fidelización', desc: 'Optimizamos la inversión basada en datos y activamos sistemas de recurrencia para tus clientes.' },
               ].map((p, i) => (
-                <div key={i} className="p-10 bg-[#F8F9FA] rounded-[2.5rem] border border-black/5">
+                <div 
+                  key={i} 
+                  className="p-10 bg-[#F8F9FA] rounded-[2.5rem] border border-black/5 hover:border-black/20 transition-all duration-500"
+                  style={{ transitionDelay: isVisible('roadmap') ? `${i * 150}ms` : '0ms' }}
+                >
                   <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest">{p.month}</span>
                   <h3 className="text-xl font-semibold text-black mt-3 mb-3">{p.title}</h3>
                   <p className="text-gray-600 text-sm font-light leading-relaxed">{p.desc}</p>
@@ -127,8 +180,12 @@ const EstrategiaDigitalPage: React.FC = () => {
         </section>
 
         {/* Premium CTA */}
-        <section className="pb-20 md:pb-32 px-6 md:px-12 mt-20">
-          <div className="max-w-7xl mx-auto">
+        <section 
+          ref={setRef('cta')} 
+          data-section-id="cta"
+          className="pb-20 md:pb-32 px-6 md:px-12 mt-20"
+        >
+          <div className={`max-w-7xl mx-auto transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('cta') ? 'opacity-100 scale-100' : 'opacity-0 scale-95 translate-y-12'}`}>
             <div className="bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-20 relative overflow-hidden flex flex-col items-center text-center">
                 <div className="relative z-10 max-w-3xl flex flex-col items-center">
                     <h2 className="text-3xl md:text-5xl font-medium text-white mb-6 tracking-tight leading-[1.2]">
