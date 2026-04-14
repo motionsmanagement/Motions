@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom';
 import { Cpu, ArrowRight, MessageSquare, Bot, BarChart3, Clock, Zap, Settings } from 'lucide-react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import useSEO from './useSEO';
 
 const IntegracionIAPage: React.FC = () => {
+  useSEO({
+    title: 'Integración con IA para Restaurantes | Motions',
+    description: 'Automatizamos las reservas, atención al cliente y marketing de tu restaurante con Inteligencia Artificial. Chatbots, WhatsApp automático y análisis predictivo para hosteleria.',
+    canonical: 'https://www.motions.es/servicios/integracion-ia',
+  });
   const features = [
     { icon: <Bot className="w-5 h-5" />, title: 'Chatbot con IA para tu web', desc: 'Asistente automatizado que responde reservas, preguntas y menús del día sin intervención humana.' },
     { icon: <MessageSquare className="w-5 h-5" />, title: 'Automatización de WhatsApp', desc: 'Gestión automática de consultas y reservas por WhatsApp para que nunca pierdas un cliente.' },

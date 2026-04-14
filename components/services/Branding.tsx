@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom';
 import { Palette, ArrowRight, Layers, Type, Image, Heart, Award } from 'lucide-react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import useSEO from './useSEO';
 
 const BrandingPage: React.FC = () => {
+  useSEO({
+    title: 'Branding e Identidad Visual para Restaurantes | Motions',
+    description: 'Creamos la identidad visual que convierte tu restaurante en una marca reconocida. Logotipo, diseño de menús, manual de marca y materiales gráficos para el sector gastronómico.',
+    canonical: 'https://www.motions.es/servicios/branding-restaurantes',
+  });
   const features = [
     { icon: <Palette className="w-5 h-5" />, title: 'Identidad Visual Completa', desc: 'Logotipo, paleta de colores, tipografías y sistema visual que diferencian tu marca.' },
     { icon: <Layers className="w-5 h-5" />, title: 'Manual de Marca', desc: 'Guía completa de uso de tu identidad para que siempre proyectes coherencia y profesionalidad.' },

@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom';
 import { Activity, ArrowRight, Target, Users, BarChart3, Megaphone, RefreshCw, Lightbulb } from 'lucide-react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import useSEO from './useSEO';
 
 const EstrategiaDigitalPage: React.FC = () => {
+  useSEO({
+    title: 'Estrategia Digital para Restaurantes | Motions',
+    description: 'Diseñamos y ejecutamos la estrategia digital completa de tu restaurante: redes sociales, publicidad, SEO y fidelización. Todo coordinado para maximizar tus resultados en hosteleria.',
+    canonical: 'https://www.motions.es/servicios/estrategia-digital',
+  });
   const features = [
     { icon: <Target className="w-5 h-5" />, title: 'Estrategia 360°', desc: 'Plan integral que unifica web, redes sociales, SEO, publicidad y reputación en una sola dirección.' },
     { icon: <Users className="w-5 h-5" />, title: 'Definición de Audiencia', desc: 'Identificamos y segmentamos a tu cliente ideal para que cada acción impacte donde importa.' },

@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom';
 import { Globe, Zap, ArrowRight, Monitor, Smartphone, ShieldCheck, TrendingUp } from 'lucide-react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import useSEO from './useSEO';
 
 const DisenoWebPage: React.FC = () => {
+  useSEO({
+    title: 'Diseño Web Premium para Restaurantes | Motions',
+    description: 'Creamos webs de alto rendimiento para restaurantes que convierten visitas en reservas. Diseño a medida, ultra rápidas, 100% responsive y con SEO integrado. Madrid y toda España.',
+    canonical: 'https://www.motions.es/servicios/diseno-web-restaurantes',
+  });
   const features = [
     { icon: <Monitor className="w-5 h-5" />, title: 'Diseño a Medida', desc: 'Cada web es única. Diseñamos desde cero adaptándonos a la identidad y valores de tu restaurante.' },
     { icon: <Smartphone className="w-5 h-5" />, title: '100% Responsive', desc: 'Perfecta en todos los dispositivos: móvil, tablet y escritorio. El 70% de tus clientes usa el móvil.' },

@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom';
 import { Search, ArrowRight, TrendingUp, FileText, Link2, BarChart3, MapPin, Star } from 'lucide-react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import useSEO from './useSEO';
 
 const SeoGastronomicoPage: React.FC = () => {
+  useSEO({
+    title: 'SEO Gastronómico para Restaurantes | Motions',
+    description: 'Posicionamos tu restaurante en los primeros resultados de Google. Especializados en SEO para hosteleria y sector gastronómico en Madrid, Barcelona y toda España.',
+    canonical: 'https://www.motions.es/servicios/seo-gastronomico',
+  });
   const features = [
     { icon: <Search className="w-5 h-5" />, title: 'Auditoría SEO Completa', desc: 'Diagnóstico técnico exhaustivo de tu presencia online para detectar oportunidades de mejora.' },
     { icon: <FileText className="w-5 h-5" />, title: 'Contenido Optimizado', desc: 'Textos estratégicos pensados para posicionar en Google con las palabras clave de tu sector.' },

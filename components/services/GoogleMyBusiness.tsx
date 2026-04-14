@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom';
 import { MapPin, Star, CheckCircle2, ArrowRight, TrendingUp, Eye, MessageSquare } from 'lucide-react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import useSEO from './useSEO';
 
 const GoogleMyBusinessPage: React.FC = () => {
+  useSEO({
+    title: 'Google My Business para Restaurantes | Motions',
+    description: 'Dominamos las búsquedas locales en Google Maps para que tu restaurante sea siempre la primera opción. Gestión de reseñas, SEO local y posicionamiento en Madrid y toda España.',
+    canonical: 'https://www.motions.es/servicios/google-my-business',
+  });
   const benefits = [
     { icon: <MapPin className="w-5 h-5" />, title: 'Presencia Local Dominante', desc: 'Aparece en el "Pack de 3" de Google Maps cuando alguien busca restaurantes cerca.' },
     { icon: <Star className="w-5 h-5" />, title: 'Gestión de Reseñas', desc: 'Estrategia completa de captación y respuesta a reseñas para elevar tu reputación online.' },
