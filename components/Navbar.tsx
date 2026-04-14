@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
         style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
       >
         {/* Top Header inside Overlay */}
-        <div className="absolute top-0 left-0 right-0 h-20 px-8 flex justify-between items-center bg-white">
+        <div className="absolute top-0 left-0 right-0 h-20 px-8 flex justify-between items-center bg-white z-20">
           <Link to="/" onClick={() => setIsMenuOpen(false)}>
             <img src="/motionsblack.png" alt="Motions Logo" className="h-7 w-auto" />
           </Link>
