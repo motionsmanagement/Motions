@@ -25,7 +25,7 @@ const IntegracionIAPage: React.FC = () => {
   return (
     <>
       <Navbar />
-      <main className="bg-[#FBF9F6] font-['Inter'] overflow-hidden">
+      <main className="bg-[#F8F9FA] font-['Inter'] overflow-hidden">
 
         {/* Hero Section */}
         <section className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12">
@@ -43,13 +43,13 @@ const IntegracionIAPage: React.FC = () => {
                 Automatizamos los procesos repetitivos de tu negocio. Implementamos IA real para gestionar clientes, reservas y operaciones mientras tu equipo se enfoca en cocinar.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-              <ContactButton label="Automatizar mi negocio" />
+            <div className="flex flex-row items-center gap-3 w-full justify-center md:justify-start">
+              <ContactButton label="Automatizar local" />
               <Link 
                 to="/" 
-                className="px-5 py-2.5 md:px-7 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-xs md:text-base flex items-center justify-center gap-2"
+                className="px-4 py-2.5 md:px-7 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[10px] md:text-base flex items-center justify-center gap-2"
               >
-                Ver otros servicios <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
+                Ver servicios <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
               </Link>
             </div>
           </div>
@@ -76,7 +76,7 @@ const IntegracionIAPage: React.FC = () => {
         {/* Features Grid */}
         <section className="py-20 md:py-32 px-6 md:px-12">
           <div className="max-w-7xl mx-auto">
-            <div className="max-w-2xl mb-16">
+            <div className="max-w-2xl mb-16 px-4 md:px-0">
                 <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-6">
                     Multiplica la capacidad de tu equipo humano.
                 </h2>
@@ -101,7 +101,7 @@ const IntegracionIAPage: React.FC = () => {
 
         {/* Use Cases Section */}
         <section className="py-20 md:py-32 px-6 md:px-12 bg-white border-y border-gray-100">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto px-4 md:px-0">
             <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-16 text-center">
               Casos de éxito operativos.
             </h2>
@@ -118,7 +118,7 @@ const IntegracionIAPage: React.FC = () => {
                   with: 'La IA extrae menús y alérgenos. Responde con precisión y agenda la visita sin intervención humana.',
                 },
               ].map((c, i) => (
-                <div key={i} className="p-8 md:p-10 bg-[#FBF9F6] rounded-[2.5rem] border border-gray-100 flex flex-col justify-between h-full">
+                <div key={i} className="p-8 md:p-10 bg-[#F8F9FA] rounded-[2.5rem] border border-gray-100 flex flex-col justify-between h-full">
                   <p className="text-lg md:text-xl font-medium text-black mb-10 italic leading-relaxed font-light">"{c.scenario}"</p>
                   <div className="space-y-4">
                     <div className="flex gap-4 p-5 bg-white/50 rounded-2xl border border-gray-100">

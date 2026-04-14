@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, MessageCircle, Mail, MapPin, Phone } from 'lucide-react';
+import { Instagram, Linkedin, MessageCircle, Mail, MapPin, Phone, ArrowUpRight } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const [visible, setVisible] = React.useState(false);
@@ -43,10 +43,10 @@ const Footer: React.FC = () => {
                 href="https://www.instagram.com/motions.es" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-10 h-10 rounded-full bg-[#f3f4f1] border border-gray-200/50 flex items-center justify-center text-gray-500 hover:text-black hover:border-black/20 hover:scale-110 active:scale-95 transition-all shadow-sm"
-                aria-label="Síguenos en Instagram"
+                className="flex items-center gap-2 text-gray-500 hover:text-black transition-colors font-medium text-sm group"
               >
-                <Instagram className="w-5 h-5" />
+                Instagram
+                <ArrowUpRight className="w-4 h-4 text-gray-300 group-hover:text-black transition-colors" />
               </a>
             </div>
           </div>

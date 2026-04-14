@@ -25,7 +25,7 @@ const BrandingPage: React.FC = () => {
   return (
     <>
       <Navbar />
-      <main className="bg-[#FBF9F6] font-['Inter'] overflow-hidden">
+      <main className="bg-[#F8F9FA] font-['Inter'] overflow-hidden">
 
         {/* Hero Section */}
         <section className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12">
@@ -43,11 +43,11 @@ const BrandingPage: React.FC = () => {
                 Construimos marcas memorables que capturan la esencia de tu cocina. No solo diseñamos logos; creamos ecosistemas visuales premium.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-              <ContactButton label="Crear mi identidad de marca" />
+            <div className="flex flex-row items-center gap-3 w-full justify-center md:justify-start">
+              <ContactButton label="Crear mi marca" />
               <Link 
                 to="/#proyectos" 
-                className="px-5 py-2.5 md:px-7 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-xs md:text-base flex items-center justify-center gap-2"
+                className="px-4 py-2.5 md:px-7 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[10px] md:text-base flex items-center justify-center gap-2"
               >
                 Ver casos <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
               </Link>
@@ -76,7 +76,7 @@ const BrandingPage: React.FC = () => {
         {/* Features Grid */}
         <section className="py-20 md:py-32 px-6 md:px-12">
           <div className="max-w-7xl mx-auto">
-            <div className="max-w-2xl mb-16">
+            <div className="max-w-2xl mb-16 px-4 md:px-0">
                 <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-6">
                     Diferenciación real en un mundo visual.
                 </h2>

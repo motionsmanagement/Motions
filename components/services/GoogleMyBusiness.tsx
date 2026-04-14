@@ -25,7 +25,7 @@ const GoogleMyBusinessPage: React.FC = () => {
   return (
     <>
       <Navbar />
-      <main className="bg-[#FBF9F6] font-['Inter'] overflow-hidden">
+      <main className="bg-[#F8F9FA] font-['Inter'] overflow-hidden">
 
         {/* Hero Section */}
         <section className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12">
@@ -43,13 +43,13 @@ const GoogleMyBusinessPage: React.FC = () => {
                 Dominamos las búsquedas locales para que tu restaurante sea siempre la primera opción. Transformamos tu ficha técnica en una herramienta de captación masiva.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+            <div className="flex flex-row items-center gap-3 w-full justify-center md:justify-start">
               <ContactButton label="Multiplicar mis reservas" />
               <Link 
                 to="/" 
-                className="px-5 py-2.5 md:px-7 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-xs md:text-base flex items-center justify-center gap-2"
+                className="px-4 py-2.5 md:px-7 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[10px] md:text-base flex items-center justify-center gap-2"
               >
-                Ver otros servicios <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
+                Ver servicios <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
               </Link>
             </div>
           </div>
@@ -76,7 +76,7 @@ const GoogleMyBusinessPage: React.FC = () => {
         {/* Benefits Grid */}
         <section className="py-20 md:py-32 px-6 md:px-12">
           <div className="max-w-7xl mx-auto">
-            <div className="max-w-2xl mb-16">
+            <div className="max-w-2xl mb-16 px-4 md:px-0">
                 <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-6">
                     Optimización técnica para un mercado saturado.
                 </h2>
