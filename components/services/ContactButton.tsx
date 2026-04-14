@@ -25,7 +25,9 @@ const ContactButton: React.FC<ContactButtonProps> = ({ label, className = '' }) 
       navigate('/');
       setTimeout(() => {
         const el = document.getElementById('contacto');
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
       }, 400);
     }
   };
@@ -33,9 +35,14 @@ const ContactButton: React.FC<ContactButtonProps> = ({ label, className = '' }) 
   return (
     <button
       onClick={handleClick}
-      className={`inline-flex items-center gap-3 ${className}`}
+      className={`group relative flex items-center justify-between gap-6 pl-8 pr-2.5 py-2.5 rounded-full bg-black text-white hover:bg-neutral-900 transition-all active:scale-[0.98] shadow-xl ${className}`}
     >
-      {label} <ArrowRight className="w-4 h-4 flex-shrink-0" />
+      <span className="font-semibold tracking-tight text-[15px] md:text-lg">
+        {label}
+      </span>
+      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-black transition-transform group-hover:rotate-12 shrink-0">
+        <img src="/anagram2.png" alt="" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+      </div>
     </button>
   );
 };

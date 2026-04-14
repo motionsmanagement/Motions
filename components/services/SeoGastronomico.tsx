@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Search, TrendingUp, FileText, Link2, BarChart3, MapPin } from 'lucide-react';
+import { Search, TrendingUp, FileText, Link2, BarChart3, MapPin, ChevronRight } from 'lucide-react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import useSEO from './useSEO';
@@ -32,80 +32,91 @@ const SeoGastronomicoPage: React.FC = () => {
   return (
     <>
       <Navbar />
-      <main className="bg-[#FBF9F6] font-['Inter']">
+      <main className="bg-[#FBF9F6] font-['Inter'] overflow-hidden">
 
-        {/* Hero */}
-        <section className="pt-32 md:pt-40 pb-20 md:pb-28 px-6 md:px-12 border-b border-gray-100">
+        {/* Hero Section */}
+        <section className="relative pt-32 md:pt-48 pb-20 md:pb-32 px-6 md:px-12">
           <div className="max-w-7xl mx-auto">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black text-white text-[11px] font-semibold uppercase tracking-widest mb-10">
-              <Search className="w-3 h-3" /> SEO Gastronómico
-            </span>
-            <h1 className="text-4xl sm:text-6xl md:text-[80px] font-medium tracking-tight text-black leading-[1.02] mb-8 max-w-4xl">
-              SEO Gastronómico<br />
+            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/[0.03] border border-black/5 mb-8`}>
+                <div className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+                <span className="text-[10px] font-bold text-black uppercase tracking-[0.2em]">Posicionamiento Orgánico</span>
+            </div>
+            
+            <h1 className="text-[2.75rem] sm:text-6xl md:text-[6.5rem] font-medium tracking-tight text-black leading-[0.95] mb-10 max-w-5xl">
+              SEO Gastronómico <br className="hidden md:block" />
               para Restaurantes
             </h1>
-            <p className="text-lg md:text-xl text-gray-500 leading-relaxed mb-12 max-w-2xl">
-              Posicionamos tu restaurante en los primeros resultados de Google para que los clientes te encuentren antes que a la competencia. Sin publicidad, tráfico orgánico de calidad.
+            
+            <p className="text-lg md:text-2xl text-gray-500/80 leading-relaxed mb-14 max-w-2xl font-light">
+                No pagues por cada clic. Conquista las primeras posiciones de Google orgánicamente y atrae a miles de clientes hambrientos cada mes de forma constante.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+
+            <div className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto">
               <ContactButton
-                label="Quiero salir primero en Google"
-                className="px-8 py-4 bg-black text-white rounded-full font-semibold hover:bg-gray-900 transition-all shadow-sm hover:-translate-y-0.5"
+                label="Dominar los buscadores"
+                className="w-full sm:w-auto"
               />
-              <Link to="/" className="inline-flex items-center gap-3 px-8 py-4 bg-black/[0.03] border border-black/5 text-gray-600 rounded-full font-semibold hover:bg-black/[0.06] transition-all">
-                Ver todos los servicios
+              <Link to="/" className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 text-black font-semibold border-b border-black/10 hover:border-black transition-all">
+                Ver otros servicios <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
         </section>
 
-        {/* Stats */}
-        <section className="py-20 px-6 md:px-12 bg-[#0A0A0A]">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-12 text-center">
+        {/* Stats Section */}
+        <section className="py-12 md:py-0 px-4 md:px-12 bg-[#0A0A0A] relative md:h-80 flex items-center">
+          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 relative z-10">
             {[
-              { num: 'Top 3', label: 'Posición media en Google en 90 días' },
-              { num: '+220%', label: 'Aumento de tráfico orgánico anual' },
-              { num: '0€', label: 'Coste por clic en tráfico orgánico' },
+              { num: 'Top 3', label: 'Posición promedio alcanzada para tus palabras clave principales.' },
+              { num: '+220%', label: 'Crecimiento estimado del tráfico orgánico en el primer año.' },
+              { num: '0€', label: 'Costo de adquisición publicitaria en tráfico orgánico.' },
             ].map((s, i) => (
-              <div key={i} className="flex flex-col items-center">
-                <span className="text-3xl md:text-5xl font-medium text-white mb-2">{s.num}</span>
-                <span className="text-white/40 text-[10px] md:text-xs max-w-[200px] uppercase tracking-[0.2em]">{s.label}</span>
+              <div key={i} className={`flex flex-col items-center md:items-start md:px-12 ${i !== 0 ? 'md:border-l md:border-white/10' : ''}`}>
+                <span className="text-5xl md:text-7xl font-light text-white tracking-tighter mb-4">{s.num}</span>
+                <p className="text-white/40 text-sm md:text-base font-light max-w-[200px] text-center md:text-left leading-snug lowercase first-letter:uppercase">
+                    {s.label}
+                </p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Features */}
-        <section className="py-28 px-6 md:px-12">
+        {/* Features Grid */}
+        <section className="py-24 md:py-40 px-6 md:px-12">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-black mb-4 max-w-2xl">
-              SEO especializado en el sector gastronómico
-            </h2>
-            <p className="text-gray-400 mb-16 max-w-xl">No hacemos SEO genérico. Conocemos exactamente cómo buscan tus clientes y por qué eligen un restaurante sobre otro.</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="max-w-2xl mb-20">
+                <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-6">
+                    Estrategia de búsqueda de nicho.
+                </h2>
+                <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed">
+                    Sabemos cómo se busca la comida. Optimizamos cada byte de tu web para responder a la intención real de reserva de tus clientes.
+                </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((f, i) => (
-                <div key={i} className="group p-8 bg-white rounded-[2rem] border border-gray-100 hover:border-gray-200 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md">
-                  <div className="w-11 h-11 bg-[#0A0A0A] rounded-xl flex items-center justify-center text-white mb-6">
+                <div key={i} className="group p-10 bg-white rounded-[2.5rem] border border-gray-100 hover:border-black/5 transition-all duration-500 hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)]">
+                  <div className="w-12 h-12 bg-[#FBF9F6] rounded-2xl flex items-center justify-center text-black mb-8 group-hover:bg-black group-hover:text-white transition-colors duration-500">
                     {f.icon}
                   </div>
-                  <h3 className="text-base font-semibold text-black mb-2 tracking-tight">{f.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                  <h3 className="text-xl font-semibold text-black mb-4 tracking-tight">{f.title}</h3>
+                  <p className="text-gray-500 text-base leading-relaxed font-light">{f.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Keywords */}
-        <section className="py-28 px-6 md:px-12 bg-white border-y border-gray-100">
+        {/* Keywords Cloud Section */}
+        <section className="py-24 md:py-40 px-6 md:px-12 bg-white border-y border-gray-100">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-black mb-4">
-              ¿Para qué búsquedas te posicionamos?
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-12 text-center">
+              Tu marca en cada búsqueda relevante.
             </h2>
-            <p className="text-gray-400 mb-12">Ejemplos reales de términos por los que trabajamos para que aparezcas primero:</p>
-            <div className="flex flex-wrap gap-3">
+            <p className="text-gray-400 text-center mb-20 max-w-xl mx-auto font-light">Dominamos los términos que tus clientes escriben cada día en sus teléfonos antes de salir a comer.</p>
+            <div className="flex flex-wrap justify-center gap-4">
               {keywords.map((kw, i) => (
-                <span key={i} className="px-4 py-2 bg-[#FBF9F6] border border-gray-200 rounded-full text-sm text-gray-600">
+                <span key={i} className="px-6 py-3 bg-[#FBF9F6] hover:bg-black hover:text-white transition-all duration-500 border border-black/5 rounded-full text-sm md:text-base text-gray-600 font-light cursor-default">
                   {kw}
                 </span>
               ))}
@@ -113,19 +124,23 @@ const SeoGastronomicoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-28 px-6 md:px-12 bg-[#0A0A0A]">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-medium text-white mb-6 tracking-tight leading-[1.1]">
-              El 93% de las experiencias<br />online empiezan en Google
-            </h2>
-            <p className="text-white/40 text-lg mb-10 max-w-xl mx-auto">
-              Si no estás en la primera página, prácticamente no existes. Te llevamos hasta donde están tus clientes.
-            </p>
-            <ContactButton
-              label="Quiero estar primero en Google"
-              className="px-10 py-4 bg-white text-black rounded-full font-bold text-base hover:bg-gray-100 transition-all hover:-translate-y-0.5 shadow-lg"
-            />
+        {/* Premium CTA */}
+        <section className="py-24 px-6 md:px-12">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-[#0A0A0A] rounded-[3rem] p-8 md:p-24 relative overflow-hidden group">
+                <div className="relative z-10 max-w-3xl">
+                    <h2 className="text-4xl md:text-6xl font-medium text-white mb-8 tracking-tight leading-[1.05]">
+                        Deja de ser invisible para Google.
+                    </h2>
+                    <p className="text-white/40 text-lg md:text-xl mb-12 font-light max-w-2xl leading-relaxed">
+                        Si no estás en la primera página, no existes. Te llevamos al lugar donde tus clientes están buscando hoy mismo.
+                    </p>
+                    <ContactButton
+                        label="Auditoría SEO Gratuita"
+                        className="bg-white text-black hover:bg-gray-100"
+                    />
+                </div>
+            </div>
           </div>
         </section>
 

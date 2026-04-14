@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Globe, Zap, Monitor, Smartphone, ShieldCheck, TrendingUp } from 'lucide-react';
+import { Globe, Zap, Monitor, Smartphone, ShieldCheck, TrendingUp, ChevronRight } from 'lucide-react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import useSEO from './useSEO';
@@ -25,104 +25,98 @@ const DisenoWebPage: React.FC = () => {
   return (
     <>
       <Navbar />
-      <main className="bg-[#FBF9F6] font-['Inter']">
+      <main className="bg-[#FBF9F6] font-['Inter'] overflow-hidden">
 
-        {/* Hero */}
-        <section className="pt-32 md:pt-40 pb-20 md:pb-28 px-6 md:px-12 border-b border-gray-100">
+        {/* Hero Section */}
+        <section className="relative pt-32 md:pt-48 pb-20 md:pb-32 px-6 md:px-12">
           <div className="max-w-7xl mx-auto">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black text-white text-[11px] font-semibold uppercase tracking-widest mb-10">
-              <Globe className="w-3 h-3" /> Diseño Web
-            </span>
-            <h1 className="text-4xl sm:text-6xl md:text-[80px] font-medium tracking-tight text-black leading-[1.02] mb-8 max-w-4xl">
-              Diseño Web Premium<br />
+            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/[0.03] border border-black/5 mb-8`}>
+                <div className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+                <span className="text-[10px] font-bold text-black uppercase tracking-[0.2em]">Desarrollo de Alta Gama</span>
+            </div>
+            
+            <h1 className="text-[2.75rem] sm:text-6xl md:text-[6.5rem] font-medium tracking-tight text-black leading-[0.95] mb-10 max-w-5xl">
+              Diseño Web <br className="hidden md:block" />
               para Restaurantes
             </h1>
-            <p className="text-lg md:text-xl text-gray-500 leading-relaxed mb-12 max-w-2xl">
-              Creamos webs de alto rendimiento que reflejan la excelencia de tu restaurante y convierten cada visita online en una reserva real.
+            
+            <p className="text-lg md:text-2xl text-gray-500/80 leading-relaxed mb-14 max-w-2xl font-light">
+                Creamos herramientas de venta digitales. No hacemos webs informativas; desarrollamos plataformas optimizadas para maximizar tus reservas online.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+
+            <div className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto">
               <ContactButton
-                label="Quiero mi web premium"
-                className="px-8 py-4 bg-black text-white rounded-full font-semibold hover:bg-gray-900 transition-all shadow-sm hover:-translate-y-0.5"
+                label="Solicitar mi nueva web"
+                className="w-full sm:w-auto"
               />
-              <Link to="/#proyectos" className="inline-flex items-center gap-3 px-8 py-4 bg-black/[0.03] border border-black/5 text-gray-600 rounded-full font-semibold hover:bg-black/[0.06] transition-all">
-                Ver proyectos realizados
+              <Link to="/#proyectos" className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 text-black font-semibold border-b border-black/10 hover:border-black transition-all">
+                Ver proyectos realizados <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
         </section>
 
-        {/* Stats */}
-        <section className="py-20 px-6 md:px-12 bg-[#0A0A0A]">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-12 text-center">
+        {/* Stats Section */}
+        <section className="py-12 md:py-0 px-4 md:px-12 bg-[#0A0A0A] relative md:h-80 flex items-center">
+          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 relative z-10">
             {[
-              { num: '100/100', label: 'Puntuación Google PageSpeed' },
-              { num: '<1s', label: 'Tiempo de carga promedio' },
-              { num: '+65%', label: 'Más reservas tras el rediseño' },
+              { num: '100/100', label: 'Puntuación perfecta en Google PageSpeed Performance.' },
+              { num: '<1.0s', label: 'Tiempo de carga promedio para una experiencia fluida.' },
+              { num: '+65%', label: 'Aumento en la tasa de conversión de visitas a reservas.' },
             ].map((s, i) => (
-              <div key={i} className="flex flex-col items-center">
-                <span className="text-3xl md:text-5xl font-medium text-white mb-2">{s.num}</span>
-                <span className="text-white/40 text-[10px] md:text-xs max-w-[180px] uppercase tracking-[0.2em]">{s.label}</span>
+              <div key={i} className={`flex flex-col items-center md:items-start md:px-12 ${i !== 0 ? 'md:border-l md:border-white/10' : ''}`}>
+                <span className="text-5xl md:text-7xl font-light text-white tracking-tighter mb-4">{s.num}</span>
+                <p className="text-white/40 text-sm md:text-base font-light max-w-[200px] text-center md:text-left leading-snug lowercase first-letter:uppercase">
+                    {s.label}
+                </p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Features */}
-        <section className="py-28 px-6 md:px-12">
+        {/* Features Grid */}
+        <section className="py-24 md:py-40 px-6 md:px-12">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-black mb-4 max-w-2xl">
-              Una web que trabaja por ti las 24 horas
-            </h2>
-            <p className="text-gray-400 mb-16 max-w-xl">Diseñamos cada elemento pensando en un solo objetivo: que el visitante se convierta en cliente.</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="max-w-2xl mb-20">
+                <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-6">
+                    Tecnología que impulsa tu negocio físico.
+                </h2>
+                <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed">
+                    Utilizamos las mismas herramientas que multinacionales tecnológicas para asegurar que tu restaurante sea imbatible digitalmente.
+                </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((f, i) => (
-                <div key={i} className="group p-8 bg-white rounded-[2rem] border border-gray-100 hover:border-gray-200 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md">
-                  <div className="w-11 h-11 bg-[#0A0A0A] rounded-xl flex items-center justify-center text-white mb-6">
+                <div key={i} className="group p-10 bg-white rounded-[2.5rem] border border-gray-100 hover:border-black/5 transition-all duration-500 hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)]">
+                  <div className="w-12 h-12 bg-[#FBF9F6] rounded-2xl flex items-center justify-center text-black mb-8 group-hover:bg-black group-hover:text-white transition-colors duration-500">
                     {f.icon}
                   </div>
-                  <h3 className="text-base font-semibold text-black mb-2 tracking-tight">{f.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                  <h3 className="text-xl font-semibold text-black mb-4 tracking-tight">{f.title}</h3>
+                  <p className="text-gray-500 text-base leading-relaxed font-light">{f.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Process */}
-        <section className="py-28 px-6 md:px-12 bg-white border-y border-gray-100">
+        {/* Premium CTA */}
+        <section className="pb-24 px-6 md:px-12">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-black mb-16">Cómo trabajamos</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[
-                { step: '01', title: 'Briefing', desc: 'Analizamos tu restaurante, competencia y objetivos para definir la estrategia visual.' },
-                { step: '02', title: 'Diseño', desc: 'Creamos el diseño personalizado adaptado a tu identidad de marca y tu cliente ideal.' },
-                { step: '03', title: 'Desarrollo', desc: 'Programamos la web con tecnología de última generación, ágil y 100% optimizada.' },
-                { step: '04', title: 'Lanzamiento', desc: 'Publicamos tu web y te entregamos el control total con soporte continuado.' },
-              ].map((p, i) => (
-                <div key={i}>
-                  <span className="text-6xl font-bold text-gray-100 block mb-4">{p.step}</span>
-                  <h3 className="text-lg font-semibold text-black mb-2">{p.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
+            <div className="bg-[#0A0A0A] rounded-[3rem] p-8 md:p-24 relative overflow-hidden group">
+                <div className="relative z-10 max-w-3xl">
+                    <h2 className="text-4xl md:text-6xl font-medium text-white mb-8 tracking-tight leading-[1.05]">
+                        Tu restaurante merece una web que hable por sí misma.
+                    </h2>
+                    <p className="text-white/40 text-lg md:text-xl mb-12 font-light max-w-2xl leading-relaxed">
+                        No pierdas más clientes por una web lenta o desactualizada. Empieza hoy tu transformación digital.
+                    </p>
+                    <ContactButton
+                        label="Comenzar mi proyecto"
+                        className="bg-white text-black hover:bg-gray-100"
+                    />
                 </div>
-              ))}
             </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-28 px-6 md:px-12 bg-[#0A0A0A]">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-medium text-white mb-6 tracking-tight leading-[1.1]">
-              Tu restaurante merece<br />una web que esté a su altura
-            </h2>
-            <p className="text-white/40 text-lg mb-10 max-w-xl mx-auto">
-              Tu web es tu mejor comercial. Está abierta 24/7 y habla por ti antes de que el cliente te llame.
-            </p>
-            <ContactButton
-              label="Empezamos"
-              className="px-10 py-4 bg-white text-black rounded-full font-bold text-base hover:bg-gray-100 transition-all hover:-translate-y-0.5 shadow-lg"
-            />
           </div>
         </section>
 
