@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowRight, MapPin, Globe, Palette, Cpu, Zap, Activity, ShieldCheck, Sparkles, UtensilsCrossed, Clock, Star, MousePointer2, CheckCircle2 } from 'lucide-react';
 
