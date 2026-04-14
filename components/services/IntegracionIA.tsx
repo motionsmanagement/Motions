@@ -31,7 +31,6 @@ const IntegracionIAPage: React.FC = () => {
         <section className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/[0.03] border border-black/5 mb-6">
-                <div className="w-1.5 h-1.5 rounded-full bg-black" />
                 <span className="text-[10px] font-bold text-black uppercase tracking-widest">Sistemas Autogestionados</span>
             </div>
             
@@ -48,9 +47,9 @@ const IntegracionIAPage: React.FC = () => {
               <ContactButton label="Automatizar mi negocio" />
               <Link 
                 to="/" 
-                className="px-5 py-2.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-xs flex items-center justify-center gap-2"
+                className="px-5 py-2.5 md:px-7 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-xs md:text-base flex items-center justify-center gap-2"
               >
-                Ver otros servicios <ChevronRight className="w-3 h-3" />
+                Ver otros servicios <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
               </Link>
             </div>
           </div>
@@ -66,7 +65,7 @@ const IntegracionIAPage: React.FC = () => {
             ].map((s, i) => (
               <div key={i} className={`flex flex-col items-center justify-center md:px-12 ${i !== 0 ? 'md:border-l md:border-white/10' : ''}`}>
                 <span className="text-4xl md:text-6xl font-light text-white tracking-tighter mb-2">{s.num}</span>
-                <p className="text-white/40 text-[13px] md:text-base font-light max-w-[220px] text-center">
+                <p className="text-white/60 text-[13px] md:text-base font-light max-w-[220px] text-center">
                     {s.label}
                 </p>
               </div>
@@ -145,7 +144,7 @@ const IntegracionIAPage: React.FC = () => {
                     <h2 className="text-3xl md:text-5xl font-medium text-white mb-6 tracking-tight leading-[1.2]">
                         El futuro de tu local empieza hoy.
                     </h2>
-                    <p className="text-white/40 text-sm md:text-lg mb-10 font-light max-w-2xl leading-relaxed">
+                    <p className="text-white/60 text-sm md:text-lg mb-10 font-light max-w-2xl leading-relaxed">
                         No esperes a que la competencia se automatice primero. Toma ventaja con sistemas de IA de próxima generación.
                     </p>
                     <ContactButton
