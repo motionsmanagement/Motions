@@ -48,15 +48,15 @@ const DisenoWebPage: React.FC = () => {
               <ContactButton label="Solicitar mi nueva web" />
               <Link 
                 to="/#proyectos" 
-                className="w-full sm:w-auto px-6 py-3 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-center text-sm flex items-center justify-center gap-2"
+                className="px-5 py-2.5 bg-black/[0.03] border border-black/5 text-gray-500 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-xs flex items-center justify-center gap-2"
               >
-                Ver proyectos realizados <ChevronRight className="w-4 h-4" />
+                Ver proyectos <ChevronRight className="w-3 h-3" />
               </Link>
             </div>
           </div>
         </section>
 
-        {/* Stats Section */}
+        {/* Stats Section - Centered */}
         <section className="py-12 md:py-20 px-6 md:px-12 bg-[#0A0A0A] relative overflow-hidden">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0 relative z-10">
             {[
@@ -64,9 +64,9 @@ const DisenoWebPage: React.FC = () => {
               { num: '<1.0s', label: 'Tiempo de carga promedio para una experiencia fluida.' },
               { num: '+65%', label: 'Aumento en la tasa de conversión de visitas a reservas.' },
             ].map((s, i) => (
-              <div key={i} className={`flex flex-col items-center md:items-start md:px-12 ${i !== 0 ? 'md:border-l md:border-white/10' : ''}`}>
+              <div key={i} className={`flex flex-col items-center justify-center md:px-12 ${i !== 0 ? 'md:border-l md:border-white/10' : ''}`}>
                 <span className="text-4xl md:text-6xl font-light text-white tracking-tighter mb-2">{s.num}</span>
-                <p className="text-white/40 text-[13px] md:text-base font-light max-w-[220px] text-center md:text-left">
+                <p className="text-white/40 text-[13px] md:text-base font-light max-w-[220px] text-center">
                     {s.label}
                 </p>
               </div>

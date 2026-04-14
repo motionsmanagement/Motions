@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowRight, MapPin, Globe, Palette, Cpu, Zap, Activity, ShieldCheck, Sparkles, UtensilsCrossed, Clock, Star, MousePointer2, CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowUpRight, ArrowRight, MapPin, Globe, Palette, Cpu, Zap, Activity, ShieldCheck, Sparkles, UtensilsCrossed, Clock, Star, MousePointer2, CheckCircle2 } from 'lucide-react';
 
 const Services: React.FC = () => {
     const [visible, setVisible] = React.useState(false);
@@ -19,6 +19,7 @@ const Services: React.FC = () => {
             title: "Páginas Web",
             description: "Plataformas de alto rendimiento orientadas a maximizar tus reservas directas.",
             stats: "ALTA VELOCIDAD",
+            path: "/servicios/diseno-web",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center p-12">
                     <div className="w-full h-full border border-white/10 rounded-2xl bg-[#0A0A0A] relative overflow-hidden flex flex-col shadow-2xl">
@@ -71,6 +72,7 @@ const Services: React.FC = () => {
             title: "Branding",
             description: "Creamos la identidad visual que posiciona a tu restaurante como marca de referencia.",
             stats: "IDENTIDAD PREMIUM",
+            path: "/servicios/branding",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                     {/* Ambient glow behind everything */}
@@ -96,6 +98,7 @@ const Services: React.FC = () => {
             title: "Google My Business",
             description: "Dominamos las búsquedas locales para que siempre seas la primera opción en tu zona.",
             stats: "SEO LOCAL",
+            path: "/servicios/google-my-business",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center">
                     <div className="relative w-44 h-44 flex items-center justify-center">
@@ -130,6 +133,7 @@ const Services: React.FC = () => {
             title: "Integración con IA",
             description: "Automatizamos tus procesos y atención al cliente para optimizar tu rentabilidad.",
             stats: "AUTOTOMIZACIÓN IA",
+            path: "/servicios/integracion-ia",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                     <div className="flex gap-4">
@@ -174,18 +178,18 @@ const Services: React.FC = () => {
                 {/* Services Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, index) => (
-                        <div
+                        <Link
                             key={index}
-                            className={`group relative h-[440px] rounded-[2.5rem] border border-white/10 bg-[#0A0A0A] transition-all duration-1000 cursor-default overflow-hidden shadow-2xl hover:-translate-y-2 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                            to={service.path}
+                            className={`group relative h-[440px] rounded-[2.5rem] border border-white/10 bg-[#0A0A0A] transition-all duration-700 overflow-hidden shadow-2xl hover:-translate-y-3 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                             style={{ 
                                 transitionDelay: visible ? `${index * 150}ms` : '0ms',
                                 transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
                             }}
                         >
-                            {/* Technical Visualization with fade-out */}
+                            {/* Illustration with fade-out */}
                             <div className="absolute top-0 left-0 w-full h-[55%] pointer-events-none transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110">
                                 <service.Illustration isVisible={visible} />
-                                {/* Bottom Fade for legibility */}
                                 <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/90 to-transparent"></div>
                                 <div className="absolute inset-0 bg-radial-vignette pointer-events-none opacity-30"></div>
                             </div>
@@ -196,18 +200,21 @@ const Services: React.FC = () => {
                                     {service.title}
                                 </h3>
 
-                                <p className="text-sm text-white/70 leading-relaxed mb-8 group-hover:text-white/90 transition-colors duration-500 max-w-[90%]">
+                                <p className="text-sm text-white/70 leading-relaxed mb-8 group-hover:text-white/90 transition-colors duration-500">
                                     {service.description}
                                 </p>
 
-                                <div className="pt-6 border-t border-white/5">
+                                <div className="pt-6 border-t border-white/5 flex items-center justify-between">
                                     <span className="text-[9px] font-mono font-medium text-white/50 uppercase tracking-widest">{service.stats}</span>
+                                    <div className="p-2 rounded-full bg-white/5 border border-white/10 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                                        <ArrowUpRight className="w-4 h-4" />
+                                    </div>
                                 </div>
                             </div>
 
-                            {/* Subtle inner hover glow */}
+                            {/* Hover inner glow */}
                             <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

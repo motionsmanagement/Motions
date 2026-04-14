@@ -22,13 +22,14 @@ const ContactButton: React.FC<ContactButtonProps> = ({ label, className = '' }) 
       const el = document.getElementById('contacto');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else {
-      navigate('/');
+      navigate('/', { state: { scrollTo: 'contacto' } });
+      // El scroll se manejará en el componente principal o aquí con un mini-timeout
       setTimeout(() => {
         const el = document.getElementById('contacto');
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 400);
+      }, 100);
     }
   };
 
