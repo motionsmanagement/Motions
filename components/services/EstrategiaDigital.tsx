@@ -49,7 +49,7 @@ const EstrategiaDigitalPage: React.FC = () => {
               <ContactButton label="Diseñar mi hoja" />
               <Link 
                 to="/" 
-                className="px-5 py-3 md:px-7 md:py-4 bg-black/[0.03] border border-black/5 text-gray-700 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[11px] md:text-base flex items-center justify-center whitespace-nowrap"
+                className="px-5 py-3 md:px-7 md:py-4 bg-black/[0.03] border border-black/5 text-gray-700 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[11px] md:text-[15px] flex items-center justify-center whitespace-nowrap"
               >
                 Ver servicios
               </Link>

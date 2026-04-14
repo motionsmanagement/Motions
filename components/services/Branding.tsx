@@ -49,7 +49,7 @@ const BrandingPage: React.FC = () => {
               <ContactButton label="Crear mi marca" />
               <Link 
                 to="/" 
-                className="px-5 py-3 md:px-7 md:py-4 bg-black/[0.03] border border-black/5 text-gray-700 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[11px] md:text-base flex items-center justify-center whitespace-nowrap"
+                className="px-5 py-3 md:px-7 md:py-4 bg-black/[0.03] border border-black/5 text-gray-700 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[11px] md:text-[15px] flex items-center justify-center whitespace-nowrap"
               >
                 Ver servicios
               </Link>
@@ -110,7 +110,7 @@ const BrandingPage: React.FC = () => {
                         Eleva tu marca a un nivel superior.
                     </h2>
                     <p className="text-white/60 text-sm md:text-lg mb-10 font-light max-w-2xl leading-relaxed">
-                        Un buen diseño atrae. Un buen branding fideliza. Empecemos a construir tu legacy hoy mismo.
+                        Un buen diseño atrae. Un buen branding fideliza. Empecemos a construir tu legado hoy mismo.
                     </p>
                     <ContactButton
                         label="Definir mi Marca"

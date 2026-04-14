@@ -24,7 +24,7 @@ const SeoGastronomicoPage: React.FC = () => {
 
   const keywords = [
     'restaurante italiano madrid', 'mejor restaurante zona retiro', 'restaurante japonés barcelona',
-    'restaurante para despedida', 'donde comer cerca de mi', 'restaurante con terraza madrid',
+    'restaurante para dsepedida', 'donde comer cerca de mi', 'restaurante con terraza madrid',
     'restaurante romántico barcelona', 'menú del día restaurante', 'reservar mesa restaurante',
     'restaurante sin gluten madrid', 'brunch madrid', 'restaurante de moda 2025',
   ];
@@ -56,7 +56,7 @@ const SeoGastronomicoPage: React.FC = () => {
               <ContactButton label="Dominar Google" />
               <Link 
                 to="/" 
-                className="px-5 py-3 md:px-7 md:py-4 bg-black/[0.03] border border-black/5 text-gray-700 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[11px] md:text-base flex items-center justify-center whitespace-nowrap"
+                className="px-5 py-3 md:px-7 md:py-4 bg-black/[0.03] border border-black/5 text-gray-700 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[11px] md:text-[15px] flex items-center justify-center whitespace-nowrap"
               >
                 Ver servicios
               </Link>
