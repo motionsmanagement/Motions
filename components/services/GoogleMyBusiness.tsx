@@ -30,9 +30,10 @@ const GoogleMyBusinessPage: React.FC = () => {
         {/* Hero Section */}
         <section className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12">
           <div className="max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="inline-flex items-center gap-2.5 pl-3.5 pr-4.5 py-2 rounded-full bg-black/[0.04] border border-black/5 mb-8 shadow-sm transition-all hover:bg-black/[0.06]">
-                <img src="/anagram.png" alt="" className="w-3.5 h-3.5 opacity-30" />
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap leading-none mt-0.5">SEO Local & Maps</span>
+            <div className="mb-8 px-4 py-1.5 bg-[#EDEDED] rounded-full inline-flex items-center justify-center border border-black/[0.03]">
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.15em] leading-none">
+                  SEO Local & Maps
+                </span>
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1] mb-8 max-w-4xl">
