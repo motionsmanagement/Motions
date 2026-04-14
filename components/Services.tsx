@@ -20,7 +20,7 @@ const Services: React.FC = () => {
             title: "Páginas Web",
             description: "Plataformas de alto rendimiento orientadas a maximizar tus reservas directas.",
             stats: "ALTA VELOCIDAD",
-            path: "/servicios/diseno-web",
+            path: "/servicios/diseno-web-restaurantes",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center p-12">
                     <div className="w-full h-full border border-white/10 rounded-2xl bg-[#0A0A0A] relative overflow-hidden flex flex-col shadow-2xl">
@@ -73,7 +73,7 @@ const Services: React.FC = () => {
             title: "Branding",
             description: "Creamos la identidad visual que posiciona a tu restaurante como marca de referencia.",
             stats: "IDENTIDAD PREMIUM",
-            path: "/servicios/branding",
+            path: "/servicios/branding-restaurantes",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                     {/* Ambient glow behind everything */}
