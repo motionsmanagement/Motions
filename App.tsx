@@ -34,10 +34,16 @@ const ScrollToTop = () => {
       window.scrollTo(0, 0);
     } else {
       const id = hash.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      // Retry scroll: wait for lazy-loaded components to render
+      const tryScroll = (attempts = 0) => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        } else if (attempts < 10) {
+          setTimeout(() => tryScroll(attempts + 1), 100);
+        }
+      };
+      setTimeout(() => tryScroll(), 100);
     }
   }, [pathname, hash]);
 

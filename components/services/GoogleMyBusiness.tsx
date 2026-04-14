@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Star, CheckCircle2, ArrowRight, TrendingUp, Eye, MessageSquare } from 'lucide-react';
+import { MapPin, Star, CheckCircle2, TrendingUp, Eye, MessageSquare } from 'lucide-react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import useSEO from './useSEO';
+import ContactButton from './ContactButton';
 
 const GoogleMyBusinessPage: React.FC = () => {
   useSEO({
@@ -11,6 +12,7 @@ const GoogleMyBusinessPage: React.FC = () => {
     description: 'Dominamos las búsquedas locales en Google Maps para que tu restaurante sea siempre la primera opción. Gestión de reseñas, SEO local y posicionamiento en Madrid y toda España.',
     canonical: 'https://www.motions.es/servicios/google-my-business',
   });
+
   const benefits = [
     { icon: <MapPin className="w-5 h-5" />, title: 'Presencia Local Dominante', desc: 'Aparece en el "Pack de 3" de Google Maps cuando alguien busca restaurantes cerca.' },
     { icon: <Star className="w-5 h-5" />, title: 'Gestión de Reseñas', desc: 'Estrategia completa de captación y respuesta a reseñas para elevar tu reputación online.' },
@@ -24,30 +26,26 @@ const GoogleMyBusinessPage: React.FC = () => {
     <>
       <Navbar />
       <main className="bg-[#FBF9F6] font-['Inter']">
+
         {/* Hero */}
-        <section className="pt-40 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white text-xs font-semibold uppercase tracking-widest mb-8">
-              <MapPin className="w-3.5 h-3.5" /> SEO Local
+        <section className="pt-40 pb-28 px-6 md:px-12 border-b border-gray-100">
+          <div className="max-w-7xl mx-auto">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black text-white text-[11px] font-semibold uppercase tracking-widest mb-10">
+              <MapPin className="w-3 h-3" /> SEO Local
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-medium tracking-tight text-black leading-[1.05] mb-8">
+            <h1 className="text-5xl sm:text-6xl md:text-[80px] font-medium tracking-tight text-black leading-[1.02] mb-8 max-w-4xl">
               Google My Business<br />
-              <span className="text-gray-400">para Restaurantes</span>
+              <span className="text-gray-300">para Restaurantes</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-500 leading-relaxed mb-12 max-w-2xl">
               Dominamos las búsquedas locales para que tu restaurante sea siempre la primera opción en Google Maps. Más visibilidad, más reservas, más clientes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/#contacto"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded-full font-semibold hover:bg-gray-900 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-              >
-                Quiero más visibilidad local <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-semibold border border-gray-200 hover:border-gray-400 transition-all"
-              >
+              <ContactButton
+                label="Quiero más visibilidad local"
+                className="px-8 py-4 bg-black text-white rounded-full font-semibold hover:bg-gray-900 transition-all shadow-sm hover:-translate-y-0.5"
+              />
+              <Link to="/" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-semibold border border-gray-200 hover:border-gray-400 transition-all">
                 Ver todos los servicios
               </Link>
             </div>
@@ -55,7 +53,7 @@ const GoogleMyBusinessPage: React.FC = () => {
         </section>
 
         {/* Stats */}
-        <section className="py-16 px-6 md:px-12 bg-black">
+        <section className="py-20 px-6 md:px-12 bg-[#0A0A0A]">
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-12 text-center">
             {[
               { num: '+180%', label: 'Aumento de visibilidad en Maps' },
@@ -63,26 +61,27 @@ const GoogleMyBusinessPage: React.FC = () => {
               { num: '3x', label: 'Más llamadas desde Google' },
             ].map((s, i) => (
               <div key={i} className="flex flex-col items-center">
-                <span className="text-4xl md:text-5xl font-bold text-white mb-3">{s.num}</span>
-                <span className="text-gray-400 text-sm max-w-[180px]">{s.label}</span>
+                <span className="text-5xl md:text-6xl font-bold text-white mb-3">{s.num}</span>
+                <span className="text-white/40 text-sm max-w-[180px] font-mono uppercase tracking-widest">{s.label}</span>
               </div>
             ))}
           </div>
         </section>
 
         {/* Benefits */}
-        <section className="py-24 px-6 md:px-12">
+        <section className="py-28 px-6 md:px-12">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-16 max-w-2xl">
-              Todo lo que incluye nuestro servicio de Google My Business
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-black mb-4 max-w-2xl">
+              Todo lo que incluye nuestro servicio
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <p className="text-gray-400 mb-16 max-w-xl">Gestión profesional y continua de tu ficha de Google para que nunca pierdas visibilidad.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {benefits.map((b, i) => (
-                <div key={i} className="p-8 bg-white rounded-3xl border border-gray-100 hover:border-gray-300 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md">
-                  <div className="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white mb-6">
+                <div key={i} className="group p-8 bg-white rounded-[2rem] border border-gray-100 hover:border-gray-200 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md">
+                  <div className="w-11 h-11 bg-[#0A0A0A] rounded-xl flex items-center justify-center text-white mb-6">
                     {b.icon}
                   </div>
-                  <h3 className="text-lg font-semibold text-black mb-3">{b.title}</h3>
+                  <h3 className="text-base font-semibold text-black mb-2 tracking-tight">{b.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{b.desc}</p>
                 </div>
               ))}
@@ -91,22 +90,21 @@ const GoogleMyBusinessPage: React.FC = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-24 px-6 md:px-12 bg-black">
+        <section className="py-28 px-6 md:px-12 bg-[#0A0A0A]">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-medium text-white mb-6 tracking-tight">
-              ¿Tu restaurante aparece en el Top 3 de Google Maps?
+            <h2 className="text-4xl md:text-5xl font-medium text-white mb-6 tracking-tight leading-[1.1]">
+              ¿Tu restaurante aparece<br />en el Top 3 de Google Maps?
             </h2>
-            <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
-              El 80% de los clientes busca dónde comer en Google Maps. Si no estás visible, esos clientes van a la competencia. Nosotros lo arreglamos.
+            <p className="text-white/40 text-lg mb-10 max-w-xl mx-auto">
+              El 80% de los clientes busca dónde comer en Google Maps. Si no estás visible, esos clientes van a la competencia.
             </p>
-            <Link
-              to="/#contacto"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-white text-black rounded-full font-bold text-lg hover:bg-gray-100 transition-all hover:-translate-y-0.5 shadow-lg"
-            >
-              Empieza ahora <ArrowRight className="w-5 h-5" />
-            </Link>
+            <ContactButton
+              label="Empieza ahora"
+              className="px-10 py-4 bg-white text-black rounded-full font-bold text-base hover:bg-gray-100 transition-all hover:-translate-y-0.5 shadow-lg"
+            />
           </div>
         </section>
+
       </main>
       <Footer />
     </>

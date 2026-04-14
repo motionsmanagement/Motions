@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronRight, MessageCircle, Mail } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, ChevronRight } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,8 +29,26 @@ const Navbar: React.FC = () => {
     }
   }, [isMenuOpen]);
 
-  const isWhiteBgPage = ['/privacidad', '/cookies', '/aviso-legal', '/unete'].includes(location.pathname);
+  const navigate = useNavigate();
+
+  const isWhiteBgPage = location.pathname !== '/';
   const showDarkNavbar = isScrolled || isWhiteBgPage || isMenuOpen;
+
+  // Navigate to home section (works from any sub-page)
+  const handleNavToSection = (sectionId: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      const el = document.getElementById(sectionId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 350);
+    }
+    setIsMenuOpen(false);
+  };
 
   const themeClass = showDarkNavbar
     ? "bg-white/80 border-black/5 shadow-lg text-[#2D241E]"
@@ -39,10 +57,10 @@ const Navbar: React.FC = () => {
   const logoSrc = showDarkNavbar ? "/motionsblack.png" : "/MotionsLogo.png";
 
   const navLinks = [
-    { name: "Servicios", href: "/#servicios" },
-    { name: "Nuestra Especialidad", href: "/#trabajos" },
-    { name: "Proyectos", href: "/#proyectos" },
-    { name: "Contacto", href: "/#contacto" },
+    { name: "Servicios", href: "/#servicios", section: "servicios" },
+    { name: "Nuestra Especialidad", href: "/#trabajos", section: "trabajos" },
+    { name: "Proyectos", href: "/#proyectos", section: "proyectos" },
+    { name: "Contacto", href: "/#contacto", section: "contacto" },
   ];
 
   return (
@@ -57,7 +75,12 @@ const Navbar: React.FC = () => {
 
           <div className={`hidden md:flex items-center gap-8 font-medium text-sm transition-colors duration-300 ${showDarkNavbar ? "text-[#2D241E]/80" : "text-white/80"}`}>
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className={`hover:text-current transition-colors tracking-tight ${showDarkNavbar ? "hover:text-black" : "hover:text-white"}`}>
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={handleNavToSection(link.section)}
+                className={`hover:text-current transition-colors tracking-tight ${showDarkNavbar ? "hover:text-black" : "hover:text-white"}`}
+              >
                 {link.name}
               </a>
             ))}
@@ -68,7 +91,11 @@ const Navbar: React.FC = () => {
             <a href="tel:+34919610420" className={`hidden lg:block px-6 py-2 rounded-full border text-xs md:text-sm font-medium transition-all tracking-tight ${showDarkNavbar ? "border-black/10 text-black/90 hover:bg-black/5" : "border-white/20 text-white/90 hover:bg-white/10"}`}>
               +34 919 61 04 20
             </a>
-            <a href="#contacto" className={`hidden md:block px-6 md:px-7 py-2 rounded-full text-xs md:text-sm font-bold transition-all shadow-lg tracking-tight ${showDarkNavbar ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}>
+            <a
+              href="/#contacto"
+              onClick={handleNavToSection('contacto')}
+              className={`hidden md:block px-6 md:px-7 py-2 rounded-full text-xs md:text-sm font-bold transition-all shadow-lg tracking-tight ${showDarkNavbar ? "bg-black text-white hover:bg-gray-800" : "bg-black/40 backdrop-blur-xl border border-white/30 text-white hover:bg-black/50"}`}
+            >
               Empezar Ahora
             </a>
 
@@ -120,7 +147,7 @@ const Navbar: React.FC = () => {
                   transitionDelay: isMenuOpen ? `${index * 80 + 150}ms` : '0ms',
                   transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={handleNavToSection(link.section)}
               >
                 {link.name}
                 <svg 
@@ -128,7 +155,7 @@ const Navbar: React.FC = () => {
                   fill="none" 
                   xmlns="http://www.w3.org/2000/svg" 
                   className="w-4 h-4 text-black/30 group-hover:text-black transition-transform rotate-90"
-                >
+                > 
                   <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
