@@ -128,16 +128,19 @@ const Careers: React.FC = () => {
       <main className="pt-32 md:pt-48 pb-24">
         {/* Hero Section */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 md:mb-20 text-center">
-          <div className={`inline-flex items-center bg-gray-50 border border-gray-200 px-4 py-1.5 rounded-full mb-8 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-             <div className="w-1.5 h-1.5 bg-black rounded-full animate-pulse mr-2" />
-            <span className="text-[10px] font-bold text-black uppercase tracking-[0.2em]">Oportunidades Abiertas</span>
+          <div className={`inline-flex items-center bg-emerald-50 content-box border border-emerald-100 px-4 py-1.5 rounded-full mb-8 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+             <div className="relative flex mr-2.5">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse z-10 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+                <div className="absolute inset-0 w-2 h-2 bg-emerald-400 rounded-full animate-ping opacity-75" />
+             </div>
+            <span className="text-[10px] font-bold text-emerald-800 uppercase tracking-[0.2em]">Oportunidades Abiertas</span>
           </div>
           
           <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-black leading-[1.1] mb-8 transition-all duration-1000 delay-100 ease-[cubic-bezier(0.16,1,0.3,1)] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             Únete a nuestro <br className="hidden md:block" /> laboratorio creativo.
           </h1>
           
-          <p className={`text-base md:text-xl text-gray-450 max-w-2xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+          <p className={`text-base md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             En la intersección del diseño y la hostelería. Buscamos mentes curiosas para liderar la próxima generación de marcas gastronómicas.
           </p>
         </div>
@@ -162,9 +165,9 @@ const Careers: React.FC = () => {
                 >
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-3 mb-5">
-                      <span className={`text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest transition-all ${isExpanded ? 'bg-black text-white' : 'text-gray-400 bg-gray-50 border border-gray-100'}`}>{job.category}</span>
-                      <span className="text-[10px] font-bold text-gray-300 bg-gray-50/50 px-3 py-1 rounded-full border border-gray-100 transition-all uppercase tracking-widest">{job.location}</span>
-                      <span className="text-[10px] font-bold text-gray-300 bg-gray-50/50 px-3 py-1 rounded-full border border-gray-100 transition-all uppercase tracking-widest">{job.type}</span>
+                      <span className={`text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest transition-all ${isExpanded ? 'bg-black text-white' : 'text-gray-600 bg-gray-50 border border-gray-100'}`}>{job.category}</span>
+                      <span className="text-[10px] font-bold text-gray-500 bg-gray-50/50 px-3 py-1 rounded-full border border-gray-100 transition-all uppercase tracking-widest">{job.location}</span>
+                      <span className="text-[10px] font-bold text-gray-500 bg-gray-50/50 px-3 py-1 rounded-full border border-gray-100 transition-all uppercase tracking-widest">{job.type}</span>
                     </div>
                     <h3 className={`text-xl md:text-3xl font-medium text-black transition-all duration-500 tracking-tight leading-tight ${isExpanded ? 'text-black' : 'group-hover:text-black/60'}`}>
                       {job.title}
@@ -186,29 +189,29 @@ const Careers: React.FC = () => {
                     {!isSubmitted ? (
                       <>
                         <div className="mb-12">
-                          <p className="text-gray-500 text-[15px] md:text-lg leading-relaxed max-w-2xl mb-10">
+                          <p className="text-gray-600 text-[15px] md:text-lg leading-relaxed max-w-2xl mb-10">
                             {job.description}
                           </p>
                           <div className="h-px w-full bg-gray-50 mb-10" />
-                          <h4 className="text-2xl md:text-3xl font-medium text-black tracking-tighter mb-10">Envía tu postulación para <br /> <span className="text-gray-300">{job.title}</span></h4>
+                          <h4 className="text-2xl md:text-3xl font-medium text-black tracking-tighter mb-10">Envía tu postulación para <br /> <span className="text-gray-400">{job.title}</span></h4>
                         </div>
 
                         <form onSubmit={(e) => handleSubmit(e, job.title)} className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10">
                           <div className="space-y-3">
-                            <label className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] block leading-none">Nombre Completo</label>
-                            <input required name="nombre" type="text" className="w-full bg-transparent border-b border-gray-200 pb-2 focus:outline-none focus:border-black transition-all text-base md:text-lg font-medium text-black placeholder:text-gray-100" placeholder="Tu nombre..." />
+                            <label className="text-[10px] font-bold text-gray-700 uppercase tracking-[0.2em] block leading-none">Nombre Completo</label>
+                            <input required name="nombre" type="text" className="w-full bg-transparent border-b border-gray-200 pb-2 focus:outline-none focus:border-black transition-all text-base md:text-lg font-medium text-black placeholder:text-gray-400" placeholder="Tu nombre..." />
                           </div>
                           <div className="space-y-3">
-                            <label className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] block leading-none">Email de Contacto</label>
-                            <input required name="email" type="email" className="w-full bg-transparent border-b border-gray-200 pb-2 focus:outline-none focus:border-black transition-all text-base md:text-lg font-medium text-black placeholder:text-gray-100" placeholder="hola@tuemail.com" />
+                            <label className="text-[10px] font-bold text-gray-700 uppercase tracking-[0.2em] block leading-none">Email de Contacto</label>
+                            <input required name="email" type="email" className="w-full bg-transparent border-b border-gray-200 pb-2 focus:outline-none focus:border-black transition-all text-base md:text-lg font-medium text-black placeholder:text-gray-400" placeholder="hola@tuemail.com" />
                           </div>
                           <div className="md:col-span-2 space-y-3">
-                            <label className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] block leading-none">LinkedIn o Portfolio</label>
-                            <input required name="linkedin" type="url" className="w-full bg-transparent border-b border-gray-200 pb-2 focus:outline-none focus:border-black transition-all text-base md:text-lg font-medium text-black placeholder:text-gray-100" placeholder="https://linkedin.com/in/..." />
+                            <label className="text-[10px] font-bold text-gray-700 uppercase tracking-[0.2em] block leading-none">LinkedIn o Portfolio</label>
+                            <input required name="linkedin" type="url" className="w-full bg-transparent border-b border-gray-200 pb-2 focus:outline-none focus:border-black transition-all text-base md:text-lg font-medium text-black placeholder:text-gray-400" placeholder="https://linkedin.com/in/..." />
                           </div>
                           <div className="md:col-span-2 space-y-3">
-                            <label className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] block leading-none">Presentación / Mensaje</label>
-                            <textarea name="mensaje" rows={2} className="w-full bg-transparent border-b border-gray-200 pb-2 focus:outline-none focus:border-black transition-all text-base md:text-lg font-medium text-black resize-none placeholder:text-gray-100" placeholder="Cuéntanos por qué eres el perfil ideal..."></textarea>
+                            <label className="text-[10px] font-bold text-gray-700 uppercase tracking-[0.2em] block leading-none">Presentación / Mensaje</label>
+                            <textarea name="mensaje" rows={2} className="w-full bg-transparent border-b border-gray-200 pb-2 focus:outline-none focus:border-black transition-all text-base md:text-lg font-medium text-black resize-none placeholder:text-gray-400" placeholder="Cuéntanos por qué eres el perfil ideal..."></textarea>
                           </div>
 
                           <div className="md:col-span-2 pt-6">
@@ -224,7 +227,7 @@ const Careers: React.FC = () => {
                           <Check className="w-10 h-10" />
                         </div>
                         <h2 className="text-3xl md:text-4xl font-medium text-black mb-6 tracking-tighter">Postulación Recibida</h2>
-                        <p className="text-gray-500 text-base md:text-lg max-w-sm mx-auto leading-relaxed">Gracias por tu interés. Nuestro equipo te contactará pronto si encajas con nuestra visión.</p>
+                        <p className="text-gray-700 text-base md:text-lg max-w-sm mx-auto leading-relaxed">Gracias por tu interés. Nuestro equipo te contactará pronto si encajas con nuestra visión.</p>
                         <button onClick={() => { setIsSubmitted(false); setExpandedId(null); }} className="mt-12 text-black font-bold text-[11px] uppercase tracking-widest border border-gray-200 px-10 py-4 rounded-full hover:bg-gray-50 transition-all">Cerrar</button>
                       </div>
                     )}

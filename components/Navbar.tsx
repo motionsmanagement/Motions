@@ -172,7 +172,7 @@ const Navbar: React.FC = () => {
                               key={service.name}
                               to={service.href}
                               onClick={() => setIsMenuOpen(false)}
-                              className="text-lg text-black/60 hover:text-black transition-colors py-1"
+                              className="text-lg text-black/85 hover:text-black transition-colors py-1"
                             >
                               {service.name}
                             </Link>
