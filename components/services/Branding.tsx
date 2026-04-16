@@ -60,16 +60,16 @@ const BrandingPage: React.FC = () => {
         <section 
           ref={setRef('hero')} 
           data-section-id="hero"
-          className="relative min-h-[70vh] flex flex-col items-center justify-center pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12 overflow-hidden"
+          className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12 overflow-hidden"
         >
-          {/* Background Image with Overlay */}
+          {/* Background Image with Dark Overlay - Gradient optimized for white text */}
           <div className="absolute inset-0 z-0">
             <img
               src="/motions102.jpg"
               alt="Motions Branding Background"
-              className="w-full h-full object-cover brightness-[0.4]"
+              className="w-full h-full object-cover brightness-[0.35]"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-[#F8F9FA]"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-[#F8F9FA]"></div>
           </div>
 
           <div className={`relative z-10 max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
