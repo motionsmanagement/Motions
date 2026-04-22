@@ -86,9 +86,9 @@ const DisenoWebPage: React.FC = () => {
                 </span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-white leading-[1.1] mb-8 max-w-4xl">
-              Diseño Web <span className="text-white/50">&</span> <br className="hidden md:block" />
-              SEO Gastronómico
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-white leading-[1.1] mb-8 max-w-4xl text-center md:text-left">
+              Diseño Web <br className="hidden md:block" />
+              para Restaurantes
             </h1>
             
             <p className="text-base md:text-lg text-white/80 leading-relaxed mb-10 max-w-2xl font-light px-4 md:px-0">

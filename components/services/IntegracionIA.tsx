@@ -178,9 +178,9 @@ const IntegracionIAPage: React.FC = () => {
                   with: 'Respuesta instantánea. La IA consulta disponibilidad real y formaliza la reserva en 15 segundos.',
                 },
                 {
-                  scenario: 'Tu equipo recibe 50 fotos de la misma carta por WhatsApp.',
-                  without: 'Se pierde el hilo. El cliente se frustra por la tardanza.',
-                  with: 'La IA extrae menús y alérgenos. Responde con precisión y agenda la visita sin intervención humana.',
+                  scenario: 'Tu WhatsApp se satura con las mismas preguntas sobre el menú, el parking o si aceptáis mascotas.',
+                  without: 'Tu equipo pierde horas respondiendo lo mismo una y otra vez o atendiendo llamadas básicas.',
+                  with: 'La IA resuelve estas dudas al instante 24/7, liberando a tu personal para dar un servicio de calidad en sala.',
                 },
               ].map((c, i) => (
                 <div key={i} className="p-8 md:p-10 bg-[#F8F9FA] rounded-[2.5rem] border border-gray-100 flex flex-col justify-between h-full hover:border-black/10 transition-colors">
