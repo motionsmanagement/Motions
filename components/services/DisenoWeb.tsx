@@ -61,13 +61,13 @@ const DisenoWebPage: React.FC = () => {
   return (
     <>
       <Navbar />
-      <main className="bg-[#F8F9FA] font-['Inter'] overflow-hidden">
-
+      <main className="bg-[#0A0A0A] font-['Inter'] overflow-hidden">
+        
         {/* Hero Section */}
         <section 
           ref={setRef('hero')} 
           data-section-id="hero"
-          className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12 overflow-hidden"
+          className="relative pt-32 md:pt-44 pb-20 md:pb-24 px-6 md:px-12 overflow-hidden"
         >
           {/* Background Image with optimized Dark Overlay for section merging */}
           <div className="absolute inset-0 z-0">
@@ -76,9 +76,9 @@ const DisenoWebPage: React.FC = () => {
               alt="Motions Diseño Web Background"
               className="w-full h-full object-cover brightness-[0.7]"
             />
+            {/* Multi-layer gradient for perfect blending */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-[#0A0A0A]"></div>
-            {/* Extra solid overlay at the very bottom for mobile blending */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0A0A0A] to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent"></div>
           </div>
 
           <div className={`relative z-10 max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
