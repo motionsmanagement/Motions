@@ -77,6 +77,8 @@ const DisenoWebPage: React.FC = () => {
               className="w-full h-full object-cover brightness-[0.7]"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-[#0A0A0A]"></div>
+            {/* Extra solid overlay at the very bottom for mobile blending */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0A0A0A] to-transparent"></div>
           </div>
 
           <div className={`relative z-10 max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
