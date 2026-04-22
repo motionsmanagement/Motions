@@ -8,8 +8,8 @@ import ContactButton from './ContactButton';
 
 const DisenoWebPage: React.FC = () => {
   useSEO({
-    title: 'Diseño Web Premium para Restaurantes | Motions',
-    description: 'Creamos webs de alto rendimiento para restaurantes que convierten visitas en reservas. Diseño a medida, ultra rápidas, 100% responsive y con SEO integrado.',
+    title: 'Diseño Web y SEO Gastronómico para Restaurantes | Motions',
+    description: 'Creamos webs de alto rendimiento y estrategias SEO que convierten visitas en reservas. Diseño a medida, ultra rápidas y posicionamiento en Google.',
     canonical: 'https://www.motions.es/servicios/diseno-web-restaurantes',
   });
 
@@ -51,6 +51,13 @@ const DisenoWebPage: React.FC = () => {
     { icon: <TrendingUp className="w-5 h-5" />, title: 'Conversión Maximizada', desc: 'Cada elemento está pensado para convertir visitas en reservas: CTAs, prueba social, velocidad.' },
   ];
 
+  const keywords = [
+    'restaurante italiano madrid', 'mejor restaurante zona retiro', 'restaurante japonés barcelona',
+    'restaurante para dsepedida', 'don de comer cerca de mi', 'restaurante con terraza madrid',
+    'restaurante romántico barcelona', 'menú del día restaurante', 'reservar mesa restaurante',
+    'restaurante sin gluten madrid', 'brunch madrid', 'restaurante de moda 2025',
+  ];
+
   return (
     <>
       <Navbar />
@@ -80,8 +87,8 @@ const DisenoWebPage: React.FC = () => {
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-white leading-[1.1] mb-8 max-w-4xl">
-              Diseño Web <br className="hidden md:block" />
-              para Restaurantes
+              Diseño Web <span className="text-white/50">&</span> <br className="hidden md:block" />
+              SEO Gastronómico
             </h1>
             
             <p className="text-base md:text-lg text-white/80 leading-relaxed mb-10 max-w-2xl font-light px-4 md:px-0">
@@ -154,6 +161,44 @@ const DisenoWebPage: React.FC = () => {
                   </div>
                   <h3 className="text-lg font-semibold text-black mb-3 tracking-tight">{f.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed font-light">{f.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Keywords Cloud Section */}
+        <section 
+          ref={setRef('keywords')} 
+          data-section-id="keywords"
+          className="py-20 md:py-32 bg-white border-y border-gray-100 overflow-hidden"
+        >
+          <div className={`max-w-4xl mx-auto mb-16 px-6 text-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('keywords') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-6">
+              Tu marca en cada búsqueda relevante.
+            </h2>
+            <p className="text-gray-500 text-sm md:text-lg font-light max-w-2xl mx-auto">
+              Analizamos los términos de búsqueda con mayor intención de reserva para asegurar que tu restaurante lidere tu zona de influencia.
+            </p>
+          </div>
+          
+          <div className="relative group">
+            {/* Fade gradients at edges */}
+            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+            
+            <div className="flex animate-marquee-fast hover:[animation-play-state:paused] gap-4 w-fit whitespace-nowrap px-4 py-2">
+              {[...keywords, ...keywords].map((kw, i) => (
+                <div key={i} className="px-8 py-4 bg-[#F8F9FA] border border-black/[0.03] rounded-2xl md:rounded-full text-sm md:text-lg text-black font-medium hover:bg-black hover:text-white transition-all duration-500 cursor-default shadow-sm select-none">
+                  {kw}
+                </div>
+              ))}
+            </div>
+            
+            <div className="flex animate-marquee-reverse-fast hover:[animation-play-state:paused] gap-4 w-fit whitespace-nowrap px-4 py-2 mt-4">
+              {[...keywords, ...keywords].reverse().map((kw, i) => (
+                <div key={i} className="px-8 py-4 bg-[#F8F9FA] border border-black/[0.03] rounded-2xl md:rounded-full text-sm md:text-lg text-black font-medium hover:bg-black hover:text-white transition-all duration-500 cursor-default shadow-sm select-none">
+                  {kw}
                 </div>
               ))}
             </div>

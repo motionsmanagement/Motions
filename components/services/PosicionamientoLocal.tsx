@@ -6,11 +6,11 @@ import Footer from '../Footer';
 import useSEO from './useSEO';
 import ContactButton from './ContactButton';
 
-const GoogleMyBusinessPage: React.FC = () => {
+const PosicionamientoLocalPage: React.FC = () => {
   useSEO({
-    title: 'Google My Business para Restaurantes | Motions',
-    description: 'Dominamos las búsquedas locales en Google Maps para que tu restaurante sea siempre la primera opción. Gestión de reseñas, SEO local y posicionamiento en Madrid y toda España.',
-    canonical: 'https://www.motions.es/servicios/google-my-business',
+    title: 'Posicionamiento Local para Restaurantes | Motions',
+    description: 'Dominamos las búsquedas locales en Google Maps y SEO local para que tu restaurante sea siempre la primera opción en tu zona.',
+    canonical: 'https://www.motions.es/servicios/posicionamiento-local',
   });
 
   const [visibleItems, setVisibleItems] = React.useState<{[key: string]: boolean}>({});
@@ -45,7 +45,7 @@ const GoogleMyBusinessPage: React.FC = () => {
   const benefits = [
     { icon: <MapPin className="w-5 h-5" />, title: 'Presencia Local Dominante', desc: 'Aparece en el "Pack de 3" de Google Maps cuando alguien busca restaurantes cerca.' },
     { icon: <Star className="w-5 h-5" />, title: 'Gestión de Reseñas', desc: 'Estrategia completa de captación y respuesta a reseñas para elevar tu reputación online.' },
-    { icon: <TrendingUp className="w-5 h-5" />, title: 'Posicionamiento Local', desc: 'Optimización técnica de tu ficha para superar a la competencia en búsquedas locales.' },
+    { icon: <TrendingUp className="w-5 h-5" />, title: 'SEO Local Avanzado', desc: 'Optimización técnica de tu ficha para superar a la competencia en búsquedas locales.' },
     { icon: <Eye className="w-5 h-5" />, title: 'Visibilidad Aumentada', desc: 'Publicaciones, fotos y ofertas optimizadas para que Google priorice tu negocio.' },
     { icon: <MessageSquare className="w-5 h-5" />, title: 'Atención al Cliente', desc: 'Configuración de mensajería directa para gestionar consultas desde Google.' },
     { icon: <CheckCircle2 className="w-5 h-5" />, title: 'Análisis de Rendimiento', desc: 'Informes mensuales con datos reales: cuántas personas te encuentran y cómo.' },
@@ -66,7 +66,7 @@ const GoogleMyBusinessPage: React.FC = () => {
           <div className="absolute inset-0 z-0">
             <img
               src="/motions102.jpg"
-              alt="Motions Google My Business Background"
+              alt="Motions Posicionamiento Local Background"
               className="w-full h-full object-cover brightness-[0.7]"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-[#0A0A0A]"></div>
@@ -80,12 +80,12 @@ const GoogleMyBusinessPage: React.FC = () => {
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-white leading-[1.1] mb-8 max-w-4xl">
-              Google My Business <br className="hidden md:block" />
+              Posicionamiento Local <br className="hidden md:block" />
               para Restaurantes
             </h1>
             
             <p className="text-base md:text-lg text-white/80 leading-relaxed mb-10 max-w-2xl font-light px-4 md:px-0">
-                Dominamos las búsquedas locales para que tu restaurante sea siempre la primera opción. Transformamos tu ficha técnica en una herramienta de captación masiva.
+                Dominamos las búsquedas locales para que tu restaurante sea siempre la primera opción. Transformamos tu presencia en Google Maps en una herramienta de captación masiva.
             </p>
 
             <div className="flex flex-row items-center gap-3 w-full justify-center md:justify-start px-4 md:px-0">
@@ -141,7 +141,7 @@ const GoogleMyBusinessPage: React.FC = () => {
                     No solo completamos tu perfil; aplicamos ingeniería de búsqueda para que Google te priorice frente a cualquier competidor cercano.
                 </p>
             </div>
-
+ 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {benefits.map((b, i) => (
                 <div 
@@ -191,4 +191,4 @@ const GoogleMyBusinessPage: React.FC = () => {
   );
 };
 
-export default GoogleMyBusinessPage;
+export default PosicionamientoLocalPage;

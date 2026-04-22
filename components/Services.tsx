@@ -17,9 +17,9 @@ const Services: React.FC = () => {
 
     const services = [
         {
-            title: "Páginas Web",
-            description: "Plataformas de alto rendimiento orientadas a maximizar tus reservas directas.",
-            stats: "ALTA VELOCIDAD",
+            title: "Web & SEO",
+            description: "Plataformas de alto rendimiento con estrategias SEO integradas para dominar Google.",
+            stats: "MAXIMO IMPACTO",
             path: "/servicios/diseno-web-restaurantes",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center p-12">
@@ -96,10 +96,10 @@ const Services: React.FC = () => {
             )
         },
         {
-            title: "Google My Business",
-            description: "Dominamos las búsquedas locales para que siempre seas la primera opción en tu zona.",
-            stats: "SEO LOCAL",
-            path: "/servicios/google-my-business",
+            title: "Posicionamiento Local",
+            description: "Dominamos las búsquedas locales en Maps para que siempre seas la primera opción.",
+            stats: "DOMINIO LOCAL",
+            path: "/servicios/posicionamiento-local",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center">
                     <div className="relative w-44 h-44 flex items-center justify-center">

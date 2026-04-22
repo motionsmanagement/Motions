@@ -65,11 +65,10 @@ const Navbar: React.FC = () => {
   ];
 
   const services = [
-    { name: "Google My Business", href: "/servicios/google-my-business" },
+    { name: "Posicionamiento Local", href: "/servicios/posicionamiento-local" },
     { name: "Diseño Web", href: "/servicios/diseno-web-restaurantes" },
     { name: "Branding", href: "/servicios/branding-restaurantes" },
     { name: "Integración IA", href: "/servicios/integracion-ia" },
-    { name: "SEO Gastronómico", href: "/servicios/seo-gastronomico" },
     { name: "Estrategia Digital", href: "/servicios/estrategia-digital" },
   ];
 
