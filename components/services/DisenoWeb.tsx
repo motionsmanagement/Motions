@@ -60,21 +60,31 @@ const DisenoWebPage: React.FC = () => {
         <section 
           ref={setRef('hero')} 
           data-section-id="hero"
-          className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12"
+          className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12 overflow-hidden"
         >
-          <div className={`max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-            <div className="mb-8 pl-3.5 pr-2.5 py-2 bg-[#EDEDED] rounded-full inline-flex items-center justify-center border border-black/[0.03]">
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.15em] leading-none">
+          {/* Background Image with optimized Dark Overlay for section merging */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/motionsweb.jpg"
+              alt="Motions Diseño Web Background"
+              className="w-full h-full object-cover brightness-[0.7]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-[#0A0A0A]"></div>
+          </div>
+
+          <div className={`relative z-10 max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+            <div className="mb-8 pl-3.5 pr-2.5 py-2 bg-white/10 backdrop-blur-md rounded-full inline-flex items-center justify-center border border-white/20">
+                <span className="text-[10px] font-bold text-white uppercase tracking-[0.15em] leading-none">
                   Desarrollo de Alta Gama
                 </span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1] mb-8 max-w-4xl">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-white leading-[1.1] mb-8 max-w-4xl">
               Diseño Web <br className="hidden md:block" />
               para Restaurantes
             </h1>
             
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-10 max-w-2xl font-light px-4 md:px-0">
+            <p className="text-base md:text-lg text-white/80 leading-relaxed mb-10 max-w-2xl font-light px-4 md:px-0">
                 Creamos herramientas de venta digitales. No hacemos webs informativas; desarrollamos plataformas optimizadas para maximizar tus reservas online.
             </p>
 
@@ -82,10 +92,11 @@ const DisenoWebPage: React.FC = () => {
               <ContactButton 
                 label="Solicitar proyecto" 
                 desktopLabel="Solicitar presupuesto para mi nueva web" 
+                className="bg-white text-black hover:bg-gray-100"
               />
               <Link 
                 to="/#proyectos" 
-                className="px-4 py-2.5 md:px-6 md:py-3.5 bg-black/[0.03] border border-black/5 text-gray-700 rounded-full font-semibold hover:bg-black/[0.06] transition-all text-[11px] md:text-[15px] flex items-center justify-center whitespace-nowrap"
+                className="px-4 py-2.5 md:px-6 md:py-3.5 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-semibold hover:bg-white/20 transition-all text-[11px] md:text-[15px] flex items-center justify-center whitespace-nowrap"
               >
                 Ver proyectos
               </Link>
