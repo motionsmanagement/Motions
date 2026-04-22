@@ -9,11 +9,10 @@ const FinalCTA: React.FC = () => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   const services = [
-    "Google My Business",
-    "Diseño Web",
+    "Páginas Web",
     "Branding",
-    "Integración con IA",
-    "SEO Gastronómico",
+    "SEO Local",
+    "Integración IA",
     "Estrategia Digital"
   ];
 
