@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
   ];
 
   const services = [
-    { name: "Posicionamiento Local", href: "/servicios/posicionamiento-local" },
+    { name: "SEO Local", href: "/servicios/seo-local" },
     { name: "Diseño Web", href: "/servicios/diseno-web-restaurantes" },
     { name: "Branding", href: "/servicios/branding-restaurantes" },
     { name: "Integración IA", href: "/servicios/integracion-ia" },

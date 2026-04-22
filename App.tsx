@@ -18,7 +18,7 @@ const CookiesPolicy = lazy(() => import('./components/legal/LegalPages').then(m 
 const LegalNotice = lazy(() => import('./components/legal/LegalPages').then(m => ({ default: m.LegalNotice })));
 
 // Service Pages (Lazy Loaded for SEO)
-const PosicionamientoLocalPage = lazy(() => import('./components/services/PosicionamientoLocal'));
+const SeoLocalPage = lazy(() => import('./components/services/SeoLocal'));
 const DisenoWebPage = lazy(() => import('./components/services/DisenoWeb'));
 const BrandingPage = lazy(() => import('./components/services/Branding'));
 const IntegracionIAPage = lazy(() => import('./components/services/IntegracionIA'));
@@ -79,7 +79,7 @@ const App: React.FC = () => {
             <Route path="/cookies" element={<CookiesPolicy />} />
             <Route path="/aviso-legal" element={<LegalNotice />} />
             {/* Service Pages - SEO Silos */}
-            <Route path="/servicios/posicionamiento-local" element={<PosicionamientoLocalPage />} />
+            <Route path="/servicios/seo-local" element={<SeoLocalPage />} />
             <Route path="/servicios/diseno-web-restaurantes" element={<DisenoWebPage />} />
             <Route path="/servicios/branding-restaurantes" element={<BrandingPage />} />
             <Route path="/servicios/integracion-ia" element={<IntegracionIAPage />} />

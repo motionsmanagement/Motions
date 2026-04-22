@@ -96,10 +96,10 @@ const Services: React.FC = () => {
             )
         },
         {
-            title: "Posicionamiento Local",
+            title: "SEO Local",
             description: "Dominamos las búsquedas locales en Maps para que siempre seas la primera opción.",
             stats: "DOMINIO LOCAL",
-            path: "/servicios/posicionamiento-local",
+            path: "/servicios/seo-local",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center">
                     <div className="relative w-44 h-44 flex items-center justify-center">
