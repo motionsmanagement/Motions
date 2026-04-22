@@ -17,9 +17,9 @@ const Services: React.FC = () => {
 
     const services = [
         {
-            title: "Web & SEO",
-            description: "Plataformas de alto rendimiento con estrategias SEO integradas para dominar Google.",
-            stats: "MAXIMO IMPACTO",
+            title: "Páginas Web",
+            description: "Plataformas de alto rendimiento orientadas a maximizar tus reservas directas.",
+            stats: "ALTA VELOCIDAD",
             path: "/servicios/diseno-web-restaurantes",
             Illustration: ({ isVisible }: { isVisible: boolean }) => (
                 <div className="relative w-full h-full flex items-center justify-center p-12">

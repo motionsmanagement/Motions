@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
             <h5 className="text-black font-semibold mb-8 text-sm uppercase tracking-widest">Servicios</h5>
             <ul className="space-y-4">
               <li><Link to="/servicios/seo-local" className="text-gray-600 hover:text-black transition-colors">SEO Local</Link></li>
-              <li><Link to="/servicios/diseno-web-restaurantes" className="text-gray-600 hover:text-black transition-colors">Diseño Web</Link></li>
+              <li><Link to="/servicios/diseno-web-restaurantes" className="text-gray-600 hover:text-black transition-colors">Páginas Web</Link></li>
               <li><Link to="/servicios/branding-restaurantes" className="text-gray-600 hover:text-black transition-colors">Branding e Identidad</Link></li>
               <li><Link to="/servicios/integracion-ia" className="text-gray-600 hover:text-black transition-colors">Integración con IA</Link></li>
               <li><Link to="/servicios/estrategia-digital" className="text-gray-600 hover:text-black transition-colors">Estrategia Digital</Link></li>

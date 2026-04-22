@@ -167,43 +167,7 @@ const DisenoWebPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Keywords Cloud Section */}
-        <section 
-          ref={setRef('keywords')} 
-          data-section-id="keywords"
-          className="py-20 md:py-32 bg-white border-y border-gray-100 overflow-hidden"
-        >
-          <div className={`max-w-4xl mx-auto mb-16 px-6 text-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('keywords') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-            <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-6">
-              Tu marca en cada búsqueda relevante.
-            </h2>
-            <p className="text-gray-500 text-sm md:text-lg font-light max-w-2xl mx-auto">
-              Analizamos los términos de búsqueda con mayor intención de reserva para asegurar que tu restaurante lidere tu zona de influencia.
-            </p>
-          </div>
-          
-          <div className="relative group">
-            {/* Fade gradients at edges */}
-            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-            
-            <div className="flex animate-marquee-fast hover:[animation-play-state:paused] gap-4 w-fit whitespace-nowrap px-4 py-2">
-              {[...keywords, ...keywords].map((kw, i) => (
-                <div key={i} className="px-8 py-4 bg-[#F8F9FA] border border-black/[0.03] rounded-2xl md:rounded-full text-sm md:text-lg text-black font-medium hover:bg-black hover:text-white transition-all duration-500 cursor-default shadow-sm select-none">
-                  {kw}
-                </div>
-              ))}
-            </div>
-            
-            <div className="flex animate-marquee-reverse-fast hover:[animation-play-state:paused] gap-4 w-fit whitespace-nowrap px-4 py-2 mt-4">
-              {[...keywords, ...keywords].reverse().map((kw, i) => (
-                <div key={i} className="px-8 py-4 bg-[#F8F9FA] border border-black/[0.03] rounded-2xl md:rounded-full text-sm md:text-lg text-black font-medium hover:bg-black hover:text-white transition-all duration-500 cursor-default shadow-sm select-none">
-                  {kw}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* Premium CTA */}
         <section 
