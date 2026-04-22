@@ -29,6 +29,7 @@ const Navbar: React.FC = () => {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
+      setIsServicesOpen(false); // Reset services dropdown when menu closes
     }
   }, [isMenuOpen]);
 
