@@ -65,7 +65,7 @@ const BrandingPage: React.FC = () => {
           {/* Background Image with optimized Dark Overlay for section merging */}
           <div className="absolute inset-0 z-0">
             <img
-              src="/motions102.jpg"
+              src="/Motions150.jpg"
               alt="Motions Branding Background"
               className="w-full h-full object-cover brightness-[0.7]"
             />
