@@ -215,9 +215,9 @@ const SeoLocalPage: React.FC = () => {
             <div className="bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-20 relative overflow-hidden flex flex-col items-center text-center">
                 <div className="relative z-10 max-w-3xl flex flex-col items-center">
                     <h2 className="text-3xl md:text-5xl font-medium text-white mb-6 tracking-tight leading-[1.2]">
-                        Si no apareces en el <span className="text-white/40">Top 3</span>, tus clientes están cenando en otro lugar.
+                        Si no apareces en el <span className="text-white/60">Top 3</span>, tus clientes están cenando en otro lugar.
                     </h2>
-                    <p className="text-white/60 text-sm md:text-lg mb-10 font-light max-w-2xl leading-relaxed">
+                    <p className="text-white/80 text-sm md:text-lg mb-10 font-light max-w-2xl leading-relaxed">
                         El 80% de las búsquedas gastronómicas se deciden en los primeros tres resultados de Google Maps. Asegura tu lugar hoy mismo.
                     </p>
                     <ContactButton
