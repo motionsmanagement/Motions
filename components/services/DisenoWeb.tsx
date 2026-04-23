@@ -72,9 +72,9 @@ const DisenoWebPage: React.FC = () => {
           {/* Background Image with optimized Dark Overlay for section merging */}
           <div className="absolute inset-0 z-0">
             <img
-              src="/vvvv2 (1).jpg"
+              src="/resti.jpg"
               alt="Motions Diseño Web Background"
-              className="w-full h-full object-cover brightness-[0.7]"
+              className="w-full h-full object-cover brightness-[0.85]"
             />
             {/* Multi-layer gradient for perfect blending */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-[#0A0A0A]"></div>

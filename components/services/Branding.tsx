@@ -67,7 +67,7 @@ const BrandingPage: React.FC = () => {
             <img
               src="/Motions150.jpg"
               alt="Motions Branding Background"
-              className="w-full h-full object-cover brightness-[0.7]"
+              className="w-full h-full object-cover brightness-[0.85]"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-[#0A0A0A]"></div>
           </div>
