@@ -74,9 +74,11 @@ const SeoLocalPage: React.FC = () => {
             <img
               src="/rest.jpg"
               alt="Motions SEO Local Background"
-              className="w-full h-full object-cover brightness-[0.85]"
+              className="w-full h-full object-cover brightness-[0.9]"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-[#0A0A0A]"></div>
+            {/* Soft overlays for text legibility and blending without darkening the center */}
+            <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/70 to-transparent"></div>
+            <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[#0A0A0A] to-transparent"></div>
           </div>
 
           <div className={`relative z-10 max-w-7xl mx-auto flex flex-col items-center md:items-start text-center md:text-left transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
