@@ -116,16 +116,19 @@ const Careers: React.FC = () => {
       });
       setIsSubmitted(true);
       
-      // Tracking para Google Analytics y Meta Pixel
-      if (typeof (window as any).gtag === 'function') {
-        (window as any).gtag('event', 'generate_lead', {
-          event_category: 'engagement',
-          event_label: 'Formulario Careers - ' + jobTitle
+      // Tracking para Google Analytics
+      if (typeof window !== 'undefined') {
+        const dataLayer = (window as any).dataLayer = (window as any).dataLayer || [];
+        dataLayer.push({
+          event: 'job_application_submit',
+          form_name: 'Formulario Empleo',
+          job_title: jobTitle
         });
-      }
-      
-      if (typeof (window as any).fbq === 'function') {
-        (window as any).fbq('track', 'Lead');
+        
+        // Tracking para Meta Pixel
+        if (typeof (window as any).fbq === 'function') {
+          (window as any).fbq('track', 'SubmitApplication', { content_name: jobTitle });
+        }
       }
     } catch (error) {
       console.error('Error:', error);

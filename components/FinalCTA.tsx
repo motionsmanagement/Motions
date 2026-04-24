@@ -57,16 +57,18 @@ const FinalCTA: React.FC = () => {
       });
       setIsSubmitted(true);
       
-      // Tracking para Google Analytics y Meta Pixel
-      if (typeof (window as any).gtag === 'function') {
-        (window as any).gtag('event', 'generate_lead', {
-          event_category: 'engagement',
-          event_label: 'Formulario Contacto'
+      // Tracking para Google Analytics
+      if (typeof window !== 'undefined') {
+        const dataLayer = (window as any).dataLayer = (window as any).dataLayer || [];
+        dataLayer.push({
+          event: 'contact_form_submit',
+          form_name: 'Formulario Contacto Principal'
         });
-      }
-      
-      if (typeof (window as any).fbq === 'function') {
-        (window as any).fbq('track', 'Lead');
+        
+        // Tracking para Meta Pixel
+        if (typeof (window as any).fbq === 'function') {
+          (window as any).fbq('track', 'Contact');
+        }
       }
     } catch (error) {
       console.error('Error enviando formulario:', error);
