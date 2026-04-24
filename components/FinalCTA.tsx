@@ -56,6 +56,18 @@ const FinalCTA: React.FC = () => {
         body: JSON.stringify(data)
       });
       setIsSubmitted(true);
+      
+      // Tracking para Google Analytics y Meta Pixel
+      if (typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'generate_lead', {
+          event_category: 'engagement',
+          event_label: 'Formulario Contacto'
+        });
+      }
+      
+      if (typeof (window as any).fbq === 'function') {
+        (window as any).fbq('track', 'Lead');
+      }
     } catch (error) {
       console.error('Error enviando formulario:', error);
       setIsSubmitted(true);
