@@ -8,7 +8,7 @@ const LeadPopup: React.FC = () => {
     const [countryCodeDesktop, setCountryCodeDesktop] = useState('+34');
 
     useEffect(() => {
-        const popupSeen = localStorage.getItem('motions_lead_popup_v7');
+        const popupSeen = localStorage.getItem('motions_lead_popup_v8');
         if (!popupSeen) {
             const timer = setTimeout(() => {
                 setIsOpen(true);
@@ -19,7 +19,7 @@ const LeadPopup: React.FC = () => {
 
     const closePopup = () => {
         setIsOpen(false);
-        localStorage.setItem('motions_lead_popup_v7', 'true');
+        localStorage.setItem('motions_lead_popup_v8', 'true');
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>, isMobile: boolean) => {
@@ -73,32 +73,32 @@ const LeadPopup: React.FC = () => {
             </button>
 
             {/* --- DESKTOP VIEW (Split Layout) --- */}
-            <div className="hidden md:flex relative w-full max-w-[950px] h-[600px] bg-white rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-500">
+            <div className="hidden md:flex relative w-full max-w-[900px] h-[550px] bg-white rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-500">
                 
                 {/* Left Side: Pure Image */}
                 <div className="w-1/2 h-full bg-black relative">
                     <img 
                         src="/motions-ad-popup.jpg" 
                         alt="Promoción Creación Web Motions" 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-top"
                         onError={(e) => { e.currentTarget.src = "/bannermobile.jpg"; }}
                     />
                 </div>
 
                 {/* Right Side: Form Content */}
-                <div className="w-1/2 h-full bg-white p-12 lg:p-16 flex flex-col justify-center relative">
+                <div className="w-1/2 h-full bg-white p-10 lg:p-14 flex flex-col justify-center relative">
                     {!isSubmitted ? (
                         <>
-                            <div className="mb-8">
-                                <h3 className="text-[2.5rem] lg:text-[3rem] font-medium tracking-tighter leading-[1.05] text-black uppercase mb-4">
-                                    Reclama tu <br /> 10% Descuento
+                            <div className="mb-6">
+                                <h3 className="text-3xl lg:text-[2.5rem] font-medium tracking-tight text-black leading-[1.1] mb-4">
+                                    Reclama tu <br /> 10% de descuento.
                                 </h3>
-                                <p className="text-gray-500 text-[15px] leading-relaxed font-light">
+                                <p className="text-gray-500 text-sm lg:text-base leading-relaxed font-light">
                                     Lleva tu restaurante al siguiente nivel con una web premium diseñada para convertir visitas en reservas directas.
                                 </p>
                             </div>
 
-                            <form className="space-y-6" onSubmit={(e) => handleSubmit(e, false)}>
+                            <form className="space-y-5" onSubmit={(e) => handleSubmit(e, false)}>
                                 <div className="relative">
                                     <input 
                                         type="text" 
@@ -137,14 +137,14 @@ const LeadPopup: React.FC = () => {
                                         className="flex-1 bg-transparent border-b border-gray-200 py-3 text-black text-sm placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
                                     />
                                 </div>
-                                <div className="pt-4">
-                                    <button type="submit" className="w-full py-4 bg-black text-white text-[13px] font-semibold uppercase tracking-widest hover:bg-neutral-800 transition-all rounded-full shadow-xl hover:-translate-y-0.5 active:scale-95 transform duration-200">
+                                <div className="pt-2">
+                                    <button type="submit" className="w-full py-3.5 bg-black text-white text-[13px] font-medium tracking-wide rounded-full shadow-xl hover:-translate-y-0.5 active:scale-95 transform duration-200">
                                         Solicitar Oferta
                                     </button>
                                 </div>
                             </form>
-                            <p className="text-[10px] text-gray-400 mt-6 text-center font-light">
-                                Al enviar, aceptas nuestra política de privacidad y el tratamiento de tus datos.
+                            <p className="text-[10px] text-gray-400 mt-4 text-center font-light">
+                                Al enviar, aceptas nuestra política de privacidad.
                             </p>
                         </>
                     ) : (
@@ -170,49 +170,48 @@ const LeadPopup: React.FC = () => {
                     <img 
                         src="/motions-ad-popup.jpg" 
                         alt="Promoción Creación Web Motions" 
-                        className="w-full h-full object-cover"
-                        style={{ objectPosition: 'center top' }}
+                        className="w-full h-full object-cover object-top"
                         onError={(e) => { e.currentTarget.src = "/bannermobile.jpg"; }}
                     />
-                    {/* Gradient from bottom to ensure text readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent/20"></div>
+                    {/* Gradient from bottom - lower profile to show more image */}
+                    <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none"></div>
                 </div>
 
                 {/* Content Overlay */}
                 <div className="relative z-10 flex-1 flex flex-col justify-end p-6 pb-8">
                     {!isSubmitted ? (
                         <>
-                            <div className="mb-6 text-center">
-                                <h3 className="text-3xl font-medium tracking-tighter leading-tight text-white uppercase mb-2 drop-shadow-md">
-                                    Reclama tu <br /> 10% Descuento
+                            <div className="mb-5 text-left">
+                                <h3 className="text-3xl font-medium tracking-tight text-white leading-[1.1] mb-2 drop-shadow-lg">
+                                    Reclama tu <br /> 10% descuento.
                                 </h3>
-                                <p className="text-white/80 text-[13px] font-light leading-relaxed drop-shadow-sm">
-                                    Web premium para restaurantes.
+                                <p className="text-white/80 text-[13px] font-light leading-relaxed drop-shadow-md">
+                                    Web premium para tu restaurante.
                                 </p>
                             </div>
 
-                            <form className="space-y-4" onSubmit={(e) => handleSubmit(e, true)}>
-                                <div className="space-y-3">
+                            <form className="space-y-3" onSubmit={(e) => handleSubmit(e, true)}>
+                                <div className="space-y-1">
                                     <input 
                                         type="text" 
                                         name="nombre"
-                                        placeholder="Tu nombre" 
+                                        placeholder="Tu nombre completo" 
                                         required
-                                        className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
+                                        className="w-full bg-transparent border-b border-white/20 py-2.5 text-white text-[15px] placeholder:text-white/50 focus:outline-none focus:border-white transition-colors"
                                     />
                                     <input 
                                         type="email" 
                                         name="email"
                                         placeholder="Correo electrónico" 
                                         required
-                                        className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
+                                        className="w-full bg-transparent border-b border-white/20 py-2.5 text-white text-[15px] placeholder:text-white/50 focus:outline-none focus:border-white transition-colors"
                                     />
-                                    <div className="flex gap-2">
-                                        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-3 py-3 shrink-0 flex items-center">
+                                    <div className="flex gap-3">
+                                        <div className="border-b border-white/20 py-2.5 shrink-0 flex items-center">
                                             <select 
                                                 value={countryCodeMobile}
                                                 onChange={(e) => setCountryCodeMobile(e.target.value)}
-                                                className="bg-transparent text-white text-sm font-medium focus:outline-none appearance-none cursor-pointer"
+                                                className="bg-transparent text-white text-[15px] focus:outline-none appearance-none cursor-pointer pr-1"
                                             >
                                                 <option value="+34">🇪🇸 +34</option>
                                                 <option value="+1">🇺🇸 +1</option>
@@ -224,12 +223,12 @@ const LeadPopup: React.FC = () => {
                                             name="telefono"
                                             placeholder="Teléfono" 
                                             required
-                                            className="flex-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
+                                            className="flex-1 bg-transparent border-b border-white/20 py-2.5 text-white text-[15px] placeholder:text-white/50 focus:outline-none focus:border-white transition-colors"
                                         />
                                     </div>
                                 </div>
-                                <div className="pt-2">
-                                    <button type="submit" className="w-full py-4 bg-white text-black text-[13px] font-bold uppercase tracking-widest rounded-xl shadow-xl active:scale-95 transition-transform">
+                                <div className="pt-3">
+                                    <button type="submit" className="w-full py-3.5 bg-white text-black text-[14px] font-medium tracking-wide rounded-full shadow-2xl active:scale-95 transition-transform">
                                         Solicitar Oferta
                                     </button>
                                 </div>
