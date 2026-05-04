@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Check } from 'lucide-react';
+import { X, Check, ArrowRight } from 'lucide-react';
 
 const LeadPopup: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -91,7 +91,7 @@ const LeadPopup: React.FC = () => {
                         <>
                             <div className="mb-6">
                                 <h3 className="text-3xl lg:text-[2.5rem] font-medium tracking-tight text-black leading-[1.1] mb-4">
-                                    Reclama tu <br /> 10% de descuento.
+                                    Reclama tu 10% de descuento.
                                 </h3>
                                 <p className="text-gray-500 text-sm lg:text-base leading-relaxed font-light">
                                     Lleva tu restaurante al siguiente nivel con una web premium diseñada para convertir visitas en reservas directas.
@@ -138,8 +138,8 @@ const LeadPopup: React.FC = () => {
                                     />
                                 </div>
                                 <div className="pt-2">
-                                    <button type="submit" className="w-full py-3.5 bg-black text-white text-[13px] font-medium tracking-wide rounded-full shadow-xl hover:-translate-y-0.5 active:scale-95 transform duration-200">
-                                        Solicitar Oferta
+                                    <button type="submit" className="w-full py-3.5 bg-black text-white text-[13px] font-medium tracking-wide rounded-full shadow-xl hover:-translate-y-0.5 active:scale-95 transform duration-200 flex items-center justify-center gap-2">
+                                        Solicitar Oferta <ArrowRight size={16} />
                                     </button>
                                 </div>
                             </form>
@@ -163,7 +163,7 @@ const LeadPopup: React.FC = () => {
 
 
             {/* --- MOBILE VIEW (Overlay Layout) --- */}
-            <div className="md:hidden relative w-full max-w-[400px] h-[85vh] bg-black rounded-[2rem] overflow-hidden shadow-2xl flex flex-col animate-in fade-in zoom-in duration-500">
+            <div className="md:hidden relative w-full max-w-[400px] h-[500px] bg-black rounded-[2rem] overflow-hidden shadow-2xl flex flex-col animate-in fade-in zoom-in duration-500">
                 
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
@@ -174,22 +174,13 @@ const LeadPopup: React.FC = () => {
                         onError={(e) => { e.currentTarget.src = "/bannermobile.jpg"; }}
                     />
                     {/* Gradient from bottom - lower profile to show more image */}
-                    <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none"></div>
                 </div>
 
                 {/* Content Overlay */}
                 <div className="relative z-10 flex-1 flex flex-col justify-end p-6 pb-8">
                     {!isSubmitted ? (
                         <>
-                            <div className="mb-5 text-left">
-                                <h3 className="text-3xl font-medium tracking-tight text-white leading-[1.1] mb-2 drop-shadow-lg">
-                                    Reclama tu <br /> 10% descuento.
-                                </h3>
-                                <p className="text-white/80 text-[13px] font-light leading-relaxed drop-shadow-md">
-                                    Web premium para tu restaurante.
-                                </p>
-                            </div>
-
                             <form className="space-y-3" onSubmit={(e) => handleSubmit(e, true)}>
                                 <div className="space-y-1">
                                     <input 
@@ -228,8 +219,8 @@ const LeadPopup: React.FC = () => {
                                     </div>
                                 </div>
                                 <div className="pt-3">
-                                    <button type="submit" className="w-full py-3.5 bg-white text-black text-[14px] font-medium tracking-wide rounded-full shadow-2xl active:scale-95 transition-transform">
-                                        Solicitar Oferta
+                                    <button type="submit" className="w-full py-3.5 bg-white text-black text-[14px] font-medium tracking-wide rounded-full shadow-2xl active:scale-95 transition-transform flex items-center justify-center gap-2">
+                                        Solicitar Oferta <ArrowRight size={16} />
                                     </button>
                                 </div>
                             </form>
