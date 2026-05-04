@@ -5,7 +5,7 @@ const LeadPopup: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        const popupSeen = localStorage.getItem('motions_lead_popup_v3');
+        const popupSeen = localStorage.getItem('motions_lead_popup_v4');
         if (!popupSeen) {
             // Show popup after 8 seconds of engagement
             const timer = setTimeout(() => {
@@ -17,7 +17,7 @@ const LeadPopup: React.FC = () => {
 
     const closePopup = () => {
         setIsOpen(false);
-        localStorage.setItem('motions_lead_popup_v3', 'true');
+        localStorage.setItem('motions_lead_popup_v4', 'true');
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -52,29 +52,26 @@ const LeadPopup: React.FC = () => {
                     />
                     
                     {/* Gradient Overlay & Form over the image */}
-                    <div className="absolute bottom-0 inset-x-0 pt-32 pb-6 px-6 sm:px-8 bg-gradient-to-t from-black via-black/95 to-transparent">
+                    <div className="absolute bottom-0 inset-x-0 pt-16 pb-6 px-6 sm:px-8 bg-gradient-to-t from-black via-black/80 to-transparent">
                         <div className="mb-4">
-                            <h3 className="text-[1.6rem] font-serif text-white mb-2 tracking-tight leading-tight drop-shadow-lg">
-                                ¿Listo para escalar tu local?
+                            <h3 className="text-xl sm:text-2xl font-serif text-white mb-1 tracking-tight leading-tight drop-shadow-lg uppercase">
+                                Reclama tu 10% Descuento
                             </h3>
-                            <p className="text-white/80 text-[13px] leading-relaxed drop-shadow-md">
-                                Déjanos tus datos y aprovecha esta oferta especial para transformar la presencia digital de tu restaurante.
-                            </p>
                         </div>
 
-                        <form className="space-y-4" onSubmit={handleSubmit}>
+                        <form className="space-y-3" onSubmit={handleSubmit}>
                             <div className="grid grid-cols-2 gap-4">
                                 <input 
                                     type="text" 
                                     placeholder="Nombre" 
                                     required
-                                    className="w-full px-0 py-2 bg-transparent border-b border-white/20 focus:outline-none focus:border-white text-white text-sm transition-colors placeholder:text-white/40"
+                                    className="w-full px-0 py-1.5 bg-transparent border-b border-white/20 focus:outline-none focus:border-white text-white text-sm transition-colors placeholder:text-white/40"
                                 />
                                 <input 
                                     type="tel" 
                                     placeholder="Teléfono" 
                                     required
-                                    className="w-full px-0 py-2 bg-transparent border-b border-white/20 focus:outline-none focus:border-white text-white text-sm transition-colors placeholder:text-white/40"
+                                    className="w-full px-0 py-1.5 bg-transparent border-b border-white/20 focus:outline-none focus:border-white text-white text-sm transition-colors placeholder:text-white/40"
                                 />
                             </div>
                             <div>
@@ -82,20 +79,20 @@ const LeadPopup: React.FC = () => {
                                     type="email" 
                                     placeholder="Correo electrónico" 
                                     required
-                                    className="w-full px-0 py-2 bg-transparent border-b border-white/20 focus:outline-none focus:border-white text-white text-sm transition-colors placeholder:text-white/40"
+                                    className="w-full px-0 py-1.5 bg-transparent border-b border-white/20 focus:outline-none focus:border-white text-white text-sm transition-colors placeholder:text-white/40"
                                 />
                             </div>
                             
-                            <div className="pt-4">
+                            <div className="pt-2">
                                 <button 
                                     type="submit"
-                                    className="w-full py-3.5 bg-white text-black text-[13px] font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors rounded-full shadow-xl hover:-translate-y-0.5 transform duration-200"
+                                    className="w-full py-3 bg-white text-black text-[12px] font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors rounded-full shadow-xl hover:-translate-y-0.5 transform duration-200"
                                 >
                                     Solicitar Oferta
                                 </button>
                             </div>
                             
-                            <p className="text-[10px] text-white/30 mt-4 leading-relaxed text-center">
+                            <p className="text-[9px] text-white/30 mt-3 leading-relaxed text-center">
                                 Al registrarte, aceptas nuestra <a href="/privacidad" className="underline hover:text-white/60 transition-colors">Política de Privacidad</a>.
                             </p>
                         </form>
