@@ -5,7 +5,7 @@ const LeadPopup: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        const popupSeen = localStorage.getItem('motions_lead_popup');
+        const popupSeen = localStorage.getItem('motions_lead_popup_v2');
         if (!popupSeen) {
             // Show popup after 8 seconds of engagement
             const timer = setTimeout(() => {
@@ -17,7 +17,7 @@ const LeadPopup: React.FC = () => {
 
     const closePopup = () => {
         setIsOpen(false);
-        localStorage.setItem('motions_lead_popup', 'true');
+        localStorage.setItem('motions_lead_popup_v2', 'true');
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -29,70 +29,84 @@ const LeadPopup: React.FC = () => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity">
-            <div className="relative w-full max-w-[340px] bg-[#FBF9F6] shadow-2xl overflow-hidden flex flex-col max-h-[90vh] animate-in fade-in zoom-in duration-300 rounded-sm">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-md transition-opacity">
+            <div className="relative w-full max-w-[800px] bg-[#FBF9F6] shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[400px] animate-in fade-in zoom-in duration-500 rounded-xl">
+                
+                {/* Close Button - Responsive Position */}
                 <button 
                     onClick={closePopup}
-                    className="absolute top-3 right-3 z-10 p-1.5 text-white hover:text-gray-200 transition-colors"
+                    className="absolute top-4 right-4 z-20 p-2 bg-black/10 hover:bg-black/20 text-[#2D241E] hover:text-black rounded-full transition-all backdrop-blur-md md:bg-[#FBF9F6]/50"
                 >
                     <X size={20} strokeWidth={1.5} />
                 </button>
                 
-                <div className="w-full h-52 relative">
+                {/* Image Section - Prominent */}
+                <div className="w-full md:w-[45%] h-[300px] md:h-auto relative order-1 md:order-1">
                     <img 
-                        src="/bannermobile.jpg" 
-                        alt="Descuento Motions" 
-                        className="w-full h-full object-cover"
+                        // Renombra tu imagen a "banner-popup.jpg" y métela en public/
+                        src="/banner-popup.jpg" 
+                        alt="Promoción Creación Web Motions" 
+                        className="w-full h-full object-cover object-center"
+                        onError={(e) => {
+                            // Fallback if image not found
+                            e.currentTarget.src = "/bannermobile.jpg";
+                        }}
                     />
-                    <div className="absolute inset-0 bg-black/10"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-black/10"></div>
                 </div>
 
-                <div className="p-7 sm:p-8 overflow-y-auto bg-[#FBF9F6]">
-                    <h3 className="text-[1.7rem] font-serif text-[#2D241E] mb-3 tracking-tight leading-tight">
-                        Obtén un 10% de descuento
-                    </h3>
-                    <p className="text-[#2D241E]/80 mb-6 text-[13px] leading-relaxed">
-                        Impulsa las ventas de tu restaurante. Déjanos tus datos para recibir novedades, promociones y un 10% de descuento en tu primer mes.
-                    </p>
+                {/* Content Section */}
+                <div className="w-full md:w-[55%] p-8 sm:p-10 md:p-12 flex flex-col justify-center bg-[#FBF9F6] order-2 md:order-2">
+                    <div className="mb-8">
+                        <span className="text-xs font-semibold tracking-[0.2em] text-[#2D241E]/50 uppercase block mb-3">Oferta Exclusiva</span>
+                        <h3 className="text-3xl sm:text-4xl font-serif text-[#2D241E] mb-4 tracking-tight leading-[1.1]">
+                            ¿Listo para <br/>escalar tu local?
+                        </h3>
+                        <p className="text-[#2D241E]/70 text-sm sm:text-base leading-relaxed">
+                            Déjanos tus datos y aprovecha esta oferta especial para transformar la presencia digital de tu restaurante.
+                        </p>
+                    </div>
 
-                    <form className="space-y-4" onSubmit={handleSubmit}>
-                        <div>
-                            <input 
-                                type="text" 
-                                placeholder="Nombre completo" 
-                                required
-                                className="w-full px-0 py-2.5 bg-transparent border-b border-[#2D241E]/20 focus:outline-none focus:border-[#2D241E] text-sm transition-colors placeholder:text-[#2D241E]/40"
-                            />
+                    <form className="space-y-5" onSubmit={handleSubmit}>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <input 
+                                    type="text" 
+                                    placeholder="Nombre completo" 
+                                    required
+                                    className="w-full px-0 py-2 bg-transparent border-b border-[#2D241E]/20 focus:outline-none focus:border-[#2D241E] text-sm transition-colors placeholder:text-[#2D241E]/40"
+                                />
+                            </div>
+                            <div>
+                                <input 
+                                    type="tel" 
+                                    placeholder="Teléfono" 
+                                    required
+                                    className="w-full px-0 py-2 bg-transparent border-b border-[#2D241E]/20 focus:outline-none focus:border-[#2D241E] text-sm transition-colors placeholder:text-[#2D241E]/40"
+                                />
+                            </div>
                         </div>
                         <div>
                             <input 
                                 type="email" 
-                                placeholder="Correo electrónico*" 
+                                placeholder="Correo electrónico" 
                                 required
-                                className="w-full px-0 py-2.5 bg-transparent border-b border-[#2D241E]/20 focus:outline-none focus:border-[#2D241E] text-sm transition-colors placeholder:text-[#2D241E]/40"
-                            />
-                        </div>
-                        <div>
-                            <input 
-                                type="tel" 
-                                placeholder="Teléfono*" 
-                                required
-                                className="w-full px-0 py-2.5 bg-transparent border-b border-[#2D241E]/20 focus:outline-none focus:border-[#2D241E] text-sm transition-colors placeholder:text-[#2D241E]/40"
+                                className="w-full px-0 py-2 bg-transparent border-b border-[#2D241E]/20 focus:outline-none focus:border-[#2D241E] text-sm transition-colors placeholder:text-[#2D241E]/40"
                             />
                         </div>
                         
-                        <p className="text-[9px] text-[#2D241E]/40 mt-4 leading-tight">
-                            Al registrarte, aceptas nuestra <a href="/privacidad" className="underline">Política de Privacidad</a> y consientes recibir comunicaciones de nuestra empresa.
-                        </p>
-
-                        <div className="pt-3">
+                        <div className="pt-6">
                             <button 
                                 type="submit"
-                                className="text-[#D65B5B] font-medium text-[13px] flex items-center gap-1.5 hover:text-[#B54A4A] transition-colors"
+                                className="w-full sm:w-auto px-8 py-3.5 bg-[#2D241E] text-white text-sm font-medium tracking-wide hover:bg-black transition-colors rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform duration-200"
                             >
-                                Reclamar mi descuento <span className="text-lg leading-none mb-[2px]">&rsaquo;</span>
+                                Solicitar Información
                             </button>
                         </div>
+                        
+                        <p className="text-[10px] text-[#2D241E]/40 mt-6 leading-relaxed max-w-sm">
+                            Al registrarte, aceptas nuestra <a href="/privacidad" className="underline hover:text-[#2D241E]/80 transition-colors">Política de Privacidad</a> y consientes recibir comunicaciones.
+                        </p>
                     </form>
                 </div>
             </div>
