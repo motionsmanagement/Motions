@@ -5,7 +5,7 @@ const LeadPopup: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        const popupSeen = localStorage.getItem('motions_lead_popup_v5');
+        const popupSeen = localStorage.getItem('motions_lead_popup_v6');
         if (!popupSeen) {
             // Show popup after 8 seconds of engagement
             const timer = setTimeout(() => {
@@ -17,7 +17,7 @@ const LeadPopup: React.FC = () => {
 
     const closePopup = () => {
         setIsOpen(false);
-        localStorage.setItem('motions_lead_popup_v5', 'true');
+        localStorage.setItem('motions_lead_popup_v6', 'true');
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -30,20 +30,20 @@ const LeadPopup: React.FC = () => {
 
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md transition-opacity font-['Inter']">
-            <div className="relative w-full max-w-[420px] md:max-w-[850px] bg-white md:bg-transparent shadow-2xl overflow-hidden rounded-[2rem] animate-in fade-in zoom-in duration-500">
+            <div className="relative w-full max-w-[420px] md:max-w-[900px] bg-black md:bg-white shadow-2xl overflow-hidden rounded-3xl animate-in fade-in zoom-in duration-500">
                 
                 {/* Close Button */}
                 <button 
                     onClick={closePopup}
-                    className="absolute top-6 right-6 z-30 p-2 bg-black/10 hover:bg-black/20 md:bg-gray-100 md:hover:bg-gray-200 text-black rounded-full transition-all backdrop-blur-md"
+                    className="absolute top-4 right-4 z-30 p-2 bg-black/50 hover:bg-black/80 md:bg-gray-100 md:hover:bg-gray-200 text-white md:text-black rounded-full transition-all backdrop-blur-md"
                 >
                     <X size={20} strokeWidth={2} />
                 </button>
                 
-                <div className="flex flex-col md:flex-row bg-white">
+                <div className="flex flex-col md:flex-row">
                     
-                    {/* Left Side: Image (Poster) */}
-                    <div className="relative w-full md:w-1/2 h-[45vh] md:h-[600px] bg-black overflow-hidden shrink-0">
+                    {/* Image Section / Mobile Overlay Container */}
+                    <div className="relative w-full md:w-[55%] h-[65vh] md:h-[600px] bg-black overflow-hidden shrink-0">
                         <img 
                             src="/motions-ad-popup.jpg" 
                             alt="Promoción Creación Web Motions" 
@@ -52,71 +52,101 @@ const LeadPopup: React.FC = () => {
                                 e.currentTarget.src = "/bannermobile.jpg";
                             }}
                         />
-                        {/* Mobile Gradient Overlay - Very subtle to ensure image visibility */}
-                        <div className="md:hidden absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white via-white/20 to-transparent pointer-events-none"></div>
+                        
+                        {/* Mobile Overlay - Only on Mobile Devices */}
+                        <div className="md:hidden absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-8 pb-10">
+                            <div className="mb-6">
+                                <h3 className="text-2xl font-medium tracking-tight leading-tight text-white uppercase mb-2">
+                                    Reclama tu <br /> 10% Descuento
+                                </h3>
+                            </div>
+
+                            <form className="space-y-4" onSubmit={handleSubmit}>
+                                <input 
+                                    type="text" 
+                                    placeholder="Nombre completo" 
+                                    required
+                                    className="w-full bg-transparent border-b border-white/20 py-2 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-white transition-colors"
+                                />
+                                <input 
+                                    type="email" 
+                                    placeholder="Correo electrónico" 
+                                    required
+                                    className="w-full bg-transparent border-b border-white/20 py-2 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-white transition-colors"
+                                />
+                                <div className="flex gap-3">
+                                    <div className="shrink-0 border-b border-white/20 py-2">
+                                        <select className="bg-transparent text-white text-sm focus:outline-none appearance-none pr-1">
+                                            <option value="+34">🇪🇸 +34</option>
+                                            <option value="+1">🇺🇸 +1</option>
+                                        </select>
+                                    </div>
+                                    <input 
+                                        type="tel" 
+                                        placeholder="Teléfono" 
+                                        required
+                                        className="flex-1 bg-transparent border-b border-white/20 py-2 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-white transition-colors"
+                                    />
+                                </div>
+                                <button type="submit" className="w-full py-3.5 mt-2 bg-white text-black text-xs font-bold uppercase tracking-widest rounded-full shadow-xl active:scale-95 transition-transform">
+                                    Solicitar Oferta
+                                </button>
+                            </form>
+                            <p className="text-[8px] text-white/30 mt-4 text-center">Al enviar, aceptas nuestra política de privacidad.</p>
+                        </div>
                     </div>
 
-                    {/* Right Side: White Card Form */}
-                    <div className="w-full md:w-1/2 bg-white p-8 md:p-12 flex flex-col justify-center">
-                        <div className="mb-8 md:mb-10">
-                            <h3 className="text-3xl md:text-5xl font-medium tracking-tighter leading-[1.1] text-black uppercase mb-4">
-                                Reclama tu <br className="hidden md:block" /> 10% Descuento
+                    {/* Desktop Content Side (Side-by-side) */}
+                    <div className="hidden md:flex md:w-[45%] bg-white p-12 lg:p-16 flex-col justify-center">
+                        <div className="mb-10">
+                            <h3 className="text-4xl lg:text-5xl font-medium tracking-tighter leading-[1.05] text-black uppercase mb-5">
+                                Reclama tu <br /> 10% Descuento
                             </h3>
-                            <p className="text-gray-500 text-sm md:text-lg font-light leading-relaxed">
-                                Lleva tu restaurante al siguiente nivel con una web premium diseñada para convertir.
+                            <p className="text-gray-500 text-lg font-light leading-relaxed">
+                                Lleva tu restaurante al siguiente nivel con una web premium diseñada para convertir visitas en reservas.
                             </p>
                         </div>
 
-                        <form className="space-y-6 md:space-y-8" onSubmit={handleSubmit}>
+                        <form className="space-y-8" onSubmit={handleSubmit}>
                             <div className="relative">
                                 <input 
                                     type="text" 
                                     placeholder="Tu nombre" 
                                     required
-                                    className="w-full bg-transparent border-b border-gray-100 py-3 text-black text-sm md:text-lg placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
+                                    className="w-full bg-transparent border-b border-gray-100 py-3 text-black text-lg placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
                                 />
                             </div>
-                            
                             <div className="relative">
                                 <input 
                                     type="email" 
                                     placeholder="Correo electrónico" 
                                     required
-                                    className="w-full bg-transparent border-b border-gray-100 py-3 text-black text-sm md:text-lg placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
+                                    className="w-full bg-transparent border-b border-gray-100 py-3 text-black text-lg placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
                                 />
                             </div>
-
                             <div className="relative flex gap-4">
-                                <div className="relative shrink-0">
-                                    <select 
-                                        className="appearance-none bg-transparent border-b border-gray-100 py-3 pr-6 text-black text-sm md:text-lg font-medium focus:outline-none focus:border-black cursor-pointer transition-colors"
-                                    >
+                                <div className="shrink-0 border-b border-gray-100 py-3">
+                                    <select className="bg-transparent text-black text-lg font-medium focus:outline-none appearance-none pr-2">
                                         <option value="+34">🇪🇸 +34</option>
                                         <option value="+1">🇺🇸 +1</option>
-                                        <option value="+44">🇬🇧 +44</option>
                                     </select>
                                 </div>
                                 <input 
-                                  type="tel" 
-                                  placeholder="Número de teléfono" 
-                                  required
-                                  className="flex-1 bg-transparent border-b border-gray-100 py-3 text-black text-sm md:text-lg placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
+                                    type="tel" 
+                                    placeholder="Número de teléfono" 
+                                    required
+                                    className="flex-1 bg-transparent border-b border-gray-100 py-3 text-black text-lg placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
                                 />
                             </div>
-                            
-                            <div className="pt-6">
-                                <button 
-                                    type="submit"
-                                    className="w-full py-4 bg-black text-white text-sm md:text-base font-semibold uppercase tracking-widest hover:bg-neutral-800 transition-all rounded-full shadow-xl hover:scale-[1.01] active:scale-95 transform duration-200"
-                                >
+                            <div className="pt-4">
+                                <button type="submit" className="w-full py-4 bg-black text-white text-base font-semibold uppercase tracking-widest hover:bg-neutral-800 transition-all rounded-full shadow-xl hover:scale-[1.01] active:scale-95 transform duration-200">
                                     Solicitar Oferta
                                 </button>
                             </div>
-                            
-                            <p className="text-[10px] text-gray-400 mt-4 leading-relaxed text-center font-light opacity-60">
-                                Al enviar, aceptas nuestra política de privacidad y el tratamiento de tus datos.
-                            </p>
                         </form>
+                        <p className="text-[10px] text-gray-400 mt-6 leading-relaxed text-center font-light opacity-60">
+                            Al enviar, aceptas nuestra política de privacidad y el tratamiento de tus datos.
+                        </p>
                     </div>
                 </div>
             </div>
