@@ -43,8 +43,7 @@ const LeadPopup: React.FC = () => {
                 {/* Image Section - Prominent */}
                 <div className="w-full md:w-[45%] h-[300px] md:h-auto relative order-1 md:order-1">
                     <img 
-                        // Renombra tu imagen a "banner-popup.jpg" y métela en public/
-                        src="/banner-popup.jpg" 
+                        src="/motions-ad-popup.jpg" 
                         alt="Promoción Creación Web Motions" 
                         className="w-full h-full object-cover object-center"
                         onError={(e) => {
