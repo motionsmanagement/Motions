@@ -10,6 +10,7 @@ import SuccessStories from './components/SuccessStories';
 import FinalCTA from './components/FinalCTA';
 import AdBanner from './components/AdBanner';
 import Footer from './components/Footer';
+import LeadPopup from './components/LeadPopup';
 
 // Non-Critical Pages (Lazy Loaded)
 const Careers = lazy(() => import('./components/Careers'));
@@ -62,6 +63,7 @@ const HomePage: React.FC = () => {
         <FinalCTA />
       </main>
       <Footer />
+      <LeadPopup />
     </>
   );
 };
