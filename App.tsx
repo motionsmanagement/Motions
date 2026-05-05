@@ -58,9 +58,9 @@ const HomePage: React.FC = () => {
         <Hero />
         <Services />
         <RecentWorks />
-        <AdBanner />
-        <SuccessStories />
         <FinalCTA />
+        <SuccessStories />
+        <AdBanner />
       </main>
       <Footer />
       <LeadPopup />
