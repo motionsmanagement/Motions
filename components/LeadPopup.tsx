@@ -180,7 +180,7 @@ const LeadPopup: React.FC = () => {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 bg-black">
                     <img 
-                        src="/motions-ad-popup.jpg" 
+                        src="/popup-motions-mobile.jpg" 
                         alt="Promoción Creación Web Motions" 
                         className="w-full h-full object-contain object-top"
                         onError={(e) => { e.currentTarget.src = "/bannermobile.jpg"; }}
@@ -239,7 +239,7 @@ const LeadPopup: React.FC = () => {
                                 </div>
                                 <div className="pt-3">
                                     <button type="submit" className="w-full py-3.5 bg-white text-black text-[14px] font-medium tracking-wide rounded-full shadow-2xl active:scale-95 transition-transform flex items-center justify-center gap-2">
-                                        Solicitar Oferta <ArrowRight size={16} />
+                                        Obtener 10% de descuento <ArrowRight size={16} />
                                     </button>
                                 </div>
                             </form>
