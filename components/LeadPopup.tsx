@@ -61,7 +61,7 @@ const LeadPopup: React.FC = () => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md transition-opacity font-['Inter']">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/40 backdrop-blur-md transition-opacity font-['Inter']">
             
             {/* Close Button - Mobile Only */}
             <button 
@@ -152,9 +152,9 @@ const LeadPopup: React.FC = () => {
                                 <div className="pt-2">
                                     <button 
                                       type="submit" 
-                                      className="w-full bg-black text-white rounded-full pl-6 pr-2 py-2 flex items-center justify-between group hover:-translate-y-0.5 active:scale-95 transform duration-200 shadow-xl"
+                                      className="w-fit bg-black text-white rounded-full pl-6 pr-2 py-2 flex items-center justify-between gap-6 group hover:-translate-y-0.5 active:scale-95 transform duration-200 shadow-xl"
                                     >
-                                      <span className="font-semibold tracking-tight text-[13px] leading-tight mx-auto">
+                                      <span className="font-semibold tracking-tight text-[13px] leading-tight">
                                         Solicitar Oferta
                                       </span>
                                       <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-black shadow-inner shrink-0 scale-90 group-hover:bg-gray-100 transition-colors">
