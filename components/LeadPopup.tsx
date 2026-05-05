@@ -30,7 +30,6 @@ const LeadPopup: React.FC = () => {
         
         const data = {
           nombre: formData.get('nombre'),
-          email: formData.get('email'),
           telefono: `${code} ${formData.get('telefono')}`,
           origen: "Popup 10% Descuento",
           _subject: "🔥 Nuevo Lead Popup Motions - " + formData.get('nombre'),
@@ -91,7 +90,7 @@ const LeadPopup: React.FC = () => {
                         <>
                             <div className="mb-6">
                                 <h3 className="text-3xl lg:text-[2.5rem] font-medium tracking-tight text-black leading-[1.1] mb-4">
-                                    Reclama tu 10% de descuento.
+                                    Reclama tu <br /> 10% de descuento.
                                 </h3>
                                 <p className="text-gray-500 text-sm lg:text-base leading-relaxed font-light">
                                     Lleva tu restaurante al siguiente nivel con una web premium diseñada para convertir visitas en reservas directas.
@@ -108,15 +107,7 @@ const LeadPopup: React.FC = () => {
                                         className="w-full bg-transparent border-b border-gray-200 py-3 text-black text-sm placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
                                     />
                                 </div>
-                                <div className="relative">
-                                    <input 
-                                        type="email" 
-                                        name="email"
-                                        placeholder="Correo electrónico" 
-                                        required
-                                        className="w-full bg-transparent border-b border-gray-200 py-3 text-black text-sm placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
-                                    />
-                                </div>
+
                                 <div className="relative flex gap-4">
                                     <div className="shrink-0 border-b border-gray-200 py-3">
                                         <select 
@@ -127,6 +118,19 @@ const LeadPopup: React.FC = () => {
                                             <option value="+34">🇪🇸 +34</option>
                                             <option value="+1">🇺🇸 +1</option>
                                             <option value="+44">🇬🇧 +44</option>
+                                            <option value="+52">🇲🇽 +52</option>
+                                            <option value="+54">🇦🇷 +54</option>
+                                            <option value="+57">🇨🇴 +57</option>
+                                            <option value="+56">🇨🇱 +56</option>
+                                            <option value="+51">🇵🇪 +51</option>
+                                            <option value="+58">🇻🇪 +58</option>
+                                            <option value="+593">🇪🇨 +593</option>
+                                            <option value="+507">🇵🇦 +507</option>
+                                            <option value="+506">🇨🇷 +506</option>
+                                            <option value="+55">🇧🇷 +55</option>
+                                            <option value="+39">🇮🇹 +39</option>
+                                            <option value="+33">🇫🇷 +33</option>
+                                            <option value="+49">🇩🇪 +49</option>
                                         </select>
                                     </div>
                                     <input 
@@ -174,11 +178,11 @@ const LeadPopup: React.FC = () => {
                         onError={(e) => { e.currentTarget.src = "/bannermobile.jpg"; }}
                     />
                     {/* Gradient from bottom - lower profile to show more image */}
-                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none"></div>
                 </div>
 
                 {/* Content Overlay */}
-                <div className="relative z-10 flex-1 flex flex-col justify-end p-6 pb-8">
+                <div className="relative z-10 flex-1 flex flex-col justify-end p-6 pb-2">
                     {!isSubmitted ? (
                         <>
                             <form className="space-y-3" onSubmit={(e) => handleSubmit(e, true)}>
@@ -190,13 +194,7 @@ const LeadPopup: React.FC = () => {
                                         required
                                         className="w-full bg-transparent border-b border-white/20 py-2.5 text-white text-[15px] placeholder:text-white/50 focus:outline-none focus:border-white transition-colors"
                                     />
-                                    <input 
-                                        type="email" 
-                                        name="email"
-                                        placeholder="Correo electrónico" 
-                                        required
-                                        className="w-full bg-transparent border-b border-white/20 py-2.5 text-white text-[15px] placeholder:text-white/50 focus:outline-none focus:border-white transition-colors"
-                                    />
+
                                     <div className="flex gap-3">
                                         <div className="border-b border-white/20 py-2.5 shrink-0 flex items-center">
                                             <select 
@@ -207,6 +205,19 @@ const LeadPopup: React.FC = () => {
                                                 <option value="+34">🇪🇸 +34</option>
                                                 <option value="+1">🇺🇸 +1</option>
                                                 <option value="+44">🇬🇧 +44</option>
+                                                <option value="+52">🇲🇽 +52</option>
+                                                <option value="+54">🇦🇷 +54</option>
+                                                <option value="+57">🇨🇴 +57</option>
+                                                <option value="+56">🇨🇱 +56</option>
+                                                <option value="+51">🇵🇪 +51</option>
+                                                <option value="+58">🇻🇪 +58</option>
+                                                <option value="+593">🇪🇨 +593</option>
+                                                <option value="+507">🇵🇦 +507</option>
+                                                <option value="+506">🇨🇷 +506</option>
+                                                <option value="+55">🇧🇷 +55</option>
+                                                <option value="+39">🇮🇹 +39</option>
+                                                <option value="+33">🇫🇷 +33</option>
+                                                <option value="+49">🇩🇪 +49</option>
                                             </select>
                                         </div>
                                         <input 

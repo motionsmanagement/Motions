@@ -39,7 +39,6 @@ const FinalCTA: React.FC = () => {
     const formData = new FormData(e.currentTarget);
     const data = {
       nombre: formData.get('nombre'),
-      email: formData.get('email'),
       telefono: `${countryCode} ${formData.get('telefono')}`,
       servicios: selectedServices.length > 0 ? selectedServices.join(', ') : 'Ninguno especificado',
       _subject: "🔥 Nuevo Lead o Presupuesto Motions - " + formData.get('nombre'),
@@ -107,25 +106,14 @@ const FinalCTA: React.FC = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6 md:space-y-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-                <div className="relative">
-                  <input 
-                    type="text" 
-                    name="nombre"
-                    placeholder="Tu nombre" 
-                    className="w-full bg-transparent border-b border-gray-100 py-3 text-black text-sm md:text-lg placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
-                    required
-                  />
-                </div>
-                <div className="relative">
-                  <input 
-                    type="email" 
-                    name="email"
-                    placeholder="Correo electrónico" 
-                    className="w-full bg-transparent border-b border-gray-100 py-3 text-black text-sm md:text-lg placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
-                    required
-                  />
-                </div>
+              <div className="relative">
+                <input 
+                  type="text" 
+                  name="nombre"
+                  placeholder="Tu nombre" 
+                  className="w-full bg-transparent border-b border-gray-100 py-3 text-black text-sm md:text-lg placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
+                  required
+                />
               </div>
 
               <div className="relative flex gap-4">
@@ -138,6 +126,19 @@ const FinalCTA: React.FC = () => {
                     <option value="+34">🇪🇸 +34</option>
                     <option value="+1">🇺🇸 +1</option>
                     <option value="+44">🇬🇧 +44</option>
+                    <option value="+52">🇲🇽 +52</option>
+                    <option value="+54">🇦🇷 +54</option>
+                    <option value="+57">🇨🇴 +57</option>
+                    <option value="+56">🇨🇱 +56</option>
+                    <option value="+51">🇵🇪 +51</option>
+                    <option value="+58">🇻🇪 +58</option>
+                    <option value="+593">🇪🇨 +593</option>
+                    <option value="+507">🇵🇦 +507</option>
+                    <option value="+506">🇨🇷 +506</option>
+                    <option value="+55">🇧🇷 +55</option>
+                    <option value="+39">🇮🇹 +39</option>
+                    <option value="+33">🇫🇷 +33</option>
+                    <option value="+49">🇩🇪 +49</option>
                   </select>
                   <div className="absolute right-0 bottom-4 pointer-events-none text-gray-400">
                     <ChevronRight className="w-4 h-4 rotate-90" />
