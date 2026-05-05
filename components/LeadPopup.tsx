@@ -150,8 +150,23 @@ const LeadPopup: React.FC = () => {
                                     />
                                 </div>
                                 <div className="pt-2">
-                                    <button type="submit" className="w-full py-3.5 bg-black text-white text-[13px] font-medium tracking-wide rounded-full shadow-xl hover:-translate-y-0.5 active:scale-95 transform duration-200 flex items-center justify-center gap-2">
-                                        Solicitar Oferta <ArrowRight size={16} />
+                                    <button 
+                                      type="submit" 
+                                      className="w-full bg-black text-white rounded-full pl-6 pr-2 py-2 flex items-center justify-between group hover:-translate-y-0.5 active:scale-95 transform duration-200 shadow-xl"
+                                    >
+                                      <span className="font-semibold tracking-tight text-[13px] leading-tight mx-auto">
+                                        Solicitar Oferta
+                                      </span>
+                                      <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-black shadow-inner shrink-0 scale-90 group-hover:bg-gray-100 transition-colors">
+                                        <svg 
+                                            viewBox="0 0 24 24" 
+                                            fill="none" 
+                                            xmlns="http://www.w3.org/2000/svg" 
+                                            className="w-4 h-4 transition-transform rotate-90"
+                                        >
+                                            <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                      </div>
                                     </button>
                                 </div>
                             </form>
@@ -175,22 +190,22 @@ const LeadPopup: React.FC = () => {
 
 
             {/* --- MOBILE VIEW (Overlay Layout) --- */}
-            <div className="md:hidden relative w-full max-w-[400px] h-[600px] bg-black rounded-[2rem] overflow-hidden shadow-2xl flex flex-col animate-in fade-in zoom-in duration-500">
+            <div className="md:hidden relative w-full max-w-[400px] bg-black rounded-[2rem] overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-500">
                 
                 {/* Background Image */}
-                <div className="absolute inset-0 z-0 bg-black">
+                <div className="relative w-full z-0">
                     <img 
                         src="/popup-motions-mobile.jpg" 
                         alt="Promoción Creación Web Motions" 
-                        className="w-full h-full object-contain object-top"
+                        className="w-full h-auto block"
                         onError={(e) => { e.currentTarget.src = "/bannermobile.jpg"; }}
                     />
                     {/* Gradient from bottom - lower profile to show more image */}
-                    <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none"></div>
                 </div>
 
                 {/* Content Overlay */}
-                <div className="relative z-10 flex-1 flex flex-col justify-end p-6 pb-2">
+                <div className="absolute inset-x-0 bottom-0 z-10 p-6 pb-6 w-full">
                     {!isSubmitted ? (
                         <>
                             <form className="space-y-3" onSubmit={(e) => handleSubmit(e, true)}>
@@ -238,8 +253,23 @@ const LeadPopup: React.FC = () => {
                                     </div>
                                 </div>
                                 <div className="pt-3">
-                                    <button type="submit" className="w-full py-3.5 bg-white text-black text-[14px] font-medium tracking-wide rounded-full shadow-2xl active:scale-95 transition-transform flex items-center justify-center gap-2">
-                                        Obtener 10% de descuento <ArrowRight size={16} />
+                                    <button 
+                                      type="submit" 
+                                      className="w-full bg-white text-black rounded-full pl-6 pr-2 py-2 flex items-center justify-between group active:scale-95 transition-transform shadow-2xl"
+                                    >
+                                      <span className="font-semibold tracking-tight text-[14px] leading-tight mx-auto">
+                                        Reclama tu 10% de descuento
+                                      </span>
+                                      <div className="w-9 h-9 rounded-full bg-black flex items-center justify-center text-white shadow-inner shrink-0 scale-90 group-hover:bg-neutral-800 transition-colors">
+                                        <svg 
+                                            viewBox="0 0 24 24" 
+                                            fill="none" 
+                                            xmlns="http://www.w3.org/2000/svg" 
+                                            className="w-4 h-4 transition-transform rotate-90"
+                                        >
+                                            <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                      </div>
                                     </button>
                                 </div>
                             </form>
