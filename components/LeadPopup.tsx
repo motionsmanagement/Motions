@@ -63,10 +63,10 @@ const LeadPopup: React.FC = () => {
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md transition-opacity font-['Inter']">
             
-            {/* Close Button - Global */}
+            {/* Close Button - Mobile Only */}
             <button 
                 onClick={closePopup}
-                className="absolute top-4 right-4 md:top-6 md:right-6 z-[110] p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all backdrop-blur-md"
+                className="md:hidden absolute top-4 right-4 z-[110] p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all backdrop-blur-md"
             >
                 <X size={20} strokeWidth={2} />
             </button>
@@ -86,14 +86,22 @@ const LeadPopup: React.FC = () => {
 
                 {/* Right Side: Form Content */}
                 <div className="w-1/2 h-full bg-white p-10 lg:p-14 flex flex-col justify-center relative">
+                    {/* Close Button - Desktop Inside Box */}
+                    <button 
+                        onClick={closePopup}
+                        className="absolute top-6 right-6 z-[110] p-2 text-gray-400 hover:text-black hover:bg-gray-100 rounded-full transition-all"
+                    >
+                        <X size={20} strokeWidth={2} />
+                    </button>
+
                     {!isSubmitted ? (
                         <>
                             <div className="mb-6">
                                 <h3 className="text-3xl lg:text-[2.5rem] font-medium tracking-tight text-black leading-[1.1] mb-4">
-                                    Reclama tu <br /> 10% de descuento.
+                                    Reclama tu 10% <br /> de descuento.
                                 </h3>
                                 <p className="text-gray-500 text-sm lg:text-base leading-relaxed font-light">
-                                    Lleva tu restaurante al siguiente nivel con una web premium diseñada para convertir visitas en reservas directas.
+                                    Déjanos tus datos y nos pondremos en contacto contigo en menos de 24 horas para aplicar tu descuento.
                                 </p>
                             </div>
 
@@ -167,14 +175,14 @@ const LeadPopup: React.FC = () => {
 
 
             {/* --- MOBILE VIEW (Overlay Layout) --- */}
-            <div className="md:hidden relative w-full max-w-[400px] h-[500px] bg-black rounded-[2rem] overflow-hidden shadow-2xl flex flex-col animate-in fade-in zoom-in duration-500">
+            <div className="md:hidden relative w-full max-w-[400px] h-[600px] bg-black rounded-[2rem] overflow-hidden shadow-2xl flex flex-col animate-in fade-in zoom-in duration-500">
                 
                 {/* Background Image */}
-                <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 z-0 bg-black">
                     <img 
                         src="/motions-ad-popup.jpg" 
                         alt="Promoción Creación Web Motions" 
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-full object-contain object-top"
                         onError={(e) => { e.currentTarget.src = "/bannermobile.jpg"; }}
                     />
                     {/* Gradient from bottom - lower profile to show more image */}
