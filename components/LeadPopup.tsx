@@ -170,7 +170,7 @@ const LeadPopup: React.FC = () => {
                                     </button>
                                 </div>
                             </form>
-                            <p className="text-[10px] text-gray-400 mt-4 text-center font-light">
+                            <p className="text-[10px] text-gray-400 mt-4 text-left font-light">
                                 Al enviar, aceptas nuestra política de privacidad.
                             </p>
                         </>

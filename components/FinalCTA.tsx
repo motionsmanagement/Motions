@@ -80,7 +80,7 @@ const FinalCTA: React.FC = () => {
       {/* Background Image - High Visibility */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/Adbanner.jpg"
+          src="/banner.jpg"
           alt="Final CTA background"
           className="w-full h-full object-cover brightness-[0.75]"
           loading="lazy"
