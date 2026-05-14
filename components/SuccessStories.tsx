@@ -233,7 +233,7 @@ const ProjectCard: React.FC<{ project: SuccessCase; onClick: () => void; index: 
             }}
           >
             <span className="text-lg font-semibold text-white leading-tight">
-              {project.title}
+              Ver proyecto
             </span>
             <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center ml-3 shrink-0">
               <ArrowUpRight className="w-4 h-4 text-white" />
@@ -304,10 +304,10 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-black/10 backdrop-blur-md flex items-center justify-center hover:bg-black/20 transition-colors"
+          className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-black/25 backdrop-blur-md flex items-center justify-center hover:bg-black/40 transition-colors"
           aria-label="Cerrar"
         >
-          <X className="w-5 h-5 text-gray-800" />
+          <X className="w-5 h-5 text-white" />
         </button>
 
         {/* Hero Image with navigation */}
@@ -321,7 +321,7 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
               className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
               style={{
                 opacity: idx === currentImg ? 1 : 0,
-                transform: idx === currentImg ? 'scale(1)' : 'scale(1.03)',
+                transform: idx === currentImg ? 'scale(1.005)' : 'scale(1.03)',
               }}
             />
           ))}
@@ -352,10 +352,10 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
         <div className="p-6 md:p-10 lg:p-12 flex flex-col">
           {/* Header info */}
           <div className="mb-10">
-            <span className="block text-[11px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-3">
+            <span className="block text-xs font-normal text-gray-400 lowercase tracking-tight mb-2">
               {project.category}
             </span>
-            <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-[1.2] tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-[1.3] tracking-tight">
               {project.title}
             </h2>
           </div>
@@ -371,9 +371,9 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
                   style={{
                     width: '100px',
                     height: '64px',
-                    outline: idx === currentImg ? '2px solid #111' : '2px solid transparent',
-                    outlineOffset: '3px',
-                    opacity: idx === currentImg ? 1 : 0.5,
+                    opacity: idx === currentImg ? 1 : 0.4,
+                    transform: idx === currentImg ? 'scale(1.05)' : 'scale(1)',
+                    transition: 'all 0.3s ease'
                   }}
                 >
                   <img src={src} alt="" className="w-full h-full object-cover" />
@@ -424,10 +424,10 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
             <a
               href="#contacto"
               onClick={onClose}
-              className="inline-flex items-center gap-3 px-8 py-3.5 bg-black text-white text-sm font-bold rounded-full hover:bg-neutral-800 transition-all hover:scale-[1.03] active:scale-95 shadow-xl"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3.5 bg-black text-white text-[13px] sm:text-sm font-bold rounded-full hover:bg-neutral-800 transition-all hover:scale-[1.03] active:scale-95 shadow-xl whitespace-nowrap"
             >
               Trabajar juntos
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4 shrink-0" />
             </a>
           </div>
         </div>
