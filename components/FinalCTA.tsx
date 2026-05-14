@@ -65,7 +65,7 @@ const FinalCTA: React.FC = () => {
           {/* Left Side: Image */}
           <div className="lg:w-[45%] relative min-h-[300px] lg:min-h-full">
             <img 
-              src="/motions22.jpg" 
+              src="/motions11.jpg" 
               alt="Motions Portfolio" 
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -95,9 +95,6 @@ const FinalCTA: React.FC = () => {
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium leading-tight tracking-tight text-black mb-4">
                     ¿Hablamos de tu proyecto?
                   </h2>
-                  <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed max-w-sm">
-                    Potenciamos tu marca para que los clientes elijan tu restaurante por encima de la competencia.
-                  </p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
