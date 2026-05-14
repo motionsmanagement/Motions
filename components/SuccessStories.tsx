@@ -204,8 +204,8 @@ const ProjectCard: React.FC<{ project: SuccessCase; onClick: () => void; index: 
         transition: `opacity 0.7s cubic-bezier(0.16,1,0.3,1) ${index * 80}ms, transform 0.7s cubic-bezier(0.16,1,0.3,1) ${index * 80}ms`,
       }}
     >
-      {/* Thumbnail */}
-      <div className="relative w-full overflow-hidden bg-gray-100" style={{ aspectRatio: '16/10' }}>
+      {/* Thumbnail — rounded corners */}
+      <div className="relative w-full overflow-hidden bg-gray-100 rounded-2xl" style={{ aspectRatio: '16/10' }}>
         <img
           src={project.coverImage}
           alt={project.title}
@@ -214,50 +214,42 @@ const ProjectCard: React.FC<{ project: SuccessCase; onClick: () => void; index: 
           style={{ transform: hovered ? 'scale(1.06)' : 'scale(1)' }}
         />
 
-        {/* Hover overlay — Awwwards-style bottom info bar */}
+        {/* Hover overlay — title + arrow only (category is shown below, no duplication) */}
         <div
-          className="absolute inset-0 flex flex-col justify-end"
+          className="absolute inset-0 rounded-2xl flex flex-col justify-end"
           style={{
             background: hovered
-              ? 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.15) 60%, transparent 100%)'
+              ? 'linear-gradient(to top, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.12) 55%, transparent 100%)'
               : 'linear-gradient(to top, rgba(0,0,0,0) 0%, transparent 100%)',
             transition: 'background 0.4s ease',
           }}
         >
           <div
-            className="px-5 pb-5 flex items-end justify-between"
+            className="px-4 pb-4 flex items-end justify-between"
             style={{
               opacity: hovered ? 1 : 0,
               transform: hovered ? 'translateY(0)' : 'translateY(8px)',
               transition: 'opacity 0.35s ease, transform 0.35s ease',
             }}
           >
-            <div>
-              <span className="block text-[10px] font-bold text-white/70 uppercase tracking-widest mb-1">
-                {project.category}
-              </span>
-              <span className="block text-xl font-semibold text-white leading-tight">
-                {project.title}
-              </span>
-            </div>
-            <div className="flex items-center gap-2 ml-4 shrink-0">
-              {/* Arrow icon */}
-              <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
-                <ArrowUpRight className="w-4 h-4 text-white" />
-              </div>
+            <span className="text-lg font-semibold text-white leading-tight">
+              {project.title}
+            </span>
+            <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center ml-3 shrink-0">
+              <ArrowUpRight className="w-4 h-4 text-white" />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Below-image meta (always visible, minimal — no author since it's your portfolio) */}
-      <div className="pt-3 pb-1 px-0.5 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className="text-[11px] font-semibold text-gray-800">{project.title}</span>
-          <span className="text-[10px] text-gray-400">·</span>
-          <span className="text-[10px] text-gray-500">{project.category}</span>
+      {/* Below-image meta */}
+      <div className="pt-2.5 pb-0.5 px-0.5 flex items-center justify-between">
+        <div className="flex items-center gap-2 min-w-0">
+          <span className="text-[11px] font-semibold text-gray-800 truncate">{project.title}</span>
+          <span className="text-[10px] text-gray-400 shrink-0">·</span>
+          <span className="text-[10px] text-gray-500 truncate">{project.category}</span>
         </div>
-        <span className="text-[10px] text-gray-400 tabular-nums">{project.year}</span>
+        <span className="text-[10px] text-gray-400 tabular-nums shrink-0 ml-2">{project.year}</span>
       </div>
     </article>
   );
@@ -295,28 +287,26 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
 
   return (
     <div
-      className="fixed inset-0 z-[200] flex items-start justify-center overflow-y-auto"
-      style={{ background: 'rgba(0,0,0,0.88)', backdropFilter: 'blur(8px)' }}
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6"
+      style={{ background: 'rgba(0,0,0,0.88)', backdropFilter: 'blur(10px)' }}
       onClick={onClose}
     >
-      {/* Panel */}
+      {/* Panel — fixed max-height, no scroll, two-column on desktop */}
       <div
         ref={modalRef}
         onClick={e => e.stopPropagation()}
-        className="relative w-full max-w-4xl my-8 mx-4 bg-white rounded-2xl overflow-hidden shadow-2xl"
-        style={{ animation: 'modalSlideIn 0.45s cubic-bezier(0.16,1,0.3,1) forwards' }}
+        className="relative w-full bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
+        style={{
+          maxWidth: '960px',
+          maxHeight: '88vh',
+          animation: 'modalSlideIn 0.4s cubic-bezier(0.16,1,0.3,1) forwards',
+        }}
       >
-        {/* Close button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-black/10 backdrop-blur-md flex items-center justify-center hover:bg-black/20 transition-colors"
-          aria-label="Cerrar"
+        {/* ── LEFT: Image carousel ── */}
+        <div
+          className="relative bg-gray-100 flex-shrink-0 w-full md:w-[52%]"
+          style={{ minHeight: '200px', maxHeight: '88vh' }}
         >
-          <X className="w-5 h-5 text-gray-800" />
-        </button>
-
-        {/* Hero Image with navigation */}
-        <div className="relative w-full overflow-hidden bg-gray-100" style={{ aspectRatio: '16/9' }}>
           {project.images.map((src, idx) => (
             <img
               key={src}
@@ -326,89 +316,94 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
               className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
               style={{
                 opacity: idx === currentImg ? 1 : 0,
-                transform: idx === currentImg ? 'scale(1)' : 'scale(1.04)',
+                transform: idx === currentImg ? 'scale(1)' : 'scale(1.03)',
               }}
             />
           ))}
 
-          {/* Gradient overlay at bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-
-          {/* Title over image */}
-          <div className="absolute bottom-6 left-6 right-20">
-            <span className="block text-[11px] font-bold text-white/70 uppercase tracking-widest mb-1">
+          {/* Gradient + title */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent pointer-events-none" />
+          <div className="absolute bottom-4 left-5 right-5">
+            <span className="block text-[10px] font-semibold text-white/60 uppercase tracking-widest mb-0.5">
               {project.category}
             </span>
-            <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight">
+            <h2 className="text-2xl md:text-[1.6rem] font-semibold text-white leading-tight">
               {project.title}
             </h2>
           </div>
 
-          {/* Image counter */}
+          {/* Counter */}
           {project.images.length > 1 && (
-            <div className="absolute top-4 left-4 px-3 py-1 bg-black/30 backdrop-blur-md rounded-full text-[10px] font-bold text-white uppercase tracking-widest">
+            <div className="absolute top-4 left-4 px-2.5 py-1 bg-black/30 backdrop-blur-md rounded-full text-[10px] font-bold text-white tracking-widest">
               {currentImg + 1} / {project.images.length}
             </div>
           )}
 
-          {/* Carousel arrows */}
+          {/* Arrows */}
           {project.images.length > 1 && (
             <>
-              <button
-                onClick={prev}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/40 transition-all z-30"
-              >
-                <ChevronLeft className="w-5 h-5" />
+              <button onClick={prev} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/40 transition-all z-30">
+                <ChevronLeft className="w-4 h-4" />
               </button>
-              <button
-                onClick={next}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/40 transition-all z-30"
-              >
-                <ChevronRight className="w-5 h-5" />
+              <button onClick={next} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/40 transition-all z-30">
+                <ChevronRight className="w-4 h-4" />
               </button>
             </>
           )}
+
+          {/* Thumbnail strip — overlaid on image bottom */}
+          {project.images.length > 1 && (
+            <div
+              className="absolute bottom-0 left-0 right-0 flex gap-1.5 px-4 pb-3 pt-8 overflow-x-auto scrollbar-none"
+              style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%)' }}
+            >
+              {project.images.map((src, idx) => (
+                <button
+                  key={src}
+                  onClick={() => setCurrentImg(idx)}
+                  className="flex-shrink-0 rounded-md overflow-hidden transition-all duration-300"
+                  style={{
+                    width: '44px',
+                    height: '30px',
+                    outline: idx === currentImg ? '2px solid rgba(255,255,255,0.9)' : '2px solid transparent',
+                    outlineOffset: '2px',
+                    opacity: idx === currentImg ? 1 : 0.5,
+                  }}
+                >
+                  <img src={src} alt="" className="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
-        {/* Thumbnail strip */}
-        {project.images.length > 1 && (
-          <div className="flex gap-2 px-6 pt-4 overflow-x-auto scrollbar-none">
-            {project.images.map((src, idx) => (
-              <button
-                key={src}
-                onClick={() => setCurrentImg(idx)}
-                className="flex-shrink-0 rounded-lg overflow-hidden border-2 transition-all duration-300"
-                style={{
-                  width: '80px',
-                  height: '52px',
-                  borderColor: idx === currentImg ? '#111' : 'transparent',
-                  opacity: idx === currentImg ? 1 : 0.55,
-                }}
-              >
-                <img src={src} alt="" className="w-full h-full object-cover" />
-              </button>
-            ))}
-          </div>
-        )}
+        {/* ── RIGHT: Info panel ── */}
+        <div className="flex flex-col flex-1 min-h-0">
+          {/* Close button */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 z-50 w-9 h-9 rounded-full bg-black/8 flex items-center justify-center hover:bg-black/15 transition-colors"
+            aria-label="Cerrar"
+          >
+            <X className="w-4 h-4 text-gray-700" />
+          </button>
 
-        {/* Content */}
-        <div className="px-6 py-6 md:px-8 md:py-8">
-          {/* Description */}
-          <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-8 max-w-2xl">
-            {project.description}
-          </p>
+          <div className="flex flex-col justify-between h-full p-6 md:p-7 gap-5">
+            {/* Description */}
+            <p className="text-gray-600 leading-relaxed text-sm md:text-[0.9rem]">
+              {project.description}
+            </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             {/* Services */}
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 block">
+              <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-2 block">
                 Servicios Realizados
               </span>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {project.services.map((s, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-xs text-gray-700 font-medium"
+                    className="px-2.5 py-1 bg-gray-50 border border-gray-200 rounded-full text-[11px] text-gray-700 font-medium"
                   >
                     {s}
                   </span>
@@ -418,34 +413,34 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
 
             {/* Outcome */}
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 block">
+              <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-2 block">
                 Impacto Logrado
               </span>
               <p className="text-sm text-gray-700 leading-relaxed font-medium">
                 "{project.outcome}"
               </p>
             </div>
-          </div>
 
-          {/* CTA */}
-          <div className="pt-4 border-t border-gray-100 flex items-center justify-between gap-4">
-            <span className="text-xs text-gray-400">{project.year} · Motions</span>
-            <a
-              href="#contacto"
-              onClick={onClose}
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-black text-white text-sm font-semibold rounded-full hover:bg-neutral-800 transition-all hover:scale-[1.03] active:scale-95"
-            >
-              Trabajar juntos
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
+            {/* CTA */}
+            <div className="pt-4 border-t border-gray-100 flex items-center justify-between gap-3 mt-auto">
+              <span className="text-[11px] text-gray-400">{project.year} · Motions</span>
+              <a
+                href="#contacto"
+                onClick={onClose}
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white text-sm font-semibold rounded-full hover:bg-neutral-800 transition-all hover:scale-[1.03] active:scale-95"
+              >
+                Trabajar juntos
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       <style>{`
         @keyframes modalSlideIn {
-          from { opacity: 0; transform: translateY(24px) scale(0.97); }
-          to { opacity: 1; transform: translateY(0) scale(1); }
+          from { opacity: 0; transform: scale(0.96) translateY(16px); }
+          to   { opacity: 1; transform: scale(1) translateY(0); }
         }
         .scrollbar-none::-webkit-scrollbar { display: none; }
         .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
