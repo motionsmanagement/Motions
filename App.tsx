@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import RecentWorks from './components/RecentWorks';
 import SuccessStories from './components/SuccessStories';
 import FinalCTA from './components/FinalCTA';
 import AdBanner from './components/AdBanner';
@@ -57,9 +56,8 @@ const HomePage: React.FC = () => {
       <main>
         <Hero />
         <Services />
-        <RecentWorks />
-        <FinalCTA />
         <SuccessStories />
+        <FinalCTA />
         <AdBanner />
       </main>
       <Footer />
