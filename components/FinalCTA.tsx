@@ -69,7 +69,6 @@ const FinalCTA: React.FC = () => {
               alt="Motions Portfolio" 
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
           </div>
 
           {/* Right Side: Form */}
@@ -92,12 +91,12 @@ const FinalCTA: React.FC = () => {
               </div>
             ) : (
               <>
-                <div className="mb-8">
+                <div className="mb-8 text-left">
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium leading-tight tracking-tight text-black mb-4">
                     ¿Hablamos de tu proyecto?
                   </h2>
-                  <p className="text-gray-400 text-sm md:text-base font-light">
-                    Déjanos tus datos y te llamaremos en menos de 24h.
+                  <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed max-w-sm">
+                    Potenciamos tu marca para que los clientes elijan tu restaurante por encima de la competencia.
                   </p>
                 </div>
 
@@ -140,13 +139,13 @@ const FinalCTA: React.FC = () => {
 
                   <div className="space-y-3">
                     <label className="text-[10px] font-normal text-gray-400 uppercase tracking-widest pl-1">¿En qué podemos ayudarte?</label>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap md:flex-nowrap gap-1.5 md:gap-2">
                       {servicesList.map((service) => (
                         <button
                           key={service}
                           type="button"
                           onClick={() => toggleService(service)}
-                          className={`px-4 py-2 rounded-full text-[11px] font-semibold border transition-all duration-300 ${
+                          className={`px-3 md:px-4 py-2 rounded-full text-[10px] md:text-[11px] font-semibold border transition-all duration-300 whitespace-nowrap ${
                             selectedServices.includes(service)
                               ? "bg-black border-black text-white"
                               : "bg-gray-50 border-gray-100 text-gray-500 hover:border-black/20"

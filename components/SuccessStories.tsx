@@ -469,10 +469,11 @@ const SuccessStories: React.FC = () => {
   return (
     <>
       <section
-        id="proyectos"
-        ref={ref}
-        className="py-24 bg-[#F7F7F5] font-['Inter']"
-      >
+      id="proyectos"
+      ref={ref}
+      className="relative py-24 bg-white overflow-hidden font-['Inter']"
+    >
+      <div className={`transition-all duration-700 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           {/* Header spacer */}
@@ -537,7 +538,8 @@ const SuccessStories: React.FC = () => {
             </div>
           )}
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Modal */}
       {activeProject && (
