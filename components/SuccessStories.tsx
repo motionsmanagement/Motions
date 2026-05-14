@@ -287,26 +287,31 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
 
   return (
     <div
-      className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6"
+      className="fixed inset-0 z-[200] flex items-start justify-center overflow-y-auto p-4 sm:p-6"
       style={{ background: 'rgba(0,0,0,0.88)', backdropFilter: 'blur(10px)' }}
       onClick={onClose}
     >
-      {/* Panel — fixed max-height, no scroll, two-column on desktop */}
+      {/* Panel — vertical scroll, fixed within popup container */}
       <div
         ref={modalRef}
         onClick={e => e.stopPropagation()}
-        className="relative w-full bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
+        className="relative w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col"
         style={{
-          maxWidth: '960px',
-          maxHeight: '88vh',
+          maxHeight: 'none',
           animation: 'modalSlideIn 0.4s cubic-bezier(0.16,1,0.3,1) forwards',
         }}
       >
-        {/* ── LEFT: Image carousel ── */}
-        <div
-          className="relative bg-gray-100 flex-shrink-0 w-full md:w-[52%]"
-          style={{ minHeight: '200px', maxHeight: '88vh' }}
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-black/10 backdrop-blur-md flex items-center justify-center hover:bg-black/20 transition-colors"
+          aria-label="Cerrar"
         >
+          <X className="w-5 h-5 text-gray-800" />
+        </button>
+
+        {/* Hero Image with navigation */}
+        <div className="relative w-full overflow-hidden bg-gray-100" style={{ aspectRatio: '16/9' }}>
           {project.images.map((src, idx) => (
             <img
               key={src}
@@ -321,20 +326,11 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
             />
           ))}
 
-          {/* Gradient + title */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent pointer-events-none" />
-          <div className="absolute bottom-4 left-5 right-5">
-            <span className="block text-[10px] font-semibold text-white/60 uppercase tracking-widest mb-0.5">
-              {project.category}
-            </span>
-            <h2 className="text-2xl md:text-[1.6rem] font-semibold text-white leading-tight">
-              {project.title}
-            </h2>
-          </div>
-
-          {/* Counter */}
+          {/* Gradient + counter */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+          
           {project.images.length > 1 && (
-            <div className="absolute top-4 left-4 px-2.5 py-1 bg-black/30 backdrop-blur-md rounded-full text-[10px] font-bold text-white tracking-widest">
+            <div className="absolute top-4 left-4 px-3 py-1 bg-black/30 backdrop-blur-md rounded-full text-[10px] font-bold text-white tracking-widest">
               {currentImg + 1} / {project.images.length}
             </div>
           )}
@@ -342,31 +338,41 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
           {/* Arrows */}
           {project.images.length > 1 && (
             <>
-              <button onClick={prev} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/40 transition-all z-30">
-                <ChevronLeft className="w-4 h-4" />
+              <button onClick={prev} className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/40 transition-all z-30">
+                <ChevronLeft className="w-5 h-5" />
               </button>
-              <button onClick={next} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/40 transition-all z-30">
-                <ChevronRight className="w-4 h-4" />
+              <button onClick={next} className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/40 transition-all z-30">
+                <ChevronRight className="w-5 h-5" />
               </button>
             </>
           )}
+        </div>
 
-          {/* Thumbnail strip — overlaid on image bottom */}
+        {/* Content area */}
+        <div className="p-6 md:p-10 lg:p-12 flex flex-col">
+          {/* Header info */}
+          <div className="mb-10">
+            <span className="block text-[11px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-3">
+              {project.category}
+            </span>
+            <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-[1.2] tracking-tight">
+              {project.title}
+            </h2>
+          </div>
+
+          {/* Thumbnail strip */}
           {project.images.length > 1 && (
-            <div
-              className="absolute bottom-0 left-0 right-0 flex gap-1.5 px-4 pb-3 pt-8 overflow-x-auto scrollbar-none"
-              style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%)' }}
-            >
+            <div className="flex gap-2 mb-12 overflow-x-auto scrollbar-none">
               {project.images.map((src, idx) => (
                 <button
                   key={src}
                   onClick={() => setCurrentImg(idx)}
-                  className="flex-shrink-0 rounded-md overflow-hidden transition-all duration-300"
+                  className="flex-shrink-0 rounded-xl overflow-hidden transition-all duration-300"
                   style={{
-                    width: '44px',
-                    height: '30px',
-                    outline: idx === currentImg ? '2px solid rgba(255,255,255,0.9)' : '2px solid transparent',
-                    outlineOffset: '2px',
+                    width: '100px',
+                    height: '64px',
+                    outline: idx === currentImg ? '2px solid #111' : '2px solid transparent',
+                    outlineOffset: '3px',
                     opacity: idx === currentImg ? 1 : 0.5,
                   }}
                 >
@@ -375,35 +381,25 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
               ))}
             </div>
           )}
-        </div>
 
-        {/* ── RIGHT: Info panel ── */}
-        <div className="flex flex-col flex-1 min-h-0">
-          {/* Close button */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 z-50 w-9 h-9 rounded-full bg-black/8 flex items-center justify-center hover:bg-black/15 transition-colors"
-            aria-label="Cerrar"
-          >
-            <X className="w-4 h-4 text-gray-700" />
-          </button>
-
-          <div className="flex flex-col justify-between h-full p-6 md:p-7 gap-5">
-            {/* Description */}
-            <p className="text-gray-600 leading-relaxed text-sm md:text-[0.9rem]">
+          {/* Description */}
+          <div className="max-w-2xl mb-12">
+            <p className="text-gray-600 leading-relaxed text-base md:text-lg">
               {project.description}
             </p>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 border-t border-gray-100 pt-12">
             {/* Services */}
             <div>
-              <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-2 block">
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 block">
                 Servicios Realizados
               </span>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-2">
                 {project.services.map((s, i) => (
                   <span
                     key={i}
-                    className="px-2.5 py-1 bg-gray-50 border border-gray-200 rounded-full text-[11px] text-gray-700 font-medium"
+                    className="px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-xs text-gray-700 font-medium"
                   >
                     {s}
                   </span>
@@ -413,34 +409,34 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
 
             {/* Outcome */}
             <div>
-              <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-2 block">
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 block">
                 Impacto Logrado
               </span>
-              <p className="text-sm text-gray-700 leading-relaxed font-medium">
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed font-medium">
                 "{project.outcome}"
               </p>
             </div>
+          </div>
 
-            {/* CTA */}
-            <div className="pt-4 border-t border-gray-100 flex items-center justify-between gap-3 mt-auto">
-              <span className="text-[11px] text-gray-400">{project.year} · Motions</span>
-              <a
-                href="#contacto"
-                onClick={onClose}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white text-sm font-semibold rounded-full hover:bg-neutral-800 transition-all hover:scale-[1.03] active:scale-95"
-              >
-                Trabajar juntos
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
-            </div>
+          {/* Footer CTA */}
+          <div className="flex items-center justify-between gap-4 py-8 border-t border-gray-100">
+            <span className="text-xs text-gray-400 font-medium">{project.year} · Motions Management</span>
+            <a
+              href="#contacto"
+              onClick={onClose}
+              className="inline-flex items-center gap-3 px-8 py-3.5 bg-black text-white text-sm font-bold rounded-full hover:bg-neutral-800 transition-all hover:scale-[1.03] active:scale-95 shadow-xl"
+            >
+              Trabajar juntos
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </div>
 
       <style>{`
         @keyframes modalSlideIn {
-          from { opacity: 0; transform: scale(0.96) translateY(16px); }
-          to   { opacity: 1; transform: scale(1) translateY(0); }
+          from { opacity: 0; transform: translateY(32px); }
+          to   { opacity: 1; transform: translateY(0); }
         }
         .scrollbar-none::-webkit-scrollbar { display: none; }
         .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
