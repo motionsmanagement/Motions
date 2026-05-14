@@ -56,6 +56,7 @@ const HomePage: React.FC = () => {
       <main>
         <Hero />
         <Services />
+        <AdBanner />
         <SuccessStories />
         <FinalCTA />
       </main>
