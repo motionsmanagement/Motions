@@ -167,6 +167,11 @@ const Services: React.FC = () => {
             <div className={`max-w-7xl mx-auto transition-all duration-700 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 {/* Header Section */}
                 <div className="mb-20 text-balance flex flex-col items-center md:items-start text-center md:text-left">
+                    <div className="inline-flex items-center bg-gray-50 border border-gray-200 px-4 py-1.5 rounded-full mb-6">
+                        <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                            Nuestras Soluciones
+                        </span>
+                    </div>
                     <h2 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1] mb-6">
                         Impulsa el crecimiento<br />
                         digital de tu restaurante.

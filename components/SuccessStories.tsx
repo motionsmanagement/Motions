@@ -485,9 +485,17 @@ const SuccessStories: React.FC = () => {
               transition: 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)',
             }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-[3.25rem] font-medium tracking-tight text-[#111] leading-[1.3] mb-4">
+            <div className="inline-flex items-center bg-gray-50 border border-gray-100 px-4 py-1.5 rounded-full mb-6">
+              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                Nuestra Trayectoria
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.1] mb-6">
               Proyectos con impacto,<br />resultados visibles.
             </h2>
+            <p className="text-base md:text-lg text-gray-500 max-w-2xl leading-relaxed">
+              Cada proyecto es una oportunidad para transformar la visión de nuestros clientes en una realidad digital impactante.
+            </p>
           </div>
 
           {/* Grid */}
@@ -514,7 +522,7 @@ const SuccessStories: React.FC = () => {
             >
               <button
                 onClick={() => setShowAll(true)}
-                className="flex items-center gap-3 px-8 py-3.5 border border-gray-300 text-gray-700 bg-white rounded-full text-sm font-semibold hover:border-gray-900 hover:text-gray-900 transition-all hover:scale-[1.03] active:scale-95 shadow-sm"
+                className="flex items-center gap-3 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-[1.03] active:scale-95 shadow-lg"
               >
                 Ver todos los proyectos
               </button>
