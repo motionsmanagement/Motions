@@ -1,491 +1,578 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ArrowUpRight, CheckCircle2, TrendingUp, ChevronRight, MessageSquare, Activity, Users, Target, MousePointer2, Smartphone, BarChart3, Star, MapPin, Search, ChevronLeft } from 'lucide-react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { X, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
-interface SuccessMetric {
-    label: string;
-    value: string;
-    icon: React.ElementType;
-}
-
+/* ─── Types ─────────────────────────────────────────────── */
 interface SuccessCase {
-    id: string;
-    title: string;
-    year: string;
-    location: string;
-    images: string[];
-    description: string;
-    metrics: SuccessMetric[];
-    graphicType: 'performance' | 'visibility' | 'conversion' | 'reputation' | 'brand' | 'reach';
-    services: string[];
-    outcome: string;
+  id: string;
+  title: string;
+  category: string;
+  year: string;
+  coverImage: string;
+  images: string[];
+  description: string;
+  services: string[];
+  outcome: string;
 }
 
-const Gem = ({ size, strokeWidth, color }: any) => (
-  <Activity size={size} strokeWidth={strokeWidth} color={color} />
-);
-
+/* ─── Data ───────────────────────────────────────────────── */
 const successCases: SuccessCase[] = [
-    {
-        id: '03',
-        title: 'Kizuna',
-        year: '2025',
-        location: 'Estrategia SEO & Identidad',
-        images: [
-            '/Proyectos/Kizuna/motionsk1.jpg',
-            '/Proyectos/Kizuna/motionsk.jpg',
-            '/Proyectos/Kizuna/motionsk2.jpg',
-            '/Proyectos/Kizuna/motionsk3.jpg'
-        ],
-        description: 'Diseño de una identidad visual inspirada en la tradición japonesa con un toque contemporáneo. Implementamos un sistema de diseño gráfico integral que abarca la carta del restaurante, señalética y elementos corporativos, enfocándonos en la elegancia y la legibilidad.',
-        graphicType: 'visibility',
-        metrics: [
-            { label: 'Búsquedas', value: '+5.2k', icon: Search },
-            { label: 'Reservas', value: '+25%', icon: CheckCircle2 }
-        ],
-        services: ['Identidad Visual', 'Diseño de Menú', 'SEO Local', 'Diseño de Señalética'],
-        outcome: 'Aumento significativo en la visibilidad local y una imagen de marca coherente y profesional.'
-    },
-    {
-        id: '01',
-        title: 'Burger Cartel',
-        year: '2025',
-        location: 'Branding & Identidad',
-        images: [
-            '/Proyectos/burger cartel/motionsbc1.jpg',
-            '/Proyectos/burger cartel/bcmotions.jpg',
-            '/Proyectos/burger cartel/motionsbc (2).jpg',
-            '/Proyectos/burger cartel/motionsbc3.jpg'
-        ],
-        description: 'Renovación integral de la identidad visual para destacar en el competitivo mercado de las smash burgers. Desarrollamos desde el Naming hasta el diseño estratégico del menú, papelería y soportes físicos, logrando una imagen de marca potente y coherente.',
-        graphicType: 'brand',
-        metrics: [
-            { label: 'Reconocimiento', value: '+35%', icon: Target },
-            { label: 'Visitas', value: '+22%', icon: TrendingUp }
-        ],
-        services: ['Naming', 'Diseño de Logo', 'Identidad Visual', 'Diseño de Menú'],
-        outcome: 'Identidad visual impactante que ha posicionado a la marca como referente en redes sociales.'
-    },
-    {
-        id: '02',
-        title: 'Lagotto',
-        year: '2025',
-        location: 'Diseño de Marca 360º',
-        images: [
-            '/Proyectos/Lagotto/motionsl1.jpg',
-            '/Proyectos/Lagotto/motionsl.jpg',
-            '/Proyectos/Lagotto/motionsl2.jpg',
-            '/Proyectos/Lagotto/motionsl3.jpg',
-            '/Proyectos/Lagotto/motionsl4.jpg',
-            '/Proyectos/Lagotto/motionsl5.jpg',
-            '/Proyectos/Lagotto/motionsl7.jpg'
-        ],
-        description: 'Llevamos la sofisticación de Lagotto a cada punto de contacto con el cliente: desde el diseño editorial de sus cartas hasta la identidad visual en merchandising y etiquetas de vino premium. Una experiencia de marca 360º diseñada para el comensal más exigente.',
-        graphicType: 'reputation',
-        metrics: [
-            { label: 'Interacciones', value: '+45%', icon: Users },
-            { label: 'Visitas', value: '+28%', icon: MousePointer2 }
-        ],
-        services: ['Branding Integral', 'Diseño Merchandising', 'Carta de Vinos', 'Diseño Social Media'],
-        outcome: 'Ecosistema visual premium que refuerza el posicionamiento de lujo del restaurante.'
-    },
-    {
-        id: '04',
-        title: 'Rancho',
-        year: '2025',
-        location: 'Branding & Packaging',
-        images: [
-            '/Proyectos/Rancho/motionsr1.jpg',
-            '/Proyectos/Rancho/morionsr4.jpg',
-            '/Proyectos/Rancho/motionsr2.jpg',
-            '/Proyectos/Rancho/motionsr3.jpg'
-        ],
-        description: 'Construcción de una marca vibrante que celebra la autenticidad mexicana. Desarrollamos la identidad visual completa, incluyendo el diseño de packaging premium para sus salsas picantes, papelería corporativa y merchandising de local.',
-        graphicType: 'brand',
-        metrics: [
-            { label: 'Soportes Físicos', value: '8+', icon: Target },
-            { label: 'Activos de Marca', value: '40+', icon: Star }
-        ],
-        services: ['Identidad Visual', 'Diseño de Packaging', 'Bolsas y Merch', 'Evolución de Logo'],
-        outcome: 'Un diseño de marca y packaging con personalidad que enamora a primera vista del consumidor.'
-    },
-    {
-        id: '05',
-        title: 'Chompo',
-        year: '2025',
-        location: 'UX Design & Contenido',
-        images: [
-            '/Proyectos/chompo/motionscc1.jpg',
-            '/Proyectos/chompo/motionscc3.jpg',
-            '/Proyectos/chompo/motionscc5.jpg',
-            '/Proyectos/chompo/motionscc6.jpg',
-            '/Proyectos/chompo/motionscc8.jpg'
-        ],
-        description: 'Impulsamos la presencia digital de Chompo capturando la esencia de sus productos mediante contenido visual de alto impacto y una interfaz de usuario optimizada para simplificar el proceso de pedido y aumentar la recurrencia.',
-        graphicType: 'performance',
-        metrics: [
-            { label: 'Exp. Usuario', value: '98%', icon: Target },
-            { label: 'Alcance', value: '+120k', icon: Activity },
-            { label: 'Visitas', value: '+24%', icon: TrendingUp }
-        ],
-        services: ['Diseño UX/UI', 'Fotografía Gastronómica', 'Social Media Ads', 'Diseño de Banners Web'],
-        outcome: 'Plataforma digital optimizada que reduce la fricción en el pedido y aumenta el ticket medio.'
-    },
-    {
-        id: '06',
-        title: 'Franks',
-        year: '2025',
-        location: 'Gráficos de Local & Digital',
-        images: [
-            '/Proyectos/Franks/motionsf1.jpg',
-            '/Proyectos/Franks/motionsf2.jpg',
-            '/Proyectos/Franks/motionsf3.jpg',
-            '/Proyectos/Franks/motionsf4.jpg'
-        ],
-        description: 'Fusionamos estética industrial y elegancia asiática a través del diseño. Intervinimos el espacio físico con gráficos en cristales y señalética personalizada, complementado con el diseño de soportes digitales y banners estratégicos para su canal de ventas online.',
-        graphicType: 'reach',
-        metrics: [
-            { label: 'Visitas Local', value: '+25%', icon: MapPin },
-            { label: 'Clicks', value: '+12%', icon: Target }
-        ],
-        services: ['Señalética', 'Gráficos para Local', 'Banners Web', 'Branding Steakhouse'],
-        outcome: 'Un concepto visual alternativo y sofisticado que se traslada del local a la web.'
-    },
-    {
-        id: '07',
-        title: 'Blum',
-        year: '2025',
-        location: 'Identidad & Fotografía',
-        images: [
-            '/Proyectos/blum/motionsb1.jpg',
-            '/Proyectos/blum/motionsb.jpg',
-            '/Proyectos/blum/motionsb3.jpg'
-        ],
-        description: 'Redefinimos la cultura del café a través del diseño y la imagen. Realizamos el rediseño total de la identidad visual, centrándonos en la experiencia física de consumo (vasos, tickets, bolsas) y potenciando su alcance digital mediante fotografía profesional.',
-        graphicType: 'visibility',
-        metrics: [
-            { label: 'Seguidores', value: '+2.4k', icon: Users },
-            { label: 'Impresiones', value: '+80k', icon: Search },
-            { label: 'Estética', value: 'Premium', icon: Gem }
-        ],
-        services: ['Rediseño Identidad', 'Diseño Packaging', 'Fotografía de Producto', 'Contenido Instagram'],
-        outcome: 'Identidad refrescada que conecta con el público joven y potencia el "shareability" en redes.'
-    },
-    {
-        id: '08',
-        title: 'Lungo',
-        year: '2025',
-        location: 'Branding Minimalista',
-        images: [
-            '/Proyectos/lungo/motionsll1.jpg',
-            '/Proyectos/lungo/motionsll3.jpg',
-            '/Proyectos/lungo/motionsll4.jpg',
-            '/Proyectos/lungo/motionsll5.jpg'
-        ],
-        description: 'Diseño de posters y elementos gráficos que elevan la experiencia diaria del café. Trabajamos en la evolución de su logotipo y en la aplicación de la marca sobre soportes de consumo masivo, manteniendo una estética minimalista y funcional.',
-        graphicType: 'brand',
-        metrics: [
-            { label: 'Fidelización', value: '+45%', icon: Users },
-            { label: 'Diseños', value: '12+', icon: Target },
-            { label: 'Ventas T/A', value: '+18%', icon: TrendingUp }
-        ],
-        services: ['Evolución de Logo', 'Diseño de Posters', 'Branding de Vasos', 'Identidad Corporativa'],
-        outcome: 'Consistencia visual en todos los soportes físicos para una marca de café de especialidad.'
-    },
-    {
-        id: '09',
-        title: 'Spark',
-        year: '2025',
-        location: 'Packaging & Estrategia',
-        images: [
-            '/Proyectos/spark/motionss1.jpg',
-            '/Proyectos/spark/motionss2.jpg',
-            '/Proyectos/spark/motionss4.jpg',
-            '/Proyectos/spark/motionss6.jpg'
-        ],
-        description: 'Posicionamos a Spark como referente en el mercado de Cold Brew mediante un diseño gráfico premium para su packaging. Desarrollamos la identidad de su producto estrella y creamos campañas visuales para redes sociales que resaltan la calidad del producto.',
-        graphicType: 'visibility',
-        metrics: [
-            { label: 'Retailers', value: '12+', icon: MapPin },
-            { label: 'Alcance', value: '+50k', icon: Users },
-            { label: 'Engagement', value: '+65%', icon: Activity }
-        ],
-        services: ['Diseño de Botella', 'Diseño de Logo', 'Posters de Campaña', 'Estrategia Instagram'],
-        outcome: 'Packaging icónico que facilita la entrada del producto en tiendas gourmet y retail.'
-    }
+  {
+    id: 'kizuna',
+    title: 'Kizuna',
+    category: 'Identidad Visual & SEO',
+    year: '2025',
+    coverImage: '/Proyectos/Kizuna/motionsk1.jpg',
+    images: [
+      '/Proyectos/Kizuna/motionsk1.jpg',
+      '/Proyectos/Kizuna/motionsk.jpg',
+      '/Proyectos/Kizuna/motionsk2.jpg',
+      '/Proyectos/Kizuna/motionsk3.jpg',
+    ],
+    description:
+      'Diseño de una identidad visual inspirada en la tradición japonesa con un toque contemporáneo. Implementamos un sistema de diseño gráfico integral que abarca la carta del restaurante, señalética y elementos corporativos, enfocándonos en la elegancia y la legibilidad.',
+    services: ['Identidad Visual', 'Diseño de Menú', 'SEO Local', 'Diseño de Señalética'],
+    outcome:
+      'Aumento significativo en la visibilidad local y una imagen de marca coherente y profesional que conecta con el cliente.',
+  },
+  {
+    id: 'burger-cartel',
+    title: 'Burger Cartel',
+    category: 'Branding & Identidad',
+    year: '2025',
+    coverImage: '/Proyectos/burger cartel/motionsbc1.jpg',
+    images: [
+      '/Proyectos/burger cartel/motionsbc1.jpg',
+      '/Proyectos/burger cartel/bcmotions.jpg',
+      '/Proyectos/burger cartel/motionsbc (2).jpg',
+      '/Proyectos/burger cartel/motionsbc3.jpg',
+    ],
+    description:
+      'Renovación integral de la identidad visual para destacar en el competitivo mercado de las smash burgers. Desarrollamos desde el Naming hasta el diseño estratégico del menú, papelería y soportes físicos, logrando una imagen de marca potente y coherente.',
+    services: ['Naming', 'Diseño de Logo', 'Identidad Visual', 'Diseño de Menú'],
+    outcome:
+      'Identidad visual impactante que ha posicionado a la marca como referente en redes sociales y potenciado el reconocimiento de marca.',
+  },
+  {
+    id: 'lagotto',
+    title: 'Lagotto',
+    category: 'Diseño de Marca 360º',
+    year: '2025',
+    coverImage: '/Proyectos/Lagotto/motionsl1.jpg',
+    images: [
+      '/Proyectos/Lagotto/motionsl1.jpg',
+      '/Proyectos/Lagotto/motionsl.jpg',
+      '/Proyectos/Lagotto/motionsl2.jpg',
+      '/Proyectos/Lagotto/motionsl3.jpg',
+      '/Proyectos/Lagotto/motionsl4.jpg',
+      '/Proyectos/Lagotto/motionsl5.jpg',
+      '/Proyectos/Lagotto/motionsl7.jpg',
+    ],
+    description:
+      'Llevamos la sofisticación de Lagotto a cada punto de contacto con el cliente: desde el diseño editorial de sus cartas hasta la identidad visual en merchandising y etiquetas de vino premium. Una experiencia de marca 360º diseñada para el comensal más exigente.',
+    services: ['Branding Integral', 'Diseño Merchandising', 'Carta de Vinos', 'Diseño Social Media'],
+    outcome:
+      'Ecosistema visual premium que refuerza el posicionamiento de lujo del restaurante y eleva la experiencia del cliente.',
+  },
+  {
+    id: 'rancho',
+    title: 'Rancho',
+    category: 'Branding & Packaging',
+    year: '2025',
+    coverImage: '/Proyectos/Rancho/motionsr1.jpg',
+    images: [
+      '/Proyectos/Rancho/motionsr1.jpg',
+      '/Proyectos/Rancho/morionsr4.jpg',
+      '/Proyectos/Rancho/motionsr2.jpg',
+      '/Proyectos/Rancho/motionsr3.jpg',
+    ],
+    description:
+      'Construcción de una marca vibrante que celebra la autenticidad mexicana. Desarrollamos la identidad visual completa, incluyendo el diseño de packaging premium para sus salsas picantes, papelería corporativa y merchandising de local.',
+    services: ['Identidad Visual', 'Diseño de Packaging', 'Bolsas y Merch', 'Evolución de Logo'],
+    outcome:
+      'Un diseño de marca y packaging con personalidad que enamora a primera vista del consumidor y destaca en el punto de venta.',
+  },
+  {
+    id: 'chompo',
+    title: 'Chompo',
+    category: 'UX Design & Contenido',
+    year: '2025',
+    coverImage: '/Proyectos/chompo/motionscc1.jpg',
+    images: [
+      '/Proyectos/chompo/motionscc1.jpg',
+      '/Proyectos/chompo/motionscc3.jpg',
+      '/Proyectos/chompo/motionscc5.jpg',
+      '/Proyectos/chompo/motionscc6.jpg',
+      '/Proyectos/chompo/motionscc8.jpg',
+    ],
+    description:
+      'Impulsamos la presencia digital de Chompo capturando la esencia de sus productos mediante contenido visual de alto impacto y una interfaz de usuario optimizada para simplificar el proceso de pedido y aumentar la recurrencia.',
+    services: ['Diseño UX/UI', 'Fotografía Gastronómica', 'Social Media Ads', 'Diseño de Banners Web'],
+    outcome:
+      'Plataforma digital optimizada que reduce la fricción en el pedido y aumenta el ticket medio en un entorno altamente competitivo.',
+  },
+  {
+    id: 'franks',
+    title: 'Franks',
+    category: 'Gráficos de Local & Digital',
+    year: '2025',
+    coverImage: '/Proyectos/Franks/motionsf1.jpg',
+    images: [
+      '/Proyectos/Franks/motionsf1.jpg',
+      '/Proyectos/Franks/motionsf2.jpg',
+      '/Proyectos/Franks/motionsf3.jpg',
+      '/Proyectos/Franks/motionsf4.jpg',
+    ],
+    description:
+      'Fusionamos estética industrial y elegancia asiática a través del diseño. Intervinimos el espacio físico con gráficos en cristales y señalética personalizada, complementado con el diseño de soportes digitales y banners estratégicos.',
+    services: ['Señalética', 'Gráficos para Local', 'Banners Web', 'Branding Steakhouse'],
+    outcome:
+      'Un concepto visual alternativo y sofisticado que se traslada del local a la web creando una experiencia de marca coherente.',
+  },
+  {
+    id: 'blum',
+    title: 'Blum',
+    category: 'Identidad & Fotografía',
+    year: '2025',
+    coverImage: '/Proyectos/blum/motionsb1.jpg',
+    images: [
+      '/Proyectos/blum/motionsb1.jpg',
+      '/Proyectos/blum/motionsb.jpg',
+      '/Proyectos/blum/motionsb3.jpg',
+    ],
+    description:
+      'Redefinimos la cultura del café a través del diseño y la imagen. Realizamos el rediseño total de la identidad visual, centrándonos en la experiencia física de consumo (vasos, tickets, bolsas) y potenciando su alcance digital mediante fotografía profesional.',
+    services: ['Rediseño Identidad', 'Diseño Packaging', 'Fotografía de Producto', 'Contenido Instagram'],
+    outcome:
+      'Identidad refrescada que conecta con el público joven y potencia el \"shareability\" en redes sociales.',
+  },
+  {
+    id: 'lungo',
+    title: 'Lungo',
+    category: 'Branding Minimalista',
+    year: '2025',
+    coverImage: '/Proyectos/lungo/motionsll1.jpg',
+    images: [
+      '/Proyectos/lungo/motionsll1.jpg',
+      '/Proyectos/lungo/motionsll3.jpg',
+      '/Proyectos/lungo/motionsll4.jpg',
+      '/Proyectos/lungo/motionsll5.jpg',
+    ],
+    description:
+      'Diseño de posters y elementos gráficos que elevan la experiencia diaria del café. Trabajamos en la evolución de su logotipo y en la aplicación de la marca sobre soportes de consumo masivo, manteniendo una estética minimalista y funcional.',
+    services: ['Evolución de Logo', 'Diseño de Posters', 'Branding de Vasos', 'Identidad Corporativa'],
+    outcome:
+      'Consistencia visual en todos los soportes físicos para una marca de café de especialidad que aspira a escalar.',
+  },
+  {
+    id: 'spark',
+    title: 'Spark',
+    category: 'Packaging & Estrategia',
+    year: '2025',
+    coverImage: '/Proyectos/spark/motionss1.jpg',
+    images: [
+      '/Proyectos/spark/motionss1.jpg',
+      '/Proyectos/spark/motionss2.jpg',
+      '/Proyectos/spark/motionss4.jpg',
+      '/Proyectos/spark/motionss6.jpg',
+    ],
+    description:
+      'Posicionamos a Spark como referente en el mercado de Cold Brew mediante un diseño gráfico premium para su packaging. Desarrollamos la identidad de su producto estrella y creamos campañas visuales para redes sociales que resaltan la calidad del producto.',
+    services: ['Diseño de Botella', 'Diseño de Logo', 'Posters de Campaña', 'Estrategia Instagram'],
+    outcome:
+      'Packaging icónico que facilita la entrada del producto en tiendas gourmet y retail de toda España.',
+  },
 ];
 
+/* ─── Project Card (Grid Item) ───────────────────────────── */
+const ProjectCard: React.FC<{ project: SuccessCase; onClick: () => void; index: number; visible: boolean }> = ({
+  project,
+  onClick,
+  index,
+  visible,
+}) => {
+  const [hovered, setHovered] = useState(false);
 
-const SuccessImageCarousel: React.FC<{ images: string[]; active: boolean }> = ({ images, active }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+  return (
+    <article
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="relative overflow-hidden cursor-pointer group"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(32px)',
+        transition: `opacity 0.7s cubic-bezier(0.16,1,0.3,1) ${index * 80}ms, transform 0.7s cubic-bezier(0.16,1,0.3,1) ${index * 80}ms`,
+      }}
+    >
+      {/* Thumbnail */}
+      <div className="relative w-full overflow-hidden bg-gray-100" style={{ aspectRatio: '16/10' }}>
+        <img
+          src={project.coverImage}
+          alt={project.title}
+          loading={index < 3 ? 'eager' : 'lazy'}
+          className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+          style={{ transform: hovered ? 'scale(1.06)' : 'scale(1)' }}
+        />
 
-    const nextImage = (e: React.MouseEvent) => {
-        e.stopPropagation();
-        setCurrentIndex((prev) => (prev + 1) % images.length);
-    };
-
-    const prevImage = (e: React.MouseEvent) => {
-        e.stopPropagation();
-        setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-    };
-
-    return (
-        <div className="relative w-full h-full overflow-hidden group/carousel bg-gray-50">
-            {/* Main Image */}
-            <div className="relative w-full h-full overflow-hidden">
-                {images.map((src, idx) => {
-                    // We only want to load the other images if active or if it's the first image
-                    // This balances performance and speed
-                    const shouldLoad = active || idx === 0;
-                    
-                    if (!shouldLoad && idx !== 0) return null;
-
-                    return (
-                        <img
-                            key={src}
-                            src={src}
-                            alt={`Vista del proyecto ${idx + 1}`}
-                            loading={idx === 0 ? "eager" : "lazy"}
-                            className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                                idx === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
-                            }`}
-                        />
-                    );
-                })}
+        {/* Hover overlay — Awwwards-style bottom info bar */}
+        <div
+          className="absolute inset-0 flex flex-col justify-end"
+          style={{
+            background: hovered
+              ? 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.15) 60%, transparent 100%)'
+              : 'linear-gradient(to top, rgba(0,0,0,0) 0%, transparent 100%)',
+            transition: 'background 0.4s ease',
+          }}
+        >
+          <div
+            className="px-5 pb-5 flex items-end justify-between"
+            style={{
+              opacity: hovered ? 1 : 0,
+              transform: hovered ? 'translateY(0)' : 'translateY(8px)',
+              transition: 'opacity 0.35s ease, transform 0.35s ease',
+            }}
+          >
+            <div>
+              <span className="block text-[10px] font-bold text-white/70 uppercase tracking-widest mb-1">
+                {project.category}
+              </span>
+              <span className="block text-xl font-semibold text-white leading-tight">
+                {project.title}
+              </span>
             </div>
-
-            {/* Navigation Buttons (Only if active and multiple images) */}
-            {active && images.length > 1 && (
-                <>
-                    <button
-                        onClick={prevImage}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-white/40 z-30"
-                    >
-                        <ChevronLeft className="w-5 h-5" />
-                    </button>
-                    <button
-                        onClick={nextImage}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-white/40 z-30"
-                    >
-                        <ChevronRight className="w-5 h-5" />
-                    </button>
-
-                    {/* Indicators */}
-                    <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-30">
-                        {images.map((_, idx) => (
-                            <div
-                                key={idx}
-                                className={`h-1 rounded-full transition-all duration-500 ${
-                                    idx === currentIndex ? 'w-8 bg-white' : 'w-2 bg-white/40'
-                                }`}
-                            />
-                        ))}
-                    </div>
-
-                    {/* Number indicator */}
-                    <div className="absolute top-6 right-6 px-3 py-1 bg-black/30 backdrop-blur-md rounded-full text-[10px] font-bold text-white uppercase tracking-widest z-30">
-                        {currentIndex + 1} / {images.length}
-                    </div>
-                </>
-            )}
+            <div className="flex items-center gap-2 ml-4 shrink-0">
+              {/* Arrow icon */}
+              <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
+                <ArrowUpRight className="w-4 h-4 text-white" />
+              </div>
+            </div>
+          </div>
         </div>
-    );
+      </div>
+
+      {/* Below-image meta (always visible, minimal — no author since it's your portfolio) */}
+      <div className="pt-3 pb-1 px-0.5 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="text-[11px] font-semibold text-gray-800">{project.title}</span>
+          <span className="text-[10px] text-gray-400">·</span>
+          <span className="text-[10px] text-gray-500">{project.category}</span>
+        </div>
+        <span className="text-[10px] text-gray-400 tabular-nums">{project.year}</span>
+      </div>
+    </article>
+  );
 };
 
-const SuccessStories: React.FC = () => {
-    const [expandedIds, setExpandedIds] = useState<string[]>([successCases[0].id]);
-    const [showAll, setShowAll] = useState(false);
-    const projectRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+/* ─── Modal Detail View ──────────────────────────────────── */
+const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({ project, onClose }) => {
+  const [currentImg, setCurrentImg] = useState(0);
+  const modalRef = useRef<HTMLDivElement>(null);
 
-    const toggleProject = (id: string) => {
-        setExpandedIds(prev => 
-            prev.includes(id) 
-                ? prev.filter(item => item !== id) 
-                : [...prev, id]
-        );
+  // Close on Escape
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowRight') setCurrentImg(p => (p + 1) % project.images.length);
+      if (e.key === 'ArrowLeft') setCurrentImg(p => (p - 1 + project.images.length) % project.images.length);
     };
+    window.addEventListener('keydown', handleKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose, project.images.length]);
 
-    const displayedCases = showAll ? successCases : successCases.slice(0, 4);
+  const prev = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImg(p => (p - 1 + project.images.length) % project.images.length);
+  }, [project.images.length]);
 
-    const [visible, setVisible] = React.useState(false);
-    const ref = React.useRef<HTMLDivElement>(null);
+  const next = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImg(p => (p + 1) % project.images.length);
+  }, [project.images.length]);
 
-    React.useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => setVisible(entry.isIntersecting),
-            { threshold: 0.1 }
-        );
-        if (ref.current) observer.observe(ref.current);
-        return () => observer.disconnect();
-    }, []);
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-start justify-center overflow-y-auto"
+      style={{ background: 'rgba(0,0,0,0.88)', backdropFilter: 'blur(8px)' }}
+      onClick={onClose}
+    >
+      {/* Panel */}
+      <div
+        ref={modalRef}
+        onClick={e => e.stopPropagation()}
+        className="relative w-full max-w-4xl my-8 mx-4 bg-white rounded-2xl overflow-hidden shadow-2xl"
+        style={{ animation: 'modalSlideIn 0.45s cubic-bezier(0.16,1,0.3,1) forwards' }}
+      >
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-black/10 backdrop-blur-md flex items-center justify-center hover:bg-black/20 transition-colors"
+          aria-label="Cerrar"
+        >
+          <X className="w-5 h-5 text-gray-800" />
+        </button>
 
-    return (
-        <section id="proyectos" ref={ref} className="py-24 px-6 md:px-12 bg-white font-['Inter']">
-            <div className={`max-w-7xl mx-auto transition-all duration-700 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                {/* Header Section */}
-                <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-16 gap-8 text-center md:text-left">
-                    <div className="flex flex-col items-center md:items-start">
-                        <div className="inline-flex items-center bg-[#f3f4f1] border border-gray-200/50 px-4 py-1.5 rounded-full mb-6 text-center">
-                            <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest text-center">Nuestra Trayectoria</span>
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight text-[#111] leading-[1.1]">
-                            Proyectos con impacto,<br />
-                            resultados visibles.
-                        </h2>
-                    </div>
-                </div>
+        {/* Hero Image with navigation */}
+        <div className="relative w-full overflow-hidden bg-gray-100" style={{ aspectRatio: '16/9' }}>
+          {project.images.map((src, idx) => (
+            <img
+              key={src}
+              src={src}
+              alt={`${project.title} — vista ${idx + 1}`}
+              loading={idx === 0 ? 'eager' : 'lazy'}
+              className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+              style={{
+                opacity: idx === currentImg ? 1 : 0,
+                transform: idx === currentImg ? 'scale(1)' : 'scale(1.04)',
+              }}
+            />
+          ))}
 
-                {/* Main List */}
-                <div className="border-t border-gray-100">
-                    {displayedCases.map((item, index) => {
-                        const isExpanded = expandedIds.includes(item.id);
-                        return (
-                            <div
-                                key={item.id}
-                                ref={(el) => (projectRefs.current[item.id] = el)}
-                                className={`border-b border-gray-100 transition-all duration-[1000ms] overflow-hidden ${isExpanded ? 'py-12 bg-white' : 'hover:bg-gray-50/50'} ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
-                                style={{ 
-                                    transitionDelay: visible ? `${index * 100}ms` : '0ms',
-                                    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
-                                }}
-                            >
-                                {/* Header (Clickable) */}
-                                <div
-                                    className={`flex flex-col md:flex-row items-center justify-between cursor-pointer group gap-4 ${!isExpanded ? 'py-7' : 'mb-10 text-center md:text-left'}`}
-                                    onClick={() => toggleProject(item.id)}
-                                >
-                                    <h3 className={`text-xl md:text-2xl font-medium transition-all duration-500 ${isExpanded ? 'text-black' : 'text-gray-500 group-hover:text-black'}`}>
-                                        {item.title}
-                                    </h3>
+          {/* Gradient overlay at bottom */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
-                                    <div className="flex items-center gap-4 md:gap-16">
-                                        <div className="flex items-center gap-6 md:gap-12 text-black/50 md:text-black min-w-0 md:min-w-[200px] justify-center md:justify-end">
-                                            <span className="text-xs md:text-sm font-medium tabular-nums">{item.year}</span>
-                                            <span className="text-xs md:text-sm font-medium w-auto md:w-48 truncate text-right">{item.location}</span>
-                                        </div>
-                                        <div className={`p-1.5 rounded-full border border-gray-100 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded ? 'bg-black border-black rotate-90' : 'bg-transparent'}`}>
-                                            <ChevronRight className={`w-4 h-4 transition-colors ${isExpanded ? 'text-white' : 'text-gray-400'}`} strokeWidth={1} />
-                                        </div>
-                                    </div>
-                                </div>
+          {/* Title over image */}
+          <div className="absolute bottom-6 left-6 right-20">
+            <span className="block text-[11px] font-bold text-white/70 uppercase tracking-widest mb-1">
+              {project.category}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight">
+              {project.title}
+            </h2>
+          </div>
 
-                                <div
-                                    className={`grid grid-cols-1 lg:grid-cols-2 gap-12 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded ? 'max-h-[1400px] opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2 pointer-events-none'
-                                        }`}
-                                >
-                                    <div className="relative rounded-2xl overflow-hidden aspect-[16/10] bg-gray-50 group/item shadow-2xl">
-                                        <SuccessImageCarousel images={item.images} active={isExpanded} />
-                                    </div>
+          {/* Image counter */}
+          {project.images.length > 1 && (
+            <div className="absolute top-4 left-4 px-3 py-1 bg-black/30 backdrop-blur-md rounded-full text-[10px] font-bold text-white uppercase tracking-widest">
+              {currentImg + 1} / {project.images.length}
+            </div>
+          )}
 
-                                    <div className="flex flex-col justify-between items-start relative min-h-[440px]">
-                                        <div className="w-full h-full flex flex-col relative z-20">
-                                            <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-10 max-w-xl">
-                                                {item.description}
-                                            </p>
+          {/* Carousel arrows */}
+          {project.images.length > 1 && (
+            <>
+              <button
+                onClick={prev}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/40 transition-all z-30"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={next}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/40 transition-all z-30"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </>
+          )}
+        </div>
 
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full mb-12">
-                                                <div>
-                                                    <span className="text-[10px] font-bold text-black uppercase tracking-widest mb-4 block opacity-40">Servicios Realizados</span>
-                                                    <div className="flex flex-wrap gap-2">
-                                                        {item.services.map((service, i) => (
-                                                            <span key={i} className="px-3 py-1 bg-black/[0.03] border border-black/5 rounded-full text-xs text-gray-600 font-medium">
-                                                                {service}
-                                                            </span>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <span className="text-[10px] font-bold text-black uppercase tracking-widest mb-4 block opacity-40">Impacto Logrado</span>
-                                                    <p className="text-sm text-gray-700 leading-relaxed font-medium">
-                                                        "{item.outcome}"
-                                                    </p>
-                                                </div>
-                                            </div>
+        {/* Thumbnail strip */}
+        {project.images.length > 1 && (
+          <div className="flex gap-2 px-6 pt-4 overflow-x-auto scrollbar-none">
+            {project.images.map((src, idx) => (
+              <button
+                key={src}
+                onClick={() => setCurrentImg(idx)}
+                className="flex-shrink-0 rounded-lg overflow-hidden border-2 transition-all duration-300"
+                style={{
+                  width: '80px',
+                  height: '52px',
+                  borderColor: idx === currentImg ? '#111' : 'transparent',
+                  opacity: idx === currentImg ? 1 : 0.55,
+                }}
+              >
+                <img src={src} alt="" className="w-full h-full object-cover" />
+              </button>
+            ))}
+          </div>
+        )}
 
-                                            {/* Minimalist Black Pill Metrics Row */}
-                                            <div className="flex flex-wrap items-center gap-2">
-                                                {item.metrics.map((metric, idx) => (
-                                                    <div key={idx} className="flex items-center gap-2 px-4 py-1.5 bg-black border border-white/10 rounded-full shadow-sm">
-                                                        <span className="text-xs sm:text-[13px] font-medium text-white lowercase first-letter:uppercase tracking-tight">{metric.label}</span>
-                                                        <span className="text-xs sm:text-[13px] font-medium text-white tabular-nums">{metric.value}</span>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
+        {/* Content */}
+        <div className="px-6 py-6 md:px-8 md:py-8">
+          {/* Description */}
+          <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-8 max-w-2xl">
+            {project.description}
+          </p>
 
-                {/* Show More Button */}
-                {!showAll && successCases.length > 4 && (
-                    <div className="mt-16 flex justify-center">
-                        <button
-                            onClick={() => setShowAll(true)}
-                            className="flex items-center gap-3 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 group shadow-lg"
-                        >
-                            Ver más proyectos
-                            <svg 
-                                viewBox="0 0 24 24" 
-                                fill="none" 
-                                xmlns="http://www.w3.org/2000/svg" 
-                                className="w-4 h-4 group-hover:translate-x-1 transition-transform rotate-90"
-                            >
-                                <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                )}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            {/* Services */}
+            <div>
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 block">
+                Servicios Realizados
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {project.services.map((s, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-xs text-gray-700 font-medium"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
             </div>
 
-            <style dangerouslySetInnerHTML={{
-                __html: `
-                @keyframes spin-slow {
-                    from { transform: rotate(0deg); }
-                    to { transform: rotate(360deg); }
-                }
-                @keyframes spin-reverse {
-                    from { transform: rotate(360deg); }
-                    to { transform: rotate(0deg); }
-                }
-                .animate-spin-slow {
-                    animation: spin-slow 12s linear infinite;
-                }
-                .animate-spin-reverse {
-                    animation: spin-reverse 8s linear infinite;
-                }
-                @keyframes grow-horizontal {
-                    from { width: 0; }
-                }
-                .animate-grow-horizontal {
-                    animation: grow-horizontal 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-                }
-                @keyframes bounce-slow {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-3px); }
-                }
-                .animate-bounce-slow {
-                    animation: bounce-slow 2s ease-in-out infinite;
-                }
-                @keyframes draw-path {
-                    from { stroke-dasharray: 0 100; stroke-dashoffset: 0; }
-                    to { stroke-dasharray: 100 0; stroke-dashoffset: 0; }
-                }
-                .animate-draw-path {
-                    stroke-dasharray: 100 100;
-                    animation: draw-path 2s ease-out forwards;
-                }
-                @keyframes ping-slow {
-                    0% { transform: scale(1); opacity: 0.8; }
-                    100% { transform: scale(1.5); opacity: 0; }
-                }
-                .animate-ping-slow {
-                    animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
-                }
-            `}} />
-        </section>
+            {/* Outcome */}
+            <div>
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 block">
+                Impacto Logrado
+              </span>
+              <p className="text-sm text-gray-700 leading-relaxed font-medium">
+                "{project.outcome}"
+              </p>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="pt-4 border-t border-gray-100 flex items-center justify-between gap-4">
+            <span className="text-xs text-gray-400">{project.year} · Motions</span>
+            <a
+              href="#contacto"
+              onClick={onClose}
+              className="inline-flex items-center gap-2 px-6 py-2.5 bg-black text-white text-sm font-semibold rounded-full hover:bg-neutral-800 transition-all hover:scale-[1.03] active:scale-95"
+            >
+              Trabajar juntos
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes modalSlideIn {
+          from { opacity: 0; transform: translateY(24px) scale(0.97); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .scrollbar-none::-webkit-scrollbar { display: none; }
+        .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+      `}</style>
+    </div>
+  );
+};
+
+/* ─── Main Section ───────────────────────────────────────── */
+const SuccessStories: React.FC = () => {
+  const [activeProject, setActiveProject] = useState<SuccessCase | null>(null);
+  const [showAll, setShowAll] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.08 }
     );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const displayedCases = showAll ? successCases : successCases.slice(0, 6);
+
+  return (
+    <>
+      <section
+        id="proyectos"
+        ref={ref}
+        className="py-24 bg-[#F7F7F5] font-['Inter']"
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+
+          {/* Header */}
+          <div
+            className="flex flex-col items-center text-center mb-14"
+            style={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? 'translateY(0)' : 'translateY(24px)',
+              transition: 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)',
+            }}
+          >
+            <div className="inline-flex items-center bg-white border border-gray-200 px-4 py-1.5 rounded-full mb-6">
+              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                Nuestra Trayectoria
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-[3.25rem] font-medium tracking-tight text-[#111] leading-[1.1] mb-4">
+              Proyectos con impacto,<br />resultados visibles.
+            </h2>
+            <p className="text-base text-gray-500 max-w-xl leading-relaxed">
+              Cada proyecto es una historia de transformación. Explora nuestro trabajo y descubre cómo llevamos marcas al siguiente nivel.
+            </p>
+          </div>
+
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-8">
+            {displayedCases.map((project, index) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                index={index}
+                visible={visible}
+                onClick={() => setActiveProject(project)}
+              />
+            ))}
+          </div>
+
+          {/* Show more */}
+          {!showAll && successCases.length > 6 && (
+            <div
+              className="mt-14 flex justify-center"
+              style={{
+                opacity: visible ? 1 : 0,
+                transition: 'opacity 0.7s ease 0.6s',
+              }}
+            >
+              <button
+                onClick={() => setShowAll(true)}
+                className="flex items-center gap-3 px-8 py-3.5 border border-gray-300 text-gray-700 bg-white rounded-full text-sm font-semibold hover:border-gray-900 hover:text-gray-900 transition-all hover:scale-[1.03] active:scale-95 shadow-sm"
+              >
+                Ver todos los proyectos
+              </button>
+            </div>
+          )}
+
+          {/* Bottom CTA */}
+          {(showAll || successCases.length <= 6) && (
+            <div
+              className="mt-14 flex justify-center"
+              style={{
+                opacity: visible ? 1 : 0,
+                transition: 'opacity 0.7s ease 0.6s',
+              }}
+            >
+              <a
+                href="#contacto"
+                className="hidden md:inline-flex items-center gap-3 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 shadow-lg"
+              >
+                Solicitar presupuesto
+                <img src="/anagram.png" alt="Motions" className="w-5 h-5 invert brightness-0" />
+              </a>
+              <a
+                href="https://wa.me/34919610420"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="md:hidden inline-flex items-center gap-3 px-8 py-3.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-neutral-800 transition-all hover:scale-105 active:scale-95 shadow-lg"
+              >
+                Solicitar presupuesto
+                <img src="/anagram.png" alt="Motions" className="w-5 h-5 invert brightness-0" />
+              </a>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Modal */}
+      {activeProject && (
+        <ProjectModal
+          project={activeProject}
+          onClose={() => setActiveProject(null)}
+        />
+      )}
+    </>
+  );
 };
 
 export default SuccessStories;
