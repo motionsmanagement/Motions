@@ -477,24 +477,16 @@ const SuccessStories: React.FC = () => {
 
           {/* Header */}
           <div
-            className="flex flex-col items-center text-center mb-14"
+            className="flex flex-col items-center text-center mb-16"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? 'translateY(0)' : 'translateY(24px)',
               transition: 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)',
             }}
           >
-            <div className="inline-flex items-center bg-white border border-gray-200 px-4 py-1.5 rounded-full mb-6">
-              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
-                Nuestra Trayectoria
-              </span>
-            </div>
             <h2 className="text-3xl sm:text-4xl md:text-[3.25rem] font-medium tracking-tight text-[#111] leading-[1.3] mb-4">
               Proyectos con impacto,<br />resultados visibles.
             </h2>
-            <p className="text-base text-gray-500 max-w-xl leading-relaxed">
-              Cada proyecto es una historia de transformación. Explora nuestro trabajo y descubre cómo llevamos marcas al siguiente nivel.
-            </p>
           </div>
 
           {/* Grid */}
