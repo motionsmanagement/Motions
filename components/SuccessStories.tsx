@@ -232,7 +232,7 @@ const ProjectCard: React.FC<{ project: SuccessCase; onClick: () => void; index: 
               transition: 'opacity 0.35s ease, transform 0.35s ease',
             }}
           >
-            <span className="text-lg font-semibold text-white leading-tight">
+            <span className="text-lg font-semibold text-white leading-tight opacity-0">
               Ver proyecto
             </span>
             <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center ml-3 shrink-0">
@@ -269,9 +269,11 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
     };
     window.addEventListener('keydown', handleKey);
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
     return () => {
       window.removeEventListener('keydown', handleKey);
       document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     };
   }, [onClose, project.images.length]);
 
@@ -287,8 +289,8 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
 
   return (
     <div
-      className="fixed inset-0 z-[200] flex items-start justify-center overflow-y-auto p-4 sm:p-6"
-      style={{ background: 'rgba(0,0,0,0.88)', backdropFilter: 'blur(10px)' }}
+      className="fixed inset-0 z-[200] flex items-start justify-center overflow-y-auto p-4 sm:p-6 overscroll-contain"
+      style={{ background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(10px)' }}
       onClick={onClose}
     >
       {/* Panel — vertical scroll, fixed within popup container */}
@@ -352,7 +354,7 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
         <div className="p-6 md:p-10 lg:p-12 flex flex-col">
           {/* Header info */}
           <div className="mb-10">
-            <span className="block text-xs font-normal text-gray-400 lowercase tracking-tight mb-2">
+            <span className="block text-[10px] font-normal text-gray-400 uppercase tracking-[0.15em] mb-3">
               {project.category}
             </span>
             <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-[1.3] tracking-tight">
@@ -392,7 +394,7 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 border-t border-gray-100 pt-12">
             {/* Services */}
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 block">
+              <span className="text-[10px] font-normal text-gray-400 uppercase tracking-[0.15em] mb-4 block">
                 Servicios Realizados
               </span>
               <div className="flex flex-wrap gap-2">
@@ -409,7 +411,7 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
 
             {/* Outcome */}
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 block">
+              <span className="text-[10px] font-normal text-gray-400 uppercase tracking-[0.15em] mb-4 block">
                 Impacto Logrado
               </span>
               <p className="text-sm md:text-base text-gray-700 leading-relaxed font-medium">
