@@ -300,6 +300,7 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
         className="relative w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col"
         style={{
           maxHeight: 'none',
+          backgroundColor: '#fff',
           animation: 'modalSlideIn 0.4s cubic-bezier(0.16,1,0.3,1) forwards',
         }}
       >
@@ -488,7 +489,7 @@ const SuccessStories: React.FC = () => {
                 Nuestra Trayectoria
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-[3.25rem] font-medium tracking-tight text-[#111] leading-[1.1] mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-[3.25rem] font-medium tracking-tight text-[#111] leading-[1.3] mb-4">
               Proyectos con impacto,<br />resultados visibles.
             </h2>
             <p className="text-base text-gray-500 max-w-xl leading-relaxed">

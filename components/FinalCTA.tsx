@@ -1,28 +1,11 @@
 import React, { useState } from 'react';
-import { Phone, MessageSquare, Mail, ChevronRight, Globe, Check } from 'lucide-react';
+import { ChevronRight, Check, ArrowUpRight } from 'lucide-react';
 
 const FinalCTA: React.FC = () => {
-  const [visible, setVisible] = React.useState(false);
+  const [visible, setVisible] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [countryCode, setCountryCode] = useState('+34');
   const ref = React.useRef<HTMLDivElement>(null);
-
-  const services = [
-    "Páginas Web",
-    "Branding",
-    "SEO Local",
-    "Integración IA",
-    "Estrategia Digital"
-  ];
-
-  const toggleService = (service: string) => {
-    setSelectedServices(prev => 
-      prev.includes(service) 
-        ? prev.filter(s => s !== service) 
-        : [...prev, service]
-    );
-  };
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,39 +18,27 @@ const FinalCTA: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
     const formData = new FormData(e.currentTarget);
     const data = {
       nombre: formData.get('nombre'),
+      apellidos: formData.get('apellidos'),
+      email: formData.get('email'),
+      mensaje: formData.get('mensaje'),
       telefono: `${countryCode} ${formData.get('telefono')}`,
-      servicios: selectedServices.length > 0 ? selectedServices.join(', ') : 'Ninguno especificado',
-      _subject: "🔥 Nuevo Lead o Presupuesto Motions - " + formData.get('nombre'),
+      _subject: "🔥 Nuevo Lead Motions - " + formData.get('nombre'),
       _template: "box"
     };
 
     try {
       await fetch('https://formsubmit.co/ajax/contacto@motions.es', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data)
       });
       setIsSubmitted(true);
-      
-      // Tracking para Google Analytics
       if (typeof window !== 'undefined') {
         const dataLayer = (window as any).dataLayer = (window as any).dataLayer || [];
-        dataLayer.push({
-          event: 'contact_form_submit',
-          form_name: 'Formulario Contacto Principal'
-        });
-        
-        // Tracking para Meta Pixel
-        if (typeof (window as any).fbq === 'function') {
-          (window as any).fbq('track', 'Contact');
-        }
+        dataLayer.push({ event: 'contact_form_submit', form_name: 'Formulario Contacto Rediseñado' });
       }
     } catch (error) {
       console.error('Error enviando formulario:', error);
@@ -76,155 +47,137 @@ const FinalCTA: React.FC = () => {
   };
 
   return (
-    <section id="contacto" ref={ref} className="relative py-16 md:py-20 px-4 md:px-12 overflow-hidden flex flex-col items-center justify-center font-['Inter']">
-      {/* Background Image - High Visibility */}
-      <div className="absolute inset-0 z-0">
-        <picture>
-          <source media="(max-width: 767px)" srcSet="/vvvv2-mobile.jpg" />
-          <img
-            src="/vvvv2 (1).jpg"
-            alt="Final CTA background"
-            className="w-full h-full object-cover brightness-[0.75]"
-            loading="lazy"
-          />
-        </picture>
-        <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
-      </div>
-
-      <div className={`relative z-10 max-w-4xl w-full transition-all duration-[1000ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-        
-        {/* Centralized Horizontal Contact Form Card */}
-        <div className="bg-white rounded-[2rem] p-6 md:p-12 shadow-[0_48px_80px_-20px_rgba(0,0,0,0.3)] relative overflow-hidden flex items-center justify-center">
+    <section id="contacto" ref={ref} className="bg-[#F7F7F5] py-24 px-6 md:px-12 font-['Inter']">
+      <div className={`max-w-7xl mx-auto transition-all duration-[1000ms] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+        <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row min-h-[700px]">
           
-          {/* Form State */}
-          <div className={`relative z-10 w-full transition-all duration-700 ${isSubmitted ? 'opacity-0 pointer-events-none scale-[0.98] blur-sm' : 'opacity-100 scale-100 blur-none'}`}>
-            <div className="flex flex-col items-center mb-8 md:mb-12 text-center">
-              <h2 className="text-3xl md:text-5xl lg:text-6xl text-black font-medium tracking-tighter leading-[1.1] mb-6">
-                Lleva tu restaurante<br className="hidden md:block" /> al siguiente nivel
-              </h2>
-              <p className="text-gray-600/80 text-[14px] md:text-lg max-w-xl md:max-w-3xl mx-auto leading-relaxed md:leading-normal font-light px-4">
-                <span className="md:hidden">Déjanos tus datos y te contactaremos en <br /> menos de 24 horas.</span>
-                <span className="hidden md:inline">Déjanos tus datos y te llamaremos en menos de 24 horas para entender las necesidades de tu negocio y crear un plan a medida.</span>
+          {/* Left Side: Image & Testimonial */}
+          <div className="lg:w-1/2 relative min-h-[450px] lg:min-h-full">
+            <img 
+              src="/motionsweb.jpg" 
+              alt="Motions Portfolio" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            
+            {/* Testimonial Card */}
+            <div className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 p-6 md:p-8 rounded-[1.5rem]">
+              <p className="text-white text-base md:text-lg leading-relaxed mb-6 font-light">
+                "Trabajar con Motions ha sido un placer absoluto. Su visión creativa y técnica ha transformado nuestra presencia digital, capturando perfectamente la esencia de nuestra marca en cada detalle."
               </p>
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="text-white font-semibold text-sm">Alvaro Garayar</h4>
+                  <p className="text-white/60 text-[11px] uppercase tracking-widest mt-1">Founder at Motions</p>
+                </div>
+                <div className="flex gap-2">
+                  <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/40 cursor-not-allowed">
+                    <ChevronRight className="w-4 h-4 rotate-180" />
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black shadow-lg">
+                    <ChevronRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <form onSubmit={handleSubmit} className="space-y-6 md:space-y-10">
-              <div className="relative">
-                <input 
-                  type="text" 
-                  name="nombre"
-                  placeholder="Tu nombre" 
-                  className="w-full bg-transparent border-b border-gray-100 py-3 text-black text-sm md:text-lg placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
-                  required
-                />
-              </div>
-
-              <div className="relative flex gap-4">
-                <div className="relative group shrink-0">
-                  <select 
-                    value={countryCode}
-                    onChange={(e) => setCountryCode(e.target.value)}
-                    className="appearance-none bg-transparent border-b border-gray-100 py-3 pr-8 text-black text-sm md:text-lg font-medium focus:outline-none focus:border-black cursor-pointer transition-colors"
-                  >
-                    <option value="+34">🇪🇸 +34</option>
-                    <option value="+1">🇺🇸 +1</option>
-                    <option value="+44">🇬🇧 +44</option>
-                    <option value="+52">🇲🇽 +52</option>
-                    <option value="+54">🇦🇷 +54</option>
-                    <option value="+57">🇨🇴 +57</option>
-                    <option value="+56">🇨🇱 +56</option>
-                    <option value="+51">🇵🇪 +51</option>
-                    <option value="+58">🇻🇪 +58</option>
-                    <option value="+593">🇪🇨 +593</option>
-                    <option value="+507">🇵🇦 +507</option>
-                    <option value="+506">🇨🇷 +506</option>
-                    <option value="+55">🇧🇷 +55</option>
-                    <option value="+39">🇮🇹 +39</option>
-                    <option value="+33">🇫🇷 +33</option>
-                    <option value="+49">🇩🇪 +49</option>
-                  </select>
-                  <div className="absolute right-0 bottom-4 pointer-events-none text-gray-400">
-                    <ChevronRight className="w-4 h-4 rotate-90" />
-                  </div>
-                </div>
-                <input 
-                  type="tel" 
-                  name="telefono"
-                  placeholder="Número de teléfono" 
-                  className="flex-1 bg-transparent border-b border-gray-100 py-3 text-black text-sm md:text-lg placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
-                  required
-                />
-              </div>
-
-              {/* Bot protection */}
-              <input type="text" name="_honey" style={{ display: 'none' }} />
-
-              {/* Service Selection Pills */}
-              <div className="space-y-4 md:space-y-5">
-                <label className="text-sm md:text-base font-medium text-[#2D241E]/80 block text-left pl-0.5">¿En qué podemos ayudarte?</label>
-                <div className="flex flex-wrap gap-2 justify-start min-h-[40px]">
-                  {services.map((service) => (
-                    <button
-                      key={service}
-                      type="button"
-                      onClick={() => toggleService(service)}
-                      className={`px-4 md:px-5 py-2 rounded-full text-[11px] md:text-[13px] font-semibold border transition-all duration-300 ${
-                        selectedServices.includes(service)
-                          ? "bg-black border-black text-white shadow-md"
-                          : "bg-gray-50/50 border-gray-100 text-gray-500 hover:border-black/20 hover:bg-white"
-                      }`}
-                    >
-                      {service}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="pt-6 flex justify-center">
-                <button 
-                  type="submit" 
-                  className="bg-black text-white rounded-full pl-6 md:pl-10 pr-2 md:pr-2.5 py-2 md:py-2.5 flex items-center justify-center gap-3 md:gap-8 group hover:bg-neutral-800 transition-all hover:scale-[1.02] active:scale-95 shadow-xl"
-                >
-                  <span className="font-semibold tracking-tight text-[14px] md:text-lg leading-tight">
-                    <span className="md:hidden">Solicitar presupuesto</span>
-                    <span className="hidden md:inline">Solicitar presupuesto y auditoría</span>
-                  </span>
-                  <div className="w-9 h-9 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center text-black shadow-inner shrink-0 scale-90 md:scale-100">
-                    <svg 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        className="w-4 h-4 md:w-7 md:h-7 transition-transform rotate-90"
-                    >
-                        <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                </button>
-              </div>
-
-              <p className="text-[9px] text-gray-400 pt-2 text-center font-light w-full opacity-60 whitespace-nowrap overflow-hidden text-ellipsis">
-                Al enviar, aceptas nuestra política de privacidad y el tratamiento de tus datos para el contacto.
-              </p>
-            </form>
           </div>
 
-          {/* Success Overlay State */}
-          <div className={`absolute inset-0 z-20 flex flex-col items-center justify-center p-6 transition-all duration-700 md:delay-300 ${isSubmitted ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'}`}>
-            <div className="mb-6 flex justify-center">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center animate-[bounce_1.5s_infinite] shadow-2xl">
-                <Check className="w-8 h-8 text-white" />
+          {/* Right Side: Form */}
+          <div className="lg:w-1/2 p-8 md:p-14 lg:p-20 relative flex flex-col">
+            {isSubmitted ? (
+              <div className="flex-1 flex flex-col items-center justify-center text-center">
+                <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center mb-8 shadow-2xl">
+                  <Check className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-3xl font-medium text-black mb-4 tracking-tight">¡Mensaje enviado!</h3>
+                <p className="text-gray-500 text-lg leading-relaxed max-w-sm mb-8">
+                  Gracias por contactarnos. Nuestro equipo revisará tu propuesta y te responderemos en menos de 24 horas.
+                </p>
+                <button 
+                  onClick={() => setIsSubmitted(false)}
+                  className="px-8 py-3 border border-black text-black rounded-full text-sm font-semibold hover:bg-black hover:text-white transition-all"
+                >
+                  Volver al formulario
+                </button>
               </div>
-            </div>
-            <h3 className="text-2xl md:text-4xl font-medium text-black mb-3 tracking-tight">¡Solicitud recibida!</h3>
-            <p className="text-gray-500 text-base max-w-md mx-auto leading-relaxed text-center">
-              Gracias por confiar en Motions. Uno de nuestros especialistas te contactará en menos de 24 horas.
-            </p>
-            <button 
-              onClick={() => setIsSubmitted(false)}
-              className="mt-8 px-5 py-2 border border-black/10 rounded-full text-black text-xs font-semibold hover:bg-black/5 transition-all"
-            >
-              Volver al formulario
-            </button>
+            ) : (
+              <>
+                <div className="mb-12">
+                  <div className="flex items-center gap-2 mb-8">
+                    <img src="/anagram.png" alt="Motions" className="w-8 h-8" />
+                    <span className="text-lg font-bold tracking-tighter">Motions</span>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.1] tracking-tight text-black mb-6">
+                    ¿Tienes una idea?<br />Hablemos de ella.
+                  </h2>
+                  <p className="text-gray-500 text-base md:text-lg font-light leading-relaxed">
+                    Estamos siempre abiertos a nuevas oportunidades y colaboraciones. Cuéntanos tu proyecto y veamos cómo podemos ayudarte.
+                  </p>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-[11px] font-bold text-gray-400 uppercase tracking-widest pl-1">Nombre</label>
+                      <input 
+                        type="text" 
+                        name="nombre"
+                        placeholder="Tu nombre" 
+                        required
+                        className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3.5 text-black placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[11px] font-bold text-gray-400 uppercase tracking-widest pl-1">Apellidos</label>
+                      <input 
+                        type="text" 
+                        name="apellidos"
+                        placeholder="Tus apellidos" 
+                        required
+                        className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3.5 text-black placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-[11px] font-bold text-gray-400 uppercase tracking-widest pl-1">Email</label>
+                    <input 
+                      type="email" 
+                      name="email"
+                      placeholder="hola@ejemplo.com" 
+                      required
+                      className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3.5 text-black placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-[11px] font-bold text-gray-400 uppercase tracking-widest pl-1">Mensaje</label>
+                    <textarea 
+                      name="mensaje"
+                      placeholder="Cuéntanos un poco sobre tu proyecto..." 
+                      rows={4}
+                      required
+                      className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3.5 text-black placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all resize-none"
+                    ></textarea>
+                  </div>
+
+                  <div className="flex items-center gap-3 pt-2">
+                    <input type="checkbox" id="privacy" required className="w-4 h-4 rounded border-gray-300 text-black focus:ring-black" />
+                    <label htmlFor="privacy" className="text-xs text-gray-400 font-light">
+                      Acepto la política de privacidad y los términos y condiciones.
+                    </label>
+                  </div>
+
+                  <button 
+                    type="submit" 
+                    className="w-full bg-black text-white rounded-full py-4 font-bold text-sm tracking-tight hover:bg-neutral-800 transition-all shadow-xl flex items-center justify-center gap-2 group"
+                  >
+                    Enviar Mensaje
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </button>
+                </form>
+              </>
+            )}
           </div>
         </div>
       </div>
