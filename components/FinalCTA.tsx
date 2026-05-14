@@ -13,7 +13,7 @@ const FinalCTA: React.FC = () => {
     "Branding",
     "SEO Local",
     "Integración IA",
-    "Estrategia Digital"
+    "Redes Sociales"
   ];
 
   const toggleService = (service: string) => {
@@ -65,7 +65,7 @@ const FinalCTA: React.FC = () => {
           {/* Left Side: Image */}
           <div className="lg:w-[45%] relative min-h-[300px] lg:min-h-full">
             <img 
-              src="/proyectos.jpg" 
+              src="/motions22.jpg" 
               alt="Motions Portfolio" 
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -93,7 +93,6 @@ const FinalCTA: React.FC = () => {
             ) : (
               <>
                 <div className="mb-8">
-                  <img src="/motionsblack.png" alt="Motions" className="h-6 w-auto mb-6" />
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium leading-tight tracking-tight text-black mb-4">
                     ¿Hablamos de tu proyecto?
                   </h2>
@@ -104,7 +103,7 @@ const FinalCTA: React.FC = () => {
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest pl-1">Nombre completo</label>
+                    <label className="text-[10px] font-normal text-gray-400 uppercase tracking-widest pl-1">Nombre completo</label>
                     <input 
                       type="text" 
                       name="nombre"
@@ -115,7 +114,7 @@ const FinalCTA: React.FC = () => {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest pl-1">Teléfono</label>
+                    <label className="text-[10px] font-normal text-gray-400 uppercase tracking-widest pl-1">Teléfono</label>
                     <div className="flex gap-2">
                       <select 
                         value={countryCode}
@@ -140,7 +139,7 @@ const FinalCTA: React.FC = () => {
                   </div>
 
                   <div className="space-y-3">
-                    <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest pl-1">¿En qué podemos ayudarte?</label>
+                    <label className="text-[10px] font-normal text-gray-400 uppercase tracking-widest pl-1">¿En qué podemos ayudarte?</label>
                     <div className="flex flex-wrap gap-2">
                       {servicesList.map((service) => (
                         <button
