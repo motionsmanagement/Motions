@@ -385,9 +385,11 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
         <div className="p-6 md:p-10 lg:p-12 flex flex-col">
           {/* Header info */}
           <div className="mb-10">
-            <span className="block text-[10px] font-normal text-gray-400 uppercase tracking-[0.15em] mb-3">
-              {project.category}
-            </span>
+            <div className="inline-flex items-center bg-gray-50 border border-gray-100 px-3 py-1 rounded-full mb-4">
+              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                {project.category}
+              </span>
+            </div>
             <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-[1.3] tracking-tight">
               {project.title}
             </h2>
@@ -425,7 +427,7 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 border-t border-gray-100 pt-12">
             {/* Services */}
             <div>
-              <span className="text-[10px] font-normal text-gray-400 uppercase tracking-[0.15em] mb-4 block">
+              <span className="text-[11px] font-bold text-black uppercase tracking-tighter mb-4 block">
                 Servicios Realizados
               </span>
               <div className="flex flex-wrap gap-2">
@@ -442,7 +444,7 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
 
             {/* Outcome */}
             <div>
-              <span className="text-[10px] font-normal text-gray-400 uppercase tracking-[0.15em] mb-4 block">
+              <span className="text-[11px] font-bold text-black uppercase tracking-tighter mb-4 block">
                 Impacto Logrado
               </span>
               <p className="text-sm md:text-base text-gray-700 leading-relaxed font-medium">
