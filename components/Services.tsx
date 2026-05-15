@@ -19,7 +19,7 @@ const Services: React.FC = () => {
             title: "Páginas Web",
             description: "Plataformas de alto rendimiento orientadas a maximizar tus reservas directas.",
             price: "495",
-            image: "/Motions-websites.jpg"
+            image: "/webs.jpg"
         },
         {
             title: "Branding",
@@ -96,9 +96,9 @@ const Services: React.FC = () => {
                                 <div className="pt-8 flex items-end justify-between">
                                     <div className="flex flex-col">
                                         <span className="text-[9px] text-white/30 uppercase font-medium tracking-[0.2em] mb-1">Desde</span>
-                                        <div className="flex items-baseline gap-0.5">
+                                        <div className="flex items-baseline gap-1">
                                             <span className="text-3xl font-medium text-white tracking-tight">{service.price}</span>
-                                            <span className="text-sm font-light text-white/40">€</span>
+                                            <span className="text-3xl font-medium text-white tracking-tight">€</span>
                                         </div>
                                     </div>
                                     <div className="p-2.5 rounded-full bg-white/5 border border-white/10 text-white group-hover:bg-white group-hover:text-black transition-all duration-500 translate-y-2 group-hover:translate-y-0">
