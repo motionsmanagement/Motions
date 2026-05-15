@@ -427,7 +427,7 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 border-t border-gray-100 pt-12">
             {/* Services */}
             <div>
-              <span className="text-[11px] font-bold text-black uppercase tracking-tighter mb-4 block">
+              <span className="text-[11px] font-bold text-black uppercase tracking-tight mb-4 block">
                 Servicios Realizados
               </span>
               <div className="flex flex-wrap gap-2">
@@ -444,7 +444,7 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
 
             {/* Outcome */}
             <div>
-              <span className="text-[11px] font-bold text-black uppercase tracking-tighter mb-4 block">
+              <span className="text-[11px] font-bold text-black uppercase tracking-tight mb-4 block">
                 Impacto Logrado
               </span>
               <p className="text-sm md:text-base text-gray-700 leading-relaxed font-medium">
