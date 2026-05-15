@@ -84,16 +84,16 @@ const Services: React.FC = () => {
                             </div>
 
                             {/* Card Content */}
-                            <div className="relative h-full z-10 px-8 pb-7 flex flex-col justify-end">
-                                <h3 className="text-2xl font-semibold text-white mb-2 tracking-tight">
+                            <div className="relative h-full z-10 px-8 pb-5 flex flex-col justify-end">
+                                <h3 className="text-2xl font-semibold text-white mb-1 tracking-tight">
                                     {service.title}
                                 </h3>
 
-                                <p className="text-sm text-white/60 leading-relaxed mb-7 group-hover:text-white/90 transition-colors duration-500">
+                                <p className="text-sm text-white/60 leading-relaxed mb-4 group-hover:text-white/90 transition-colors duration-500">
                                     {service.description}
                                 </p>
 
-                                <div className="pt-6 flex items-end justify-between">
+                                <div className="pt-3 flex items-end justify-between">
                                     <div className="flex flex-col">
                                         <span className="text-[9px] text-white/30 uppercase font-medium tracking-[0.2em] mb-1">Desde</span>
                                         <div className="flex items-baseline gap-1">
