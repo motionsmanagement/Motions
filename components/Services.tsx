@@ -66,7 +66,7 @@ const Services: React.FC = () => {
                         <a
                             key={index}
                             href="#contacto"
-                            className={`group relative aspect-[3/4] rounded-[2rem] bg-[#0A0A0A] transition-all duration-700 overflow-hidden shadow-2xl hover:-translate-y-3 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                            className={`group relative aspect-[3/4] rounded-2xl bg-[#0A0A0A] transition-all duration-700 overflow-hidden shadow-2xl hover:-translate-y-3 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                             style={{ 
                                 transitionDelay: visible ? `${index * 150}ms` : '0ms',
                                 transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
@@ -80,30 +80,30 @@ const Services: React.FC = () => {
                                     className="w-full h-full object-cover opacity-85 transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
                                 />
                                 {/* Localized bottom gradient for readability */}
-                                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                             </div>
 
                             {/* Card Content */}
-                            <div className="relative h-full z-10 px-8 pb-5 flex flex-col justify-end">
+                            <div className="relative h-full z-10 px-8 pb-7 flex flex-col justify-end">
                                 <h3 className="text-2xl font-semibold text-white mb-1 tracking-tight">
                                     {service.title}
                                 </h3>
 
-                                <p className="text-sm text-white leading-relaxed mb-4 group-hover:text-white transition-colors duration-500">
+                                <p className="text-sm text-white leading-relaxed mb-6">
                                     {service.description}
                                 </p>
 
-                                <div className="pt-3 flex items-end justify-between">
-                                    <div className="flex flex-col">
-                                        <span className="text-[9px] text-white uppercase font-medium tracking-tighter mb-1">Desde</span>
-                                        <div className="flex items-baseline gap-1">
-                                            <span className="text-3xl font-medium text-white tracking-tight">{service.price}</span>
-                                            <span className="text-3xl font-medium text-white tracking-tight">€</span>
-                                        </div>
+                                <div className="flex flex-col">
+                                    <span className="text-[9px] text-white/80 uppercase font-medium tracking-tighter mb-1">Desde</span>
+                                    <div className="flex items-baseline gap-1">
+                                        <span className="text-3xl font-medium text-white tracking-tight">{service.price}</span>
+                                        <span className="text-3xl font-medium text-white tracking-tight">€</span>
                                     </div>
-                                    <div className="p-2.5 rounded-full bg-white/5 border border-white/10 text-white group-hover:bg-white group-hover:text-black transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                                        <ArrowUpRight className="w-4 h-4" />
-                                    </div>
+                                </div>
+
+                                {/* Absolute Arrow Button */}
+                                <div className="absolute bottom-6 right-6 p-2.5 rounded-full bg-white/5 border border-white/10 text-white group-hover:bg-white group-hover:text-black transition-all duration-500 translate-y-2 group-hover:translate-y-0 shadow-xl">
+                                    <ArrowUpRight className="w-4 h-4" />
                                 </div>
                             </div>
 
