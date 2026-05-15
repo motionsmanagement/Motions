@@ -191,9 +191,29 @@ const ProjectCard: React.FC<{ project: SuccessCase; onClick: () => void; index: 
   visible,
 }) => {
   const [hovered, setHovered] = useState(false);
+  const [isMobileActive, setIsMobileActive] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (!isTouch) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsMobileActive(entry.isIntersecting);
+      },
+      { threshold: 0.8 } // Show when mostly in view
+    );
+
+    if (cardRef.current) observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const isActive = hovered || isMobileActive;
 
   return (
     <article
+      ref={cardRef}
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -211,14 +231,14 @@ const ProjectCard: React.FC<{ project: SuccessCase; onClick: () => void; index: 
           alt={project.title}
           loading={index < 3 ? 'eager' : 'lazy'}
           className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-          style={{ transform: hovered ? 'scale(1.06)' : 'scale(1)' }}
+          style={{ transform: isActive ? 'scale(1.06)' : 'scale(1)' }}
         />
 
         {/* Hover overlay — title + arrow only (category is shown below, no duplication) */}
         <div
           className="absolute inset-0 rounded-2xl flex flex-col justify-end"
           style={{
-            background: hovered
+            background: isActive
               ? 'linear-gradient(to top, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.12) 55%, transparent 100%)'
               : 'linear-gradient(to top, rgba(0,0,0,0) 0%, transparent 100%)',
             transition: 'background 0.4s ease',
@@ -227,8 +247,8 @@ const ProjectCard: React.FC<{ project: SuccessCase; onClick: () => void; index: 
           <div
             className="px-4 pb-4 flex items-end justify-between"
             style={{
-              opacity: hovered ? 1 : 0,
-              transform: hovered ? 'translateY(0)' : 'translateY(8px)',
+              opacity: isActive ? 1 : 0,
+              transform: isActive ? 'translateY(0)' : 'translateY(8px)',
               transition: 'opacity 0.35s ease, transform 0.35s ease',
             }}
           >
