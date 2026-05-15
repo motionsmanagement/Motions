@@ -455,9 +455,8 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
 
           {/* Footer CTA */}
           <div className="flex items-center justify-between gap-4 py-8 border-t border-gray-100">
-            <div className="flex items-center gap-3">
-              <img src="/motionsblack.png" alt="Motions Logo" className="h-4 w-auto" />
-              <span className="text-xs text-gray-400 font-medium">· {project.year}</span>
+            <div className="flex items-center">
+              <img src="/motionsblack.png" alt="Motions Logo" className="h-6 w-auto" />
             </div>
             <a
               href="#contacto"
