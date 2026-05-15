@@ -318,22 +318,27 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
   }, [project.images.length]);
 
   return (
-    <div
-      className="fixed inset-0 z-[200] flex items-start justify-center overflow-y-auto p-4 sm:p-6 overscroll-contain"
-      style={{ background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(10px)' }}
-      onClick={onClose}
-    >
-      {/* Panel — vertical scroll, fixed within popup container */}
-      <div
-        ref={modalRef}
-        onClick={e => e.stopPropagation()}
-        className="relative w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col"
-        style={{
-          maxHeight: 'none',
-          backgroundColor: '#fff',
-          animation: 'modalSlideIn 0.4s cubic-bezier(0.16,1,0.3,1) forwards',
-        }}
+    <div className="fixed inset-0 z-[200] overflow-y-auto scrollbar-hide">
+      {/* Fixed Backdrop — prevents gaps on overscroll */}
+      <div 
+        className="fixed inset-0 bg-black/80 backdrop-blur-xl" 
+        onClick={onClose}
+      />
+      
+      {/* Scrollable Content Container */}
+      <div 
+        className="relative min-h-full flex items-start justify-center p-4 sm:p-6 pointer-events-none"
+        onClick={onClose}
       >
+        <div
+          ref={modalRef}
+          onClick={e => e.stopPropagation()}
+          className="pointer-events-auto relative w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col my-auto"
+          style={{
+            backgroundColor: '#fff',
+            animation: 'modalSlideIn 0.4s cubic-bezier(0.16,1,0.3,1) forwards',
+          }}
+        >
         {/* Close button */}
         <button
           onClick={onClose}
@@ -469,8 +474,9 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
           </div>
         </div>
       </div>
+    </div>
 
-      <style>{`
+    <style>{`
         @keyframes modalSlideIn {
           from { opacity: 0; transform: translateY(32px); }
           to   { opacity: 1; transform: translateY(0); }
