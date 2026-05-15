@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronRight, Check, ArrowUpRight } from 'lucide-react';
+import { Check, ArrowUpRight, Phone, MessageCircle } from 'lucide-react';
 
 const FinalCTA: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -12,7 +12,6 @@ const FinalCTA: React.FC = () => {
     "Páginas Web",
     "Branding",
     "SEO Local",
-    "Integración IA",
     "Redes Sociales"
   ];
 
@@ -91,10 +90,30 @@ const FinalCTA: React.FC = () => {
               </div>
             ) : (
               <>
-                <div className="mb-8 text-left">
+                <div className="mb-8">
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium leading-tight tracking-tight text-black mb-4">
                     ¿Hablamos de tu proyecto?
                   </h2>
+                  
+                  {/* Contact Pills */}
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    <a 
+                      href="tel:+34919610420" 
+                      className="inline-flex items-center gap-2 px-4 py-1.5 bg-black text-white rounded-full text-[11px] font-semibold hover:bg-neutral-800 transition-colors shadow-sm"
+                    >
+                      <Phone className="w-3 h-3" />
+                      +34 919 610 420
+                    </a>
+                    <a 
+                      href="https://wa.me/34919610420" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-1.5 bg-black text-white rounded-full text-[11px] font-semibold hover:bg-neutral-800 transition-colors shadow-sm"
+                    >
+                      <MessageCircle className="w-3 h-3 text-green-400" />
+                      Enviar WhatsApp
+                    </a>
+                  </div>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-5">

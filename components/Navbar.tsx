@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronRight, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -20,7 +19,6 @@ const Navbar: React.FC = () => {
   // Close menu on navigation and handle body scroll
   useEffect(() => {
     setIsMenuOpen(false);
-    setIsServicesOpen(false);
     document.body.style.overflow = 'auto'; // Reset on navigation
   }, [location]);
 
@@ -29,7 +27,6 @@ const Navbar: React.FC = () => {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
-      setIsServicesOpen(false); // Reset services dropdown when menu closes
     }
   }, [isMenuOpen]);
 
@@ -62,14 +59,6 @@ const Navbar: React.FC = () => {
     { name: "Servicios", href: "/#servicios", section: "servicios" },
     { name: "Proyectos", href: "/#proyectos", section: "proyectos" },
     { name: "Contacto", href: "/#contacto", section: "contacto" },
-  ];
-
-  const services = [
-    { name: "Páginas Web", href: "/servicios/diseno-web-restaurantes" },
-    { name: "Branding", href: "/servicios/branding-restaurantes" },
-    { name: "SEO Local", href: "/servicios/seo-local" },
-    { name: "Integración IA", href: "/servicios/integracion-ia" },
-    { name: "Estrategia Digital", href: "/servicios/estrategia-digital" },
   ];
 
   return (
@@ -147,60 +136,24 @@ const Navbar: React.FC = () => {
         <div className="flex flex-col h-full px-8 pt-24 pb-8 overflow-y-auto overflow-x-hidden scrollbar-hide">
           {/* Main Navigation Links */}
           <div className="flex flex-col gap-7 text-left mb-10">
-            {navLinks.map((link, index) => {
-              if (link.name === "Servicios") {
-                return (
-                  <div key={link.name} className="flex flex-col">
-                    <button
-                      onClick={() => setIsServicesOpen(!isServicesOpen)}
-                      className={`text-[1.75rem] font-medium text-black tracking-tight flex items-center justify-between group transition-all duration-[800ms] ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                      style={{ 
-                        transitionDelay: isMenuOpen ? `${index * 80 + 150}ms` : '0ms',
-                        transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
-                      }}
-                    >
-                      {link.name}
-                      <ChevronRight className={`w-6 h-6 text-black/20 transition-transform duration-500 ${isServicesOpen ? 'rotate-90' : ''}`} />
-                    </button>
-                    
-                    <div className={`grid transition-all duration-500 ease-in-out ${isServicesOpen ? 'grid-rows-[1fr] mt-6 opacity-100' : 'grid-rows-[0fr] mt-0 opacity-0 pointer-events-none'}`}>
-                      <div className="overflow-hidden">
-                        <div className="flex flex-col gap-4 pl-4 border-l-2 border-black/5">
-                          {services.map((service, sIndex) => (
-                            <Link
-                              key={service.name}
-                              to={service.href}
-                              onClick={() => setIsMenuOpen(false)}
-                              className="text-lg text-black/85 hover:text-black transition-colors py-1"
-                            >
-                              {service.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              }
-              return (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`text-[1.75rem] font-medium text-black tracking-tight flex items-center justify-between group transition-all duration-[800ms] ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                  style={{ 
-                    transitionDelay: isMenuOpen ? `${index * 80 + 150}ms` : '0ms',
-                    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
-                  }}
-                  onClick={handleNavToSection(link.section)}
-                >
-                  {link.name}
-                  <ArrowUpRight className="w-5 h-5 text-black/20 group-hover:text-black transition-transform" />
-                </a>
-              );
-            })}
+            {navLinks.map((link, index) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`text-[1.75rem] font-medium text-black tracking-tight flex items-center justify-between group transition-all duration-[800ms] ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ 
+                  transitionDelay: isMenuOpen ? `${index * 80 + 150}ms` : '0ms',
+                  transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                }}
+                onClick={handleNavToSection(link.section)}
+              >
+                {link.name}
+                <ArrowUpRight className="w-5 h-5 text-black/20 group-hover:text-black transition-transform" />
+              </a>
+            ))}
           </div>
 
-          {/* Quick Choice Buttons & Banner with staggered reveal as well */}
+          {/* Quick Choice Buttons & Banner */}
           <div className={`transition-all duration-[800ms] delay-[400ms] ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}>
             <div className="flex gap-3 w-full mb-8">
               <a 

@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, MessageCircle, Mail, MapPin, Phone, ArrowUpRight } from 'lucide-react';
+import { Instagram, ArrowUpRight } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const [visible, setVisible] = React.useState(false);
   const ref = React.useRef<HTMLElement>(null);
 
   const handleScroll = (id: string) => (e: React.MouseEvent) => {
-    // Si estamos en la página de inicio, forzamos el scroll aunque el hash sea el mismo
     if (window.location.pathname === '/') {
       const element = document.getElementById(id.replace('#', ''));
       if (element) {
@@ -32,7 +31,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           {/* Logo & About */}
           <div className="flex flex-col gap-8">
-            <Link to="/">
+            <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <img src="/motionsblack.png" alt="Motions Logo" className="h-10 w-auto" />
             </Link>
             <p className="text-gray-500 text-base leading-relaxed max-w-xs">
@@ -51,15 +50,14 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Servicios */}
+          {/* Servicios (Anchors) */}
           <div>
             <h5 className="text-black font-semibold mb-8 text-sm uppercase tracking-widest">Servicios</h5>
             <ul className="space-y-4">
-              <li><Link to="/servicios/diseno-web-restaurantes" className="text-gray-600 hover:text-black transition-colors">Páginas Web</Link></li>
-              <li><Link to="/servicios/branding-restaurantes" className="text-gray-600 hover:text-black transition-colors">Branding e Identidad</Link></li>
-              <li><Link to="/servicios/seo-local" className="text-gray-600 hover:text-black transition-colors">SEO Local</Link></li>
-              <li><Link to="/servicios/integracion-ia" className="text-gray-600 hover:text-black transition-colors">Integración con IA</Link></li>
-              <li><Link to="/servicios/estrategia-digital" className="text-gray-600 hover:text-black transition-colors">Estrategia Digital</Link></li>
+              <li><a href="#servicios" onClick={handleScroll('servicios')} className="text-gray-600 hover:text-black transition-colors">Páginas Web</a></li>
+              <li><a href="#servicios" onClick={handleScroll('servicios')} className="text-gray-600 hover:text-black transition-colors">Branding e Identidad</a></li>
+              <li><a href="#servicios" onClick={handleScroll('servicios')} className="text-gray-600 hover:text-black transition-colors">SEO Local</a></li>
+              <li><a href="#servicios" onClick={handleScroll('servicios')} className="text-gray-600 hover:text-black transition-colors">Redes Sociales</a></li>
             </ul>
           </div>
 
@@ -68,9 +66,9 @@ const Footer: React.FC = () => {
             <h5 className="text-black font-semibold mb-8 text-sm uppercase tracking-widest">Navegación</h5>
             <ul className="space-y-4">
               <li><Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-600 hover:text-black transition-colors">Inicio</Link></li>
+              <li><a href="#proyectos" onClick={handleScroll('proyectos')} className="text-gray-600 hover:text-black transition-colors">Proyectos</a></li>
+              <li><a href="#contacto" onClick={handleScroll('contacto')} className="text-gray-600 hover:text-black transition-colors">Contacto</a></li>
               <li><Link to="/unete" className="text-gray-600 hover:text-black transition-colors font-medium">Únete al equipo</Link></li>
-              <li><Link to="/#proyectos" onClick={handleScroll('proyectos')} className="text-gray-600 hover:text-black transition-colors">Proyectos</Link></li>
-              <li><Link to="/#contacto" onClick={handleScroll('contacto')} className="text-gray-600 hover:text-black transition-colors">Contacto</Link></li>
             </ul>
           </div>
 
@@ -78,22 +76,10 @@ const Footer: React.FC = () => {
           <div>
             <h5 className="text-black font-semibold mb-8 text-sm uppercase tracking-widest">Contacto</h5>
             <ul className="space-y-6">
-              <li className="space-y-4">
-                <div className="flex items-start text-gray-600">
-                  <div className="grid gap-5">
-                    <div className="flex flex-col items-start">
-                      <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">General</span>
-                      <a href="mailto:contacto@motions.es" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition-colors text-base">contacto@motions.es</a>
-                    </div>
-                    <div className="flex flex-col items-start">
-                      <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">Ventas</span>
-                      <a href="mailto:ventas@motions.es" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition-colors text-base">ventas@motions.es</a>
-                    </div>
-                    <div className="flex flex-col items-start">
-                      <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">Soporte</span>
-                      <a href="mailto:clientes@motions.es" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition-colors text-base">clientes@motions.es</a>
-                    </div>
-                  </div>
+              <li className="flex items-start text-gray-600">
+                <div className="flex flex-col items-start">
+                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">Email</span>
+                  <a href="mailto:contacto@motions.es" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition-colors text-base">contacto@motions.es</a>
                 </div>
               </li>
               <li className="flex items-start text-gray-600">
@@ -109,14 +95,8 @@ const Footer: React.FC = () => {
                     className="flex items-center gap-2.5 px-5 py-2.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-gray-800 transition-all shadow-md group"
                   >
                     <img src="/anagram.png" alt="Motions Anagram" className="w-5 h-5 invert brightness-0" />
-                    Mandar un mensaje
+                    Mandar un WhatsApp
                   </a>
-                </div>
-              </li>
-              <li className="flex items-start text-gray-600">
-                <div className="flex flex-col items-start">
-                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">Localización</span>
-                  <span className="text-gray-600 text-base">Madrid, España</span>
                 </div>
               </li>
             </ul>
