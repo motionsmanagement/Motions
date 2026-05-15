@@ -17,25 +17,25 @@ const Services: React.FC = () => {
     const services = [
         {
             title: "Páginas Web",
-            description: "Plataformas de alto rendimiento orientadas a maximizar tus reservas directas.",
+            description: "Plataformas de alto rendimiento. Optimizadas para maximizar tus reservas.",
             price: "495",
             image: "/webs.jpg"
         },
         {
             title: "Branding",
-            description: "Creamos la identidad visual que posiciona a tu restaurante como marca de referencia.",
+            description: "Identidad visual estratégica. Posiciona tu marca como referente.",
             price: "99",
             image: "/Branding-motions.jpg"
         },
         {
             title: "SEO Local",
-            description: "Dominamos las búsquedas locales en Maps para que siempre seas la primera opción.",
+            description: "Dominio de búsquedas locales. Aparece primero en Google Maps.",
             price: "199",
             image: "/local seo.jpg"
         },
         {
             title: "Redes Sociales",
-            description: "Gestionamos tu presencia digital para conectar con tu audiencia y atraer nuevos clientes.",
+            description: "Gestión digital completa. Conecta y atrae nuevos clientes.",
             price: "89",
             image: "/social media.jpg"
         }
@@ -66,7 +66,7 @@ const Services: React.FC = () => {
                         <a
                             key={index}
                             href="#contacto"
-                            className={`group relative aspect-[3/4] rounded-[2.5rem] bg-[#0A0A0A] transition-all duration-700 overflow-hidden shadow-2xl hover:-translate-y-3 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                            className={`group relative aspect-[3/4] rounded-[2rem] bg-[#0A0A0A] transition-all duration-700 overflow-hidden shadow-2xl hover:-translate-y-3 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                             style={{ 
                                 transitionDelay: visible ? `${index * 150}ms` : '0ms',
                                 transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
@@ -77,10 +77,10 @@ const Services: React.FC = () => {
                                 <img 
                                     src={service.image} 
                                     alt={service.title}
-                                    className="w-full h-full object-cover opacity-80 transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
+                                    className="w-full h-full object-cover opacity-85 transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
                                 />
-                                {/* Bottom-only gradient for readability */}
-                                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                                {/* Localized bottom gradient for readability */}
+                                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                             </div>
 
                             {/* Card Content */}
