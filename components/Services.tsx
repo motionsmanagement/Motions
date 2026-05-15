@@ -66,7 +66,7 @@ const Services: React.FC = () => {
                         <a
                             key={index}
                             href="#contacto"
-                            className={`group relative h-[520px] rounded-[2.5rem] bg-[#0A0A0A] transition-all duration-700 overflow-hidden shadow-2xl hover:-translate-y-3 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                            className={`group relative aspect-[3/4] rounded-[2.5rem] bg-[#0A0A0A] transition-all duration-700 overflow-hidden shadow-2xl hover:-translate-y-3 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                             style={{ 
                                 transitionDelay: visible ? `${index * 150}ms` : '0ms',
                                 transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
@@ -93,7 +93,7 @@ const Services: React.FC = () => {
                                     {service.description}
                                 </p>
 
-                                <div className="pt-8 border-t border-white/10 flex items-end justify-between">
+                                <div className="pt-8 flex items-end justify-between">
                                     <div className="flex flex-col">
                                         <span className="text-[9px] text-white/30 uppercase font-medium tracking-[0.2em] mb-1">Desde</span>
                                         <div className="flex items-baseline gap-0.5">
