@@ -211,6 +211,16 @@ const ProjectCard: React.FC<{ project: SuccessCase; onClick: () => void; index: 
 
   const isActive = hovered || isMobileActive;
 
+  // Preload images of this project when hovered
+  useEffect(() => {
+    if (hovered) {
+      project.images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    }
+  }, [hovered, project.images]);
+
   return (
     <article
       ref={cardRef}
@@ -340,7 +350,7 @@ const ProjectModal: React.FC<{ project: SuccessCase; onClose: () => void }> = ({
               key={src}
               src={src}
               alt={`${project.title} — vista ${idx + 1}`}
-              loading={idx === 0 ? 'eager' : 'lazy'}
+              loading="eager"
               className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
               style={{
                 opacity: idx === currentImg ? 1 : 0,
@@ -481,6 +491,15 @@ const SuccessStories: React.FC = () => {
       { threshold: 0.08 }
     );
     if (ref.current) observer.observe(ref.current);
+
+    // Preload first 3 projects images globally
+    successCases.slice(0, 3).forEach(project => {
+      project.images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    });
+
     return () => observer.disconnect();
   }, []);
 
