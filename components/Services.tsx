@@ -80,7 +80,7 @@ const Services: React.FC = () => {
                                     className="w-full h-full object-cover opacity-80 transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
                                 />
                                 {/* Bottom-only gradient for readability */}
-                                <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                             </div>
 
                             {/* Card Content */}
@@ -89,13 +89,13 @@ const Services: React.FC = () => {
                                     {service.title}
                                 </h3>
 
-                                <p className="text-sm text-white/60 leading-relaxed mb-4 group-hover:text-white/90 transition-colors duration-500">
+                                <p className="text-sm text-white leading-relaxed mb-4 group-hover:text-white transition-colors duration-500">
                                     {service.description}
                                 </p>
 
                                 <div className="pt-3 flex items-end justify-between">
                                     <div className="flex flex-col">
-                                        <span className="text-[9px] text-white/30 uppercase font-medium tracking-[0.2em] mb-1">Desde</span>
+                                        <span className="text-[9px] text-white uppercase font-medium tracking-tighter mb-1">Desde</span>
                                         <div className="flex items-baseline gap-1">
                                             <span className="text-3xl font-medium text-white tracking-tight">{service.price}</span>
                                             <span className="text-3xl font-medium text-white tracking-tight">€</span>
