@@ -115,7 +115,7 @@ const FinalCTA: React.FC = () => {
                     </a>
                     <a 
                       href="mailto:contacto@motions.es" 
-                      className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white rounded-full text-[10px] font-semibold hover:bg-neutral-800 transition-colors shadow-sm"
+                      className="hidden md:inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white rounded-full text-[10px] font-semibold hover:bg-neutral-800 transition-colors shadow-sm"
                     >
                       <Mail className="w-3 h-3" />
                       Enviar Email
