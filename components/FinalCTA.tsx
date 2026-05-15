@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, ArrowUpRight, Phone, MessageCircle } from 'lucide-react';
+import { Check, ArrowUpRight, Phone, MessageCircle, Mail } from 'lucide-react';
 
 const FinalCTA: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -96,10 +96,10 @@ const FinalCTA: React.FC = () => {
                   </h2>
                   
                   {/* Contact Pills */}
-                  <div className="flex flex-wrap gap-2 mt-4">
+                  <div className="flex flex-wrap gap-1.5 mt-4">
                     <a 
                       href="tel:+34919610420" 
-                      className="inline-flex items-center gap-2 px-4 py-1.5 bg-black text-white rounded-full text-[11px] font-semibold hover:bg-neutral-800 transition-colors shadow-sm"
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white rounded-full text-[10px] font-semibold hover:bg-neutral-800 transition-colors shadow-sm"
                     >
                       <Phone className="w-3 h-3" />
                       +34 919 610 420
@@ -108,10 +108,17 @@ const FinalCTA: React.FC = () => {
                       href="https://wa.me/34919610420" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-1.5 bg-black text-white rounded-full text-[11px] font-semibold hover:bg-neutral-800 transition-colors shadow-sm"
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white rounded-full text-[10px] font-semibold hover:bg-neutral-800 transition-colors shadow-sm"
                     >
-                      <MessageCircle className="w-3 h-3 text-green-400" />
-                      Enviar WhatsApp
+                      <MessageCircle className="w-3 h-3" />
+                      Mandar WhatsApp
+                    </a>
+                    <a 
+                      href="mailto:contacto@motions.es" 
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white rounded-full text-[10px] font-semibold hover:bg-neutral-800 transition-colors shadow-sm"
+                    >
+                      <Mail className="w-3 h-3" />
+                      Enviar Email
                     </a>
                   </div>
                 </div>
