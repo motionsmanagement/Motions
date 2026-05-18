@@ -189,83 +189,98 @@ const LeadPopup: React.FC = () => {
             </div>
 
 
-            {/* --- MOBILE VIEW (Overlay Layout) --- */}
-            <div className="md:hidden relative w-full max-w-[400px] bg-black rounded-[2rem] overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-500">
-                
-                {/* Background Image */}
-                <div className="relative w-full z-0">
+            {/* --- MOBILE VIEW --- */}
+            <div className="md:hidden relative w-full max-w-[360px] bg-white rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-500 flex flex-col max-h-[90vh]">
+                {/* Close Button - inside card at top-right for mobile to be easily tapable but clear */}
+                <button 
+                    onClick={closePopup}
+                    className="absolute top-4 right-4 z-[120] p-2 bg-black/40 hover:bg-black/60 text-white rounded-full transition-all backdrop-blur-md"
+                >
+                    <X size={18} strokeWidth={2.5} />
+                </button>
+
+                {/* Top Image Banner */}
+                <div className="w-full h-40 shrink-0 relative bg-black">
                     <img 
                         src="/popup-motions-mobile.jpg" 
-                        alt="Promoción Creación Web Motions" 
-                        className="w-full h-auto block"
-                        onError={(e) => { e.currentTarget.src = "/bannermobile.jpg"; }}
+                        alt="Promoción" 
+                        className="w-full h-full object-cover object-center"
+                        onError={(e) => { e.currentTarget.src = "/motions-ad-popup.jpg"; }}
                     />
-                    {/* Gradient from bottom - lower profile to show more image */}
-                    <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                 </div>
 
-                {/* Content Overlay */}
-                <div className="absolute inset-x-0 bottom-0 z-10 p-6 pb-6 w-full">
+                {/* Form & Content Area */}
+                <div className="p-6 flex flex-col justify-center bg-white overflow-y-auto">
                     {!isSubmitted ? (
                         <>
-                            <form className="space-y-3" onSubmit={(e) => handleSubmit(e, true)}>
-                                <div className="space-y-1">
+                            <div className="mb-4">
+                                <h3 className="text-2xl font-semibold tracking-tight text-black leading-tight mb-2">
+                                    Reclama tu 10% <br /> de descuento.
+                                </h3>
+                                <p className="text-gray-500 text-xs leading-relaxed font-light">
+                                    Déjanos tus datos y nos pondremos en contacto en menos de 24 horas para aplicar tu descuento.
+                                </p>
+                            </div>
+
+                            <form className="space-y-4" onSubmit={(e) => handleSubmit(e, true)}>
+                                <div className="relative">
                                     <input 
                                         type="text" 
                                         name="nombre"
                                         placeholder="Tu nombre completo" 
                                         required
-                                        className="w-full bg-transparent border-b border-white/20 py-2.5 text-white text-[15px] placeholder:text-white/50 focus:outline-none focus:border-white transition-colors"
+                                        className="w-full bg-transparent border-b border-gray-200 py-2.5 text-black text-sm placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
                                     />
-
-                                    <div className="flex gap-3">
-                                        <div className="border-b border-white/20 py-2.5 shrink-0 flex items-center">
-                                            <select 
-                                                value={countryCodeMobile}
-                                                onChange={(e) => setCountryCodeMobile(e.target.value)}
-                                                className="bg-transparent text-white text-[15px] focus:outline-none appearance-none cursor-pointer pr-1"
-                                            >
-                                                <option value="+34">🇪🇸 +34</option>
-                                                <option value="+1">🇺🇸 +1</option>
-                                                <option value="+44">🇬🇧 +44</option>
-                                                <option value="+52">🇲🇽 +52</option>
-                                                <option value="+54">🇦🇷 +54</option>
-                                                <option value="+57">🇨🇴 +57</option>
-                                                <option value="+56">🇨🇱 +56</option>
-                                                <option value="+51">🇵🇪 +51</option>
-                                                <option value="+58">🇻🇪 +58</option>
-                                                <option value="+593">🇪🇨 +593</option>
-                                                <option value="+507">🇵🇦 +507</option>
-                                                <option value="+506">🇨🇷 +506</option>
-                                                <option value="+55">🇧🇷 +55</option>
-                                                <option value="+39">🇮🇹 +39</option>
-                                                <option value="+33">🇫🇷 +33</option>
-                                                <option value="+49">🇩🇪 +49</option>
-                                            </select>
-                                        </div>
-                                        <input 
-                                            type="tel" 
-                                            name="telefono"
-                                            placeholder="Teléfono" 
-                                            required
-                                            className="flex-1 bg-transparent border-b border-white/20 py-2.5 text-white text-[15px] placeholder:text-white/50 focus:outline-none focus:border-white transition-colors"
-                                        />
-                                    </div>
                                 </div>
-                                <div className="pt-3">
+
+                                <div className="relative flex gap-3">
+                                    <div className="shrink-0 border-b border-gray-200 py-2.5">
+                                        <select 
+                                            value={countryCodeMobile}
+                                            onChange={(e) => setCountryCodeMobile(e.target.value)}
+                                            className="bg-transparent text-black text-sm font-medium focus:outline-none appearance-none pr-3 cursor-pointer"
+                                        >
+                                            <option value="+34">🇪🇸 +34</option>
+                                            <option value="+1">🇺🇸 +1</option>
+                                            <option value="+44">🇬🇧 +44</option>
+                                            <option value="+52">🇲🇽 +52</option>
+                                            <option value="+54">🇦🇷 +54</option>
+                                            <option value="+57">🇨🇴 +57</option>
+                                            <option value="+56">🇨🇱 +56</option>
+                                            <option value="+51">🇵🇪 +51</option>
+                                            <option value="+58">🇻🇪 +58</option>
+                                            <option value="+593">🇪🇨 +593</option>
+                                            <option value="+507">🇵🇦 +507</option>
+                                            <option value="+506">🇨🇷 +506</option>
+                                            <option value="+55">🇧🇷 +55</option>
+                                            <option value="+39">🇮🇹 +39</option>
+                                            <option value="+33">🇫🇷 +33</option>
+                                            <option value="+49">🇩🇪 +49</option>
+                                        </select>
+                                    </div>
+                                    <input 
+                                        type="tel" 
+                                        name="telefono"
+                                        placeholder="Teléfono" 
+                                        required
+                                        className="flex-1 bg-transparent border-b border-gray-200 py-2.5 text-black text-sm placeholder:text-gray-400 focus:outline-none focus:border-black transition-colors"
+                                    />
+                                </div>
+                                <div className="pt-2">
                                     <button 
                                       type="submit" 
-                                      className="w-full bg-white text-black rounded-full pl-6 pr-2 py-2 flex items-center justify-between group active:scale-95 transition-transform shadow-2xl"
+                                      className="w-full bg-black text-white rounded-full pl-6 pr-2 py-2 flex items-center justify-between gap-4 group active:scale-95 transition-transform duration-200 shadow-xl"
                                     >
-                                      <span className="font-semibold tracking-tight text-[14px] leading-tight mx-auto">
-                                        Reclama tu 10% de descuento
+                                      <span className="font-semibold tracking-tight text-[13px] leading-tight">
+                                        Reclamar Oferta
                                       </span>
-                                      <div className="w-9 h-9 rounded-full bg-black flex items-center justify-center text-white shadow-inner shrink-0 scale-90 group-hover:bg-neutral-800 transition-colors">
+                                      <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black shadow-inner shrink-0 scale-90 group-hover:bg-gray-100 transition-colors">
                                         <svg 
                                             viewBox="0 0 24 24" 
                                             fill="none" 
                                             xmlns="http://www.w3.org/2000/svg" 
-                                            className="w-4 h-4 transition-transform rotate-90"
+                                            className="w-4.5 h-4.5 transition-transform rotate-90"
                                         >
                                             <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
@@ -273,17 +288,19 @@ const LeadPopup: React.FC = () => {
                                     </button>
                                 </div>
                             </form>
-                            <p className="text-[10px] text-white/40 mt-4 text-center">
+                            <p className="text-[9px] text-gray-400 mt-3 text-center font-light">
                                 Al enviar, aceptas nuestra política de privacidad.
                             </p>
                         </>
                     ) : (
-                        <div className="flex flex-col items-center justify-center text-center py-10 animate-in fade-in zoom-in">
-                            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-xl">
-                                <Check className="w-8 h-8 text-black" />
+                        <div className="flex flex-col items-center justify-center text-center py-8 animate-in fade-in zoom-in">
+                            <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4 shadow-xl">
+                                <Check className="w-6 h-6 text-white" />
                             </div>
-                            <h3 className="text-2xl font-medium text-white mb-2 tracking-tight">¡Recibido!</h3>
-                            <p className="text-white/70 text-sm">Te contactaremos muy pronto.</p>
+                            <h3 className="text-xl font-medium text-black mb-2 tracking-tight">¡Solicitud recibida!</h3>
+                            <p className="text-gray-500 text-xs max-w-[200px]">
+                                Gracias. Te contactaremos muy pronto con tu oferta especial.
+                            </p>
                         </div>
                     )}
                 </div>

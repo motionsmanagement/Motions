@@ -78,8 +78,20 @@ const Footer: React.FC = () => {
             <ul className="space-y-6">
               <li className="flex items-start text-gray-600">
                 <div className="flex flex-col items-start">
-                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">Email</span>
+                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">General</span>
                   <a href="mailto:contacto@motions.es" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition-colors text-base">contacto@motions.es</a>
+                </div>
+              </li>
+              <li className="flex items-start text-gray-600">
+                <div className="flex flex-col items-start">
+                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">Ventas</span>
+                  <a href="mailto:ventas@motions.es" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition-colors text-base">ventas@motions.es</a>
+                </div>
+              </li>
+              <li className="flex items-start text-gray-600">
+                <div className="flex flex-col items-start">
+                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">Soporte</span>
+                  <a href="mailto:clientes@motions.es" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition-colors text-base">clientes@motions.es</a>
                 </div>
               </li>
               <li className="flex items-start text-gray-600">
@@ -95,8 +107,14 @@ const Footer: React.FC = () => {
                     className="flex items-center gap-2.5 px-5 py-2.5 bg-black text-white rounded-full text-sm font-semibold hover:bg-gray-800 transition-all shadow-md group"
                   >
                     <img src="/anagram.png" alt="Motions Anagram" className="w-5 h-5 invert brightness-0" />
-                    Mandar un WhatsApp
+                    Mandar un mensaje
                   </a>
+                </div>
+              </li>
+              <li className="flex items-start text-gray-600">
+                <div className="flex flex-col items-start">
+                  <span className="inline-flex px-2 py-0.5 rounded-full bg-[#f3f4f1] border border-gray-200/50 text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1 leading-none">Localización</span>
+                  <span className="text-gray-600 text-base leading-snug">Conde de Aranda, 1, Madrid</span>
                 </div>
               </li>
             </ul>

@@ -17,25 +17,41 @@ const Services: React.FC = () => {
     const services = [
         {
             title: "Páginas Web",
-            description: "Plataformas de alto rendimiento. Optimizadas para maximizar tus reservas.",
+            description: (
+                <>
+                    Plataformas de alto rendimiento.<br className="hidden lg:inline" /> Optimizadas para tus reservas.
+                </>
+            ),
             price: "495",
             image: "/webs.jpg"
         },
         {
             title: "Branding",
-            description: "Identidad visual estratégica. Posiciona tu marca como referente.",
+            description: (
+                <>
+                    Identidad visual estratégica.<br className="hidden lg:inline" /> Posiciona tu marca como referente.
+                </>
+            ),
             price: "99",
             image: "/Branding-motions.jpg"
         },
         {
             title: "SEO Local",
-            description: "Dominio de búsquedas locales. Aparece primero en Google Maps.",
+            description: (
+                <>
+                    Dominio de búsquedas locales.<br className="hidden lg:inline" /> Aparece primero en Google Maps.
+                </>
+            ),
             price: "199",
             image: "/local seo.jpg"
         },
         {
             title: "Redes Sociales",
-            description: "Gestión digital completa. Conecta y atrae nuevos clientes.",
+            description: (
+                <>
+                    Gestión digital completa.<br className="hidden lg:inline" /> Conecta y atrae nuevos clientes.
+                </>
+            ),
             price: "89",
             image: "/social media.jpg"
         }

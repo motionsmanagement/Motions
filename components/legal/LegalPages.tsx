@@ -4,11 +4,18 @@ import Navbar from '../Navbar';
 import Footer from '../Footer';
 
 const LegalPage: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => {
+    const [visible, setVisible] = React.useState(false);
+    
+    React.useEffect(() => {
+        setVisible(true);
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="min-h-screen bg-white font-['Inter']">
             <Navbar />
             <main className="pt-40 pb-24 px-6 md:px-12">
-                <div className="max-w-4xl mx-auto">
+                <div className={`max-w-4xl mx-auto transition-all duration-[1000ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                     <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-black mb-12">{title}</h1>
                     <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
                         {children}
@@ -24,7 +31,7 @@ export const PrivacyPolicy: React.FC = () => (
     <LegalPage title="Política de Privacidad">
         <section className="mb-8">
             <h2 className="text-2xl font-semibold text-black mb-4">1. Responsable del Tratamiento</h2>
-            <p>Motions, con domicilio en Madrid, España, y correo electrónico de contacto <strong>contacto@motions.es</strong>, es el responsable del tratamiento de sus datos personales recogidos a través de este sitio web. Nos comprometemos a garantizar la privacidad de nuestros usuarios y la protección de sus datos bajo el Reglamento General de Protección de Datos (RGPD).</p>
+            <p>Ignacio Lozano (Motions), con NIF 54867997W, domicilio en Calle Conde de Aranda, 1, 28001 Madrid, España, y correo electrónico de contacto <strong>contacto@motions.es</strong>, es el responsable del tratamiento de sus datos personales recogidos a través de este sitio web. Nos comprometemos a garantizar la privacidad de nuestros usuarios y la protección de sus datos bajo el Reglamento General de Protección de Datos (RGPD).</p>
         </section>
         <section className="mb-8">
             <h2 className="text-2xl font-semibold text-black mb-4">2. Datos Recogidos y Finalidad</h2>
@@ -105,8 +112,9 @@ export const LegalNotice: React.FC = () => (
             <h2 className="text-2xl font-semibold text-black mb-4">1. Información General</h2>
             <p>En cumplimiento con el deber de información recogido en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE), se facilitan los siguientes datos informativos:</p>
             <ul className="list-none space-y-2 mt-4">
-                <li><strong>Titular:</strong> Motions</li>
-                <li><strong>Domicilio:</strong> Madrid, España</li>
+                <li><strong>Titular:</strong> Ignacio Lozano (Motions)</li>
+                <li><strong>NIF:</strong> 54867997W</li>
+                <li><strong>Domicilio:</strong> Calle Conde de Aranda, 1, 28001 Madrid, España</li>
                 <li><strong>Email:</strong> contacto@motions.es</li>
                 <li><strong>Actividad:</strong> Agencia de Marketing Especializada en Restauración</li>
             </ul>
